@@ -5,6 +5,7 @@ cd "$project_root"
 swift build -c release
 binary_dir="$(swift build -c release --show-bin-path)"
 app="$project_root/dist/CyberAudio.app"
+rm -rf "$app"
 mkdir -p "$app/Contents/MacOS" "$app/Contents/Resources/backend"
 cp "$binary_dir/CyberAudio" "$app/Contents/MacOS/CyberAudio"
 cp packaging/Info.plist "$app/Contents/Info.plist"

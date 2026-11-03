@@ -38,6 +38,29 @@ bash scripts/build_app.sh
 
 输出 `dist/CyberAudio.app`，其中仅包含原生可执行文件和后端源文件。完整首次安装、资产下载和迁移步骤见 [部署与使用指南](docs/GUIDE.md)。
 
+## Release DMG 与下载
+
+[Release DMG 工作流](https://github.com/Arasaka-Academy/CyberAudio/actions/workflows/release-dmg.yml) 仅在 **GitHub Release 发布**（`release.published`）时运行，包括预发布版本。普通 push、PR、单独推送 tag、保存 Release 草稿或编辑已发布的 Release 均不触发。
+
+发布步骤：
+
+1. 更新 `packaging/Info.plist` 中的 `CFBundleShortVersionString`，并递增 `CFBundleVersion`，提交并推送。
+2. 在 GitHub 的 Releases 页面创建 Release，选择包含本工作流的提交，设置与 App 版本一致的 tag，例如 `v0.1.0`。预发布可使用 `v0.1.0-rc.1`，其 App 版本仍为 `0.1.0`。
+3. 点击 Publish release，等待 `Release DMG` 工作流完成。
+4. 打开该次工作流的 Summary，点击下载链接或底部的 Artifacts，下载并解压 `CyberAudio-v0.1.0-macOS-arm64`。
+
+产物包括 `CyberAudio-0.1.0-macOS-arm64.dmg` 和同名 `.dmg.sha256` 文件。Actions artifact 保留 90 天，下载需要登录 GitHub。解压后可运行 `shasum -a 256 -c CyberAudio-0.1.0-macOS-arm64.dmg.sha256` 校验。
+
+工作流使用 `macos-26` 的 ARM64 runner、固定 SHA 的官方 checkout／upload-artifact Actions，以及 `contents: read` 权限；从 Release tag 构建，版本不一致时失败。打包过程不下载模型。DMG 包含 App、Applications 快捷方式及部署资料；首次安装继续按指南准备 Python、FFmpeg 和模型。当前为 ad-hoc 签名包，未做 Apple 公证。
+
+也可在 Apple Silicon Mac 上本地构建同款 DMG：
+
+```bash
+make dmg
+# 指定 Release tag，并检查它与 Info.plist 的版本是否一致：
+bash scripts/build_dmg.sh v0.1.0
+```
+
 ## 开发检查
 
 ```bash
