@@ -1,0 +1,12 @@
+.build/
+dist/
+.venv/
+__pycache__/
+.pytest_cache/
+.context/
+artifacts/
+.DS_Store
+*.pyc
+*.wav
+*.pcm
+*.log
