@@ -6,7 +6,7 @@
 
 - **STT**：Qwen3-ASR 1.7B 8-bit，中文／英文／混合语音，录音或导入文件。
 - **TTS**：Qwen3-TTS 1.7B CustomVoice 8-bit，9 个预设音色，表达指令，WAV 与流式 PCM。
-- **生命周期**：打开 App 加载模型；关闭窗口后继续在菜单栏运行；退出 App 停止 API、卸载模型。没有后台系统守护服务。
+- **生命周期**：打开 App 加载模型；仅在菜单栏显示，不显示 Dock 图标；关闭窗口后继续运行，可从菜单栏恢复主窗口；退出 App 停止 API、卸载模型。没有后台系统守护服务。
 - **API**：保持 `/v1/audio/transcriptions`，新增 `/v1/audio/speech`，共用地址与 Bearer Token。
 
 GUI 使用 SwiftUI／AppKit／AVFoundation；模型使用 App 直接管理的 Python／MLX Audio 子进程，**不是全 Swift 模型实现**。首次安装需要下载模型与准备独立运行环境。当前 `.app` 使用本机 ad-hoc 签名，未公证，不是包含所有资源的通用分发安装包。

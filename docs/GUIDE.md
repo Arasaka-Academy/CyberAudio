@@ -4,7 +4,7 @@ title: CyberAudio：Mac 原生 STT／TTS App 安装、API 使用与部署运维�
 
 # CyberAudio：Mac 原生 STT／TTS App 安装、API 使用与部署运维指南
 
-本文对应 2026 年 11 月 3 日的 CyberAudio 0.1.0（build 2）。项目源码位于 `/Users/zhubby/Repository/CyberAudio`。实际运行设备是 Mac mini：Apple M4、16GB 统一内存、macOS 27.2、arm64。
+本文对应 2026 年 11 月 3 日的 CyberAudio 0.1.0（build 3）。项目源码位于 `/Users/zhubby/Repository/CyberAudio`。实际运行设备是 Mac mini：Apple M4、16GB 统一内存、macOS 27.2、arm64。
 
 CyberAudio 是一个原生 SwiftUI Mac App，同时提供语音识别 STT、语音合成 TTS 和统一 API。它直接管理本地 Python／MLX Audio 推理子进程。界面、录音和播放使用 SwiftUI、AppKit、AVFoundation；模型推理仍使用 Python／MLX，并非全 Swift 模型实现。
 
@@ -13,6 +13,7 @@ CyberAudio 是一个原生 SwiftUI Mac App，同时提供语音识别 STT、语�
 | 操作或状态 | 实际行为 |
 | --- | --- |
 | 打开 CyberAudio | 启动一个后端子进程，加载并预热两个模型 |
+| Dock 与菜单栏 | App 不显示 Dock 图标；始终通过菜单栏入口打开主窗口或退出 |
 | 模型就绪 | 原生窗口和 API 均可使用 STT／TTS |
 | 点击窗口左上角关闭 | App 继续在菜单栏运行，API 保持可用 |
 | 菜单栏打开主窗口 | 恢复操作界面，复用已加载模型 |

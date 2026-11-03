@@ -1,6 +1,6 @@
 # CyberAudio 0.1.0 验收报告
 
-验收日期：2026-11-03。以下为本次部署实测，不是模型官方基准或面向所有设备的性能保证。
+验收日期：2026-11-03。第 2–11 节保留初次 build 2 部署的实测记录，其中长跑测试仍为 build 1；第 12 节追加 build 3 隐藏 Dock 图标的部署与复测结果。以下不是模型官方基准或面向所有设备的性能保证。
 
 ## 1. 交付设备与安装状态
 
@@ -8,8 +8,8 @@
 | --- | --- |
 | 目标设备 | Mac mini，Apple M4，16GB 统一内存，arm64 |
 | 目标系统 | macOS 27.2 |
-| App | `/Applications/CyberAudio.app`，版本 0.1.0（build 2），ad-hoc 签名检查通过 |
-| 源码 | `/Users/zhubby/Repository/CyberAudio`，新仓库，尚未提交／推送 |
+| App | `/Applications/CyberAudio.app`，版本 0.1.0（build 3），ad-hoc 签名检查通过 |
+| 源码 | `/Users/zhubby/Repository/CyberAudio`，GitHub `Arasaka-Academy/CyberAudio` 的 `main` 分支 |
 | 推理环境 | 独立 Python 3.13.18；初次基准进程为 3.13.17，MLX Audio 0.6.3，MLX／Metal 0.32.4 |
 | 运行目录 | `/Users/zhubby/Library/Application Support/CyberAudio` |
 | 本机地址 | `http://127.0.0.1:8765` |
@@ -29,7 +29,7 @@
 
 TTS 配置确认为 `qwen3_tts`／`custom_voice`／`1b7`／8-bit；没有用 0.6B 或 Base 版替代。ASR 从原已验证模型作独立 APFS 克隆，原资产保留供回退。独立 Python 环境从原已验证环境克隆并重新定位入口，完整依赖版本一致，迁移后的 `python -m pytest` 和 console entrypoint 可执行。
 
-目标机最终 App 与本地构建产物的以下 SHA256 一致：
+初次 build 2 部署时，目标机 App 与本地构建产物的以下 SHA256 一致；build 3 的新文件校验见第 12 节对应的部署报告：
 
 ```text
 Contents/MacOS/CyberAudio
@@ -209,5 +209,23 @@ HTTPS 延迟是单次客户端样本，不是网络 P50／P95。没有用手机�
 管理 Mac 仓库的忽略目录 `.context/` 保存 HTTPS、GUI、文档和证据副本。生产 Token 未写入这些报告、源码或 Notion。
 
 可运行 `scripts/verify_live.py`、`scripts/verify_client.py` 复测 API。`scripts/verify_lifecycle.py` 与 `scripts/verify_active_exit.py` 会主动退出并重新启动目标机 App，只应在允许短时中断时手动执行；需要目标机已可用的 Cua Driver 启动能力。它们不由常规 `make check` 自动运行。
+
+## 12. build 3：隐藏 Dock 图标
+
+2026-11-03 将 `LSUIElement` 设置为 `true`，构建号更新为 3，服务设置中的说明同步为菜单栏入口。关闭窗口后仍可从菜单栏选择“显示主窗口”；选择“退出 CyberAudio”仍由 App 负责停止语音引擎。
+
+本轮实际验证：
+
+- `make check app` 通过：24 项后端测试、Python／Shell／plist 检查、Swift release 构建与 App 签名验证。
+- 管理 Mac 的隔离测试 App、Mac mini 的实际安装 App，均由 macOS 报告 `activationPolicy = 1`（`accessory`），确认运行于隐藏 Dock 的应用模式。
+- Mac mini 原 App 退出后，其进程和 API 监听均关闭；替换为 build 3 后，两个真实模型重新加载，`/ready` 返回 `ready`，STT／TTS 都为 `ready`。
+- 新版真实 TTS 返回 HTTP 200、24kHz 单声道 WAV、2.96 秒音频；交给真实 STT 后返回 HTTP 200 和“你好，欢迎使用 Cyber Audio。”。这是一条合成语音回环检查，未据此重新估计准确率或延迟分位数。
+- 另一台 Tailscale 设备访问原 HTTPS 8443 入口，确认同一新实例就绪。
+- 目标机安装包的可执行文件、plist 与后端源文件 SHA256 均与本地构建一致；后端源文件 SHA256 仍为 `bd86ca6d5d94fe3c7c1b671c85456823695428fd45eb591e228ef985305fe9e8`。
+- 隔离界面测试 App 的正常退出仍关闭其测试 API；真实接口测试结束后临时录音文件为零。
+
+本轮原生自动化未能解析测试窗口或截取窗口图像，因此没有完成菜单栏点击恢复、关闭窗口和点击退出的人工交互复测；隐藏 Dock 的判断来自实际运行策略，而非截图。第 10 节列出的真实麦克风、重新登录／重启等待验收项目仍然适用；本轮没有重复 30 分钟长跑。
+
+目标机原 App 保留在 `~/Library/Application Support/CyberAudio/updates/dock-build3-20261103/CyberAudio.build2.app`。部署与接口原始报告分别为 `reports/dock-build3.json` 和 `reports/dock-build3-api.json`。已发布的 `v0.1.0` Actions DMG 是原 build 2；本轮 build 3 更新源码与 Mac mini 安装版，后续 Release 会按工作流生成新的下载包。
 
 报告结束标记：CYBERAUDIO-VERIFICATION-END-20261103。

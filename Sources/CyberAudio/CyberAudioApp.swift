@@ -323,7 +323,7 @@ private struct ServiceView: View {
                 if login.status == .requiresApproval {
                     Text("请在系统设置中批准 CyberAudio 登录项。").font(.callout).foregroundStyle(.orange)
                 }
-                Text("关闭窗口后，App 会继续在菜单栏运行。选择“退出 CyberAudio”会停止 API 并卸载两个模型。登录启动在用户登录后生效。").font(.callout).foregroundStyle(.secondary)
+                Text("App 仅显示在菜单栏，不显示 Dock 图标。关闭窗口后继续运行，可从菜单栏选择“显示主窗口”重新打开。选择“退出 CyberAudio”会停止 API 并卸载两个模型。登录启动在用户登录后生效。").font(.callout).foregroundStyle(.secondary)
                 HStack {
                     Button("打开数据目录", systemImage: "folder") { NSWorkspace.shared.open(backend.root) }
                     Button("打开日志", systemImage: "doc.text") { NSWorkspace.shared.open(backend.root.appendingPathComponent("logs")) }
