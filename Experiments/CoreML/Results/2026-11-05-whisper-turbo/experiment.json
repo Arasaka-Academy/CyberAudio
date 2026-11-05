@@ -1,0 +1,81 @@
+{
+  "date": "2026-11-05",
+  "repository_base_commit": "6c99d82",
+  "branch": "codex/coreml-native",
+  "probe_sha256": "2be1d5ee934b8758c7d48060c0c45986e82b0ac70fe6b09f59932cc81060a87c",
+  "asset_lock_sha256": "f9e040dd760d9b311234057dcac2a88a8e02bb306676e9f7c792d3434de9e794",
+  "sdk_revisions": {
+    "argmax-oss-swift": "9f99b5cb6a907730543823ad271b82532782a899",
+    "FluidAudio": "ee78635d23d52379117554ba72358b65a0612447"
+  },
+  "model_revision": "0f63a7800b00dd0226abd051b906c246e1907482",
+  "tokenizer_revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+  "asset_files": 29,
+  "asset_bytes": 1641461408,
+  "corpus_manifest": "../2026-11-05/corpus.json",
+  "corpus_manifest_sha256": "dc67d7b52bea55f7ea6fcd0934e0460811699ad510c0befe9f938c60c84ef7eb",
+  "corpus_provenance": "../2026-11-05/provenance.json",
+  "corpus_recordings": 100,
+  "corpus_seconds": 1010.48,
+  "sequence": [
+    "offline Whisper first load and one recording three times",
+    "production Qwen 100 recordings",
+    "offline SenseVoice 100 recordings",
+    "offline Whisper run 1 100 recordings",
+    "offline Whisper run 2 100 recordings"
+  ],
+  "native_sandbox_profile": "(version 1)(allow default)(deny network*)",
+  "production_deployment_changed": false,
+  "production_instance_unchanged": true,
+  "sanitization": "Removed production readiness payloads, instance and request UUIDs. Transcripts, timings, audio hashes, references and model identities are unchanged.",
+  "evidence_sha256": {
+    "m4-whisper-turbo-baseline.json": {
+      "original_sha256": "60eaa3810b0b92d1f58a77df54c75c505751f0c34e2e91c505aa829bac01746a",
+      "retained_sha256": "de370f6c619f7686baef0d4d03599e6de59805a7ad8007b4189f64f965efda9b"
+    },
+    "m4-whisper-turbo-cold.json": {
+      "original_sha256": "74a1eabf920def7119217709229898b4ec84e7c302ff7a4c1f45eedd3b1b2d4e",
+      "retained_sha256": "70d688195b21baf2aedfa12b44a41f2ac8bb20b85c7c0f8e413920dea77e2d21"
+    },
+    "m4-whisper-turbo-sensevoice.json": {
+      "original_sha256": "0b2d13e8435262e9d951c08e824b79c248fee5a2944c13d92ecc57c5eeb67bd1",
+      "retained_sha256": "efcbe96130e9c451d97bc7b27120c72d8869bf66a6e9f9991bc48a7eb67bde6b"
+    },
+    "m4-whisper-turbo-run1.json": {
+      "original_sha256": "a5aeac0c8284d03d424c5378c3eef3dd194f1bfdeee2f65694d88d8facdd05cb",
+      "retained_sha256": "79b3f54efd00a0784f7c50169e2f18dd9da93dae6d16b56b982cd5e79a7aca5e"
+    },
+    "m4-whisper-turbo-run2.json": {
+      "original_sha256": "8f8d485c1bdf452e62266d04c0ea9d19afc34bf34bcd1970147a1542d232076d",
+      "retained_sha256": "b8fb7fe8b78c6aaab21e742e6770f4381595e7ba009e7a557e3f93d34a9d987d"
+    },
+    "m4-whisper-turbo-comparison1.json": {
+      "original_sha256": "213f97e4bfeb4e6a761c8a9a10afd141b0e91896bdc1534de8fc3762fcb56499",
+      "retained_sha256": "3ac5aa7d66f3ffc5d881d4a27d1442cd3ed8c52bbd86b0f0e9cbb967a1f5d3b0"
+    },
+    "m4-whisper-turbo-comparison2.json": {
+      "original_sha256": "12af4d417d687d4f20813dbabffcd617b49d4e03bf591caeafa66d605cdd46be",
+      "retained_sha256": "260cf91baa5f12bdb48c6587b6246e6e2492a94782a4d12e3371f1ac01d4c97f"
+    },
+    "m4-whisper-turbo-sensevoice-comparison.json": {
+      "original_sha256": "b74284ed20b86000b39f9a1a2879465d505c76f832f093c5ea0bcac1c41b11b6",
+      "retained_sha256": "09040bbb1054d0dfb346d16b56e52a1dd65a7deb8b4d49666d5b843a27fc149c"
+    },
+    "m4-whisper-turbo-verified.json": {
+      "original_sha256": "8654514bfec9a43138c1dac9d2a3e8f6226dd919ee1196092927a535f24546e7",
+      "retained_sha256": "5bde941e80617baf8bc61be5a479bb561b8467ae5e4a7ef6fe7bd2ef6140e13b"
+    },
+    "local-whisper-turbo-verified.json": {
+      "original_sha256": "8654514bfec9a43138c1dac9d2a3e8f6226dd919ee1196092927a535f24546e7",
+      "retained_sha256": "5bde941e80617baf8bc61be5a479bb561b8467ae5e4a7ef6fe7bd2ef6140e13b"
+    },
+    "whisper-turbo-environment-before.json": {
+      "original_sha256": "831af9016c6e309a31f27041f5bdf701c5e1b109c2788542e98ab852d4cc01ea",
+      "retained_sha256": "3fab5ea510b6819232062078b6c08ef8e71591a347aa011295cab2644960966e"
+    },
+    "whisper-turbo-environment-after.json": {
+      "original_sha256": "7a0cb1663e046b2e60ad0a71ebbc63b98e3b1ab6214151004d0922b9e4a5c70e",
+      "retained_sha256": "7a0cb1663e046b2e60ad0a71ebbc63b98e3b1ab6214151004d0922b9e4a5c70e"
+    }
+  }
+}

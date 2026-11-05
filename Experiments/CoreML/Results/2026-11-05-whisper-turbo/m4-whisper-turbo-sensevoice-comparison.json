@@ -1,0 +1,24 @@
+{
+  "accuracyNonRegressing": false,
+  "baseline_model": "qwen3-asr-1.7b",
+  "baselineP95Milliseconds": 1156.09,
+  "candidate_model": "sensevoice-small",
+  "candidateP95Milliseconds": 84.12437500373926,
+  "languages": {
+    "en": {
+      "baselineCER": 0.01871141975308642,
+      "baselineWER": 0.03345724907063197,
+      "candidateCER": 0.033371913580246916,
+      "candidateWER": 0.07156133828996282,
+      "samples": 50
+    },
+    "zh": {
+      "baselineCER": 0.07972270363951472,
+      "baselineWER": 0.5226130653266332,
+      "candidateCER": 0.0878105141536684,
+      "candidateWER": 0.6733668341708543,
+      "samples": 50
+    }
+  },
+  "samples": 100
+}

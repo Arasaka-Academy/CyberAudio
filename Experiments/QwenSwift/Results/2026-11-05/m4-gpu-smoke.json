@@ -1,0 +1,9 @@
+{
+  "gpu_result": 9,
+  "host": {
+    "cpu": "Apple M4",
+    "os": "Version 27.2 (Build 26B123)",
+    "physical_memory_bytes": 17179869184
+  },
+  "status": "completed"
+}

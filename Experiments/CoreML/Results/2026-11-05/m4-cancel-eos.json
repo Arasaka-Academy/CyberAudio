@@ -1,0 +1,99 @@
+{
+  "ane_trace_verified": false,
+  "configured_compute_units": "cpuAndNeuralEngine",
+  "host": {
+    "cpu": "Apple M4",
+    "os": "Version 27.2 (Build 26B123)",
+    "physical_memory_bytes": 17179869184
+  },
+  "instructions": "",
+  "language": "chinese",
+  "load_ms": 1833.4913333383156,
+  "max_tokens": 1200,
+  "model": "qwen3-tts-1.7b-customvoice",
+  "multi_code_decoder_mode": "fused",
+  "peak_rss_bytes": 1677885440,
+  "results": [
+    {
+      "audio_seconds": 0.64,
+      "chunk_bytes": [
+        15360,
+        15360
+      ],
+      "chunk_times_seconds": [
+        0.6070772916718852,
+        1.0819199999968987
+      ],
+      "decoding_steps": 11,
+      "eos_verified": false,
+      "first_audio_ms": 607.0772916718852,
+      "pcm_file": "m4-cancel-eos/serena-0.pcm",
+      "result_bytes": 30720,
+      "rtf": 1.690751041655858,
+      "sdk_speaker_token": 3066,
+      "sdk_stop_reason": "maxNewTokens limit (1200) after 11 steps",
+      "sdk_voice": "serena",
+      "seconds": 1.0820806666597491,
+      "status": "cancelled",
+      "stream_bytes": 30720,
+      "stream_matches_result": true,
+      "voice": "serena",
+      "wav_file": "m4-cancel-eos/serena-0.wav"
+    },
+    {
+      "audio_seconds": 3.92,
+      "chunk_bytes": [
+        15360,
+        15360,
+        15360,
+        15360,
+        15360,
+        15360,
+        15360,
+        15360,
+        15360,
+        15360,
+        15360,
+        15360,
+        3840
+      ],
+      "chunk_times_seconds": [
+        0.2852922499878332,
+        0.7473390833329177,
+        0.9891427916591056,
+        1.2173514583264478,
+        1.4399379166570725,
+        1.668307999992976,
+        1.896479333328898,
+        2.125068958324846,
+        2.3619797916617244,
+        2.597076208330691,
+        2.8210753333260072,
+        2.879921416664729,
+        2.8921598749875557
+      ],
+      "decoding_steps": 49,
+      "eos_verified": true,
+      "first_audio_ms": 285.2922499878332,
+      "pcm_file": "m4-cancel-eos/serena-1.pcm",
+      "result_bytes": 188160,
+      "rtf": 0.7378168898793199,
+      "sdk_speaker_token": 3066,
+      "sdk_stop_reason": "EOS token after 49 steps",
+      "sdk_voice": "serena",
+      "seconds": 2.892242208326934,
+      "status": "completed",
+      "stream_bytes": 188160,
+      "stream_matches_result": true,
+      "voice": "serena",
+      "wav_file": "m4-cancel-eos/serena-1.wav"
+    }
+  ],
+  "sample_rate": 24000,
+  "seed": 42,
+  "speech_decoder_mode": "throughput",
+  "status": "incomplete",
+  "text": "这是用于验证流式取消后再次生成的真实模型测试。",
+  "verification_ms": 964.1640833287966,
+  "workers": 1
+}

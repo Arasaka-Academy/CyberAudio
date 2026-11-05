@@ -1,0 +1,365 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "path": "sensevoice/SenseVoicePreprocessor.mlmodelc/analytics/coremldata.bin",
+      "source": "SenseVoicePreprocessor.mlmodelc/analytics/coremldata.bin",
+      "repository": "FluidInference/sensevoice-small-coreml",
+      "revision": "74bdbe74b2258f25b5400db72f6cbfbef7c74ded",
+      "size": 243,
+      "sha256": "5bdb0b132e48c7e852ec18eeba7e217b6cb7153e6a939ce76b5ed17242e956dd"
+    },
+    {
+      "path": "sensevoice/SenseVoicePreprocessor.mlmodelc/coremldata.bin",
+      "source": "SenseVoicePreprocessor.mlmodelc/coremldata.bin",
+      "repository": "FluidInference/sensevoice-small-coreml",
+      "revision": "74bdbe74b2258f25b5400db72f6cbfbef7c74ded",
+      "size": 330,
+      "sha256": "e64cc73b2a9b01bad799a23874bc20dba3cf3342c23e3f60012c3e884f682944"
+    },
+    {
+      "path": "sensevoice/SenseVoicePreprocessor.mlmodelc/model.mil",
+      "source": "SenseVoicePreprocessor.mlmodelc/model.mil",
+      "repository": "FluidInference/sensevoice-small-coreml",
+      "revision": "74bdbe74b2258f25b5400db72f6cbfbef7c74ded",
+      "size": 15008,
+      "git_blob_sha1": "7a1bab3e6233c6d362553b23e08697060ebf2a25"
+    },
+    {
+      "path": "sensevoice/SenseVoicePreprocessor.mlmodelc/weights/weight.bin",
+      "source": "SenseVoicePreprocessor.mlmodelc/weights/weight.bin",
+      "repository": "FluidInference/sensevoice-small-coreml",
+      "revision": "74bdbe74b2258f25b5400db72f6cbfbef7c74ded",
+      "size": 3037504,
+      "sha256": "69c630a115da5e4db36ec41662f0b776c0ef33ec6776d86f8cdaaba022518396"
+    },
+    {
+      "path": "sensevoice/SenseVoiceSmall.mlmodelc/analytics/coremldata.bin",
+      "source": "SenseVoiceSmall.mlmodelc/analytics/coremldata.bin",
+      "repository": "FluidInference/sensevoice-small-coreml",
+      "revision": "74bdbe74b2258f25b5400db72f6cbfbef7c74ded",
+      "size": 243,
+      "sha256": "2dd2919d1ef534ecd4d0c9843dea078b0ad337e0918e692d9811cb16a31fb02b"
+    },
+    {
+      "path": "sensevoice/SenseVoiceSmall.mlmodelc/coremldata.bin",
+      "source": "SenseVoiceSmall.mlmodelc/coremldata.bin",
+      "repository": "FluidInference/sensevoice-small-coreml",
+      "revision": "74bdbe74b2258f25b5400db72f6cbfbef7c74ded",
+      "size": 436,
+      "sha256": "8af6326236369150e5540e15996877a71b281e98cb9ede6b646c2f4b3d9be88c"
+    },
+    {
+      "path": "sensevoice/SenseVoiceSmall.mlmodelc/model.mil",
+      "source": "SenseVoiceSmall.mlmodelc/model.mil",
+      "repository": "FluidInference/sensevoice-small-coreml",
+      "revision": "74bdbe74b2258f25b5400db72f6cbfbef7c74ded",
+      "size": 1003095,
+      "git_blob_sha1": "de9191f2faab79b2c04c6c3c0a8feebc2552cddc"
+    },
+    {
+      "path": "sensevoice/SenseVoiceSmall.mlmodelc/weights/weight.bin",
+      "source": "SenseVoiceSmall.mlmodelc/weights/weight.bin",
+      "repository": "FluidInference/sensevoice-small-coreml",
+      "revision": "74bdbe74b2258f25b5400db72f6cbfbef7c74ded",
+      "size": 468060094,
+      "sha256": "f435f29513464bcda175e449fd72e28ef5183b963f116394a38eadbbc12ca694"
+    },
+    {
+      "path": "sensevoice/config.json",
+      "source": "config.json",
+      "repository": "FluidInference/sensevoice-small-coreml",
+      "revision": "74bdbe74b2258f25b5400db72f6cbfbef7c74ded",
+      "size": 72,
+      "git_blob_sha1": "9eedecd40591056de71dc33813d902e1076f1ff5"
+    },
+    {
+      "path": "sensevoice/vocab.json",
+      "source": "vocab.json",
+      "repository": "FluidInference/sensevoice-small-coreml",
+      "revision": "74bdbe74b2258f25b5400db72f6cbfbef7c74ded",
+      "size": 352064,
+      "git_blob_sha1": "bc0021233d7c0891e2885233ef7ce16ba80be86d"
+    },
+    {
+      "path": "ttskit/qwen3_tts/code_decoder/12hz-1.7b-customvoice/W8A16-stateful/CodeDecoder.mlmodelc/analytics/coremldata.bin",
+      "source": "qwen3_tts/code_decoder/12hz-1.7b-customvoice/W8A16-stateful/CodeDecoder.mlmodelc/analytics/coremldata.bin",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 243,
+      "sha256": "2ae0466e386343e0079070977b713c72abd29e9653af179fbac1a0c656a7408b"
+    },
+    {
+      "path": "ttskit/qwen3_tts/code_decoder/12hz-1.7b-customvoice/W8A16-stateful/CodeDecoder.mlmodelc/coremldata.bin",
+      "source": "qwen3_tts/code_decoder/12hz-1.7b-customvoice/W8A16-stateful/CodeDecoder.mlmodelc/coremldata.bin",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 671,
+      "sha256": "bac65aa923aecda6c84e1439769c47c440ab8f8afcdfd47b8d100b992dc7be1a"
+    },
+    {
+      "path": "ttskit/qwen3_tts/code_decoder/12hz-1.7b-customvoice/W8A16-stateful/CodeDecoder.mlmodelc/metadata.json",
+      "source": "qwen3_tts/code_decoder/12hz-1.7b-customvoice/W8A16-stateful/CodeDecoder.mlmodelc/metadata.json",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 4715,
+      "git_blob_sha1": "f2cc48501987b32351fbe8496bdd24e1711f1bd2"
+    },
+    {
+      "path": "ttskit/qwen3_tts/code_decoder/12hz-1.7b-customvoice/W8A16-stateful/CodeDecoder.mlmodelc/model.mil",
+      "source": "qwen3_tts/code_decoder/12hz-1.7b-customvoice/W8A16-stateful/CodeDecoder.mlmodelc/model.mil",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 1100161,
+      "git_blob_sha1": "baa942b415d2505ab98d30b88c03159a4175a222"
+    },
+    {
+      "path": "ttskit/qwen3_tts/code_decoder/12hz-1.7b-customvoice/W8A16-stateful/CodeDecoder.mlmodelc/weights/weight.bin",
+      "source": "qwen3_tts/code_decoder/12hz-1.7b-customvoice/W8A16-stateful/CodeDecoder.mlmodelc/weights/weight.bin",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 1416032256,
+      "sha256": "2dc0cb784a9df3f11cb4c12710e962ab108d84081f25d7e0f068a0eb0aa3ace7"
+    },
+    {
+      "path": "ttskit/qwen3_tts/code_embedder/12hz-1.7b-customvoice/W16A16/CodeEmbedder.mlmodelc/analytics/coremldata.bin",
+      "source": "qwen3_tts/code_embedder/12hz-1.7b-customvoice/W16A16/CodeEmbedder.mlmodelc/analytics/coremldata.bin",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 243,
+      "sha256": "a67276394d403612b21f2042840c89e8b5feeb0d76162b0b10dc9f5be3273242"
+    },
+    {
+      "path": "ttskit/qwen3_tts/code_embedder/12hz-1.7b-customvoice/W16A16/CodeEmbedder.mlmodelc/coremldata.bin",
+      "source": "qwen3_tts/code_embedder/12hz-1.7b-customvoice/W16A16/CodeEmbedder.mlmodelc/coremldata.bin",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 380,
+      "sha256": "52bea537a5853fa5f98b869ca6c68e052febb5257d5b5a5a14be9148e4599e6b"
+    },
+    {
+      "path": "ttskit/qwen3_tts/code_embedder/12hz-1.7b-customvoice/W16A16/CodeEmbedder.mlmodelc/metadata.json",
+      "source": "qwen3_tts/code_embedder/12hz-1.7b-customvoice/W16A16/CodeEmbedder.mlmodelc/metadata.json",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 1724,
+      "git_blob_sha1": "af32edbeb2c0fc891fb49c493bf30cb473655870"
+    },
+    {
+      "path": "ttskit/qwen3_tts/code_embedder/12hz-1.7b-customvoice/W16A16/CodeEmbedder.mlmodelc/model.mil",
+      "source": "qwen3_tts/code_embedder/12hz-1.7b-customvoice/W16A16/CodeEmbedder.mlmodelc/model.mil",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 3164,
+      "git_blob_sha1": "ddf119b66162f4ec8743c9ac87561941c7ad6a78"
+    },
+    {
+      "path": "ttskit/qwen3_tts/code_embedder/12hz-1.7b-customvoice/W16A16/CodeEmbedder.mlmodelc/weights/weight.bin",
+      "source": "qwen3_tts/code_embedder/12hz-1.7b-customvoice/W16A16/CodeEmbedder.mlmodelc/weights/weight.bin",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 12583040,
+      "sha256": "cb500c72e2fb86bbba8b89e6810c64485e177bb4bcfc3725373d2c756f28b624"
+    },
+    {
+      "path": "ttskit/qwen3_tts/multi_code_decoder/12hz-1.7b-customvoice/W8A16-multifunction/MultiCodeDecoder.mlmodelc/analytics/coremldata.bin",
+      "source": "qwen3_tts/multi_code_decoder/12hz-1.7b-customvoice/W8A16-multifunction/MultiCodeDecoder.mlmodelc/analytics/coremldata.bin",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 243,
+      "sha256": "3cff719e21343a92fc7eedfd5da71c3f4eed536b7d0c6fd3c5129d509052ede5"
+    },
+    {
+      "path": "ttskit/qwen3_tts/multi_code_decoder/12hz-1.7b-customvoice/W8A16-multifunction/MultiCodeDecoder.mlmodelc/coremldata.bin",
+      "source": "qwen3_tts/multi_code_decoder/12hz-1.7b-customvoice/W8A16-multifunction/MultiCodeDecoder.mlmodelc/coremldata.bin",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 624,
+      "sha256": "ae22d36504bd24d589c7dec4dc9cf2f622fbfb44bbc120ff234253f32917646b"
+    },
+    {
+      "path": "ttskit/qwen3_tts/multi_code_decoder/12hz-1.7b-customvoice/W8A16-multifunction/MultiCodeDecoder.mlmodelc/metadata.json",
+      "source": "qwen3_tts/multi_code_decoder/12hz-1.7b-customvoice/W8A16-multifunction/MultiCodeDecoder.mlmodelc/metadata.json",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 11936,
+      "git_blob_sha1": "0635f965de7274eb92aa51301680667caa9e94f5"
+    },
+    {
+      "path": "ttskit/qwen3_tts/multi_code_decoder/12hz-1.7b-customvoice/W8A16-multifunction/MultiCodeDecoder.mlmodelc/model.mil",
+      "source": "qwen3_tts/multi_code_decoder/12hz-1.7b-customvoice/W8A16-multifunction/MultiCodeDecoder.mlmodelc/model.mil",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 2712595,
+      "git_blob_sha1": "4b303f5e14b9819c8d4416f3ff465c9aaff79c8e"
+    },
+    {
+      "path": "ttskit/qwen3_tts/multi_code_decoder/12hz-1.7b-customvoice/W8A16-multifunction/MultiCodeDecoder.mlmodelc/weights/weight.bin",
+      "source": "qwen3_tts/multi_code_decoder/12hz-1.7b-customvoice/W8A16-multifunction/MultiCodeDecoder.mlmodelc/weights/weight.bin",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 175204768,
+      "sha256": "498cd0cbc7ad298e961325c5b159e89195f5c56dcb4effbcd88c2f3c8509de14"
+    },
+    {
+      "path": "ttskit/qwen3_tts/multi_code_embedder/12hz-1.7b-customvoice/W16A16/MultiCodeEmbedder.mlmodelc/analytics/coremldata.bin",
+      "source": "qwen3_tts/multi_code_embedder/12hz-1.7b-customvoice/W16A16/MultiCodeEmbedder.mlmodelc/analytics/coremldata.bin",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 243,
+      "sha256": "59e7994cafd7a43d8c1af61044f330357ba05ee9817d11a3e51bcc3000d598f0"
+    },
+    {
+      "path": "ttskit/qwen3_tts/multi_code_embedder/12hz-1.7b-customvoice/W16A16/MultiCodeEmbedder.mlmodelc/coremldata.bin",
+      "source": "qwen3_tts/multi_code_embedder/12hz-1.7b-customvoice/W16A16/MultiCodeEmbedder.mlmodelc/coremldata.bin",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 380,
+      "sha256": "d20121b9a714012ce61f8257ebd047be23c2994a7ef0a1c40225fdbdc72c2dd8"
+    },
+    {
+      "path": "ttskit/qwen3_tts/multi_code_embedder/12hz-1.7b-customvoice/W16A16/MultiCodeEmbedder.mlmodelc/metadata.json",
+      "source": "qwen3_tts/multi_code_embedder/12hz-1.7b-customvoice/W16A16/MultiCodeEmbedder.mlmodelc/metadata.json",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 1729,
+      "git_blob_sha1": "5cae6752b6825b0f3176a40284a9421badde0709"
+    },
+    {
+      "path": "ttskit/qwen3_tts/multi_code_embedder/12hz-1.7b-customvoice/W16A16/MultiCodeEmbedder.mlmodelc/model.mil",
+      "source": "qwen3_tts/multi_code_embedder/12hz-1.7b-customvoice/W16A16/MultiCodeEmbedder.mlmodelc/model.mil",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 3167,
+      "git_blob_sha1": "25841be9b52cb3cd6dcd94d9aba70d125f97e0e6"
+    },
+    {
+      "path": "ttskit/qwen3_tts/multi_code_embedder/12hz-1.7b-customvoice/W16A16/MultiCodeEmbedder.mlmodelc/weights/weight.bin",
+      "source": "qwen3_tts/multi_code_embedder/12hz-1.7b-customvoice/W16A16/MultiCodeEmbedder.mlmodelc/weights/weight.bin",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 125829248,
+      "sha256": "46f8ac7940915bf46cb15cd16ac06c1cf306044aebf6ade6253831539e61cb88"
+    },
+    {
+      "path": "ttskit/qwen3_tts/speech_decoder/12hz-1.7b-customvoice/W8A16-multifunction/SpeechDecoder.mlmodelc/analytics/coremldata.bin",
+      "source": "qwen3_tts/speech_decoder/12hz-1.7b-customvoice/W8A16-multifunction/SpeechDecoder.mlmodelc/analytics/coremldata.bin",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 243,
+      "sha256": "cbf0a9a3a35b57b915b95b799666902aec9ddc59650bf63d61a2f3e37b0e766c"
+    },
+    {
+      "path": "ttskit/qwen3_tts/speech_decoder/12hz-1.7b-customvoice/W8A16-multifunction/SpeechDecoder.mlmodelc/coremldata.bin",
+      "source": "qwen3_tts/speech_decoder/12hz-1.7b-customvoice/W8A16-multifunction/SpeechDecoder.mlmodelc/coremldata.bin",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 896,
+      "sha256": "209c17e8cd64ae321ed68617d24fd86e7a6d48784ddf6e4688c091795ab2d1fa"
+    },
+    {
+      "path": "ttskit/qwen3_tts/speech_decoder/12hz-1.7b-customvoice/W8A16-multifunction/SpeechDecoder.mlmodelc/metadata.json",
+      "source": "qwen3_tts/speech_decoder/12hz-1.7b-customvoice/W8A16-multifunction/SpeechDecoder.mlmodelc/metadata.json",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 15519,
+      "git_blob_sha1": "25b5f4b88664314821ef964756a8b0eae7bae45e"
+    },
+    {
+      "path": "ttskit/qwen3_tts/speech_decoder/12hz-1.7b-customvoice/W8A16-multifunction/SpeechDecoder.mlmodelc/model.mil",
+      "source": "qwen3_tts/speech_decoder/12hz-1.7b-customvoice/W8A16-multifunction/SpeechDecoder.mlmodelc/model.mil",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 806684,
+      "git_blob_sha1": "c93318db564e8f17414faf9f6a208f15a64e5859"
+    },
+    {
+      "path": "ttskit/qwen3_tts/speech_decoder/12hz-1.7b-customvoice/W8A16-multifunction/SpeechDecoder.mlmodelc/weights/weight.bin",
+      "source": "qwen3_tts/speech_decoder/12hz-1.7b-customvoice/W8A16-multifunction/SpeechDecoder.mlmodelc/weights/weight.bin",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 114238784,
+      "sha256": "5dc780657305201c968c11456f851d6cbdbf6b477664cc0d92cf09df4a1bb2a3"
+    },
+    {
+      "path": "ttskit/qwen3_tts/text_projector/12hz-1.7b-customvoice/W8A16/TextProjector.mlmodelc/analytics/coremldata.bin",
+      "source": "qwen3_tts/text_projector/12hz-1.7b-customvoice/W8A16/TextProjector.mlmodelc/analytics/coremldata.bin",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 243,
+      "sha256": "805ecdabccc61590d7f244e8a833422ab508c1ef539187703cab074b37241598"
+    },
+    {
+      "path": "ttskit/qwen3_tts/text_projector/12hz-1.7b-customvoice/W8A16/TextProjector.mlmodelc/coremldata.bin",
+      "source": "qwen3_tts/text_projector/12hz-1.7b-customvoice/W8A16/TextProjector.mlmodelc/coremldata.bin",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 380,
+      "sha256": "0b282c723b4842c34722e86c20dfcec29e906d846741fcdbb0168ea0abe06413"
+    },
+    {
+      "path": "ttskit/qwen3_tts/text_projector/12hz-1.7b-customvoice/W8A16/TextProjector.mlmodelc/metadata.json",
+      "source": "qwen3_tts/text_projector/12hz-1.7b-customvoice/W8A16/TextProjector.mlmodelc/metadata.json",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 1823,
+      "git_blob_sha1": "dda858001613557a4de89fefd1270d352dc6c436"
+    },
+    {
+      "path": "ttskit/qwen3_tts/text_projector/12hz-1.7b-customvoice/W8A16/TextProjector.mlmodelc/model.mil",
+      "source": "qwen3_tts/text_projector/12hz-1.7b-customvoice/W8A16/TextProjector.mlmodelc/model.mil",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 6467,
+      "git_blob_sha1": "924599a2f3d1179e9220d25838d49a356ad8af46"
+    },
+    {
+      "path": "ttskit/qwen3_tts/text_projector/12hz-1.7b-customvoice/W8A16/TextProjector.mlmodelc/weights/weight.bin",
+      "source": "qwen3_tts/text_projector/12hz-1.7b-customvoice/W8A16/TextProjector.mlmodelc/weights/weight.bin",
+      "repository": "argmaxinc/ttskit-coreml",
+      "revision": "065712357592bc0d194cf7cd91852c5cde3eb1b8",
+      "size": 319563840,
+      "sha256": "8dc53fb68c883e5d9809847760116ae2aaac8ff054f993df9419adfafd0ad4d2"
+    },
+    {
+      "path": "tokenizer/config.json",
+      "source": "config.json",
+      "repository": "Qwen/Qwen3-0.6B",
+      "revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+      "size": 726,
+      "git_blob_sha1": "f5c3703b78ae2a478ae15b247e9f855e0ce2107b"
+    },
+    {
+      "path": "tokenizer/merges.txt",
+      "source": "merges.txt",
+      "repository": "Qwen/Qwen3-0.6B",
+      "revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+      "size": 1671853,
+      "git_blob_sha1": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7"
+    },
+    {
+      "path": "tokenizer/tokenizer.json",
+      "source": "tokenizer.json",
+      "repository": "Qwen/Qwen3-0.6B",
+      "revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+      "size": 11422654,
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    },
+    {
+      "path": "tokenizer/tokenizer_config.json",
+      "source": "tokenizer_config.json",
+      "repository": "Qwen/Qwen3-0.6B",
+      "revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+      "size": 9732,
+      "git_blob_sha1": "417d038a63fa3de29cfde265caedae14d1a58d92"
+    },
+    {
+      "path": "tokenizer/vocab.json",
+      "source": "vocab.json",
+      "repository": "Qwen/Qwen3-0.6B",
+      "revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+      "size": 2776833,
+      "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "ane_trace_verified": false,
+  "configured_compute_units": "cpuAndNeuralEngine",
+  "decoding": {
+    "language": "auto",
+    "task": "transcribe",
+    "temperature": 0,
+    "temperature_fallback_count": 5,
+    "without_timestamps": true,
+    "workers": 1
+  },
+  "host": {
+    "cpu": "Apple M4",
+    "os": "Version 27.2 (Build 26B123)",
+    "physical_memory_bytes": 17179869184
+  },
+  "load_ms": 70289.50091666775,
+  "mel_compute_units": "cpuOnly",
+  "model": "whisper-large-v3-turbo",
+  "peak_rss_bytes": 1813004288,
+  "prewarm": true,
+  "results": [
+    {
+      "audio_sha256": "a72c0b59fdba80850552af7991de07f9f4940846d2d70f0890eeb153c40f164b",
+      "decoding_fallbacks": 0,
+      "decoding_ms": 674.7150421142578,
+      "detected_languages": [
+        "zh"
+      ],
+      "encoding_ms": 342.695951461792,
+      "id": "zh-000-1906.wav",
+      "language": "zh",
+      "milliseconds": 687.2724999993807,
+      "reference": "",
+      "repetition": 0,
+      "text": "这并不是告别,这是一个篇章的结束,也是新篇章的开始。"
+    },
+    {
+      "audio_sha256": "a72c0b59fdba80850552af7991de07f9f4940846d2d70f0890eeb153c40f164b",
+      "decoding_fallbacks": 0,
+      "decoding_ms": 622.7620840072632,
+      "detected_languages": [
+        "zh"
+      ],
+      "encoding_ms": 326.8110752105713,
+      "id": "zh-000-1906.wav",
+      "language": "zh",
+      "milliseconds": 623.8094166619703,
+      "reference": "",
+      "repetition": 1,
+      "text": "这并不是告别,这是一个篇章的结束,也是新篇章的开始。"
+    },
+    {
+      "audio_sha256": "a72c0b59fdba80850552af7991de07f9f4940846d2d70f0890eeb153c40f164b",
+      "decoding_fallbacks": 0,
+      "decoding_ms": 625.7890462875366,
+      "detected_languages": [
+        "zh"
+      ],
+      "encoding_ms": 326.62904262542725,
+      "id": "zh-000-1906.wav",
+      "language": "zh",
+      "milliseconds": 626.7780416674213,
+      "reference": "",
+      "repetition": 2,
+      "text": "这并不是告别,这是一个篇章的结束,也是新篇章的开始。"
+    }
+  ],
+  "status": "completed",
+  "text_norm": "model-output",
+  "variant": "openai_whisper-large-v3-v20240930_turbo",
+  "verification_ms": 645.5116249999264
+}

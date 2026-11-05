@@ -1,0 +1,11 @@
+{
+  "captured_at_utc": "2026-11-05T10:29:26.023308+00:00",
+  "production": {
+    "status": "ready",
+    "busy": false,
+    "model": "qwen3-asr-1.7b"
+  },
+  "production_instance_unchanged": true,
+  "free_bytes": 29561331712,
+  "swap": "total = 8192.00M  used = 7451.12M  free = 740.88M  (encrypted)"
+}

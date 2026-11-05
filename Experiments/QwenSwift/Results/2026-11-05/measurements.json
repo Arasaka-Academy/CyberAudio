@@ -1,0 +1,153 @@
+{
+  "latency_percentile": "nearest rank",
+  "asr": {
+    "python": {
+      "processing": {
+        "samples": 100,
+        "p50_ms": 829.54,
+        "p95_ms": 1271.55,
+        "max_ms": 4536.84,
+        "total_seconds": 90.08942
+      },
+      "model": {
+        "samples": 100,
+        "p50_ms": 802.93,
+        "p95_ms": 1244.59,
+        "max_ms": 4368.92,
+        "total_seconds": 87.12864
+      },
+      "http": {
+        "samples": 100,
+        "p50_ms": 832.7416249958333,
+        "p95_ms": 1274.7134160017595,
+        "max_ms": 4545.265417007613,
+        "total_seconds": 90.440010833001
+      },
+      "process_lifetime_peak_rss_bytes": 1460420608,
+      "process_lifetime_metal_peak_bytes": 6640536236,
+      "detected_language_matches_reference": 94,
+      "detected_language_mismatch_ids": [
+        "zh-003-1852",
+        "zh-010-1903",
+        "zh-021-1792",
+        "zh-025-1958",
+        "zh-032-2002",
+        "zh-043-1729"
+      ]
+    },
+    "swift_run1": {
+      "processing": {
+        "samples": 100,
+        "p50_ms": 869.4232500129147,
+        "p95_ms": 1304.4687079964206,
+        "max_ms": 1575.0167919904925,
+        "total_seconds": 91.01270904198464
+      },
+      "model": {
+        "samples": 100,
+        "p50_ms": 869.1489696502686,
+        "p95_ms": 1304.1620254516602,
+        "max_ms": 1574.6880769729614,
+        "total_seconds": 90.98275709152222
+      },
+      "verification_ms": 1296.1119579995284,
+      "load_ms": 1220.911166004953,
+      "warmup_ms": 647.0196250011213,
+      "peak_rss_bytes": 2405449728,
+      "metal_peak_bytes": 3434254672,
+      "max_generation_tokens": 52,
+      "same_raw_text_as_python": 97,
+      "same_normalized_text_as_python": 98,
+      "detected_language_matches_reference": 94,
+      "detected_language_mismatch_ids": [
+        "zh-003-1852",
+        "zh-010-1903",
+        "zh-021-1792",
+        "zh-025-1958",
+        "zh-032-2002",
+        "zh-043-1729"
+      ]
+    },
+    "swift_run2": {
+      "processing": {
+        "samples": 100,
+        "p50_ms": 861.5158750035334,
+        "p95_ms": 1338.4369169943966,
+        "max_ms": 1509.4371249870164,
+        "total_seconds": 90.73051329700684
+      },
+      "model": {
+        "samples": 100,
+        "p50_ms": 861.2669706344604,
+        "p95_ms": 1338.1500244140625,
+        "max_ms": 1509.1180801391602,
+        "total_seconds": 90.69842195510864
+      },
+      "verification_ms": 1131.6683339973679,
+      "load_ms": 1141.7760839976836,
+      "warmup_ms": 506.80291700700764,
+      "peak_rss_bytes": 3238117376,
+      "metal_peak_bytes": 3437486412,
+      "max_generation_tokens": 52,
+      "same_raw_text_as_python": 97,
+      "same_normalized_text_as_python": 98,
+      "detected_language_matches_reference": 94,
+      "detected_language_mismatch_ids": [
+        "zh-003-1852",
+        "zh-010-1903",
+        "zh-021-1792",
+        "zh-025-1958",
+        "zh-032-2002",
+        "zh-043-1729"
+      ]
+    }
+  },
+  "asr_repeatability": {
+    "samples": 100,
+    "same_raw_text": 100,
+    "same_detected_language": 100
+  },
+  "tts": {
+    "voices": 9,
+    "samples": 18,
+    "eos_completed": 18,
+    "cold_first_chunk_ms": 3781.5866250020918,
+    "cold_rtf": 1.887245031080179,
+    "warm_first_chunk": {
+      "samples": 17,
+      "p50_ms": 242.21241600753274,
+      "p95_ms": 244.98120800126344,
+      "max_ms": 244.98120800126344,
+      "total_seconds": 4.118709998030681
+    },
+    "warm_min_rtf": 0.6037176305866563,
+    "warm_max_rtf": 0.6201152935649258,
+    "same_pcm_repetition_pairs": 9,
+    "load_ms": 2483.2442909973906,
+    "verification_ms": 1450.754416990094,
+    "process_peaks": {
+      "voices": {
+        "peak_rss_bytes": 2632187904,
+        "metal_peak_bytes": 3679885111
+      },
+      "cancel": {
+        "peak_rss_bytes": 4387422208,
+        "metal_peak_bytes": 3679360359
+      },
+      "english": {
+        "peak_rss_bytes": 4441604096,
+        "metal_peak_bytes": 3684013083
+      }
+    },
+    "pcm_verified_samples": 22,
+    "roundtrip_asr_samples": 21,
+    "roundtrip_exact_text_matches": 21,
+    "cancelled_audio_seconds": 0.64,
+    "cancelled_chunks": 2,
+    "recovery_pcm_matches_full_serena": true,
+    "cancellation_settle_ms": 2000,
+    "producer_cancellation_join_verified": false,
+    "human_listening_verified": false,
+    "instruction_adherence_verified": false
+  }
+}

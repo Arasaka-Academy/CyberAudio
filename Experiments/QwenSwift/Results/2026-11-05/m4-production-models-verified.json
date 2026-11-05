@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "components": {
+    "asr": {
+      "files": 10,
+      "all_original_hashes_match": true,
+      "production_has_generated_tokenizer": false
+    },
+    "tts": {
+      "files": 14,
+      "all_original_hashes_match": true,
+      "production_has_generated_tokenizer": false
+    }
+  },
+  "unexpected_production_files": []
+}

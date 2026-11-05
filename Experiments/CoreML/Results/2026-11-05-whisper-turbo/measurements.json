@@ -1,0 +1,55 @@
+{
+  "baseline": {
+    "samples": 100,
+    "p50_ms": 796.21,
+    "p95_ms": 1156.09,
+    "max_ms": 1382.41,
+    "first_request_ms": 856.58,
+    "total_request_seconds": 82.71481,
+    "aggregate_rtf": 0.08185694917267042
+  },
+  "sensevoice": {
+    "samples": 100,
+    "p50_ms": 26.815416669705883,
+    "p95_ms": 84.12437500373926,
+    "max_ms": 104.25962500448804,
+    "first_request_ms": 58.007541665574536,
+    "total_request_seconds": 3.2800793750648154,
+    "aggregate_rtf": 0.003246060659354777,
+    "load_ms": 88355.69079166453,
+    "verification_ms": 217.3493750015041,
+    "peak_rss_bytes": 1013596160
+  },
+  "run1": {
+    "samples": 100,
+    "p50_ms": 659.0620416682214,
+    "p95_ms": 931.4840416627703,
+    "max_ms": 1248.864749999484,
+    "first_request_ms": 675.8465000020806,
+    "total_request_seconds": 69.09010320832022,
+    "aggregate_rtf": 0.0683735484208695,
+    "load_ms": 1271.4871666685212,
+    "verification_ms": 721.2115833390271,
+    "peak_rss_bytes": 1667170304,
+    "decoding_fallbacks": 0,
+    "language_detection_mismatches": 0
+  },
+  "run2": {
+    "samples": 100,
+    "p50_ms": 650.2713333320571,
+    "p95_ms": 923.4141666674986,
+    "max_ms": 1236.5758749947418,
+    "first_request_ms": 676.3955833448563,
+    "total_request_seconds": 68.49159845834947,
+    "aggregate_rtf": 0.06778125094841013,
+    "load_ms": 1022.1854999981588,
+    "verification_ms": 681.6522916633403,
+    "peak_rss_bytes": 1859158016,
+    "decoding_fallbacks": 0,
+    "language_detection_mismatches": 0
+  },
+  "repeatability": {
+    "same_raw_text": 100,
+    "samples": 100
+  }
+}

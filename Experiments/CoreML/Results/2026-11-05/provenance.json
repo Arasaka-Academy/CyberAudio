@@ -1,0 +1,13 @@
+{
+  "dataset": "google/fleurs",
+  "revision": "168de341b3db6859a9bac1c50a2ef5e3b47647e0",
+  "samples": 100,
+  "license": "CC-BY-4.0",
+  "mixed_speech": false,
+  "entities_annotated": false,
+  "source_lfs_sha256": {
+    "zh": "87c0aebbe183f3a36ac87b5c3421b6ab57036824744ff695029a3f858e7622fd",
+    "en": "6428a4d04d3aac29e16b45e039bb1470a8bd7aa334cf92f7984c9c520d1f234d"
+  },
+  "source_full_parquet_hash_verified": true
+}

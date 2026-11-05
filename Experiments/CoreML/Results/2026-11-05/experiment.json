@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-05",
+  "repository_base_commit": "6c99d82",
+  "branch": "codex/coreml-native",
+  "probe_sha256": "924fcbed006727bf2ee288d0a6fd3eb67f558a4a2b373a1b9534fa7a4fd8d250",
+  "asset_lock_sha256": "87413903f74740ac30b77cd8feeb9ca1f62355b43755f7ec3c74a119a3d2f955",
+  "sdk_revisions": {
+    "argmax-oss-swift": "9f99b5cb6a907730543823ad271b82532782a899",
+    "FluidAudio": "ee78635d23d52379117554ba72358b65a0612447"
+  },
+  "production_deployment_changed": false,
+  "tts_complete_generations": 24,
+  "tts_gate_policy": "Maximum RTF across all EOS-verified complete generations with throughput/fused decoders: three Serena repetitions, nine voices twice, cancellation recovery and English twice. Includes the first request after each load; excludes the deliberately cancelled partial generation.",
+  "sanitization": "Removed ready payloads and request UUIDs; output audio paths contain only the experiment directory and filename. Transcripts, timings, hashes and SDK stop reasons are unchanged.",
+  "audio_files": "Generated WAV and PCM are retained under ignored artifacts/coreml/<experiment-directory>/. Public corpus audio can be regenerated from corpus.json and the verified immutable Parquet sources."
+}

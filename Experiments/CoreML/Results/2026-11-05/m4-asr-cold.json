@@ -1,0 +1,43 @@
+{
+  "ane_trace_verified": false,
+  "configured_compute_units": "cpuAndNeuralEngine",
+  "host": {
+    "cpu": "Apple M4",
+    "os": "Version 27.2 (Build 26B123)",
+    "physical_memory_bytes": 17179869184
+  },
+  "load_ms": 93567.19075000728,
+  "model": "sensevoice-small",
+  "peak_rss_bytes": 547602432,
+  "results": [
+    {
+      "audio_sha256": "46dbc998c9d1d48111267c40741dd3200f2e5bcf4075f8c4c97f4451160dce50",
+      "id": "official-zh.wav",
+      "language": "auto",
+      "milliseconds": 58.21308333543129,
+      "reference": "",
+      "repetition": 0,
+      "text": "甚至出现交易几乎停滞的情况"
+    },
+    {
+      "audio_sha256": "46dbc998c9d1d48111267c40741dd3200f2e5bcf4075f8c4c97f4451160dce50",
+      "id": "official-zh.wav",
+      "language": "auto",
+      "milliseconds": 37.34645833901595,
+      "reference": "",
+      "repetition": 1,
+      "text": "甚至出现交易几乎停滞的情况"
+    },
+    {
+      "audio_sha256": "46dbc998c9d1d48111267c40741dd3200f2e5bcf4075f8c4c97f4451160dce50",
+      "id": "official-zh.wav",
+      "language": "auto",
+      "milliseconds": 14.782291662413627,
+      "reference": "",
+      "repetition": 2,
+      "text": "甚至出现交易几乎停滞的情况"
+    }
+  ],
+  "status": "completed",
+  "verification_ms": 208.50325000355951
+}

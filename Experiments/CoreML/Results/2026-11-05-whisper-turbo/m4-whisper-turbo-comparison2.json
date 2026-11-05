@@ -1,0 +1,24 @@
+{
+  "accuracyNonRegressing": false,
+  "baseline_model": "qwen3-asr-1.7b",
+  "baselineP95Milliseconds": 1156.09,
+  "candidate_model": "whisper-large-v3-turbo",
+  "candidateP95Milliseconds": 923.4141666674986,
+  "languages": {
+    "en": {
+      "baselineCER": 0.01871141975308642,
+      "baselineWER": 0.03345724907063197,
+      "candidateCER": 0.02353395061728395,
+      "candidateWER": 0.047397769516728624,
+      "samples": 50
+    },
+    "zh": {
+      "baselineCER": 0.07972270363951472,
+      "baselineWER": 0.5226130653266332,
+      "candidateCER": 0.09589832466782207,
+      "candidateWER": 0.864321608040201,
+      "samples": 50
+    }
+  },
+  "samples": 100
+}

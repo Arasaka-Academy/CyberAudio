@@ -1,0 +1,69 @@
+{
+  "backend": "mlx-swift",
+  "configured_device": "gpu",
+  "decoding": {
+    "language": "auto",
+    "max_tokens": 1024,
+    "repetition_penalty": 1,
+    "temperature": 0
+  },
+  "host": {
+    "cpu": "Apple M4",
+    "os": "Version 27.2 (Build 26B123)",
+    "physical_memory_bytes": 17179869184
+  },
+  "load_ms": 2655.4843329940923,
+  "metal_active_bytes": 44,
+  "metal_peak_bytes": 3302621316,
+  "mlx_swift_version": "0.33.0",
+  "model": "qwen3-asr-1.7b",
+  "peak_rss_bytes": 1668153344,
+  "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+  "results": [
+    {
+      "audio_sha256": "a72c0b59fdba80850552af7991de07f9f4940846d2d70f0890eeb153c40f164b",
+      "detected_language": "zh",
+      "generation_tokens": 18,
+      "id": "zh-000-1906.wav",
+      "language": "auto",
+      "milliseconds": 1073.1992500077467,
+      "prompt_tokens": 150,
+      "reference": "",
+      "repetition": 0,
+      "sdk_seconds": 1.0592759847640991,
+      "text": "这并不是告别，这是一个篇章的结束，也是新篇章的开始。"
+    },
+    {
+      "audio_sha256": "a72c0b59fdba80850552af7991de07f9f4940846d2d70f0890eeb153c40f164b",
+      "detected_language": "zh",
+      "generation_tokens": 18,
+      "id": "zh-000-1906.wav",
+      "language": "auto",
+      "milliseconds": 707.0222920010565,
+      "prompt_tokens": 150,
+      "reference": "",
+      "repetition": 1,
+      "sdk_seconds": 0.7067660093307495,
+      "text": "这并不是告别，这是一个篇章的结束，也是新篇章的开始。"
+    },
+    {
+      "audio_sha256": "a72c0b59fdba80850552af7991de07f9f4940846d2d70f0890eeb153c40f164b",
+      "detected_language": "zh",
+      "generation_tokens": 18,
+      "id": "zh-000-1906.wav",
+      "language": "auto",
+      "milliseconds": 706.1787499987986,
+      "prompt_tokens": 150,
+      "reference": "",
+      "repetition": 2,
+      "sdk_seconds": 0.7059750556945801,
+      "text": "这并不是告别，这是一个篇章的结束，也是新篇章的开始。"
+    }
+  ],
+  "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+  "sdk_revision": "927d4e30cf1dd3bcfdbf2cec8c9a6fd7edf4b4fe",
+  "status": "completed",
+  "tokenizer_sha256": "11d6ebc61a8bbfc5a0bd8f84df1c863ec6560a3efac6d318bf4197a93072c094",
+  "verification_ms": 1318.8946250011213,
+  "warmup_ms": 3678.8528750039404
+}

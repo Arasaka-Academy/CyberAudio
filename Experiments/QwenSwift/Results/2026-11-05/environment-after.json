@@ -1,0 +1,13 @@
+{
+  "captured_at_utc": "2026-11-05T12:28:40.295714+00:00",
+  "production": {
+    "status": "ready",
+    "busy": false,
+    "model": "qwen3-asr-1.7b"
+  },
+  "free_bytes": 28052856832,
+  "swap": "total = 9216.00M  used = 8570.50M  free = 645.50M  (encrypted)",
+  "probe_sha256": "15302b13c764a506607c4a7f582df9971760ec19b2680e78b94d8219b8e2cad0",
+  "model_lock_sha256": "2437be057e9a2aa2b049670fe77c735ca011b5bded2de3126c172c92ade85709",
+  "production_instance_unchanged": true
+}

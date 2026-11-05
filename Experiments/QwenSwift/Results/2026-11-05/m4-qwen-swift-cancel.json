@@ -1,0 +1,178 @@
+{
+  "backend": "mlx-swift",
+  "cancellation_settle_ms": 2000,
+  "configured_device": "gpu",
+  "host": {
+    "cpu": "Apple M4",
+    "os": "Version 27.2 (Build 26B123)",
+    "physical_memory_bytes": 17179869184
+  },
+  "load_ms": 1066.7192910041194,
+  "metal_active_bytes": 28,
+  "metal_peak_bytes": 3679360359,
+  "mlx_swift_version": "0.33.0",
+  "model": "qwen3-tts-1.7b",
+  "peak_rss_bytes": 4387422208,
+  "producer_cancellation_join_verified": false,
+  "repository": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit",
+  "results": [
+    {
+      "audio_file": "cancel/serena-0.wav",
+      "audio_seconds": 0.64,
+      "channels": 1,
+      "chunks": [
+        {
+          "bytes": 15360,
+          "milliseconds": 480.81366599944886
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 669.4894579995889
+        }
+      ],
+      "eos_token": 2150,
+      "eos_verified": false,
+      "first_chunk_ms": 480.81366599944886,
+      "format": "pcm_s16le",
+      "instructions": "请用自然、轻快的语气说话。",
+      "language": "chinese",
+      "milliseconds": 669.5001250045607,
+      "pcm_bytes": 30720,
+      "pcm_sha256": "a5bba63ebdb9696675591e6c7837508dea36ff2750bec39f6887983311989805",
+      "real_time_factor": 1.046093945319626,
+      "repetition": 0,
+      "sample_rate": 24000,
+      "sdk_info": {},
+      "speaker_token": 3066,
+      "status": "cancelled",
+      "text": "今天下午三点十五分，请提醒我开会。",
+      "tokens": [
+        1995,
+        1376,
+        1713,
+        1784,
+        741,
+        741,
+        140,
+        961
+      ],
+      "voice": "serena",
+      "voice_prompt": "serena, 请用自然、轻快的语气说话。"
+    },
+    {
+      "audio_file": "cancel/serena-1.wav",
+      "audio_seconds": 2.96,
+      "channels": 1,
+      "chunks": [
+        {
+          "bytes": 15360,
+          "milliseconds": 278.9217919926159
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 470.0670000020182
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 657.0964999991702
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 843.6642500018934
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1028.849333000835
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1214.806124989991
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1400.9303329949034
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1586.1001669982215
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1771.0807080002269
+        },
+        {
+          "bytes": 3840,
+          "milliseconds": 1866.9687919900753
+        }
+      ],
+      "eos_token": 2150,
+      "eos_verified": true,
+      "first_chunk_ms": 278.9217919926159,
+      "format": "pcm_s16le",
+      "instructions": "请用自然、轻快的语气说话。",
+      "language": "chinese",
+      "milliseconds": 1867.1617499931017,
+      "pcm_bytes": 142080,
+      "pcm_sha256": "f606e6c8520d9bf50513f47d527c8e99ce7a5b879993477595756486477a449b",
+      "real_time_factor": 0.630797888511183,
+      "repetition": 1,
+      "sample_rate": 24000,
+      "sdk_info": {
+        "generate_seconds": 1.8474719524383545,
+        "generation_tokens": 37,
+        "tokens_per_second": 20.027367642126407
+      },
+      "speaker_token": 3066,
+      "status": "completed",
+      "text": "今天下午三点十五分，请提醒我开会。",
+      "tokens": [
+        1995,
+        1376,
+        1713,
+        1784,
+        741,
+        741,
+        140,
+        961,
+        773,
+        745,
+        1057,
+        1162,
+        835,
+        1255,
+        938,
+        253,
+        826,
+        1320,
+        1627,
+        522,
+        1579,
+        385,
+        609,
+        1480,
+        1533,
+        1486,
+        562,
+        79,
+        741,
+        989,
+        1144,
+        1203,
+        1942,
+        192,
+        542,
+        1951,
+        1782,
+        2150
+      ],
+      "voice": "serena",
+      "voice_prompt": "serena, 请用自然、轻快的语气说话。"
+    }
+  ],
+  "revision": "41d3337e8b7f2843a75841595fc14e4b9a7a4b96",
+  "sdk_revision": "927d4e30cf1dd3bcfdbf2cec8c9a6fd7edf4b4fe",
+  "status": "completed",
+  "streaming_interval_seconds": 0.32,
+  "tokenizer_sha256": "d7794d12b1c501d8c816aef7b361232502185596c19fae5575a3a3a15ab644c9",
+  "verification_ms": 1363.8792499987176
+}

@@ -1,0 +1,10 @@
+{
+  "mlx_backend_commit": "36969c094354086e15d2a327a9c50feb20b9cf11",
+  "mlx_backend_version": "0.32.4",
+  "source_wheel": "mlx-metal-0.32.4.whl",
+  "wheel_sha256": "514df92d41a286895d2564b4b18f4da45096bd7a4a0c47e1042f345ad5a7f936",
+  "member": "mlx/lib/mlx.metallib",
+  "metallib_sha256": "c6d7a3facb83568f6e4cb2cf4a8c736ee29302571a48343cb9a3a4d1cd3e3893",
+  "metallib_bytes": 214156448,
+  "runtime_python_required": false
+}

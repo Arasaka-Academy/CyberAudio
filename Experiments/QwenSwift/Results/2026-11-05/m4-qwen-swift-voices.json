@@ -1,0 +1,2038 @@
+{
+  "backend": "mlx-swift",
+  "configured_device": "gpu",
+  "host": {
+    "cpu": "Apple M4",
+    "os": "Version 27.2 (Build 26B123)",
+    "physical_memory_bytes": 17179869184
+  },
+  "load_ms": 2483.2442909973906,
+  "metal_active_bytes": 52,
+  "metal_peak_bytes": 3679885111,
+  "mlx_swift_version": "0.33.0",
+  "model": "qwen3-tts-1.7b",
+  "peak_rss_bytes": 2632187904,
+  "repository": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit",
+  "results": [
+    {
+      "audio_file": "voices/serena-0.wav",
+      "audio_seconds": 2.96,
+      "channels": 1,
+      "chunks": [
+        {
+          "bytes": 15360,
+          "milliseconds": 3781.5866250020918
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 3970.526916993549
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 4156.287417004933
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 4343.458332994487
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 4531.825625002966
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 4719.512041992857
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 4907.751708000433
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 5096.676707995357
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 5284.3020419968525
+        },
+        {
+          "bytes": 3840,
+          "milliseconds": 5586.04183299758
+        }
+      ],
+      "eos_token": 2150,
+      "eos_verified": true,
+      "first_chunk_ms": 3781.5866250020918,
+      "format": "pcm_s16le",
+      "instructions": "请用自然、轻快的语气说话。",
+      "language": "chinese",
+      "milliseconds": 5586.245291997329,
+      "pcm_bytes": 142080,
+      "pcm_sha256": "f606e6c8520d9bf50513f47d527c8e99ce7a5b879993477595756486477a449b",
+      "real_time_factor": 1.887245031080179,
+      "repetition": 0,
+      "sample_rate": 24000,
+      "sdk_info": {
+        "generate_seconds": 5.361392974853516,
+        "generation_tokens": 37,
+        "tokens_per_second": 6.901191569717181
+      },
+      "speaker_token": 3066,
+      "status": "completed",
+      "text": "今天下午三点十五分，请提醒我开会。",
+      "tokens": [
+        1995,
+        1376,
+        1713,
+        1784,
+        741,
+        741,
+        140,
+        961,
+        773,
+        745,
+        1057,
+        1162,
+        835,
+        1255,
+        938,
+        253,
+        826,
+        1320,
+        1627,
+        522,
+        1579,
+        385,
+        609,
+        1480,
+        1533,
+        1486,
+        562,
+        79,
+        741,
+        989,
+        1144,
+        1203,
+        1942,
+        192,
+        542,
+        1951,
+        1782,
+        2150
+      ],
+      "voice": "serena",
+      "voice_prompt": "serena, 请用自然、轻快的语气说话。"
+    },
+    {
+      "audio_file": "voices/serena-1.wav",
+      "audio_seconds": 2.96,
+      "channels": 1,
+      "chunks": [
+        {
+          "bytes": 15360,
+          "milliseconds": 244.98120800126344
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 431.83845799649134
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 618.7853329902282
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 805.5188750004163
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 992.6607079978567
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1178.6609159898944
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1362.7330409944989
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1549.1132909955923
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1735.6489160010824
+        },
+        {
+          "bytes": 3840,
+          "milliseconds": 1832.2101249941625
+        }
+      ],
+      "eos_token": 2150,
+      "eos_verified": true,
+      "first_chunk_ms": 244.98120800126344,
+      "format": "pcm_s16le",
+      "instructions": "请用自然、轻快的语气说话。",
+      "language": "chinese",
+      "milliseconds": 1832.4345829896629,
+      "pcm_bytes": 142080,
+      "pcm_sha256": "f606e6c8520d9bf50513f47d527c8e99ce7a5b879993477595756486477a449b",
+      "real_time_factor": 0.6190657374965077,
+      "repetition": 1,
+      "sample_rate": 24000,
+      "sdk_info": {
+        "generate_seconds": 1.813602089881897,
+        "generation_tokens": 37,
+        "tokens_per_second": 20.401388047810126
+      },
+      "speaker_token": 3066,
+      "status": "completed",
+      "text": "今天下午三点十五分，请提醒我开会。",
+      "tokens": [
+        1995,
+        1376,
+        1713,
+        1784,
+        741,
+        741,
+        140,
+        961,
+        773,
+        745,
+        1057,
+        1162,
+        835,
+        1255,
+        938,
+        253,
+        826,
+        1320,
+        1627,
+        522,
+        1579,
+        385,
+        609,
+        1480,
+        1533,
+        1486,
+        562,
+        79,
+        741,
+        989,
+        1144,
+        1203,
+        1942,
+        192,
+        542,
+        1951,
+        1782,
+        2150
+      ],
+      "voice": "serena",
+      "voice_prompt": "serena, 请用自然、轻快的语气说话。"
+    },
+    {
+      "audio_file": "voices/vivian-0.wav",
+      "audio_seconds": 3.36,
+      "channels": 1,
+      "chunks": [
+        {
+          "bytes": 15360,
+          "milliseconds": 242.54433299938682
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 427.61079099727795
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 612.62749999878
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 799.9993749981513
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 986.9407499936642
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1172.4492499924963
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1358.9987500017742
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1544.3574999953853
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1730.1655409974046
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1916.8188749899855
+        },
+        {
+          "bytes": 7680,
+          "milliseconds": 2056.0524579923367
+        }
+      ],
+      "eos_token": 2150,
+      "eos_verified": true,
+      "first_chunk_ms": 242.54433299938682,
+      "format": "pcm_s16le",
+      "instructions": "请用自然、轻快的语气说话。",
+      "language": "chinese",
+      "milliseconds": 2056.6621249890886,
+      "pcm_bytes": 161280,
+      "pcm_sha256": "3f5b368bc256da65203c7dba7e7d8248012ec2da788ff6084ca3cd77138e00bb",
+      "real_time_factor": 0.6121018229134193,
+      "repetition": 0,
+      "sample_rate": 24000,
+      "sdk_info": {
+        "generate_seconds": 2.0342578887939453,
+        "generation_tokens": 42,
+        "tokens_per_second": 20.646349821900223
+      },
+      "speaker_token": 3065,
+      "status": "completed",
+      "text": "今天下午三点十五分，请提醒我开会。",
+      "tokens": [
+        1995,
+        1376,
+        1713,
+        332,
+        741,
+        989,
+        961,
+        429,
+        1547,
+        1086,
+        967,
+        745,
+        1057,
+        1162,
+        1906,
+        1255,
+        938,
+        253,
+        826,
+        1320,
+        1627,
+        2041,
+        1971,
+        1548,
+        1130,
+        1174,
+        34,
+        736,
+        631,
+        661,
+        341,
+        562,
+        720,
+        950,
+        1337,
+        1184,
+        1203,
+        1942,
+        192,
+        542,
+        1951,
+        1782,
+        2150
+      ],
+      "voice": "vivian",
+      "voice_prompt": "vivian, 请用自然、轻快的语气说话。"
+    },
+    {
+      "audio_file": "voices/vivian-1.wav",
+      "audio_seconds": 3.36,
+      "channels": 1,
+      "chunks": [
+        {
+          "bytes": 15360,
+          "milliseconds": 242.31429099745583
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 429.52079100359697
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 615.8686660055537
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 802.2840409976197
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 988.9395409991266
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1174.284082997474
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1359.1619579965482
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1543.8954999990528
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1729.1176660073688
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1913.7895410094643
+        },
+        {
+          "bytes": 7680,
+          "milliseconds": 2051.928750006482
+        }
+      ],
+      "eos_token": 2150,
+      "eos_verified": true,
+      "first_chunk_ms": 242.31429099745583,
+      "format": "pcm_s16le",
+      "instructions": "请用自然、轻快的语气说话。",
+      "language": "chinese",
+      "milliseconds": 2052.8539160004584,
+      "pcm_bytes": 161280,
+      "pcm_sha256": "3f5b368bc256da65203c7dba7e7d8248012ec2da788ff6084ca3cd77138e00bb",
+      "real_time_factor": 0.6109684273810888,
+      "repetition": 1,
+      "sample_rate": 24000,
+      "sdk_info": {
+        "generate_seconds": 2.0300289392471313,
+        "generation_tokens": 42,
+        "tokens_per_second": 20.689360229306075
+      },
+      "speaker_token": 3065,
+      "status": "completed",
+      "text": "今天下午三点十五分，请提醒我开会。",
+      "tokens": [
+        1995,
+        1376,
+        1713,
+        332,
+        741,
+        989,
+        961,
+        429,
+        1547,
+        1086,
+        967,
+        745,
+        1057,
+        1162,
+        1906,
+        1255,
+        938,
+        253,
+        826,
+        1320,
+        1627,
+        2041,
+        1971,
+        1548,
+        1130,
+        1174,
+        34,
+        736,
+        631,
+        661,
+        341,
+        562,
+        720,
+        950,
+        1337,
+        1184,
+        1203,
+        1942,
+        192,
+        542,
+        1951,
+        1782,
+        2150
+      ],
+      "voice": "vivian",
+      "voice_prompt": "vivian, 请用自然、轻快的语气说话。"
+    },
+    {
+      "audio_file": "voices/uncle_fu-0.wav",
+      "audio_seconds": 3.76,
+      "channels": 1,
+      "chunks": [
+        {
+          "bytes": 15360,
+          "milliseconds": 241.41116700775456
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 425.82183399645146
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 609.9087500042515
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 799.2634590045782
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 985.9695420018397
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1171.3316249952186
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1356.8185420008376
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1541.5763339988189
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1725.7417920045555
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1909.5462920085993
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 2093.842250003945
+        },
+        {
+          "bytes": 11520,
+          "milliseconds": 2276.324417005526
+        }
+      ],
+      "eos_token": 2150,
+      "eos_verified": true,
+      "first_chunk_ms": 241.41116700775456,
+      "format": "pcm_s16le",
+      "instructions": "请用自然、轻快的语气说话。",
+      "language": "chinese",
+      "milliseconds": 2276.6139169980306,
+      "pcm_bytes": 180480,
+      "pcm_sha256": "0a30f72c4928630e6c82314b6da192abc30372d05f9d27d421c86690c01e1daa",
+      "real_time_factor": 0.6054824247335188,
+      "repetition": 0,
+      "sample_rate": 24000,
+      "sdk_info": {
+        "generate_seconds": 2.2490919828414917,
+        "generation_tokens": 47,
+        "tokens_per_second": 20.897322278753773
+      },
+      "speaker_token": 3010,
+      "status": "completed",
+      "text": "今天下午三点十五分，请提醒我开会。",
+      "tokens": [
+        1995,
+        1376,
+        661,
+        131,
+        562,
+        1784,
+        1200,
+        1708,
+        1816,
+        961,
+        429,
+        1547,
+        262,
+        773,
+        889,
+        1584,
+        860,
+        91,
+        1166,
+        1255,
+        2045,
+        646,
+        1547,
+        1320,
+        1627,
+        870,
+        1579,
+        1130,
+        609,
+        736,
+        631,
+        622,
+        1069,
+        649,
+        562,
+        79,
+        1756,
+        720,
+        950,
+        1337,
+        1184,
+        206,
+        1942,
+        1027,
+        32,
+        787,
+        1782,
+        2150
+      ],
+      "voice": "uncle_fu",
+      "voice_prompt": "uncle_fu, 请用自然、轻快的语气说话。"
+    },
+    {
+      "audio_file": "voices/uncle_fu-1.wav",
+      "audio_seconds": 3.76,
+      "channels": 1,
+      "chunks": [
+        {
+          "bytes": 15360,
+          "milliseconds": 241.9238750007935
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 426.9635410018964
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 610.6537080049748
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 794.7508329962147
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 978.49591600243
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1163.3184160018573
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1348.5428330022842
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1533.4690830059117
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1718.149041000288
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1903.0214160011383
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 2087.4482079962036
+        },
+        {
+          "bytes": 11520,
+          "milliseconds": 2269.7154579946073
+        }
+      ],
+      "eos_token": 2150,
+      "eos_verified": true,
+      "first_chunk_ms": 241.9238750007935,
+      "format": "pcm_s16le",
+      "instructions": "请用自然、轻快的语气说话。",
+      "language": "chinese",
+      "milliseconds": 2269.9782910058275,
+      "pcm_bytes": 180480,
+      "pcm_sha256": "0a30f72c4928630e6c82314b6da192abc30372d05f9d27d421c86690c01e1daa",
+      "real_time_factor": 0.6037176305866563,
+      "repetition": 1,
+      "sample_rate": 24000,
+      "sdk_info": {
+        "generate_seconds": 2.2423479557037354,
+        "generation_tokens": 47,
+        "tokens_per_second": 20.96017251936691
+      },
+      "speaker_token": 3010,
+      "status": "completed",
+      "text": "今天下午三点十五分，请提醒我开会。",
+      "tokens": [
+        1995,
+        1376,
+        661,
+        131,
+        562,
+        1784,
+        1200,
+        1708,
+        1816,
+        961,
+        429,
+        1547,
+        262,
+        773,
+        889,
+        1584,
+        860,
+        91,
+        1166,
+        1255,
+        2045,
+        646,
+        1547,
+        1320,
+        1627,
+        870,
+        1579,
+        1130,
+        609,
+        736,
+        631,
+        622,
+        1069,
+        649,
+        562,
+        79,
+        1756,
+        720,
+        950,
+        1337,
+        1184,
+        206,
+        1942,
+        1027,
+        32,
+        787,
+        1782,
+        2150
+      ],
+      "voice": "uncle_fu",
+      "voice_prompt": "uncle_fu, 请用自然、轻快的语气说话。"
+    },
+    {
+      "audio_file": "voices/ryan-0.wav",
+      "audio_seconds": 2.64,
+      "channels": 1,
+      "chunks": [
+        {
+          "bytes": 15360,
+          "milliseconds": 241.5825830103131
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 426.83166700589936
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 612.7188750106143
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 797.8705420100596
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 983.1421249982668
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1169.316291998257
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1354.4539170106873
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1540.911625008448
+        },
+        {
+          "bytes": 3840,
+          "milliseconds": 1636.8608750053681
+        }
+      ],
+      "eos_token": 2150,
+      "eos_verified": true,
+      "first_chunk_ms": 241.5825830103131,
+      "format": "pcm_s16le",
+      "instructions": "请用自然、轻快的语气说话。",
+      "language": "chinese",
+      "milliseconds": 1637.104375011404,
+      "pcm_bytes": 126720,
+      "pcm_sha256": "d29d11dc8966e7d752452a5fc454878d1cbbe2e4b90a5de6b937113796a832d9",
+      "real_time_factor": 0.6201152935649258,
+      "repetition": 0,
+      "sample_rate": 24000,
+      "sdk_info": {
+        "generate_seconds": 1.618933081626892,
+        "generation_tokens": 33,
+        "tokens_per_second": 20.38379496627357
+      },
+      "speaker_token": 3061,
+      "status": "completed",
+      "text": "今天下午三点十五分，请提醒我开会。",
+      "tokens": [
+        1995,
+        1376,
+        341,
+        341,
+        741,
+        140,
+        961,
+        773,
+        1057,
+        1057,
+        1906,
+        835,
+        742,
+        646,
+        1320,
+        1627,
+        2041,
+        24,
+        1868,
+        996,
+        1402,
+        1533,
+        130,
+        562,
+        0,
+        950,
+        1337,
+        477,
+        1203,
+        1942,
+        542,
+        787,
+        1782,
+        2150
+      ],
+      "voice": "ryan",
+      "voice_prompt": "ryan, 请用自然、轻快的语气说话。"
+    },
+    {
+      "audio_file": "voices/ryan-1.wav",
+      "audio_seconds": 2.64,
+      "channels": 1,
+      "chunks": [
+        {
+          "bytes": 15360,
+          "milliseconds": 241.55191599857062
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 429.0873329882743
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 614.5049579936313
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 800.5289579887176
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 985.9398330008844
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1170.7094999874244
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1356.4263749867678
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1541.476624988718
+        },
+        {
+          "bytes": 3840,
+          "milliseconds": 1636.7878329911036
+        }
+      ],
+      "eos_token": 2150,
+      "eos_verified": true,
+      "first_chunk_ms": 241.55191599857062,
+      "format": "pcm_s16le",
+      "instructions": "请用自然、轻快的语气说话。",
+      "language": "chinese",
+      "milliseconds": 1637.0399999868823,
+      "pcm_bytes": 126720,
+      "pcm_sha256": "d29d11dc8966e7d752452a5fc454878d1cbbe2e4b90a5de6b937113796a832d9",
+      "real_time_factor": 0.6200909090859402,
+      "repetition": 1,
+      "sample_rate": 24000,
+      "sdk_info": {
+        "generate_seconds": 1.618988037109375,
+        "generation_tokens": 33,
+        "tokens_per_second": 20.383103051780363
+      },
+      "speaker_token": 3061,
+      "status": "completed",
+      "text": "今天下午三点十五分，请提醒我开会。",
+      "tokens": [
+        1995,
+        1376,
+        341,
+        341,
+        741,
+        140,
+        961,
+        773,
+        1057,
+        1057,
+        1906,
+        835,
+        742,
+        646,
+        1320,
+        1627,
+        2041,
+        24,
+        1868,
+        996,
+        1402,
+        1533,
+        130,
+        562,
+        0,
+        950,
+        1337,
+        477,
+        1203,
+        1942,
+        542,
+        787,
+        1782,
+        2150
+      ],
+      "voice": "ryan",
+      "voice_prompt": "ryan, 请用自然、轻快的语气说话。"
+    },
+    {
+      "audio_file": "voices/aiden-0.wav",
+      "audio_seconds": 3.2,
+      "channels": 1,
+      "chunks": [
+        {
+          "bytes": 15360,
+          "milliseconds": 242.3185000079684
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 428.3669580036076
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 613.2454159960616
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 798.3342499937862
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 983.2799580035498
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1168.4985830070218
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1354.5656659989618
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1538.9781249978114
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1722.891208002693
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1906.4705409982707
+        }
+      ],
+      "eos_token": 2150,
+      "eos_verified": true,
+      "first_chunk_ms": 242.3185000079684,
+      "format": "pcm_s16le",
+      "instructions": "请用自然、轻快的语气说话。",
+      "language": "chinese",
+      "milliseconds": 1945.705791004002,
+      "pcm_bytes": 153600,
+      "pcm_sha256": "962de9b1c54f3c496c172fd39a75b74c8a599a91b85b0f50d7d16a945164a913",
+      "real_time_factor": 0.6080330596887507,
+      "repetition": 0,
+      "sample_rate": 24000,
+      "sdk_info": {
+        "generate_seconds": 1.9452840089797974,
+        "generation_tokens": 40,
+        "tokens_per_second": 20.562550154811568
+      },
+      "speaker_token": 2861,
+      "status": "completed",
+      "text": "今天下午三点十五分，请提醒我开会。",
+      "tokens": [
+        1995,
+        1376,
+        238,
+        546,
+        1200,
+        989,
+        961,
+        429,
+        1086,
+        773,
+        889,
+        1584,
+        1162,
+        1906,
+        500,
+        1789,
+        646,
+        253,
+        1320,
+        1627,
+        2041,
+        1901,
+        1921,
+        856,
+        467,
+        631,
+        622,
+        1069,
+        649,
+        562,
+        1310,
+        848,
+        1072,
+        1184,
+        1203,
+        1942,
+        192,
+        542,
+        1951,
+        1782,
+        2150
+      ],
+      "voice": "aiden",
+      "voice_prompt": "aiden, 请用自然、轻快的语气说话。"
+    },
+    {
+      "audio_file": "voices/aiden-1.wav",
+      "audio_seconds": 3.2,
+      "channels": 1,
+      "chunks": [
+        {
+          "bytes": 15360,
+          "milliseconds": 243.47816700174008
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 434.5283750008093
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 619.7551250079414
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 806.0360000090441
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 990.2905830094824
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1174.5877920038765
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1359.7339170082705
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1547.0901250082534
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1734.3389580055373
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1919.681750005111
+        }
+      ],
+      "eos_token": 2150,
+      "eos_verified": true,
+      "first_chunk_ms": 243.47816700174008,
+      "format": "pcm_s16le",
+      "instructions": "请用自然、轻快的语气说话。",
+      "language": "chinese",
+      "milliseconds": 1959.8340000084136,
+      "pcm_bytes": 153600,
+      "pcm_sha256": "962de9b1c54f3c496c172fd39a75b74c8a599a91b85b0f50d7d16a945164a913",
+      "real_time_factor": 0.6124481250026292,
+      "repetition": 1,
+      "sample_rate": 24000,
+      "sdk_info": {
+        "generate_seconds": 1.9593580961227417,
+        "generation_tokens": 40,
+        "tokens_per_second": 20.414849168793413
+      },
+      "speaker_token": 2861,
+      "status": "completed",
+      "text": "今天下午三点十五分，请提醒我开会。",
+      "tokens": [
+        1995,
+        1376,
+        238,
+        546,
+        1200,
+        989,
+        961,
+        429,
+        1086,
+        773,
+        889,
+        1584,
+        1162,
+        1906,
+        500,
+        1789,
+        646,
+        253,
+        1320,
+        1627,
+        2041,
+        1901,
+        1921,
+        856,
+        467,
+        631,
+        622,
+        1069,
+        649,
+        562,
+        1310,
+        848,
+        1072,
+        1184,
+        1203,
+        1942,
+        192,
+        542,
+        1951,
+        1782,
+        2150
+      ],
+      "voice": "aiden",
+      "voice_prompt": "aiden, 请用自然、轻快的语气说话。"
+    },
+    {
+      "audio_file": "voices/ono_anna-0.wav",
+      "audio_seconds": 3.04,
+      "channels": 1,
+      "chunks": [
+        {
+          "bytes": 15360,
+          "milliseconds": 242.21241600753274
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 428.0636250041425
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 613.657082998543
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 799.1462080099154
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 984.3221659975825
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1169.1522909968626
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1354.8816249967786
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1539.5641659997636
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1725.766208008281
+        },
+        {
+          "bytes": 7680,
+          "milliseconds": 1864.4147910090396
+        }
+      ],
+      "eos_token": 2150,
+      "eos_verified": true,
+      "first_chunk_ms": 242.21241600753274,
+      "format": "pcm_s16le",
+      "instructions": "请用自然、轻快的语气说话。",
+      "language": "chinese",
+      "milliseconds": 1864.4969580054749,
+      "pcm_bytes": 145920,
+      "pcm_sha256": "be2d47e00f62f8f8795b2b3f5d7726aa56305bca2467a3b19eaee97a5d086b70",
+      "real_time_factor": 0.6133213677649588,
+      "repetition": 0,
+      "sample_rate": 24000,
+      "sdk_info": {
+        "generate_seconds": 1.842134952545166,
+        "generation_tokens": 38,
+        "tokens_per_second": 20.628238961264866
+      },
+      "speaker_token": 2873,
+      "status": "completed",
+      "text": "今天下午三点十五分，请提醒我开会。",
+      "tokens": [
+        1995,
+        1376,
+        661,
+        341,
+        1784,
+        741,
+        1708,
+        961,
+        961,
+        773,
+        1350,
+        1057,
+        91,
+        1162,
+        1246,
+        938,
+        1614,
+        253,
+        1320,
+        1627,
+        522,
+        1739,
+        996,
+        1402,
+        1533,
+        1486,
+        562,
+        79,
+        720,
+        64,
+        1144,
+        477,
+        1203,
+        1942,
+        542,
+        787,
+        1951,
+        1782,
+        2150
+      ],
+      "voice": "ono_anna",
+      "voice_prompt": "ono_anna, 请用自然、轻快的语气说话。"
+    },
+    {
+      "audio_file": "voices/ono_anna-1.wav",
+      "audio_seconds": 3.04,
+      "channels": 1,
+      "chunks": [
+        {
+          "bytes": 15360,
+          "milliseconds": 241.88666699046735
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 426.7481669958215
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 611.0947080014739
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 796.8479999981355
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 982.8127499931725
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1167.3430829978315
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1352.8956249938346
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1537.5753330008592
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1722.3560419952264
+        },
+        {
+          "bytes": 7680,
+          "milliseconds": 1862.7607499947771
+        }
+      ],
+      "eos_token": 2150,
+      "eos_verified": true,
+      "first_chunk_ms": 241.88666699046735,
+      "format": "pcm_s16le",
+      "instructions": "请用自然、轻快的语气说话。",
+      "language": "chinese",
+      "milliseconds": 1862.8387920034584,
+      "pcm_bytes": 145920,
+      "pcm_sha256": "be2d47e00f62f8f8795b2b3f5d7726aa56305bca2467a3b19eaee97a5d086b70",
+      "real_time_factor": 0.6127759184221903,
+      "repetition": 1,
+      "sample_rate": 24000,
+      "sdk_info": {
+        "generate_seconds": 1.840353012084961,
+        "generation_tokens": 38,
+        "tokens_per_second": 20.64821246275424
+      },
+      "speaker_token": 2873,
+      "status": "completed",
+      "text": "今天下午三点十五分，请提醒我开会。",
+      "tokens": [
+        1995,
+        1376,
+        661,
+        341,
+        1784,
+        741,
+        1708,
+        961,
+        961,
+        773,
+        1350,
+        1057,
+        91,
+        1162,
+        1246,
+        938,
+        1614,
+        253,
+        1320,
+        1627,
+        522,
+        1739,
+        996,
+        1402,
+        1533,
+        1486,
+        562,
+        79,
+        720,
+        64,
+        1144,
+        477,
+        1203,
+        1942,
+        542,
+        787,
+        1951,
+        1782,
+        2150
+      ],
+      "voice": "ono_anna",
+      "voice_prompt": "ono_anna, 请用自然、轻快的语气说话。"
+    },
+    {
+      "audio_file": "voices/sohee-0.wav",
+      "audio_seconds": 3.2,
+      "channels": 1,
+      "chunks": [
+        {
+          "bytes": 15360,
+          "milliseconds": 242.72179200488608
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 428.0812499928288
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 613.1073330034269
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 799.7470830014208
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 985.7268750056392
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1170.8536670048488
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1357.311458006734
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1542.402791994391
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1726.534832996549
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1910.5891670042183
+        }
+      ],
+      "eos_token": 2150,
+      "eos_verified": true,
+      "first_chunk_ms": 242.72179200488608,
+      "format": "pcm_s16le",
+      "instructions": "请用自然、轻快的语气说话。",
+      "language": "chinese",
+      "milliseconds": 1949.8938750039088,
+      "pcm_bytes": 153600,
+      "pcm_sha256": "49b000ecaa3f3bae32e648a6d890c3f75c94fccaada79abc7c9a4185e25ec26e",
+      "real_time_factor": 0.6093418359387215,
+      "repetition": 0,
+      "sample_rate": 24000,
+      "sdk_info": {
+        "generate_seconds": 1.9494439363479614,
+        "generation_tokens": 40,
+        "tokens_per_second": 20.51867163460724
+      },
+      "speaker_token": 2864,
+      "status": "completed",
+      "text": "今天下午三点十五分，请提醒我开会。",
+      "tokens": [
+        1995,
+        1376,
+        341,
+        341,
+        1129,
+        1200,
+        1562,
+        961,
+        961,
+        773,
+        889,
+        1584,
+        91,
+        835,
+        1436,
+        646,
+        253,
+        826,
+        1320,
+        1627,
+        2041,
+        2041,
+        870,
+        1901,
+        385,
+        1100,
+        1480,
+        1533,
+        1486,
+        341,
+        79,
+        720,
+        950,
+        1337,
+        477,
+        1203,
+        192,
+        542,
+        787,
+        1782,
+        2150
+      ],
+      "voice": "sohee",
+      "voice_prompt": "sohee, 请用自然、轻快的语气说话。"
+    },
+    {
+      "audio_file": "voices/sohee-1.wav",
+      "audio_seconds": 3.2,
+      "channels": 1,
+      "chunks": [
+        {
+          "bytes": 15360,
+          "milliseconds": 242.45287499797996
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 428.45025000860915
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 613.7781660072505
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 799.4869160029339
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 984.4114580046153
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1170.2740830078255
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1355.2749160007806
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1539.7045830031857
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1723.3231249992969
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1906.8439999973634
+        }
+      ],
+      "eos_token": 2150,
+      "eos_verified": true,
+      "first_chunk_ms": 242.45287499797996,
+      "format": "pcm_s16le",
+      "instructions": "请用自然、轻快的语气说话。",
+      "language": "chinese",
+      "milliseconds": 1946.0175410058582,
+      "pcm_bytes": 153600,
+      "pcm_sha256": "49b000ecaa3f3bae32e648a6d890c3f75c94fccaada79abc7c9a4185e25ec26e",
+      "real_time_factor": 0.6081304815643307,
+      "repetition": 1,
+      "sample_rate": 24000,
+      "sdk_info": {
+        "generate_seconds": 1.9455769062042236,
+        "generation_tokens": 40,
+        "tokens_per_second": 20.559454562009112
+      },
+      "speaker_token": 2864,
+      "status": "completed",
+      "text": "今天下午三点十五分，请提醒我开会。",
+      "tokens": [
+        1995,
+        1376,
+        341,
+        341,
+        1129,
+        1200,
+        1562,
+        961,
+        961,
+        773,
+        889,
+        1584,
+        91,
+        835,
+        1436,
+        646,
+        253,
+        826,
+        1320,
+        1627,
+        2041,
+        2041,
+        870,
+        1901,
+        385,
+        1100,
+        1480,
+        1533,
+        1486,
+        341,
+        79,
+        720,
+        950,
+        1337,
+        477,
+        1203,
+        192,
+        542,
+        787,
+        1782,
+        2150
+      ],
+      "voice": "sohee",
+      "voice_prompt": "sohee, 请用自然、轻快的语气说话。"
+    },
+    {
+      "audio_file": "voices/eric-0.wav",
+      "audio_seconds": 2.96,
+      "channels": 1,
+      "chunks": [
+        {
+          "bytes": 15360,
+          "milliseconds": 242.41550000442658
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 429.1094170039287
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 613.9210420078598
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 800.223417012603
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 985.1577090012142
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1177.4927920050686
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1363.0566250067204
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1548.7983339990024
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1733.9586669986602
+        },
+        {
+          "bytes": 3840,
+          "milliseconds": 1829.0075840050122
+        }
+      ],
+      "eos_token": 2150,
+      "eos_verified": true,
+      "first_chunk_ms": 242.41550000442658,
+      "format": "pcm_s16le",
+      "instructions": "请用自然、轻快的语气说话。",
+      "language": "chinese",
+      "milliseconds": 1829.255959004513,
+      "pcm_bytes": 142080,
+      "pcm_sha256": "4c1311f26fa7eebd9423fc6718740979b7ff684e8de6c639bbb91e59c52742c7",
+      "real_time_factor": 0.6179918780420652,
+      "repetition": 0,
+      "sample_rate": 24000,
+      "sdk_info": {
+        "generate_seconds": 1.811337947845459,
+        "generation_tokens": 37,
+        "tokens_per_second": 20.426889440488214
+      },
+      "speaker_token": 2875,
+      "status": "completed",
+      "text": "今天下午三点十五分，请提醒我开会。",
+      "tokens": [
+        1995,
+        1028,
+        238,
+        400,
+        741,
+        972,
+        961,
+        773,
+        1161,
+        745,
+        627,
+        252,
+        91,
+        1162,
+        1906,
+        1595,
+        1702,
+        253,
+        1320,
+        1627,
+        2041,
+        1901,
+        385,
+        609,
+        1480,
+        1533,
+        341,
+        0,
+        1310,
+        848,
+        1337,
+        477,
+        1203,
+        192,
+        542,
+        1951,
+        1680,
+        2150
+      ],
+      "voice": "eric",
+      "voice_prompt": "eric, 请用自然、轻快的语气说话。"
+    },
+    {
+      "audio_file": "voices/eric-1.wav",
+      "audio_seconds": 2.96,
+      "channels": 1,
+      "chunks": [
+        {
+          "bytes": 15360,
+          "milliseconds": 242.0486670016544
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 428.0541250045644
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 614.235250002821
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 802.167041998473
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 987.424082995858
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1172.7931250061374
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1356.8321250058943
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1540.5511669960106
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1726.7182920040796
+        },
+        {
+          "bytes": 3840,
+          "milliseconds": 1822.5788330018986
+        }
+      ],
+      "eos_token": 2150,
+      "eos_verified": true,
+      "first_chunk_ms": 242.0486670016544,
+      "format": "pcm_s16le",
+      "instructions": "请用自然、轻快的语气说话。",
+      "language": "chinese",
+      "milliseconds": 1822.7509169955738,
+      "pcm_bytes": 142080,
+      "pcm_sha256": "4c1311f26fa7eebd9423fc6718740979b7ff684e8de6c639bbb91e59c52742c7",
+      "real_time_factor": 0.6157942287147209,
+      "repetition": 1,
+      "sample_rate": 24000,
+      "sdk_info": {
+        "generate_seconds": 1.8046239614486694,
+        "generation_tokens": 37,
+        "tokens_per_second": 20.502886357719696
+      },
+      "speaker_token": 2875,
+      "status": "completed",
+      "text": "今天下午三点十五分，请提醒我开会。",
+      "tokens": [
+        1995,
+        1028,
+        238,
+        400,
+        741,
+        972,
+        961,
+        773,
+        1161,
+        745,
+        627,
+        252,
+        91,
+        1162,
+        1906,
+        1595,
+        1702,
+        253,
+        1320,
+        1627,
+        2041,
+        1901,
+        385,
+        609,
+        1480,
+        1533,
+        341,
+        0,
+        1310,
+        848,
+        1337,
+        477,
+        1203,
+        192,
+        542,
+        1951,
+        1680,
+        2150
+      ],
+      "voice": "eric",
+      "voice_prompt": "eric, 请用自然、轻快的语气说话。"
+    },
+    {
+      "audio_file": "voices/dylan-0.wav",
+      "audio_seconds": 2.96,
+      "channels": 1,
+      "chunks": [
+        {
+          "bytes": 15360,
+          "milliseconds": 241.6242909966968
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 427.84233299607877
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 613.3247499965364
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 797.1235410077497
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 981.2308330001542
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1166.5005830000155
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1352.1527080010856
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1537.1139159979066
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1722.8544579993468
+        },
+        {
+          "bytes": 3840,
+          "milliseconds": 1818.3267080021324
+        }
+      ],
+      "eos_token": 2150,
+      "eos_verified": true,
+      "first_chunk_ms": 241.6242909966968,
+      "format": "pcm_s16le",
+      "instructions": "请用自然、轻快的语气说话。",
+      "language": "chinese",
+      "milliseconds": 1818.5815000033472,
+      "pcm_bytes": 142080,
+      "pcm_sha256": "361659e59cc9b2a944c938b6ffa38628fa5fa020723eccd1a234cfbbacea0bac",
+      "real_time_factor": 0.6143856418930227,
+      "repetition": 0,
+      "sample_rate": 24000,
+      "sdk_info": {
+        "generate_seconds": 1.8005300760269165,
+        "generation_tokens": 37,
+        "tokens_per_second": 20.54950400031356
+      },
+      "speaker_token": 2878,
+      "status": "completed",
+      "text": "今天下午三点十五分，请提醒我开会。",
+      "tokens": [
+        1995,
+        1376,
+        131,
+        238,
+        546,
+        1200,
+        1287,
+        972,
+        599,
+        745,
+        1057,
+        1300,
+        835,
+        1947,
+        2045,
+        646,
+        253,
+        411,
+        1627,
+        610,
+        1958,
+        2018,
+        416,
+        890,
+        725,
+        196,
+        562,
+        79,
+        551,
+        78,
+        1144,
+        477,
+        1203,
+        1942,
+        961,
+        1053,
+        249,
+        2150
+      ],
+      "voice": "dylan",
+      "voice_prompt": "dylan, 请用自然、轻快的语气说话。"
+    },
+    {
+      "audio_file": "voices/dylan-1.wav",
+      "audio_seconds": 2.96,
+      "channels": 1,
+      "chunks": [
+        {
+          "bytes": 15360,
+          "milliseconds": 241.24175000179093
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 426.3724999909755
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 612.7010839991271
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 797.8694589983206
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 982.8002919966821
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1168.0164169956697
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1352.9035419924185
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1538.2757499901345
+        },
+        {
+          "bytes": 15360,
+          "milliseconds": 1722.9599999991478
+        },
+        {
+          "bytes": 3840,
+          "milliseconds": 1817.6916669908678
+        }
+      ],
+      "eos_token": 2150,
+      "eos_verified": true,
+      "first_chunk_ms": 241.24175000179093,
+      "format": "pcm_s16le",
+      "instructions": "请用自然、轻快的语气说话。",
+      "language": "chinese",
+      "milliseconds": 1817.9126670002006,
+      "pcm_bytes": 142080,
+      "pcm_sha256": "361659e59cc9b2a944c938b6ffa38628fa5fa020723eccd1a234cfbbacea0bac",
+      "real_time_factor": 0.614159684797365,
+      "repetition": 1,
+      "sample_rate": 24000,
+      "sdk_info": {
+        "generate_seconds": 1.8003569841384888,
+        "generation_tokens": 37,
+        "tokens_per_second": 20.5514796931817
+      },
+      "speaker_token": 2878,
+      "status": "completed",
+      "text": "今天下午三点十五分，请提醒我开会。",
+      "tokens": [
+        1995,
+        1376,
+        131,
+        238,
+        546,
+        1200,
+        1287,
+        972,
+        599,
+        745,
+        1057,
+        1300,
+        835,
+        1947,
+        2045,
+        646,
+        253,
+        411,
+        1627,
+        610,
+        1958,
+        2018,
+        416,
+        890,
+        725,
+        196,
+        562,
+        79,
+        551,
+        78,
+        1144,
+        477,
+        1203,
+        1942,
+        961,
+        1053,
+        249,
+        2150
+      ],
+      "voice": "dylan",
+      "voice_prompt": "dylan, 请用自然、轻快的语气说话。"
+    }
+  ],
+  "revision": "41d3337e8b7f2843a75841595fc14e4b9a7a4b96",
+  "sdk_revision": "927d4e30cf1dd3bcfdbf2cec8c9a6fd7edf4b4fe",
+  "status": "completed",
+  "streaming_interval_seconds": 0.32,
+  "tokenizer_sha256": "d7794d12b1c501d8c816aef7b361232502185596c19fae5575a3a3a15ab644c9",
+  "verification_ms": 1450.754416990094
+}

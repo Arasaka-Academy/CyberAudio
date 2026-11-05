@@ -1,0 +1,146 @@
+{
+  "date": "2026-11-05",
+  "repository_base_commit": "6c99d827c316911f4b41e4301c27b987ef0809bb",
+  "branch": "codex/coreml-native",
+  "probe_sha256": "15302b13c764a506607c4a7f582df9971760ec19b2680e78b94d8219b8e2cad0",
+  "probe_bytes": 66456968,
+  "probe_source_sha256": "d6668d9f413ecfa265f6c88d5c65c8efe572a2179357a9fa26b9adbb2b4c60ec",
+  "package_resolved_sha256": "8030b5831f622791b5b9f836e74ba91c4e416d8a93b435e055810d28d4f77099",
+  "sdk_revision": "927d4e30cf1dd3bcfdbf2cec8c9a6fd7edf4b4fe",
+  "sdk_inference_patches": [],
+  "mlx_swift_version": "0.33.0",
+  "mlx_backend_version": "0.32.4",
+  "asset_files": 24,
+  "asset_bytes": 5547999722,
+  "models": {
+    "asr": {
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "weights_match_production": true,
+      "pinned_weights_verified": true
+    },
+    "tts": {
+      "repository": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit",
+      "revision": "41d3337e8b7f2843a75841595fc14e4b9a7a4b96",
+      "weights_match_production": true,
+      "pinned_weights_verified": true
+    }
+  },
+  "asset_lock_sha256": "2437be057e9a2aa2b049670fe77c735ca011b5bded2de3126c172c92ade85709",
+  "corpus_manifest": "../../../CoreML/Results/2026-11-05/corpus.json",
+  "corpus_manifest_sha256": "dc67d7b52bea55f7ea6fcd0934e0460811699ad510c0befe9f938c60c84ef7eb",
+  "corpus_recordings": 100,
+  "corpus_seconds": 1010.48,
+  "corpus_provenance": "../../../CoreML/Results/2026-11-05/provenance.json",
+  "native_sandbox_profile": "(version 1)(allow default)(deny network*)",
+  "build": {
+    "system": "SwiftPM native",
+    "configuration": "release",
+    "seconds": 347.96,
+    "exit_code": 0,
+    "swift_version": "6.4",
+    "full_xcode_packaging_verified": false,
+    "warnings": [
+      "upstream unhandled README resources",
+      "native build system deprecated"
+    ]
+  },
+  "sequence": [
+    "M4 GPU smoke",
+    "offline native cold ASR x3",
+    "fresh production Python ASR x100",
+    "offline native ASR run1 x100",
+    "offline native ASR run2 x100",
+    "offline native TTS 9 voices x2",
+    "offline TTS cancellation and same-instance recovery",
+    "offline English TTS x2",
+    "WAV/PCM and original production model hash verification",
+    "offline native ASR content checks of 21 completed TTS outputs",
+    "production final ready/idle check"
+  ],
+  "production_deployment_changed": false,
+  "production_instance_unchanged": true,
+  "production_model_files_unchanged": true,
+  "runtime_python_required": false,
+  "development_python_uses": [
+    "isolated asset staging",
+    "experiment scheduling",
+    "production baseline client",
+    "evidence checks"
+  ],
+  "memory_comparison_limit": "Swift probes load one component; production retains both. RSS and Metal are separate counters and cannot be added. Final Metal active may be collected after model release. Swap was already in use and increased during validation.",
+  "acceptance_limits": [
+    "No human listening or instruction A/B acceptance",
+    "No dedicated mixed speech or entity annotations",
+    "No energy or ANE trace",
+    "No HTTP, lifecycle or cancellation-drain acceptance",
+    "No long-form TTS token-cap acceptance"
+  ],
+  "sanitization": "Removed readiness payloads, production instance IDs and request IDs; shortened TTS audio paths. All transcripts, references, timings, hashes and model identities are unchanged.",
+  "evidence_sha256": {
+    "environment-after.json": {
+      "original_sha256": "95576f000982c0556db2c578f2a4e6b28d56c7f93dc284e65920743a193c777f",
+      "retained_sha256": "d4b4f93dcf9bcd6da89c6b09454e7dc7fdb464d82cdc5d5077da38bdbfb4c647"
+    },
+    "environment-before.json": {
+      "original_sha256": "e19c7296d740ff5a6e4bcca839cca14319a998e4db8f35ad04e00fe6b8b697ca",
+      "retained_sha256": "a2f929ca0958fb319af1d5d34a518609d04f3f6e5a2b4bde190c42c256894842"
+    },
+    "environment-final.json": {
+      "original_sha256": "07f7e9ce0004141966344a0ab24828646eaacd7a846e2cd18a85d1aca285b06d",
+      "retained_sha256": "07f7e9ce0004141966344a0ab24828646eaacd7a846e2cd18a85d1aca285b06d"
+    },
+    "m4-gpu-smoke.json": {
+      "original_sha256": "01a7b50d05525410bfb47e94644ae5d996c3ee39d85683fe773e89495de2d008",
+      "retained_sha256": "0acb6259af52e7e57ffde6fdc79e76d57d3c37d7a24f3d06533c30e4c8639d17"
+    },
+    "m4-production-models-verified.json": {
+      "original_sha256": "47c9059930b685188382b3d2839bd8653e9dc3b3ebc212dfc4bed931169ceeda",
+      "retained_sha256": "47c9059930b685188382b3d2839bd8653e9dc3b3ebc212dfc4bed931169ceeda"
+    },
+    "m4-qwen-python-baseline.json": {
+      "original_sha256": "fd858f6d50ac0a6906cd113ccab2604b9f2de2ae2143daf068c1e76f3c94e09e",
+      "retained_sha256": "423ff910a1444c6d6ae4942a335447d5bf0943e55ddc09cada9301d0b583896c"
+    },
+    "m4-qwen-swift-cancel.json": {
+      "original_sha256": "d2f9d7791bdd52e72531b5c0811f8dc8f290540c3e5a6f82e9f36e6842d1d99d",
+      "retained_sha256": "6d812b8ae45327c97ed51c04d232641be29860bc9a0b9a24bfc20da574b42af9"
+    },
+    "m4-qwen-swift-cold.json": {
+      "original_sha256": "3ccddc26878c8c2d67efb7e8fbb1c62746fbec6668246f98a9ae057ba6496ed8",
+      "retained_sha256": "a95a639af9a77f2e196f33c774b63d8e71532364b12fb5411cb21876898b8618"
+    },
+    "m4-qwen-swift-comparison1.json": {
+      "original_sha256": "c8f5e58d386145e8aa36e7b521d2687af83a6d6f4b8aeb54b807ea6d18af7d6e",
+      "retained_sha256": "d6dc83545ee6a74d592feee4c4e7c0c5400c6cd4a4e4b0bda4ad121f0425525d"
+    },
+    "m4-qwen-swift-comparison2.json": {
+      "original_sha256": "5367086e2935537a86ef3d38c1f16160d8d29394e1057ee8e2ec0bbfa006e08d",
+      "retained_sha256": "c3e8b6d2b5604f832427b81ce3e1630f88d3a76bbde7aa21c58239632cbc41a0"
+    },
+    "m4-qwen-swift-english.json": {
+      "original_sha256": "21039a3f9fcc04cd4ede164784708db95b0c1635bb265549146f803094013bd8",
+      "retained_sha256": "0cf432365b314a934b7062a5fe995a44ae36ac20f4509f6233a86a95237463c5"
+    },
+    "m4-qwen-swift-pcm-verified.json": {
+      "original_sha256": "34312930112861007de67f6162d0583fa56b3768dc971aad16edefb0aee47d42",
+      "retained_sha256": "34312930112861007de67f6162d0583fa56b3768dc971aad16edefb0aee47d42"
+    },
+    "m4-qwen-swift-run1.json": {
+      "original_sha256": "3b9c3812ff2e7038d49b12b6f93b67f902d4306fb08a75bedf6634ec0a0eefaa",
+      "retained_sha256": "380dd17c6c922813a90ea9a480a4b8c0e0ce43a9b84dc0c8478f768a74203e3b"
+    },
+    "m4-qwen-swift-run2.json": {
+      "original_sha256": "67761bd91b3d2e10cb9ed22a8c1b49d0eb41efa1faa5e4255edeca77e245cfe0",
+      "retained_sha256": "4177ae49735be2d128078c79aa87b5bde809659bb10de4bbb078569ab7996da1"
+    },
+    "m4-qwen-swift-tts-roundtrip.json": {
+      "original_sha256": "41c78a5f15ab2e14ec0cfe61384f664f1f7dae9503a06de25bb275604d702690",
+      "retained_sha256": "8f1494377490a2f1e07f4b6adc2a3a9f8542b512a0de56792b0f95f38cf5f9b7"
+    },
+    "m4-qwen-swift-voices.json": {
+      "original_sha256": "c2507b4ab8199d1d747304811fa29a5180949f0586634d172b724cb15585a8d3",
+      "retained_sha256": "1b086761d6ca2b6ea46c29533ca2315ef65958f222c748f4fb66e9ee4f29ca0f"
+    }
+  }
+}

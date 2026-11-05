@@ -1,0 +1,12 @@
+{
+  "realUtterances": 100,
+  "includesMixedSpeech": false,
+  "accuracyNonRegressing": false,
+  "entitiesNonRegressing": false,
+  "sttP95Milliseconds": 83.1764583272161,
+  "ttsRealTimeFactor": 1.0007914396387954,
+  "nineVoicesListened": false,
+  "energyLower": null,
+  "aneTraceVerified": false,
+  "apiLifecyclePassed": false
+}
