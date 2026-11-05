@@ -8,7 +8,7 @@
 - **TTS**：Qwen3-TTS 1.7B CustomVoice 8-bit，9 个预设音色，表达指令，WAV 与流式 PCM。
 - **界面**：原生 Liquid Glass 工作台，顶部切换录音／朗读模式，独立设置窗口，跟随系统浅色／深色；跨模式保留任务和停止／取消入口。
 - **生命周期**：打开 App 加载模型；仅在菜单栏显示，不显示 Dock 图标；关闭窗口后继续运行，可从菜单栏恢复主窗口；退出 App 停止 API、卸载模型。没有后台系统守护服务。
-- **更新**：Sparkle 2.10.1，每天检查稳定版并自动下载；确认重启或主动退出时安装，等待音频和 API 任务完成。首次需手动安装 0.2.0（4），详见 [自动更新与发布](docs/AUTOMATIC_UPDATES.md)。
+- **更新**：Sparkle 2.10.1，每天检查稳定版并自动下载；确认重启或主动退出时安装，等待音频和 API 任务完成。0.2.0（4）起支持更新，首次需手动安装最新版，详见 [自动更新与发布](docs/AUTOMATIC_UPDATES.md)。
 - **API**：保持 `/v1/audio/transcriptions`，新增 `/v1/audio/speech`，共用地址与 Bearer Token。
 
 GUI 使用 SwiftUI／AppKit／AVFoundation；模型使用 App 直接管理的 Python／MLX Audio 子进程，**不是全 Swift 模型实现**。首次安装需要下载模型与准备独立运行环境。当前 `.app` 使用本机 ad-hoc 签名，未公证，不是包含所有资源的通用分发安装包。

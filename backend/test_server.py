@@ -2,6 +2,7 @@ from concurrent.futures import ThreadPoolExecutor
 from io import BytesIO
 from pathlib import Path
 import asyncio
+import json
 import math
 import struct
 import threading
@@ -240,6 +241,53 @@ def test_cancelled_or_old_control_cannot_pause_a_new_session(running):
     assert speak(client).status_code == 200
 
 
+@pytest.mark.asyncio
+@pytest.mark.parametrize("stream", [False, True])
+async def test_update_waits_until_audio_response_is_sent(running, stream):
+    _, _, _, app = running
+    sending, release_send = asyncio.Event(), asyncio.Event()
+    messages = []
+    sent_request = False
+    payload = json.dumps({"input": "test", "stream": stream, "response_format": "pcm" if stream else "wav"}).encode()
+
+    async def receive():
+        nonlocal sent_request
+        if not sent_request:
+            sent_request = True
+            return {"type": "http.request", "body": payload, "more_body": False}
+        await asyncio.Event().wait()
+
+    async def send(message):
+        messages.append(message)
+        if message["type"] == "http.response.body" and message.get("body"):
+            sending.set()
+            await release_send.wait()  # Real ASGI backpressure after inference has finished.
+
+    scope = {"type": "http", "asgi": {"version": "3.0", "spec_version": "2.4"}, "http_version": "1.1",
+             "method": "POST", "scheme": "http", "path": "/v1/audio/speech", "raw_path": b"/v1/audio/speech",
+             "query_string": b"", "headers": [(b"authorization", f"Bearer {TOKEN}".encode()), (b"content-type", b"application/json")],
+             "client": ("test", 1), "server": ("test", 80), "root_path": ""}
+    task = asyncio.create_task(app(scope, receive, send))
+    try:
+        await asyncio.wait_for(sending.wait(), 3)
+        for _ in range(100):
+            if not app.state.busy: break
+            await asyncio.sleep(0.01)
+        assert not app.state.busy  # Model slot is free; HTTP audio is still being sent.
+        async with httpx.AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://test") as client:
+            prepared = await client.post("/internal/update/prepare", headers=UPDATE_AUTH)
+            assert prepared.json()["busy"] is True
+            assert (await client.post("/v1/audio/speech", headers=AUTH, json={"input": "new"})).status_code == 503
+            release_send.set()
+            await asyncio.wait_for(task, 3)
+            assert (await client.post("/internal/update/prepare", headers=UPDATE_AUTH)).json()["busy"] is False
+        body = b"".join(message.get("body", b"") for message in messages if message["type"] == "http.response.body")
+        assert len(body) == (14400 if stream else 14444)
+    finally:
+        release_send.set()
+        await asyncio.wait_for(task, 3)
+
+
 def test_private_errors_and_recovery(running):
     client, engine, settings, _ = running
     engine.fail = True
@@ -279,6 +327,8 @@ async def test_disconnect_holds_slot_until_worker_finishes(running):
             await asyncio.sleep(0.02)
         assert not app.state.busy
         assert list(settings.temp_dir.iterdir()) == []
+        async with httpx.AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://test") as client:
+            assert (await client.post("/internal/update/prepare", headers=UPDATE_AUTH)).json()["busy"] is False
 
 
 def test_loading_failure_does_not_break_health(tmp_path):

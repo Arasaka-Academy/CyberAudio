@@ -62,6 +62,29 @@ def error(status, code, message, **kwargs):
     return JSONResponse({"error": {"code": code, "message": message}}, status_code=status, **kwargs)
 
 
+class UpdateRequestDrain:
+    """Keep an accepted audio response live until ASGI finishes sending it."""
+    def __init__(self, app, state, lock):
+        self.app, self.state, self.lock = app, state, lock
+
+    async def __call__(self, scope, receive, send):
+        if scope["type"] != "http" or scope["method"] != "POST" or scope["path"] not in (
+            "/v1/audio/speech", "/v1/audio/transcriptions"
+        ):
+            return await self.app(scope, receive, send)
+        with self.lock:
+            paused = time.monotonic() < self.state.update_deadline
+            if not paused:
+                self.state.audio_responses += 1
+        if paused:
+            return await error(503, "updating", "正在准备更新，请稍后重试。", headers={"Retry-After": "2"})(scope, receive, send)
+        try:
+            return await self.app(scope, receive, send)
+        finally:
+            with self.lock:
+                self.state.audio_responses -= 1
+
+
 class RequestBoundary:
     """Authenticate and bound bodies before multipart/JSON parsing, including chunked bodies."""
     def __init__(self, app, token):
@@ -262,10 +285,12 @@ def create_app(settings, engine_factory=QwenEngine):
         await asyncio.to_thread(worker.shutdown, wait=True, cancel_futures=True)
 
     app = FastAPI(lifespan=lifespan, docs_url=None, redoc_url=None, openapi_url=None)
-    app.add_middleware(RequestBoundary, token=settings.token)
     app.state.status, app.state.busy, app.state.engine, app.state.cancelled = "loading", False, None, None
+    app.state.audio_responses = 0
     app.state.update_deadline = 0.0
     app.state.update_lease = None
+    app.add_middleware(UpdateRequestDrain, state=app.state, lock=lock)
+    app.add_middleware(RequestBoundary, token=settings.token)  # Authentication remains outermost.
     cancelled_updates = OrderedDict()
 
     def updating():
@@ -273,7 +298,7 @@ def create_app(settings, engine_factory=QwenEngine):
         return time.monotonic() < app.state.update_deadline
 
     def update_state():
-        return {"instance": settings.instance, "busy": app.state.busy, "updating": updating()}
+        return {"instance": settings.instance, "busy": app.state.busy or app.state.audio_responses > 0, "updating": updating()}
 
     def check_update_owner(request):
         if request.headers.get("X-CyberAudio-Instance") != settings.instance:
