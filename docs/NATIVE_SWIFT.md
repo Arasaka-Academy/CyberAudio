@@ -122,7 +122,7 @@ CER／WER 是语料级微平均：NFC、转小写、非字母数字转空白；�
 ```bash
 make check
 make app
-bash scripts/build_dmg.sh 0.2.0 --reuse-app
+bash scripts/build_dmg.sh 0.3.0 --reuse-app
 swiftc -parse-as-library -swift-version 5 -target arm64-apple-macos26.0 \
   scripts/verify_native.swift -o .context/verify-native
 # 使用隔离 App bundle ID、全新测试目录与非生产端口；模型、语料须事先准备。

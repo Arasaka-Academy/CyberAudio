@@ -6,8 +6,8 @@
 <key>CFBundleName</key><string>CyberAudio</string>
 <key>CFBundleDisplayName</key><string>CyberAudio</string>
 <key>CFBundlePackageType</key><string>APPL</string>
-<key>CFBundleShortVersionString</key><string>0.2.1</string>
-<key>CFBundleVersion</key><string>5</string>
+<key>CFBundleShortVersionString</key><string>0.3.0</string>
+<key>CFBundleVersion</key><string>6</string>
 <key>SUFeedURL</key><string>https://arasaka-academy.github.io/CyberAudio/appcast.xml</string>
 <key>SUPublicEDKey</key><string>4ZMe8J3U81BkBWtcAm9HGET79cZHxbrqWm9u6UXypI8=</string>
 <key>SUEnableAutomaticChecks</key><true/>

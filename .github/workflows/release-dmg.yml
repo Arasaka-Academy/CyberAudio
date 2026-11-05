@@ -16,7 +16,7 @@ jobs:
   build:
     name: Sign and publish release assets
     runs-on: macos-26
-    timeout-minutes: 30
+    timeout-minutes: 60
     permissions:
       contents: write
     env:
@@ -29,6 +29,16 @@ jobs:
         with:
           ref: ${{ github.event.release.tag_name }}
           persist-credentials: false
+
+      - name: Select Swift 6.3 for native Qwen
+        uses: swift-actions/setup-swift@364295d9c23900ce04d4e5cc708387921b4e50f9 # v3
+        with:
+          swift-version: "6.3"
+
+      - name: Install FFmpeg for native protocol tests
+        env:
+          HOMEBREW_NO_AUTO_UPDATE: "1"
+        run: brew list ffmpeg >/dev/null 2>&1 || brew install ffmpeg
 
       - name: Guard stable feed against version rollback
         if: ${{ !github.event.release.prerelease }}
