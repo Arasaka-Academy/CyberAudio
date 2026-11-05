@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "checked_at": "2026-11-05T16:39:25.669447+00:00",
+  "old_app_pid": 88594,
+  "app_pid": 88720,
+  "native_helper_pid": 88722,
+  "old_instance": "466702F7-3851-4CBA-8719-EAA8B7378BDD",
+  "new_instance": "2320F474-F752-477D-B085-6DEF847079DB",
+  "elapsed_ms": 7828.456791001372,
+  "old_helper_gone": true,
+  "update_lease_obtained": true,
+  "config_bytes_preserved": true,
+  "helper_sha256": "1f93505ffb5d1e95ba7b3c9bcebe89665bc9ef01e4d932e1c5588f610de38d3e",
+  "ready": {
+    "application": "CyberAudio",
+    "busy": false,
+    "instance": "2320F474-F752-477D-B085-6DEF847079DB",
+    "model": "qwen3-asr-1.7b",
+    "models": {
+      "stt": "ready",
+      "tts": "ready"
+    },
+    "startup": {
+      "backend": "mlx-swift",
+      "device": "metal",
+      "load_ms": 2686.5226660011103,
+      "metal_active_bytes": 5578423720,
+      "metal_peak_bytes": 6273318916,
+      "process_peak_rss_bytes": 4294639616,
+      "verification_ms": 3078.6014170007547,
+      "warmup_ms": 1217.3748749919469
+    },
+    "status": "ready",
+    "updating": false
+  }
+}

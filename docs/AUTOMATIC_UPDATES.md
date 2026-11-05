@@ -43,6 +43,8 @@ GitHub Pages 应为 workflow 模式；`github-pages` 环境需允许 `v*` tag �
 
 ## 验证记录（2026-11-05）
 
+0.3.0（6）的云端发布、正式包在 M4 上的 100 条真人录音回归、保留配置／Token 的手动安装、原生服务重启和外部 HTTPS 已完成，详见 [正式发布验收报告](releases/0.3.0-acceptance.md)。目标机原版本 0.1.0 不支持 Sparkle，因此该安装记录不作为 Sparkle 升级证据。以下保留此前验证的版本、测试夹具与网络边界。
+
 此前实际升级使用区别于正式 App 的独立测试 bundle ID、签名本地 HTTP 清单、0.2.0（4）→ 0.2.1（5）两个测试版本和隔离数据目录，后端为历史 `tests/ui_stub.py` 合成接口。此项是 Python 版本证据。当前 `tests/prepare_update_fixture.py` 改为打包原生 `CyberAudioFixture`，不再创建 Python 运行环境；Swift 服务更新租约与模型排空证据见 [迁移报告](NATIVE_SWIFT.md)。测试不覆盖正式 `/Applications` 安装。
 
 - 完成实际 ZIP 下载、验证、替换、重启；重启后的同一隔离数据目录、配置端口和单个 App 进程有效。

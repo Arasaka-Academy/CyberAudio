@@ -1,0 +1,61 @@
+{
+  "status": "passed",
+  "checked_at": "2026-11-05T16:39:59.747436+00:00",
+  "client": "separate M1 Max Mac",
+  "url": "https://mac-mini.civet-beta.ts.net:8443",
+  "transport": "HTTPS with normal certificate and hostname validation; explicit proxy bypass for the private endpoint",
+  "ready": {
+    "application": "CyberAudio",
+    "busy": false,
+    "instance": "2320F474-F752-477D-B085-6DEF847079DB",
+    "model": "qwen3-asr-1.7b",
+    "models": {
+      "stt": "ready",
+      "tts": "ready"
+    },
+    "startup": {
+      "backend": "mlx-swift",
+      "device": "metal",
+      "load_ms": 2686.5226660011103,
+      "metal_active_bytes": 5578423720,
+      "metal_peak_bytes": 6273318916,
+      "process_peak_rss_bytes": 4294639616,
+      "verification_ms": 3078.6014170007547,
+      "warmup_ms": 1217.3748749919469
+    },
+    "status": "ready",
+    "updating": false
+  },
+  "models": {
+    "data": [
+      {
+        "id": "qwen3-asr-1.7b",
+        "object": "model",
+        "owned_by": "local",
+        "quantization": "8bit",
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55"
+      },
+      {
+        "id": "qwen3-tts-1.7b",
+        "object": "model",
+        "owned_by": "local",
+        "quantization": "8bit",
+        "repository": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit",
+        "revision": "41d3337e8b7f2843a75841595fc14e4b9a7a4b96"
+      }
+    ],
+    "object": "list"
+  },
+  "tts": {
+    "status": 200,
+    "bytes": 180524,
+    "sha256": "78392ab51599efce55d59b6de4289db7403a187be14c5a225ab55efa29f16a8b",
+    "sample_rate": 24000,
+    "channels": 1,
+    "sample_bits": 16,
+    "http_ms": 2759.569624962751,
+    "request_status": "completed"
+  },
+  "credentials_written_to_disk": false
+}

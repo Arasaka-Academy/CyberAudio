@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "canonical_bundle_id": "local.cyberaudio.mac",
+  "isolated_bundle_id": "local.cyberaudio.release-test.v030-20261106",
+  "isolated_helper_matches_release": true,
+  "helper_sha256": "1f93505ffb5d1e95ba7b3c9bcebe89665bc9ef01e4d932e1c5588f610de38d3e",
+  "zip_sha256": "af6e53ca334b71c749ba4df1e703aca4d2a3833a6a358a8cdd8caa183f25fd09"
+}

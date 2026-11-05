@@ -1,0 +1,11 @@
+{
+  "target": "M4 Mac mini",
+  "route": "unauthenticated direct HTTPS using system curl; no proxy configured for this command",
+  "url": "https://github.com/Arasaka-Academy/CyberAudio/releases/download/v0.3.0/CyberAudio-0.3.0-macOS-arm64.zip",
+  "timeout_seconds": 90,
+  "http_status": 0,
+  "bytes_received": 0,
+  "curl_exit_code": 28,
+  "status": "timeout",
+  "fallback": "Transfer the independently downloaded and hash-verified public release ZIP over SSH; verify its SHA-256 again on M4."
+}

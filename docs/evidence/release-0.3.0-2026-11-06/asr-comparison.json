@@ -1,0 +1,81 @@
+{
+  "accuracy_and_processing" : {
+    "accuracyNonRegressing" : true,
+    "baselineP95Milliseconds" : 1271.55,
+    "candidateP95Milliseconds" : 1396.9978329987498,
+    "languages" : {
+      "en" : {
+        "baselineCER" : 0.01871141975308642,
+        "baselineWER" : 0.033457249070631967,
+        "candidateCER" : 0.01871141975308642,
+        "candidateWER" : 0.033457249070631967,
+        "samples" : 50
+      },
+      "zh" : {
+        "baselineCER" : 0.079722703639514725,
+        "baselineWER" : 0.52261306532663321,
+        "candidateCER" : 0.079722703639514725,
+        "candidateWER" : 0.53266331658291455,
+        "samples" : 50
+      }
+    },
+    "samples" : 100
+  },
+  "detected_language_mismatches" : [
+    "zh-003-1852",
+    "zh-010-1903",
+    "zh-021-1792",
+    "zh-025-1958",
+    "zh-032-2002",
+    "zh-043-1729"
+  ],
+  "differences_from_previous_swift" : [
+    {
+      "id" : "zh-022-1780",
+      "native" : "在昆达里尼瑜伽中，昆达里尼能量、启迪能量通过瑜伽姿势、呼吸练习、念语和视觉形象被唤醒。",
+      "normalized_text_equal" : false,
+      "previous" : "在昆达里尼瑜伽中，昆达里尼能量、启迪能量，通过瑜伽姿势、呼吸练习、念语和视觉形象被唤醒。"
+    },
+    {
+      "id" : "en-010-1776",
+      "native" : "For the night, between 150 and 200 copies were made, now known as Dunlap broadsides.",
+      "normalized_text_equal" : false,
+      "previous" : "Through the night, between 150 and 200 copies were made, now known as Dunlap broadsides."
+    },
+    {
+      "id" : "en-025-1662",
+      "native" : "Alloys are basically a mixture of two or more metals. Don't forget, there are many elements on the periodic table.",
+      "normalized_text_equal" : true,
+      "previous" : "Alloys are basically a mixture of two or more metals. Don't forget there are many elements on the periodic table."
+    },
+    {
+      "id" : "en-041-1678",
+      "native" : "Oliver Sacks, in his paper \"The President's Speech,\" indicated how people who are unable to understand speech because of brain damage are nevertheless able to assess sincerity accurately.",
+      "normalized_text_equal" : true,
+      "previous" : "Oliver Sacks, in his paper *The President's Speech*, indicated how people who are unable to understand speech because of brain damage are nevertheless able to assess sincerity accurately."
+    },
+    {
+      "id" : "en-046-1710",
+      "native" : "Last week, Mediatech announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.",
+      "normalized_text_equal" : false,
+      "previous" : "Last week, Meddy announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious."
+    }
+  ],
+  "latency_ms" : {
+    "native_http_p95" : 1399.6297910052817,
+    "native_inference_p95" : 1297.3366250080289,
+    "native_processing_p95" : 1396.9978329987498,
+    "python_http_p95" : 1274.7134160017595,
+    "python_inference_p95" : 1244.5899999999999,
+    "python_processing_p95" : 1271.55
+  },
+  "limitations" : [
+    "50 Mandarin and 50 English public FLEURS recordings; no dedicated code-switch or entity labels",
+    "Measurements are successive runs on the same M4, not simultaneous controlled energy tests"
+  ],
+  "raw_text_matches_previous_swift" : 95,
+  "raw_text_matches_python" : 98,
+  "same_audio_hashes_and_references" : true,
+  "samples" : 100,
+  "scoring" : "NFC lowercase; punctuation to spaces; aggregate character/word edits; nearest-rank P95"
+}

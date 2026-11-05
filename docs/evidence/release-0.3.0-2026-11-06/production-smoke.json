@@ -1,0 +1,118 @@
+{
+  "started_at": "2026-11-05T16:38:48.449034+00:00",
+  "scope": "installed production 0.3.0; real Qwen models",
+  "checks": {
+    "ready": {
+      "application": "CyberAudio",
+      "busy": false,
+      "instance": "466702F7-3851-4CBA-8719-EAA8B7378BDD",
+      "model": "qwen3-asr-1.7b",
+      "models": {
+        "stt": "ready",
+        "tts": "ready"
+      },
+      "startup": {
+        "backend": "mlx-swift",
+        "device": "metal",
+        "load_ms": 3260.755541996332,
+        "metal_active_bytes": 5578423720,
+        "metal_peak_bytes": 6273318916,
+        "process_peak_rss_bytes": 3148070912,
+        "verification_ms": 3363.788500006194,
+        "warmup_ms": 6661.212792008882
+      },
+      "status": "ready",
+      "updating": false
+    },
+    "authentication": 401,
+    "models": {
+      "data": [
+        {
+          "id": "qwen3-asr-1.7b",
+          "object": "model",
+          "owned_by": "local",
+          "quantization": "8bit",
+          "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+          "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55"
+        },
+        {
+          "id": "qwen3-tts-1.7b",
+          "object": "model",
+          "owned_by": "local",
+          "quantization": "8bit",
+          "repository": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit",
+          "revision": "41d3337e8b7f2843a75841595fc14e4b9a7a4b96"
+        }
+      ],
+      "object": "list"
+    },
+    "voice_count": 9,
+    "stt_zh_en": [
+      {
+        "language": "zh",
+        "id": "zh-000-1906",
+        "audio_sha256": "a72c0b59fdba80850552af7991de07f9f4940846d2d70f0890eeb153c40f164b",
+        "result": {
+          "duration": 10.38,
+          "inference_ms": 806.6614999988815,
+          "language": "zh",
+          "metal_active_bytes": 5579095464,
+          "metal_peak_bytes": 6411673844,
+          "model": "qwen3-asr-1.7b",
+          "no_speech": false,
+          "process_peak_rss_bytes": 3148070912,
+          "processing_ms": 957.3755839955993,
+          "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+          "request_id": "b019e20e16a0457e",
+          "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+          "text": "这并不是告别，这是一个篇章的结束，也是新篇章的开始。"
+        }
+      },
+      {
+        "language": "en",
+        "id": "en-000-1904",
+        "audio_sha256": "33aca50159ec2e3cbcc894eb26faa916d6badb1b49fb75994973561540a7f012",
+        "result": {
+          "duration": 10.56,
+          "inference_ms": 1065.3232080076123,
+          "language": "en",
+          "metal_active_bytes": 5579111848,
+          "metal_peak_bytes": 6411690312,
+          "model": "qwen3-asr-1.7b",
+          "no_speech": false,
+          "process_peak_rss_bytes": 3148070912,
+          "processing_ms": 1169.172708003316,
+          "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+          "request_id": "8bf4332a561843a3",
+          "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+          "text": "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years."
+        }
+      }
+    ],
+    "tts_wav": [
+      {
+        "voice": "serena",
+        "bytes": 115244,
+        "processing_ms": "1570.1703340018867",
+        "first_audio_ms": "308.9294170058565",
+        "sha256": "68f25e819c3b69c875f5729f0f2bfc64a850e11353cb70627b89f022b7f76be9"
+      },
+      {
+        "voice": "ryan",
+        "bytes": 119084,
+        "processing_ms": "1522.7798330015503",
+        "first_audio_ms": "217.67454099608585",
+        "sha256": "9b851b5fe0a47fae3da590469f461a3871f8e53cafeef91e55bb72d50aa5ead6"
+      }
+    ],
+    "pcm_complete": {
+      "bytes": 161280,
+      "first_read_ms_after_headers": 0.027916001272387803,
+      "request_status": "completed"
+    },
+    "disconnect_cancel_and_recovery": true,
+    "update_pause_and_cancel": true,
+    "finished_at": "2026-11-05T16:38:57.739197+00:00"
+  },
+  "status": "passed"
+}

@@ -1,0 +1,121 @@
+{
+  "files": [
+    {
+      "file": "asr/README.md",
+      "exists": true,
+      "matches": true
+    },
+    {
+      "file": "asr/chat_template.json",
+      "exists": true,
+      "matches": true
+    },
+    {
+      "file": "asr/config.json",
+      "exists": true,
+      "matches": true
+    },
+    {
+      "file": "asr/generation_config.json",
+      "exists": true,
+      "matches": true
+    },
+    {
+      "file": "asr/merges.txt",
+      "exists": true,
+      "matches": true
+    },
+    {
+      "file": "asr/model.safetensors",
+      "exists": true,
+      "matches": true
+    },
+    {
+      "file": "asr/model.safetensors.index.json",
+      "exists": true,
+      "matches": true
+    },
+    {
+      "file": "asr/preprocessor_config.json",
+      "exists": true,
+      "matches": true
+    },
+    {
+      "file": "asr/tokenizer_config.json",
+      "exists": true,
+      "matches": true
+    },
+    {
+      "file": "asr/vocab.json",
+      "exists": true,
+      "matches": true
+    },
+    {
+      "file": "tts/README.md",
+      "exists": true,
+      "matches": true
+    },
+    {
+      "file": "tts/config.json",
+      "exists": true,
+      "matches": true
+    },
+    {
+      "file": "tts/generation_config.json",
+      "exists": true,
+      "matches": true
+    },
+    {
+      "file": "tts/merges.txt",
+      "exists": true,
+      "matches": true
+    },
+    {
+      "file": "tts/model.safetensors",
+      "exists": true,
+      "matches": true
+    },
+    {
+      "file": "tts/model.safetensors.index.json",
+      "exists": true,
+      "matches": true
+    },
+    {
+      "file": "tts/preprocessor_config.json",
+      "exists": true,
+      "matches": true
+    },
+    {
+      "file": "tts/speech_tokenizer/config.json",
+      "exists": true,
+      "matches": true
+    },
+    {
+      "file": "tts/speech_tokenizer/configuration.json",
+      "exists": true,
+      "matches": true
+    },
+    {
+      "file": "tts/speech_tokenizer/model.safetensors",
+      "exists": true,
+      "matches": true
+    },
+    {
+      "file": "tts/speech_tokenizer/preprocessor_config.json",
+      "exists": true,
+      "matches": true
+    },
+    {
+      "file": "tts/tokenizer_config.json",
+      "exists": true,
+      "matches": true
+    },
+    {
+      "file": "tts/vocab.json",
+      "exists": true,
+      "matches": true
+    }
+  ],
+  "all_match": true,
+  "production_files_modified": false
+}

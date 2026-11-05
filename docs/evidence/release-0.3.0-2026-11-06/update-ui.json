@@ -1,0 +1,16 @@
+{
+  "fixture": "native-release-update-20261106",
+  "backend": "native CyberAudioFixture",
+  "scenario": "0.2.0 build 4 to 0.2.1 build 5; isolated bundle identifier and data root",
+  "feed_http_status": 200,
+  "archive_http_status": 200,
+  "installed_build_after_attempt": "4",
+  "preservation_sentinels_unchanged": true,
+  "accessibility_permission_reported": true,
+  "screen_recording_permission_reported": true,
+  "exact_window_accessibility": "ax_window_unresolved; zero AXWindow elements",
+  "capture": "ScreenCaptureKit and shell capture failed for the exact fixture window",
+  "foreground_escalation_attempted": false,
+  "status": "ui_installation_unverified",
+  "note": "The fixture downloaded its signed feed and archive. No UI installation or relaunch was confirmed. Does not represent production Sparkle acceptance."
+}

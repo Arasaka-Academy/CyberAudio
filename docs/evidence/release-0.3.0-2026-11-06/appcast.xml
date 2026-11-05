@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="yes"?><!-- sparkle-sign-warning:
+IMPORTANT: This file was signed by Sparkle. Any modifications to this file requires re-signing this file with generate_appcast or sign_update! The signed signature will be embedded at the end of this file.
+--><rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>CyberAudio</title>
+        <item>
+            <title>0.3.0</title>
+            <pubDate>Thu, 05 Nov 2026 16:23:36 +0000</pubDate>
+            <sparkle:version>6</sparkle:version>
+            <sparkle:shortVersionString>0.3.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<p>更新将重启 CyberAudio，请先复制需要的文字并保存音频。</p><pre># CyberAudio 0.3.0（6）
+
+运行时改为全 Swift：App 内置原生 HTTP／Qwen 推理 Helper 和模型准备工具，安装与使用无需 Python、pip 或 venv。继续使用 Qwen3-ASR 1.7B 8-bit 与 Qwen3-TTS 1.7B CustomVoice 8-bit，计算使用 Apple GPU／Metal。
+
+- 保留现有 STT、9 音色 TTS、表达指令、24kHz WAV／流式 PCM、Bearer Token 和调用地址。
+- 固定模型与依赖版本，原生下载／SHA-256／tokenizer 校验，推理阶段离线运行；模型仍需单独准备，FFmpeg 继续使用原生可执行文件。
+- 保留单任务互斥、取消／超时恢复、请求状态与 App 进程所有权；更新会等待已接收请求和音频响应完整发送，新上传在读取内容前拒绝。
+- 升级保留已有模型路径、端口、HTTPS URL、Token、配置和旧 Python 环境，默认不清理旧数据。
+
+M4／16GiB 的固定 100 条公开真人录音中，中文 CER 7.97%、英文 WER 3.35%，与 Python 基线持平；HTTP P95 1.43 秒，原版 1.27 秒。预热后 9 音色 RTF 约 0.60–0.65。结果不代表更快、更省内存或更省电；没有切换 Core ML／ANE。
+
+首次安装：将 App 放入 Applications，按部署指南运行 App 内置 `CyberAudioAssets prepare`、`download`、`verify`，并安装／配置 FFmpeg。已有用户升级前先保存文字和音频；0.2.0 用户请先等待外部音频请求完全结束。App 使用 ad-hoc 签名，尚未进行 Developer ID 公证。
+
+迁移说明、API 与实测边界见仓库 `docs/GUIDE.md` 和 `docs/NATIVE_SWIFT.md`。人工试听、长文本、中英混说与专名数字专项、能耗仍需单独验收。
+
+</pre>]]></description>
+            <enclosure url="https://github.com/Arasaka-Academy/CyberAudio/releases/download/v0.3.0/CyberAudio-0.3.0-macOS-arm64.zip" length="92240573" type="application/octet-stream" sparkle:edSignature="aHcLeLPgmOQvub7CDukwg7ORU71MAOeWUHYesYm3mx8FSv6j6cKGxnoo69Ri3C5e7yp4HW1oSCc18BcDSTwEAw=="></enclosure>
+        </item>
+    </channel>
+</rss><!-- sparkle-signatures:
+edSignature: J2lHSBSqjetY2Q651LgjsRqOJTN0Iynxcj0rbm4qiUjf4x7GKOCdmLXJZke5AycDm3sa8k2YM5U4T6Z7uy6YDA==
+length: 2940
+-->

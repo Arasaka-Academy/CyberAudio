@@ -1,0 +1,64 @@
+{
+  "started_at": "20261105T163749Z",
+  "source_commit": "3fe2562bf9f71bfe26a9f68456a75984be639535",
+  "backup": "/Users/zhubby/Library/Application Support/CyberAudio/Backups/0.1.0-to-0.3.0-20261105T163749Z",
+  "old_version": "0.1.0",
+  "old_build": "3",
+  "new_version": "0.3.0",
+  "new_build": "6",
+  "helper_sha256": "1f93505ffb5d1e95ba7b3c9bcebe89665bc9ef01e4d932e1c5588f610de38d3e",
+  "production_instance_before": "DF2BC5FA-1028-4D78-8E69-FB6D72CCEB40",
+  "installation_method": "controlled manual replacement; old 0.1.0 predates Sparkle",
+  "legacy_runtime_preserved": true,
+  "assets_verified_before_stop": true,
+  "asset_report": {
+    "models": [
+      {
+        "component": "asr",
+        "files_verified": 10,
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55"
+      },
+      {
+        "component": "tts",
+        "files_verified": 13,
+        "revision": "41d3337e8b7f2843a75841595fc14e4b9a7a4b96"
+      }
+    ],
+    "status": "verified",
+    "tokenizers": {
+      "asr": "470bb264b72c2c47eb415c1cc18f96a39f572608f5695df0f34e896ec4f2fc37",
+      "tts": "a210c764d0e752c234adbafe3784c987d14aabb12f6bd5f7571f327db93724a4"
+    }
+  },
+  "idle_samples_before_stop": 3,
+  "old_processes_stopped": true,
+  "installed_app_pid": 88594,
+  "status": "installed_ready",
+  "ready": {
+    "application": "CyberAudio",
+    "busy": false,
+    "instance": "466702F7-3851-4CBA-8719-EAA8B7378BDD",
+    "model": "qwen3-asr-1.7b",
+    "models": {
+      "stt": "ready",
+      "tts": "ready"
+    },
+    "startup": {
+      "backend": "mlx-swift",
+      "device": "metal",
+      "load_ms": 3260.755541996332,
+      "metal_active_bytes": 5578423720,
+      "metal_peak_bytes": 6273318916,
+      "process_peak_rss_bytes": 3148070912,
+      "verification_ms": 3363.788500006194,
+      "warmup_ms": 6661.212792008882
+    },
+    "status": "ready",
+    "updating": false
+  },
+  "native_helper_pid": 88610,
+  "config_bytes_preserved": true,
+  "installed_helper_matches_release": true,
+  "finished_at": "2026-11-05T16:38:11.239772+00:00",
+  "config_file_count": 4
+}
