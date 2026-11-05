@@ -55,10 +55,14 @@ GitHub Pages 应为 workflow 模式；`github-pages` 环境需允许 `v*` tag �
 
 自动化后端测试覆盖认证、同锁准入竞争、租约过期、迟到取消／准备；0.2.1 增加阻塞真实 ASGI 响应发送的 WAV／PCM 场景，确认模型空闲后仍等待发送完成，并验证断连释放等待。Swift 行为测试覆盖音频等待、取消恢复、准备失败与重复动作；发布脚本测试覆盖版本回退、非法版本、空清单和预发布分类。
 
-`make check app` 完成 34 项 Python 测试、4 项 Swift 行为场景、编译、打包与严格签名验证。`make update` 完成 DMG 创建／校验和 ZIP／清单签名验证。
+初次接入的 `make check app` 完成 34 项 Python 测试；0.2.1 补充后共 37 项，另有 4 项 Swift 行为场景，编译、打包与严格签名验证均通过。`make update` 完成 DMG 创建／校验和 ZIP／清单签名验证。
 
 正式版本 [v0.2.0](https://github.com/Arasaka-Academy/CyberAudio/releases/tag/v0.2.0) 对应源码 `6c99d827c316911f4b41e4301c27b987ef0809bb`。[发布工作流 41990598311](https://github.com/Arasaka-Academy/CyberAudio/actions/runs/41990598311) 的构建、资产上传与下载校验、Pages 部署均成功。另行下载云端 ZIP，确认嵌套签名有效、内置后端与该提交一致。
 
 本机此前访问 GitHub 标准下载域名曾超时；2026-11-05 15:58（UTC+8）使用 `Foundation.URLSession` 从正式公开下载 URL 实际取得 ZIP，HTTP 200，1,412,083 字节，SHA-256 与发布 manifest 一致，EdDSA 验签通过。固定 Pages appcast 返回 HTTP 200，2,292 字节，与 Release 清单字节相同且签名有效。本地实际替换／重启测试与这次公开网络下载分别记录，未把资产 API 下载当作公开 URL 的连通性证明。
+
+随后发布的 [v0.2.1](https://github.com/Arasaka-Academy/CyberAudio/releases/tag/v0.2.1) 对应 `85e2b3544fd79dc097f53ee0572eb8c165a4ad05`，补齐慢速音频响应保护。[工作流 41992829625](https://github.com/Arasaka-Academy/CyberAudio/actions/runs/41992829625) 构建、上传资产并重新下载校验、Pages 部署全部成功。本地 App、DMG、ZIP 与该提交匹配。线上清单返回 HTTP 200，1,968 字节，版本 0.2.1／build 5，EdDSA 验签通过；对这份真实清单的版本检查拒绝旧版与同版覆盖。
+
+0.2.1 公开 ZIP 在本机 16:17、16:20（UTC+8）的两次 `URLSession` 下载均为 `NSURLErrorDomain -1001` 超时；本机通过资产 API 重新下载也发生网络超时。因此本轮最终版本的在线包在 CI 校验通过，本机在线完整下载仍受间歇性网络故障影响；0.2.0 的一次成功下载不能替代 0.2.1 的本机在线升级验收。本地可运行 App、DMG 和完整更新 ZIP 仍可直接交付。
 
 真实麦克风授权保留、真人听感、真实模型推理、登录项注册与重新登录，以及需要管理员权限的安装仍需在实际交付设备验收；本地替身不能证明这些行为。桌面锁定后未继续手动下载进度、完整焦点巡检和深色更新设置截图；已取得浅色设置与等待状态截图。ad-hoc 签名也不等同于 Developer ID 公证。
