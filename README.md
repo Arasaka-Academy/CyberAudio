@@ -6,6 +6,7 @@
 
 - **STT**：Qwen3-ASR 1.7B 8-bit，中文／英文／混合语音，录音或导入文件。
 - **TTS**：Qwen3-TTS 1.7B CustomVoice 8-bit，9 个预设音色，表达指令，WAV 与流式 PCM。
+- **界面**：原生 Liquid Glass 工作台，顶部切换录音／朗读模式，独立设置窗口，跟随系统浅色／深色；跨模式保留任务和停止／取消入口。
 - **生命周期**：打开 App 加载模型；仅在菜单栏显示，不显示 Dock 图标；关闭窗口后继续运行，可从菜单栏恢复主窗口；退出 App 停止 API、卸载模型。没有后台系统守护服务。
 - **API**：保持 `/v1/audio/transcriptions`，新增 `/v1/audio/speech`，共用地址与 Bearer Token。
 

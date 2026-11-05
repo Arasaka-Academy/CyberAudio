@@ -10,14 +10,22 @@ struct Transcription: Decodable {
     let processing_ms: Double
 }
 
+enum AudioOperation {
+    case transcription, speech
+}
+
 @MainActor
 final class AudioWorkspace: NSObject, ObservableObject {
     @Published var recording = false
     @Published var recordingSeconds = 0
+    @Published private(set) var requestingMicrophone = false
+    @Published private(set) var recordingLevel: Float = 0
+    @Published private(set) var recordingLevels = [Float](repeating: 0, count: 48)
     @Published var transcribing = false
     @Published var transcript = ""
     @Published var sttTiming = ""
     @Published var errorMessage: String?
+    @Published private(set) var errorOperation: AudioOperation = .transcription
     @Published var text = "你好，欢迎使用 CyberAudio。这是运行在 Mac 上的本地语音助手。"
     @Published var instructions = "自然、清晰、亲切地朗读。"
     @Published var voice = "serena"
@@ -31,6 +39,8 @@ final class AudioWorkspace: NSObject, ObservableObject {
     private var recorder: AVAudioRecorder?
     private var recordingURL: URL?
     private var ticker: Task<Void, Never>?
+    private var meter: Task<Void, Never>?
+    private var transcription: Task<Void, Never>?
     private var generation: Task<Void, Never>?
     private var player: AVAudioPlayer?
     private var engine: AVAudioEngine?
@@ -46,13 +56,18 @@ final class AudioWorkspace: NSObject, ObservableObject {
         }
     }
 
-    var working: Bool { generating || transcribing || recording }
+    var working: Bool { generating || transcribing || recording || requestingMicrophone }
 
     func beginRecording() async {
+        guard !working else { return }
+        requestingMicrophone = true
+        defer { requestingMicrophone = false }
+        errorOperation = .transcription
         errorMessage = nil
         let permitted = await AVCaptureDevice.requestAccess(for: .audio)
         guard permitted else { errorMessage = "麦克风权限未开启，请在系统设置 → 隐私与安全性 → 麦克风中允许 CyberAudio。"; return }
         do {
+            stopPlayback()
             let url = recordings.appendingPathComponent("recording-\(UUID().uuidString).wav")
             recordingURL = url
             let recorder = try AVAudioRecorder(url: url, settings: [
@@ -60,11 +75,14 @@ final class AudioWorkspace: NSObject, ObservableObject {
                 AVNumberOfChannelsKey: 1, AVLinearPCMBitDepthKey: 16,
                 AVLinearPCMIsFloatKey: false, AVLinearPCMIsBigEndianKey: false
             ])
+            recorder.isMeteringEnabled = true
             guard recorder.record() else { throw CyberAudioError.message("无法开启麦克风，请检查输入设备。") }
             self.recorder = recorder
             recordingURL = url
             recording = true
             recordingSeconds = 0
+            recordingLevels = [Float](repeating: 0, count: 48)
+            startMetering()
             ticker = Task { [weak self] in
                 while !Task.isCancelled {
                     try? await Task.sleep(for: .seconds(1))
@@ -72,6 +90,7 @@ final class AudioWorkspace: NSObject, ObservableObject {
                     self.recordingSeconds += 1
                     if self.recordingSeconds >= 59 {
                         self.recorder?.pause()
+                        self.stopMetering()
                         return
                     }
                 }
@@ -87,6 +106,8 @@ final class AudioWorkspace: NSObject, ObservableObject {
         recorder?.stop()
         recorder = nil
         ticker?.cancel()
+        ticker = nil
+        stopMetering()
         recording = false
         guard let url = recordingURL else { return }
         recordingURL = nil
@@ -94,21 +115,63 @@ final class AudioWorkspace: NSObject, ObservableObject {
         await transcribe(url: url, using: backend)
     }
 
+    private func startMetering() {
+        meter?.cancel()
+        meter = Task { [weak self] in
+            while !Task.isCancelled {
+                try? await Task.sleep(for: .milliseconds(50))
+                guard !Task.isCancelled, let self, self.recording,
+                      let recorder = self.recorder, recorder.isRecording else { return }
+                recorder.updateMeters()
+                let level = max(0, min(1, (recorder.averagePower(forChannel: 0) + 50) / 50))
+                self.recordingLevel = level
+                self.recordingLevels.removeFirst()
+                self.recordingLevels.append(level)
+            }
+        }
+    }
+
+    private func stopMetering() {
+        meter?.cancel()
+        meter = nil
+        recordingLevel = 0
+    }
+
+    func reportError(_ error: Error, for operation: AudioOperation) {
+        errorOperation = operation
+        errorMessage = error.localizedDescription
+    }
+
     func importAudio(using backend: BackendController) {
         let panel = NSOpenPanel()
         panel.allowedContentTypes = [.audio, .movie]
         panel.allowsMultipleSelection = false
         panel.message = "选择不超过 60 秒、20MiB 的音频"
-        guard panel.runModal() == .OK, let url = panel.url else { return }
-        Task { await transcribe(url: url, using: backend) }
+        present(panel) { [weak self] response in
+            guard response == .OK, let url = panel.url else { return }
+            Task { await self?.transcribe(url: url, using: backend) }
+        }
     }
 
     func transcribe(url: URL, using backend: BackendController) async {
-        guard !transcribing else { return }
+        guard !working else { return }
+        stopPlayback()
+        errorOperation = .transcription
         errorMessage = nil
         transcribing = true
-        defer { transcribing = false }
+        sttTiming = ""
+        defer { transcribing = false; transcription = nil }
+        let task = Task { [weak self] in
+            guard let self else { return }
+            await self.performTranscription(url: url, using: backend)
+        }
+        transcription = task
+        await task.value
+    }
+
+    private func performTranscription(url: URL, using backend: BackendController) async {
         do {
+            try Task.checkCancellation()
             let size = try url.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0
             guard size <= 20 * 1024 * 1024 else { throw CyberAudioError.message("文件不能超过 20MiB。") }
             let audio = try Data(contentsOf: url)
@@ -122,16 +185,23 @@ final class AudioWorkspace: NSObject, ObservableObject {
             body.append(Data("\r\n--\(boundary)--\r\n".utf8))
             let request = try backend.request(path: "/v1/audio/transcriptions", method: "POST", body: body, contentType: "multipart/form-data; boundary=\(boundary)")
             let (data, response) = try await backend.session.data(for: request)
+            try Task.checkCancellation()
             try backend.check(response, data: data)
             let result = try JSONDecoder().decode(Transcription.self, from: data)
             transcript = result.text
             sttTiming = String(format: "音频 %.1f 秒 · 处理 %.2f 秒 · %@", result.duration, result.processing_ms / 1000, result.language ?? "自动")
-        } catch { errorMessage = error.localizedDescription }
+        } catch {
+            if Task.isCancelled { sttTiming = "已取消" }
+            else { reportError(error, for: .transcription) }
+        }
     }
 
+    func cancelTranscription() { transcription?.cancel() }
+
     func generate(using backend: BackendController) {
-        guard !generating else { return }
+        guard !working else { return }
         stopPlayback()
+        errorOperation = .speech
         errorMessage = nil
         generated = Data()
         ttsTiming = ""
@@ -192,6 +262,7 @@ final class AudioWorkspace: NSObject, ObservableObject {
                     }
                 } else {
                     let (data, response) = try await backend.session.data(for: request)
+                    try Task.checkCancellation()
                     try backend.check(response, data: data)
                     self.generated = data
                     self.ttsTiming = String(format: "生成耗时 %.2f 秒", Date().timeIntervalSince(start))
@@ -203,7 +274,8 @@ final class AudioWorkspace: NSObject, ObservableObject {
             } catch {
                 self.stopPlayback()
                 self.generated = Data()
-                if !Task.isCancelled { self.errorMessage = error.localizedDescription }
+                if Task.isCancelled { self.ttsTiming = "已取消" }
+                else { self.reportError(error, for: .speech) }
             }
         }
     }
@@ -256,14 +328,27 @@ final class AudioWorkspace: NSObject, ObservableObject {
         let panel = NSSavePanel()
         panel.allowedContentTypes = [.wav]
         panel.nameFieldStringValue = "CyberAudio.wav"
-        guard panel.runModal() == .OK, let url = panel.url else { return }
-        do { try generated.write(to: url, options: .atomic) }
-        catch { errorMessage = error.localizedDescription }
+        let data = generated
+        present(panel) { [weak self] response in
+            guard response == .OK, let url = panel.url else { return }
+            do { try data.write(to: url, options: .atomic) }
+            catch { self?.reportError(error, for: .speech) }
+        }
+    }
+
+    private func present(_ panel: NSSavePanel, completion: @escaping (NSApplication.ModalResponse) -> Void) {
+        if let window = NSApp.windows.first(where: { $0.identifier?.rawValue == "main" }) ?? NSApp.mainWindow {
+            panel.beginSheetModal(for: window, completionHandler: completion)
+        } else {
+            panel.begin(completionHandler: completion)
+        }
     }
 
     func cleanup() {
+        transcription?.cancel()
         generation?.cancel()
         ticker?.cancel()
+        stopMetering()
         recorder?.stop()
         if let recordingURL { try? FileManager.default.removeItem(at: recordingURL) }
         stopPlayback()
