@@ -34,10 +34,9 @@ def main():
     root = args.output.resolve()
     root.mkdir(parents=True, exist_ok=False)
     data = root / "data"
-    for child in ["config", "runtime/.venv/bin", "reports", "models"]:
+    for child in ["config", "runtime", "reports", "models"]:
         (data / child).mkdir(parents=True)
     api, feed_port = port(), port()
-    (data / "runtime/.venv/bin/python").symlink_to(sys.executable)
     (data / "config/service.json").write_text(json.dumps({"asr_dir": str(data / "models"), "tts_dir": str(data / "models"),
         "ffmpeg": "/opt/homebrew/bin/ffmpeg", "port": api, "https_url": ""}))
     (data / "config/api-token").write_text("update-fixture-token-" * 4)
@@ -48,6 +47,11 @@ def main():
     feed.mkdir()
     apps = []
     next_version, next_build = {"current": ("0.2.0", "4"), "older": ("0.1.9", "3")}.get(args.scenario, ("0.2.1", "5"))
+    native_scratch = PROJECT / ".context/native-build"
+    run(["swift", "build", "--build-system", "native", "--package-path", PROJECT / "Native", "--scratch-path", native_scratch,
+         "-c", "release", "--skip-update", "--product", "CyberAudioFixture"])
+    native_bin = subprocess.check_output(["swift", "build", "--build-system", "native", "--package-path", str(PROJECT / "Native"),
+         "--scratch-path", str(native_scratch), "-c", "release", "--show-bin-path"], text=True).strip()
     for name, version, build in [("installed", "0.2.0", "4"), ("next", next_version, next_build)]:
         app = root / name / "CyberAudio.app"
         app.parent.mkdir()
@@ -60,7 +64,9 @@ def main():
             "SUAutomaticallyUpdate": not args.manual,
             "SUFeedURL": f"http://127.0.0.1:{feed_port}/appcast.xml"})
         plist.write_bytes(plistlib.dumps(info))
-        (app / "Contents/Resources/backend/server.py").write_bytes((PROJECT / "tests/ui_stub.py").read_bytes())
+        helper = app / "Contents/Helpers/CyberAudioService"
+        helper.write_bytes((Path(native_bin) / "CyberAudioFixture").read_bytes())
+        run(["codesign", "--force", "--sign", "-", helper])
         run(["codesign", "--force", "--sign", "-", app])
         run(["codesign", "--verify", "--deep", "--strict", app])
         apps.append(app)

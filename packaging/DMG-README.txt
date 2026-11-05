@@ -5,10 +5,10 @@ CyberAudio — 本地语音识别与合成
 1. 将 CyberAudio.app 拖到 Applications（应用程序）文件夹。
    更新时先退出正在运行的 CyberAudio，再替换旧 App。
 
-2. 首次安装需要准备 Homebrew Python 3.13、FFmpeg、独立 Python 环境和模型。
-   请按照 Deployment/GUIDE.md 第 12.1–12.4 节操作。
-   Deployment 中附带固定依赖锁和模型下载、配置及资产校验脚本。
-   可将 Deployment 复制到自己的工作目录后执行；使用 DMG 内的 App 可跳过指南中的源码构建步骤。
+2. 首次安装需要 FFmpeg 和固定版本的模型；推理与 HTTP 服务均使用 Swift，无需 Python。
+   请按照 Deployment/GUIDE.md 第 12.1–12.4 节运行 App 内的 CyberAudioAssets 工具，
+   依次准备配置、下载并校验模型。源码构建步骤可跳过。
+   从旧版升级会保留配置、Token、模型和旧运行环境，默认不删除任何旧数据。
    模型文件合计约 5.55GB，建议预留至少 15GB 可用磁盘。
 
 3. 从“应用程序”打开 CyberAudio，等待 STT 与 TTS 就绪。

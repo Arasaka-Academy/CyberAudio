@@ -26,15 +26,10 @@ if [[ "${2:-}" != "--reuse-app" ]]; then
   bash scripts/build_app.sh
 fi
 app="$project_root/dist/CyberAudio.app"
-python3 - "$app/Contents/Info.plist" <<'PY'
-import plistlib
-import sys
-from pathlib import Path
-source = plistlib.loads(Path("packaging/Info.plist").read_bytes())
-built = plistlib.loads(Path(sys.argv[1]).read_bytes())
-if built != source:
-    raise SystemExit("Built App Info.plist differs from release source; rebuild the App.")
-PY
+if ! cmp -s packaging/Info.plist "$app/Contents/Info.plist"; then
+  printf '%s\n' 'Built App Info.plist differs from release source; rebuild the App.' >&2
+  exit 1
+fi
 if [[ "$(lipo -archs "$app/Contents/MacOS/CyberAudio")" != "arm64" ]]; then
   printf '%s\n' 'Expected an arm64 application binary.' >&2
   exit 1
@@ -44,13 +39,11 @@ codesign --verify --deep --strict "$app"
 staging="$(mktemp -d "${TMPDIR:-/tmp}/CyberAudio-dmg.XXXXXX")"
 trap 'rm -rf "$staging"' EXIT
 image="$staging/image"
-mkdir -p "$image/Deployment/scripts"
+mkdir -p "$image/Deployment"
 ditto "$app" "$image/CyberAudio.app"
 ln -s /Applications "$image/Applications"
 cp packaging/DMG-README.txt "$image/使用说明.txt"
 cp docs/GUIDE.md "$image/Deployment/GUIDE.md"
-cp requirements.lock.txt "$image/Deployment/requirements.lock.txt"
-cp scripts/prepare_models.py scripts/prepare_runtime.py scripts/verify_assets.py "$image/Deployment/scripts/"
 
 filename="CyberAudio-${release_version}-macOS-arm64.dmg"
 dmg="$project_root/dist/$filename"

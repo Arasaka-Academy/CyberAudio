@@ -40,6 +40,9 @@ jobs:
       - name: Read release notes
         run: gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --json body --jq .body > "$RUNNER_TEMP/release-notes.txt"
 
+      - name: Validate native service and update behavior
+        run: make check
+
       - name: Build, sign and verify app, DMG, ZIP and feed
         run: python3 scripts/release_updates.py build --tag "$RELEASE_TAG" --notes "$RUNNER_TEMP/release-notes.txt"
 

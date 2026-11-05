@@ -1,0 +1,21 @@
+{
+  "application_version": "0.2.0",
+  "application_build": 4,
+  "release_published": false,
+  "production_installation_replaced": false,
+  "architecture": "arm64",
+  "signature": "ad-hoc",
+  "app_strict_deep_signature_verified": true,
+  "dmg_strict_deep_signature_verified": true,
+  "dmg_readonly_mount_verified": true,
+  "dmg_helper_matches_app_and_real_model_test": true,
+  "helper_sha256": "573b250666d7722a312b3508a57ab275501c0d1451b6863290af3429152b530a",
+  "dmg_name": "CyberAudio-0.2.0-macOS-arm64.dmg",
+  "dmg_size": 106463488,
+  "dmg_sha256": "ebab6c3426917fdef851db9b0a2bf00f8fb1146e55960d9d3ea12b734f8e41f4",
+  "dmg_image_checksum_verified": true,
+  "python_resources_in_app": false,
+  "python_dynamic_linkage_in_helpers": false,
+  "developer_id_notarized": false,
+  "remote_ci_executed": false
+}

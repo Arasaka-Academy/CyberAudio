@@ -98,19 +98,22 @@ final class BackendController: ObservableObject {
             configuration = try JSONDecoder().decode(ServiceConfiguration.self, from: Data(contentsOf: configURL))
             token = try String(contentsOf: root.appendingPathComponent("config/api-token"), encoding: .utf8).trimmingCharacters(in: .whitespacesAndNewlines)
             guard token.count >= 32 else { throw CyberAudioError.message("API Token 配置无效。") }
-            let python = root.appendingPathComponent("runtime/.venv/bin/python")
-            guard FileManager.default.isExecutableFile(atPath: python.path) else { throw CyberAudioError.message("未安装 Python 运行环境，请按部署指南准备资源。") }
-            guard let script = Bundle.main.resourceURL?.appendingPathComponent("backend/server.py"), FileManager.default.fileExists(atPath: script.path) else {
-                throw CyberAudioError.message("App 缺少后端资源，请重新构建完整 App。")
+            let helper = Bundle.main.bundleURL.appendingPathComponent("Contents/Helpers/CyberAudioService")
+            guard let resources = Bundle.main.resourceURL,
+                  FileManager.default.isExecutableFile(atPath: helper.path),
+                  FileManager.default.fileExists(atPath: resources.appendingPathComponent("mlx.metallib").path),
+                  FileManager.default.fileExists(atPath: resources.appendingPathComponent("offline.sb").path) else {
+                throw CyberAudioError.message("App 缺少原生推理资源，请重新安装完整 App。")
             }
             instance = UUID().uuidString
             let process = Process()
             process.executableURL = URL(fileURLWithPath: "/usr/bin/sandbox-exec")
-            process.arguments = ["-f", root.appendingPathComponent("config/offline.sb").path, python.path, "-u", script.path,
-                                 "--root", root.path, "--parent-pid", String(getpid()), "--instance", instance]
+            process.arguments = ["-f", resources.appendingPathComponent("offline.sb").path, helper.path,
+                                 "--root", root.path, "--parent-pid", String(getpid()), "--instance", instance,
+                                 "--metallib", resources.appendingPathComponent("mlx.metallib").path]
             process.environment = ProcessInfo.processInfo.environment.merging([
                 "HF_HUB_OFFLINE": "1", "TRANSFORMERS_OFFLINE": "1", "TOKENIZERS_PARALLELISM": "false",
-                "PYTHONDONTWRITEBYTECODE": "1", "PATH": "/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+                "PATH": "/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
             ]) { _, new in new }
             let pipe = Pipe()
             process.standardInput = pipe

@@ -1,0 +1,40 @@
+    /Users/zhubby/.codex/worktrees/coreml-native/CyberAudio/.context/native-build/checkouts/mlx-audio-swift/Sources/MLXAudioSTT/Models/MingASR/README.md
+warning: 'mlx-audio-swift': found 1 file(s) which are unhandled; explicitly declare them as resources or exclude from the target
+    /Users/zhubby/.codex/worktrees/coreml-native/CyberAudio/.context/native-build/checkouts/mlx-audio-swift/Sources/MLXAudioSTS/Models/DeepFilterNet/README.md
+[0/1] Planning build
+Building for production...
+[0/2] Write swift-version--1AB21518FC5DEDBE.txt
+Build of product 'CyberAudioCoreTests' complete! (2.46s)
+PASS strict speech
+PASS binary multipart
+PASS atomic update admission
+PASS update lease expiry
+PASS producer cancellation join
+PASS timeout slot retention
+PASS HTTP auth WAV PCM and records
+PASS FFmpeg formats and limits
+PASS chunked limit and duplicate auth
+PASS private and partial failures
+PASS HTTP disconnect update drain and recovery
+PASS HTTP timeout retains producer
+PASS slow HTTP reader bounds producer
+PASS health and scoped cleanup
+PASS native setup preservation
+PASS tokenizer process and locale stability
+Downloading asr/README.md (1008 bytes)
+Fetching pinned asset; network errors preserve existing files.
+PASS native proxy download preserves failed assets
+Native contracts: 17 cases, 0 failures, 0 skipped
+bash scripts/test_update_gate.sh
+UpdateGate: 4 behavioral scenarios passed
+bash scripts/test_coreml_evidence.sh
+CoreMLEvidence: 11 behavioral scenarios passed
+for script in scripts/*.sh; do bash -n "$script"; done
+plutil -lint packaging/Info.plist
+packaging/Info.plist: OK
+swift build --build-system native -c release
+[0/1] Planning build
+Building for production...
+[0/2] Write swift-version--1AB21518FC5DEDBE.txt
+Build complete! (0.93s)
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.

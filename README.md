@@ -2,7 +2,7 @@
 
 原生 SwiftUI macOS 语音工作台。一个 App 同时提供本地 STT、TTS 和统一 HTTP API。
 
-[完整 Notion 手册（部署、使用、API 与实测验收）](https://app.notion.com/p/CyberAudio-Mac-STT-TTS-App-API-40d1d9761945811081c6ddd41d45e2c8)。本地文档见 [部署指南](docs/GUIDE.md) 和 [验收报告](docs/VERIFICATION.md)。
+当前文档见 [部署指南](docs/GUIDE.md) 和 [Swift 迁移报告](docs/NATIVE_SWIFT.md)。[Notion 手册](https://app.notion.com/p/CyberAudio-Mac-STT-TTS-App-API-40d1d9761945811081c6ddd41d45e2c8) 与 [旧验收报告](docs/VERIFICATION.md) 保留历史 Python 版本记录。
 
 - **STT**：Qwen3-ASR 1.7B 8-bit，中文／英文／混合语音，录音或导入文件。
 - **TTS**：Qwen3-TTS 1.7B CustomVoice 8-bit，9 个预设音色，表达指令，WAV 与流式 PCM。
@@ -11,20 +11,21 @@
 - **更新**：Sparkle 2.10.1，每天检查稳定版并自动下载；确认重启或主动退出时安装，等待音频和 API 任务完成。首次需手动安装 0.2.0（4），详见 [自动更新与发布](docs/AUTOMATIC_UPDATES.md)。
 - **API**：保持 `/v1/audio/transcriptions`，新增 `/v1/audio/speech`，共用地址与 Bearer Token。
 
-GUI 使用 SwiftUI／AppKit／AVFoundation；模型使用 App 直接管理的 Python／MLX Audio 子进程，**不是全 Swift 模型实现**。首次安装需要下载模型与准备独立运行环境。当前 `.app` 使用本机 ad-hoc 签名，未公证，不是包含所有资源的通用分发安装包。
+运行时已改为全 Swift：SwiftUI／AppKit／AVFoundation 界面、SwiftNIO HTTP、MLX Swift／MLX Audio Swift 推理。App 直接管理内置 Helper，无需 Python、pip 或 venv。首次安装只需 FFmpeg 和固定模型资产。计算使用 Apple GPU／Metal，未切换 Core ML 或 ANE。当前 `.app` 使用 ad-hoc 签名，未公证，模型单独下载。
 
 ## 设备
 
-Apple Silicon Mac，macOS 26 或以上；推荐 16GB 以上统一内存、15GB 以上可用空间。已部署验证的设备是 Apple M4／16GB／macOS 27.2。模型固定 MLX Audio 0.6.3、MLX 0.32.4，完整依赖见 `requirements.lock.txt`。
+Apple Silicon Mac，macOS 26 或以上；推荐 16GB 以上统一内存、15GB 以上可用空间。验证设备是 Apple M4／16GB／macOS 27.2。MLX Swift 0.33.0、MLX 0.32.4，完整 Swift 依赖见 `Native/Package.resolved`。源码构建需要 Swift 6.3+。
 
 ## 目录
 
 ```text
 Sources/CyberAudio/       SwiftUI 界面、音频、后端进程管理
-backend/                 固定模型 FastAPI API 和针对性测试
-scripts/                 模型准备、运行环境迁移、构建、实际模型验证
+Native/                  Swift HTTP、Qwen 推理、资产工具、协议测试
+backend/                 历史 Python API 与回归测试，不进入 App
+scripts/                 原生构建、Metal 准备、隔离验收及历史开发工具
 packaging/Info.plist      App 配置与麦克风权限说明
-tests/ui_stub.py          仅用于界面测试的合成接口，不进入生产 App
+Native/.../CyberAudioFixture/  界面／更新测试的原生合成接口，不进入生产 App
 docs/                    部署、API、运维与验收说明
 ```
 
@@ -38,7 +39,7 @@ docs/                    部署、API、运维与验收说明
 bash scripts/build_app.sh
 ```
 
-输出 `dist/CyberAudio.app`，包含原生可执行文件、Sparkle 框架和后端源文件。完整首次安装、资产下载和迁移步骤见 [部署与使用指南](docs/GUIDE.md)。
+输出 `dist/CyberAudio.app`，包含 App、原生推理 Helper、资产工具、Metal 资源和 Sparkle。首次安装、下载和迁移见 [部署指南](docs/GUIDE.md)，验证边界见 [Swift 迁移报告](docs/NATIVE_SWIFT.md)。
 
 ## Release 与自动更新
 
@@ -53,17 +54,16 @@ make dmg
 make update
 ```
 
-首次安装仍需准备 Python、FFmpeg 和模型。当前 App 为 ad-hoc 签名，未做 Apple 公证。密钥配置、版本规则、工作流重试及验收边界见 [自动更新与发布指南](docs/AUTOMATIC_UPDATES.md)。
+首次安装需准备 FFmpeg 和模型。当前 App 为 ad-hoc 签名，未做 Apple 公证。密钥配置、版本规则、工作流重试及验收边界见 [自动更新与发布指南](docs/AUTOMATIC_UPDATES.md)。
 
 ## 开发检查
 
 ```bash
-/opt/homebrew/opt/python@3.13/bin/python3.13 -m venv .venv
-.venv/bin/python -m pip install fastapi==0.162.0 uvicorn==0.54.0 python-multipart==0.0.33 httpx pytest pytest-asyncio
 make check
+make legacy-test # 可选：现有 .venv 中的历史 Python 与发布工具测试
 ```
 
-后端测试使用真实 FastAPI／FFmpeg 与受控推理替身，无需下载模型。实际 Metal 推理、网络访问、退出与崩溃行为的证据另见 [验收报告](docs/VERIFICATION.md)。测试目录、日志、模型、运行环境和生成音频均不提交。
+原生协议测试使用真实 SwiftNIO／FFmpeg 与受控推理替身，无需下载模型，Command Line Tools 即可运行。真实模型隔离验收使用 `scripts/verify_native.swift`；证据见 [Swift 迁移报告](docs/NATIVE_SWIFT.md)。历史 Python 测试和发布编排用于开发，不进入 App。
 
 ## 调用
 
@@ -75,4 +75,4 @@ curl --fail-with-body "$CYBERAUDIO_BASE_URL/v1/models" \
   -H "Authorization: Bearer $CYBERAUDIO_TOKEN"
 ```
 
-完整请求参数、流式完成校验、错误处理和 Python 客户端示例见部署指南。STT／TTS 共用单个推理槽；忙时返回 429，调用方自行等待后重试。
+完整请求参数、流式完成校验、错误处理和 Swift 客户端示例见部署指南。STT／TTS 共用单个推理槽；忙时返回 429，调用方自行等待后重试。

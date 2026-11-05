@@ -1,0 +1,1 @@
+{"models":[{"component":"asr","files_verified":10,"revision":"a8379a2e2f9e313c9292cdf1af4055ab56d50d55"},{"component":"tts","files_verified":13,"revision":"41d3337e8b7f2843a75841595fc14e4b9a7a4b96"}],"status":"verified","tokenizers":{"asr":"11d6ebc61a8bbfc5a0bd8f84df1c863ec6560a3efac6d318bf4197a93072c094","tts":"d7794d12b1c501d8c816aef7b361232502185596c19fae5575a3a3a15ab644c9"}}
