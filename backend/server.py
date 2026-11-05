@@ -39,6 +39,7 @@ TTS_REV = "41d3337e8b7f2843a75841595fc14e4b9a7a4b96"
 VOICES = ["serena", "vivian", "uncle_fu", "ryan", "aiden", "ono_anna", "sohee", "eric", "dylan"]
 MAX_UPLOAD = 20 * 1024 * 1024
 MAX_TOKENS = 1200
+INFERENCE_PATHS = frozenset(("/v1/audio/speech", "/v1/audio/transcriptions"))
 LOG = logging.getLogger("cyberaudio")
 
 
@@ -68,9 +69,7 @@ class UpdateRequestDrain:
         self.app, self.state, self.lock = app, state, lock
 
     async def __call__(self, scope, receive, send):
-        if scope["type"] != "http" or scope["method"] != "POST" or scope["path"] not in (
-            "/v1/audio/speech", "/v1/audio/transcriptions"
-        ):
+        if scope["type"] != "http" or scope["method"] != "POST" or scope["path"] not in INFERENCE_PATHS:
             return await self.app(scope, receive, send)
         with self.lock:
             paused = time.monotonic() < self.state.update_deadline
@@ -87,8 +86,9 @@ class UpdateRequestDrain:
 
 class RequestBoundary:
     """Authenticate and bound bodies before multipart/JSON parsing, including chunked bodies."""
-    def __init__(self, app, token):
+    def __init__(self, app, token, state, lock):
         self.app, self.token = app, token.encode()
+        self.state, self.lock = state, lock
 
     async def __call__(self, scope, receive, send):
         if scope["type"] != "http":
@@ -107,6 +107,11 @@ class RequestBoundary:
             auth = [value for key, value in scope["headers"] if key.lower() == b"authorization"]
             if len(auth) != 1 or not hmac.compare_digest(auth[0], b"Bearer " + self.token):
                 return await error(401, "unauthorized", "令牌无效或缺失。", headers={"WWW-Authenticate": "Bearer"})(scope, receive, secured_send)
+        if scope["method"] == "POST" and path in INFERENCE_PATHS:
+            with self.lock:
+                paused = time.monotonic() < self.state.update_deadline
+            if paused:
+                return await error(503, "updating", "正在准备更新，请稍后重试。", headers={"Retry-After": "2"})(scope, receive, secured_send)
         limit = MAX_UPLOAD + 1024 * 1024 if path == "/v1/audio/transcriptions" else 16 * 1024
         if scope["method"] == "POST":
             try:
@@ -290,7 +295,7 @@ def create_app(settings, engine_factory=QwenEngine):
     app.state.update_deadline = 0.0
     app.state.update_lease = None
     app.add_middleware(UpdateRequestDrain, state=app.state, lock=lock)
-    app.add_middleware(RequestBoundary, token=settings.token)  # Authentication remains outermost.
+    app.add_middleware(RequestBoundary, token=settings.token, state=app.state, lock=lock)  # Authentication remains outermost.
     cancelled_updates = OrderedDict()
 
     def updating():

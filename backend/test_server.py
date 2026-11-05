@@ -288,6 +288,22 @@ async def test_update_waits_until_audio_response_is_sent(running, stream):
         await asyncio.wait_for(task, 3)
 
 
+@pytest.mark.asyncio
+async def test_update_rejects_new_bodies_after_authentication(running):
+    async def unread_body():
+        raise AssertionError("Paused inference must not consume a new upload")
+        yield b"unreachable"
+
+    async with httpx.AsyncClient(transport=httpx.ASGITransport(app=running[3]), base_url="http://test") as client:
+        assert (await client.post("/internal/update/prepare", headers=UPDATE_AUTH)).status_code == 200
+        for path in ["/v1/audio/speech", "/v1/audio/transcriptions"]:
+            assert (await client.post(path, content=unread_body())).status_code == 401
+            response = await client.post(path, headers=AUTH, content=unread_body())
+            assert response.status_code == 503
+            assert response.json()["error"]["code"] == "updating"
+            assert response.headers["retry-after"] == "2"
+
+
 def test_private_errors_and_recovery(running):
     client, engine, settings, _ = running
     engine.fail = True
