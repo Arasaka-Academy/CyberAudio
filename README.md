@@ -8,6 +8,7 @@
 - **TTS**：Qwen3-TTS 1.7B CustomVoice 8-bit，9 个预设音色，表达指令，WAV 与流式 PCM。
 - **界面**：原生 Liquid Glass 工作台，顶部切换录音／朗读模式，独立设置窗口，跟随系统浅色／深色；跨模式保留任务和停止／取消入口。
 - **生命周期**：打开 App 加载模型；仅在菜单栏显示，不显示 Dock 图标；关闭窗口后继续运行，可从菜单栏恢复主窗口；退出 App 停止 API、卸载模型。没有后台系统守护服务。
+- **更新**：Sparkle 2.10.1，每天检查稳定版并自动下载；确认重启或主动退出时安装，等待音频和 API 任务完成。首次需手动安装 0.2.0（4），详见 [自动更新与发布](docs/AUTOMATIC_UPDATES.md)。
 - **API**：保持 `/v1/audio/transcriptions`，新增 `/v1/audio/speech`，共用地址与 Bearer Token。
 
 GUI 使用 SwiftUI／AppKit／AVFoundation；模型使用 App 直接管理的 Python／MLX Audio 子进程，**不是全 Swift 模型实现**。首次安装需要下载模型与准备独立运行环境。当前 `.app` 使用本机 ad-hoc 签名，未公证，不是包含所有资源的通用分发安装包。
@@ -37,30 +38,22 @@ docs/                    部署、API、运维与验收说明
 bash scripts/build_app.sh
 ```
 
-输出 `dist/CyberAudio.app`，其中仅包含原生可执行文件和后端源文件。完整首次安装、资产下载和迁移步骤见 [部署与使用指南](docs/GUIDE.md)。
+输出 `dist/CyberAudio.app`，包含原生可执行文件、Sparkle 框架和后端源文件。完整首次安装、资产下载和迁移步骤见 [部署与使用指南](docs/GUIDE.md)。
 
-## Release DMG 与下载
+## Release 与自动更新
 
-[Release DMG 工作流](https://github.com/Arasaka-Academy/CyberAudio/actions/workflows/release-dmg.yml) 仅在 **GitHub Release 发布**（`release.published`）时运行，包括预发布版本。普通 push、PR、单独推送 tag、保存 Release 草稿或编辑已发布的 Release 均不触发。
+[GitHub Releases](https://github.com/Arasaka-Academy/CyberAudio/releases) 提供 DMG、完整 App 更新 ZIP、SHA-256 校验与签名 appcast。稳定更新地址固定为 [appcast.xml](https://arasaka-academy.github.io/CyberAudio/appcast.xml)。
 
-发布步骤：
-
-1. 更新 `packaging/Info.plist` 中的 `CFBundleShortVersionString`，并递增 `CFBundleVersion`，提交并推送。
-2. 在 GitHub 的 Releases 页面创建 Release，选择包含本工作流的提交，设置与 App 版本一致的 tag，例如 `v0.1.0`。预发布可使用 `v0.1.0-rc.1`，其 App 版本仍为 `0.1.0`。
-3. 点击 Publish release，等待 `Release DMG` 工作流完成。
-4. 打开该次工作流的 Summary，点击下载链接或底部的 Artifacts，下载并解压 `CyberAudio-v0.1.0-macOS-arm64`。
-
-产物包括 `CyberAudio-0.1.0-macOS-arm64.dmg` 和同名 `.dmg.sha256` 文件。Actions artifact 保留 90 天，下载需要登录 GitHub。解压后可运行 `shasum -a 256 -c CyberAudio-0.1.0-macOS-arm64.dmg.sha256` 校验。
-
-工作流使用 `macos-26` 的 ARM64 runner、固定 SHA 的官方 checkout／upload-artifact Actions，以及 `contents: read` 权限；从 Release tag 构建，版本不一致时失败。打包过程不下载模型。DMG 包含 App、Applications 快捷方式及部署资料；首次安装继续按指南准备 Python、FFmpeg 和模型。当前为 ad-hoc 签名包，未做 Apple 公证。
-
-也可在 Apple Silicon Mac 上本地构建同款 DMG：
+发布工作流仅由 `release.published` 触发。它从 tag 构建一次 App，产出 DMG 和 ZIP，签名并验证清单，上传并重新下载校验所有资产，最后部署 Pages 清单。预发布不进入稳定通道，旧版本不能覆盖新清单；失败时原清单继续生效。
 
 ```bash
+make check app
 make dmg
-# 指定 Release tag，并检查它与 Info.plist 的版本是否一致：
-bash scripts/build_dmg.sh v0.1.0
+# 需先配置与 App 公钥匹配的 Keychain 签名密钥：
+make update
 ```
+
+首次安装仍需准备 Python、FFmpeg 和模型。当前 App 为 ad-hoc 签名，未做 Apple 公证。密钥配置、版本规则、工作流重试及验收边界见 [自动更新与发布指南](docs/AUTOMATIC_UPDATES.md)。
 
 ## 开发检查
 

@@ -80,7 +80,7 @@ class RequestBoundary:
             await send(message)
 
         path = scope["path"]
-        if path.startswith("/v1/"):
+        if path.startswith(("/v1/", "/internal/")):
             auth = [value for key, value in scope["headers"] if key.lower() == b"authorization"]
             if len(auth) != 1 or not hmac.compare_digest(auth[0], b"Bearer " + self.token):
                 return await error(401, "unauthorized", "令牌无效或缺失。", headers={"WWW-Authenticate": "Bearer"})(scope, receive, secured_send)
@@ -264,6 +264,47 @@ def create_app(settings, engine_factory=QwenEngine):
     app = FastAPI(lifespan=lifespan, docs_url=None, redoc_url=None, openapi_url=None)
     app.add_middleware(RequestBoundary, token=settings.token)
     app.state.status, app.state.busy, app.state.engine, app.state.cancelled = "loading", False, None, None
+    app.state.update_deadline = 0.0
+    app.state.update_lease = None
+    cancelled_updates = OrderedDict()
+
+    def updating():
+        # A renewable lease prevents an abandoned update from leaving the API paused.
+        return time.monotonic() < app.state.update_deadline
+
+    def update_state():
+        return {"instance": settings.instance, "busy": app.state.busy, "updating": updating()}
+
+    def check_update_owner(request):
+        if request.headers.get("X-CyberAudio-Instance") != settings.instance:
+            raise AudioError(409, "wrong_instance", "更新请求不属于当前引擎。")
+        lease = request.headers.get("X-CyberAudio-Update", "")
+        if not lease or len(lease) > 64:
+            raise AudioError(400, "invalid_update", "更新标识无效。")
+        return lease
+
+    @app.post("/internal/update/prepare")
+    async def prepare_update(request: Request):
+        lease = check_update_owner(request)
+        with lock:
+            if lease in cancelled_updates:
+                raise AudioError(409, "update_cancelled", "这次更新等待已取消。")
+            if updating() and app.state.update_lease != lease:
+                raise AudioError(409, "update_in_progress", "已有更新正在准备。")
+            app.state.update_lease = lease
+            app.state.update_deadline = time.monotonic() + 30
+            return update_state()
+
+    @app.post("/internal/update/cancel")
+    async def cancel_update(request: Request):
+        lease = check_update_owner(request)
+        with lock:
+            cancelled_updates[lease] = True
+            while len(cancelled_updates) > 64:
+                cancelled_updates.popitem(last=False)
+            if app.state.update_lease == lease:
+                app.state.update_deadline = 0.0
+            return update_state()
 
     @app.get("/health")
     async def health():
@@ -271,8 +312,9 @@ def create_app(settings, engine_factory=QwenEngine):
 
     @app.get("/ready")
     async def ready():
-        state = app.state.status
-        return JSONResponse({"status": state, "busy": app.state.busy, "model": ASR_ID,
+        with lock:
+            state, admission = app.state.status, update_state()
+        return JSONResponse({"status": state, **admission, "model": ASR_ID,
             "application": "CyberAudio", "instance": settings.instance,
             "models": {"stt": state, "tts": state},
             "startup": getattr(app.state.engine, "metrics", {})}, status_code=200 if state == "ready" else 503)
@@ -296,6 +338,8 @@ def create_app(settings, engine_factory=QwenEngine):
 
     def acquire(kind):
         with lock:
+            if updating():
+                raise AudioError(503, "updating", "正在准备更新，请稍后重试。")
             if app.state.status != "ready":
                 raise AudioError(503, "not_ready", "模型尚未就绪。")
             if app.state.busy:
@@ -363,7 +407,7 @@ def create_app(settings, engine_factory=QwenEngine):
 
     @app.exception_handler(AudioError)
     async def audio_error(_request, exc):
-        return error(exc.status, exc.code, exc.message, headers={"Retry-After": "2"} if exc.status == 429 else {})
+        return error(exc.status, exc.code, exc.message, headers={"Retry-After": "2"} if exc.status == 429 or exc.code == "updating" else {})
 
     @app.post("/v1/audio/transcriptions")
     async def transcriptions(request: Request):

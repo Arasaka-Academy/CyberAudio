@@ -22,8 +22,19 @@ if [[ "${BASH_REMATCH[1]}" != "$app_version" ]]; then
   exit 1
 fi
 
-bash scripts/build_app.sh
+if [[ "${2:-}" != "--reuse-app" ]]; then
+  bash scripts/build_app.sh
+fi
 app="$project_root/dist/CyberAudio.app"
+python3 - "$app/Contents/Info.plist" <<'PY'
+import plistlib
+import sys
+from pathlib import Path
+source = plistlib.loads(Path("packaging/Info.plist").read_bytes())
+built = plistlib.loads(Path(sys.argv[1]).read_bytes())
+if built != source:
+    raise SystemExit("Built App Info.plist differs from release source; rebuild the App.")
+PY
 if [[ "$(lipo -archs "$app/Contents/MacOS/CyberAudio")" != "arm64" ]]; then
   printf '%s\n' 'Expected an arm64 application binary.' >&2
   exit 1

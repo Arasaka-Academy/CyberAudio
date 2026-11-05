@@ -16,6 +16,7 @@ private final class WorkspaceNavigation: ObservableObject {
 struct ContentView: View {
     @EnvironmentObject private var backend: BackendController
     @EnvironmentObject private var audio: AudioWorkspace
+    @EnvironmentObject private var updater: UpdaterController
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @StateObject private var navigation = WorkspaceNavigation()
 
@@ -38,9 +39,11 @@ struct ContentView: View {
                 .frame(maxWidth: .infinity)
             }
             .safeAreaInset(edge: .bottom, spacing: 0) {
-                if audio.working || audio.playing {
-                    ActiveAudioBar(mode: $navigation.mode).padding(.horizontal, 24).padding(.bottom, 16).padding(.top, 8)
+                VStack(spacing: 8) {
+                    if updater.gate.waiting { UpdateWaitingBar() }
+                    if audio.working || audio.playing { ActiveAudioBar(mode: $navigation.mode) }
                 }
+                .padding(.horizontal, 24).padding(.bottom, 16).padding(.top, 8)
             }
         }
         .background { WorkspaceBackground() }
@@ -59,6 +62,13 @@ struct ContentView: View {
                 .accessibilityIdentifier("workspace-mode")
             }
             ToolbarItem(placement: .primaryAction) { EngineStatus() }
+            if updater.availableVersion != nil || updater.gate.waiting {
+                ToolbarItem(placement: .primaryAction) {
+                    Button { updater.checkForUpdates() } label: { Image(systemName: "arrow.down.circle") }
+                        .help(updater.menuTitle).accessibilityLabel(updater.menuTitle)
+                        .disabled(!updater.canPerformAction)
+                }
+            }
             ToolbarItem(placement: .primaryAction) {
                 SettingsLink { Image(systemName: "gearshape") }
                     .help("设置 (⌘,)").accessibilityLabel("打开设置")
@@ -121,10 +131,10 @@ private struct TranscriptionWorkspace: View {
                                         .padding(.horizontal, 8)
                                 }
                                 .studioButton(prominent: true, tint: audio.recording ? .red : StudioStyle.accent)
-                                .disabled(!audio.recording && (!backend.ready || backend.busy || audio.working))
+                                .disabled(!audio.recording && (!backend.ready || backend.busy || audio.cannotStart))
                                 .help("开始录音／停止并识别 (⇧⌘R)")
                                 Button("导入音频…", systemImage: "square.and.arrow.down") { audio.importAudio(using: backend) }
-                                    .studioButton().disabled(!backend.ready || backend.busy || audio.working)
+                                    .studioButton().disabled(!backend.ready || backend.busy || audio.cannotStart)
                             }.controlSize(.large)
                         }.padding(.top, 6)
                     }.frame(maxWidth: .infinity, alignment: .leading)
@@ -135,7 +145,7 @@ private struct TranscriptionWorkspace: View {
                         Text("自动识别").tag("auto")
                         Text("中文").tag("zh")
                         Text("English").tag("en")
-                    }.frame(width: 200).disabled(audio.working)
+                    }.frame(width: 200).disabled(audio.cannotStart)
                     Spacer()
                     if audio.recording {
                         Label(String(format: "%02d:%02d", audio.recordingSeconds / 60, audio.recordingSeconds % 60), systemImage: "record.circle")
@@ -189,7 +199,7 @@ private struct SpeechWorkspace: View {
     private let voices = ["serena", "vivian", "uncle_fu", "ryan", "aiden", "ono_anna", "sohee", "eric", "dylan"]
 
     private var canGenerate: Bool {
-        backend.ready && !backend.busy && !audio.working && !audio.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        backend.ready && !backend.busy && !audio.cannotStart && !audio.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
             && audio.text.unicodeScalars.count <= 500 && audio.instructions.unicodeScalars.count <= 200
     }
 

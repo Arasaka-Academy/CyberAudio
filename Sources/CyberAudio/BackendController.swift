@@ -17,6 +17,12 @@ struct Readiness: Decodable {
     let startup: [String: MetricValue]?
 }
 
+private struct UpdatePreparation: Decodable {
+    let instance: String
+    let busy: Bool
+    let updating: Bool
+}
+
 enum MetricValue: Decodable {
     case number(Double), text(String)
     init(from decoder: Decoder) throws {
@@ -63,7 +69,9 @@ final class BackendController: ObservableObject {
         let index = arguments.firstIndex(of: "--data-dir")
         let override = index.flatMap { $0 + 1 < arguments.count ? arguments[$0 + 1] : nil }
             ?? ProcessInfo.processInfo.environment["CYBERAUDIO_HOME"]
-        root = override.map { URL(fileURLWithPath: $0, isDirectory: true) }
+        let updateRoot = UserDefaults.standard.string(forKey: "PendingUpdateDataDirectory")
+        UserDefaults.standard.removeObject(forKey: "PendingUpdateDataDirectory")
+        root = (override ?? updateRoot).map { URL(fileURLWithPath: $0, isDirectory: true) }
             ?? FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Application Support/CyberAudio", isDirectory: true)
         let config = URLSessionConfiguration.ephemeral
         config.timeoutIntervalForRequest = 150
@@ -204,6 +212,37 @@ final class BackendController: ObservableObject {
         child = nil
     }
     func copyToken() { NSPasteboard.general.clearContents(); NSPasteboard.general.setString(token, forType: .string) }
+
+    func preserveRootForUpdateRelaunch() {
+        // Sparkle relaunches the bundle without the original command-line arguments.
+        UserDefaults.standard.set(root.path, forKey: "PendingUpdateDataDirectory")
+    }
+
+    func prepareForUpdate(lease: String) async throws -> Bool {
+        guard running else { return true }
+        let value = try await updateControl("prepare", lease: lease)
+        guard value.updating else { throw CyberAudioError.message("引擎未进入更新准备状态。") }
+        return !value.busy
+    }
+
+    func cancelUpdatePreparation(lease: String) async {
+        guard running else { return }
+        _ = try? await updateControl("cancel", lease: lease)
+    }
+
+    private func updateControl(_ action: String, lease: String) async throws -> UpdatePreparation {
+        var request = URLRequest(url: URL(string: localURL + "/internal/update/" + action)!)
+        request.httpMethod = "POST"
+        request.timeoutInterval = 3
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.setValue(instance, forHTTPHeaderField: "X-CyberAudio-Instance")
+        request.setValue(lease, forHTTPHeaderField: "X-CyberAudio-Update")
+        let (data, response) = try await session.data(for: request)
+        try check(response, data: data)
+        let value = try JSONDecoder().decode(UpdatePreparation.self, from: data)
+        guard value.instance == instance else { throw CyberAudioError.message("更新连接不属于当前引擎。") }
+        return value
+    }
 
     func request(path: String, method: String = "GET", body: Data? = nil, contentType: String? = nil) throws -> URLRequest {
         guard ready else { throw CyberAudioError.message("模型尚未就绪。") }

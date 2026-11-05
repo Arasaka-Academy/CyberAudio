@@ -166,6 +166,80 @@ def test_stt_tts_share_one_admission_slot(running):
         assert first.result(5).status_code == 200
 
 
+UPDATE_AUTH = {**AUTH, "X-CyberAudio-Instance": "test", "X-CyberAudio-Update": "test-lease"}
+
+
+def test_update_control_requires_auth_and_owned_instance(running):
+    client, engine, _, _ = running
+    for path in ["/internal/update/prepare", "/internal/update/cancel"]:
+        assert client.post(path).status_code == 401
+        assert client.post(path, headers=AUTH).status_code == 409
+        assert client.post(path, headers={**AUTH, "X-CyberAudio-Instance": "other"}).status_code == 409
+    assert speak(client).status_code == 200
+
+
+def test_update_drains_existing_work_and_cancel_reopens_admission(running):
+    client, engine, _, _ = running
+    engine.block = True
+    with ThreadPoolExecutor(max_workers=1) as pool:
+        first = pool.submit(speak, client)
+        assert engine.started.wait(3)
+        state = client.post("/internal/update/prepare", headers=UPDATE_AUTH)
+        assert state.status_code == 200
+        assert state.json() == {"instance": "test", "busy": True, "updating": True}
+        for response in [speak(client), upload(client)]:
+            assert response.status_code == 503
+            assert response.json()["error"]["code"] == "updating"
+        engine.release.set()
+        assert first.result(5).status_code == 200
+    assert client.post("/internal/update/prepare", headers=UPDATE_AUTH).json()["busy"] is False
+    assert client.get("/ready").json()["updating"] is True
+    assert client.post("/internal/update/cancel", headers=UPDATE_AUTH).json()["updating"] is False
+    assert client.post("/internal/update/cancel", headers=UPDATE_AUTH).status_code == 200
+    assert speak(client).status_code == 200
+
+
+def test_abandoned_update_lease_expires(running, monkeypatch):
+    client, _, _, _ = running
+    assert client.post("/internal/update/prepare", headers=UPDATE_AUTH).status_code == 200
+    clock = time.monotonic()
+    monkeypatch.setattr("server.time.monotonic", lambda: clock + 31)
+    assert client.get("/ready").json()["updating"] is False
+    assert speak(client).status_code == 200
+
+
+def test_update_preparation_and_inference_are_atomically_ordered(running):
+    client, engine, _, _ = running
+    engine.block = True
+    barrier = threading.Barrier(2)
+    def start():
+        barrier.wait()
+        return speak(client)
+    def prepare():
+        barrier.wait()
+        return client.post("/internal/update/prepare", headers=UPDATE_AUTH)
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        first, preparing = pool.submit(start), pool.submit(prepare)
+        state = preparing.result(3).json()
+        assert state["updating"] is True
+        assert speak(client).status_code == 503
+        engine.release.set()
+        assert first.result(5).status_code in (200, 503)
+    assert client.post("/internal/update/prepare", headers=UPDATE_AUTH).json()["busy"] is False
+
+
+def test_cancelled_or_old_control_cannot_pause_a_new_session(running):
+    client, _, _, _ = running
+    assert client.post("/internal/update/cancel", headers=UPDATE_AUTH).status_code == 200
+    assert client.post("/internal/update/prepare", headers=UPDATE_AUTH).status_code == 409
+    newer = {**UPDATE_AUTH, "X-CyberAudio-Update": "new-lease"}
+    assert client.post("/internal/update/prepare", headers=newer).status_code == 200
+    assert client.post("/internal/update/cancel", headers=UPDATE_AUTH).status_code == 200
+    assert speak(client).status_code == 503
+    assert client.post("/internal/update/cancel", headers=newer).status_code == 200
+    assert speak(client).status_code == 200
+
+
 def test_private_errors_and_recovery(running):
     client, engine, settings, _ = running
     engine.fail = True

@@ -36,6 +36,7 @@ final class AudioWorkspace: NSObject, ObservableObject {
     @Published var playing = false
     @Published var ttsTiming = ""
     @Published var generated = Data()
+    @Published var preparingUpdate = false
     private var recorder: AVAudioRecorder?
     private var recordingURL: URL?
     private var ticker: Task<Void, Never>?
@@ -57,9 +58,10 @@ final class AudioWorkspace: NSObject, ObservableObject {
     }
 
     var working: Bool { generating || transcribing || recording || requestingMicrophone }
+    var cannotStart: Bool { working || preparingUpdate }
 
     func beginRecording() async {
-        guard !working else { return }
+        guard !cannotStart else { return }
         requestingMicrophone = true
         defer { requestingMicrophone = false }
         errorOperation = .transcription
@@ -112,7 +114,7 @@ final class AudioWorkspace: NSObject, ObservableObject {
         guard let url = recordingURL else { return }
         recordingURL = nil
         defer { try? FileManager.default.removeItem(at: url) }
-        await transcribe(url: url, using: backend)
+        await transcribe(url: url, using: backend, completingRecording: true)
     }
 
     private func startMetering() {
@@ -143,6 +145,7 @@ final class AudioWorkspace: NSObject, ObservableObject {
     }
 
     func importAudio(using backend: BackendController) {
+        guard !cannotStart else { return }
         let panel = NSOpenPanel()
         panel.allowedContentTypes = [.audio, .movie]
         panel.allowsMultipleSelection = false
@@ -153,8 +156,8 @@ final class AudioWorkspace: NSObject, ObservableObject {
         }
     }
 
-    func transcribe(url: URL, using backend: BackendController) async {
-        guard !working else { return }
+    func transcribe(url: URL, using backend: BackendController, completingRecording: Bool = false) async {
+        guard !working, !preparingUpdate || completingRecording else { return }
         stopPlayback()
         errorOperation = .transcription
         errorMessage = nil
@@ -199,7 +202,7 @@ final class AudioWorkspace: NSObject, ObservableObject {
     func cancelTranscription() { transcription?.cancel() }
 
     func generate(using backend: BackendController) {
-        guard !working else { return }
+        guard !cannotStart else { return }
         stopPlayback()
         errorOperation = .speech
         errorMessage = nil
@@ -307,6 +310,7 @@ final class AudioWorkspace: NSObject, ObservableObject {
     }
 
     func playGenerated() throws {
+        guard !preparingUpdate else { return }
         stopPlayback()
         let player = try AVAudioPlayer(data: generated)
         player.delegate = self

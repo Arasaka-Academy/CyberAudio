@@ -20,6 +20,7 @@ config = json.loads((args.root / "config/service.json").read_text())
 records = {}
 started = time.monotonic()
 busy = threading.Event()
+updating = threading.Event()
 
 
 def fixture_options():
@@ -44,9 +45,9 @@ wav = out.getvalue()
 
 class Handler(BaseHTTPRequestHandler):
     def log_message(self, *_): pass
-    def respond(self, data, headers=None):
+    def respond(self, data, headers=None, status=200):
         if isinstance(data, dict): data = json.dumps(data, ensure_ascii=False).encode()
-        self.send_response(200)
+        self.send_response(status)
         self.send_header("Content-Length", str(len(data)))
         for key, value in (headers or {"Content-Type": "application/json"}).items(): self.send_header(key, value)
         self.end_headers()
@@ -63,8 +64,17 @@ class Handler(BaseHTTPRequestHandler):
             self.respond({"status": status, "busy": busy.is_set(), "instance": args.instance, "startup": {"load_ms": 1, "warmup_ms": 1}})
 
     def do_POST(self):
-        payload = self.rfile.read(int(self.headers["Content-Length"]))
+        payload = self.rfile.read(int(self.headers.get("Content-Length", 0)))
         options = fixture_options()
+        if self.path.startswith("/internal/update/"):
+            if self.headers.get("X-CyberAudio-Instance") != args.instance:
+                return self.respond({"error": {"code": "wrong_instance", "message": "Fixture instance mismatch"}}, status=409)
+            if self.path.endswith("prepare"): updating.set()
+            else: updating.clear()
+            record({"event": "update-control", "path": self.path, "busy": busy.is_set()})
+            return self.respond({"instance": args.instance, "busy": busy.is_set(), "updating": updating.is_set()})
+        if updating.is_set():
+            return self.respond({"error": {"code": "updating", "message": "正在准备更新"}}, status=503)
         busy.set()
         value = {}
         try:
@@ -72,6 +82,8 @@ class Handler(BaseHTTPRequestHandler):
                 value = json.loads(payload)
             record({"event": "started", "path": self.path, "stream": value.get("stream"), "voice": value.get("voice")})
             time.sleep(options.get("response_delay", 0))
+            while fixture_options().get("hold", False):
+                time.sleep(0.1)
             if options.get("fail"):
                 self.send_response(500)
                 data = json.dumps({"error": {"code": "ui_fixture", "message": "界面测试：生成失败，请重试。"}}).encode()

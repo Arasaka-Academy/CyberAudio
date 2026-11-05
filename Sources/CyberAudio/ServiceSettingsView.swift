@@ -25,6 +25,7 @@ private final class LoginState: ObservableObject {
 struct ServiceSettingsView: View {
     @EnvironmentObject private var backend: BackendController
     @EnvironmentObject private var audio: AudioWorkspace
+    @EnvironmentObject private var updater: UpdaterController
     @StateObject private var login = LoginState()
 
     var body: some View {
@@ -46,12 +47,12 @@ struct ServiceSettingsView: View {
                 HStack {
                     if backend.running {
                         Button("停止引擎", systemImage: "stop.circle") { Task { await backend.stop() } }
-                            .disabled(audio.working || backend.status == "stopping")
+                            .disabled(audio.cannotStart || backend.status == "stopping")
                     } else {
-                        Button("启动引擎", systemImage: "play.circle") { backend.start() }
+                        Button("启动引擎", systemImage: "play.circle") { backend.start() }.disabled(audio.preparingUpdate)
                     }
                     Button("重启", systemImage: "arrow.clockwise") { Task { await backend.restart() } }
-                        .disabled(audio.working || backend.status == "stopping")
+                        .disabled(audio.cannotStart || backend.status == "stopping")
                 }
                 model("语音识别", name: "Qwen3-ASR 1.7B · 8-bit", revision: "a8379a2e2f9e")
                 model("语音合成", name: "Qwen3-TTS 1.7B · CustomVoice · 8-bit", revision: "41d3337e8b7f")
@@ -98,6 +99,7 @@ struct ServiceSettingsView: View {
             } footer: {
                 Text("App 仅显示在菜单栏。关闭窗口后继续运行；从菜单栏恢复主窗口，或退出 App 以停止 API 并卸载模型。")
             }
+            SoftwareUpdateSection()
             Section("数据与日志") {
                 HStack {
                     Button("打开数据目录", systemImage: "folder") { NSWorkspace.shared.open(backend.root) }
