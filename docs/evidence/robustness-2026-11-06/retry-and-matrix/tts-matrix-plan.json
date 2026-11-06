@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "purpose": "Predeclared paired TTS diagnostic; no production parameter change or quality acceptance",
+  "seeds": [196, 0, 31, 117],
+  "temperatures": [0.7, 0.9],
+  "voices": ["ono_anna", "serena", "vivian", "uncle_fu", "ryan", "aiden", "sohee", "eric", "dylan"],
+  "texts": [
+    {"id": "zh-stability", "language": "chinese", "text": "持续验证语音服务的稳定性和恢复能力。"},
+    {"id": "zh-entities", "language": "chinese", "text": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。"},
+    {"id": "en-stability", "language": "english", "text": "Verify that the speech service remains stable and recovers after an interruption."},
+    {"id": "en-entities", "language": "english", "text": "On November sixth at three in the afternoon, send file one two three four to Alice."}
+  ],
+  "expected_generations": 288,
+  "top_k": 50,
+  "top_p": 1.0,
+  "repetition_penalty": 1.05,
+  "max_tokens": 1200,
+  "streaming_interval_seconds": 0.32,
+  "total_budget_seconds": 3000,
+  "individual_budget_seconds": 120,
+  "maximum_disk_bytes": 1610612736,
+  "pairing": "Same text, voice and fixed seed; baseline 0.7 immediately followed by candidate 0.9",
+  "baseline_parity_required": "First zh-stability / ono_anna / seed 196 / temperature 0.7 must match the existing original-SDK failure tokens and PCM SHA exactly",
+  "stop_rule": "Complete all predeclared cases regardless of EOS outcome; stop only on parity failure, process error or resource/time bounds",
+  "outputs": "Full per-case token and PCM hashes, EOS, duration, wall time; original PCM remains private",
+  "quality_followup": "After this process actually terminates, transcribe every output with the unchanged ASR Helper; split outputs above 24 seconds and retain every segment. Roundtrip errors combine TTS and ASR and do not prove human listening quality",
+  "promotion_requirements": "No candidate is promoted from this diagnostic alone. Any production change must retain interface/cancellation/update checks, pass the original strict two-hour target gate and fixed corpus regression, and obtain human listening evidence"
+}

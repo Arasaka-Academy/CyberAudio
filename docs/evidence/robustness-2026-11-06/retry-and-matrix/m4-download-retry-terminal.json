@@ -1,0 +1,166 @@
+{
+  "runner": {
+    "status": "failed",
+    "started": "2026-11-06T14:06:14.639527+00:00",
+    "maximum_seconds": 3600,
+    "disk_reserve_bytes": 3221225472,
+    "scope": "One actual Assets CLI run with bounded internal range retries; retained public partials; no model inference or App install",
+    "candidate": {
+      "purpose": "Actual Assets candidate with bounded per-range retry; no inference or App installation",
+      "helper_sha256": "2bbd092507d750e9fc48da1f9b316a1526780f76e99ac741e38a3d3076caa334",
+      "source_sha256": "c2be9458a9171d129cf194e5e95a1b34d6bdcd25a78f5a55f3526cb1d75d211b",
+      "models_lock_sha256": "668125b12cc2c1b469925e1eb60c79171c6f9623470622c619e4583971f4e816",
+      "local_smoke": {
+        "prepare": "passed",
+        "status": "passed",
+        "missing_files": 23,
+        "models_ready": false,
+        "ffmpeg_ready": true
+      },
+      "files": {
+        "CyberAudioAssets": "2bbd092507d750e9fc48da1f9b316a1526780f76e99ac741e38a3d3076caa334",
+        "CyberAudioNative_CyberAudioCore.bundle/Models.lock.json": "668125b12cc2c1b469925e1eb60c79171c6f9623470622c619e4583971f4e816"
+      }
+    },
+    "runner_sha256": "552a7e3ce26b0421f8cf9881b92b6b4a1651d45fbc9c4586cca6fa02b7f3fc33",
+    "production_before": {
+      "instance": "5A940C69-D3EA-4444-8C04-446D211C319F",
+      "status": "ready",
+      "config_sha256": "cabe58f37637430abd7c610cc215083996ddf810a892ac469bd5c884a321d017",
+      "token_sha256": "aa8792163e9d9e591958a8ec4d4a5a94c9c2c470ec4e7af829c6117186fc5228"
+    },
+    "model_inference_not_run": true,
+    "elapsed_seconds": 705.6383170830086,
+    "before": {
+      "invalid_files": [],
+      "resumable_bytes": 117440512,
+      "required_bytes": 5622764634,
+      "invalid_partials": [],
+      "verified_bytes": 2469536771,
+      "ffmpeg_ready": true,
+      "models_ready": false,
+      "can_download": true,
+      "total_bytes": 5547997530,
+      "available_bytes": 15645659136,
+      "event": "status",
+      "ffmpeg_path": "/opt/homebrew/bin/ffmpeg",
+      "missing_files": 9
+    },
+    "child_pid": 66582,
+    "exit_code": 1,
+    "final_status": {
+      "ffmpeg_path": "/opt/homebrew/bin/ffmpeg",
+      "ffmpeg_ready": true,
+      "available_bytes": 15619403776,
+      "event": "status",
+      "can_download": true,
+      "invalid_partials": [],
+      "required_bytes": 5622764634,
+      "resumable_bytes": 117440512,
+      "verified_bytes": 2469536771,
+      "invalid_files": [],
+      "missing_files": 9,
+      "total_bytes": 5547997530,
+      "models_ready": false
+    },
+    "error": "Actual download did not complete",
+    "production_after": {
+      "instance": "5A940C69-D3EA-4444-8C04-446D211C319F",
+      "status": "ready",
+      "config_sha256": "cabe58f37637430abd7c610cc215083996ddf810a892ac469bd5c884a321d017",
+      "token_sha256": "aa8792163e9d9e591958a8ec4d4a5a94c9c2c470ec4e7af829c6117186fc5228"
+    },
+    "production_preserved": true,
+    "configuration_token_preserved": true,
+    "finished": "2026-11-06T14:18:00.268636+00:00"
+  },
+  "observed_at": "2026-11-06T14:22:12.438981+00:00",
+  "owned_processes_absent": true,
+  "final_files": [
+    {
+      "path": "asr/README.md",
+      "bytes": 1008,
+      "expected_bytes": 1008
+    },
+    {
+      "path": "asr/chat_template.json",
+      "bytes": 1161,
+      "expected_bytes": 1161
+    },
+    {
+      "path": "asr/config.json",
+      "bytes": 7188,
+      "expected_bytes": 7188
+    },
+    {
+      "path": "asr/generation_config.json",
+      "bytes": 142,
+      "expected_bytes": 142
+    },
+    {
+      "path": "asr/merges.txt",
+      "bytes": 1671853,
+      "expected_bytes": 1671853
+    },
+    {
+      "path": "asr/model.safetensors",
+      "bytes": 2463307541,
+      "expected_bytes": 2463307541
+    },
+    {
+      "path": "asr/model.safetensors.index.json",
+      "bytes": 78968,
+      "expected_bytes": 78968
+    },
+    {
+      "path": "asr/preprocessor_config.json",
+      "bytes": 330,
+      "expected_bytes": 330
+    },
+    {
+      "path": "asr/tokenizer_config.json",
+      "bytes": 12487,
+      "expected_bytes": 12487
+    },
+    {
+      "path": "asr/vocab.json",
+      "bytes": 2776833,
+      "expected_bytes": 2776833
+    },
+    {
+      "path": "tts/README.md",
+      "bytes": 1118,
+      "expected_bytes": 1118
+    },
+    {
+      "path": "tts/config.json",
+      "bytes": 6058,
+      "expected_bytes": 6058
+    },
+    {
+      "path": "tts/generation_config.json",
+      "bytes": 245,
+      "expected_bytes": 245
+    },
+    {
+      "path": "tts/merges.txt",
+      "bytes": 1671839,
+      "expected_bytes": 1671839
+    }
+  ],
+  "partials": [
+    {
+      "name": "tmp/downloads/b696f4bf45f54497b6de758981e76f1410bd68af05a657477dee466b0202df1a.partial",
+      "bytes": 117440512
+    }
+  ],
+  "terminal_error": {
+    "event": "error",
+    "code": "download_unavailable",
+    "message": "下载连接中断，已保留进度；请检查网络或代理后继续。"
+  },
+  "ndjson_sha256": "56c380d1de3149d150f6241384125895f5a01e6c511f807cf10b836ae0f2a80b",
+  "ndjson_lines": 16,
+  "stderr_bytes": 0,
+  "scope": "Actual one-shot per-range retry candidate failed. Preserve earlier running snapshot; final download and fresh inference gates remain unaccepted."
+}

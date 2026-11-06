@@ -1,0 +1,55 @@
+{
+  "started": "2026-11-06T14:25:18.555100+00:00",
+  "scope": "Three predeclared same-range transports through existing explicit proxy; no model download runner restart or production changes",
+  "requested_range": "117440512-125829119",
+  "cases": [
+    {
+      "transport": "curl-default",
+      "exit_code": 35,
+      "curl_metrics": "000 0 6.088932 2",
+      "response_headers": [
+        "HTTP/1.1 200 Connection established",
+        "HTTP/2 302 ",
+        "content-type: text/plain; charset=utf-8",
+        "content-length: 1052",
+        "x-cache: Miss from cloudfront",
+        "HTTP/1.1 200 Connection established"
+      ],
+      "bytes": 0,
+      "sha256": null
+    },
+    {
+      "transport": "curl-http1",
+      "exit_code": 28,
+      "curl_metrics": "206 2560202 45.001727 1.1",
+      "response_headers": [
+        "HTTP/1.1 200 Connection established",
+        "HTTP/1.1 302 Found",
+        "Content-Type: text/plain; charset=utf-8",
+        "Content-Length: 1052",
+        "X-Cache: Miss from cloudfront",
+        "HTTP/1.1 200 Connection established",
+        "HTTP/1.1 206 Partial Content",
+        "content-type: application/octet-stream",
+        "content-length: 8388608",
+        "content-range: bytes 117440512-125829119/2393308931"
+      ],
+      "bytes": 2560202,
+      "sha256": "0a7379601531f77bbb5d96c3e09f677436fdd9015c49a1998c9cd21d189054d5"
+    },
+    {
+      "elapsed_seconds": 55.185997009277344,
+      "error_code": -1001,
+      "error_domain": "NSURLErrorDomain",
+      "maximum_resource_seconds": 55,
+      "requested_range": "117440512-125829119",
+      "tls_validation": "default",
+      "transport": "URLSessionDownloadTask"
+    }
+  ],
+  "finished": "2026-11-06T14:27:08.581234+00:00",
+  "source_sha256": {
+    "NetworkRangeProbe.swift": "80e46c1219d492831ab019cd37b5c9456c6525bcafcbe534a591c4f53fed315b",
+    "run-network-range-probes.py": "45d6a1f49e57643bd125eab7f49ba7cfd86b64b9916512485f2df5ae19ca3f69"
+  }
+}

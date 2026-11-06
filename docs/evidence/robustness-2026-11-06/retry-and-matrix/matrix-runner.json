@@ -1,0 +1,34 @@
+{
+  "status": "completed",
+  "started": "2026-11-06T13:52:40.356005+00:00",
+  "scope": "Fixed 288-generation paired diagnostic, baseline 0.7/candidate 0.9; no production parameter change",
+  "production_before": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "build": {
+    "status": "built",
+    "source_sha256": "5d45ccef398eed5722ae5f8b750fea52b2f091bddb672c3f91e6333069be6019",
+    "executable_sha256": "d26d4d40ef2c917d6cc305edc175e2fece8efa51f25769b8e03ec958a11b5a23",
+    "plan_sha256": "b76a168e5838b6934df4f4ec8ab56f4f971100b3ceaf3ccbace41ac6b5232ac7",
+    "prior_build_sha256": "526aa7fdab1b8fb4060132b419026be6c39438da8cd1a4adeb5b75cb8042c014",
+    "preserved_input_sha256": {
+      "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/traced-tts-build/Modules/MLXAudioTTS.swiftmodule": "6dea2bb65c726b132aa9e6b95b7a96a68d39958eb88af177228a02b635a63e6d",
+      "/Users/zhubby/Repository/CyberAudio/dist/CyberAudio.app/Contents/Helpers/CyberAudioService": "cc556b65e263e16218db4315ed8585dccaede7b5f539be7bbd68a4b04e841a89"
+    }
+  },
+  "elapsed_seconds": 910.6815545419813,
+  "owned_group_pid": 97027,
+  "exit_code": 0,
+  "production_after": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "production_preserved": true,
+  "sdk_and_helper_preserved": true,
+  "finished": "2026-11-06T14:07:51.052633+00:00"
+}

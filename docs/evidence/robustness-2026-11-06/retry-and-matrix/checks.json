@@ -1,0 +1,40 @@
+{
+  "full_check": {
+    "command": "CYBERAUDIO_NATIVE_SCRATCH=.context/icon-native-build make check",
+    "exit_code": 0,
+    "native_contracts": 33,
+    "native_failures": 0,
+    "native_skipped": 0,
+    "active_tools_passed": 39,
+    "native_view_renders": 14,
+    "sha256": "0b7e3c46d6c38d8b664adc7f53c08b314fb3222f9c88ca3fb782ba65a01b3e4f",
+    "private_log": "/tmp/cyberaudio-download-retry-check-final-20261106.log",
+    "includes": [
+      "Preparation/update/dictation/clipboard/audio behavior",
+      "Actual App and Inference/Service/Assets compilation",
+      "Shell syntax and Info.plist validation"
+    ]
+  },
+  "download_red": {
+    "native_contracts": 32,
+    "assertions_or_errors": 5,
+    "sha256": "0414749dfd6d921a4ce547436aa522159a06312e79da917b2026fa6f27311498",
+    "failures": [
+      "FAIL /Users/zhubby/Repository/CyberAudio/Native/Tests/CyberAudioCoreTests/Runner.swift:94: transient asset interruption retries unchanged range: ServiceError(status: 502, code: \"download_unavailable\", message: \"下载中断，已保留进度；请检查网络或代理后继续。\")",
+      "FAIL /Users/zhubby/Repository/CyberAudio/Native/Tests/CyberAudioCoreTests/Runner.swift:94: temporary asset server failure recovers: ServiceError(status: 502, code: \"download_failed\", message: \"下载响应长度、范围或摘要不匹配，已保留先前进度。\")",
+      "FAIL /Users/zhubby/Repository/CyberAudio/Native/Tests/CyberAudioCoreTests/AssetDownloadTests.swift:66: Optional(\"download_failed\") != Optional(\"download_unavailable\"). ",
+      "FAIL /Users/zhubby/Repository/CyberAudio/Native/Tests/CyberAudioCoreTests/AssetDownloadTests.swift:67: [\"bytes=0-7\", \"bytes=8-15\"] != [\"bytes=0-7\", \"bytes=8-15\", \"bytes=8-15\", \"bytes=8-15\"]. Each range has at most two automatic retries",
+      "FAIL /Users/zhubby/Repository/CyberAudio/Native/Tests/CyberAudioCoreTests/AssetDownloadTests.swift:82: Expected true. A retry delay must report cancellation, not a network failure"
+    ]
+  },
+  "tail_callback_red": {
+    "exit_code": 133,
+    "sha256": "5acb12047d73585553d69497079e5d3965b922618196027c9b4f4e72d1092094",
+    "assertion": "A flushed tail on a stopped engine must explain the device interruption before its late configuration notification"
+  },
+  "tail_callback_green": {
+    "exit_code": 0,
+    "sha256": "a2ace073033f40076724bffea9ed09b839615cbd698a27d94c8a3d752fd59f1d",
+    "scope": "Real AVFoundation engine stopped; tail completion before manually posted late configuration notification; not physical unplug"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "Native/Sources/CyberAudioCore/AssetDownloader.swift": "c2be9458a9171d129cf194e5e95a1b34d6bdcd25a78f5a55f3526cb1d75d211b",
+  "Native/Tests/CyberAudioCoreTests/AssetDownloadTests.swift": "6f234f9316b152ab3fe73015da8b1fd1e854094c351430646ac17f5fbcc1e3c0",
+  "Native/Tests/CyberAudioCoreTests/Runner.swift": "539b6c125bc25a550a0df3690f3eff9dbffc2d2fec4a398df5ab374e87ddd9d8",
+  "Sources/CyberAudio/AudioWorkspace.swift": "6422cf8b58f16efbc1d23deeed14b7f4bfb16d95cb0490de9dd094d7666baafe",
+  "tests/AudioWorkflowTests.swift": "266753631e0579ff026157f8eb34bbd4708a7b7da3ddfcd161642b11536fe58d",
+  "scripts/verify_native.swift": "73b90d861ea9059db126f2874696faca284d6845318fa7eb97db0172c571c03a"
+}

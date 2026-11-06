@@ -1,0 +1,35 @@
+{
+  "status": "failed",
+  "started": "2026-11-06T14:18:16.354525+00:00",
+  "port": 18882,
+  "scope": "Current isolated App/Service/Assets; full fixed 100 corpus, formats/voices/stream/cancel/update/EOF and actual App TERM/KILL/restart; no long soak or physical acceptance",
+  "source_commit": "939050f8c16b9d4b5748fb9b262e4c185df0c32c",
+  "build_sha256": "d6163027c7e0c9951ad9314b99c89e8cfb8f80de02a6c0af078a487a5394e138",
+  "driver_sha256": "90152a026e328d0a747ae976eab798a567cd493c1edf1ce505e5a2a95852f13d",
+  "corpus_manifest_sha256": "dc67d7b52bea55f7ea6fcd0934e0460811699ad510c0befe9f938c60c84ef7eb",
+  "production_before": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "maximum_seconds": 1800,
+  "elapsed_seconds": 160.94325662503252,
+  "owned_group_pid": 15176,
+  "owned_process_identity": "15176 Fri Nov  6 22:18:16 2026     /usr/bin/caffeinate -i /Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/final-bytes-939050f/verify-native --app /Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/final-bytes-939050f/CyberAudio.app --root /Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/final-bytes-939050f/data-full --models /Users/zhubby/Repository/CyberAudio/.context/robustness/linked-models --corpus /Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/corpus --port 18882 --asr-count 100",
+  "exit_code": 0,
+  "native_report_status": "passed",
+  "error_type": "KeyError",
+  "error": "'tts'",
+  "production_after": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "production_preserved": true,
+  "frozen_preserved": true,
+  "candidate_bytes_preserved": true,
+  "owned_listener_closed": true,
+  "finished": "2026-11-06T14:20:57.312834+00:00"
+}

@@ -1,0 +1,116 @@
+{
+  "status": "failed",
+  "started": "2026-11-06T13:28:30.254235+00:00",
+  "maximum_attempts": 2,
+  "per_attempt_seconds": 3600,
+  "total_budget_seconds": 7300,
+  "scope": "Resume the actual Assets CLI on retained public partials; no model process or App installation",
+  "production_before": {
+    "instance": "5A940C69-D3EA-4444-8C04-446D211C319F",
+    "status": "ready",
+    "config_sha256": "cabe58f37637430abd7c610cc215083996ddf810a892ac469bd5c884a321d017",
+    "token_sha256": "aa8792163e9d9e591958a8ec4d4a5a94c9c2c470ec4e7af829c6117186fc5228"
+  },
+  "attempts": [
+    {
+      "number": 1,
+      "started": "2026-11-06T13:28:30.304332+00:00",
+      "before": {
+        "invalid_files": [],
+        "event": "status",
+        "total_bytes": 5547997530,
+        "invalid_partials": [],
+        "available_bytes": 15171665920,
+        "verified_bytes": 1681352,
+        "resumable_bytes": 2206203904,
+        "missing_files": 18,
+        "required_bytes": 6071855271,
+        "models_ready": false,
+        "ffmpeg_ready": true,
+        "can_download": true,
+        "ffmpeg_path": "/opt/homebrew/bin/ffmpeg"
+      },
+      "pid": 63343,
+      "exit_code": 1,
+      "elapsed_seconds": 956.815243041,
+      "after": {
+        "invalid_partials": [],
+        "ffmpeg_ready": true,
+        "total_bytes": 5547997530,
+        "required_bytes": 5656319066,
+        "ffmpeg_path": "/opt/homebrew/bin/ffmpeg",
+        "verified_bytes": 2469536771,
+        "models_ready": false,
+        "available_bytes": 13728772096,
+        "event": "status",
+        "invalid_files": [],
+        "missing_files": 9,
+        "can_download": true,
+        "resumable_bytes": 83886080
+      }
+    },
+    {
+      "number": 2,
+      "started": "2026-11-06T13:44:35.505693+00:00",
+      "before": {
+        "required_bytes": 5656319066,
+        "ffmpeg_path": "/opt/homebrew/bin/ffmpeg",
+        "resumable_bytes": 83886080,
+        "models_ready": false,
+        "verified_bytes": 2469536771,
+        "event": "status",
+        "missing_files": 9,
+        "can_download": true,
+        "ffmpeg_ready": true,
+        "invalid_partials": [],
+        "total_bytes": 5547997530,
+        "invalid_files": [],
+        "available_bytes": 13728776192
+      },
+      "pid": 64639,
+      "exit_code": 1,
+      "elapsed_seconds": 333.402144875,
+      "after": {
+        "total_bytes": 5547997530,
+        "models_ready": false,
+        "ffmpeg_ready": true,
+        "missing_files": 9,
+        "ffmpeg_path": "/opt/homebrew/bin/ffmpeg",
+        "invalid_files": [],
+        "invalid_partials": [],
+        "event": "status",
+        "resumable_bytes": 117440512,
+        "verified_bytes": 2469536771,
+        "can_download": true,
+        "required_bytes": 5622764634,
+        "available_bytes": 12604022784
+      }
+    }
+  ],
+  "elapsed_seconds": 1301.693641583,
+  "final_status": {
+    "total_bytes": 5547997530,
+    "event": "status",
+    "models_ready": false,
+    "required_bytes": 5622764634,
+    "ffmpeg_path": "/opt/homebrew/bin/ffmpeg",
+    "invalid_partials": [],
+    "invalid_files": [],
+    "missing_files": 9,
+    "verified_bytes": 2469536771,
+    "ffmpeg_ready": true,
+    "resumable_bytes": 117440512,
+    "available_bytes": 12604678144,
+    "can_download": true
+  },
+  "error": "Public assets incomplete after bounded recovery",
+  "production_after": {
+    "instance": "5A940C69-D3EA-4444-8C04-446D211C319F",
+    "status": "ready",
+    "config_sha256": "cabe58f37637430abd7c610cc215083996ddf810a892ac469bd5c884a321d017",
+    "token_sha256": "aa8792163e9d9e591958a8ec4d4a5a94c9c2c470ec4e7af829c6117186fc5228"
+  },
+  "production_preserved": true,
+  "configuration_token_preserved": true,
+  "finished": "2026-11-06T13:50:11.942490+00:00"
+}

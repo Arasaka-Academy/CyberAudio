@@ -1,0 +1,18 @@
+[
+  {
+    "name": "qwen-model.py",
+    "url": "https://raw.githubusercontent.com/QwenLM/Qwen3-TTS/main/qwen_tts/core/models/modeling_qwen3_tts.py",
+    "exit_code": 0,
+    "error": "",
+    "bytes": 100211,
+    "sha256": "25c42656bcf810f06ef6bc1839bd7083f3c8cfedac3a147c4060b4262b1c96a0"
+  },
+  {
+    "name": "mlx-qwen.py",
+    "url": "https://raw.githubusercontent.com/Blaizzy/mlx-audio/main/mlx_audio/tts/models/qwen3_tts/qwen3_tts.py",
+    "exit_code": 0,
+    "error": "",
+    "bytes": 114417,
+    "sha256": "9339599982a84cbc7f2b2bd153598997ca539b3cc1e67a0ba439bada4a5f0ba8"
+  }
+]
