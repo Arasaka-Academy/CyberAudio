@@ -1,0 +1,7 @@
+error: link command failed with exit code 1 (use -v to see invocation)
+ld: warning: Could not find or use auto-linked framework 'CoreAudioTypes': framework 'CoreAudioTypes' not found
+Undefined symbols for architecture arm64:
+  "MLXAudioTTS.Qwen3TTSSpeechTokenizer.decoder.getter : MLXAudioTTS.Qwen3TTSSpeechTokenizerDecoder", referenced from:
+      (3) suspend resume partial function for closure #1 () async throws -> () in static ReferenceDecodeProbe.ReferenceDecodeProbe.run() async throws -> () in ReferenceDecodeProbe.o
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
