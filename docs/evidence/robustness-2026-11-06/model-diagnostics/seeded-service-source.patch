@@ -1,0 +1,18 @@
+--- Native/Sources/CyberAudioInference/QwenEngine.swift
++++ PRIVATE_DIAGNOSTIC/QwenEngine.swift
+@@ -2,6 +2,7 @@
+ import Darwin
+ import CyberAudioCore
+ import MLX
++import MLXRandom
+ import MLXAudioCore
+ import MLXAudioSTT
+ import MLXAudioTTS
+@@ -72,6 +73,7 @@
+             let prompt = speech.instructions.isEmpty ? speech.voice : speech.voice+", "+speech.instructions
+             // The synchronous patched SDK method owns the decoder reset defer.
+             // No detached producer can outlive this call or release the service slot early.
++            MLXRandom.seed(196) // Private reproduction only.
+             try tts.generateManaged(text:speech.input,voice:prompt,language:speech.language,maxTokens:ModelCatalog.maxTokens,
+                 checkCancellation:{
+                     if let failure { throw failure }

@@ -1,0 +1,97 @@
+{
+  "status": "completed",
+  "started": "2026-11-06T13:35:04.695750+00:00",
+  "helper_sha256": "13379551ed4db5568c1b824794a372e8593b3afc1fec4b625c64a23da7127a13",
+  "device": "Apple M1 Max",
+  "port": 18880,
+  "scope": "Private fixed-seed-196 Helper; unchanged sampling parameters, HTTP and coordinator. Does not identify original M4 terminal cause.",
+  "maximum_requests": 1,
+  "maximum_seconds": 900,
+  "results": [
+    {
+      "http_status": 200,
+      "http_ms": 41079.64133401401,
+      "transport_error": "IncompleteRead",
+      "bytes": 4608000,
+      "output_seconds": 96.0,
+      "record": {
+        "code": "generation_limit",
+        "kind": "tts",
+        "request_id": "eaf0ada3f5964750",
+        "status": "failed"
+      },
+      "output_sha256": "5aeb4109035957d1b6627d0f76a9621aab6e8e9b6e72c4805f6963624b286b92",
+      "number": 1
+    }
+  ],
+  "production_before": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+  "production_hashes_before": {
+    "service.json": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "api-token": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "instance": "71f2a94faff04d6fa5dd92916ae950d6",
+  "startup": {
+    "application": "CyberAudio",
+    "busy": false,
+    "instance": "71f2a94faff04d6fa5dd92916ae950d6",
+    "model": "qwen3-asr-1.7b",
+    "models": {
+      "stt": "ready",
+      "tts": "ready"
+    },
+    "startup": {
+      "backend": "mlx-swift",
+      "device": "metal",
+      "load_ms": 3147.1983329975046,
+      "metal_active_bytes": 5578423720,
+      "metal_peak_bytes": 6437814276,
+      "process_peak_rss_bytes": 3913007104,
+      "verification_ms": 4622.9049999965355,
+      "warmup_ms": 9958.304167026654
+    },
+    "status": "ready",
+    "updating": false
+  },
+  "elapsed_seconds": 60.99573208304355,
+  "failure_observed": {
+    "http_status": 200,
+    "http_ms": 41079.64133401401,
+    "transport_error": "IncompleteRead",
+    "bytes": 4608000,
+    "output_seconds": 96.0,
+    "record": {
+      "code": "generation_limit",
+      "kind": "tts",
+      "request_id": "eaf0ada3f5964750",
+      "status": "failed"
+    },
+    "output_sha256": "5aeb4109035957d1b6627d0f76a9621aab6e8e9b6e72c4805f6963624b286b92",
+    "number": 1
+  },
+  "quality_observation": "request_failure_reproduced",
+  "same_instance_recovery": {
+    "http_status": 200,
+    "http_ms": 753.7746250163764,
+    "transport_error": null,
+    "bytes": 76844,
+    "output_seconds": 1.6,
+    "record": {
+      "duration": 1.6,
+      "first_audio_ms": 186.39341701054946,
+      "kind": "tts",
+      "metal_active_bytes": 5578423708,
+      "metal_peak_bytes": 6437814276,
+      "process_peak_rss_bytes": 3913007104,
+      "processing_ms": 751.7009999719448,
+      "request_id": "f7c0f629fb574742",
+      "status": "completed"
+    },
+    "output_sha256": "e44e2770792da80ae12fadde2aeec15026f07e1dba712cde7545c2e6c5facfa2"
+  },
+  "update_pause_resume": true,
+  "temporary_request_cleanup": true,
+  "owned_helper_exit_code": 0,
+  "production_and_isolated_config_token_preserved": true,
+  "production_config_token_preserved": true,
+  "finished": "2026-11-06T13:36:05.691473+00:00"
+}

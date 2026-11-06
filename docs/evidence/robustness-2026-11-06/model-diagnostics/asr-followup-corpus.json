@@ -1,0 +1,314 @@
+[
+  {
+    "id": "tts-seed-0-part-0",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-asr-followup/audio/tts-seed-0-part-0.wav",
+    "audio_sha256": "5d5dd5cb9140da6f9b7f63e64dc54df2b041cb0097435e32012cea78e84c57a8",
+    "language": "zh",
+    "source_seed": 0,
+    "source_pcm_sha256": "1f8bf810774b0fa8a10c3b212e7211c2fe8039bb6b0bdea9910b04129086619c",
+    "start_seconds": 0.0,
+    "duration_seconds": 5.44,
+    "expected_source_text": "持续验证语音服务的稳定性和恢复能力。",
+    "kind": "tts_retranscription"
+  },
+  {
+    "id": "tts-seed-31-part-0",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-asr-followup/audio/tts-seed-31-part-0.wav",
+    "audio_sha256": "495af136cc430b228948eac943815d327634f4d0a208e8dac46a8ea36ac6c3d5",
+    "language": "zh",
+    "source_seed": 31,
+    "source_pcm_sha256": "ad8e1d920dd41ed00e5d455acaac6daf47a3b7253e80ce65662d26cb168f15dd",
+    "start_seconds": 0.0,
+    "duration_seconds": 2.56,
+    "expected_source_text": "持续验证语音服务的稳定性和恢复能力。",
+    "kind": "tts_retranscription"
+  },
+  {
+    "id": "tts-seed-117-part-0",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-asr-followup/audio/tts-seed-117-part-0.wav",
+    "audio_sha256": "6844b7f12ce80cb50ae36a408351c93358856c165cdc3ff708f4a5dc5630f838",
+    "language": "zh",
+    "source_seed": 117,
+    "source_pcm_sha256": "66d7e31104c04dfbc32a51164b9f2bddef399189f31f68d00b96c222fc895efc",
+    "start_seconds": 0.0,
+    "duration_seconds": 24.0,
+    "expected_source_text": "持续验证语音服务的稳定性和恢复能力。",
+    "kind": "tts_retranscription"
+  },
+  {
+    "id": "tts-seed-117-part-1",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-asr-followup/audio/tts-seed-117-part-1.wav",
+    "audio_sha256": "12096e52affb3c7878efe3d38f36c73f88adf89b925725b1139069e01acb6c52",
+    "language": "zh",
+    "source_seed": 117,
+    "source_pcm_sha256": "66d7e31104c04dfbc32a51164b9f2bddef399189f31f68d00b96c222fc895efc",
+    "start_seconds": 24.0,
+    "duration_seconds": 24.0,
+    "expected_source_text": "持续验证语音服务的稳定性和恢复能力。",
+    "kind": "tts_retranscription"
+  },
+  {
+    "id": "tts-seed-117-part-2",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-asr-followup/audio/tts-seed-117-part-2.wav",
+    "audio_sha256": "e8ad208bd00932fdd09e819203636445140efdc278e5882d21163461d2bd8067",
+    "language": "zh",
+    "source_seed": 117,
+    "source_pcm_sha256": "66d7e31104c04dfbc32a51164b9f2bddef399189f31f68d00b96c222fc895efc",
+    "start_seconds": 48.0,
+    "duration_seconds": 24.0,
+    "expected_source_text": "持续验证语音服务的稳定性和恢复能力。",
+    "kind": "tts_retranscription"
+  },
+  {
+    "id": "tts-seed-117-part-3",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-asr-followup/audio/tts-seed-117-part-3.wav",
+    "audio_sha256": "bcc6ad7e52ca27a5d720fda50e14d44e0af87b5515405d9827099d44971ac2b9",
+    "language": "zh",
+    "source_seed": 117,
+    "source_pcm_sha256": "66d7e31104c04dfbc32a51164b9f2bddef399189f31f68d00b96c222fc895efc",
+    "start_seconds": 72.0,
+    "duration_seconds": 14.72,
+    "expected_source_text": "持续验证语音服务的稳定性和恢复能力。",
+    "kind": "tts_retranscription"
+  },
+  {
+    "id": "tts-seed-196-part-0",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-asr-followup/audio/tts-seed-196-part-0.wav",
+    "audio_sha256": "672af7b6e5dbf5d0b17255c521e2b4908f5adbc85135a8ac9241a87d49831515",
+    "language": "zh",
+    "source_seed": 196,
+    "source_pcm_sha256": "5aeb4109035957d1b6627d0f76a9621aab6e8e9b6e72c4805f6963624b286b92",
+    "start_seconds": 0.0,
+    "duration_seconds": 24.0,
+    "expected_source_text": "持续验证语音服务的稳定性和恢复能力。",
+    "kind": "tts_retranscription"
+  },
+  {
+    "id": "tts-seed-196-part-1",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-asr-followup/audio/tts-seed-196-part-1.wav",
+    "audio_sha256": "a97725e21d46ba3d5685fc1c84f7e0c4105333d9ecf695568f3eaa1c14bb5fff",
+    "language": "zh",
+    "source_seed": 196,
+    "source_pcm_sha256": "5aeb4109035957d1b6627d0f76a9621aab6e8e9b6e72c4805f6963624b286b92",
+    "start_seconds": 24.0,
+    "duration_seconds": 24.0,
+    "expected_source_text": "持续验证语音服务的稳定性和恢复能力。",
+    "kind": "tts_retranscription"
+  },
+  {
+    "id": "tts-seed-196-part-2",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-asr-followup/audio/tts-seed-196-part-2.wav",
+    "audio_sha256": "ad52b717fbe7995aa8cf78d45e9978c3a64c28ea394ad6d25e650eefcef9760e",
+    "language": "zh",
+    "source_seed": 196,
+    "source_pcm_sha256": "5aeb4109035957d1b6627d0f76a9621aab6e8e9b6e72c4805f6963624b286b92",
+    "start_seconds": 48.0,
+    "duration_seconds": 24.0,
+    "expected_source_text": "持续验证语音服务的稳定性和恢复能力。",
+    "kind": "tts_retranscription"
+  },
+  {
+    "id": "tts-seed-196-part-3",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-asr-followup/audio/tts-seed-196-part-3.wav",
+    "audio_sha256": "bd552a92737daff3865b3544f8f7b02fd868e9787555e7578dc8e6373b7107a1",
+    "language": "zh",
+    "source_seed": 196,
+    "source_pcm_sha256": "5aeb4109035957d1b6627d0f76a9621aab6e8e9b6e72c4805f6963624b286b92",
+    "start_seconds": 72.0,
+    "duration_seconds": 24.0,
+    "expected_source_text": "持续验证语音服务的稳定性和恢复能力。",
+    "kind": "tts_retranscription"
+  },
+  {
+    "id": "rms-composite-zh-002-1883-en-008-1846-clean-auto",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-mixed-rms-diagnostics/audio/rms-composite-zh-002-1883-en-008-1846-clean.wav",
+    "audio_sha256": "3a68a3b260abb871c185862d8256a7c629357369a04a959ea77407a31ddc857d",
+    "language": "auto",
+    "reference": "桥下垂直净空 15 米。该项目于 2011 年 8 月完工，但直到 2017 年 3 月才开始通车。 The aspect ratio of this format (dividing by twelve to obtain the simplest whole-number ratio) is therefore said to be 3:2.",
+    "kind": "forced_language_diagnostic"
+  },
+  {
+    "id": "rms-composite-zh-002-1883-en-008-1846-clean-zh",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-mixed-rms-diagnostics/audio/rms-composite-zh-002-1883-en-008-1846-clean.wav",
+    "audio_sha256": "3a68a3b260abb871c185862d8256a7c629357369a04a959ea77407a31ddc857d",
+    "language": "zh",
+    "reference": "桥下垂直净空 15 米。该项目于 2011 年 8 月完工，但直到 2017 年 3 月才开始通车。 The aspect ratio of this format (dividing by twelve to obtain the simplest whole-number ratio) is therefore said to be 3:2.",
+    "kind": "forced_language_diagnostic"
+  },
+  {
+    "id": "rms-composite-zh-002-1883-en-008-1846-clean-en",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-mixed-rms-diagnostics/audio/rms-composite-zh-002-1883-en-008-1846-clean.wav",
+    "audio_sha256": "3a68a3b260abb871c185862d8256a7c629357369a04a959ea77407a31ddc857d",
+    "language": "en",
+    "reference": "桥下垂直净空 15 米。该项目于 2011 年 8 月完工，但直到 2017 年 3 月才开始通车。 The aspect ratio of this format (dividing by twelve to obtain the simplest whole-number ratio) is therefore said to be 3:2.",
+    "kind": "forced_language_diagnostic"
+  },
+  {
+    "id": "rms-composite-zh-002-1883-en-008-1846-snr20-auto",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-mixed-rms-diagnostics/audio/rms-composite-zh-002-1883-en-008-1846-snr20.wav",
+    "audio_sha256": "a87fc1eba9d3e56db94404094bc14d28eb7412aa54caec9ff877fac378e9a026",
+    "language": "auto",
+    "reference": "桥下垂直净空 15 米。该项目于 2011 年 8 月完工，但直到 2017 年 3 月才开始通车。 The aspect ratio of this format (dividing by twelve to obtain the simplest whole-number ratio) is therefore said to be 3:2.",
+    "kind": "forced_language_diagnostic"
+  },
+  {
+    "id": "rms-composite-zh-002-1883-en-008-1846-snr20-zh",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-mixed-rms-diagnostics/audio/rms-composite-zh-002-1883-en-008-1846-snr20.wav",
+    "audio_sha256": "a87fc1eba9d3e56db94404094bc14d28eb7412aa54caec9ff877fac378e9a026",
+    "language": "zh",
+    "reference": "桥下垂直净空 15 米。该项目于 2011 年 8 月完工，但直到 2017 年 3 月才开始通车。 The aspect ratio of this format (dividing by twelve to obtain the simplest whole-number ratio) is therefore said to be 3:2.",
+    "kind": "forced_language_diagnostic"
+  },
+  {
+    "id": "rms-composite-zh-002-1883-en-008-1846-snr20-en",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-mixed-rms-diagnostics/audio/rms-composite-zh-002-1883-en-008-1846-snr20.wav",
+    "audio_sha256": "a87fc1eba9d3e56db94404094bc14d28eb7412aa54caec9ff877fac378e9a026",
+    "language": "en",
+    "reference": "桥下垂直净空 15 米。该项目于 2011 年 8 月完工，但直到 2017 年 3 月才开始通车。 The aspect ratio of this format (dividing by twelve to obtain the simplest whole-number ratio) is therefore said to be 3:2.",
+    "kind": "forced_language_diagnostic"
+  },
+  {
+    "id": "rms-composite-en-008-1846-zh-002-1883-clean-auto",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-mixed-rms-diagnostics/audio/rms-composite-en-008-1846-zh-002-1883-clean.wav",
+    "audio_sha256": "52199168b08dfadf5c239ba5a5a9df8cd7d125c1934331e20449ff19ce93dd1b",
+    "language": "auto",
+    "reference": "The aspect ratio of this format (dividing by twelve to obtain the simplest whole-number ratio) is therefore said to be 3:2. 桥下垂直净空 15 米。该项目于 2011 年 8 月完工，但直到 2017 年 3 月才开始通车。",
+    "kind": "forced_language_diagnostic"
+  },
+  {
+    "id": "rms-composite-en-008-1846-zh-002-1883-clean-zh",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-mixed-rms-diagnostics/audio/rms-composite-en-008-1846-zh-002-1883-clean.wav",
+    "audio_sha256": "52199168b08dfadf5c239ba5a5a9df8cd7d125c1934331e20449ff19ce93dd1b",
+    "language": "zh",
+    "reference": "The aspect ratio of this format (dividing by twelve to obtain the simplest whole-number ratio) is therefore said to be 3:2. 桥下垂直净空 15 米。该项目于 2011 年 8 月完工，但直到 2017 年 3 月才开始通车。",
+    "kind": "forced_language_diagnostic"
+  },
+  {
+    "id": "rms-composite-en-008-1846-zh-002-1883-clean-en",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-mixed-rms-diagnostics/audio/rms-composite-en-008-1846-zh-002-1883-clean.wav",
+    "audio_sha256": "52199168b08dfadf5c239ba5a5a9df8cd7d125c1934331e20449ff19ce93dd1b",
+    "language": "en",
+    "reference": "The aspect ratio of this format (dividing by twelve to obtain the simplest whole-number ratio) is therefore said to be 3:2. 桥下垂直净空 15 米。该项目于 2011 年 8 月完工，但直到 2017 年 3 月才开始通车。",
+    "kind": "forced_language_diagnostic"
+  },
+  {
+    "id": "rms-composite-en-008-1846-zh-002-1883-snr20-auto",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-mixed-rms-diagnostics/audio/rms-composite-en-008-1846-zh-002-1883-snr20.wav",
+    "audio_sha256": "2b8bd69e4863befa30fa555d3cfb69214b657ab96ca41f2f228a82cba4ae00fe",
+    "language": "auto",
+    "reference": "The aspect ratio of this format (dividing by twelve to obtain the simplest whole-number ratio) is therefore said to be 3:2. 桥下垂直净空 15 米。该项目于 2011 年 8 月完工，但直到 2017 年 3 月才开始通车。",
+    "kind": "forced_language_diagnostic"
+  },
+  {
+    "id": "rms-composite-en-008-1846-zh-002-1883-snr20-zh",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-mixed-rms-diagnostics/audio/rms-composite-en-008-1846-zh-002-1883-snr20.wav",
+    "audio_sha256": "2b8bd69e4863befa30fa555d3cfb69214b657ab96ca41f2f228a82cba4ae00fe",
+    "language": "zh",
+    "reference": "The aspect ratio of this format (dividing by twelve to obtain the simplest whole-number ratio) is therefore said to be 3:2. 桥下垂直净空 15 米。该项目于 2011 年 8 月完工，但直到 2017 年 3 月才开始通车。",
+    "kind": "forced_language_diagnostic"
+  },
+  {
+    "id": "rms-composite-en-008-1846-zh-002-1883-snr20-en",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-mixed-rms-diagnostics/audio/rms-composite-en-008-1846-zh-002-1883-snr20.wav",
+    "audio_sha256": "2b8bd69e4863befa30fa555d3cfb69214b657ab96ca41f2f228a82cba4ae00fe",
+    "language": "en",
+    "reference": "The aspect ratio of this format (dividing by twelve to obtain the simplest whole-number ratio) is therefore said to be 3:2. 桥下垂直净空 15 米。该项目于 2011 年 8 月完工，但直到 2017 年 3 月才开始通车。",
+    "kind": "forced_language_diagnostic"
+  },
+  {
+    "id": "rms-composite-zh-020-1779-en-046-1710-clean-auto",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-mixed-rms-diagnostics/audio/rms-composite-zh-020-1779-en-046-1710-clean.wav",
+    "audio_sha256": "500a6a65b851bff133099d5a82601317c6936885626a0fa34de3316c4c873bcb",
+    "language": "auto",
+    "reference": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安（Recep Tayyip Erdoğan）通话后发表了声明。 Last week, METI announced that Apple had informed it of 34 additional overheating incidents, which the company called \"non-serious.\"",
+    "kind": "forced_language_diagnostic"
+  },
+  {
+    "id": "rms-composite-zh-020-1779-en-046-1710-clean-zh",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-mixed-rms-diagnostics/audio/rms-composite-zh-020-1779-en-046-1710-clean.wav",
+    "audio_sha256": "500a6a65b851bff133099d5a82601317c6936885626a0fa34de3316c4c873bcb",
+    "language": "zh",
+    "reference": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安（Recep Tayyip Erdoğan）通话后发表了声明。 Last week, METI announced that Apple had informed it of 34 additional overheating incidents, which the company called \"non-serious.\"",
+    "kind": "forced_language_diagnostic"
+  },
+  {
+    "id": "rms-composite-zh-020-1779-en-046-1710-clean-en",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-mixed-rms-diagnostics/audio/rms-composite-zh-020-1779-en-046-1710-clean.wav",
+    "audio_sha256": "500a6a65b851bff133099d5a82601317c6936885626a0fa34de3316c4c873bcb",
+    "language": "en",
+    "reference": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安（Recep Tayyip Erdoğan）通话后发表了声明。 Last week, METI announced that Apple had informed it of 34 additional overheating incidents, which the company called \"non-serious.\"",
+    "kind": "forced_language_diagnostic"
+  },
+  {
+    "id": "rms-composite-zh-020-1779-en-046-1710-snr20-auto",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-mixed-rms-diagnostics/audio/rms-composite-zh-020-1779-en-046-1710-snr20.wav",
+    "audio_sha256": "9b899d55155c2fcbd056a43142843eef16a865b9535b33f63a7b41ea0ab130d6",
+    "language": "auto",
+    "reference": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安（Recep Tayyip Erdoğan）通话后发表了声明。 Last week, METI announced that Apple had informed it of 34 additional overheating incidents, which the company called \"non-serious.\"",
+    "kind": "forced_language_diagnostic"
+  },
+  {
+    "id": "rms-composite-zh-020-1779-en-046-1710-snr20-zh",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-mixed-rms-diagnostics/audio/rms-composite-zh-020-1779-en-046-1710-snr20.wav",
+    "audio_sha256": "9b899d55155c2fcbd056a43142843eef16a865b9535b33f63a7b41ea0ab130d6",
+    "language": "zh",
+    "reference": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安（Recep Tayyip Erdoğan）通话后发表了声明。 Last week, METI announced that Apple had informed it of 34 additional overheating incidents, which the company called \"non-serious.\"",
+    "kind": "forced_language_diagnostic"
+  },
+  {
+    "id": "rms-composite-zh-020-1779-en-046-1710-snr20-en",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-mixed-rms-diagnostics/audio/rms-composite-zh-020-1779-en-046-1710-snr20.wav",
+    "audio_sha256": "9b899d55155c2fcbd056a43142843eef16a865b9535b33f63a7b41ea0ab130d6",
+    "language": "en",
+    "reference": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安（Recep Tayyip Erdoğan）通话后发表了声明。 Last week, METI announced that Apple had informed it of 34 additional overheating incidents, which the company called \"non-serious.\"",
+    "kind": "forced_language_diagnostic"
+  },
+  {
+    "id": "rms-composite-en-046-1710-zh-020-1779-clean-auto",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-mixed-rms-diagnostics/audio/rms-composite-en-046-1710-zh-020-1779-clean.wav",
+    "audio_sha256": "6aadd74cc6b6e4935b5797d6c44bedbc23433965fa43dcc13cb45703ef858cc3",
+    "language": "auto",
+    "reference": "Last week, METI announced that Apple had informed it of 34 additional overheating incidents, which the company called \"non-serious.\" 特朗普与土耳其总统雷杰普·塔伊普·埃尔多安（Recep Tayyip Erdoğan）通话后发表了声明。",
+    "kind": "forced_language_diagnostic"
+  },
+  {
+    "id": "rms-composite-en-046-1710-zh-020-1779-clean-zh",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-mixed-rms-diagnostics/audio/rms-composite-en-046-1710-zh-020-1779-clean.wav",
+    "audio_sha256": "6aadd74cc6b6e4935b5797d6c44bedbc23433965fa43dcc13cb45703ef858cc3",
+    "language": "zh",
+    "reference": "Last week, METI announced that Apple had informed it of 34 additional overheating incidents, which the company called \"non-serious.\" 特朗普与土耳其总统雷杰普·塔伊普·埃尔多安（Recep Tayyip Erdoğan）通话后发表了声明。",
+    "kind": "forced_language_diagnostic"
+  },
+  {
+    "id": "rms-composite-en-046-1710-zh-020-1779-clean-en",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-mixed-rms-diagnostics/audio/rms-composite-en-046-1710-zh-020-1779-clean.wav",
+    "audio_sha256": "6aadd74cc6b6e4935b5797d6c44bedbc23433965fa43dcc13cb45703ef858cc3",
+    "language": "en",
+    "reference": "Last week, METI announced that Apple had informed it of 34 additional overheating incidents, which the company called \"non-serious.\" 特朗普与土耳其总统雷杰普·塔伊普·埃尔多安（Recep Tayyip Erdoğan）通话后发表了声明。",
+    "kind": "forced_language_diagnostic"
+  },
+  {
+    "id": "rms-composite-en-046-1710-zh-020-1779-snr20-auto",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-mixed-rms-diagnostics/audio/rms-composite-en-046-1710-zh-020-1779-snr20.wav",
+    "audio_sha256": "9256d36d29b4cba83251e24a6b6762a4cbaa056f4322dcbee2020af0b3a3a227",
+    "language": "auto",
+    "reference": "Last week, METI announced that Apple had informed it of 34 additional overheating incidents, which the company called \"non-serious.\" 特朗普与土耳其总统雷杰普·塔伊普·埃尔多安（Recep Tayyip Erdoğan）通话后发表了声明。",
+    "kind": "forced_language_diagnostic"
+  },
+  {
+    "id": "rms-composite-en-046-1710-zh-020-1779-snr20-zh",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-mixed-rms-diagnostics/audio/rms-composite-en-046-1710-zh-020-1779-snr20.wav",
+    "audio_sha256": "9256d36d29b4cba83251e24a6b6762a4cbaa056f4322dcbee2020af0b3a3a227",
+    "language": "zh",
+    "reference": "Last week, METI announced that Apple had informed it of 34 additional overheating incidents, which the company called \"non-serious.\" 特朗普与土耳其总统雷杰普·塔伊普·埃尔多安（Recep Tayyip Erdoğan）通话后发表了声明。",
+    "kind": "forced_language_diagnostic"
+  },
+  {
+    "id": "rms-composite-en-046-1710-zh-020-1779-snr20-en",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-mixed-rms-diagnostics/audio/rms-composite-en-046-1710-zh-020-1779-snr20.wav",
+    "audio_sha256": "9256d36d29b4cba83251e24a6b6762a4cbaa056f4322dcbee2020af0b3a3a227",
+    "language": "en",
+    "reference": "Last week, METI announced that Apple had informed it of 34 additional overheating incidents, which the company called \"non-serious.\" 特朗普与土耳其总统雷杰普·塔伊普·埃尔多安（Recep Tayyip Erdoğan）通话后发表了声明。",
+    "kind": "forced_language_diagnostic"
+  }
+]

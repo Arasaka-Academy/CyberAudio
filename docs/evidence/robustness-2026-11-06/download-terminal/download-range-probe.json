@@ -1,0 +1,25 @@
+{
+  "observed_at": "2026-11-06T13:24:32.713657+00:00",
+  "exit_code": 0,
+  "elapsed_seconds": 7.370293042011326,
+  "curl_result": "206 8388608 1",
+  "error": "",
+  "range": [
+    2206203904,
+    2214592511
+  ],
+  "expected_bytes": 8388608,
+  "received_bytes": 8388608,
+  "response_headers": [
+    "HTTP/1.1 200 Connection established",
+    "HTTP/2 302 ",
+    "content-length: 1040",
+    "HTTP/1.1 200 Connection established",
+    "HTTP/2 206 ",
+    "content-length: 8388608",
+    "content-range: bytes 2206203904-2214592511/2463307541"
+  ],
+  "proxy": "http://127.0.0.1:7890",
+  "tls_verification": true,
+  "scope": "Independent bounded public Range probe after failed Assets CLI attempts; not complete App/model download acceptance"
+}

@@ -1,0 +1,40 @@
+{
+  "observed_at": "2026-11-06T13:23:52.840380+00:00",
+  "download_runner_terminal": "2026-11-06T13:16:19.889761+00:00",
+  "production_after": {
+    "config_sha256": "cabe58f37637430abd7c610cc215083996ddf810a892ac469bd5c884a321d017",
+    "token_sha256": "aa8792163e9d9e591958a8ec4d4a5a94c9c2c470ec4e7af829c6117186fc5228",
+    "instance": "5A940C69-D3EA-4444-8C04-446D211C319F",
+    "status": "ready"
+  },
+  "production_preserved": true,
+  "fresh_configuration_token_preserved": true,
+  "durable_partials": {
+    "bf304b009cc7eca79283056f787b44c952d24ac22cec787b39732bba3c23c13c.partial": 2206203904
+  },
+  "owned_processes": [
+    {
+      "pid": 55433,
+      "absent": true
+    },
+    {
+      "pid": 55496,
+      "absent": true
+    }
+  ],
+  "asset_status": {
+    "resumable_bytes": 2206203904,
+    "ffmpeg_path": "/opt/homebrew/bin/ffmpeg",
+    "ffmpeg_ready": true,
+    "can_download": true,
+    "models_ready": false,
+    "verified_bytes": 1681352,
+    "invalid_partials": [],
+    "invalid_files": [],
+    "missing_files": 18,
+    "total_bytes": 5547997530,
+    "available_bytes": 15183593472,
+    "event": "status",
+    "required_bytes": 6071855271
+  }
+}

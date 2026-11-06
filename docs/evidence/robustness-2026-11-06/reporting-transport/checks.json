@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "implementation_commit": "83f0ec3",
+  "scope": "Only scripts/verify_native.swift and tests/test_native_validation.py; App/Helpers/models and strict acceptance criterion unchanged",
+  "red": {
+    "exit_code": 1,
+    "failed": 2,
+    "passed": 1,
+    "reason": "Both WAV 422 and interrupted PCM lose failed_request",
+    "log_sha256": "2d9a4865a1b39438d3cc4d10ce45150dcfa9e6a337192ad67ce3a2c8bf9c5082"
+  },
+  "targeted_green": {
+    "exit_code": 0,
+    "passed": 10,
+    "failed": 0,
+    "log_sha256": "05fb18cb37287354077af336a5db69f226c19128bc9e19be752fd9c7980b6a91"
+  },
+  "tool_suite": {
+    "exit_code": 0,
+    "passed": 39,
+    "failed": 0,
+    "skipped": 0,
+    "command": "rtk proxy env CYBERAUDIO_NATIVE_SCRATCH=/Users/zhubby/Repository/CyberAudio/.context/icon-native-build bash scripts/test_tools.sh",
+    "log_sha256": "fa3263b31b8a421bb4388f991f378b272011bd143e2e970b25b526b2f7db6b81"
+  },
+  "source_sha256": {
+    "scripts/verify_native.swift": "73b90d861ea9059db126f2874696faca284d6845318fa7eb97db0172c571c03a",
+    "tests/test_native_validation.py": "570bd33be9a65067f55a55c690e11a511ffa413660016c9d263cd4db92792688"
+  },
+  "runtime_helper_sha256": "cc556b65e263e16218db4315ed8585dccaede7b5f539be7bbd68a4b04e841a89",
+  "live_m4_repeat": "Remains on initial 3d59609 reporting driver; no process restart or replacement"
+}

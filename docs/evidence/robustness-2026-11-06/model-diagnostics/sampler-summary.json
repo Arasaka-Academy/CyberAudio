@@ -1,0 +1,59 @@
+{
+  "cases": [
+    {
+      "label": "baseline-untraced",
+      "raw_sampler_sha256": "ace810d7e2cbb4f8c40ce09dc8e191ae466adb4e1a7d49c59f2215b411d38b05",
+      "sampler_steps": 0
+    },
+    {
+      "label": "baseline-traced",
+      "raw_sampler_sha256": "c54df16a19b62ddc19b03b209b164edba4a394a51cf19a758f378afdf4b6876e",
+      "sampler_steps": 1200,
+      "eos_masked_steps": 0,
+      "eos_logit_changed_by_filters_steps": 0,
+      "eos_probability_minimum": 8.451044575292136e-20,
+      "eos_probability_median": 8.97859649802594e-06,
+      "eos_probability_maximum": 0.0004147413662567189,
+      "eos_probability_sum_on_observed_path": 0.022370567138809878,
+      "eos_rank_beyond_50_steps": 101
+    },
+    {
+      "label": "temperature-09",
+      "raw_sampler_sha256": "a37a582d62c5db87404f2943026288c68dd77ac5d52683429832164c43679841",
+      "sampler_steps": 84,
+      "eos_masked_steps": 0,
+      "eos_logit_changed_by_filters_steps": 0,
+      "eos_probability_minimum": 1.463440823548399e-15,
+      "eos_probability_median": 7.633754043978936e-08,
+      "eos_probability_maximum": 0.9999838474508742,
+      "eos_probability_sum_on_observed_path": 1.0024818370074167,
+      "eos_rank_beyond_50_steps": 73
+    },
+    {
+      "label": "temperature-05",
+      "raw_sampler_sha256": "31a95066ad7feba7a5d7b0d779bde7ddf9da4e41c000c6a04365e338b1204cc3",
+      "sampler_steps": 123,
+      "eos_masked_steps": 0,
+      "eos_logit_changed_by_filters_steps": 0,
+      "eos_probability_minimum": 1.98461017772964e-27,
+      "eos_probability_median": 1.764060091690622e-16,
+      "eos_probability_maximum": 0.9999977396674041,
+      "eos_probability_sum_on_observed_path": 0.999997775882594,
+      "eos_rank_beyond_50_steps": 101
+    },
+    {
+      "label": "recovery-seed-31",
+      "raw_sampler_sha256": "04e915bcf025306227eb845962a67e2813720aad32ab03fe2e4a7f233afcc6c5",
+      "sampler_steps": 33,
+      "eos_masked_steps": 0,
+      "eos_logit_changed_by_filters_steps": 0,
+      "eos_probability_minimum": 8.451044575292136e-20,
+      "eos_probability_median": 3.2389763780920128e-12,
+      "eos_probability_maximum": 0.9999999203211313,
+      "eos_probability_sum_on_observed_path": 0.9999999672858751,
+      "eos_rank_beyond_50_steps": 31
+    }
+  ],
+  "interpretation": "Sums describe conditional probabilities on the observed token path; they are not a population failure rate. Tracing matches original failure tokens/PCM exactly.",
+  "remaining_limits": "One failure seed, one short sentence and one voice. Temperature hypotheses are not qualified product changes or listening acceptance."
+}

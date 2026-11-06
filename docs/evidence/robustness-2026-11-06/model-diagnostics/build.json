@@ -1,0 +1,10 @@
+{
+  "status": "compiled",
+  "purpose": "Private EOS sampler tracing and temperature hypothesis only",
+  "production_source_modified": false,
+  "production_runtime_modified": false,
+  "original_sdk_sha256": "0fcfeaaadd8eb6bb793d985162450968fa1b4e6c8d198962a988e8e4aaa55426",
+  "diagnostic_sdk_sha256": "4e42dd7f529d2ca3dc36866a65532718a8217dbcadbe20d330476dc905e76f23",
+  "original_sdk_object_sha256": "38f453dab684b473b6e4410681e6bff30d4f6c9b746b767fc9b359d1206d41c1",
+  "raw_build_receipt_sha256": "968185b893ad42595edeefe4d8bd7d3ddcf28ab1c5cd99ddc74ff24f85062787"
+}

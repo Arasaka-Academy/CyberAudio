@@ -1,0 +1,35 @@
+[
+  {
+    "id": "temperature-09",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-tts-temperature-roundtrip/audio/temperature-09.wav",
+    "audio_sha256": "bff4a5ef1c653102cf5633c81019e2a8b71d5cd25c2f5ff1a34b077941d32780",
+    "language": "zh",
+    "source_seed": 196,
+    "temperature": 0.8999999761581421,
+    "source_pcm_sha256": "36438574dbe45f4e6170525463ff2bdb01213df057ee443e4c732182d99aa1bf",
+    "expected_source_text": "持续验证语音服务的稳定性和恢复能力。",
+    "kind": "tts_retranscription"
+  },
+  {
+    "id": "temperature-05",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-tts-temperature-roundtrip/audio/temperature-05.wav",
+    "audio_sha256": "7bb1c1d20a0d35dd87a4fdd8feeeb7858f5694fd5bd8603dde8d80eb5f8d844a",
+    "language": "zh",
+    "source_seed": 196,
+    "temperature": 0.5,
+    "source_pcm_sha256": "ecb6caf339f4871f35c66fd07c31fb97dce9296de478e4059508bdc4a53d50b9",
+    "expected_source_text": "持续验证语音服务的稳定性和恢复能力。",
+    "kind": "tts_retranscription"
+  },
+  {
+    "id": "recovery-seed-31",
+    "audio": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-tts-temperature-roundtrip/audio/recovery-seed-31.wav",
+    "audio_sha256": "495af136cc430b228948eac943815d327634f4d0a208e8dac46a8ea36ac6c3d5",
+    "language": "zh",
+    "source_seed": 31,
+    "temperature": 0.699999988079071,
+    "source_pcm_sha256": "ad8e1d920dd41ed00e5d455acaac6daf47a3b7253e80ce65662d26cb168f15dd",
+    "expected_source_text": "持续验证语音服务的稳定性和恢复能力。",
+    "kind": "tts_retranscription"
+  }
+]

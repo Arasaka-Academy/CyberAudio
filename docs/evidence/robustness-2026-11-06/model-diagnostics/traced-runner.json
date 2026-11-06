@@ -1,0 +1,26 @@
+{
+  "status": "completed",
+  "started": "2026-11-06T13:25:28.482239+00:00",
+  "production_before": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "build": {
+    "status": "built",
+    "executable_sha256": "43d46c66874a1560890926099450cb8433a0fd4a92d151fa920018b7f7ce1e83",
+    "source_sha256": "51616916bdb89dfe0b1b1830a0dd3b8080ca25df1c05ec9f84c844bca3877788",
+    "sdk_build_sha256": "968185b893ad42595edeefe4d8bd7d3ddcf28ab1c5cd99ddc74ff24f85062787"
+  },
+  "scope": "Private tracing and temperature hypotheses; production model parameters unchanged",
+  "owned_group_pid": 88375,
+  "exit_code": 0,
+  "production_after": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "production_preserved": true,
+  "elapsed_seconds": 94.14991516701411,
+  "finished": "2026-11-06T13:27:02.650906+00:00"
+}

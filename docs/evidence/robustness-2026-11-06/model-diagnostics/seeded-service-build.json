@@ -1,0 +1,9 @@
+{
+  "status": "built",
+  "scope": "Diagnostic Helper only: fixed seed 196 before each TTS request; parameters/HTTP/coordinator unchanged",
+  "executable_sha256": "13379551ed4db5568c1b824794a372e8593b3afc1fec4b625c64a23da7127a13",
+  "source_sha256": "523a02341555003ebe73d555fb73f085ba868993c407ae92b50f9f37d4453054",
+  "original_source_sha256": "9957c2654ac1781710857782412b0213be7ee66c8c5c33c6e4b2c290aeb659f0",
+  "original_object_sha256": "7b28dbc63ca7fed5819bb41b4238281404a870b5b6cebc78262c547f467385d7",
+  "original_sdk_object_sha256": "38f453dab684b473b6e4410681e6bff30d4f6c9b746b767fc9b359d1206d41c1"
+}

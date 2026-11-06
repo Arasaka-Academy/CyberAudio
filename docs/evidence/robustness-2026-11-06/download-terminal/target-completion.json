@@ -1,0 +1,143 @@
+{
+  "status": "failed",
+  "started": "2026-11-06T11:54:32.630944+00:00",
+  "source_commit": "e2f34df30eab49e526a3dfd2fa7d6fffbfb81d0b",
+  "stage": "resume_public_download",
+  "maximum_additional_download_attempts": 3,
+  "per_attempt_budget_seconds": 3600,
+  "total_runner_budget_seconds": 18000,
+  "attempts": [
+    {
+      "number": 1,
+      "status_before": {
+        "models_ready": false,
+        "can_download": true,
+        "ffmpeg_path": "/opt/homebrew/bin/ffmpeg",
+        "ffmpeg_ready": true,
+        "resumable_bytes": 771751936,
+        "available_bytes": 17130631168,
+        "total_bytes": 5547997530,
+        "invalid_files": [],
+        "invalid_partials": [],
+        "required_bytes": 7506307239,
+        "missing_files": 18,
+        "verified_bytes": 1681352,
+        "event": "status"
+      },
+      "started": "2026-11-06T12:33:59.462070+00:00",
+      "exit_code": 1,
+      "elapsed_seconds": 2237.8263555000003,
+      "log": "download-continued-1.ndjson",
+      "durable_partials": {
+        "bf304b009cc7eca79283056f787b44c952d24ac22cec787b39732bba3c23c13c.partial": 2080374784
+      }
+    },
+    {
+      "number": 2,
+      "status_before": {
+        "total_bytes": 5547997530,
+        "invalid_files": [],
+        "available_bytes": 15313055744,
+        "invalid_partials": [],
+        "can_download": true,
+        "verified_bytes": 1681352,
+        "event": "status",
+        "required_bytes": 6197684391,
+        "ffmpeg_path": "/opt/homebrew/bin/ffmpeg",
+        "ffmpeg_ready": true,
+        "missing_files": 18,
+        "resumable_bytes": 2080374784,
+        "models_ready": false
+      },
+      "started": "2026-11-06T13:11:17.339872+00:00",
+      "exit_code": 1,
+      "elapsed_seconds": 1.0529424579999613,
+      "log": "download-continued-2.ndjson",
+      "durable_partials": {
+        "bf304b009cc7eca79283056f787b44c952d24ac22cec787b39732bba3c23c13c.partial": 2080374784
+      }
+    },
+    {
+      "number": 3,
+      "status_before": {
+        "resumable_bytes": 2080374784,
+        "ffmpeg_path": "/opt/homebrew/bin/ffmpeg",
+        "models_ready": false,
+        "missing_files": 18,
+        "invalid_files": [],
+        "total_bytes": 5547997530,
+        "available_bytes": 15313035264,
+        "required_bytes": 6197684391,
+        "invalid_partials": [],
+        "can_download": true,
+        "event": "status",
+        "ffmpeg_ready": true,
+        "verified_bytes": 1681352
+      },
+      "started": "2026-11-06T13:11:18.470851+00:00",
+      "exit_code": 1,
+      "elapsed_seconds": 301.386161333,
+      "log": "download-continued-3.ndjson",
+      "durable_partials": {
+        "bf304b009cc7eca79283056f787b44c952d24ac22cec787b39732bba3c23c13c.partial": 2206203904
+      }
+    }
+  ],
+  "first_wrapper_terminal_status_normalized_without_changing_raw_receipt": true,
+  "production_before": {
+    "config_sha256": "cabe58f37637430abd7c610cc215083996ddf810a892ac469bd5c884a321d017",
+    "token_sha256": "aa8792163e9d9e591958a8ec4d4a5a94c9c2c470ec4e7af829c6117186fc5228",
+    "instance": "5A940C69-D3EA-4444-8C04-446D211C319F",
+    "status": "ready"
+  },
+  "fresh_config_sha256": "72d142652bbf3e9a52305e800483199c26ba5bdf951ba9ff4486b2bcb088a6b4",
+  "fresh_token_sha256": "847ce6f558520ecb5840c9f470aec4a03f0f0a53a07bb34ef63a3fcf4e564481",
+  "elapsed_seconds": 4907.277716167,
+  "durable_partial_bytes": 771751936,
+  "original_download_terminal": {
+    "status": "running",
+    "finished": "2026-11-06T12:33:57.063501+00:00",
+    "error": "Public download still failed after bounded retries",
+    "cancel_exit_code": 130,
+    "retained_partials_after_cancel": {
+      "bf304b009cc7eca79283056f787b44c952d24ac22cec787b39732bba3c23c13c.partial": 8388608
+    },
+    "attempts": [
+      {
+        "name": "download-resume-1",
+        "exit_code": 1,
+        "elapsed_seconds": 1891.343546334,
+        "remaining_partials": {
+          "bf304b009cc7eca79283056f787b44c952d24ac22cec787b39732bba3c23c13c.partial": 427819008
+        }
+      },
+      {
+        "name": "download-resume-2",
+        "exit_code": 1,
+        "elapsed_seconds": 87.64815958400004,
+        "remaining_partials": {
+          "bf304b009cc7eca79283056f787b44c952d24ac22cec787b39732bba3c23c13c.partial": 452984832
+        }
+      },
+      {
+        "name": "download-resume-3",
+        "exit_code": 1,
+        "elapsed_seconds": 368.62275950000026,
+        "remaining_partials": {
+          "bf304b009cc7eca79283056f787b44c952d24ac22cec787b39732bba3c23c13c.partial": 553648128
+        }
+      },
+      {
+        "name": "download-resume-4",
+        "exit_code": 1,
+        "elapsed_seconds": 602.6683415000002,
+        "remaining_partials": {
+          "bf304b009cc7eca79283056f787b44c952d24ac22cec787b39732bba3c23c13c.partial": 771751936
+        }
+      }
+    ]
+  },
+  "error_type": "AssertionError",
+  "error": "Complete public assets not ready after bounded retries",
+  "finished": "2026-11-06T13:16:19.889761+00:00"
+}

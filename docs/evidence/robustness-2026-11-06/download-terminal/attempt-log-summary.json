@@ -1,0 +1,77 @@
+[
+  {
+    "file": "download-continued-1.ndjson",
+    "sha256": "fc6ce372b228e49df4541d26dff3423d5c02166b3dfa5d88f15d5232d9afc04f",
+    "last_events": [
+      {
+        "completed_bytes": 2073667528,
+        "total_bytes": 5547997530,
+        "path": "asr/model.safetensors",
+        "event": "progress",
+        "phase": "downloading"
+      },
+      {
+        "completed_bytes": 2082056136,
+        "total_bytes": 5547997530,
+        "path": "asr/model.safetensors",
+        "event": "progress",
+        "phase": "downloading"
+      },
+      {
+        "code": "download_unavailable",
+        "message": "下载中断，已保留进度；请检查网络或代理后继续。",
+        "event": "error"
+      }
+    ]
+  },
+  {
+    "file": "download-continued-2.ndjson",
+    "sha256": "44f9660418b855ee9f0140668e59cec3c80aa9b7a03005cb16121861e2cdf25e",
+    "last_events": [
+      {
+        "event": "progress",
+        "phase": "downloading",
+        "completed_bytes": 1681352,
+        "path": "asr/merges.txt",
+        "total_bytes": 5547997530
+      },
+      {
+        "event": "progress",
+        "phase": "downloading",
+        "completed_bytes": 2082056136,
+        "path": "asr/model.safetensors",
+        "total_bytes": 5547997530
+      },
+      {
+        "message": "下载中断，已保留进度；请检查网络或代理后继续。",
+        "code": "download_unavailable",
+        "event": "error"
+      }
+    ]
+  },
+  {
+    "file": "download-continued-3.ndjson",
+    "sha256": "6e964cf88c62277dd7ceaba6b447c4a108c9e2fafeb9763e3e8770ccb56378d3",
+    "last_events": [
+      {
+        "total_bytes": 5547997530,
+        "completed_bytes": 2199496648,
+        "event": "progress",
+        "path": "asr/model.safetensors",
+        "phase": "downloading"
+      },
+      {
+        "total_bytes": 5547997530,
+        "completed_bytes": 2207885256,
+        "event": "progress",
+        "path": "asr/model.safetensors",
+        "phase": "downloading"
+      },
+      {
+        "message": "下载中断，已保留进度；请检查网络或代理后继续。",
+        "code": "download_unavailable",
+        "event": "error"
+      }
+    ]
+  }
+]
