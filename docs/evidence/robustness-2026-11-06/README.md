@@ -6,8 +6,8 @@
 
 | 文件 | 含义 |
 |---|---|
-| [checks.json](checks.json) | 最新完整 `make check`：28 项原生契约，29 项现役工具测试，14 个原生渲染，行为回归和实际推理 Helper 编译；工作流／entitlement／空白检查 |
-| [build.json](build.json) | 当前设备、源码提交、正式 App 与两个 Helper／Metal 的大小和 SHA；明确本地 ad-hoc、未公证、未交付 |
+| [checks.json](checks.json) | R1–R7 阶段完整 `make check`：28 项原生契约，29 项现役工具测试，14 个原生渲染，行为回归和实际推理 Helper 编译；工作流／entitlement／空白检查 |
+| [build.json](build.json) | R1–R7 阶段设备、源码提交、本地 App 与两个 Helper／Metal 的大小和 SHA；明确本地 ad-hoc、未公证、未交付 |
 | [source-sha256.json](source-sha256.json) | 本轮本仓库 App、Native、测试、工具、打包、锁文件与工作流的内容快照；不含下载的上游源码 |
 | [native-service.json](native-service.json) | 最终真实模型／离线服务／格式／音色／断流／退出重启验收 |
 | [synthetic-corpus.json](synthetic-corpus.json) | 本轮系统 `say` 中英文输入来源、参考文本及音频 SHA；原始录音为合成语音 |
@@ -17,12 +17,13 @@
 | [corpus-availability.json](corpus-availability.json) | 固定真人语料的本地缺失和两条固定数据源连接超时记录 |
 | [first-run-light.png](first-run-light.png)、[first-run-dark.png](first-run-dark.png) | 受控准备状态在 560 × 440 pt 下的实际原生离屏渲染 |
 | [package.json](package.json) | 本地 DMG 生成后的外部验收回执：映像／SHA、只读挂载、App 嵌套签名和指定文档／二进制逐字节检查 |
+| [playback-recovery/README.md](playback-recovery/README.md) | R8 设备中断续审的独立回归、源码快照与后续构建证据；上列历史回执未被替换 |
 
 完整原始记录保留在开发工作区 `.context/robustness/`，原始检查日志在 `/tmp/cyberaudio-robustness-*.log`，不会作为分发材料上传。
 
 ## 实际服务
 
-硬件为 Apple M1 Max／32GiB，macOS 27.0.1。使用最终本地 App 的 Service，SHA 在 `build.json`、`development-signing.json` 与 `native-service.json` 中一致。测试 App 采用独立 bundle ID、数据目录和 18865 端口，前后确认 8765 正式服务实例身份一致。
+硬件为 Apple M1 Max／32GiB，macOS 27.0.1。使用 R1–R7 阶段本地 App 的 Service，SHA 在 `build.json`、`development-signing.json` 与 `native-service.json` 中一致。测试 App 采用独立 bundle ID、数据目录和 18865 端口，前后确认 8765 正式服务实例身份一致。
 
 验收包含 23 个模型资产与 tokenizer 校验、禁止主动出站网络、单所有者锁、中英文各八种输入格式、九音色 24kHz／单声道／PCM16 WAV、完整 PCM、三次断流取消与恢复、更新租约暂停／恢复、stdin EOF，以及真实 App 在活动推理中收到 TERM／KILL 后的子进程回收与重启。
 

@@ -90,6 +90,18 @@ Files: isolated verification drivers, regression tests, acceptance report.
 - [x] Review the final changed tree, run complete checks and package validation, and record every accepted requirement and remaining gate above.
 - [ ] Mark the overall user goal complete only after the remaining required interactive, credential and target-device acceptance is actually performed.
 
+## 9. Playback recovery — additional review finding 8
+
+Files: `Sources/CyberAudio/AudioWorkspace.swift`, `tests/AudioWorkflowTests.swift`.
+
+- [x] Reproduce stopped PCM playback retaining `playing` after an output configuration notification using the real AVFoundation engine and native HTTP fixture.
+- [x] Observe only the current engine, hand off asynchronously from the audio thread, and remove the observer before stopping. Ignore stale queued engine/player callbacks.
+- [x] Cancel partial generation without releasing update admission before the task/HTTP response drains; preserve a completed WAV for replay/export.
+- [x] Handle current-player decoding and unsuccessful-completion errors; successful replay clears speech errors while retaining unrelated transcription errors.
+- [x] Pass the integration regression for active/completed interruptions, retry, stale events, failure callbacks, and actual service update lease recovery.
+- [x] Run complete checks, review observer/cancellation ownership, and record a separate new source/build/package snapshot while preserving the R1–R7 evidence.
+- [ ] Perform physical output-device unplug/replug and sleep recovery in an unlocked interactive desktop session. Controlled notifications are not physical acceptance.
+
 ## Evidence log
 
 - Starting point: clean `main@96210dd`; development branch `codex/robustness`.
@@ -111,3 +123,7 @@ Files: isolated verification drivers, regression tests, acceptance report.
 - Ten-minute actual-model mixed load passed on one instance: 602.69 seconds, 210 STT, 210 complete TTS, 42 disconnect/cancellation recovery rounds, 21 update pause/resume rounds. Metal active bytes first/last 5,578,423,756 / 5,578,423,828, maximum 5,581,437,472; no cumulative growth observed in this window. Actual `tmp` contains no request directories after completion. EOF stop 152ms; production instance preserved. `docs/evidence/robustness-2026-11-06/soak.json`.
 - Local DMG `CyberAudio-0.4.3-robustness.local-macOS-arm64.dmg` built without replacing an existing release artifact. Image and SHA checks passed; a read-only mount verified nested signatures, exact App/Helper/Metal bytes and bundled preparation/signing/review/evidence documents, then detached. `docs/evidence/robustness-2026-11-06/package.json`. This is an ad-hoc, unnotarized local artifact, not an installed or published release.
 - Local implementation commits: `0cf9e40` runtime/review fixes, `7fb6b75` recoverable first-run preparation, `b730c64` certificate signing/notarization. Final sequential review and a 96-file source-content snapshot are retained with the evidence.
+- Additional playback recovery regression failed before the fix with “A stopped PCM engine must not remain marked as playing after a route change” (exit 133), then passed using the current AVFoundation objects and actual fixture HTTP update lease. Logs: `/tmp/cyberaudio-device-recovery-red.log` and `/tmp/cyberaudio-device-recovery-green.log`. Physical audio acceptance remains pending.
+- Playback recovery fix committed locally as `e2f34df`. Complete checks passed again: 28 native contracts, 29 active tool tests, 14 native renders, all behavioral groups, actual helper/App compilation, workflow lint and entitlements. `/tmp/cyberaudio-device-recovery-check.log`.
+- The new App passed strict nested ad-hoc verification and bundled Assets smoke. Service, Assets, Metal and Info.plist hashes match the previous actual-model acceptance artifacts; the main App binary changed. Previous App archived with five verified component hashes; previous DMG retained.
+- New local `CyberAudio-0.4.3-robustness.playback-macOS-arm64.dmg`: 108,027,599 bytes; SHA-256 `de4589039a1c42922e5cb12909804fdae1faad4cb3ddf88dfbf1bbc3c36699d7`. Image/sidecar checks, read-only mounting, nested signatures, component bytes and 12 documentation/evidence files passed; volume detached. Separate checks/source/build/external package receipts are in `docs/evidence/robustness-2026-11-06/playback-recovery/`.

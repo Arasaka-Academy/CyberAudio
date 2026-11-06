@@ -1,0 +1,92 @@
+{
+  "command": "make check",
+  "status": "passed",
+  "exit_code": 0,
+  "native_contracts": {
+    "cases": 28,
+    "failed": 0,
+    "skipped": 0
+  },
+  "python_tool_tests": 29,
+  "native_renders": {
+    "workspace": 7,
+    "settings": 3,
+    "preparation": 4
+  },
+  "behavioral_groups": [
+    "preparation helper lifecycle and bounded output",
+    "update gate (4 scenarios)",
+    "Core ML evidence tools (11 scenarios)",
+    "dictation gestures",
+    "shortcut recording",
+    "overlay lifecycle",
+    "text insertion and clipboard",
+    "microphone permission and stale results",
+    "native HTTP / AVFoundation audio workflow including replay, device interruption, stale events, decoding failure, update drain and recovery"
+  ],
+  "compiled": [
+    "release App",
+    "real ASR/TTS Service",
+    "Assets helper",
+    "opt-in real inference test driver"
+  ],
+  "syntax_checks": [
+    "shell scripts",
+    "packaging/Info.plist",
+    "packaging/App.entitlements",
+    "both GitHub workflows via actionlint"
+  ],
+  "diff_whitespace": "passed",
+  "log_sha256": "21b3c6eec85e2e15cd7e8ae23cdcc12cb1ea69f6b0ec3a1df2f8e9ad612c11aa",
+  "remote_ci": {
+    "status": "not_run",
+    "reason": "local development branch has not been pushed"
+  },
+  "known_build_warnings": [
+    "SwiftPM native build-system deprecation",
+    "SwiftPM skip-update deprecation",
+    "upstream README resources not declared"
+  ],
+  "recorded": "2026-11-06T11:00:31.709496+00:00",
+  "review_finding": "R8",
+  "runtime_fix_commit": "e2f34df30eab49e526a3dfd2fa7d6fffbfb81d0b",
+  "source_manifest_sha256": "5938df3e09bb3507c46d2544338d47988bb75ba1d47bfbb1c90b7300b67b21a8",
+  "changed_source_paths_from_R1_R7_snapshot": [
+    "Sources/CyberAudio/AudioWorkspace.swift",
+    "tests/AudioWorkflowTests.swift"
+  ],
+  "regression_before_fix": {
+    "status": "failed_as_expected",
+    "exit_code": 133,
+    "assertion": "A stopped PCM engine must not remain marked as playing after a route change",
+    "log_sha256": "c5563e8fa6326c88d73da2d5aaee1620fb04ed9a7973600f35e3499f6ffefa33"
+  },
+  "targeted_after_fix": {
+    "status": "passed",
+    "exit_code": 0,
+    "log_sha256": "db4f1b93aaa3fa0de9201a519868102587774d8c8ff9074d8b18cc4a5a9da94e"
+  },
+  "playback_recovery_scenarios": [
+    "active PCM engine interruption cancels partial generation",
+    "update waits for task and HTTP drain and resumes its real lease",
+    "completed WAV survives output configuration change",
+    "queued old-engine configuration notifications cannot cancel replay",
+    "old-player decoding and failure callbacks are ignored",
+    "current-player decoding and unsuccessful completion release ownership",
+    "successful replay clears speech error and preserves transcription error"
+  ],
+  "manual_source_review": {
+    "status": "no_remaining_confirmed_findings_in_changed_scope",
+    "checks": [
+      "weak notification captures and observer teardown",
+      "audio thread does not wait synchronously for MainActor",
+      "current engine and player identity guards",
+      "cancelled stream cannot publish completed WAV",
+      "generation ownership retained until task exit",
+      "completed audio and unrelated errors retained"
+    ]
+  },
+  "evidence_kind": "real AVFoundation and native HTTP fixture with controlled configuration notification",
+  "physical_audio_route_switch": "not_performed",
+  "desktop_locked": true
+}
