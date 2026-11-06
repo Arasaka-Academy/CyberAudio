@@ -1,0 +1,52 @@
+{
+  "preliminary": {
+    "status": "completed",
+    "started": "2026-11-06T15:01:49.446329+00:00",
+    "scope": "Six fixed paired subtalker cases, original main temperature unchanged; no production promotion",
+    "production_before": {
+      "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+      "status": "ready",
+      "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+      "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+    },
+    "elapsed_seconds": 109.18742762500187,
+    "owned_group_pid": 44259,
+    "owned_identity": "44259 Fri Nov  6 23:01:49 2026     /usr/bin/caffeinate -i /usr/bin/sandbox-exec -f /Users/zhubby/Repository/CyberAudio/dist/CyberAudio.app/Contents/Resources/offline.sb /Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/subtalker-build/subtalker-probe /Users/zhubby/Library/Application Support/CyberAudio/models/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit /Users/zhubby/Repository/CyberAudio/dist/CyberAudio.app/Contents/Resources/mlx.metallib /Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-subtalker-probe /Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/subtalker-plan.json /Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-seeded-tts-probe/report.json",
+    "exit_code": 0,
+    "production_after": {
+      "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+      "status": "ready",
+      "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+      "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+    },
+    "production_preserved": true,
+    "sdk_and_helpers_preserved": true,
+    "finished": "2026-11-06T15:03:38.652032+00:00",
+    "full_private_receipt_sha256": "12d26ba1892fad56adfc115e3b41c1dde566f37cfe3d013875320e29b7f6bbb7"
+  },
+  "matrix": {
+    "status": "completed",
+    "started": "2026-11-06T15:06:35.702195+00:00",
+    "scope": "All 144 independent-subtalker candidates; retained original baselines; no production parameter change",
+    "production_before": {
+      "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+      "status": "ready",
+      "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+      "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+    },
+    "elapsed_seconds": 411.64642041601473,
+    "owned_group_pid": 51720,
+    "owned_identity": "51720 Fri Nov  6 23:06:35 2026     /usr/bin/sandbox-exec -f /Users/zhubby/Repository/CyberAudio/dist/CyberAudio.app/Contents/Resources/offline.sb /Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/subtalker-matrix-build/subtalker-matrix-probe /Users/zhubby/Library/Application Support/CyberAudio/models/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit /Users/zhubby/Repository/CyberAudio/dist/CyberAudio.app/Contents/Resources/mlx.metallib /Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-subtalker-matrix /Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/subtalker-matrix-plan.json /Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-seeded-tts-probe/report.json /Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-subtalker-probe/report.json",
+    "exit_code": 0,
+    "production_after": {
+      "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+      "status": "ready",
+      "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+      "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+    },
+    "production_preserved": true,
+    "sdk_and_helper_preserved": true,
+    "finished": "2026-11-06T15:13:27.364439+00:00",
+    "full_private_receipt_sha256": "90c53ba9c5e8e37091e72a94e22a4d375e098fc8354cf2782204a899acdb5561"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "exit_code": 0,
+  "elapsed_seconds": 238.41795404203003,
+  "log": "/tmp/cyberaudio-language-routing-check-20261106.log",
+  "status": "passed",
+  "log_sha256": "c32287313a0bce24cf93b26a8b2d2e0bf81ff4a3706b3b3232caf0118816f65a",
+  "native_contracts": 36,
+  "native_failures": 0,
+  "native_skipped": 0,
+  "tool_tests": 40,
+  "tool_failures": 0,
+  "tool_skipped": 0,
+  "native_view_renders": 14,
+  "targeted_adapter_tests": {
+    "passed": 4,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 4.4
+  },
+  "scope": "Full make check, actual App/Inference/Service/Assets compilation, behavior groups, shell and plist"
+}

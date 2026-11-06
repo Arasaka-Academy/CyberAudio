@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "phase": "link_input_validation",
+  "exit_code": 1,
+  "error": "Existence validation treated quoted paths with spaces as literal paths; private SDK and probe compilation succeeded; no inference was launched",
+  "correction": "Parse each object line with shlex for validation, preserving original linker quoting",
+  "production_source_modified": false
+}

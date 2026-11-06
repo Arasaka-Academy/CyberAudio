@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "purpose": "Four deterministic language-routing boundary probes; compare English and Chinese requests for dialect voices at identical text/seed, without changing production",
+  "seeds": [
+    31
+  ],
+  "temperatures": [
+    0.7
+  ],
+  "voices": [
+    "eric",
+    "dylan"
+  ],
+  "texts": [
+    {
+      "id": "digits-english",
+      "language": "english",
+      "text": "1234"
+    },
+    {
+      "id": "digits-chinese",
+      "language": "chinese",
+      "text": "1234"
+    }
+  ],
+  "expected_generations": 4,
+  "top_k": 50,
+  "top_p": 1.0,
+  "repetition_penalty": 1.05,
+  "max_tokens": 1200,
+  "streaming_interval_seconds": 0.32,
+  "total_budget_seconds": 450,
+  "individual_budget_seconds": 150,
+  "maximum_disk_bytes": 1610612736,
+  "pairing": "For each dialect voice, compare same text and seed under explicit English versus Chinese; retain actual token/PCM hashes and SDK logs",
+  "baseline_parity_required": "Both seed-196 baseline outputs in completed preliminary six-case diagnostic matched original production SDK token/PCM; both candidate repetitions and real ASR content passed",
+  "stop_rule": "Complete all predeclared cases regardless of EOS outcome; stop only on parity failure, process error or resource/time bounds",
+  "outputs": "Full per-case token and PCM hashes, EOS, duration, wall time; original PCM remains private",
+  "quality_followup": "Language routing is a boundary check; identical outputs alone are not a general language or listening score",
+  "promotion_requirements": "No candidate is promoted from this diagnostic alone. Any production change must retain interface/cancellation/update checks, pass the original strict two-hour target gate and fixed corpus regression, and obtain human listening evidence",
+  "talker_temperature": 0.7,
+  "subtalker_temperatures": [
+    0.7
+  ],
+  "baseline_report": "m1-tts-matrix-r2/report.json",
+  "baseline_asr_report": "m1-tts-matrix-roundtrip/reports/asr-followup.json",
+  "preliminary_report": "m1-subtalker-probe/report.json",
+  "promotion": "No sampling change; a language-routing fix requires pinned source adaptation, red/green actual-model evidence and regression checks"
+}

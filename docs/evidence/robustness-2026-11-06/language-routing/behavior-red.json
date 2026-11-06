@@ -1,0 +1,18 @@
+{
+  "status": "failed",
+  "failures": 2,
+  "checks": [
+    {
+      "voice": "eric",
+      "check": "explicit English changes actual tokens and PCM from Chinese",
+      "passed": false
+    },
+    {
+      "voice": "dylan",
+      "check": "explicit English changes actual tokens and PCM from Chinese",
+      "passed": false
+    }
+  ],
+  "source_report_sha256": "3caf9c23e07ca715c5c59f5d428b49f924060ddd1778ab28ce236ed1b80df427",
+  "scope": "Deterministic language-selection boundary only; not a general speech/listening score"
+}

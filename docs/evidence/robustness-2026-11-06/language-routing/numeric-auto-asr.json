@@ -1,0 +1,220 @@
+{
+  "status": "diagnostic_completed",
+  "started": "2026-11-06T15:29:47.476833+00:00",
+  "scope": "Eight pre/post language-routing outputs through final-App ASR with auto language detection; no listening acceptance",
+  "matrix_report_sha256": "16b7168f863627be8001e3dba59aaa1a54431927e4ceb06a13fad8b7c286281f",
+  "baseline_report_sha256": "3caf9c23e07ca715c5c59f5d428b49f924060ddd1778ab28ce236ed1b80df427",
+  "plan_sha256": "12d4f8a922ec4501f3064b0a7cae70f1f9d9176614b62fb30f9650c2b3f8aa03",
+  "helper_sha256": "b33c26734ee4a18d48f9fa7efe5c018f88fa6ae7f4ce18f3e59d210c36893215",
+  "port": 18885,
+  "results": [
+    {
+      "id": "baseline__digits-english-eric-s31-sub7-part0",
+      "source_id": "baseline__digits-english-eric-s31-sub7",
+      "part": 0,
+      "http_status": 200,
+      "response": {
+        "duration": 2.08,
+        "inference_ms": 254.98137500835583,
+        "language": "zh",
+        "metal_active_bytes": 5578571212,
+        "metal_peak_bytes": 6494217384,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 5181669376,
+        "processing_ms": 387.1160409762524,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "238bae5da15a4439",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "一千二百三十四。"
+      }
+    },
+    {
+      "id": "baseline__digits-english-dylan-s31-sub7-part0",
+      "source_id": "baseline__digits-english-dylan-s31-sub7",
+      "part": 0,
+      "http_status": 200,
+      "response": {
+        "duration": 1.12,
+        "inference_ms": 189.23437496414408,
+        "language": "zh",
+        "metal_active_bytes": 5578505676,
+        "metal_peak_bytes": 6494217384,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 5181669376,
+        "processing_ms": 301.1416250374168,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "c205d022ca1a4188",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "一千两三四。"
+      }
+    },
+    {
+      "id": "baseline__digits-chinese-eric-s31-sub7-part0",
+      "source_id": "baseline__digits-chinese-eric-s31-sub7",
+      "part": 0,
+      "http_status": 200,
+      "response": {
+        "duration": 2.08,
+        "inference_ms": 222.3679160233587,
+        "language": "zh",
+        "metal_active_bytes": 5578571212,
+        "metal_peak_bytes": 6494217396,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 5181669376,
+        "processing_ms": 333.0145829822868,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "fc4bab52f4ad4948",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "一千二百三十四。"
+      }
+    },
+    {
+      "id": "baseline__digits-chinese-dylan-s31-sub7-part0",
+      "source_id": "baseline__digits-chinese-dylan-s31-sub7",
+      "part": 0,
+      "http_status": 200,
+      "response": {
+        "duration": 1.12,
+        "inference_ms": 184.34362497646362,
+        "language": "zh",
+        "metal_active_bytes": 5578505676,
+        "metal_peak_bytes": 6494217396,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 5181669376,
+        "processing_ms": 294.49879203457385,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "ed8d03afb21444b2",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "一千两三四。"
+      }
+    },
+    {
+      "id": "corrected__digits-english-eric-s31-sub7-part0",
+      "source_id": "corrected__digits-english-eric-s31-sub7",
+      "part": 0,
+      "http_status": 200,
+      "response": {
+        "duration": 6.88,
+        "inference_ms": 457.4391249916516,
+        "language": "Hindi",
+        "metal_active_bytes": 5578866124,
+        "metal_peak_bytes": 6595390380,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 5181669376,
+        "processing_ms": 573.4107500175014,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "329b1fed80d24c2e",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "ब्यू थर बेव सॉर सॉर"
+      }
+    },
+    {
+      "id": "corrected__digits-english-dylan-s31-sub7-part0",
+      "source_id": "corrected__digits-english-dylan-s31-sub7",
+      "part": 0,
+      "http_status": 200,
+      "response": {
+        "duration": 1.36,
+        "inference_ms": 198.10020795557648,
+        "language": "zh",
+        "metal_active_bytes": 5578522060,
+        "metal_peak_bytes": 6595390380,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 5181669376,
+        "processing_ms": 312.9932919982821,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "75b9507c1a804b9c",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "一枪来三十四。"
+      }
+    },
+    {
+      "id": "corrected__digits-chinese-eric-s31-sub7-part0",
+      "source_id": "corrected__digits-chinese-eric-s31-sub7",
+      "part": 0,
+      "http_status": 200,
+      "response": {
+        "duration": 2.08,
+        "inference_ms": 220.14241601573303,
+        "language": "zh",
+        "metal_active_bytes": 5578571212,
+        "metal_peak_bytes": 6595390380,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 5181669376,
+        "processing_ms": 329.19704203959554,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "edfec53d86bd41fc",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "一千二百三十四。"
+      }
+    },
+    {
+      "id": "corrected__digits-chinese-dylan-s31-sub7-part0",
+      "source_id": "corrected__digits-chinese-dylan-s31-sub7",
+      "part": 0,
+      "http_status": 200,
+      "response": {
+        "duration": 1.12,
+        "inference_ms": 172.99529199954122,
+        "language": "zh",
+        "metal_active_bytes": 5578505676,
+        "metal_peak_bytes": 6595390380,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 5181669376,
+        "processing_ms": 287.64279099414125,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "0dc0446c05c44152",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "一千两三四。"
+      }
+    }
+  ],
+  "production_before": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "expected_requests": 8,
+  "expected_source_outputs": 8,
+  "elapsed_seconds": 11.732206208980642,
+  "owned_helper_pid": 68442,
+  "startup": {
+    "application": "CyberAudio",
+    "busy": false,
+    "instance": "5a6cff33676346a8a341bdb8f3cd2138",
+    "model": "qwen3-asr-1.7b",
+    "models": {
+      "stt": "ready",
+      "tts": "ready"
+    },
+    "startup": {
+      "backend": "mlx-swift",
+      "device": "metal",
+      "load_ms": 1904.582958028186,
+      "metal_active_bytes": 5578423720,
+      "metal_peak_bytes": 6437814276,
+      "process_peak_rss_bytes": 5181669376,
+      "verification_ms": 4706.058832991403,
+      "warmup_ms": 1467.236166994553
+    },
+    "status": "ready",
+    "updating": false
+  },
+  "owned_helper_exit_code": 0,
+  "temporary_request_cleanup": true,
+  "production_after": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "production_and_config_preserved": true,
+  "finished": "2026-11-06T15:29:59.279027+00:00"
+}

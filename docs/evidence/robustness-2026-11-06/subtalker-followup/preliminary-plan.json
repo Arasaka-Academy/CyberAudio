@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "purpose": "Falsify whether independent subtalker temperature 0.9 resolves the original seed-196 no-EOS trajectory; no production change or quality promotion",
+  "text": "持续验证语音服务的稳定性和恢复能力。",
+  "language": "chinese",
+  "voice": "ono_anna",
+  "talker_temperature": 0.7,
+  "top_k": 50,
+  "top_p": 1.0,
+  "repetition_penalty": 1.05,
+  "max_tokens": 1200,
+  "streaming_interval_seconds": 0.32,
+  "cases": [
+    {"id": "failure-baseline", "seed": 196, "subtalker_temperature": 0.7},
+    {"id": "failure-candidate", "seed": 196, "subtalker_temperature": 0.9},
+    {"id": "control-baseline", "seed": 31, "subtalker_temperature": 0.7},
+    {"id": "control-candidate", "seed": 31, "subtalker_temperature": 0.9},
+    {"id": "failure-baseline-repeat", "seed": 196, "subtalker_temperature": 0.7},
+    {"id": "failure-candidate-repeat", "seed": 196, "subtalker_temperature": 0.9}
+  ],
+  "expected_generations": 6,
+  "total_budget_seconds": 900,
+  "individual_budget_seconds": 150,
+  "maximum_disk_bytes": 67108864,
+  "baseline_parity": "Both seed-196 baseline outputs must match the original production-SDK tokens and PCM SHA exactly",
+  "stop_rule": "Retain all six cases regardless of EOS; stop only for baseline mismatch, invalid audio, process error or resource/time bound",
+  "next_gate": "If both candidate repetitions terminate, predeclare a broader paired text/voice/seed cohort and transcribe every output. Otherwise reject this hypothesis; never rerun unchanged cases to select success.",
+  "promotion": "No production parameter change without the fixed corpus and interface/lifecycle regression, original strict target gate and human listening evidence"
+}

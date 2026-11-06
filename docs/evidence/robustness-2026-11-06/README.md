@@ -27,6 +27,8 @@
 | [retry-and-matrix/README.md](retry-and-matrix/README.md) | R10 分段重试及 R8 回调顺序修复，33／39／14 完整检查；M4 严格重测 generation_limit 失败，288 次配对生成／294 次回读，以及新旧下载失败终态与有界传输对照 |
 | [final-candidate/README.md](final-candidate/README.md) | `939050f` 阶段隔离 App／Service／Assets 的实际完整验收 exit 0、同 M1 100／100 输出一致；保留外层采集器字段错误，并独立复核字节、报告、WAV、进程清理和生产保留 |
 | [adaptive-ranges/README.md](adaptive-ranges/README.md) | `f42bafe` 大分段失败后一次 1MiB 降级、36／39／14 完整检查；新最终 App 原生／运行器实际通过和 100／100 同 M1 一致；同一 Assets 的 M4 TLS 失败终态 |
+| [subtalker-followup/README.md](subtalker-followup/README.md) | 仅私有辅助生成器温度变化，六个重复对照及 144 新候选／144 旧基线、294 ASR；总指标改善但 11 对变差，默认值未修改 |
+| [language-routing/README.md](language-routing/README.md) | R11 方言音色显式英文路由红绿修复及 36／40／14 完整检查；最新 `5479313` App 实际完整验收与同 M1 100／100 一致；英文数字自动回读仍未确认正确 |
 
 完整原始记录保留在开发工作区 `.context/robustness/`，原始检查日志在 `/tmp/cyberaudio-robustness-*.log`，不会作为分发材料上传。
 
@@ -61,7 +63,7 @@ rtk proxy .context/verify-native --app /absolute/path/to/isolated/CyberAudio.app
 
 ## 验收边界
 
-以下描述本目录 R1–R7 阶段。后续已恢复全部 100 条固定录音，并完成 M1／M4 真实语料回归；最新 `f42bafe` 隔离 App 的原生驱动与外层运行器均通过，同 M1 旧版 100／100 原始输出一致。两次 M4 两小时尝试分别在 707／1229 个完成周期后失败，第二次明确 generation_limit。公网新旧有界续传均失败，最新为 TLS 类错误，14 个最终文件和 112MiB 分段保留。288 次配对生成没有达到默认参数调整条件。当前状态以新增阶段证据与[总报告](../../reviews/2026-11-06.md)为准，历史超时、合成输入和较短负载回执保留原值。
+以下描述本目录 R1–R7 阶段。后续已恢复全部 100 条固定录音，并完成 M1／M4 真实语料回归；最新 `5479313` 隔离 App 的原生驱动与外层运行器均通过，同 M1 旧版 100／100 原始输出一致。两次 M4 两小时尝试分别在 707／1229 个完成周期后失败，第二次明确 generation_limit。公网新旧有界续传均失败，最新为 TLS 类错误，14 个最终文件和 112MiB 分段保留。主／辅助采样候选均未提升为默认值；英文数字的语言路由修复不等于发音质量通过。当前状态以新增阶段证据与[总报告](../../reviews/2026-11-06.md)为准，历史超时、合成输入和较短负载回执保留原值。
 
 - 本轮输入是 OS 合成语音，不用于估计真人 CER／WER 或主观音质。历史 FLEURS 100 条回归保留在前一日的证据目录，本机缺少原始录音；恢复固定数据源的中英文连接均超时，尚未重跑。
 - 本轮没有从公网或真实代理下载全部模型权重，没有实测完整 SOCKS5 大文件下载。

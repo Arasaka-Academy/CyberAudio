@@ -1,0 +1,16 @@
+{
+  "purpose": "Paired content followup on one final ASR binary; no quality promotion",
+  "candidate_generations": 144,
+  "retained_baseline_generations": 144,
+  "new_TTS_baseline_generations": 0,
+  "baseline_source": "m1-tts-matrix-r2/report.json",
+  "candidate_source": "m1-subtalker-matrix/report.json",
+  "old_ASR_results_preserved": true,
+  "why_retranscribe_baselines": "Compare both groups on the same final signed Helper bytes; retain previous baseline ASR and any new differences",
+  "helper_sha256": "e9a9c159eb56150b07a59729c70e73b021282c07fc2331dcb468e8cdd98ad30e",
+  "segmentation_seconds": 24,
+  "language": "Same fixed source language per case",
+  "stop_rule": "Process all cases; retain every response, stop on process/HTTP/resource failure; no selection by result",
+  "bounds_seconds": 1200,
+  "no_listening_acceptance": true
+}

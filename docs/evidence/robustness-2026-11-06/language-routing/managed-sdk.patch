@@ -1,0 +1,12 @@
+--- previous-managed/Qwen3TTS.swift
++++ current-managed/Qwen3TTS.swift
+@@ -933,7 +933,8 @@
+             } else {
+                 print("[Qwen3TTS] CustomVoice: WARNING - speaker '\(speaker)' not found in spkId map")
+             }
+-            if let dialectMap = talkerConfig.spkIsDialect,
++            if ["chinese", "auto"].contains(language.lowercased()),
++               let dialectMap = talkerConfig.spkIsDialect,
+                let dialectVal = dialectMap[speaker.lowercased()],
+                dialectVal.isDialect,
+                let dialectName = dialectVal.dialectName,

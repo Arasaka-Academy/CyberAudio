@@ -1,0 +1,85 @@
+{
+  "baseline": {
+    "status": "completed",
+    "started": "2026-11-06T15:16:24.164493+00:00",
+    "scope": "Four new deterministic language-routing probes with original main/subtalker sampling; production unchanged",
+    "production_before": {
+      "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+      "status": "ready",
+      "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+      "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+    },
+    "elapsed_seconds": 4.198565082973801,
+    "owned_group_pid": 62519,
+    "owned_identity": "62519 Fri Nov  6 23:16:24 2026     (caffeinate)",
+    "exit_code": 0,
+    "production_after": {
+      "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+      "status": "ready",
+      "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+      "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+    },
+    "production_preserved": true,
+    "sdk_and_helper_preserved": true,
+    "finished": "2026-11-06T15:16:28.378669+00:00",
+    "build": {
+      "status": "built",
+      "source_sha256": "06628f33cbd4d3b3ee09c27b2c6d123f4d9df7149408423617c359aa45980578",
+      "executable_sha256": "3d5ebb2c7639168949cafe1a4065c9097892c5d9add55d163ac9d5fe19917d6e",
+      "plan_sha256": "12d4f8a922ec4501f3064b0a7cae70f1f9d9176614b62fb30f9650c2b3f8aa03",
+      "prior_build_sha256": "b44f6c1a75c86e5f05c98c887531e86437e5ba10ae224f1a63d8a8ea8914167c",
+      "preliminary_report_sha256": "5ce83ce20998239d6c4c518e769614691d3444546be360baae537464365de932",
+      "preliminary_asr_sha256": "1caa0dda73631c44258086b6f68ae839934f1cb899fdd46944ab7a7363ee9eb0",
+      "baseline_report_sha256": "6cd28d44a6c82d945bf7f4f5b9811f4904260c59015dabbdf8fbff7eb93b31aa",
+      "baseline_asr_sha256": "f4c8a27c6e9c93543f88641de4cab39f3e64e3d4e29e3aed1b5b2e7cb425509d",
+      "preserved_input_sha256": {
+        "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/subtalker-build/Modules/MLXAudioTTS.swiftmodule": "578d1bc0cb6f4b83c018c8c8d82523b5864c45830780fb3c3418057b0d5fc823",
+        "/Users/zhubby/Repository/CyberAudio/.context/icon-native-build/checkouts/mlx-audio-swift/Sources/MLXAudioTTS/Models/Qwen3TTS/Qwen3TTS.swift": "0fcfeaaadd8eb6bb793d985162450968fa1b4e6c8d198962a988e8e4aaa55426",
+        "/Users/zhubby/Repository/CyberAudio/.context/icon-native-build/arm64-apple-macosx/release/MLXAudioTTS.build/Qwen3TTS.swift.o": "38f453dab684b473b6e4410681e6bff30d4f6c9b746b767fc9b359d1206d41c1",
+        "/Users/zhubby/Repository/CyberAudio/dist/CyberAudio.app/Contents/Helpers/CyberAudioService": "cc556b65e263e16218db4315ed8585dccaede7b5f539be7bbd68a4b04e841a89",
+        "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/final-bytes-small-range/CyberAudio.app/Contents/Helpers/CyberAudioService": "e9a9c159eb56150b07a59729c70e73b021282c07fc2331dcb468e8cdd98ad30e"
+      },
+      "existing_executable_reused": true,
+      "reuse_purpose": "Same executable/SDK and original 0.7/0.7 settings; four new text/language/voice boundary cases"
+    }
+  },
+  "green": {
+    "status": "completed",
+    "started": "2026-11-06T15:24:41.087768+00:00",
+    "scope": "Four actual production-SDK language-routing regressions; original sampling; installed production unchanged",
+    "production_before": {
+      "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+      "status": "ready",
+      "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+      "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+    },
+    "elapsed_seconds": 17.785687750030775,
+    "owned_group_pid": 67387,
+    "owned_identity": "67387 Fri Nov  6 23:24:41 2026     /usr/bin/sandbox-exec -f /Users/zhubby/Repository/CyberAudio/dist/CyberAudio.app/Contents/Resources/offline.sb /Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/language-routing-green-build/language-routing-probe /Users/zhubby/Library/Application Support/CyberAudio/models/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit /Users/zhubby/Repository/CyberAudio/dist/CyberAudio.app/Contents/Resources/mlx.metallib /Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-language-routing-green /Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/language-routing-plan.json /Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-seeded-tts-probe/report.json /Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-subtalker-probe/report.json",
+    "exit_code": 0,
+    "production_after": {
+      "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+      "status": "ready",
+      "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+      "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+    },
+    "production_preserved": true,
+    "sdk_and_helper_preserved": true,
+    "finished": "2026-11-06T15:24:58.890411+00:00",
+    "build": {
+      "status": "built",
+      "source_sha256": "a6450eaaca3d04cb2fdde2e42b4475bd4fa28c9de251798ebe4b58debaeb9404",
+      "executable_sha256": "9a17b71bee2a10134f91a200bac9a6fad804df4d610ea27c200fdff8f9fba0a0",
+      "plan_sha256": "12d4f8a922ec4501f3064b0a7cae70f1f9d9176614b62fb30f9650c2b3f8aa03",
+      "production_sdk_source_sha256": "0190fd2a02d6ce0eaa3732ca7b7d373be251747edc5d14a0d0b4fe8ce3c0dd6b",
+      "preserved_input_sha256": {
+        "/Users/zhubby/Repository/CyberAudio/.context/icon-native-build/checkouts/mlx-audio-swift/Sources/MLXAudioTTS/Models/Qwen3TTS/Qwen3TTS.swift": "0190fd2a02d6ce0eaa3732ca7b7d373be251747edc5d14a0d0b4fe8ce3c0dd6b",
+        "/Users/zhubby/Repository/CyberAudio/.context/icon-native-build/arm64-apple-macosx/release/MLXAudioTTS.build/Qwen3TTS.swift.o": "23c220f598e3f65c10e803cde2bd44c95b118954c5d8f60851597269c1b79a08",
+        "/Users/zhubby/Repository/CyberAudio/.context/icon-native-build/arm64-apple-macosx/release/CyberAudioService": "1ec88188cdb37eeecfc7452adf1b86a43b6a3ea7ac71d9c5ea7c57087f844cbb",
+        "/Users/zhubby/Repository/CyberAudio/dist/CyberAudio.app/Contents/Helpers/CyberAudioService": "cc556b65e263e16218db4315ed8585dccaede7b5f539be7bbd68a4b04e841a89"
+      },
+      "preliminary_report_sha256": "5ce83ce20998239d6c4c518e769614691d3444546be360baae537464365de932",
+      "production_sampler_settings_changed": false
+    }
+  }
+}

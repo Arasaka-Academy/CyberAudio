@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "failures": 0,
+  "checks": [
+    {
+      "voice": "eric",
+      "check": "explicit English changes actual tokens and PCM from Chinese",
+      "passed": true
+    },
+    {
+      "voice": "eric",
+      "check": "Chinese dialect token and PCM output preserved",
+      "passed": true
+    },
+    {
+      "voice": "dylan",
+      "check": "explicit English changes actual tokens and PCM from Chinese",
+      "passed": true
+    },
+    {
+      "voice": "dylan",
+      "check": "Chinese dialect token and PCM output preserved",
+      "passed": true
+    }
+  ],
+  "source_report_sha256": "16b7168f863627be8001e3dba59aaa1a54431927e4ceb06a13fad8b7c286281f",
+  "scope": "Deterministic language-selection boundary only; not a general speech/listening score"
+}

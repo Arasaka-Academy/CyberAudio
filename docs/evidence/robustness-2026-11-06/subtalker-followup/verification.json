@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "actual_PCM_and_token_pairs_verified": 294,
+  "paired_ASR_WAV_hashes_verified": 294,
+  "source_hashes": {
+    "SubtalkerProbe.swift": "775a6ceae1561b6faa4a36cedf704ab554a7383770d3d46b6d29e2bcb9182054",
+    "SubtalkerMatrixProbe.swift": "06628f33cbd4d3b3ee09c27b2c6d123f4d9df7149408423617c359aa45980578",
+    "build-subtalker-diagnostic.py": "a0527e86e8690a8281e8ff6ebbd248ac1c00cd993dfa11876dc9efdaaa7eea97",
+    "run-subtalker-diagnostic.py": "6a632e91137388d953751a276b656583a2fd7ed984b6122653d12cd9921241e0",
+    "run-subtalker-roundtrip.py": "57698b688a0357fcc2af35d8b12ddfd97e08f233c77de840b8275130af643f49",
+    "build-subtalker-matrix.py": "22b337db2dd617234c92e03ffa2c89108c5e7884f981ca8232b526fe42ed8465",
+    "run-subtalker-matrix.py": "c96435a953683ff5e2d4839c4c080001a02861babe343bdeed1937a5a60206fd",
+    "run-subtalker-matrix-roundtrip.py": "b0eda817d6eff507731ac32d744db37f386d117b9963c3bfaf06b3579c64eaf1",
+    "summarize-subtalker-matrix.py": "280f573be8a7273308d630e62e6afd2e999e813804bece0aa92ef4c835d51e0a"
+  },
+  "raw_audio_retained_privately": true,
+  "weights_or_credentials_included": false
+}

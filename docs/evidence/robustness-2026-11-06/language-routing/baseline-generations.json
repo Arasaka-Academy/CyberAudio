@@ -1,0 +1,128 @@
+{
+  "completed_generations" : 4,
+  "elapsed_seconds" : 4.0235460416879505,
+  "finished" : "2026-11-06T15:16:28Z",
+  "original_failure_pcm_sha256" : "5aeb4109035957d1b6627d0f76a9621aab6e8e9b6e72c4805f6963624b286b92",
+  "original_failure_report_sha256" : "fbe95326e1d1c679b81c928432a7976fbafe6a99f54db5d3cb1e31917337dea6",
+  "pcm_bytes" : 307200,
+  "plan" : {
+    "baseline_asr_report" : "m1-tts-matrix-roundtrip\/reports\/asr-followup.json",
+    "baseline_parity_required" : "Both seed-196 baseline outputs in completed preliminary six-case diagnostic matched original production SDK token\/PCM; both candidate repetitions and real ASR content passed",
+    "baseline_report" : "m1-tts-matrix-r2\/report.json",
+    "expected_generations" : 4,
+    "individual_budget_seconds" : 150,
+    "max_tokens" : 1200,
+    "maximum_disk_bytes" : 1610612736,
+    "outputs" : "Full per-case token and PCM hashes, EOS, duration, wall time; original PCM remains private",
+    "pairing" : "For each dialect voice, compare same text and seed under explicit English versus Chinese; retain actual token\/PCM hashes and SDK logs",
+    "preliminary_report" : "m1-subtalker-probe\/report.json",
+    "promotion" : "No sampling change; a language-routing fix requires pinned source adaptation, red\/green actual-model evidence and regression checks",
+    "promotion_requirements" : "No candidate is promoted from this diagnostic alone. Any production change must retain interface\/cancellation\/update checks, pass the original strict two-hour target gate and fixed corpus regression, and obtain human listening evidence",
+    "purpose" : "Four deterministic language-routing boundary probes; compare English and Chinese requests for dialect voices at identical text\/seed, without changing production",
+    "quality_followup" : "Language routing is a boundary check; identical outputs alone are not a general language or listening score",
+    "repetition_penalty" : 1.05,
+    "schema_version" : 1,
+    "seeds" : [
+      31
+    ],
+    "stop_rule" : "Complete all predeclared cases regardless of EOS outcome; stop only on parity failure, process error or resource\/time bounds",
+    "streaming_interval_seconds" : 0.32000000000000001,
+    "subtalker_temperatures" : [
+      0.69999999999999996
+    ],
+    "talker_temperature" : 0.69999999999999996,
+    "temperatures" : [
+      0.69999999999999996
+    ],
+    "texts" : [
+      {
+        "id" : "digits-english",
+        "language" : "english",
+        "text" : "1234"
+      },
+      {
+        "id" : "digits-chinese",
+        "language" : "chinese",
+        "text" : "1234"
+      }
+    ],
+    "top_k" : 50,
+    "top_p" : 1,
+    "total_budget_seconds" : 450,
+    "voices" : [
+      "eric",
+      "dylan"
+    ]
+  },
+  "plan_sha256" : "12d4f8a922ec4501f3064b0a7cae70f1f9d9176614b62fb30f9650c2b3f8aa03",
+  "preliminary_failure_parity_sha256" : "5ce83ce20998239d6c4c518e769614691d3444546be360baae537464365de932",
+  "results" : [
+    {
+      "audio_seconds" : 2.0800000000000001,
+      "eos_seen" : true,
+      "id" : "digits-english-eric-s31-sub7",
+      "language" : "english",
+      "pcm_sha256" : "6432cf7f84672f85364ab6a44d43339955e4ed6a8e0cafe85d9d7500d19f6245",
+      "processing_seconds" : 1.0547922499827109,
+      "seed" : 31,
+      "subtalker_temperature" : 0.69999999999999996,
+      "temperature" : 0.69999999999999996,
+      "text" : "1234",
+      "text_id" : "digits-english",
+      "token_count" : 27,
+      "tokens_sha256" : "1b883f577dd873f84e610899d4ab8c9b683238222643554b848a1a5ee3b48958",
+      "voice" : "eric"
+    },
+    {
+      "audio_seconds" : 1.1200000000000001,
+      "eos_seen" : true,
+      "id" : "digits-english-dylan-s31-sub7",
+      "language" : "english",
+      "pcm_sha256" : "7f6e804acbf5bbf26fc02f77790af399d8d10c4176b808c1480152f4d4036ae4",
+      "processing_seconds" : 0.57132754166377708,
+      "seed" : 31,
+      "subtalker_temperature" : 0.69999999999999996,
+      "temperature" : 0.69999999999999996,
+      "text" : "1234",
+      "text_id" : "digits-english",
+      "token_count" : 15,
+      "tokens_sha256" : "1de8a52bfe39cabcd1ac2f99bacae247e9a1250051b5889beff275e4a5c887a6",
+      "voice" : "dylan"
+    },
+    {
+      "audio_seconds" : 2.0800000000000001,
+      "eos_seen" : true,
+      "id" : "digits-chinese-eric-s31-sub7",
+      "language" : "chinese",
+      "pcm_sha256" : "6432cf7f84672f85364ab6a44d43339955e4ed6a8e0cafe85d9d7500d19f6245",
+      "processing_seconds" : 0.98853124998277053,
+      "seed" : 31,
+      "subtalker_temperature" : 0.69999999999999996,
+      "temperature" : 0.69999999999999996,
+      "text" : "1234",
+      "text_id" : "digits-chinese",
+      "token_count" : 27,
+      "tokens_sha256" : "1b883f577dd873f84e610899d4ab8c9b683238222643554b848a1a5ee3b48958",
+      "voice" : "eric"
+    },
+    {
+      "audio_seconds" : 1.1200000000000001,
+      "eos_seen" : true,
+      "id" : "digits-chinese-dylan-s31-sub7",
+      "language" : "chinese",
+      "pcm_sha256" : "7f6e804acbf5bbf26fc02f77790af399d8d10c4176b808c1480152f4d4036ae4",
+      "processing_seconds" : 0.55844641663134098,
+      "seed" : 31,
+      "subtalker_temperature" : 0.69999999999999996,
+      "temperature" : 0.69999999999999996,
+      "text" : "1234",
+      "text_id" : "digits-chinese",
+      "token_count" : 15,
+      "tokens_sha256" : "1de8a52bfe39cabcd1ac2f99bacae247e9a1250051b5889beff275e4a5c887a6",
+      "voice" : "dylan"
+    }
+  ],
+  "scope" : "Four deterministic language-routing boundary probes; compare English and Chinese requests for dialect voices at identical text\/seed, without changing production",
+  "started" : "2026-11-06T15:16:24Z",
+  "status" : "diagnostic_completed"
+}

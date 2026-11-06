@@ -1,0 +1,11 @@
+{
+  "status": "failed",
+  "exit_code": 1,
+  "passed": 3,
+  "failed": 1,
+  "skipped": 0,
+  "failing_test": "test_existing_managed_checkout_upgrades_without_changing_asr",
+  "assertion": "Managed TTS source did not upgrade; ASR bytes preserved",
+  "observed_runtime_seconds": 4.24,
+  "scope": "Actual pinned-adapter command, before language-routing fix"
+}

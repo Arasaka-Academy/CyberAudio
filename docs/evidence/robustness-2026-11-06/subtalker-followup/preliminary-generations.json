@@ -1,0 +1,134 @@
+{
+  "completed_generations" : 6,
+  "elapsed_seconds" : 107.73961487499764,
+  "finished" : "2026-11-06T15:03:38Z",
+  "original_failure_pcm_sha256" : "5aeb4109035957d1b6627d0f76a9621aab6e8e9b6e72c4805f6963624b286b92",
+  "original_failure_report_sha256" : "fbe95326e1d1c679b81c928432a7976fbafe6a99f54db5d3cb1e31917337dea6",
+  "pcm_bytes" : 10060800,
+  "plan" : {
+    "baseline_parity" : "Both seed-196 baseline outputs must match the original production-SDK tokens and PCM SHA exactly",
+    "cases" : [
+      {
+        "id" : "failure-baseline",
+        "seed" : 196,
+        "subtalker_temperature" : 0.69999999999999996
+      },
+      {
+        "id" : "failure-candidate",
+        "seed" : 196,
+        "subtalker_temperature" : 0.90000000000000002
+      },
+      {
+        "id" : "control-baseline",
+        "seed" : 31,
+        "subtalker_temperature" : 0.69999999999999996
+      },
+      {
+        "id" : "control-candidate",
+        "seed" : 31,
+        "subtalker_temperature" : 0.90000000000000002
+      },
+      {
+        "id" : "failure-baseline-repeat",
+        "seed" : 196,
+        "subtalker_temperature" : 0.69999999999999996
+      },
+      {
+        "id" : "failure-candidate-repeat",
+        "seed" : 196,
+        "subtalker_temperature" : 0.90000000000000002
+      }
+    ],
+    "expected_generations" : 6,
+    "individual_budget_seconds" : 150,
+    "language" : "chinese",
+    "max_tokens" : 1200,
+    "maximum_disk_bytes" : 67108864,
+    "next_gate" : "If both candidate repetitions terminate, predeclare a broader paired text\/voice\/seed cohort and transcribe every output. Otherwise reject this hypothesis; never rerun unchanged cases to select success.",
+    "promotion" : "No production parameter change without the fixed corpus and interface\/lifecycle regression, original strict target gate and human listening evidence",
+    "purpose" : "Falsify whether independent subtalker temperature 0.9 resolves the original seed-196 no-EOS trajectory; no production change or quality promotion",
+    "repetition_penalty" : 1.05,
+    "schema_version" : 1,
+    "stop_rule" : "Retain all six cases regardless of EOS; stop only for baseline mismatch, invalid audio, process error or resource\/time bound",
+    "streaming_interval_seconds" : 0.32000000000000001,
+    "talker_temperature" : 0.69999999999999996,
+    "text" : "持续验证语音服务的稳定性和恢复能力。",
+    "top_k" : 50,
+    "top_p" : 1,
+    "total_budget_seconds" : 900,
+    "voice" : "ono_anna"
+  },
+  "plan_sha256" : "997639e30cafed1b33e52f4463212c88ea7245561b7aa7b7bd8915783b5e8b4a",
+  "results" : [
+    {
+      "audio_seconds" : 96,
+      "eos_seen" : false,
+      "id" : "failure-baseline",
+      "original_failure_parity" : true,
+      "pcm_sha256" : "5aeb4109035957d1b6627d0f76a9621aab6e8e9b6e72c4805f6963624b286b92",
+      "processing_seconds" : 52.871766583353747,
+      "seed" : 196,
+      "subtalker_temperature" : 0.69999999999999996,
+      "token_count" : 1200,
+      "tokens_sha256" : "166aa4324db592ca9065c0a0978a440763ebc92b836ef852c9e08c5b3760ccb7"
+    },
+    {
+      "audio_seconds" : 4.8799999999999999,
+      "eos_seen" : true,
+      "id" : "failure-candidate",
+      "pcm_sha256" : "3013bf1af5ba58c489b13dc26de45517622001525ca618748ea3a07609f8280b",
+      "processing_seconds" : 2.5868594583589584,
+      "seed" : 196,
+      "subtalker_temperature" : 0.90000000000000002,
+      "token_count" : 62,
+      "tokens_sha256" : "2d35e57981cb5f3e118d4bd9681213eaf109e12d11e5ef6a0f9cfae41b41aace"
+    },
+    {
+      "audio_seconds" : 2.5600000000000001,
+      "eos_seen" : true,
+      "id" : "control-baseline",
+      "pcm_sha256" : "ad8e1d920dd41ed00e5d455acaac6daf47a3b7253e80ce65662d26cb168f15dd",
+      "processing_seconds" : 1.2251520833815448,
+      "seed" : 31,
+      "subtalker_temperature" : 0.69999999999999996,
+      "token_count" : 33,
+      "tokens_sha256" : "427216dd3685046b7dcf645622b7660414e94507bad4810a97811d960ada5f37"
+    },
+    {
+      "audio_seconds" : 5.2800000000000002,
+      "eos_seen" : true,
+      "id" : "control-candidate",
+      "pcm_sha256" : "fdb5d1fb53f2f070b2b4e182a1bad4e69704971fd076c928d4eb2fde739e9768",
+      "processing_seconds" : 2.4513154583401047,
+      "seed" : 31,
+      "subtalker_temperature" : 0.90000000000000002,
+      "token_count" : 67,
+      "tokens_sha256" : "2c81e0ee65af55a27391c3e773cabadab9ba4b569c3eed023dca5f7c356c0afa"
+    },
+    {
+      "audio_seconds" : 96,
+      "eos_seen" : false,
+      "id" : "failure-baseline-repeat",
+      "original_failure_parity" : true,
+      "pcm_sha256" : "5aeb4109035957d1b6627d0f76a9621aab6e8e9b6e72c4805f6963624b286b92",
+      "processing_seconds" : 44.700789499969687,
+      "seed" : 196,
+      "subtalker_temperature" : 0.69999999999999996,
+      "token_count" : 1200,
+      "tokens_sha256" : "166aa4324db592ca9065c0a0978a440763ebc92b836ef852c9e08c5b3760ccb7"
+    },
+    {
+      "audio_seconds" : 4.8799999999999999,
+      "eos_seen" : true,
+      "id" : "failure-candidate-repeat",
+      "pcm_sha256" : "3013bf1af5ba58c489b13dc26de45517622001525ca618748ea3a07609f8280b",
+      "processing_seconds" : 2.2673423750093207,
+      "seed" : 196,
+      "subtalker_temperature" : 0.90000000000000002,
+      "token_count" : 62,
+      "tokens_sha256" : "2d35e57981cb5f3e118d4bd9681213eaf109e12d11e5ef6a0f9cfae41b41aace"
+    }
+  ],
+  "started" : "2026-11-06T15:01:50Z",
+  "status" : "diagnostic_completed"
+}

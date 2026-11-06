@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "purpose": "Predeclared independent subtalker-temperature candidate; compare with all retained original main-0.7/subtalker-0.7 baseline outputs; no production promotion",
+  "seeds": [
+    196,
+    0,
+    31,
+    117
+  ],
+  "temperatures": [
+    0.9
+  ],
+  "voices": [
+    "ono_anna",
+    "serena",
+    "vivian",
+    "uncle_fu",
+    "ryan",
+    "aiden",
+    "sohee",
+    "eric",
+    "dylan"
+  ],
+  "texts": [
+    {
+      "id": "zh-stability",
+      "language": "chinese",
+      "text": "持续验证语音服务的稳定性和恢复能力。"
+    },
+    {
+      "id": "zh-entities",
+      "language": "chinese",
+      "text": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。"
+    },
+    {
+      "id": "en-stability",
+      "language": "english",
+      "text": "Verify that the speech service remains stable and recovers after an interruption."
+    },
+    {
+      "id": "en-entities",
+      "language": "english",
+      "text": "On November sixth at three in the afternoon, send file one two three four to Alice."
+    }
+  ],
+  "expected_generations": 144,
+  "top_k": 50,
+  "top_p": 1.0,
+  "repetition_penalty": 1.05,
+  "max_tokens": 1200,
+  "streaming_interval_seconds": 0.32,
+  "total_budget_seconds": 1800,
+  "individual_budget_seconds": 150,
+  "maximum_disk_bytes": 1610612736,
+  "pairing": "Reuse each existing baseline for the same text/voice/seed; generate each independent subtalker-0.9 candidate once",
+  "baseline_parity_required": "Both seed-196 baseline outputs in completed preliminary six-case diagnostic matched original production SDK token/PCM; both candidate repetitions and real ASR content passed",
+  "stop_rule": "Complete all predeclared cases regardless of EOS outcome; stop only on parity failure, process error or resource/time bounds",
+  "outputs": "Full per-case token and PCM hashes, EOS, duration, wall time; original PCM remains private",
+  "quality_followup": "After termination transcribe all 144 candidate outputs with unchanged final-App ASR; compare each to the retained 144 baseline outputs and ASR results",
+  "promotion_requirements": "No candidate is promoted from this diagnostic alone. Any production change must retain interface/cancellation/update checks, pass the original strict two-hour target gate and fixed corpus regression, and obtain human listening evidence",
+  "talker_temperature": 0.7,
+  "subtalker_temperatures": [
+    0.9
+  ],
+  "baseline_report": "m1-tts-matrix-r2/report.json",
+  "baseline_asr_report": "m1-tts-matrix-roundtrip/reports/asr-followup.json",
+  "preliminary_report": "m1-subtalker-probe/report.json"
+}

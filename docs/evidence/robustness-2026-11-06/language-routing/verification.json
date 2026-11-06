@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "source_files_match_final_build": 96,
+  "routing_PCM_token_pairs_verified": 8,
+  "numeric_WAV_payloads_verified": 8,
+  "owned_ports_closed": [
+    18882,
+    18885
+  ],
+  "owned_ASR_process_absent": true,
+  "current_sdk_sha256": "0190fd2a02d6ce0eaa3732ca7b7d373be251747edc5d14a0d0b4fe8ce3c0dd6b",
+  "previous_sdk_sha256": "0fcfeaaadd8eb6bb793d985162450968fa1b4e6c8d198962a988e8e4aaa55426",
+  "source_sha256": {
+    "LanguageRoutingProbe.swift": "a6450eaaca3d04cb2fdde2e42b4475bd4fa28c9de251798ebe4b58debaeb9404",
+    "check-language-routing.py": "eb5c91896a443b7524defc49373d4805bf39a6e80c80abd74a1359d7e846673d",
+    "build-language-routing-green.py": "b95251ac0432a9e2a304412195cbc26714bc12a2d1dd1928a03d061a3e6b85b3",
+    "run-language-routing-baseline.py": "0ed532f67933d9f1c0f7fbe6a374618b3985ba20c7619c2e92863afaa6807ab7",
+    "run-language-routing-green.py": "c9465b0623857e2e790b197fc979a4f95f867f6ccabac8b9b15093b4119a807f",
+    "run-language-routing-roundtrip.py": "7ecd6abc21ad74a6b0e315a7cd6944d08c567997b3636f7efff2cc96a536e157",
+    "build-final-candidate.py": "d6284e7e6c1a47ce74631b9b3ae33b67e9a1c5d92fb390af3070d2badb7d5f42",
+    "run-final-candidate.py": "b5ca4c9b82efbd787527f3f5b14466c31213dd88721ae7582d7fa46ed2b9e73b",
+    "verify-final-candidate-result.py": "dde2c7c919755e3403ae28e6689b24c7ae00e537d9d77553e700eceb43f1090e"
+  },
+  "numeric_English_quality_accepted": false,
+  "raw_audio_retained_privately": true
+}
