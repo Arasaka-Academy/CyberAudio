@@ -1,5 +1,7 @@
 # CyberAudio 全 Swift 迁移与验证
 
+2026-11-06 的工程完善与新增验收见[最新审查报告](reviews/2026-11-06.md)，包括播放／响应截止时间／ASR 取消修复、原生首次准备、可恢复下载及证书签名流程。下文保留迁移和 M4 回归当时的记录；设备、语料、签名和交付状态按各轮证据分别判断。
+
 运行时替换已实现：App 内置 Swift HTTP／推理 Helper，安装与模型准备使用 Swift 工具，保留原来的 Qwen3-ASR 1.7B 8-bit 与 Qwen3-TTS 1.7B CustomVoice 8-bit。App 不再打包或启动 Python、FastAPI、pip、venv。FFmpeg 仍为单独配置的原生工具。
 
 此路线使用 **MLX Swift／Apple GPU／Metal**。此前 Core ML／SenseVoice／Whisper 的实验保留；用户随后选择继续使用 Qwen，因此本次没有迁移至 Core ML 或 ANE。
@@ -45,7 +47,7 @@ MLX Audio Swift 固定 `927d4e30cf1dd3bcfdbf2cec8c9a6fd7edf4b4fe`，MLX Swift 0.
 
 CLT 缺少 Metal 编译器时，[资源脚本](../scripts/prepare_metal.sh) 从官方 MLX 0.32.4 wheel 仅提取匹配的 `mlx.metallib`；归档与着色器均固定并校验 SHA-256，不安装、运行或打包 Python。SDK、MLX、SwiftNIO 及传递依赖许可证随 App 分发，说明见 [THIRD_PARTY.md](../Native/THIRD_PARTY.md)。
 
-原生下载工具支持 HTTP／SOCKS5 代理，拒绝 URL 中的凭据；正确文件复用，已有错误文件保留并报错。M4 实测经 HTTP 代理补下载缺失的 ASR README 后，23 个文件及两个 tokenizer 全部通过验证。此项验证了下载、代理、复用和校验路径，**没有重新下载全部 5.55GB 权重，也没有实测 SOCKS5 下载**。大文件暂不支持断点续传。
+原生下载工具支持 HTTP／SOCKS5 代理，拒绝 URL 中的凭据；正确文件复用，已有错误文件保留并报错。M4 实测经 HTTP 代理补下载缺失的 ASR README 后，23 个文件及两个 tokenizer 全部通过验证。此项验证了下载、代理、复用和校验路径，**没有重新下载全部 5.55GB 权重，也没有实测 SOCKS5 下载**。该轮下载器尚未支持断点续传；后续实现和验证见[首次准备说明](FIRST_RUN.md)。
 
 ## M4 完整服务结果
 

@@ -1,0 +1,16 @@
+{
+  "test": "bundled asset helper cross-volume atomic publication",
+  "status": "passed",
+  "network": "controlled local CONNECT proxy; no forwarded traffic",
+  "asset_helper_sha256": "719cf86bd9bb4e9cfffb32e29af40d6a8dc4f5cad007273b8856b02f1f8b5d46",
+  "different_device_ids": true,
+  "asset": "asr/README.md",
+  "bytes": 1008,
+  "sha256": "b356d4bdfbe7287b06b9b5ad084d9557a24ca98ca277a839beb2e682037b08f6",
+  "final_bytes_verified": true,
+  "partial_consumed": true,
+  "temporary_sibling_cleaned": true,
+  "cancellation_after_publication": true,
+  "token_preserved": true,
+  "volume_detached": true
+}

@@ -1,0 +1,55 @@
+{
+  "command": "make check",
+  "status": "passed",
+  "exit_code": 0,
+  "native_contracts": {
+    "cases": 28,
+    "failed": 0,
+    "skipped": 0
+  },
+  "python_tool_tests": 29,
+  "native_renders": {
+    "workspace": 7,
+    "settings": 3,
+    "preparation": 4
+  },
+  "behavioral_groups": [
+    "preparation helper lifecycle and bounded output",
+    "update gate (4 scenarios)",
+    "Core ML evidence tools (11 scenarios)",
+    "dictation gestures",
+    "shortcut recording",
+    "overlay lifecycle",
+    "text insertion and clipboard",
+    "microphone permission and stale results",
+    "native HTTP / AVFoundation audio workflow including replay and update wait"
+  ],
+  "compiled": [
+    "release App",
+    "real ASR/TTS Service",
+    "Assets helper",
+    "opt-in real inference test driver"
+  ],
+  "syntax_checks": [
+    "shell scripts",
+    "packaging/Info.plist",
+    "packaging/App.entitlements",
+    "both GitHub workflows via actionlint"
+  ],
+  "diff_whitespace": "passed",
+  "log_sha256": "af56ce7791ed82f1028e6e4a16f5984c402af9b277fa724757cbceead48ee976",
+  "additional_signing_regression": {
+    "ticket_rejection_and_gatekeeper_rejection": 2,
+    "failed_before_fix": true,
+    "passed_after_fix": true
+  },
+  "remote_ci": {
+    "status": "not_run",
+    "reason": "local development branch has not been pushed"
+  },
+  "known_build_warnings": [
+    "SwiftPM native build-system deprecation",
+    "SwiftPM skip-update deprecation",
+    "upstream README resources not declared"
+  ]
+}

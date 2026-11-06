@@ -1,0 +1,27 @@
+{
+  "status": "unavailable",
+  "dataset": "google/fleurs",
+  "revision": "168de341b3db6859a9bac1c50a2ef5e3b47647e0",
+  "expected_samples": 100,
+  "local_original_audio_files": 0,
+  "bounded_source_checks": [
+    {
+      "language": "zh",
+      "curl_exit": 28,
+      "http_status": 0,
+      "failure": "connection timeout after 10 seconds"
+    },
+    {
+      "language": "en",
+      "curl_exit": 28,
+      "http_status": 0,
+      "failure": "connection timeout after 10 seconds"
+    }
+  ],
+  "system_proxies_enabled": {
+    "http": false,
+    "https": false,
+    "socks": false
+  },
+  "corpus_comparison_run": false
+}

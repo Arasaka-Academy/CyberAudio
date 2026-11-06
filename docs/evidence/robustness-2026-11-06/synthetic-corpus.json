@@ -1,0 +1,20 @@
+[
+  {
+    "id": "synthetic-zh",
+    "language": "zh",
+    "reference": "这是语音识别测试。今天是星期五，测试本地语音服务和取消后的恢复。",
+    "audio": "zh.wav",
+    "audio_sha256": "19b30e47c4a41ad22cbe79fe5cfafb477dce342f344b9cb21cfe03327c5fd063",
+    "kind": "synthetic_os_speech",
+    "source": "macOS say Tingting"
+  },
+  {
+    "id": "synthetic-en",
+    "language": "en",
+    "reference": "This is a local speech recognition test. We are checking native audio handling and recovery after cancellation.",
+    "audio": "en.wav",
+    "audio_sha256": "9a7dd16869d4d66601bbea596d773017d5312170f15b076ad135843a22632140",
+    "kind": "synthetic_os_speech",
+    "source": "macOS say Samantha"
+  }
+]

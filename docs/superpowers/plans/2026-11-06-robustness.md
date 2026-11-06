@@ -57,23 +57,25 @@ Files: `.github/workflows/`, build scripts, development documentation.
 
 - [x] Add pull-request/main CI with pinned dependencies, native checks, active tool tests, and compilation of the real inference helper.
 - [x] Reuse the same required checks in the release path; keep signing secrets out of untrusted PR jobs.
-- [ ] Validate workflow syntax and local equivalents; verify remote CI if delivery is authorized/available.
+- [x] Validate workflow syntax and local equivalents (`actionlint`, complete `make check`, release App build).
+- [ ] Verify remote CI after authorized branch delivery; this work remains local.
 
 ## 6. Recoverable first-run setup
 
 Files: native asset downloader/tool, App setup controller/view, backend startup, setup and downloader tests, guide.
 
-- [ ] Inspect native asset and FFmpeg preparation contracts; implement native first-run status, model download progress, cancellation, retry, and resumable downloads.
-- [ ] Preserve valid files and configuration; detect insufficient space, missing FFmpeg, invalid assets, interrupted transfers, and unsupported proxies with actionable UI.
-- [ ] Exercise download restart, server Range behavior, cancellation, corrupt/changed partial data, and native UI rendering using controlled endpoints.
-- [ ] Build an isolated production App and verify first-run-to-ready and existing-installation startup.
+- [x] Inspect native asset and FFmpeg preparation contracts; implement native first-run status, model download progress, cancellation, retry, and resumable downloads.
+- [x] Preserve valid files and configuration; detect insufficient space, missing FFmpeg, invalid assets, interrupted transfers, and unsupported proxies with actionable UI.
+- [x] Exercise download restart, server Range behavior, cancellation, corrupt/changed partial data, and native UI rendering using controlled endpoints.
+- [x] Build an isolated production App and verify preparation-to-ready using local pinned models and existing-installation startup. Verify actual cross-volume atomic publication using the bundled asset helper and a dedicated APFS image.
+- [ ] Accept a pristine installation downloading all model weights over the public network or real proxy. Controlled downloads and local asset reuse do not establish this.
 
 ## 7. Stable signing and upgrades
 
 Files: packaging/signing scripts, release workflow, signing and upgrade documentation/tests.
 
 - [x] Inspect available Developer ID/notarization capabilities without exposing private keys.
-- [ ] Implement configurable stable Developer ID signing, hardened runtime/required entitlements, notarization, and verification; validate ad-hoc development mode separately.
+- [x] Implement configurable stable Developer ID signing, hardened runtime/required entitlements, notarization, and verification; validate ad-hoc mode and actual Apple Development signing separately. Distribution validation also requires a stapled ticket and Gatekeeper acceptance when reusing an App.
 - [ ] With credentials available, verify signed/notarized artifacts and actual upgrade permission retention. Record a concrete external blocker if credentials or human authorization are required.
 
 ## 8. Real-use acceptance and final review
@@ -82,8 +84,11 @@ Files: isolated verification drivers, regression tests, acceptance report.
 
 - [ ] Exercise actual cross-app dictation in TextEdit, Safari, and VS Code; validate focus changes, Unicode/Chinese IME, secure-field rejection, cancellation, clipboard recovery, and sleep/session recovery.
 - [ ] Verify real microphone recording and human listening separately from synthetic or prerecorded audio.
-- [ ] Run sustained isolated inference/cancellation/restart tests and the existing corpus comparisons; record measured limits rather than inferring performance or energy gains.
-- [ ] Review the final changed tree, run complete checks and package validation, and audit every requirement above before marking the user goal complete.
+- [x] Run complete isolated actual-model service acceptance: 16 STT format requests, nine TTS voices, complete streaming PCM, three disconnect/recovery rounds, update pause/resume, EOF, single ownership, sandbox, and App TERM/KILL/restart. All passed with production service preserved.
+- [x] Complete the additional ten-minute mixed workload and inspect memory/recovery evidence.
+- [ ] Repeat the fixed 100-sample corpus comparison once the original SHA-verified audio is available locally. Current inputs are explicitly OS-synthesized speech.
+- [x] Review the final changed tree, run complete checks and package validation, and record every accepted requirement and remaining gate above.
+- [ ] Mark the overall user goal complete only after the remaining required interactive, credential and target-device acceptance is actually performed.
 
 ## Evidence log
 
@@ -94,3 +99,15 @@ Files: isolated verification drivers, regression tests, acceptance report.
 - Real local ASR model on OS-synthesized speech: pre-cancel, cancellation at check 35 of 37, and same-instance recovery passed. The recorded 694 ms was time before the injected cancellation, not cancellation latency. No microphone/corpus accuracy claim.
 - Complete `make check` passed, including 19 current development tool tests and compilation of the production inference/asset helpers. Logs: `/tmp/cyberaudio-robustness-check-1.log` and `/tmp/cyberaudio-robustness-asr-actual.log`.
 - Signing inventory found an Apple Development identity, but no Developer ID Application identity. Production notarization and stable distribution/permission retention remain unverified.
+- Final complete check log: `/tmp/cyberaudio-robustness-check-final.log`; 28 native contracts, 14 native renders, preparation/recording/playback/dictation/update regressions, 27 tool tests, production helper compilation and release App compilation all passed. Two later signing reuse regressions require the final tool check below.
+- The actual service initially reproduced Cocoa 256 / POSIX 20 for symlink model roots after successful file verification. Resolving the roots before SDK directory loading fixed actual ASR/TTS load/warmup; full service acceptance then passed. Report: `.context/robustness/service-acceptance-2/reports/native-service.json`.
+- Exact final App copy signed with an available Apple Development certificate: strict nested signatures, hardened runtime and bundled Assets helper smoke all passed. `.context/robustness/development-signing-final.json`; this is not Developer ID or notarization evidence.
+- Cross-volume publication used the final bundled Assets helper, a preverified fixed README partial on the data volume and a separate 64MiB APFS image. Published bytes/hash, consumed partial, private sibling cleanup, subsequent cancellation and unchanged Token passed; image detached. `.context/robustness/cross-volume-acceptance/report.json`.
+- Closing review found reused distribution Apps could pass signature checks without a notarization ticket. Two fail-closed regressions reproduced the omission; distribution verification now also validates the ticket and Gatekeeper assessment.
+- Desktop acceptance is unavailable while the session is locked at loginwindow; Orca is absent and the available desktop tool transport is closed. Permission flags alone do not prove cross-app dictation or physical audio.
+- Report and sanitized evidence are retained in `docs/reviews/2026-11-06.md` and `docs/evidence/robustness-2026-11-06/`. Pending external acceptance remains explicit; the overall user goal is not marked complete.
+- After the final signing correction, complete `make check` passed again: 28 native contracts, 29 development tool tests, 14 native renders and all behavioral/build checks. Log: `/tmp/cyberaudio-robustness-check-accepted.log`; workflow lint, entitlement validation and current ad-hoc App verification also passed.
+- The fixed 100-sample FLEURS manifest is present but none of its audio files are local. Bounded attempts to reach both immutable Parquet sources failed with curl 28 connection timeouts; no HTTP/HTTPS/SOCKS system proxy is enabled. The corpus comparison is a recorded acceptance gap, not a result inferred from synthetic speech.
+- Ten-minute actual-model mixed load passed on one instance: 602.69 seconds, 210 STT, 210 complete TTS, 42 disconnect/cancellation recovery rounds, 21 update pause/resume rounds. Metal active bytes first/last 5,578,423,756 / 5,578,423,828, maximum 5,581,437,472; no cumulative growth observed in this window. Actual `tmp` contains no request directories after completion. EOF stop 152ms; production instance preserved. `docs/evidence/robustness-2026-11-06/soak.json`.
+- Local DMG `CyberAudio-0.4.3-robustness.local-macOS-arm64.dmg` built without replacing an existing release artifact. Image and SHA checks passed; a read-only mount verified nested signatures, exact App/Helper/Metal bytes and bundled preparation/signing/review/evidence documents, then detached. `docs/evidence/robustness-2026-11-06/package.json`. This is an ad-hoc, unnotarized local artifact, not an installed or published release.
+- Local implementation commits: `0cf9e40` runtime/review fixes, `7fb6b75` recoverable first-run preparation, `b730c64` certificate signing/notarization. Final sequential review and a 96-file source-content snapshot are retained with the evidence.

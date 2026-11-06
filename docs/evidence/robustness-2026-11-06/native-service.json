@@ -1,0 +1,492 @@
+{
+  "app_active_exit_and_restart": [
+    {
+      "active_inference": true,
+      "child_executable": "CyberAudioService",
+      "exit_ms": 278.91787502449006,
+      "helper_gone": true,
+      "instance": "AC20709F-DFEF-45CA-993D-E6DFFF4C3DDD",
+      "signal": 15
+    },
+    {
+      "active_inference": true,
+      "child_executable": "CyberAudioService",
+      "exit_ms": 68.3324999990873,
+      "helper_gone": true,
+      "instance": "576A7AB7-AC5E-43C0-BABC-7AFA18FA6027",
+      "signal": 9
+    }
+  ],
+  "assets": {
+    "models": [
+      {
+        "component": "asr",
+        "files_verified": 10,
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55"
+      },
+      {
+        "component": "tts",
+        "files_verified": 13,
+        "revision": "41d3337e8b7f2843a75841595fc14e4b9a7a4b96"
+      }
+    ],
+    "status": "verified",
+    "tokenizers": {
+      "asr": "9f14b05f9ee224ad987e823427c76099b298e0bc66884e36e6313182d2bf9441",
+      "tts": "a210c764d0e752c234adbafe3784c987d14aabb12f6bd5f7571f327db93724a4"
+    }
+  },
+  "finished": "2026-11-06T10:26:22Z",
+  "helper_sha256": "cc556b65e263e16218db4315ed8585dccaede7b5f539be7bbd68a4b04e841a89",
+  "models": {
+    "data": [
+      {
+        "id": "qwen3-asr-1.7b",
+        "object": "model",
+        "owned_by": "local",
+        "quantization": "8bit",
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55"
+      },
+      {
+        "id": "qwen3-tts-1.7b",
+        "object": "model",
+        "owned_by": "local",
+        "quantization": "8bit",
+        "repository": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit",
+        "revision": "41d3337e8b7f2843a75841595fc14e4b9a7a4b96"
+      }
+    ],
+    "object": "list"
+  },
+  "os": "Version 27.0.1 (Build 26A434)",
+  "outbound_denied": true,
+  "phase": "all",
+  "physical_memory_bytes": 34359738368,
+  "port": 18865,
+  "production_instance_checked": true,
+  "production_root_modified": false,
+  "production_service_preserved": true,
+  "single_owner_lock": true,
+  "started": "2026-11-06T10:25:03Z",
+  "startup": {
+    "application": "CyberAudio",
+    "busy": false,
+    "instance": "D3E46000-D843-4A31-A7F1-4E3797F8E20C",
+    "model": "qwen3-asr-1.7b",
+    "models": {
+      "stt": "ready",
+      "tts": "ready"
+    },
+    "startup": {
+      "backend": "mlx-swift",
+      "device": "metal",
+      "load_ms": 2197.316625039093,
+      "metal_active_bytes": 5578423720,
+      "metal_peak_bytes": 6437814276,
+      "process_peak_rss_bytes": 6121340928,
+      "verification_ms": 4146.465333993547,
+      "warmup_ms": 9929.301291995216
+    },
+    "status": "ready",
+    "updating": false
+  },
+  "status": "passed",
+  "stdin_eof_stop_ms": 220.42666701599956,
+  "stream_complete": {
+    "bytes": 126720,
+    "first_audio_ms": 166.54870798811316,
+    "packets": 9
+  },
+  "stream_disconnect_recovery": [
+    {
+      "drain_ms": 43.01020799903199,
+      "recovery_http_status": 200,
+      "round": 1,
+      "status": "cancelled"
+    },
+    {
+      "drain_ms": 42.50774998217821,
+      "recovery_http_status": 200,
+      "round": 2,
+      "status": "cancelled"
+    },
+    {
+      "drain_ms": 42.64579201117158,
+      "recovery_http_status": 200,
+      "round": 3,
+      "status": "cancelled"
+    }
+  ],
+  "stt_formats": [
+    {
+      "format": "wav",
+      "language": "zh",
+      "result": {
+        "duration": 6.9995,
+        "inference_ms": 446.0519580170512,
+        "language": "zh",
+        "metal_active_bytes": 5578882508,
+        "metal_peak_bytes": 6597405644,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 6121340928,
+        "processing_ms": 600.6338750012219,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "a079788a785b4e8c",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "这是语音识别测试。今天是星期五。测试本地语音服务和取消后的恢复。"
+      }
+    },
+    {
+      "format": "webm",
+      "language": "zh",
+      "result": {
+        "duration": 6.9995,
+        "inference_ms": 405.19949997542426,
+        "language": "zh",
+        "metal_active_bytes": 5578882508,
+        "metal_peak_bytes": 6597405656,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 6121340928,
+        "processing_ms": 526.2285419739783,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "cb712aca843a4aa3",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "这是语音识别测试。今天是星期五。测试本地语音服务和取消后的恢复。"
+      }
+    },
+    {
+      "format": "mp3",
+      "language": "zh",
+      "result": {
+        "duration": 6.9995,
+        "inference_ms": 436.50979100493714,
+        "language": "zh",
+        "metal_active_bytes": 5578882472,
+        "metal_peak_bytes": 6597405656,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 6121340928,
+        "processing_ms": 545.9717080229893,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "87ff5ab22a70447d",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "这是语音识别测试。今天是星期五。测试本地语音服务和取消后的恢复。"
+      }
+    },
+    {
+      "format": "m4a",
+      "language": "zh",
+      "result": {
+        "duration": 6.9995,
+        "inference_ms": 410.8919170103036,
+        "language": "zh",
+        "metal_active_bytes": 5578882472,
+        "metal_peak_bytes": 6597405656,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 6121340928,
+        "processing_ms": 534.0530829853378,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "6cead2266c8f41bd",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "这是语音识别测试。今天是星期五。测试本地语音服务和取消后的恢复。"
+      }
+    },
+    {
+      "format": "flac",
+      "language": "zh",
+      "result": {
+        "duration": 6.9995,
+        "inference_ms": 416.7982920189388,
+        "language": "zh",
+        "metal_active_bytes": 5578882472,
+        "metal_peak_bytes": 6597405656,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 6121340928,
+        "processing_ms": 547.3252499941736,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "aeabc0ac4f684274",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "这是语音识别测试。今天是星期五。测试本地语音服务和取消后的恢复。"
+      }
+    },
+    {
+      "format": "ogg",
+      "language": "zh",
+      "result": {
+        "duration": 6.9995,
+        "inference_ms": 412.62229200219736,
+        "language": "zh",
+        "metal_active_bytes": 5578882508,
+        "metal_peak_bytes": 6597405656,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 6121340928,
+        "processing_ms": 538.6419590213336,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "0545ce352f744949",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "这是语音识别测试。今天是星期五。测试本地语音服务和取消后的恢复。"
+      }
+    },
+    {
+      "format": "aiff",
+      "language": "zh",
+      "result": {
+        "duration": 6.9995,
+        "inference_ms": 415.4955829726532,
+        "language": "zh",
+        "metal_active_bytes": 5578882508,
+        "metal_peak_bytes": 6597405656,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 6121340928,
+        "processing_ms": 537.0487499749288,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "2728c69088d9433a",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "这是语音识别测试。今天是星期五。测试本地语音服务和取消后的恢复。"
+      }
+    },
+    {
+      "format": "aac",
+      "language": "zh",
+      "result": {
+        "duration": 7.104,
+        "inference_ms": 408.2751669920981,
+        "language": "zh",
+        "metal_active_bytes": 5578882508,
+        "metal_peak_bytes": 6601780228,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 6121340928,
+        "processing_ms": 536.8307500029914,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "d1b3bf6707444ee3",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "这是语音识别测试。今天是星期五。测试本地语音服务和取消后的恢复。"
+      }
+    },
+    {
+      "format": "wav",
+      "language": "en",
+      "result": {
+        "duration": 6.6045,
+        "inference_ms": 407.6398339821026,
+        "language": "en",
+        "metal_active_bytes": 5578849740,
+        "metal_peak_bytes": 6601780228,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 6121340928,
+        "processing_ms": 532.0212080259807,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "ed87e1e0fbf84657",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "This is a local speech recognition test. We are checking native audio handling and recovery after cancellation."
+      }
+    },
+    {
+      "format": "webm",
+      "language": "en",
+      "result": {
+        "duration": 6.6045,
+        "inference_ms": 408.3634589915164,
+        "language": "en",
+        "metal_active_bytes": 5578849740,
+        "metal_peak_bytes": 6601780228,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 6121340928,
+        "processing_ms": 539.4024169654585,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "300ab340013842aa",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "This is a local speech recognition test. We are checking native audio handling and recovery after cancellation."
+      }
+    },
+    {
+      "format": "mp3",
+      "language": "en",
+      "result": {
+        "duration": 6.6045,
+        "inference_ms": 407.72316697984934,
+        "language": "en",
+        "metal_active_bytes": 5578849740,
+        "metal_peak_bytes": 6601780228,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 6121340928,
+        "processing_ms": 531.0555000323802,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "04adf727da774274",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "This is a local speech recognition test. We are checking native audio handling and recovery after cancellation."
+      }
+    },
+    {
+      "format": "m4a",
+      "language": "en",
+      "result": {
+        "duration": 6.6045,
+        "inference_ms": 405.27104202192277,
+        "language": "en",
+        "metal_active_bytes": 5578849740,
+        "metal_peak_bytes": 6601780228,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 6121340928,
+        "processing_ms": 534.885665983893,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "8e6487e91ac04312",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "This is a local speech recognition test. We are checking native audio handling and recovery after cancellation."
+      }
+    },
+    {
+      "format": "flac",
+      "language": "en",
+      "result": {
+        "duration": 6.6045,
+        "inference_ms": 405.50720802275464,
+        "language": "en",
+        "metal_active_bytes": 5578849776,
+        "metal_peak_bytes": 6601780228,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 6121340928,
+        "processing_ms": 526.5611669747159,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "8cf4cdf10b0c4d3b",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "This is a local speech recognition test. We are checking native audio handling and recovery after cancellation."
+      }
+    },
+    {
+      "format": "ogg",
+      "language": "en",
+      "result": {
+        "duration": 6.6045,
+        "inference_ms": 421.8585839844309,
+        "language": "en",
+        "metal_active_bytes": 5578849776,
+        "metal_peak_bytes": 6601780228,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 6121340928,
+        "processing_ms": 540.6088749878109,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "1628ab1868c541a9",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "This is a local speech recognition test. We are checking native audio handling and recovery after cancellation."
+      }
+    },
+    {
+      "format": "aiff",
+      "language": "en",
+      "result": {
+        "duration": 6.6045,
+        "inference_ms": 406.5830839681439,
+        "language": "en",
+        "metal_active_bytes": 5578849776,
+        "metal_peak_bytes": 6601780228,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 6121340928,
+        "processing_ms": 536.9923749822192,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "ca442b79180f46db",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "This is a local speech recognition test. We are checking native audio handling and recovery after cancellation."
+      }
+    },
+    {
+      "format": "aac",
+      "language": "en",
+      "result": {
+        "duration": 6.72,
+        "inference_ms": 404.70979205565527,
+        "language": "en",
+        "metal_active_bytes": 5578866160,
+        "metal_peak_bytes": 6601780228,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 6121340928,
+        "processing_ms": 527.9817080008797,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "ae4be3adecdd45bd",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "This is a local speech recognition test. We are checking native audio handling and recovery after cancellation."
+      }
+    }
+  ],
+  "tts_voices": [
+    {
+      "duration": 1.84,
+      "first_audio_ms": 202.1382080274634,
+      "processing_ms": 872.3264579894021,
+      "rtf": 0.4740904662985881,
+      "voice": "serena"
+    },
+    {
+      "duration": 2.16,
+      "first_audio_ms": 162.76437498163432,
+      "processing_ms": 964.4530420191586,
+      "rtf": 0.44650603797183264,
+      "voice": "vivian"
+    },
+    {
+      "duration": 2.24,
+      "first_audio_ms": 163.6387089965865,
+      "processing_ms": 995.097333972808,
+      "rtf": 0.4442398812378607,
+      "voice": "uncle_fu"
+    },
+    {
+      "duration": 2.72,
+      "first_audio_ms": 163.27379102585837,
+      "processing_ms": 1196.607000019867,
+      "rtf": 0.43992904412495104,
+      "voice": "ryan"
+    },
+    {
+      "duration": 2.56,
+      "first_audio_ms": 163.7079999782145,
+      "processing_ms": 1130.4218340083025,
+      "rtf": 0.4415710289094932,
+      "voice": "aiden"
+    },
+    {
+      "duration": 2,
+      "first_audio_ms": 173.26045903610066,
+      "processing_ms": 1195.3900840017013,
+      "rtf": 0.5976950420008507,
+      "voice": "ono_anna"
+    },
+    {
+      "duration": 2.16,
+      "first_audio_ms": 180.45350001193583,
+      "processing_ms": 980.9209579834715,
+      "rtf": 0.454130073140496,
+      "voice": "sohee"
+    },
+    {
+      "duration": 2,
+      "first_audio_ms": 164.34979200130329,
+      "processing_ms": 903.605333995074,
+      "rtf": 0.451802666997537,
+      "voice": "eric"
+    },
+    {
+      "duration": 2.08,
+      "first_audio_ms": 163.50329195847735,
+      "processing_ms": 933.4137499681674,
+      "rtf": 0.4487566105616189,
+      "voice": "dylan"
+    }
+  ]
+}

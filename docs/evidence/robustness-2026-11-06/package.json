@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "artifact": "CyberAudio-0.4.3-robustness.local-macOS-arm64.dmg",
+  "bytes": 108039224,
+  "sha256": "97fd7a154e46e6caafbe704d6e01d5e161d4a38481643250b5f58f7a04a3b763",
+  "signing_mode": "adhoc",
+  "notarized": false,
+  "production_installed": false,
+  "published": false,
+  "image_checksum_verified": true,
+  "read_only_mount": true,
+  "nested_signature_verified": true,
+  "app_components_sha256_matched": true,
+  "documentation_and_evidence_matched": true,
+  "verified_documentation_files": [
+    "GUIDE.md",
+    "FIRST_RUN.md",
+    "SIGNING.md",
+    "reviews/2026-11-06.md",
+    "evidence/robustness-2026-11-06/native-service.json",
+    "evidence/robustness-2026-11-06/soak.json",
+    "evidence/robustness-2026-11-06/checks.json",
+    "evidence/robustness-2026-11-06/first-run-light.png",
+    "evidence/robustness-2026-11-06/first-run-dark.png"
+  ],
+  "volume_detached": true
+}
