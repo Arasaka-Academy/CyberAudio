@@ -44,6 +44,63 @@ extension ServiceTests {
         XCTAssertEqual(server.ranges[previous],"bytes=8-15","Retry must reuse the last complete chunk")
         XCTAssertEqual(try Data(contentsOf:root.appendingPathComponent("weight.bin")),payload)
     }
+    func testTransientAssetInterruptionRecoversWithinDownload() async throws {
+        let (root,asset,session) = try assetDownloadFixture(),server = try RangeServer()
+        defer { server.stop() }; server.interruptOnce = true
+        try await fetch(asset,root,server,session)
+        XCTAssertEqual(try Data(contentsOf:root.appendingPathComponent("weight.bin")),payload)
+        XCTAssertEqual(server.ranges,["bytes=0-7","bytes=8-15","bytes=8-15","bytes=16-23","bytes=24-31","bytes=32-35"],
+                       "A transient interruption must retry the unchanged range without appending unverified bytes")
+    }
+    func testTemporaryAssetServerFailureRecoversWithinDownload() async throws {
+        let (root,asset,session) = try assetDownloadFixture(),server = try RangeServer()
+        defer { server.stop() }; server.unavailableOnce = true
+        try await fetch(asset,root,server,session)
+        XCTAssertEqual(try Data(contentsOf:root.appendingPathComponent("weight.bin")),payload)
+        XCTAssertEqual(server.ranges,["bytes=0-7","bytes=8-15","bytes=8-15","bytes=16-23","bytes=24-31","bytes=32-35"])
+    }
+    func testPersistentAssetFailureStopsAfterBoundedRetries() async throws {
+        let (root,asset,session) = try assetDownloadFixture(),server = try RangeServer()
+        defer { server.stop() }; server.unavailable = true
+        do { try await fetch(asset,root,server,session); XCTFail("Unavailable server accepted") }
+        catch { XCTAssertEqual((error as? ServiceError)?.code,"download_unavailable") }
+        XCTAssertEqual(server.ranges,["bytes=0-7","bytes=8-15","bytes=8-15","bytes=8-15"],
+                       "Each range has at most two automatic retries")
+        let partial = root.appendingPathComponent("downloads/"+asset.sha256+".partial")
+        XCTAssertEqual(try Data(contentsOf:partial),Data("01234567".utf8))
+        XCTAssertFalse(FileManager.default.fileExists(atPath:root.appendingPathComponent("weight.bin").path))
+    }
+    func testAssetRetryRespectsServerDelayAndPermanentErrors() async throws {
+        for retryAfter in ["120","Thu, 01 Jan 2099 00:00:00 GMT"] {
+            let (root,asset,session) = try assetDownloadFixture(),server = try RangeServer()
+            defer { server.stop() }; server.unavailable = true; server.retryAfter = retryAfter
+            do { try await fetch(asset,root,server,session); XCTFail("Unavailable server accepted") }
+            catch { XCTAssertEqual((error as? ServiceError)?.code,"download_unavailable") }
+            XCTAssertEqual(server.ranges,["bytes=0-7","bytes=8-15"],
+                           "A server delay beyond the automatic retry budget must return control without an early retry")
+        }
+        let (root,asset,session) = try assetDownloadFixture(),server = try RangeServer()
+        defer { server.stop() }; server.notFound = true
+        do { try await fetch(asset,root,server,session); XCTFail("Missing asset accepted") } catch {}
+        XCTAssertEqual(server.ranges,["bytes=0-7","bytes=8-15"],"Permanent HTTP errors must not be retried")
+        let partial = root.appendingPathComponent("downloads/"+asset.sha256+".partial")
+        XCTAssertEqual(try Data(contentsOf:partial),Data("01234567".utf8))
+    }
+    func testAssetCancellationInterruptsRetryDelay() async throws {
+        let (root,asset,session) = try assetDownloadFixture(),server = try RangeServer()
+        defer { server.stop() }; server.interrupt = true
+        let task = Task { try await self.fetch(asset,root,server,session) }
+        let deadline = uptime()+3
+        while server.ranges.count < 2 && uptime() < deadline { try await Task.sleep(nanoseconds:10_000_000) }
+        try await Task.sleep(nanoseconds:150_000_000)
+        let cancelled = uptime(); task.cancel()
+        do { try await task.value; XCTFail("Cancelled retry completed") }
+        catch { XCTAssertTrue(error is CancellationError,"A retry delay must report cancellation, not a network failure") }
+        XCTAssertTrue(uptime()-cancelled < 0.75,"Cancelling must not wait for the retry backoff")
+        XCTAssertEqual(server.ranges.count,2,"Cancellation must not initiate a retry")
+        let partial = root.appendingPathComponent("downloads/"+asset.sha256+".partial")
+        XCTAssertEqual(try Data(contentsOf:partial),Data("01234567".utf8))
+    }
     func testIgnoredRangeReplacesOnlyVerifiedPartial() async throws {
         let (root,asset,session) = try assetDownloadFixture(),server = try RangeServer()
         defer { server.stop() }; server.interrupt = true
@@ -57,6 +114,7 @@ extension ServiceTests {
         let (root,asset,session) = try assetDownloadFixture(),server = try RangeServer()
         defer { server.stop() }; server.wrongRange = true
         do { try await fetch(asset,root,server,session); XCTFail("Incorrect Content-Range accepted") } catch {}
+        XCTAssertEqual(server.ranges.count,1,"Malformed ranges must fail without automatic retry")
         XCTAssertFalse(FileManager.default.fileExists(atPath:root.appendingPathComponent("weight.bin").path))
         server.wrongRange = false; server.corrupt = true
         do { try await fetch(asset,root,server,session); XCTFail("Wrong SHA-256 accepted") } catch {}
@@ -134,12 +192,21 @@ private final class RangeServer: @unchecked Sendable {
     private var stopping = false
     private var requests: [String] = []
     private var flags = [String:Bool]()
+    private var retryAfterValue = "0"
     private let fd: Int32
     let url: URL
     var ranges: [String] { lock.lock(); defer { lock.unlock() }; return requests }
     private func flag(_ name: String) -> Bool { lock.lock(); defer { lock.unlock() }; return flags[name] ?? false }
     private func set(_ name: String,_ value: Bool) { lock.lock(); flags[name] = value; lock.unlock() }
     var interrupt: Bool { get { flag("interrupt") } set { set("interrupt",newValue) } }
+    var interruptOnce: Bool { get { flag("interruptOnce") } set { set("interruptOnce",newValue) } }
+    var unavailableOnce: Bool { get { flag("unavailableOnce") } set { set("unavailableOnce",newValue) } }
+    var unavailable: Bool { get { flag("unavailable") } set { set("unavailable",newValue) } }
+    var notFound: Bool { get { flag("notFound") } set { set("notFound",newValue) } }
+    var retryAfter: String {
+        get { lock.lock(); defer { lock.unlock() }; return retryAfterValue }
+        set { lock.lock(); retryAfterValue = newValue; lock.unlock() }
+    }
     var ignoreRange: Bool { get { flag("ignore") } set { set("ignore",newValue) } }
     var wrongRange: Bool { get { flag("wrong") } set { set("wrong",newValue) } }
     var corrupt: Bool { get { flag("corrupt") } set { set("corrupt",newValue) } }
@@ -187,12 +254,20 @@ private final class RangeServer: @unchecked Sendable {
         let parts = range.dropFirst(6).split(separator:"-").compactMap { Int($0) }
         guard parts.count == 2,parts[0] >= 0,parts[1] < payload.count else { return }
         lock.lock(); requests.append(range); let number = requests.count,mode = flags; lock.unlock()
+        if mode["notFound"] == true && number >= 2 {
+            write(Data("HTTP/1.1 404 Not Found\r\nContent-Length: 0\r\nConnection: close\r\n\r\n".utf8),to:peer)
+            return
+        }
+        if (mode["unavailable"] == true && number >= 2) || (mode["unavailableOnce"] == true && number == 2) {
+            write(Data("HTTP/1.1 503 Service Unavailable\r\nContent-Length: 0\r\nRetry-After: \(retryAfter)\r\nConnection: close\r\n\r\n".utf8),to:peer)
+            return
+        }
         var data = mode["ignore"] == true ? payload : payload.subdata(in:parts[0]..<(parts[1]+1))
         if mode["corrupt"] == true && parts[0] == 0 { data[0] ^= 1 }
         let contentRange = mode["ignore"] == true ? "" : "Content-Range: bytes \(parts[0]+(mode["wrong"] == true ? 1 : 0))-\(parts[1])/36\r\n"
         write(Data("HTTP/1.1 \(mode["ignore"] == true ? "200 OK" : "206 Partial Content")\r\nContent-Length: \(data.count)\r\n\(contentRange)Connection: close\r\n\r\n".utf8),to:peer)
         if mode["hold"] == true && number >= 2 { _ = release.wait(timeout:.now()+5); return }
-        if mode["interrupt"] == true && number >= 2 { data = Data(data.prefix(data.count/2)) }
+        if (mode["interrupt"] == true && number >= 2) || (mode["interruptOnce"] == true && number == 2) { data = Data(data.prefix(data.count/2)) }
         write(data,to:peer)
     }
     private func write(_ data: Data,to peer: Int32) {

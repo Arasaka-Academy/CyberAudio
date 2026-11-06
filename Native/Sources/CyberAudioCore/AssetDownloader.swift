@@ -39,14 +39,8 @@ public enum AssetDownloader {
             var request = URLRequest(url:source,cachePolicy:.reloadIgnoringLocalCacheData)
             request.setValue("bytes=\(offset)-\(end)",forHTTPHeaderField:"Range")
             request.setValue("identity",forHTTPHeaderField:"Accept-Encoding")
-            let delegate = ChunkProgress(offset:Int64(offset),fullSize:Int64(asset.size),chunkSize:Int64(end-offset+1),reporter:reporter)
-            let temporary: URL,response: URLResponse
-            do { (temporary,response) = try await session.download(for:request,delegate:delegate) }
-            catch {
-                if Task.isCancelled || error is CancellationError { throw CancellationError() }
-                if delegate.exceeded { throw invalidResponse }
-                throw ServiceError(502,"download_unavailable","下载中断，已保留进度；请检查网络或代理后继续。")
-            }
+            let (temporary,response) = try await downloadChunk(request,session:session,offset:Int64(offset),
+                fullSize:Int64(asset.size),chunkSize:Int64(end-offset+1),reporter:reporter)
             defer { try? FileManager.default.removeItem(at:temporary) }
             try Task.checkCancellation()
             guard let http = response as? HTTPURLResponse,let size = try regularSize(temporary) else { throw invalidResponse }
@@ -80,6 +74,66 @@ public enum AssetDownloader {
         reporter.report(Int64(asset.size))
     }
 
+    private static func downloadChunk(_ request: URLRequest,session: URLSession,offset: Int64,
+                                      fullSize: Int64,chunkSize: Int64,reporter: DownloadProgress) async throws -> (URL,URLResponse) {
+        // Retry only this uncommitted range. A failed attempt never changes the
+        // durable prefix, and cancellation also interrupts the bounded backoff.
+        for attempt in 0...2 {
+            try Task.checkCancellation()
+            let delegate = ChunkProgress(offset:offset,fullSize:fullSize,chunkSize:chunkSize,reporter:reporter)
+            let result: (URL,URLResponse)
+            do { result = try await session.download(for:request,delegate:delegate) }
+            catch {
+                if Task.isCancelled || error is CancellationError { throw CancellationError() }
+                if delegate.exceeded { throw invalidResponse }
+                let retryable: Set<URLError.Code> = [.timedOut,.networkConnectionLost,.cannotConnectToHost,
+                                                    .dnsLookupFailed,.notConnectedToInternet]
+                guard attempt < 2,let code = (error as? URLError)?.code,retryable.contains(code) else {
+                    throw unavailable(error)
+                }
+                try await Task.sleep(nanoseconds:UInt64(1 << attempt)*1_000_000_000)
+                continue
+            }
+            if let http = result.1 as? HTTPURLResponse,[408,429,500,502,503,504].contains(http.statusCode) {
+                try? FileManager.default.removeItem(at:result.0)
+                guard attempt < 2,let delay = retryDelay(http,attempt:attempt) else {
+                    throw ServiceError(502,"download_unavailable","下载服务暂时不可用，已保留进度；请稍后继续。")
+                }
+                try await Task.sleep(nanoseconds:delay)
+                continue
+            }
+            return result
+        }
+        throw ServiceError.inference
+    }
+    private static func retryDelay(_ response: HTTPURLResponse,attempt: Int) -> UInt64? {
+        let backoff = Double(1 << attempt)
+        guard let header = response.value(forHTTPHeaderField:"Retry-After")?.trimmingCharacters(in:.whitespaces) else {
+            return UInt64(backoff*1_000_000_000)
+        }
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier:"en_US_POSIX"); formatter.timeZone = TimeZone(secondsFromGMT:0)
+        formatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss zzz"
+        let seconds = Double(header) ?? formatter.date(from:header)?.timeIntervalSinceNow ?? backoff
+        guard seconds.isFinite,seconds <= 30 else { return nil }
+        return UInt64(max(backoff,seconds)*1_000_000_000)
+    }
+    private static func unavailable(_ error: Error) -> ServiceError {
+        let reason: String
+        switch (error as? URLError)?.code {
+        case .timedOut: reason = "下载连接超时"
+        case .networkConnectionLost: reason = "下载连接中断"
+        case .cannotConnectToHost: reason = "无法建立下载连接"
+        case .cannotFindHost,.dnsLookupFailed: reason = "无法解析下载地址"
+        case .notConnectedToInternet: reason = "网络不可用"
+        case .secureConnectionFailed,.serverCertificateHasBadDate,.serverCertificateUntrusted,
+             .serverCertificateHasUnknownRoot,.serverCertificateNotYetValid: reason = "无法验证安全下载连接"
+        default: reason = "下载中断"
+        }
+        // Do not expose localizedDescription/userInfo: redirects may carry
+        // signed credentials, and proxy addresses can contain private data.
+        return ServiceError(502,"download_unavailable",reason+"，已保留进度；请检查网络或代理后继续。")
+    }
     static var unsafePath: ServiceError { ServiceError(500,"unsafe_download_path","下载路径包含非普通文件或符号链接，请检查暂存目录。") }
     private static func publish(_ source: URL,to target: URL) throws {
         // RENAME_EXCL atomically publishes without replacing a final file that
