@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-11-06T04:41:15.366533+00:00",
+  "version": "0.4.2 (9)",
+  "installed_executable_matches_release": true,
+  "screen_locked": false,
+  "recorder_gui": {
+    "bare_tab_rejected": true,
+    "saved_chord": "control-option-shift-K",
+    "sheet_closed_after_chord": true,
+    "restored_shortcut": "right Option",
+    "restored_value_read_back": true
+  },
+  "permissions_before_system_refresh": {
+    "microphone": false,
+    "accessibility": false,
+    "input_monitoring": false
+  },
+  "microphone_after_system_toggle_and_restart": true,
+  "accessibility_refresh": "new macOS administrator authentication sheet pending",
+  "input_monitoring_refresh": "pending accessibility authentication completion",
+  "global_listener": "not yet verified",
+  "physical_press_and_voice": "not yet verified"
+}
