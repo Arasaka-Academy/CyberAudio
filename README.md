@@ -4,7 +4,7 @@
 
 当前文档见 [部署指南](docs/GUIDE.md)、[快捷听写说明](docs/DICTATION.md) 和 [Swift 迁移报告](docs/NATIVE_SWIFT.md)。[Notion 手册](https://app.notion.com/p/CyberAudio-Mac-STT-TTS-App-API-40d1d9761945811081c6ddd41d45e2c8) 与 [旧验收报告](docs/VERIFICATION.md) 保留历史 Python 版本记录。
 
-最新工程进展、代码审查修复和实际验收边界见 [2026-11-06 审查报告](docs/reviews/2026-11-06.md)。
+最新工程进展、代码审查修复和实际验收边界见 [审查报告（续审至 2026-11-07）](docs/reviews/2026-11-06.md)。
 
 - **STT**：Qwen3-ASR 1.7B 8-bit，中文／英文／混合语音，录音或导入文件。
 - **TTS**：Qwen3-TTS 1.7B CustomVoice 8-bit，9 个预设音色，表达指令，WAV 与流式 PCM。

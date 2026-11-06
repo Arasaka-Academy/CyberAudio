@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "source_commit": "b5607f2296785bb183bf88afe7fc3d956369d540",
+  "current_sdk_sha256": "17301a083f323673bc548aff031b83d9df60b2c04715af87592b1c68d42bd48a",
+  "previous_sdk_sha256": "0190fd2a02d6ce0eaa3732ca7b7d373be251747edc5d14a0d0b4fe8ce3c0dd6b",
+  "current_source_hashes_verified": 96,
+  "actual_loader_probes": 2,
+  "owned_probe_processes_absent": true,
+  "owned_listener_closed": 18887,
+  "original_models_preserved": true,
+  "production_and_frozen_preserved": true,
+  "source_sha256": {
+    "ModelPreservationProbe.swift": "bcc54b09710e48052f107182d8ef57876de3779665d21ddda29021a133dc4724",
+    "build.py": "88e10e5e03729548eb7ecedd8f19dceaff5535c15dc0c46b897db36030d3e253",
+    "run.py": "076650ffc8471d0a7111e2aa5cd3777c181226c8eb3dce9b7cba92bbf9a6c014",
+    "build-final-candidate.py": "bed1b45b4c209715ef496da029dcacbf04c3bbdb0be32e0b7206a6f8af4862ca",
+    "run-final-candidate.py": "60b6c85c92a23641ce26ad47e5b1ff43c6bff35d9b60e10baab0ea239f6ac0da",
+    "verify-final-candidate-result.py": "7eac919e7cd33c862d174c740b67a6108d60ffab38e79e23d65529ba49d46725"
+  },
+  "sampling_or_model_quality_change": false,
+  "remaining_acceptance_gates_unchanged": true,
+  "raw_token_scan": {
+    "nonempty_values_checked": 37,
+    "exposures": 0
+  }
+}

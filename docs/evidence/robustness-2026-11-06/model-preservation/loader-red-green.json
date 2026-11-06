@@ -1,0 +1,85 @@
+{
+  "scope": "Actual pinned SDK loading real linked weights; only disposable roots can be deleted",
+  "baseline": {
+    "status": "reproduced",
+    "stage": "baseline",
+    "started": "2026-11-06T16:15:38.059626+00:00",
+    "production_before": {
+      "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+      "status": "ready",
+      "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+      "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+    },
+    "build_sha256": "16cbf44ed6ae50feb0b8cde06bac8e2ce564bdb04ce9421196e16b258fa4596c",
+    "owned_group_pid": 50187,
+    "elapsed_seconds": 8.62368341704132,
+    "exit_code": 2,
+    "report": {
+      "elapsed_seconds": 1.8499415833503008,
+      "model_root_exists": false,
+      "recognized_tokenizer_error": true,
+      "rejected": true,
+      "scope": "Actual pinned Qwen3TTSModel.fromModelDirectory with real weights linked into a disposable directory",
+      "sentinel_and_user_file_preserved": false,
+      "status": "failed"
+    },
+    "production_after": {
+      "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+      "status": "ready",
+      "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+      "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+    },
+    "original_models_preserved": true,
+    "production_preserved": true,
+    "frozen_preserved": true,
+    "finished": "2026-11-06T16:15:46.705828+00:00"
+  },
+  "fixed": {
+    "status": "passed",
+    "stage": "fixed",
+    "started": "2026-11-06T16:22:10.194635+00:00",
+    "production_before": {
+      "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+      "status": "ready",
+      "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+      "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+    },
+    "build_sha256": "0a3ac49fa18f2638f0cb9c9ac1943b1b12598878788c44210afded49486630ef",
+    "owned_group_pid": 87860,
+    "elapsed_seconds": 7.643524124985561,
+    "exit_code": 0,
+    "report": {
+      "elapsed_seconds": 1.3155274583259597,
+      "model_root_exists": true,
+      "recognized_tokenizer_error": true,
+      "rejected": true,
+      "scope": "Actual pinned Qwen3TTSModel.fromModelDirectory with real weights linked into a disposable directory",
+      "sentinel_and_user_file_preserved": true,
+      "status": "passed"
+    },
+    "production_after": {
+      "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+      "status": "ready",
+      "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+      "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+    },
+    "original_models_preserved": true,
+    "production_preserved": true,
+    "frozen_preserved": true,
+    "finished": "2026-11-06T16:22:17.857197+00:00"
+  },
+  "protected_original_model_file_count": 568,
+  "protected_model_manifest_sha256": "e125da26ae9f9f79a1d139e4d176b20e07c40c4a1e5a0e29ea19cf0a2a8bfb81",
+  "protected_frozen_file_count": 8,
+  "branch_test_red_observation": {
+    "collection": "Observed tool output; original invocation was not redirected",
+    "command": "CYBERAUDIO_NATIVE_SCRATCH=.context/icon-native-build .context/tool-tests-venv/bin/python -m pytest -c pyproject.toml tests/test_mlx_adapter.py -k preserves_model -q --tb=short",
+    "exit_code": 1,
+    "failed": 1,
+    "passed": 2,
+    "deselected": 4,
+    "seconds": 3.03,
+    "assertion": "Malformed speech tokenizer must not delete the model directory"
+  },
+  "automated_branch_test_scope": "Exact SDK filesystem branch executed with Foundation; MLX weight loading and decoder construction omitted here and exercised by the separate actual loader probes"
+}

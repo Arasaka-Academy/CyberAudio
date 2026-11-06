@@ -1,0 +1,11 @@
+--- previous-managed/Qwen3TTS.swift
++++ current-managed/Qwen3TTS.swift
+@@ -1224,4 +1224 @@
+-            // speech_tokenizer exists but is not a directory — stale cache
+-            // Remove the entire model cache so it re-downloads cleanly next time
+-            print("speech_tokenizer is not a directory (stale cache), clearing model cache...")
+-            try? fm.removeItem(at: modelDir)
++            // Configured model directories may contain user-owned files.
+@@ -1229 +1226 @@
+-                "Model cache was corrupted (speech_tokenizer). It has been cleared. Please try loading again."
++                "speech_tokenizer is not a directory. Model files were preserved; check the configured model directory."

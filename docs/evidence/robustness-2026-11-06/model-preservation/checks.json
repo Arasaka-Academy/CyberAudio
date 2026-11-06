@@ -1,0 +1,39 @@
+{
+  "command": [
+    "/usr/bin/caffeinate",
+    "-i",
+    "make",
+    "check"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 260.3998631249997,
+  "started": "2026-11-06T16:17:09.846316+00:00",
+  "finished": "2026-11-06T16:21:30.246277+00:00",
+  "log": "/Users/zhubby/Repository/CyberAudio/.context/robustness/model-preservation-20261107/check.log",
+  "log_sha256": "ee1666487756ed3941c5b1d2c91a23b1cee7f6c22ce743089c60afb6349fe02b",
+  "native_contracts": 36,
+  "native_failures": 0,
+  "native_skipped": 0,
+  "active_tools_passed": 44,
+  "tool_failures": 0,
+  "tool_skipped": 0,
+  "native_view_renders": 14,
+  "all_behavioral_groups": true,
+  "app_inference_service_assets_compiled": true,
+  "targeted_adapter_tests": {
+    "command": [
+      ".context/tool-tests-venv/bin/python",
+      "-m",
+      "pytest",
+      "-c",
+      "pyproject.toml",
+      "tests/test_mlx_adapter.py",
+      "-q",
+      "--tb=short"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 9.218991542002186
+  },
+  "targeted_adapter_passed": 8,
+  "targeted_adapter_log_sha256": "a9f2a98d7a33a216b88918934a8d42caad53b6a34166ce31f447826c9c37754e"
+}
