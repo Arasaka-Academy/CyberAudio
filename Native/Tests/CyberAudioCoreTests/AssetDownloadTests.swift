@@ -6,21 +6,56 @@ import CyberAudioCore
 private let payload = Data("0123456789abcdefghijklmnopqrstuvwxyz".utf8)
 
 extension ServiceTests {
-    private func assetDownloadFixture() throws -> (URL, LockedAsset, URLSession) {
+    private func assetDownloadFixture(data: Data = payload) throws -> (URL, LockedAsset, URLSession) {
         let root = FileManager.default.temporaryDirectory.appendingPathComponent("CyberAudio-download-test-"+UUID().uuidString)
         try FileManager.default.createDirectory(at:root,withIntermediateDirectories:true)
         addTeardownBlock { try? FileManager.default.removeItem(at:root) }
-        let digest = SHA256.hash(data:payload).map { String(format:"%02x",$0) }.joined()
-        let asset = try JSONDecoder().decode(LockedAsset.self,from:jsonData(["path":"asr/weight.bin","size":36,"sha256":digest]))
+        let digest = SHA256.hash(data:data).map { String(format:"%02x",$0) }.joined()
+        let asset = try JSONDecoder().decode(LockedAsset.self,from:jsonData(["path":"asr/weight.bin","size":data.count,"sha256":digest]))
         let config = URLSessionConfiguration.ephemeral
         config.timeoutIntervalForRequest = 3; config.timeoutIntervalForResource = 5
         let session = URLSession(configuration:config)
         addTeardownBlock { session.invalidateAndCancel() }
         return (root,asset,session)
     }
-    private func fetch(_ asset: LockedAsset,_ root: URL,_ server: RangeServer,_ session: URLSession,restart: Bool = false) async throws {
+    private func fetch(_ asset: LockedAsset,_ root: URL,_ server: RangeServer,_ session: URLSession,restart: Bool = false,chunkBytes: Int = 8) async throws {
         try await AssetDownloader.download(asset,from:server.url,to:root.appendingPathComponent("weight.bin"),
-            staging:root.appendingPathComponent("downloads"),session:session,chunkBytes:8,restart:restart)
+            staging:root.appendingPathComponent("downloads"),session:session,chunkBytes:chunkBytes,restart:restart)
+    }
+    private func largeDownloadPayload() -> Data {
+        var data = Data(repeating:0x11,count:2*1024*1024)
+        data.append(Data(repeating:0x22,count:1024*1024)); data.append(Data(repeating:0x33,count:1024*1024))
+        return data
+    }
+    func testInterruptedLargeRangeFallsBackWithoutLosingPrefix() async throws {
+        let data = largeDownloadPayload(),(root,asset,session) = try assetDownloadFixture(data:data)
+        let server = try RangeServer(data:data); defer { server.stop() }; server.interruptLarge = true
+        try await fetch(asset,root,server,session,chunkBytes:2*1024*1024)
+        XCTAssertEqual(try Data(contentsOf:root.appendingPathComponent("weight.bin")),data)
+        XCTAssertEqual(server.ranges,["bytes=0-2097151","bytes=2097152-4194303","bytes=2097152-4194303","bytes=2097152-4194303",
+                                     "bytes=2097152-3145727","bytes=3145728-4194303"],
+                       "After bounded large-range failures, smaller ranges must resume exactly at the durable prefix")
+        XCTAssertFalse(FileManager.default.fileExists(atPath:root.appendingPathComponent("downloads/"+asset.sha256+".partial").path))
+    }
+    func testPersistentSmallRangeFailureRemainsBounded() async throws {
+        let data = largeDownloadPayload(),(root,asset,session) = try assetDownloadFixture(data:data)
+        let server = try RangeServer(data:data); defer { server.stop() }; server.interrupt = true
+        do { try await fetch(asset,root,server,session,chunkBytes:2*1024*1024); XCTFail("Persistent interruption accepted") }
+        catch { XCTAssertEqual((error as? ServiceError)?.code,"download_unavailable") }
+        XCTAssertEqual(server.ranges,["bytes=0-2097151","bytes=2097152-4194303","bytes=2097152-4194303","bytes=2097152-4194303",
+                                     "bytes=2097152-3145727","bytes=2097152-3145727","bytes=2097152-3145727"],
+                       "One fallback may try the smaller range at most three times, then return control")
+        XCTAssertEqual(try Data(contentsOf:root.appendingPathComponent("downloads/"+asset.sha256+".partial")),Data(data.prefix(2*1024*1024)))
+        XCTAssertFalse(FileManager.default.fileExists(atPath:root.appendingPathComponent("weight.bin").path))
+    }
+    func testTemporaryHTTPFailureDoesNotReduceRange() async throws {
+        let data = largeDownloadPayload(),(root,asset,session) = try assetDownloadFixture(data:data)
+        let server = try RangeServer(data:data); defer { server.stop() }; server.unavailable = true
+        do { try await fetch(asset,root,server,session,chunkBytes:2*1024*1024); XCTFail("Unavailable server accepted") }
+        catch { XCTAssertEqual((error as? ServiceError)?.code,"download_unavailable") }
+        XCTAssertEqual(server.ranges,["bytes=0-2097151","bytes=2097152-4194303","bytes=2097152-4194303","bytes=2097152-4194303"],
+                       "Server unavailability must keep its original retry bound without smaller-range requests")
+        XCTAssertEqual(try Data(contentsOf:root.appendingPathComponent("downloads/"+asset.sha256+".partial")),Data(data.prefix(2*1024*1024)))
     }
     func testRangedAssetDownloadAndVerifiedReuse() async throws {
         let (root,asset,session) = try assetDownloadFixture(),server = try RangeServer()
@@ -187,6 +222,7 @@ extension ServiceTests {
 }
 
 private final class RangeServer: @unchecked Sendable {
+    private let responsePayload: Data
     private let lock = NSLock(),done = DispatchSemaphore(value:0)
     let release = DispatchSemaphore(value:0)
     private var stopping = false
@@ -200,6 +236,7 @@ private final class RangeServer: @unchecked Sendable {
     private func set(_ name: String,_ value: Bool) { lock.lock(); flags[name] = value; lock.unlock() }
     var interrupt: Bool { get { flag("interrupt") } set { set("interrupt",newValue) } }
     var interruptOnce: Bool { get { flag("interruptOnce") } set { set("interruptOnce",newValue) } }
+    var interruptLarge: Bool { get { flag("interruptLarge") } set { set("interruptLarge",newValue) } }
     var unavailableOnce: Bool { get { flag("unavailableOnce") } set { set("unavailableOnce",newValue) } }
     var unavailable: Bool { get { flag("unavailable") } set { set("unavailable",newValue) } }
     var notFound: Bool { get { flag("notFound") } set { set("notFound",newValue) } }
@@ -211,7 +248,8 @@ private final class RangeServer: @unchecked Sendable {
     var wrongRange: Bool { get { flag("wrong") } set { set("wrong",newValue) } }
     var corrupt: Bool { get { flag("corrupt") } set { set("corrupt",newValue) } }
     var hold: Bool { get { flag("hold") } set { set("hold",newValue) } }
-    init() throws {
+    init(data: Data = payload) throws {
+        responsePayload = data
         let listener = socket(AF_INET,SOCK_STREAM,0)
         guard listener >= 0 else { throw ServiceError.inference }
         fd = listener
@@ -242,6 +280,7 @@ private final class RangeServer: @unchecked Sendable {
         }
     }
     private func respond(_ peer: Int32) {
+        let payload = responsePayload
         var timeout = timeval(tv_sec:3,tv_usec:0)
         setsockopt(peer,SOL_SOCKET,SO_RCVTIMEO,&timeout,socklen_t(MemoryLayout<timeval>.size))
         var bytes = Data(),buffer = [UInt8](repeating:0,count:4096)
@@ -264,10 +303,11 @@ private final class RangeServer: @unchecked Sendable {
         }
         var data = mode["ignore"] == true ? payload : payload.subdata(in:parts[0]..<(parts[1]+1))
         if mode["corrupt"] == true && parts[0] == 0 { data[0] ^= 1 }
-        let contentRange = mode["ignore"] == true ? "" : "Content-Range: bytes \(parts[0]+(mode["wrong"] == true ? 1 : 0))-\(parts[1])/36\r\n"
+        let contentRange = mode["ignore"] == true ? "" : "Content-Range: bytes \(parts[0]+(mode["wrong"] == true ? 1 : 0))-\(parts[1])/\(payload.count)\r\n"
         write(Data("HTTP/1.1 \(mode["ignore"] == true ? "200 OK" : "206 Partial Content")\r\nContent-Length: \(data.count)\r\n\(contentRange)Connection: close\r\n\r\n".utf8),to:peer)
         if mode["hold"] == true && number >= 2 { _ = release.wait(timeout:.now()+5); return }
-        if (mode["interrupt"] == true && number >= 2) || (mode["interruptOnce"] == true && number == 2) { data = Data(data.prefix(data.count/2)) }
+        if (mode["interrupt"] == true && number >= 2) || (mode["interruptOnce"] == true && number == 2) ||
+            (mode["interruptLarge"] == true && number >= 2 && data.count > 1024*1024) { data = Data(data.prefix(data.count/2)) }
         write(data,to:peer)
     }
     private func write(_ data: Data,to peer: Int32) {

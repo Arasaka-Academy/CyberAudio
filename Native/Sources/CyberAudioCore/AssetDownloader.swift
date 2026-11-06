@@ -33,14 +33,24 @@ public enum AssetDownloader {
             throw ServiceError(500,"invalid_partial","下载暂存文件长度异常，请选择重新下载。")
         }
         reporter.report(Int64(offset))
+        var rangeBytes = chunkBytes
         while offset < UInt64(asset.size) {
             try Task.checkCancellation()
-            let end = min(UInt64(asset.size)-1,offset+UInt64(chunkBytes)-1)
+            let end = min(UInt64(asset.size)-1,offset+UInt64(rangeBytes)-1)
             var request = URLRequest(url:source,cachePolicy:.reloadIgnoringLocalCacheData)
             request.setValue("bytes=\(offset)-\(end)",forHTTPHeaderField:"Range")
             request.setValue("identity",forHTTPHeaderField:"Accept-Encoding")
-            let (temporary,response) = try await downloadChunk(request,session:session,offset:Int64(offset),
-                fullSize:Int64(asset.size),chunkSize:Int64(end-offset+1),reporter:reporter)
+            let temporary: URL,response: URLResponse
+            do {
+                (temporary,response) = try await downloadChunk(request,session:session,offset:Int64(offset),
+                    fullSize:Int64(asset.size),chunkSize:Int64(end-offset+1),reporter:reporter)
+            } catch let failure as InterruptedRange {
+                // A degraded connection may never finish a large range. Fall
+                // back once per asset without touching the durable prefix.
+                guard end-offset+1 > 1024*1024 else { throw unavailable(failure.error) }
+                rangeBytes = 1024*1024
+                continue
+            }
             defer { try? FileManager.default.removeItem(at:temporary) }
             try Task.checkCancellation()
             guard let http = response as? HTTPURLResponse,let size = try regularSize(temporary) else { throw invalidResponse }
@@ -88,7 +98,11 @@ public enum AssetDownloader {
                 if delegate.exceeded { throw invalidResponse }
                 let retryable: Set<URLError.Code> = [.timedOut,.networkConnectionLost,.cannotConnectToHost,
                                                     .dnsLookupFailed,.notConnectedToInternet]
-                guard attempt < 2,let code = (error as? URLError)?.code,retryable.contains(code) else {
+                guard let code = (error as? URLError)?.code,retryable.contains(code) else {
+                    throw unavailable(error)
+                }
+                guard attempt < 2 else {
+                    if code == .timedOut || code == .networkConnectionLost { throw InterruptedRange(error:error) }
                     throw unavailable(error)
                 }
                 try await Task.sleep(nanoseconds:UInt64(1 << attempt)*1_000_000_000)
@@ -185,6 +199,8 @@ public enum AssetDownloader {
         }
     }
 }
+
+private struct InterruptedRange: Error { let error: Error }
 
 private final class DownloadProgress: @unchecked Sendable {
     private let lock = NSLock()
