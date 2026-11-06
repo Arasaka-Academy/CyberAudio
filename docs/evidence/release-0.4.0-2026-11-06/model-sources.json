@@ -1,0 +1,17 @@
+{
+  "asr_weight": {
+    "provider": "ModelScope",
+    "revision": "579e237ce6ec925252973afe835d2f98a138602f",
+    "sha256": "bf304b009cc7eca79283056f787b44c952d24ac22cec787b39732bba3c23c13c",
+    "size": 2463307541,
+    "identical_to_native_lock": true
+  },
+  "other_files": "Pinned Hugging Face files through hf-mirror.com; all final SHA-256 values remain mandatory",
+  "tts_weight": {
+    "provider": "ModelScope",
+    "revision": "74e4e5ac33ad1cf328c4f49d570f6e434b3fa79b",
+    "sha256": "b696f4bf45f54497b6de758981e76f1410bd68af05a657477dee466b0202df1a",
+    "size": 2393308931,
+    "identical_to_native_lock": true
+  }
+}

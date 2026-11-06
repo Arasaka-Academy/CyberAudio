@@ -1,0 +1,32 @@
+<?xml version="1.0" standalone="yes"?><!-- sparkle-sign-warning:
+IMPORTANT: This file was signed by Sparkle. Any modifications to this file requires re-signing this file with generate_appcast or sign_update! The signed signature will be embedded at the end of this file.
+--><rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>CyberAudio</title>
+        <item>
+            <title>0.4.0</title>
+            <pubDate>Fri, 06 Nov 2026 01:54:16 +0000</pubDate>
+            <sparkle:version>7</sparkle:version>
+            <sparkle:shortVersionString>0.4.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<p>更新将重启 CyberAudio，请先复制需要的文字并保存音频。</p><pre># CyberAudio 0.4.0（7）
+
+主窗口收紧到 560 × 440 pt，支持按住快捷键录音、松开后识别并在原输入框粘贴文字。继续使用 Swift + Qwen 推理及现有 HTTP API。
+
+- STT／TTS 共用紧凑工作台，原生文本编辑区支持长文本、撤销和输入法；主窗口无外层滚动条，音色、语言、播放和保存保持可见。
+- 默认单独按住右 Option 150 ms 开始听写，松开识别；可设置组合键或暂停。非激活浮层提供录音和识别反馈，Escape 取消，录音最长 59 秒。
+- 自动输出只面向本次会话的原输入框；切换应用、焦点或选区后保留结果供复制。只粘贴一次，不自动回车或发送消息。
+- 保存并恢复剪贴板多种格式；用户中途复制时保留新剪贴板。更新等待包含录音、识别、文本输出与剪贴板恢复。
+- 设置分为“听写／服务／通用与更新”，首次使用快捷听写需在设置中完成麦克风、辅助功能和输入监控授权。
+
+使用方式和验收边界见 [快捷听写说明](../DICTATION.md)。本次发布不会替换模型、迁移到 Core ML／ANE，或删除已有配置与 Token。App 使用 ad-hoc 签名，尚未公证。
+
+</pre>]]></description>
+            <enclosure url="https://github.com/Arasaka-Academy/CyberAudio/releases/download/v0.4.0/CyberAudio-0.4.0-macOS-arm64.zip" length="92342874" type="application/octet-stream" sparkle:edSignature="OurwT+lAmQqqC7LjmamjhdaVTpaQUrNHzWUrFczr6VNPohmvnFr/ta3FGwUksQ28HI2a9WO0g6r2JC+d+nKMAQ=="></enclosure>
+        </item>
+    </channel>
+</rss><!-- sparkle-signatures:
+edSignature: eLdbKt2NNgupo/Q4W1KLoOtO0ehi3jsXTeGrDFw2T6qTZRrKXSU9pZxgkiS09WOeaIiUcXwFIBmjVn4pnpvRBw==
+length: 2515
+-->

@@ -1,0 +1,150 @@
+{
+  "started": "2026-11-06T02:47:14.533944+00:00",
+  "root": "~/Library/Application Support/CyberAudio",
+  "fixture_kind": "macOS synthetic speech",
+  "stt": [
+    {
+      "language": "zh",
+      "reference": "你好，这是本机语音识别测试。今天是星期五，测试数字一二三四五。",
+      "audio_sha256": "c2aadb005da05ce35371ad7bc7c4f5080e668817f0059ae61e84eff1b598f924",
+      "result": {
+        "duration": 7.1,
+        "inference_ms": 1538.2999579887837,
+        "language": "zh",
+        "metal_active_bytes": 5578882472,
+        "metal_peak_bytes": 6601780192,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 3637886976,
+        "processing_ms": 1742.2377910115756,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "b5af953c531146ad",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "你好，这是本机语音识别测试。今天是星期五。测试数字一二三四五。"
+      },
+      "http_ms": 1748.7966660410166
+    },
+    {
+      "language": "en",
+      "reference": "Hello, this is a local speech recognition test. The number is one two three four five.",
+      "audio_sha256": "58123703a0dc428f7199da857e57fc1926db6ec6db3b39f146a9d6d406a4eeae",
+      "result": {
+        "duration": 5.4529375,
+        "inference_ms": 668.4431670000777,
+        "language": "en",
+        "metal_active_bytes": 5578784168,
+        "metal_peak_bytes": 6601780192,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 3637886976,
+        "processing_ms": 784.6475000260398,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "3bdd38741a504160",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "Hello. This is a local speech recognition test. The number is one two three four five."
+      },
+      "http_ms": 788.7900000205263
+    }
+  ],
+  "tts": [
+    {
+      "language": "chinese",
+      "voice": "serena",
+      "text": "你好，这是本机正式版本的语音合成测试。",
+      "bytes": 184364,
+      "duration_seconds": 3.84,
+      "http_ms": 2795.8718329900876,
+      "wav": "24kHz mono PCM16",
+      "sha256": "68980c864787b300b5d31ccd63a76b290712ad934d94290c6443e9c483df29be"
+    },
+    {
+      "language": "english",
+      "voice": "ryan",
+      "text": "Hello. This is the installed CyberAudio release test.",
+      "bytes": 195884,
+      "duration_seconds": 4.08,
+      "http_ms": 1837.7927910187282,
+      "wav": "24kHz mono PCM16",
+      "sha256": "c8d21975f3e0aae20633420c3cd4610e9769abfffa796967bfd3a9b00213c459"
+    }
+  ],
+  "ready": {
+    "application": "CyberAudio",
+    "busy": false,
+    "instance": "352DF299-DA76-4AF0-93FC-D76FC1273004",
+    "model": "qwen3-asr-1.7b",
+    "models": {
+      "stt": "ready",
+      "tts": "ready"
+    },
+    "startup": {
+      "backend": "mlx-swift",
+      "device": "metal",
+      "load_ms": 2461.2351250252686,
+      "metal_active_bytes": 5578423720,
+      "metal_peak_bytes": 6437814276,
+      "process_peak_rss_bytes": 3637886976,
+      "verification_ms": 5201.552457991056,
+      "warmup_ms": 1270.469166978728
+    },
+    "status": "ready",
+    "updating": false
+  },
+  "models": {
+    "data": [
+      {
+        "id": "qwen3-asr-1.7b",
+        "object": "model",
+        "owned_by": "local",
+        "quantization": "8bit",
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55"
+      },
+      {
+        "id": "qwen3-tts-1.7b",
+        "object": "model",
+        "owned_by": "local",
+        "quantization": "8bit",
+        "repository": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit",
+        "revision": "41d3337e8b7f2843a75841595fc14e4b9a7a4b96"
+      }
+    ],
+    "object": "list"
+  },
+  "installed_identity": {
+    "version": "0.4.0",
+    "build": "7",
+    "one_app_and_one_owned_native_helper": true,
+    "executable_sha256": {
+      "CyberAudio": "196b9072dc921df6a3541eda4b8f8ab8cf4d5408240cb6fe2d66cd5a2b2441b0",
+      "CyberAudioService": "518f3fddd5383b6b4fb0607a1972aaf80b7e067a30151957eed77bdbac2b2df5"
+    }
+  },
+  "authentication_required": true,
+  "update_prepare_pause_cancel": true,
+  "configuration_and_token_preserved": true,
+  "final_ready": {
+    "application": "CyberAudio",
+    "busy": false,
+    "instance": "352DF299-DA76-4AF0-93FC-D76FC1273004",
+    "model": "qwen3-asr-1.7b",
+    "models": {
+      "stt": "ready",
+      "tts": "ready"
+    },
+    "startup": {
+      "backend": "mlx-swift",
+      "device": "metal",
+      "load_ms": 2461.2351250252686,
+      "metal_active_bytes": 5578423720,
+      "metal_peak_bytes": 6437814276,
+      "process_peak_rss_bytes": 3637886976,
+      "verification_ms": 5201.552457991056,
+      "warmup_ms": 1270.469166978728
+    },
+    "status": "ready",
+    "updating": false
+  },
+  "status": "passed",
+  "finished": "2026-11-06T02:47:21.817730+00:00"
+}

@@ -1,0 +1,538 @@
+{
+  "app_active_exit_and_restart": [
+    {
+      "active_inference": true,
+      "child_executable": "CyberAudioService",
+      "exit_ms": 341.49258298566565,
+      "helper_gone": true,
+      "instance": "4EC70511-CBB8-4EF0-BF40-0AE13AB7A68B",
+      "signal": 15
+    },
+    {
+      "active_inference": true,
+      "child_executable": "CyberAudioService",
+      "exit_ms": 74.06900002388284,
+      "helper_gone": true,
+      "instance": "02268EB5-F965-4929-9A5F-09C997BDAA38",
+      "signal": 9
+    }
+  ],
+  "asr_corpus": [
+    {
+      "audio_sha256": "c2aadb005da05ce35371ad7bc7c4f5080e668817f0059ae61e84eff1b598f924",
+      "http_ms": 543.5157499741763,
+      "id": "macos-synthetic-zh",
+      "language": "zh",
+      "reference": "你好，这是本机语音识别测试。今天是星期五，测试数字一二三四五。",
+      "result": {
+        "duration": 7.1,
+        "inference_ms": 428.8004169939086,
+        "language": "zh",
+        "metal_active_bytes": 5578882544,
+        "metal_peak_bytes": 6601780264,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4917182464,
+        "processing_ms": 540.4939169529825,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "88829345a9614b28",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "你好，这是本机语音识别测试。今天是星期五。测试数字一二三四五。"
+      }
+    },
+    {
+      "audio_sha256": "58123703a0dc428f7199da857e57fc1926db6ec6db3b39f146a9d6d406a4eeae",
+      "http_ms": 518.3209579554386,
+      "id": "macos-synthetic-en",
+      "language": "en",
+      "reference": "Hello, this is a local speech recognition test. The number is one two three four five.",
+      "result": {
+        "duration": 5.4529375,
+        "inference_ms": 401.6867500031367,
+        "language": "en",
+        "metal_active_bytes": 5578784240,
+        "metal_peak_bytes": 6601780264,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4917182464,
+        "processing_ms": 515.3433330124244,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "1eaeb5c7a0ac4e09",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "Hello. This is a local speech recognition test. The number is one two three four five."
+      }
+    }
+  ],
+  "assets": {
+    "models": [
+      {
+        "component": "asr",
+        "files_verified": 10,
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55"
+      },
+      {
+        "component": "tts",
+        "files_verified": 13,
+        "revision": "41d3337e8b7f2843a75841595fc14e4b9a7a4b96"
+      }
+    ],
+    "status": "verified",
+    "tokenizers": {
+      "asr": "9f14b05f9ee224ad987e823427c76099b298e0bc66884e36e6313182d2bf9441",
+      "tts": "a210c764d0e752c234adbafe3784c987d14aabb12f6bd5f7571f327db93724a4"
+    }
+  },
+  "finished": "2026-11-06T02:45:46Z",
+  "helper_sha256": "518f3fddd5383b6b4fb0607a1972aaf80b7e067a30151957eed77bdbac2b2df5",
+  "models": {
+    "data": [
+      {
+        "id": "qwen3-asr-1.7b",
+        "object": "model",
+        "owned_by": "local",
+        "quantization": "8bit",
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55"
+      },
+      {
+        "id": "qwen3-tts-1.7b",
+        "object": "model",
+        "owned_by": "local",
+        "quantization": "8bit",
+        "repository": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit",
+        "revision": "41d3337e8b7f2843a75841595fc14e4b9a7a4b96"
+      }
+    ],
+    "object": "list"
+  },
+  "os": "Version 27.0.1 (Build 26A434)",
+  "outbound_denied": true,
+  "phase": "all",
+  "physical_memory_bytes": 34359738368,
+  "port": 18766,
+  "production_instance_checked": false,
+  "production_root_modified": false,
+  "production_service_preserved": true,
+  "single_owner_lock": true,
+  "started": "2026-11-06T02:44:34Z",
+  "startup": {
+    "application": "CyberAudio",
+    "busy": false,
+    "instance": "BE3035B3-109C-42E1-8A17-ADEAD27BED2B",
+    "model": "qwen3-asr-1.7b",
+    "models": {
+      "stt": "ready",
+      "tts": "ready"
+    },
+    "startup": {
+      "backend": "mlx-swift",
+      "device": "metal",
+      "load_ms": 2725.56137497304,
+      "metal_active_bytes": 5578423720,
+      "metal_peak_bytes": 6437814276,
+      "process_peak_rss_bytes": 4917182464,
+      "verification_ms": 4632.29479099391,
+      "warmup_ms": 10540.74845800642
+    },
+    "status": "ready",
+    "updating": false
+  },
+  "status": "passed",
+  "stdin_eof_stop_ms": 399.5053750113584,
+  "stream_complete": {
+    "bytes": 122880,
+    "first_audio_ms": 168.95600000862032,
+    "packets": 8
+  },
+  "stream_disconnect_recovery": [
+    {
+      "drain_ms": 37.74666599929333,
+      "recovery_http_status": 200,
+      "round": 1,
+      "status": "cancelled"
+    },
+    {
+      "drain_ms": 37.994417012669146,
+      "recovery_http_status": 200,
+      "round": 2,
+      "status": "cancelled"
+    },
+    {
+      "drain_ms": 35.56416695937514,
+      "recovery_http_status": 200,
+      "round": 3,
+      "status": "cancelled"
+    }
+  ],
+  "stt_formats": [
+    {
+      "format": "wav",
+      "language": "zh",
+      "result": {
+        "duration": 7.1,
+        "inference_ms": 496.48254201747477,
+        "language": "zh",
+        "metal_active_bytes": 5578882472,
+        "metal_peak_bytes": 6601780192,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4917182464,
+        "processing_ms": 775.4857090185396,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "a102ec097fd24588",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "你好，这是本机语音识别测试。今天是星期五。测试数字一二三四五。"
+      }
+    },
+    {
+      "format": "webm",
+      "language": "zh",
+      "result": {
+        "duration": 7.1,
+        "inference_ms": 443.18979198578745,
+        "language": "zh",
+        "metal_active_bytes": 5578882472,
+        "metal_peak_bytes": 6601780192,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4917182464,
+        "processing_ms": 557.9265410196967,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "0ec150a210ea4795",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "你好，这是本机语音识别测试。今天是星期五。测试数字一二三四五。"
+      }
+    },
+    {
+      "format": "mp3",
+      "language": "zh",
+      "result": {
+        "duration": 7.1,
+        "inference_ms": 440.9941249759868,
+        "language": "zh",
+        "metal_active_bytes": 5578882472,
+        "metal_peak_bytes": 6601780192,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4917182464,
+        "processing_ms": 556.0484160087071,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "0a030a742ff143a9",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "你好，这是本机语音识别测试。今天是星期五。测试数字一二三四五。"
+      }
+    },
+    {
+      "format": "m4a",
+      "language": "zh",
+      "result": {
+        "duration": 7.1,
+        "inference_ms": 443.452832987532,
+        "language": "zh",
+        "metal_active_bytes": 5578882472,
+        "metal_peak_bytes": 6601780192,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4917182464,
+        "processing_ms": 554.5200420310721,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "a1655624c3264d78",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "你好，这是本机语音识别测试。今天是星期五。测试数字一二三四五。"
+      }
+    },
+    {
+      "format": "flac",
+      "language": "zh",
+      "result": {
+        "duration": 7.1,
+        "inference_ms": 444.1184170427732,
+        "language": "zh",
+        "metal_active_bytes": 5578882472,
+        "metal_peak_bytes": 6601780192,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4917182464,
+        "processing_ms": 562.0518330251798,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "8ca26b22028e404e",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "你好，这是本机语音识别测试。今天是星期五。测试数字一二三四五。"
+      }
+    },
+    {
+      "format": "ogg",
+      "language": "zh",
+      "result": {
+        "duration": 7.1,
+        "inference_ms": 428.3515000133775,
+        "language": "zh",
+        "metal_active_bytes": 5578882472,
+        "metal_peak_bytes": 6601780192,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4917182464,
+        "processing_ms": 543.0818749591708,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "79227b254c57404e",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "你好，这是本机语音识别测试。今天是星期五。测试数字一二三四五。"
+      }
+    },
+    {
+      "format": "aiff",
+      "language": "zh",
+      "result": {
+        "duration": 7.1,
+        "inference_ms": 441.4564169710502,
+        "language": "zh",
+        "metal_active_bytes": 5578882472,
+        "metal_peak_bytes": 6601780192,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4917182464,
+        "processing_ms": 553.8120829733089,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "c3013b091b7948de",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "你好，这是本机语音识别测试。今天是星期五。测试数字一二三四五。"
+      }
+    },
+    {
+      "format": "aac",
+      "language": "zh",
+      "result": {
+        "duration": 7.168,
+        "inference_ms": 448.2797080418095,
+        "language": "zh",
+        "metal_active_bytes": 5578882472,
+        "metal_peak_bytes": 6601780216,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4917182464,
+        "processing_ms": 564.1347080236301,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "fee43c5f900940f7",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "你好，这是本机语音识别测试。今天是星期五。测试数字一二三四五。"
+      }
+    },
+    {
+      "format": "wav",
+      "language": "en",
+      "result": {
+        "duration": 5.4529375,
+        "inference_ms": 396.7009999905713,
+        "language": "en",
+        "metal_active_bytes": 5578784168,
+        "metal_peak_bytes": 6601780216,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4917182464,
+        "processing_ms": 509.3930000439286,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "bcb8910e10694228",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "Hello. This is a local speech recognition test. The number is one two three four five."
+      }
+    },
+    {
+      "format": "webm",
+      "language": "en",
+      "result": {
+        "duration": 5.4529375,
+        "inference_ms": 400.54741699714214,
+        "language": "en",
+        "metal_active_bytes": 5578784168,
+        "metal_peak_bytes": 6601780216,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4917182464,
+        "processing_ms": 509.51129203895107,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "2399b97c53494ab7",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "Hello. This is a local speech recognition test. The number is one two three four five."
+      }
+    },
+    {
+      "format": "mp3",
+      "language": "en",
+      "result": {
+        "duration": 5.4529375,
+        "inference_ms": 393.65024998551235,
+        "language": "en",
+        "metal_active_bytes": 5578784168,
+        "metal_peak_bytes": 6601780216,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4917182464,
+        "processing_ms": 504.68075001845136,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "7e09765d55684223",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "Hello. This is a local speech recognition test. The number is one two three four five."
+      }
+    },
+    {
+      "format": "m4a",
+      "language": "en",
+      "result": {
+        "duration": 5.4529375,
+        "inference_ms": 400.5159999942407,
+        "language": "en",
+        "metal_active_bytes": 5578784168,
+        "metal_peak_bytes": 6601780216,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4917182464,
+        "processing_ms": 511.79362495895475,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "ad5fc2d699ae4442",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "Hello. This is a local speech recognition test. The number is one two three four five."
+      }
+    },
+    {
+      "format": "flac",
+      "language": "en",
+      "result": {
+        "duration": 5.4529375,
+        "inference_ms": 413.54945802595466,
+        "language": "en",
+        "metal_active_bytes": 5578784204,
+        "metal_peak_bytes": 6601780216,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4917182464,
+        "processing_ms": 530.2952080382966,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "ece2d4642bd745bf",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "Hello. This is a local speech recognition test. The number is one two three four five."
+      }
+    },
+    {
+      "format": "ogg",
+      "language": "en",
+      "result": {
+        "duration": 5.4529375,
+        "inference_ms": 473.72137499041855,
+        "language": "en",
+        "metal_active_bytes": 5578784240,
+        "metal_peak_bytes": 6601780216,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4917182464,
+        "processing_ms": 584.9029169767164,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "fe57838f1d884fa0",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "Hello. This is a local speech recognition test. The number is one two three four five."
+      }
+    },
+    {
+      "format": "aiff",
+      "language": "en",
+      "result": {
+        "duration": 5.4529375,
+        "inference_ms": 425.3703340073116,
+        "language": "en",
+        "metal_active_bytes": 5578784240,
+        "metal_peak_bytes": 6601780216,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4917182464,
+        "processing_ms": 542.6206670235842,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "c98e39ca884e4e98",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "Hello. This is a local speech recognition test. The number is one two three four five."
+      }
+    },
+    {
+      "format": "aac",
+      "language": "en",
+      "result": {
+        "duration": 5.568,
+        "inference_ms": 401.61812503356487,
+        "language": "en",
+        "metal_active_bytes": 5578784240,
+        "metal_peak_bytes": 6601780216,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4917182464,
+        "processing_ms": 519.884290988557,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "4b7e7bd0bcb84924",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "Hello. This is a local speech recognition test. The number is one two three four five."
+      }
+    }
+  ],
+  "tts_voices": [
+    {
+      "duration": 2.24,
+      "first_audio_ms": 357.4715830036439,
+      "processing_ms": 1267.7397080115043,
+      "rtf": 0.5659552267908501,
+      "voice": "serena"
+    },
+    {
+      "duration": 2.32,
+      "first_audio_ms": 200.79387503210455,
+      "processing_ms": 1447.5458330125548,
+      "rtf": 0.6239421694019633,
+      "voice": "vivian"
+    },
+    {
+      "duration": 2.48,
+      "first_audio_ms": 208.88975000707433,
+      "processing_ms": 1367.2286660294048,
+      "rtf": 0.5513018814634697,
+      "voice": "uncle_fu"
+    },
+    {
+      "duration": 3.28,
+      "first_audio_ms": 262.22595799481496,
+      "processing_ms": 1686.104916036129,
+      "rtf": 0.5140563768402833,
+      "voice": "ryan"
+    },
+    {
+      "duration": 2.32,
+      "first_audio_ms": 229.5152090373449,
+      "processing_ms": 1131.0003339895047,
+      "rtf": 0.48750014396099345,
+      "voice": "aiden"
+    },
+    {
+      "duration": 3.2,
+      "first_audio_ms": 180.32745795790106,
+      "processing_ms": 1433.1595409894362,
+      "rtf": 0.4478623565591988,
+      "voice": "ono_anna"
+    },
+    {
+      "duration": 2.32,
+      "first_audio_ms": 182.50358302611858,
+      "processing_ms": 1074.064582993742,
+      "rtf": 0.46295887198006125,
+      "voice": "sohee"
+    },
+    {
+      "duration": 2.16,
+      "first_audio_ms": 167.9842080338858,
+      "processing_ms": 987.832042039372,
+      "rtf": 0.45732964909230184,
+      "voice": "eric"
+    },
+    {
+      "duration": 2.4,
+      "first_audio_ms": 166.09337500995025,
+      "processing_ms": 1095.181250013411,
+      "rtf": 0.4563255208389213,
+      "voice": "dylan"
+    }
+  ]
+}

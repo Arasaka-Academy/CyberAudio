@@ -1,0 +1,9 @@
+{
+  "checked_at": "2026-11-06T02:12:40.564772+00:00",
+  "cpu": "Apple M1 Max",
+  "memory_bytes": 34359738368,
+  "logical_cpus": 10,
+  "macos": "27.0.1",
+  "macos_build": "26A434",
+  "host_role": "current local Mac, not the earlier M4 target"
+}

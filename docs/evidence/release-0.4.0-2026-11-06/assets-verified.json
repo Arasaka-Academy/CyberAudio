@@ -1,0 +1,19 @@
+{
+  "models": [
+    {
+      "component": "asr",
+      "files_verified": 10,
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55"
+    },
+    {
+      "component": "tts",
+      "files_verified": 13,
+      "revision": "41d3337e8b7f2843a75841595fc14e4b9a7a4b96"
+    }
+  ],
+  "status": "verified",
+  "tokenizers": {
+    "asr": "9f14b05f9ee224ad987e823427c76099b298e0bc66884e36e6313182d2bf9441",
+    "tts": "a210c764d0e752c234adbafe3784c987d14aabb12f6bd5f7571f327db93724a4"
+  }
+}

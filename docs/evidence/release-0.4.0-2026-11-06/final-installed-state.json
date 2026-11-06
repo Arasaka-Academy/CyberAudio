@@ -1,0 +1,36 @@
+{
+  "checked_at": "2026-11-06T03:00:24.515617+00:00",
+  "status": "passed",
+  "ready": {
+    "application": "CyberAudio",
+    "busy": false,
+    "instance": "352DF299-DA76-4AF0-93FC-D76FC1273004",
+    "model": "qwen3-asr-1.7b",
+    "models": {
+      "stt": "ready",
+      "tts": "ready"
+    },
+    "startup": {
+      "backend": "mlx-swift",
+      "device": "metal",
+      "load_ms": 2461.2351250252686,
+      "metal_active_bytes": 5578423720,
+      "metal_peak_bytes": 6437814276,
+      "process_peak_rss_bytes": 3637886976,
+      "verification_ms": 5201.552457991056,
+      "warmup_ms": 1270.469166978728
+    },
+    "status": "ready",
+    "updating": false
+  },
+  "version": "0.4.0",
+  "build": "7",
+  "executable_sha256": {
+    "CyberAudio": "196b9072dc921df6a3541eda4b8f8ab8cf4d5408240cb6fe2d66cd5a2b2441b0",
+    "CyberAudioService": "518f3fddd5383b6b4fb0607a1972aaf80b7e067a30151957eed77bdbac2b2df5",
+    "CyberAudioAssets": "f857e29978e67ecd451abb6cfb27bc4393016224d2b67618421349414e8a660e"
+  },
+  "one_app_and_one_owned_native_helper": true,
+  "configuration_and_token_preserved": true,
+  "update_lease_active": false
+}

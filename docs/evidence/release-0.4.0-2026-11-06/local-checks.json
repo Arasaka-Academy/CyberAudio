@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "checked_at": "2026-11-06T01:39:17.934619+00:00",
+  "make_check": true,
+  "native_contracts": 19,
+  "update_gate_scenarios": 4,
+  "evidence_scoring_scenarios": 11,
+  "dictation_gesture": true,
+  "clipboard_and_focus": true,
+  "late_microphone_permission": true,
+  "synthetic_audio_workflow": true,
+  "native_layout_states": 7,
+  "settings_tabs": 3,
+  "release_helper_pytest": 16,
+  "release_app_build": true,
+  "strict_codesign": true,
+  "physical_microphone_acceptance": false,
+  "physical_keyboard_acceptance": false
+}

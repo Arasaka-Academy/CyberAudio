@@ -1,0 +1,20 @@
+[
+  {
+    "id": "macos-synthetic-zh",
+    "audio": "zh.wav",
+    "reference": "你好，这是本机语音识别测试。今天是星期五，测试数字一二三四五。",
+    "language": "zh",
+    "audio_sha256": "c2aadb005da05ce35371ad7bc7c4f5080e668817f0059ae61e84eff1b598f924",
+    "kind": "synthetic",
+    "source": "macOS say / Tingting"
+  },
+  {
+    "id": "macos-synthetic-en",
+    "audio": "en.wav",
+    "reference": "Hello, this is a local speech recognition test. The number is one two three four five.",
+    "language": "en",
+    "audio_sha256": "58123703a0dc428f7199da857e57fc1926db6ec6db3b39f146a9d6d406a4eeae",
+    "kind": "synthetic",
+    "source": "macOS say / Samantha"
+  }
+]

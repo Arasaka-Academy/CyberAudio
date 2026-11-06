@@ -1,0 +1,13 @@
+{
+  "status": "installed",
+  "version": "0.4.0",
+  "build": "7",
+  "installed_app": "/Applications/CyberAudio.app",
+  "previous_version": null,
+  "backup_directory": "~/Library/Application Support/CyberAudio/Backups/local-install-0.4.0-20261106T015834Z",
+  "configuration_preserved": true,
+  "token_preserved": true,
+  "helper_sha256": "518f3fddd5383b6b4fb0607a1972aaf80b7e067a30151957eed77bdbac2b2df5",
+  "app_binary_sha256": "196b9072dc921df6a3541eda4b8f8ab8cf4d5408240cb6fe2d66cd5a2b2441b0",
+  "strict_codesign": true
+}

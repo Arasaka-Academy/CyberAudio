@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "version": "0.4.0",
+  "build": "7",
+  "strict_codesign": true,
+  "signed_feed_verified": true,
+  "signed_zip_verified": true,
+  "arm64": true,
+  "python_runtime": false,
+  "dmg_internal_checksum": true,
+  "dmg_and_zip_executables_match": true,
+  "executable_sha256": {
+    "CyberAudio": "196b9072dc921df6a3541eda4b8f8ab8cf4d5408240cb6fe2d66cd5a2b2441b0",
+    "CyberAudioService": "518f3fddd5383b6b4fb0607a1972aaf80b7e067a30151957eed77bdbac2b2df5",
+    "CyberAudioAssets": "f857e29978e67ecd451abb6cfb27bc4393016224d2b67618421349414e8a660e"
+  }
+}
