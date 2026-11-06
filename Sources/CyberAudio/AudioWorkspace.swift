@@ -52,6 +52,7 @@ final class AudioWorkspace: NSObject, ObservableObject {
     private var player: AVAudioPlayer?
     private var engine: AVAudioEngine?
     private var node: AVAudioPlayerNode?
+    private var engineConfigurationObserver: NSObjectProtocol?
     private var playbackSession = UUID()
     private let recordings: URL
     private let microphoneAccess: () async -> Bool
@@ -66,6 +67,10 @@ final class AudioWorkspace: NSObject, ObservableObject {
         for url in (try? FileManager.default.contentsOfDirectory(at: recordings, includingPropertiesForKeys: nil)) ?? [] {
             if url.lastPathComponent.hasPrefix("recording-"), url.pathExtension == "wav" { try? FileManager.default.removeItem(at: url) }
         }
+    }
+
+    deinit {
+        if let engineConfigurationObserver { NotificationCenter.default.removeObserver(engineConfigurationObserver) }
     }
 
     var working: Bool { generating || transcribing || recording || requestingMicrophone }
@@ -277,10 +282,12 @@ final class AudioWorkspace: NSObject, ObservableObject {
                             }
                         }
                     }
+                    try Task.checkCancellation()
                     guard pending.count % 2 == 0 else { throw CyberAudioError.message("PCM 数据不完整。") }
                     if !pending.isEmpty { pcm.append(pending); self.schedule(pending) }
                     guard let id = http.value(forHTTPHeaderField: "X-Request-ID") else { throw CyberAudioError.message("响应缺少请求编号。") }
                     let (stateData, stateResponse) = try await backend.session.data(for: backend.request(path: "/v1/requests/\(id)"))
+                    try Task.checkCancellation()
                     try backend.check(stateResponse, data: stateData)
                     let state = try JSONSerialization.jsonObject(with: stateData) as? [String: Any]
                     guard state?["status"] as? String == "completed", !pcm.isEmpty else {
@@ -330,6 +337,16 @@ final class AudioWorkspace: NSObject, ObservableObject {
         node.play()
         self.engine = engine
         self.node = node
+        engineConfigurationObserver = NotificationCenter.default.addObserver(
+            forName: .AVAudioEngineConfigurationChange, object: engine, queue: nil
+        ) { [weak self, weak engine] _ in
+            // The audio thread must not wait for MainActor while it stops the engine.
+            Task { @MainActor in
+                guard let self, let engine, self.engine === engine else { return }
+                self.cancelGeneration()
+                self.reportError(CyberAudioError.message("音频输出设备发生变化，播放已停止。请检查设备后重试。"), for: .speech)
+            }
+        }
         playing = true
     }
 
@@ -354,11 +371,14 @@ final class AudioWorkspace: NSObject, ObservableObject {
         guard player.play() else { throw CyberAudioError.message("无法播放音频，请检查输出设备。") }
         self.player = player
         playing = true
+        if errorOperation == .speech { errorMessage = nil }
     }
 
     func stopPlayback() {
         // Stopping a node invokes its queued completions. Invalidate them first.
         playbackSession = UUID()
+        if let engineConfigurationObserver { NotificationCenter.default.removeObserver(engineConfigurationObserver) }
+        engineConfigurationObserver = nil
         player?.stop(); player = nil
         node?.stop(); node = nil
         engine?.stop(); engine = nil
@@ -409,9 +429,18 @@ final class AudioWorkspace: NSObject, ObservableObject {
 
 extension AudioWorkspace: AVAudioPlayerDelegate {
     nonisolated func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        Task { @MainActor in
-            guard self.player === player else { return }
+        Task { @MainActor [weak self] in
+            guard let self, self.player === player else { return }
             self.stopPlayback()
+            if !flag { self.reportError(CyberAudioError.message("音频播放未完成，请检查输出设备后重试。"), for: .speech) }
+        }
+    }
+
+    nonisolated func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
+        Task { @MainActor [weak self] in
+            guard let self, self.player === player else { return }
+            self.stopPlayback()
+            self.reportError(CyberAudioError.message("音频解码失败，播放已停止。请重新生成语音后重试。"), for: .speech)
         }
     }
 }
