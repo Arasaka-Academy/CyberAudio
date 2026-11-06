@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-06T04:41:15.366533+00:00",
+  "checked_at": "2026-11-06T06:05:19.878284+00:00",
   "version": "0.4.2 (9)",
   "installed_executable_matches_release": true,
   "screen_locked": false,
@@ -16,8 +16,41 @@
     "input_monitoring": false
   },
   "microphone_after_system_toggle_and_restart": true,
-  "accessibility_refresh": "new macOS administrator authentication sheet pending",
-  "input_monitoring_refresh": "pending accessibility authentication completion",
-  "global_listener": "not yet verified",
-  "physical_press_and_voice": "not yet verified"
+  "accessibility_refresh": "completed with normal System Settings remove/re-add; current code requirement verified",
+  "input_monitoring_refresh": "completed with normal System Settings remove/re-add; current code requirement verified",
+  "global_listener": {
+    "ready": true,
+    "enabled_checkbox_value": "1",
+    "final_summary": "按住 ⌃⇧K 录音，松开后在原输入框输出"
+  },
+  "physical_press_and_voice": "Physical Control-Shift-K widget activation confirmed by the user and post-recording transcription/idle state observed through Cua; intentional spoken dictation and cross-app text insertion remain unverified.",
+  "initial_unlocked_check_at": "2026-11-06T04:41:15.366533+00:00",
+  "permissions_after_system_refresh": {
+    "microphone": true,
+    "accessibility": true,
+    "input_monitoring": true
+  },
+  "physical_right_option": {
+    "keyboard": "external",
+    "user_report": "no widget",
+    "diagnostic_scope": "bounded passive HID and session modifier taps plus Option state polling; no text captured",
+    "observation": "left Option code 58 was observed; right Option code 61 was not observed in the diagnostic windows",
+    "cause_of_missing_right_event": "not established",
+    "passed": false
+  },
+  "physical_custom_shortcut": {
+    "shortcut": "control-shift-K",
+    "saved_through_installed_recorder": true,
+    "user_confirmed_widget_visible": true,
+    "user_reply": "1. 出现了",
+    "app_ui_transcribing_observed_at": "2026-11-06T06:02:56.661Z",
+    "app_ui_returned_idle_at": "2026-11-06T06:02:57.696Z",
+    "app_ui_last_audio_seconds": 0.1,
+    "app_ui_processing_seconds": 0.38,
+    "speech_requested": false,
+    "shortcut_retained_for_use": true,
+    "widget_screenshot_captured": false
+  },
+  "diagnostics_stopped": true,
+  "evidence_screenshot": "dictation-shortcut-ready.png"
 }

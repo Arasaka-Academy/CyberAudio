@@ -1,0 +1,28 @@
+{
+  "checked_at": "2026-11-06T06:05:19.878284+00:00",
+  "bundle_id": "local.cyberaudio.mac",
+  "version": "0.4.2 (9)",
+  "cause": "Accessibility and ListenEvent grants were bound to the old 0.4.0 ad-hoc code requirement. Toggling the switches did not replace that requirement.",
+  "recovery": "Remove only the CyberAudio entries and re-add the current app through normal System Settings UI; complete system authentication normally.",
+  "tcc_access": "read-only query restricted to local.cyberaudio.mac",
+  "tcc_database_modified": false,
+  "app_resigned_or_replaced_during_permission_refresh": false,
+  "records": [
+    {
+      "service": "kTCCServiceAccessibility",
+      "before_code_requirement": "cdhash H\"7e8c9a7e8621c468b0cc37ee70c55acae3fee90e\"",
+      "after_auth_value": 2,
+      "after_code_requirement": "cdhash H\"c4cf258f279a3dcb60c3e716ad20c7a3357c4f8b\"",
+      "installed_app_satisfies_after_requirement": true
+    },
+    {
+      "service": "kTCCServiceListenEvent",
+      "before_code_requirement": "cdhash H\"7e8c9a7e8621c468b0cc37ee70c55acae3fee90e\"",
+      "after_auth_value": 2,
+      "after_code_requirement": "cdhash H\"c4cf258f279a3dcb60c3e716ad20c7a3357c4f8b\"",
+      "installed_app_satisfies_after_requirement": true
+    }
+  ],
+  "app_ui_all_three_permissions_enabled": true,
+  "app_ui_listener_ready": true
+}
