@@ -23,9 +23,10 @@ private func command(_ path: String,_ arguments: [String]) throws -> String {
 private final class ResponseBox: @unchecked Sendable {
     var data = Data(),response: HTTPURLResponse?,error: Error?
 }
-private func http(_ base: URL,_ path: String,token: String? = nil,body: Data? = nil,type: String = "application/json",headers: [String:String] = [:]) throws -> (Data,HTTPURLResponse) {
+private func http(_ base: URL,_ path: String,token: String? = nil,body: Data? = nil,type: String = "application/json",headers: [String:String] = [:],timeout: Double = 150,
+                  observe: ((Data,HTTPURLResponse?,Error?) -> Void)? = nil) throws -> (Data,HTTPURLResponse) {
     var request = URLRequest(url:base.appendingPathComponent(path)); request.httpMethod = body == nil ? "GET" : "POST"; request.httpBody = body
-    request.timeoutInterval = 150; request.setValue(type,forHTTPHeaderField:"Content-Type")
+    request.timeoutInterval = timeout; request.setValue(type,forHTTPHeaderField:"Content-Type")
     if let token { request.setValue("Bearer "+token,forHTTPHeaderField:"Authorization") }
     for (key,value) in headers { request.setValue(value,forHTTPHeaderField:key) }
     let result = ResponseBox(),done = DispatchSemaphore(value:0)
@@ -33,7 +34,11 @@ private func http(_ base: URL,_ path: String,token: String? = nil,body: Data? = 
         result.data = data ?? Data(); result.response = response as? HTTPURLResponse; result.error = error; done.signal()
     }
     task.resume()
-    if done.wait(timeout:.now()+155) == .timedOut { task.cancel(); throw Failure(message:"HTTP driver timeout") }
+    if done.wait(timeout:.now()+timeout+5) == .timedOut {
+        task.cancel(); let error = Failure(message:"HTTP driver timeout")
+        observe?(Data(),nil,error); throw error
+    }
+    observe?(result.data,result.response,result.error)
     if let error = result.error { throw error }
     guard let response = result.response else { throw Failure(message:"No HTTP response") }; return (result.data,response)
 }
@@ -54,7 +59,8 @@ private final class Stream: NSObject,URLSessionDataDelegate,@unchecked Sendable 
     }
     func urlSession(_ session: URLSession,task: URLSessionTask,didCompleteWithError error: Error?) { self.error = self.error ?? error; done.signal() }
 }
-private func stream(_ base: URL,token: String,text: String,voice: String = "serena",language: String = "chinese",allowDisconnect: Bool = false,onFirst: ((HTTPURLResponse,URLSessionDataTask) throws -> Void)? = nil) throws -> Stream {
+private func stream(_ base: URL,token: String,text: String,voice: String = "serena",language: String = "chinese",allowDisconnect: Bool = false,
+                    observe: ((Data,HTTPURLResponse?,Error?) -> Void)? = nil,onFirst: ((HTTPURLResponse,URLSessionDataTask) throws -> Void)? = nil) throws -> Stream {
     let value = Stream(onFirst:onFirst),queue = OperationQueue(); queue.maxConcurrentOperationCount = 1
     let session = URLSession(configuration:.ephemeral,delegate:value,delegateQueue:queue)
     defer { session.invalidateAndCancel() }
@@ -62,7 +68,10 @@ private func stream(_ base: URL,token: String,text: String,voice: String = "sere
     request.setValue("Bearer "+token,forHTTPHeaderField:"Authorization"); request.setValue("application/json",forHTTPHeaderField:"Content-Type")
     request.httpBody = try json(["input":text,"voice":voice,"language":language,"response_format":"pcm","stream":true]); request.timeoutInterval = 150
     let task = session.dataTask(with:request); task.resume()
-    try require(value.done.wait(timeout:.now()+155) == .success,"Stream driver timeout")
+    let completed = value.done.wait(timeout:.now()+155) == .success
+    if completed { observe?(value.data,value.response,value.error ?? value.hookError) }
+    else { observe?(Data(),nil,Failure(message:"Stream driver timeout")) }
+    try require(completed,"Stream driver timeout")
     try require(value.response?.statusCode == 200,"Stream HTTP failure")
     if let error = value.hookError { throw error }
     if let error = value.error, !allowDisconnect && (onFirst == nil || (error as NSError).code != NSURLErrorCancelled) { throw error }
@@ -75,6 +84,7 @@ private func soak(_ base: URL,root: URL,corpus: URL,rows: [[String:Any]],token: 
     let reportFile = root.appendingPathComponent("reports/soak.json"),began = now()
     let voices = ["serena","vivian","uncle_fu","ryan","aiden","ono_anna","sohee","eric","dylan"]
     var metrics: [[String:Any]] = [],disconnects = 0,updates = 0
+    var lastResponse: [String:Any]?
     var report: [String:Any] = ["status":"running","started":ISO8601DateFormatter().string(from:Date()),
         "duration_target_seconds":seconds,"corpus_samples":rows.count,"single_instance":instance,
         "physical_memory_bytes":ProcessInfo.processInfo.physicalMemory,"os":ProcessInfo.processInfo.operatingSystemVersionString,
@@ -93,6 +103,28 @@ private func soak(_ base: URL,root: URL,corpus: URL,rows: [[String:Any]],token: 
             report["finished"] = ISO8601DateFormatter().string(from:Date())
             try? checkpoint()
         }
+    }
+    func observed(_ data: Data,_ response: HTTPURLResponse?,_ error: Error?) {
+        var value: [String:Any] = ["bytes_received":data.count]
+        if let response {
+            value["http_status"] = response.statusCode
+            value["request_id"] = response.value(forHTTPHeaderField:"x-request-id")
+            if let body = try? object(data) { value["json"] = body }
+        }
+        if let error {
+            let error = error as NSError
+            value["transport_error"] = ["domain":error.domain,"code":error.code,"description":error.localizedDescription]
+        }
+        lastResponse = value
+    }
+    func request(_ path: String,body: Data?,type: String = "application/json",headers: [String:String] = [:]) throws -> (Data,HTTPURLResponse) {
+        lastResponse = nil; report["active_operation"] = path
+        return try http(base,path,token:token,body:body,type:type,headers:headers,observe:observed)
+    }
+    func speechStream(text: String,voice: String = "serena",language: String = "chinese",
+                      onFirst: ((HTTPURLResponse,URLSessionDataTask) throws -> Void)? = nil) throws -> Stream {
+        lastResponse = nil; report["active_operation"] = "v1/audio/speech (PCM)"
+        return try stream(base,token:token,text:text,voice:voice,language:language,observe:observed,onFirst:onFirst)
     }
     func record(_ requestID: String?) throws -> [String:Any] {
         guard let id = requestID else { throw Failure(message:"Soak response lacks request identity") }
@@ -123,7 +155,7 @@ private func soak(_ base: URL,root: URL,corpus: URL,rows: [[String:Any]],token: 
         let boundary = "native-soak-"+UUID().uuidString
         var body = Data("--\(boundary)\r\nContent-Disposition: form-data; name=\"file\"; filename=\"audio.wav\"\r\n\r\n".utf8)
         body.append(audio); body.append(Data("\r\n--\(boundary)--\r\n".utf8))
-        let (sttData,sttResponse) = try http(base,"v1/audio/transcriptions",token:token,body:body,type:"multipart/form-data; boundary=\(boundary)")
+        let (sttData,sttResponse) = try request("v1/audio/transcriptions",body:body,type:"multipart/form-data; boundary=\(boundary)")
         try require(sttResponse.statusCode == 200,"Soak ASR request failed")
         let transcription = try object(sttData)
         try require(!(transcription["text"] as? String ?? "").isEmpty,"Soak ASR returned no text")
@@ -133,37 +165,38 @@ private func soak(_ base: URL,root: URL,corpus: URL,rows: [[String:Any]],token: 
         let language = english ? "english" : "chinese"
         let ttsResponse: HTTPURLResponse,outputBytes: Int,format: String
         if cycle%2 == 0 {
-            let (data,response) = try http(base,"v1/audio/speech",token:token,body:json(["input":text,"voice":voice,"language":language,"response_format":"wav"]))
+            let (data,response) = try request("v1/audio/speech",body:json(["input":text,"voice":voice,"language":language,"response_format":"wav"]))
             try require(response.statusCode == 200 && data.count > 44 && data.prefix(4) == Data("RIFF".utf8),"Soak WAV generation failed")
             try require(Array(data[24..<28]) == [0xc0,0x5d,0,0] && (data.count-44)%2 == 0,"Soak WAV format changed")
             ttsResponse = response; outputBytes = data.count; format = "wav"
         } else {
-            let value = try stream(base,token:token,text:text,voice:voice,language:language)
+            let value = try speechStream(text:text,voice:voice,language:language)
             ttsResponse = value.response!; outputBytes = value.data.count; format = "pcm"
         }
         let ttsRecord = try record(ttsResponse.value(forHTTPHeaderField:"x-request-id"))
         if (cycle+1)%5 == 0 {
-            let value = try stream(base,token:token,text:String(repeating:"检查取消后能否恢复。",count:12)) { _,task in task.cancel() }
+            let value = try speechStream(text:String(repeating:"检查取消后能否恢复。",count:12)) { _,task in task.cancel() }
             try drain()
             guard let requestID = value.response?.value(forHTTPHeaderField:"x-request-id") else { throw Failure(message:"Cancelled soak response lacks identity") }
             let cancelled = try object(http(base,"v1/requests/"+requestID,token:token).0)
             try require(cancelled["status"] as? String == "cancelled","Soak disconnect did not cancel inference")
-            let (_,recovery) = try http(base,"v1/audio/speech",token:token,body:json(["input":"恢复正常。","response_format":"wav"]))
+            let (_,recovery) = try request("v1/audio/speech",body:json(["input":"恢复正常。","response_format":"wav"]))
             try require(recovery.statusCode == 200,"Soak inference did not recover after disconnect")
             disconnects += 1
         }
         if (cycle+1)%10 == 0 {
             let headers = ["x-cyberaudio-instance":instance,"x-cyberaudio-update":UUID().uuidString]
             defer { _ = try? http(base,"internal/update/cancel",token:token,body:Data(),headers:headers) }
-            let (_,prepared) = try http(base,"internal/update/prepare",token:token,body:Data(),headers:headers)
+            let (_,prepared) = try request("internal/update/prepare",body:Data(),headers:headers)
             try require(prepared.statusCode == 200,"Soak update preparation failed")
-            let (_,paused) = try http(base,"v1/audio/speech",token:token,body:json(["input":"暂停的新请求"]))
+            let (_,paused) = try request("v1/audio/speech",body:json(["input":"暂停的新请求"]))
             try require(paused.statusCode == 503,"Soak update did not pause admission")
-            let (_,resumed) = try http(base,"internal/update/cancel",token:token,body:Data(),headers:headers)
+            let (_,resumed) = try request("internal/update/cancel",body:Data(),headers:headers)
             try require(resumed.statusCode == 200,"Soak update lease did not resume")
             updates += 1
         }
         try drain()
+        lastResponse = nil; report["active_operation"] = "cleanup_and_metrics"
         let temporary = try FileManager.default.contentsOfDirectory(atPath:root.appendingPathComponent("tmp").path)
         try require(!temporary.contains(where:{$0.hasPrefix("request-")}),"Soak left temporary request directories")
         let rssText = try command("/bin/ps",["-p",String(processID),"-o","rss="]).trimmingCharacters(in:.whitespacesAndNewlines)
@@ -190,12 +223,23 @@ private func soak(_ base: URL,root: URL,corpus: URL,rows: [[String:Any]],token: 
     report["memory_pressure_after"] = try command("/usr/bin/memory_pressure",["-Q"])
     report["swap_after"] = try command("/usr/sbin/sysctl",["-n","vm.swapusage"])
     report.removeValue(forKey:"active_workload")
+    report.removeValue(forKey:"active_operation")
     report["status"] = "passed"; report["finished"] = ISO8601DateFormatter().string(from:Date())
     try checkpoint()
     return ["status":"passed","report":"soak.json","duration_seconds":now()-began,"cycles":metrics.count,
         "disconnect_recovered":disconnects,"update_pause_resume":updates,"memory_summary":summary]
     } catch {
         report["failure"] = String(describing:error)
+        if let response = lastResponse {
+            report["failed_response"] = response
+            if report["failed_request"] == nil, let id = response["request_id"] as? String {
+                do {
+                    let (data,result) = try http(base,"v1/requests/"+id,token:token,timeout:3)
+                    report["failed_request_http_status"] = result.statusCode
+                    report["failed_request"] = try object(data)
+                } catch { report["failed_request_lookup_error"] = String(describing:error) }
+            }
+        }
         throw error
     }
 }

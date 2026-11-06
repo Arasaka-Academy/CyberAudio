@@ -4,6 +4,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import hashlib
 import json
 import plistlib
+import socket
 import struct
 import subprocess
 import threading
@@ -63,7 +64,8 @@ def test_separate_identity_advances_to_the_isolated_asset_stage(driver, tmp_path
     assert (root / ".native-validation").is_file()
 
 
-def test_soak_failure_keeps_request_cause_and_workload_context(tmp_path):
+@pytest.mark.parametrize("failure_mode", ["terminal_record", "wav_http_error", "pcm_transport_error"])
+def test_soak_failure_keeps_request_cause_and_workload_context(tmp_path, failure_mode):
     """Exercise the real Swift HTTP path without launching an App or models."""
     prefix = (PROJECT / "scripts/verify_native.swift").read_text().split("@main enum NativeValidation")[0]
     source = tmp_path / "Probe.swift"
@@ -76,7 +78,7 @@ def test_soak_failure_keeps_request_cause_and_workload_context(tmp_path):
             let rows = try JSONSerialization.jsonObject(with: Data(contentsOf: corpus.appendingPathComponent("corpus.json"))) as! [[String: Any]]
             _ = try soak(URL(string: args[1])!, root: root, corpus: corpus, rows: rows,
                          token: String(repeating: "x", count: 64), instance: "reporting-fixture",
-                         processID: getpid(), seconds: 1, drain: {})
+                         processID: getpid(), seconds: 30, drain: {})
             exit(2)
         } catch { fputs("EXPECTED FAILURE: \(error)\n", stderr); exit(1) }
     }
@@ -90,6 +92,7 @@ def test_soak_failure_keeps_request_cause_and_workload_context(tmp_path):
                    check=True, capture_output=True, timeout=90)
     root, corpus = tmp_path / "owned-data", tmp_path / "corpus"
     (root / "reports").mkdir(parents=True)
+    (root / "tmp").mkdir()
     corpus.mkdir()
     pcm = bytes(4)
     audio = struct.pack("<4sI4s4sIHHIIHH4sI", b"RIFF", 36 + len(pcm), b"WAVE", b"fmt ",
@@ -101,31 +104,52 @@ def test_soak_failure_keeps_request_cause_and_workload_context(tmp_path):
     }]))
 
     class Handler(BaseHTTPRequestHandler):
+        speech_requests = 0
+
         def log_message(self, *_):
             pass
 
         def do_POST(self):
             self.rfile.read(int(self.headers.get("Content-Length", 0)))
+            status = 200
             if self.path == "/v1/audio/transcriptions":
-                body = json.dumps({"text": "受控回归", "request_id": "fixture-asr"}).encode()
+                body = json.dumps({"text": "受控回归", "request_id": "fixture-asr", "processing_ms": 1}).encode()
                 content_type, identity = "application/json", "fixture-asr"
             elif self.path == "/v1/audio/speech":
+                type(self).speech_requests += 1
                 body, content_type, identity = audio, "audio/wav", "fixture-tts"
+                if failure_mode == "wav_http_error":
+                    status, content_type = 422, "application/json"
+                    body = json.dumps({"error": {"code": "generation_limit", "message": "受控长度错误"}}).encode()
+                elif failure_mode == "pcm_transport_error":
+                    if type(self).speech_requests == 1:
+                        identity = "fixture-tts-1"
+                    else:
+                        body, content_type = bytes(8), "audio/pcm"
             else:
                 self.send_error(404)
                 return
-            self.send_response(200)
+            self.send_response(status)
             self.send_header("Content-Type", content_type)
-            self.send_header("Content-Length", str(len(body)))
+            interrupted = failure_mode == "pcm_transport_error" and content_type == "audio/pcm"
+            self.send_header("Content-Length", str(len(body) + (100 if interrupted else 0)))
             self.send_header("X-Request-ID", identity)
             self.end_headers()
             self.wfile.write(body)
+            if interrupted:
+                self.wfile.flush()
+                self.connection.shutdown(socket.SHUT_RDWR)
+                self.close_connection = True
 
         def do_GET(self):
             if self.path == "/v1/requests/fixture-asr":
                 value = {"request_id": "fixture-asr", "status": "completed", "kind": "stt"}
             elif self.path == "/v1/requests/fixture-tts":
                 value = {"request_id": "fixture-tts", "status": "failed", "kind": "tts", "code": "generation_limit"}
+            elif self.path == "/v1/requests/fixture-tts-1":
+                value = {"request_id": "fixture-tts-1", "status": "completed", "kind": "tts",
+                         "metal_active_bytes": 1, "metal_peak_bytes": 2,
+                         "process_peak_rss_bytes": 3, "processing_ms": 4}
             else:
                 self.send_error(404)
                 return
@@ -145,13 +169,21 @@ def test_soak_failure_keeps_request_cause_and_workload_context(tmp_path):
         finally:
             server.shutdown()
             thread.join(timeout=5)
-    assert result.returncode == 1 and "Soak request did not complete" in result.stderr
+    assert result.returncode == 1
     report = json.loads((root / "reports/soak.json").read_text())
     assert report["status"] == "failed"
     assert report["failed_request"]["request_id"] == "fixture-tts"
     assert report["failed_request"]["code"] == "generation_limit"
     assert report["failed_request_http_status"] == 200
-    assert "generation_limit" in report["failure"] and report["finished"]
+    assert report["failure"] and report["finished"]
     assert report["active_workload"] == {
-        "cycle": 1, "corpus_id": "fixture-input", "voice": "serena", "format": "wav",
+        "cycle": 2 if failure_mode == "pcm_transport_error" else 1, "corpus_id": "fixture-input",
+        "voice": "vivian" if failure_mode == "pcm_transport_error" else "serena",
+        "format": "pcm" if failure_mode == "pcm_transport_error" else "wav",
     }
+    if failure_mode == "wav_http_error":
+        assert report["failed_response"]["http_status"] == 422
+        assert report["failed_response"]["json"]["error"]["code"] == "generation_limit"
+    if failure_mode == "pcm_transport_error":
+        assert report["failed_response"]["http_status"] == 200
+        assert report["failed_response"]["transport_error"]["code"] == -1005
