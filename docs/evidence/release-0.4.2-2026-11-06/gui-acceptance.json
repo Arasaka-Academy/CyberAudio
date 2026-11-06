@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-11-06T04:22:15.346234+00:00",
+  "installed_version": "0.4.2 (9)",
+  "screen_locked": true,
+  "screen_lock_evidence": "CGSessionCopyCurrentDictionary: CGSSessionScreenIsLocked=true",
+  "main_window_observed": true,
+  "accessibility_tree": "unavailable while screen was locked; driver returned ax_window_unresolved",
+  "final_permission_readback": null,
+  "final_global_listener_readback": null,
+  "candidate_recorder_gui": {
+    "version": "0.4.1 (8)",
+    "bare_tab_rejected": true,
+    "chord": "control-option-shift-K",
+    "chord_saved_and_sheet_closed": true,
+    "restored": "right Option"
+  },
+  "physical_keyboard": "deferred; not established by synthetic or in-process events",
+  "real_microphone_and_cross_app_insertion": "deferred; user requested automatic testing before human acceptance"
+}

@@ -1,0 +1,14 @@
+{
+  "version": "0.4.2",
+  "build": "9",
+  "source": "verified GitHub release ZIP",
+  "strictSignature": true,
+  "installedExecutablesMatchRelease": true,
+  "configurationAndTokenPreserved": true,
+  "executableSHA256": {
+    "CyberAudio": "2b127ec2f551e9484f4b080aba96a5b36b5ef47e1f5fc90a2abcc8a3758b4130",
+    "CyberAudioService": "ab29d36180284ef00a54d6a0360fe316bb935c80022d86be5eb1544e3203e254",
+    "CyberAudioAssets": "fa29478497b33b991e13fa483feb8b5852b93d18f74f2a6438ea2baac205bc14"
+  },
+  "priorInstalledVersion": "0.4.1"
+}

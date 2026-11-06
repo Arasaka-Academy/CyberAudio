@@ -1,0 +1,18 @@
+{
+  "initialFullCheck": "passed on local compiler",
+  "finalDictationRegression": "passed after explicit initializer fix",
+  "releaseToolTests": "5 passed",
+  "initialRecorderGUI": "bare Tab rejected; valid chord captured; sheet closed; right Option restored and read back",
+  "initialLocalInstalledVersion": "0.4.1 (8)",
+  "finalReleaseVersion": "0.4.2 (9)",
+  "priorCI": {
+    "run": 42158194552,
+    "status": "failed",
+    "cause": "Swift 6.3 synthesized initializer was inaccessible across files after adding private stored state",
+    "resolution": "explicit ShortcutMatcher initializer, commit 9d10dbc"
+  },
+  "physicalKeyboardAcceptance": "deferred; final desktop was locked; final permissions and global listener not read back",
+  "finalReleaseCI": "passed, run 42159172850",
+  "finalInstalledVersion": "0.4.2 (9), verified GitHub release ZIP",
+  "finalInstalledService": "2 real-model STT requests and 2 TTS requests passed; authentication and update lease passed"
+}

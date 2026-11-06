@@ -1,0 +1,63 @@
+{
+  "checked_at": "2026-11-06T04:20:12.209052+00:00",
+  "status": "passed",
+  "manifest": {
+    "tag": "v0.4.2",
+    "version": "0.4.2",
+    "build": "9",
+    "prerelease": false,
+    "commit": "156289c4273c3d6620c7184ff22ebb76a09222b2",
+    "artifacts": {
+      "CyberAudio-0.4.2-macOS-arm64.dmg": "978a7bf5beac3d78f13e044474a9cfd9f0f0cf3607730f3f28877423579ea772",
+      "CyberAudio-0.4.2-macOS-arm64.dmg.sha256": "b3b788d4236599d0ee1911596939c290910b7ec6c4d36dec95fb815411b55e51",
+      "CyberAudio-0.4.2-macOS-arm64.zip": "a870eb61fd96305bd26b0ce3bc49fe6276cb5b72f45cdb850d4ad4caf84e4e0f",
+      "CyberAudio-0.4.2-macOS-arm64.zip.sha256": "6432d078670e932b1f9f573779ecec280ca10a9e8cf8b360af95156c0366ed92",
+      "appcast.xml": "dcf42e2f4f9b5e33f36e87e94da6c7bbdb7c4376b68ddcc3a398aa0e436b0051"
+    }
+  },
+  "downloads": [
+    {
+      "name": "release.json",
+      "bytes": 693,
+      "sha256": "d4608a82ddc48853b1caf924dbd7df906729d77dac82cc9093a4b9490eb25e6c",
+      "browser_download_url": "https://github.com/Arasaka-Academy/CyberAudio/releases/download/v0.4.2/release.json",
+      "download_route": "GitHub release asset API"
+    },
+    {
+      "name": "CyberAudio-0.4.2-macOS-arm64.dmg.sha256",
+      "bytes": 99,
+      "sha256": "b3b788d4236599d0ee1911596939c290910b7ec6c4d36dec95fb815411b55e51",
+      "browser_download_url": "https://github.com/Arasaka-Academy/CyberAudio/releases/download/v0.4.2/CyberAudio-0.4.2-macOS-arm64.dmg.sha256",
+      "download_route": "GitHub release asset API"
+    },
+    {
+      "name": "CyberAudio-0.4.2-macOS-arm64.zip.sha256",
+      "bytes": 99,
+      "sha256": "6432d078670e932b1f9f573779ecec280ca10a9e8cf8b360af95156c0366ed92",
+      "browser_download_url": "https://github.com/Arasaka-Academy/CyberAudio/releases/download/v0.4.2/CyberAudio-0.4.2-macOS-arm64.zip.sha256",
+      "download_route": "GitHub release asset API"
+    },
+    {
+      "name": "appcast.xml",
+      "bytes": 2352,
+      "sha256": "dcf42e2f4f9b5e33f36e87e94da6c7bbdb7c4376b68ddcc3a398aa0e436b0051",
+      "browser_download_url": "https://github.com/Arasaka-Academy/CyberAudio/releases/download/v0.4.2/appcast.xml",
+      "download_route": "GitHub release asset API"
+    },
+    {
+      "name": "CyberAudio-0.4.2-macOS-arm64.zip",
+      "bytes": 92344214,
+      "sha256": "a870eb61fd96305bd26b0ce3bc49fe6276cb5b72f45cdb850d4ad4caf84e4e0f",
+      "browser_download_url": "https://github.com/Arasaka-Academy/CyberAudio/releases/download/v0.4.2/CyberAudio-0.4.2-macOS-arm64.zip",
+      "download_route": "GitHub release asset API"
+    },
+    {
+      "name": "CyberAudio-0.4.2-macOS-arm64.dmg",
+      "bytes": 106539829,
+      "sha256": "978a7bf5beac3d78f13e044474a9cfd9f0f0cf3607730f3f28877423579ea772",
+      "browser_download_url": "https://github.com/Arasaka-Academy/CyberAudio/releases/download/v0.4.2/CyberAudio-0.4.2-macOS-arm64.dmg",
+      "download_route": "GitHub release asset API"
+    }
+  ],
+  "pages_matches_release": true
+}
