@@ -1,0 +1,12 @@
+MEL rms-composite-zh-002-1883-en-008-1846-clean
+MEL rms-composite-zh-002-1883-en-008-1846-snr20
+MEL rms-composite-en-008-1846-zh-002-1883-clean
+MEL rms-composite-en-008-1846-zh-002-1883-snr20
+MEL rms-composite-zh-020-1779-en-046-1710-clean
+MEL rms-composite-zh-020-1779-en-046-1710-snr20
+MEL rms-composite-en-046-1710-zh-020-1779-clean
+MEL rms-composite-en-046-1710-zh-020-1779-snr20
+MEL zh-002-1883-clean
+MEL zh-020-1779-clean
+MEL en-008-1846-clean
+MEL en-046-1710-clean

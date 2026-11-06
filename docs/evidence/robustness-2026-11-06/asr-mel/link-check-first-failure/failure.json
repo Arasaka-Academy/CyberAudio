@@ -1,0 +1,9 @@
+{
+  "status": "verifier_failed",
+  "recorded_at": "2026-11-06T19:21:09.681269+00:00",
+  "exit_code": 1,
+  "failure": "AssertionError at subset check; quoted link-file-list entries with spaces were compared as literal paths",
+  "original_source_sha256": "7d081ec0970da3796a2d58ecc354d23b1481725f54938f11dc95442cd981dc2b",
+  "model_loaded": false,
+  "workloads_restarted": false
+}

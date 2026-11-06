@@ -1,0 +1,11 @@
+{
+  "status": "verified",
+  "model_loaded": false,
+  "source_sha256": "c4fafcb704cd989b479a366df0734df1405f979e95f78dd462a034a4fb38043c",
+  "previous_list_sha256": "16d1d989aee3addd8051a4ed63b277f418580be3284f931c098c76fa381a5f32",
+  "new_list_sha256": "6036fabeb6a97a4b3defa1d346f2ede1bff699c713029b3182c3b1eb02a7fa11",
+  "total_objects": 1349,
+  "single_caller_object_replaced": true,
+  "shared_objects_preserved": 1348,
+  "new_object_sha256": "cb304012b319ad9eb5b39dd3e34d7171cfddab59400c0f442d76acc313cb6bc1"
+}

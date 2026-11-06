@@ -1,0 +1,124 @@
+{
+  "purpose": "Reproduce all retained Mel boundaries without model weights, then isolate CPU window/filter constants and spectrum/reduction precision; no production changes",
+  "source_commit": "c078fa980c47d53a9ff3131183c4c10eec37049d",
+  "prior_verification_sha256": "e9b9ef2cc389dc061a4dbb0a74485deb2bc49e72c594457d05ae31478e1c23df",
+  "cases": [
+    {
+      "id": "rms-composite-zh-002-1883-en-008-1846-clean",
+      "group": "mixed",
+      "native_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/native-front/rms-composite-zh-002-1883-en-008-1846-clean.safetensors",
+      "native_sha256": "03e0934366cabff38e3528bcd48ddffe84582faed0d1163c1649a0f3c05c4259",
+      "reference_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/reference-front/rms-composite-zh-002-1883-en-008-1846-clean.safetensors",
+      "reference_sha256": "33f8e65aaf71c7fe69cd98a7be513f78dc4ec1acb100522e1ab17d013defd7e5"
+    },
+    {
+      "id": "rms-composite-zh-002-1883-en-008-1846-snr20",
+      "group": "mixed",
+      "native_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/native-front/rms-composite-zh-002-1883-en-008-1846-snr20.safetensors",
+      "native_sha256": "021ed6cfbe7fc896b1a6d690ca512b50b676792311d4adad9c26138056e81f4c",
+      "reference_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/reference-front/rms-composite-zh-002-1883-en-008-1846-snr20.safetensors",
+      "reference_sha256": "db2f5c9065d1194cdccab0f726cbb5ad1f9a1feb58e9ff2076c2cfcdb30b57ab"
+    },
+    {
+      "id": "rms-composite-en-008-1846-zh-002-1883-clean",
+      "group": "mixed",
+      "native_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/native-front/rms-composite-en-008-1846-zh-002-1883-clean.safetensors",
+      "native_sha256": "fd2f30c44e4d8513c2c4a720f396359bdfb7ead3fb2c1f10f67eccc487c8ea53",
+      "reference_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/reference-front/rms-composite-en-008-1846-zh-002-1883-clean.safetensors",
+      "reference_sha256": "81121036043775234f39db21421ab9eed022c3566320b7b702e07d6c8457958d"
+    },
+    {
+      "id": "rms-composite-en-008-1846-zh-002-1883-snr20",
+      "group": "mixed",
+      "native_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/native-front/rms-composite-en-008-1846-zh-002-1883-snr20.safetensors",
+      "native_sha256": "2038bb8017edafa0bbf673304879e5bee0dc62b9e9b9ee8996fbcbfa1acbcd7c",
+      "reference_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/reference-front/rms-composite-en-008-1846-zh-002-1883-snr20.safetensors",
+      "reference_sha256": "821b9e03ac47bdeaf531041deaa3f98527f89e47aadefb927d867048dba9ffcd"
+    },
+    {
+      "id": "rms-composite-zh-020-1779-en-046-1710-clean",
+      "group": "mixed",
+      "native_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/native-front/rms-composite-zh-020-1779-en-046-1710-clean.safetensors",
+      "native_sha256": "eaf75eded2703ccbe6308853ca0ac255e988270f8ea83fdec591d7f34480bf21",
+      "reference_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/reference-front/rms-composite-zh-020-1779-en-046-1710-clean.safetensors",
+      "reference_sha256": "e964caa4f153d4ad677ecef21f61bbcdc7cc9fef2314ee4f736a6cef47c5a6f0"
+    },
+    {
+      "id": "rms-composite-zh-020-1779-en-046-1710-snr20",
+      "group": "mixed",
+      "native_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/native-front/rms-composite-zh-020-1779-en-046-1710-snr20.safetensors",
+      "native_sha256": "7ab125b5bc5350b1b2dc7c2f59b60091e71e4f2a7de1efbb91a39eb9be67a29c",
+      "reference_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/reference-front/rms-composite-zh-020-1779-en-046-1710-snr20.safetensors",
+      "reference_sha256": "c17902f22f374c6e96b913666906000f6f62e71744b0655786338a2092305034"
+    },
+    {
+      "id": "rms-composite-en-046-1710-zh-020-1779-clean",
+      "group": "mixed",
+      "native_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/native-front/rms-composite-en-046-1710-zh-020-1779-clean.safetensors",
+      "native_sha256": "8446942f613fc8f8b26368e05c6d4f775a59c901866fc1ae47027ddac9f83edf",
+      "reference_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/reference-front/rms-composite-en-046-1710-zh-020-1779-clean.safetensors",
+      "reference_sha256": "d3a8d6e4f9ea8210cb49014a674dd1db45701e190c023d41d48a793ee2d3fcf4"
+    },
+    {
+      "id": "rms-composite-en-046-1710-zh-020-1779-snr20",
+      "group": "mixed",
+      "native_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/native-front/rms-composite-en-046-1710-zh-020-1779-snr20.safetensors",
+      "native_sha256": "40a1e1f743d6610a73da0b260974987324d5ec94169a42ddf9896003816e0d00",
+      "reference_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/reference-front/rms-composite-en-046-1710-zh-020-1779-snr20.safetensors",
+      "reference_sha256": "fc3e0a245a2d53ead03de148396d51dcda16c30625b718d6471df51513c9575a"
+    },
+    {
+      "id": "zh-002-1883-clean",
+      "group": "monolingual-control",
+      "native_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/native-front/zh-002-1883-clean.safetensors",
+      "native_sha256": "51cec8a4d83c35cad2f46b9a743381f33746690748253b807b41a20f5cdc16d7",
+      "reference_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/reference-front/zh-002-1883-clean.safetensors",
+      "reference_sha256": "b75effc150b6590a7dfbd9593d9eac0b170eafb424be0e7e96f3076fde42330b"
+    },
+    {
+      "id": "zh-020-1779-clean",
+      "group": "monolingual-control",
+      "native_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/native-front/zh-020-1779-clean.safetensors",
+      "native_sha256": "ad357432607f42191922d075828bd46beb1d0acdf81fd1a9a6a72c40170f38ae",
+      "reference_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/reference-front/zh-020-1779-clean.safetensors",
+      "reference_sha256": "3cb040381f74abf7487071d575563a42795953cab29ff877aa583254c13ce25a"
+    },
+    {
+      "id": "en-008-1846-clean",
+      "group": "monolingual-control",
+      "native_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/native-front/en-008-1846-clean.safetensors",
+      "native_sha256": "641f6fe20a2c7430664f0c84829592a2673fcfab7211352bc02154ba81d63148",
+      "reference_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/reference-front/en-008-1846-clean.safetensors",
+      "reference_sha256": "e680246dbbcc01ce57988b7ce3f0353f0b650ec7a7d9f34b219402e5226b68e1"
+    },
+    {
+      "id": "en-046-1710-clean",
+      "group": "monolingual-control",
+      "native_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/native-front/en-046-1710-clean.safetensors",
+      "native_sha256": "30ee76085d7d68b81d1f31ef31244ef329d579250faf6e217c82c82f7df1f04b",
+      "reference_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/reference-front/en-046-1710-clean.safetensors",
+      "reference_sha256": "909079192ca3f6c512ccdb1893d41cd42da7b5a84ad357fdbdba75b5e3379ceb"
+    }
+  ],
+  "protected_source_sha256": {
+    "/Users/zhubby/Repository/CyberAudio/.context/icon-native-build/checkouts/mlx-audio-swift/Sources/MLXAudioCore/DSP.swift": "42cbc9077ceb460fbfe970a955328900af7e3bc1d900dc5ccb79c104c14f9d35",
+    "/Users/zhubby/Repository/CyberAudio/.context/icon-native-build/checkouts/mlx-audio-swift/Sources/MLXAudioSTT/Models/Qwen3ASR/Qwen3ASR.swift": "97e3f0a328cd866e9aa7a0f90b958431f9baa19b78031fe136347e6114caaf28",
+    "/Users/zhubby/Repository/CyberAudio/.context/robustness/reference-parity-20261107/runtime/lib/python3.13/site-packages/transformers/audio_utils.py": "eaf95e79c399cadaaa951b5984803bf1931c08e78ee112cbe5f7750306d474d4",
+    "/Users/zhubby/Repository/CyberAudio/.context/robustness/reference-parity-20261107/runtime/lib/python3.13/site-packages/transformers/models/whisper/feature_extraction_whisper.py": "dcce2e7820be059e657a9e12a60e8a55cfd37b1a82ee202ca15fc7d0934374cb"
+  },
+  "native_arms": [
+    "original-decomposition",
+    "reference-window-only",
+    "reference-filters-only",
+    "reference-window-and-filters"
+  ],
+  "model_loaded": false,
+  "asr_generations": 0,
+  "total_workload_budget_seconds": 180,
+  "snapshot_budget_bytes": 188743680,
+  "limits": [
+    "No ASR or content acceptance implied by closer numerical agreement",
+    "Float64 NumPy reference and float32 native MLX execute different precision and backend operations",
+    "Window/filter substitutions remain private and are not adopted"
+  ]
+}

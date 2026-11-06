@@ -1,0 +1,119 @@
+{
+  "status": "verified",
+  "verified_at": "2026-11-06T19:20:11.539976+00:00",
+  "source_commit": "c078fa980c47d53a9ff3131183c4c10eec37049d",
+  "model_loaded": false,
+  "asr_generations": 0,
+  "native_and_reference_mel_reproduction_cases": 12,
+  "snapshots": [
+    {
+      "file": "native/constants.safetensors",
+      "sha256": "e449db84b892149fab85661a1da7e239d98b1dc49c09949110b1dd37b940b265",
+      "bytes": 104681
+    },
+    {
+      "file": "reference-constants.safetensors",
+      "sha256": "78934c821464214d6aabf9597d119d1e06e1e2c409416d5a854a2753538178d3",
+      "bytes": 104680
+    },
+    {
+      "file": "native/rms-composite-zh-002-1883-en-008-1846-clean.safetensors",
+      "sha256": "88711b949b74684c85fe46c90e5b26a8ba0ff51acf555710338e9ba45b4b5a6a",
+      "bytes": 14527426
+    },
+    {
+      "file": "native/rms-composite-zh-002-1883-en-008-1846-snr20.safetensors",
+      "sha256": "65b7d2aedded1d3a08858ef869d805a4ea13afcd64f6193b4c1ab2bd19059a57",
+      "bytes": 14527426
+    },
+    {
+      "file": "native/rms-composite-en-008-1846-zh-002-1883-clean.safetensors",
+      "sha256": "a04aa1fc150c0557861201d323294d0f7d24dfec675947c6e6f5286b4dd94236",
+      "bytes": 14527426
+    },
+    {
+      "file": "native/rms-composite-en-008-1846-zh-002-1883-snr20.safetensors",
+      "sha256": "f19336dde5953cd999cdf3b336115d56e047b23ddbae143669ccc6ec579550f5",
+      "bytes": 14527426
+    },
+    {
+      "file": "native/rms-composite-zh-020-1779-en-046-1710-clean.safetensors",
+      "sha256": "0226479fd90d9b7b3b79a9e6da13b12ecfa08d7d88802c820f26b35f6a1db1ac",
+      "bytes": 14169314
+    },
+    {
+      "file": "native/rms-composite-zh-020-1779-en-046-1710-snr20.safetensors",
+      "sha256": "54cb979e7745a244eb16edc132a136a43d0119454f9af5bfa04bbac4bb7fd37a",
+      "bytes": 14169316
+    },
+    {
+      "file": "native/rms-composite-en-046-1710-zh-020-1779-clean.safetensors",
+      "sha256": "7fcc87053133a80f515eb8a31f781a4f385a83c92ab344218ca93970484f8a52",
+      "bytes": 14169316
+    },
+    {
+      "file": "native/rms-composite-en-046-1710-zh-020-1779-snr20.safetensors",
+      "sha256": "25639e897a8c06786553d96035b537d086d47a81667826ee89761bdba987308d",
+      "bytes": 14169316
+    },
+    {
+      "file": "native/zh-002-1883-clean.safetensors",
+      "sha256": "24ec55816665925b53430db1d2f3fb4259652a73fb8c6433ce1ef26f9f846b62",
+      "bytes": 8006317
+    },
+    {
+      "file": "native/zh-020-1779-clean.safetensors",
+      "sha256": "7b03daa0b516f40c2d9612043d9a10ef11a6ff228d87c676201a939bbc9bb39f",
+      "bytes": 8757197
+    },
+    {
+      "file": "native/en-008-1846-clean.safetensors",
+      "sha256": "838307a36bfbbe7a7313f657058df39eeded497b05cb1e0ca9cd06e1f53eac59",
+      "bytes": 6377483
+    },
+    {
+      "file": "native/en-046-1710-clean.safetensors",
+      "sha256": "77bf60f106e01128aa1d83388b4f8cfb2e8f06895311392404743e017c650c51",
+      "bytes": 5268482
+    }
+  ],
+  "snapshot_bytes": 143405806,
+  "independent_recomputed_comparisons": 266,
+  "window_float32_different_values": 302,
+  "filters_float32_different_values": 391,
+  "native_arms_vs_original_reference": {
+    "original-decomposition": {
+      "exact_cases": 0,
+      "largest_case_max_abs": 0.00012862682342529297,
+      "unweighted_mean_of_case_mean_abs": 5.606593694943164e-07
+    },
+    "reference-window-only": {
+      "exact_cases": 0,
+      "largest_case_max_abs": 0.00013196468353271484,
+      "unweighted_mean_of_case_mean_abs": 5.530685890534509e-07
+    },
+    "reference-filters-only": {
+      "exact_cases": 0,
+      "largest_case_max_abs": 0.00010764598846435547,
+      "unweighted_mean_of_case_mean_abs": 3.416607227077794e-07
+    },
+    "reference-window-and-filters": {
+      "exact_cases": 0,
+      "largest_case_max_abs": 0.0001323223114013672,
+      "unweighted_mean_of_case_mean_abs": 3.327371976226456e-07
+    }
+  },
+  "formal_sources_verified": 96,
+  "original_model_files_verified": 568,
+  "frozen_files_verified": 8,
+  "protected_inputs_verified": 1357,
+  "owned_processes_absent": true,
+  "production_preserved": true,
+  "formal_source_or_defaults_changed": false,
+  "candidate_promoted": false,
+  "limits": [
+    "No ASR or content acceptance implied by closer numerical agreement",
+    "Float64 NumPy reference and float32 native MLX execute different precision and backend operations",
+    "Window/filter substitutions remain private and are not adopted"
+  ]
+}

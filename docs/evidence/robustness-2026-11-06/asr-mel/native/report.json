@@ -1,0 +1,107 @@
+{
+  "asr_generations" : 0,
+  "constants_bytes" : 104681,
+  "constants_sha256" : "e449db84b892149fab85661a1da7e239d98b1dc49c09949110b1dd37b940b265",
+  "elapsed_seconds" : 2.0558182499953546,
+  "model_loaded" : false,
+  "plan_sha256" : "6651459c71cc7e87fa0ed682d29f4bff43164d2d8cc4642bd1bb6177b41bfb42",
+  "results" : [
+    {
+      "bytes" : 14527426,
+      "file" : "rms-composite-zh-002-1883-en-008-1846-clean.safetensors",
+      "id" : "rms-composite-zh-002-1883-en-008-1846-clean",
+      "original_decomposition_exact" : true,
+      "original_public_mel_exact" : true,
+      "sha256" : "88711b949b74684c85fe46c90e5b26a8ba0ff51acf555710338e9ba45b4b5a6a"
+    },
+    {
+      "bytes" : 14527426,
+      "file" : "rms-composite-zh-002-1883-en-008-1846-snr20.safetensors",
+      "id" : "rms-composite-zh-002-1883-en-008-1846-snr20",
+      "original_decomposition_exact" : true,
+      "original_public_mel_exact" : true,
+      "sha256" : "65b7d2aedded1d3a08858ef869d805a4ea13afcd64f6193b4c1ab2bd19059a57"
+    },
+    {
+      "bytes" : 14527426,
+      "file" : "rms-composite-en-008-1846-zh-002-1883-clean.safetensors",
+      "id" : "rms-composite-en-008-1846-zh-002-1883-clean",
+      "original_decomposition_exact" : true,
+      "original_public_mel_exact" : true,
+      "sha256" : "a04aa1fc150c0557861201d323294d0f7d24dfec675947c6e6f5286b4dd94236"
+    },
+    {
+      "bytes" : 14527426,
+      "file" : "rms-composite-en-008-1846-zh-002-1883-snr20.safetensors",
+      "id" : "rms-composite-en-008-1846-zh-002-1883-snr20",
+      "original_decomposition_exact" : true,
+      "original_public_mel_exact" : true,
+      "sha256" : "f19336dde5953cd999cdf3b336115d56e047b23ddbae143669ccc6ec579550f5"
+    },
+    {
+      "bytes" : 14169314,
+      "file" : "rms-composite-zh-020-1779-en-046-1710-clean.safetensors",
+      "id" : "rms-composite-zh-020-1779-en-046-1710-clean",
+      "original_decomposition_exact" : true,
+      "original_public_mel_exact" : true,
+      "sha256" : "0226479fd90d9b7b3b79a9e6da13b12ecfa08d7d88802c820f26b35f6a1db1ac"
+    },
+    {
+      "bytes" : 14169316,
+      "file" : "rms-composite-zh-020-1779-en-046-1710-snr20.safetensors",
+      "id" : "rms-composite-zh-020-1779-en-046-1710-snr20",
+      "original_decomposition_exact" : true,
+      "original_public_mel_exact" : true,
+      "sha256" : "54cb979e7745a244eb16edc132a136a43d0119454f9af5bfa04bbac4bb7fd37a"
+    },
+    {
+      "bytes" : 14169316,
+      "file" : "rms-composite-en-046-1710-zh-020-1779-clean.safetensors",
+      "id" : "rms-composite-en-046-1710-zh-020-1779-clean",
+      "original_decomposition_exact" : true,
+      "original_public_mel_exact" : true,
+      "sha256" : "7fcc87053133a80f515eb8a31f781a4f385a83c92ab344218ca93970484f8a52"
+    },
+    {
+      "bytes" : 14169316,
+      "file" : "rms-composite-en-046-1710-zh-020-1779-snr20.safetensors",
+      "id" : "rms-composite-en-046-1710-zh-020-1779-snr20",
+      "original_decomposition_exact" : true,
+      "original_public_mel_exact" : true,
+      "sha256" : "25639e897a8c06786553d96035b537d086d47a81667826ee89761bdba987308d"
+    },
+    {
+      "bytes" : 8006317,
+      "file" : "zh-002-1883-clean.safetensors",
+      "id" : "zh-002-1883-clean",
+      "original_decomposition_exact" : true,
+      "original_public_mel_exact" : true,
+      "sha256" : "24ec55816665925b53430db1d2f3fb4259652a73fb8c6433ce1ef26f9f846b62"
+    },
+    {
+      "bytes" : 8757197,
+      "file" : "zh-020-1779-clean.safetensors",
+      "id" : "zh-020-1779-clean",
+      "original_decomposition_exact" : true,
+      "original_public_mel_exact" : true,
+      "sha256" : "7b03daa0b516f40c2d9612043d9a10ef11a6ff228d87c676201a939bbc9bb39f"
+    },
+    {
+      "bytes" : 6377483,
+      "file" : "en-008-1846-clean.safetensors",
+      "id" : "en-008-1846-clean",
+      "original_decomposition_exact" : true,
+      "original_public_mel_exact" : true,
+      "sha256" : "838307a36bfbbe7a7313f657058df39eeded497b05cb1e0ca9cd06e1f53eac59"
+    },
+    {
+      "bytes" : 5268482,
+      "file" : "en-046-1710-clean.safetensors",
+      "id" : "en-046-1710-clean",
+      "original_decomposition_exact" : true,
+      "original_public_mel_exact" : true,
+      "sha256" : "77bf60f106e01128aa1d83388b4f8cfb2e8f06895311392404743e017c650c51"
+    }
+  ],
+  "status" : "diagnostic_completed"
+}
