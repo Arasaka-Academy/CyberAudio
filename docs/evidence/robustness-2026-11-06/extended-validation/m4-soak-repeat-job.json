@@ -1,0 +1,10 @@
+{
+  "pid": 59969,
+  "process_started": "Fri Nov  6 20:48:05 2026",
+  "runner": "/Users/zhubby/Library/Caches/CyberAudio/RobustnessValidation/20261106-e2f34df-target1/run-soak-repeat.py",
+  "runner_sha256": "d91df6cf8d4ab64fd9ab8746013db2f6938809f619295a652a23d6a14da49eaf",
+  "started": "2026-11-06T12:48:05.842773+00:00",
+  "port": 18876,
+  "strict_target_seconds": 7200,
+  "earlier_failure_preserved": true
+}

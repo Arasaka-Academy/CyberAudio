@@ -1,0 +1,104 @@
+{
+  "captured_at": "2026-11-06T12:50:42.565279+00:00",
+  "processes": [
+    {
+      "pid": 53772,
+      "identity": "",
+      "live": false
+    },
+    {
+      "pid": 54552,
+      "identity": "",
+      "live": false
+    },
+    {
+      "pid": 55433,
+      "identity": "55433 Fri Nov  6 19:54:32 2026     /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python /Users/zhubby/Library/Caches/CyberAudio/RobustnessValidation/20261106-e2f34df-target1/finish-target.py",
+      "live": true
+    },
+    {
+      "pid": 59969,
+      "identity": "59969 Fri Nov  6 20:48:05 2026     /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python -u /Users/zhubby/Library/Caches/CyberAudio/RobustnessValidation/20261106-e2f34df-target1/run-soak-repeat.py",
+      "live": true
+    }
+  ],
+  "jobs": {
+    "soak-result.json": {
+      "stage": "soak",
+      "started": "2026-11-06T11:34:53.273868+00:00",
+      "source_commit": "e2f34df30eab49e526a3dfd2fa7d6fffbfb81d0b",
+      "status": "failed",
+      "exit_code": 1,
+      "native_report_status": "incomplete",
+      "elapsed_seconds": 3181.8713592500135,
+      "finished": "2026-11-06T12:27:55.164627+00:00"
+    },
+    "soak-r2-job.json": {
+      "pid": 59969,
+      "process_started": "Fri Nov  6 20:48:05 2026",
+      "runner": "/Users/zhubby/Library/Caches/CyberAudio/RobustnessValidation/20261106-e2f34df-target1/run-soak-repeat.py",
+      "runner_sha256": "d91df6cf8d4ab64fd9ab8746013db2f6938809f619295a652a23d6a14da49eaf",
+      "started": "2026-11-06T12:48:05.842773+00:00",
+      "port": 18876,
+      "strict_target_seconds": 7200,
+      "earlier_failure_preserved": true
+    },
+    "soak-r2-result.json": {
+      "status": "running",
+      "started": "2026-11-06T12:48:05.907884+00:00",
+      "runtime_fix_commit": "e2f34df30eab49e526a3dfd2fa7d6fffbfb81d0b",
+      "scope": "Same strict 7200-second workload; preserve terminal failure request/context. No acceptance threshold changed.",
+      "driver_sha256": "35d2a1cd781d4ad405dc19c5a761aa26d7af8d17e34c68d8ac099597ee74bdfa",
+      "port": 18876,
+      "elapsed_seconds": 0.056019374999999996,
+      "child_pid": 59972
+    },
+    "target-completion.json": {
+      "status": "running",
+      "started": "2026-11-06T11:54:32.630944+00:00",
+      "source_commit": "e2f34df30eab49e526a3dfd2fa7d6fffbfb81d0b",
+      "stage": "resume_public_download",
+      "maximum_additional_download_attempts": 3,
+      "per_attempt_budget_seconds": 3600,
+      "total_runner_budget_seconds": 18000,
+      "first_wrapper_terminal_status_normalized_without_changing_raw_receipt": true,
+      "fresh_config_sha256": "72d142652bbf3e9a52305e800483199c26ba5bdf951ba9ff4486b2bcb088a6b4",
+      "fresh_token_sha256": "847ce6f558520ecb5840c9f470aec4a03f0f0a53a07bb34ef63a3fcf4e564481",
+      "elapsed_seconds": 2366.7129775000003,
+      "durable_partial_bytes": 771751936,
+      "attempts": []
+    },
+    "data-soak-r2/reports/soak.json": {
+      "active_workload": {
+        "corpus_id": "zh-028-1698",
+        "cycle": 29,
+        "format": "wav",
+        "voice": "vivian"
+      },
+      "corpus_samples": 100,
+      "cycles": 29,
+      "disconnect_recovered": 5,
+      "duration_seconds": 107.45203904199298,
+      "duration_target_seconds": 7200,
+      "evidence_kind": "round-robin fixed corpus ASR, nine voices, alternating WAV/PCM, disconnect and update recovery",
+      "memory_pressure_before": "The system has 17179869184 (1048576 pages with a page size of 16384).\nSystem-wide memory free percentage: 50%\n",
+      "os": "Version 27.2 (Build 26B123)",
+      "physical_memory_bytes": 17179869184,
+      "single_instance": "0896B685-4DDD-40F3-B236-12B68FFA483E",
+      "started": "2026-11-06T12:48:52Z",
+      "status": "running",
+      "swap_before": "total = 12288.00M  used = 11699.38M  free = 588.62M  (encrypted)\n",
+      "update_pause_resume": 2,
+      "completed_metrics": 29
+    }
+  },
+  "download_durable_partial_bytes": 1468006400,
+  "disk_available_bytes": 16428630016,
+  "production_preserved": true,
+  "production_instance": "5A940C69-D3EA-4444-8C04-446D211C319F",
+  "owned_listener_states": {
+    "18867": false,
+    "18876": true
+  },
+  "failed_soak_request_directories_remaining": 0
+}

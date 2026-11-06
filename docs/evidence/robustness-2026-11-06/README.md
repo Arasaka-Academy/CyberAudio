@@ -20,6 +20,7 @@
 | [playback-recovery/README.md](playback-recovery/README.md) | R8 设备中断续审的独立回归、源码快照与后续构建证据；上列历史回执未被替换 |
 | [target-validation/README.md](target-validation/README.md) | 后续固定 100 条真人语料、M1 新旧同设备对照、M4 完整服务验收、36 项工具测试，以及尚在运行的两小时负载／公网下载快照 |
 | [quality-boundaries/README.md](quality-boundaries/README.md) | 实际 ASR／TTS 长度和取消边界，30 个受控专名／数字／噪声输入的新旧对照、已排除的生成器错误，以及中英拼接整段遗漏的质量限制 |
+| [extended-validation/README.md](extended-validation/README.md) | 首次 M4 两小时尝试的失败终态、失败记录修复及 37 项工具回归、M1 短句 TTS 150 次诊断、中英统一 RMS／顺序对照，以及后续重测和下载快照 |
 
 完整原始记录保留在开发工作区 `.context/robustness/`，原始检查日志在 `/tmp/cyberaudio-robustness-*.log`，不会作为分发材料上传。
 
@@ -54,7 +55,7 @@ rtk proxy .context/verify-native --app /absolute/path/to/isolated/CyberAudio.app
 
 ## 验收边界
 
-以下描述本目录 R1–R7 阶段。后续已恢复全部 100 条固定录音，并完成 M1／M4 真实语料回归；M4 的两小时负载和全新公网下载正在进行。当前状态以 [target-validation](target-validation/README.md) 与[总报告](../../reviews/2026-11-06.md) 为准，历史超时、合成输入和较短负载回执保留原值。
+以下描述本目录 R1–R7 阶段。后续已恢复全部 100 条固定录音，并完成 M1／M4 真实语料回归；首次 M4 两小时尝试在 707 轮后失败，后续重测和公网续传正在进行。当前状态以 [extended-validation](extended-validation/README.md) 与[总报告](../../reviews/2026-11-06.md) 为准，历史超时、合成输入和较短负载回执保留原值。
 
 - 本轮输入是 OS 合成语音，不用于估计真人 CER／WER 或主观音质。历史 FLEURS 100 条回归保留在前一日的证据目录，本机缺少原始录音；恢复固定数据源的中英文连接均超时，尚未重跑。
 - 本轮没有从公网或真实代理下载全部模型权重，没有实测完整 SOCKS5 大文件下载。

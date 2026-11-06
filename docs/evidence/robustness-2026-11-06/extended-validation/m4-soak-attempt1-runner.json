@@ -1,0 +1,10 @@
+{
+  "stage": "soak",
+  "started": "2026-11-06T11:34:53.273868+00:00",
+  "source_commit": "e2f34df30eab49e526a3dfd2fa7d6fffbfb81d0b",
+  "status": "failed",
+  "exit_code": 1,
+  "native_report_status": "incomplete",
+  "elapsed_seconds": 3181.8713592500135,
+  "finished": "2026-11-06T12:27:55.164627+00:00"
+}

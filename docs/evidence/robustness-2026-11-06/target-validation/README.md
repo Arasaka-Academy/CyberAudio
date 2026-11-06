@@ -2,6 +2,8 @@
 
 本阶段复用运行时修复 `e2f34df` 的实际 App／Helper，验收工具提交为 `56b7eca`。上级目录 R1–R7 和 `playback-recovery/` 的历史回执保留原值。新结果补齐固定真人语料和 M4 完整服务回归；长时间测试、完整公网下载、物理音频和正式分发分别记录。
 
+后续状态已更新：本页记录的首次两小时尝试在 3134.31 秒、707 轮后失败，首次下载包装器也已终止；新的严格重测与续传分别进行。终态、诊断和后续任务身份见 [extended-validation](../extended-validation/README.md)。以下运行中快照保留原值，不是当前终态。
+
 ## 已完成
 
 | 文件 | 内容 |
@@ -24,7 +26,7 @@ M4 是 Apple M4／16GiB、macOS 27.2（26B123）。中文 CER **7.9722704%**、�
 
 FLEURS 与参考文本归属 Google／FLEURS（Conneau 等，2022），许可 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)，[数据卡](https://huggingface.co/datasets/google/fleurs)，固定修订 `168de341b3db6859a9bac1c50a2ef5e3b47647e0`。沿用前 50 条普通话、前 50 条美式英语，未按输出选择样本。所选录音合计 64,676,520 字节；本目录仅保存元数据、原参考和输出，不分发录音。缓存中的额外录音没有计入验收。
 
-## 仍在运行
+## 当时运行中的快照
 
 两项任务均在 M4 的专用缓存目录 `RobustnessValidation/20261106-e2f34df-target1/` 下，使用持久进程，SSH 断开不会重启或中止任务。它们不属于定时自动化。
 

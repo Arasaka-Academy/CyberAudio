@@ -1,0 +1,34 @@
+{
+  "scope": "Diagnostic collection and recovery, not strict two-hour or human listening acceptance",
+  "requests": 150,
+  "observation": "not_reproduced_within_150_requests",
+  "output_seconds": {
+    "minimum": 2.8,
+    "median": 4.16,
+    "p95_nearest_rank": 17.44,
+    "maximum": 62.56,
+    "more_than_15_seconds": 10
+  },
+  "earlier_attempts": [
+    {
+      "status": "failed",
+      "error_type": "IncompleteRead",
+      "error": "IncompleteRead(4608000 bytes read)",
+      "elapsed_seconds": 199.56630408298224,
+      "finished": "2026-11-06T12:45:32.832657+00:00",
+      "directory": "m1-tts-failure-probe",
+      "report_sha256": "9e96b5dc9a1adc2c06c118958457efad6fa1118bd67d98023ed84b73790beec7",
+      "saved_completed_requests": 61
+    },
+    {
+      "status": "failed",
+      "error_type": "AssertionError",
+      "error": "",
+      "elapsed_seconds": 9.274948417034466,
+      "finished": "2026-11-06T12:48:15.349088+00:00",
+      "directory": "m1-tts-failure-probe-v2",
+      "report_sha256": "a176126f4566d1608e7b8aa028e86adca8730cbd7f870c6c436f6d437da734ed",
+      "saved_completed_requests": 0
+    }
+  ]
+}

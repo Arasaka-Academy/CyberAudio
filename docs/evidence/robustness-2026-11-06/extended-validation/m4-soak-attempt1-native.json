@@ -1,0 +1,470 @@
+{
+  "assets" : {
+    "models" : [
+      {
+        "component" : "asr",
+        "files_verified" : 10,
+        "revision" : "a8379a2e2f9e313c9292cdf1af4055ab56d50d55"
+      },
+      {
+        "component" : "tts",
+        "files_verified" : 13,
+        "revision" : "41d3337e8b7f2843a75841595fc14e4b9a7a4b96"
+      }
+    ],
+    "status" : "verified",
+    "tokenizers" : {
+      "asr" : "470bb264b72c2c47eb415c1cc18f96a39f572608f5695df0f34e896ec4f2fc37",
+      "tts" : "a210c764d0e752c234adbafe3784c987d14aabb12f6bd5f7571f327db93724a4"
+    }
+  },
+  "helper_sha256" : "cc556b65e263e16218db4315ed8585dccaede7b5f539be7bbd68a4b04e841a89",
+  "models" : {
+    "data" : [
+      {
+        "id" : "qwen3-asr-1.7b",
+        "object" : "model",
+        "owned_by" : "local",
+        "quantization" : "8bit",
+        "repository" : "mlx-community\/Qwen3-ASR-1.7B-8bit",
+        "revision" : "a8379a2e2f9e313c9292cdf1af4055ab56d50d55"
+      },
+      {
+        "id" : "qwen3-tts-1.7b",
+        "object" : "model",
+        "owned_by" : "local",
+        "quantization" : "8bit",
+        "repository" : "mlx-community\/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit",
+        "revision" : "41d3337e8b7f2843a75841595fc14e4b9a7a4b96"
+      }
+    ],
+    "object" : "list"
+  },
+  "os" : "Version 27.2 (Build 26B123)",
+  "outbound_denied" : true,
+  "phase" : "all",
+  "physical_memory_bytes" : 17179869184,
+  "port" : 18867,
+  "production_instance_checked" : true,
+  "production_root_modified" : false,
+  "single_owner_lock" : true,
+  "started" : "2026-11-06T11:34:53Z",
+  "startup" : {
+    "application" : "CyberAudio",
+    "busy" : false,
+    "instance" : "59BAAB13-B979-44EF-AE80-FC2204CD26D0",
+    "model" : "qwen3-asr-1.7b",
+    "models" : {
+      "stt" : "ready",
+      "tts" : "ready"
+    },
+    "startup" : {
+      "backend" : "mlx-swift",
+      "device" : "metal",
+      "load_ms" : 2436.0793330124579,
+      "metal_active_bytes" : 5578423720,
+      "metal_peak_bytes" : 6273318916,
+      "process_peak_rss_bytes" : 3739385856,
+      "verification_ms" : 3152.2380000096746,
+      "warmup_ms" : 1141.9579999928828
+    },
+    "status" : "ready",
+    "updating" : false
+  },
+  "stream_complete" : {
+    "bytes" : 119040,
+    "first_audio_ms" : 222.42995799751952,
+    "packets" : 8
+  },
+  "stream_disconnect_recovery" : [
+    {
+      "drain_ms" : 41.425750008784235,
+      "recovery_http_status" : 200,
+      "round" : 1,
+      "status" : "cancelled"
+    },
+    {
+      "drain_ms" : 82.543541007908061,
+      "recovery_http_status" : 200,
+      "round" : 2,
+      "status" : "cancelled"
+    },
+    {
+      "drain_ms" : 82.544375007273629,
+      "recovery_http_status" : 200,
+      "round" : 3,
+      "status" : "cancelled"
+    }
+  ],
+  "stt_formats" : [
+    {
+      "format" : "wav",
+      "language" : "zh",
+      "result" : {
+        "duration" : 10.380000000000001,
+        "inference_ms" : 743.70062499656342,
+        "language" : "zh",
+        "metal_active_bytes" : 5579095500,
+        "metal_peak_bytes" : 6411804956,
+        "model" : "qwen3-asr-1.7b",
+        "no_speech" : false,
+        "process_peak_rss_bytes" : 3739385856,
+        "processing_ms" : 876.89066599705257,
+        "repository" : "mlx-community\/Qwen3-ASR-1.7B-8bit",
+        "request_id" : "aec5734f34ae4850",
+        "revision" : "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text" : "这并不是告别，这是一个篇章的结束，也是新篇章的开始。"
+      }
+    },
+    {
+      "format" : "webm",
+      "language" : "zh",
+      "result" : {
+        "duration" : 10.380000000000001,
+        "inference_ms" : 740.64512501354329,
+        "language" : "zh",
+        "metal_active_bytes" : 5579095500,
+        "metal_peak_bytes" : 6411804968,
+        "model" : "qwen3-asr-1.7b",
+        "no_speech" : false,
+        "process_peak_rss_bytes" : 3739385856,
+        "processing_ms" : 871.87054200330749,
+        "repository" : "mlx-community\/Qwen3-ASR-1.7B-8bit",
+        "request_id" : "9d246f0297a0445e",
+        "revision" : "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text" : "这并不是告别，这是一个篇章的结束，也是新篇章的开始。"
+      }
+    },
+    {
+      "format" : "mp3",
+      "language" : "zh",
+      "result" : {
+        "duration" : 10.380000000000001,
+        "inference_ms" : 713.46508397255093,
+        "language" : "zh",
+        "metal_active_bytes" : 5579095500,
+        "metal_peak_bytes" : 6411804968,
+        "model" : "qwen3-asr-1.7b",
+        "no_speech" : false,
+        "process_peak_rss_bytes" : 3739385856,
+        "processing_ms" : 843.12199999112636,
+        "repository" : "mlx-community\/Qwen3-ASR-1.7B-8bit",
+        "request_id" : "ab8586e8f7624250",
+        "revision" : "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text" : "这并不是告别，这是一个篇章的结束，也是新篇章的开始。"
+      }
+    },
+    {
+      "format" : "m4a",
+      "language" : "zh",
+      "result" : {
+        "duration" : 10.380000000000001,
+        "inference_ms" : 727.4907500250265,
+        "language" : "zh",
+        "metal_active_bytes" : 5579095500,
+        "metal_peak_bytes" : 6411804968,
+        "model" : "qwen3-asr-1.7b",
+        "no_speech" : false,
+        "process_peak_rss_bytes" : 3739385856,
+        "processing_ms" : 859.87337501137517,
+        "repository" : "mlx-community\/Qwen3-ASR-1.7B-8bit",
+        "request_id" : "291ffa960d4a4c9d",
+        "revision" : "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text" : "这并不是告别，这是一个篇章的结束，也是新篇章的开始。"
+      }
+    },
+    {
+      "format" : "flac",
+      "language" : "zh",
+      "result" : {
+        "duration" : 10.380000000000001,
+        "inference_ms" : 737.94424999505281,
+        "language" : "zh",
+        "metal_active_bytes" : 5579095500,
+        "metal_peak_bytes" : 6411804968,
+        "model" : "qwen3-asr-1.7b",
+        "no_speech" : false,
+        "process_peak_rss_bytes" : 3739385856,
+        "processing_ms" : 870.12249999679625,
+        "repository" : "mlx-community\/Qwen3-ASR-1.7B-8bit",
+        "request_id" : "1a80c8dcf7684961",
+        "revision" : "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text" : "这并不是告别，这是一个篇章的结束，也是新篇章的开始。"
+      }
+    },
+    {
+      "format" : "ogg",
+      "language" : "zh",
+      "result" : {
+        "duration" : 10.380000000000001,
+        "inference_ms" : 742.56579202483408,
+        "language" : "zh",
+        "metal_active_bytes" : 5579095500,
+        "metal_peak_bytes" : 6411804968,
+        "model" : "qwen3-asr-1.7b",
+        "no_speech" : false,
+        "process_peak_rss_bytes" : 3739385856,
+        "processing_ms" : 874.78754200856201,
+        "repository" : "mlx-community\/Qwen3-ASR-1.7B-8bit",
+        "request_id" : "cdfff9c27f114ad6",
+        "revision" : "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text" : "这并不是告别，这是一个篇章的结束，也是新篇章的开始。"
+      }
+    },
+    {
+      "format" : "aiff",
+      "language" : "zh",
+      "result" : {
+        "duration" : 10.380000000000001,
+        "inference_ms" : 744.71737499698065,
+        "language" : "zh",
+        "metal_active_bytes" : 5579095500,
+        "metal_peak_bytes" : 6411804968,
+        "model" : "qwen3-asr-1.7b",
+        "no_speech" : false,
+        "process_peak_rss_bytes" : 3739385856,
+        "processing_ms" : 869.04795799637213,
+        "repository" : "mlx-community\/Qwen3-ASR-1.7B-8bit",
+        "request_id" : "0ff72a6d0c64465c",
+        "revision" : "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text" : "这并不是告别，这是一个篇章的结束，也是新篇章的开始。"
+      }
+    },
+    {
+      "format" : "aac",
+      "language" : "zh",
+      "result" : {
+        "duration" : 10.496,
+        "inference_ms" : 710.67900001071393,
+        "language" : "zh",
+        "metal_active_bytes" : 5579095500,
+        "metal_peak_bytes" : 6411821396,
+        "model" : "qwen3-asr-1.7b",
+        "no_speech" : false,
+        "process_peak_rss_bytes" : 3739385856,
+        "processing_ms" : 805.66699997871183,
+        "repository" : "mlx-community\/Qwen3-ASR-1.7B-8bit",
+        "request_id" : "d249b0c7c0f04635",
+        "revision" : "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text" : "这并不是告别，这是一个篇章的结束，也是新篇章的开始。"
+      }
+    },
+    {
+      "format" : "wav",
+      "language" : "en",
+      "result" : {
+        "duration" : 10.56,
+        "inference_ms" : 1104.4850000180304,
+        "language" : "en",
+        "metal_active_bytes" : 5579111884,
+        "metal_peak_bytes" : 6411837808,
+        "model" : "qwen3-asr-1.7b",
+        "no_speech" : false,
+        "process_peak_rss_bytes" : 3739385856,
+        "processing_ms" : 1207.8659170074388,
+        "repository" : "mlx-community\/Qwen3-ASR-1.7B-8bit",
+        "request_id" : "4acb7d82839644c5",
+        "revision" : "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text" : "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years."
+      }
+    },
+    {
+      "format" : "webm",
+      "language" : "en",
+      "result" : {
+        "duration" : 10.56,
+        "inference_ms" : 966.51095899869688,
+        "language" : "en",
+        "metal_active_bytes" : 5579111884,
+        "metal_peak_bytes" : 6411837808,
+        "model" : "qwen3-asr-1.7b",
+        "no_speech" : false,
+        "process_peak_rss_bytes" : 3739385856,
+        "processing_ms" : 1098.3937080018222,
+        "repository" : "mlx-community\/Qwen3-ASR-1.7B-8bit",
+        "request_id" : "7291cd4696674c76",
+        "revision" : "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text" : "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years."
+      }
+    },
+    {
+      "format" : "mp3",
+      "language" : "en",
+      "result" : {
+        "duration" : 10.56,
+        "inference_ms" : 982.18550000456162,
+        "language" : "en",
+        "metal_active_bytes" : 5579111884,
+        "metal_peak_bytes" : 6411837808,
+        "model" : "qwen3-asr-1.7b",
+        "no_speech" : false,
+        "process_peak_rss_bytes" : 3739385856,
+        "processing_ms" : 1132.1209580055438,
+        "repository" : "mlx-community\/Qwen3-ASR-1.7B-8bit",
+        "request_id" : "5e066b95e17445da",
+        "revision" : "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text" : "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years."
+      }
+    },
+    {
+      "format" : "m4a",
+      "language" : "en",
+      "result" : {
+        "duration" : 10.56,
+        "inference_ms" : 964.92691698949784,
+        "language" : "en",
+        "metal_active_bytes" : 5579111884,
+        "metal_peak_bytes" : 6411837808,
+        "model" : "qwen3-asr-1.7b",
+        "no_speech" : false,
+        "process_peak_rss_bytes" : 3739385856,
+        "processing_ms" : 1096.9112910097465,
+        "repository" : "mlx-community\/Qwen3-ASR-1.7B-8bit",
+        "request_id" : "3642146f490641a5",
+        "revision" : "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text" : "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years."
+      }
+    },
+    {
+      "format" : "flac",
+      "language" : "en",
+      "result" : {
+        "duration" : 10.56,
+        "inference_ms" : 990.16991700045764,
+        "language" : "en",
+        "metal_active_bytes" : 5579111884,
+        "metal_peak_bytes" : 6411837808,
+        "model" : "qwen3-asr-1.7b",
+        "no_speech" : false,
+        "process_peak_rss_bytes" : 3739385856,
+        "processing_ms" : 1122.1274999843445,
+        "repository" : "mlx-community\/Qwen3-ASR-1.7B-8bit",
+        "request_id" : "502498fc06874d7f",
+        "revision" : "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text" : "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years."
+      }
+    },
+    {
+      "format" : "ogg",
+      "language" : "en",
+      "result" : {
+        "duration" : 10.56,
+        "inference_ms" : 1000.669792003464,
+        "language" : "en",
+        "metal_active_bytes" : 5579111884,
+        "metal_peak_bytes" : 6411837808,
+        "model" : "qwen3-asr-1.7b",
+        "no_speech" : false,
+        "process_peak_rss_bytes" : 3739385856,
+        "processing_ms" : 1133.0285840085708,
+        "repository" : "mlx-community\/Qwen3-ASR-1.7B-8bit",
+        "request_id" : "19526270150a4d6c",
+        "revision" : "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text" : "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years."
+      }
+    },
+    {
+      "format" : "aiff",
+      "language" : "en",
+      "result" : {
+        "duration" : 10.56,
+        "inference_ms" : 1102.0486670022365,
+        "language" : "en",
+        "metal_active_bytes" : 5579111884,
+        "metal_peak_bytes" : 6411837808,
+        "model" : "qwen3-asr-1.7b",
+        "no_speech" : false,
+        "process_peak_rss_bytes" : 3739385856,
+        "processing_ms" : 1236.280875018565,
+        "repository" : "mlx-community\/Qwen3-ASR-1.7B-8bit",
+        "request_id" : "22ac359c6d19474e",
+        "revision" : "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text" : "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years."
+      }
+    },
+    {
+      "format" : "aac",
+      "language" : "en",
+      "result" : {
+        "duration" : 10.624000000000001,
+        "inference_ms" : 971.03787501691841,
+        "language" : "en",
+        "metal_active_bytes" : 5579455952,
+        "metal_peak_bytes" : 6411870600,
+        "model" : "qwen3-asr-1.7b",
+        "no_speech" : false,
+        "process_peak_rss_bytes" : 3739385856,
+        "processing_ms" : 1074.2127500125207,
+        "repository" : "mlx-community\/Qwen3-ASR-1.7B-8bit",
+        "request_id" : "0bd5534241da4e48",
+        "revision" : "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text" : "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years."
+      }
+    }
+  ],
+  "tts_voices" : [
+    {
+      "duration" : 2.0800000000000001,
+      "first_audio_ms" : 238.50875001517124,
+      "processing_ms" : 1401.9849169999361,
+      "rtf" : 0.6740312100961231,
+      "voice" : "serena"
+    },
+    {
+      "duration" : 2.2400000000000002,
+      "first_audio_ms" : 232.72608299157582,
+      "processing_ms" : 1489.3475830031093,
+      "rtf" : 0.66488731384067379,
+      "voice" : "vivian"
+    },
+    {
+      "duration" : 2.1600000000000001,
+      "first_audio_ms" : 233.41362501378171,
+      "processing_ms" : 1445.1685000094585,
+      "rtf" : 0.66905949074511961,
+      "voice" : "uncle_fu"
+    },
+    {
+      "duration" : 3.3599999999999999,
+      "first_audio_ms" : 233.35899997618981,
+      "processing_ms" : 2192.1511660038959,
+      "rtf" : 0.65242594226306427,
+      "voice" : "ryan"
+    },
+    {
+      "duration" : 2.3199999999999998,
+      "first_audio_ms" : 235.75662501389161,
+      "processing_ms" : 1558.163958019577,
+      "rtf" : 0.67162239569809357,
+      "voice" : "aiden"
+    },
+    {
+      "duration" : 2.1600000000000001,
+      "first_audio_ms" : 229.84391602221876,
+      "processing_ms" : 1438.856000022497,
+      "rtf" : 0.66613703704745231,
+      "voice" : "ono_anna"
+    },
+    {
+      "duration" : 1.8400000000000001,
+      "first_audio_ms" : 232.63904100167565,
+      "processing_ms" : 1236.4402909879573,
+      "rtf" : 0.67197841901519417,
+      "voice" : "sohee"
+    },
+    {
+      "duration" : 2.0800000000000001,
+      "first_audio_ms" : 231.44091598805971,
+      "processing_ms" : 1340.1566660031676,
+      "rtf" : 0.64430608942459977,
+      "voice" : "eric"
+    },
+    {
+      "duration" : 1.8400000000000001,
+      "first_audio_ms" : 230.82579200854525,
+      "processing_ms" : 1205.8431250043213,
+      "rtf" : 0.65534952445887029,
+      "voice" : "dylan"
+    }
+  ]
+}

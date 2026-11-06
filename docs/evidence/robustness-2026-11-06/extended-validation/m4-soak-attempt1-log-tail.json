@@ -1,0 +1,19 @@
+{
+  "soak_log_sha256": "79fc7645358af2689d849c3eaa7c09fb2f546e3de7549136dd11100ff721973c",
+  "service_log_sha256": "3f10d12db939d4fd013fc7fde45320e3db74deaf407ebee637aba87e8ee0d9c2",
+  "soak_tail": [
+    "SOAK 2962/7200 seconds; 690 cycles, 138 disconnect recoveries, 69 update rounds",
+    "SOAK 3013/7200 seconds; 691 cycles, 138 disconnect recoveries, 69 update rounds",
+    "SOAK 3044/7200 seconds; 699 cycles, 139 disconnect recoveries, 69 update rounds",
+    "SOAK 3075/7200 seconds; 707 cycles, 141 disconnect recoveries, 70 update rounds",
+    "Native validation failed: Failure(message: \"Soak request did not complete\")"
+  ],
+  "service_tail": [
+    "2026-11-06T12:26:53Z request_done id=284960e8d7e3418d status=completed",
+    "2026-11-06T12:26:56Z request_done id=84015e4cbf044b3e status=completed",
+    "2026-11-06T12:26:57Z request_done id=63a56419fa384899 status=completed",
+    "2026-11-06T12:27:54Z request_done id=f07f4752474c4217 status=failed",
+    "2026-11-06T12:27:54Z service_stopped"
+  ],
+  "limitation": "Old driver did not preserve terminal request JSON, and service log only retains status. The original M4 terminal error code cannot be recovered from these files."
+}

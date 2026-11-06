@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "implementation_commit": "3d59609",
+  "red_regression": {
+    "exit_code": 1,
+    "reason": "KeyError: failed_request",
+    "scope": "Real Swift soak HTTP requests against a controlled local server; no models/App"
+  },
+  "targeted_green": {
+    "passed": 8,
+    "failed": 0
+  },
+  "active_tool_suite": {
+    "passed": 37,
+    "failed": 0,
+    "skipped": 0,
+    "exit_code": 0,
+    "command": "rtk proxy env CYBERAUDIO_NATIVE_SCRATCH=/Users/zhubby/Repository/CyberAudio/.context/icon-native-build bash scripts/test_tools.sh",
+    "log_sha256": "84047d1af00897b375b421644908ca23e0ea60eba6ae0df0c09b425b0e57832e"
+  },
+  "driver_compilation": {
+    "exit_code": 0,
+    "sha256": "35d2a1cd781d4ad405dc19c5a761aa26d7af8d17e34c68d8ac099597ee74bdfa"
+  },
+  "source_sha256": {
+    "scripts/verify_native.swift": "385d855464b97327672a830ec0986d2bda964f1eaa27f780c90c244ae9a7921c",
+    "tests/test_native_validation.py": "410eba903216b2b6457f7b90f318d3adc54a6aab4a57990164860be1d3112223"
+  },
+  "application_runtime_modified": false,
+  "full_app_check_reference": "../target-validation/checks.json",
+  "acceptance_threshold_changed": false
+}
