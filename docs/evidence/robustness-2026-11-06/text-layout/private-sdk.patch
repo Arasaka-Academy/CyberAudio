@@ -1,0 +1,41 @@
+--- current-managed-sdk/Qwen3TTS.swift
++++ private-text-layout/Qwen3TTS.swift
+@@ -328 +328,2 @@
+-        checkCancellation: (() throws -> Void)? = nil
++        checkCancellation: (() throws -> Void)? = nil,
++        sequentialText: Bool = false
+@@ -377 +378,2 @@
+-                refAudio: refAudio
++                refAudio: refAudio,
++                sequentialText: sequentialText
+@@ -895 +897,2 @@
+-        refAudio: MLXArray? = nil
++        refAudio: MLXArray? = nil,
++        sequentialText: Bool = false
+@@ -997,0 +1001,9 @@
++        }
++
++        if sequentialText {
++            // Reference non_streaming_mode=False: first text token with codec_bos,
++            // remaining text and tts_eos consumed one step at a time.
++            let first = textEmbed[0..., 3 ..< 4, 0...] + codecEmbedSuffix[0..., 1 ..< 2, 0...]
++            inputEmbeds = concatenated([inputEmbeds, first], axis: 1)
++            let trailing = concatenated([textEmbed[0..., 4 ..< (textEmbed.dim(1) - 5), 0...], ttsEosEmbed], axis: 1)
++            return (inputEmbeds, trailing, ttsPadEmbed)
+@@ -1399,0 +1412,16 @@
++
++extension Qwen3TTSModel {
++    public func diagnosticTextLayoutManaged(
++        text: String, voice: String, language: String, sequentialText: Bool,
++        checkCancellation: @escaping () throws -> Void,
++        onToken: @escaping (Int) -> Void,
++        onAudioChunk: @escaping (MaterializedArray) -> Void
++    ) throws {
++        try requireGenerationComponents()
++        _ = try generateVoiceDesign(text: text, instruct: voice, language: language,
++            refAudio: nil, refText: nil, temperature: 0.7, topK: 50, topP: 1,
++            repetitionPenalty: 1.05, minP: 0, maxTokens: 1200,
++            streamingInterval: 0.32, onToken: onToken, onAudioChunk: onAudioChunk,
++            checkCancellation: checkCancellation, sequentialText: sequentialText)
++    }
++}

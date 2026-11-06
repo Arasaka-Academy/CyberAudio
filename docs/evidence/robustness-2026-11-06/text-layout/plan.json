@@ -1,0 +1,24 @@
+{
+  "purpose": "Private paired comparison of full text prefill and the Qwen reference's sequential text input; no sampling or production change",
+  "hypothesis": "Sequential text conditioning may avoid the known degenerate trajectory without changing main or auxiliary sampling; this is not presumed to be an SDK bug",
+  "source_commit": "1e98506",
+  "temperature": 0.7,
+  "subtalker_temperature": 0.7,
+  "top_k": 50,
+  "top_p": 1.0,
+  "repetition_penalty": 1.05,
+  "max_tokens": 1200,
+  "modes": ["prefill", "sequential"],
+  "cases": [
+    {"id": "known-failure", "text": "持续验证语音服务的稳定性和恢复能力。", "voice": "ono_anna", "language": "chinese", "seed": 196},
+    {"id": "short-control", "text": "持续验证语音服务的稳定性和恢复能力。", "voice": "ono_anna", "language": "chinese", "seed": 31},
+    {"id": "eric-english-numeric", "text": "1234", "voice": "eric", "language": "english", "seed": 31},
+    {"id": "dylan-english-numeric", "text": "1234", "voice": "dylan", "language": "english", "seed": 31},
+    {"id": "date-name-control", "text": "Alice will meet Bob on November sixth, twenty twenty-six.", "voice": "ryan", "language": "english", "seed": 31}
+  ],
+  "expected_generations": 10,
+  "individual_budget_seconds": 120,
+  "total_budget_seconds": 360,
+  "maximum_disk_bytes": 33554432,
+  "acceptance": "Verify known baseline PCM/token parity, inspect all paired outputs via the same actual final-App ASR, and retain all failures. No default promotion from this small diagnostic; original strict target/corpus/lifecycle/listening gates remain."
+}

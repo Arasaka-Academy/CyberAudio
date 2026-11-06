@@ -1,0 +1,18 @@
+{
+  "status": "built",
+  "scope": "Private SDK sequential-text input diagnostic; no sampling/default/runtime changes",
+  "source_sha256": "3d76b2f91844ddd74d7726734238d2365efdac70294c8ede822ec35055e498fe",
+  "plan_sha256": "12d9f66109317edd9da9f4e576a89832b32ba4effef2c41826cd2e97fefdce45",
+  "diagnostic_sdk_sha256": "ef9ef954823f500e271428b3926b40abeba38495e2a4a533ba91e60ec01ca25a",
+  "preserved_input_sha256": {
+    "/Users/zhubby/Repository/CyberAudio/.context/icon-native-build/checkouts/mlx-audio-swift/Sources/MLXAudioTTS/Models/Qwen3TTS/Qwen3TTS.swift": "0190fd2a02d6ce0eaa3732ca7b7d373be251747edc5d14a0d0b4fe8ce3c0dd6b",
+    "/Users/zhubby/Repository/CyberAudio/.context/icon-native-build/arm64-apple-macosx/release/MLXAudioTTS.build/Qwen3TTS.swift.o": "23c220f598e3f65c10e803cde2bd44c95b118954c5d8f60851597269c1b79a08",
+    "/Users/zhubby/Repository/CyberAudio/.context/icon-native-build/arm64-apple-macosx/release/CyberAudioService": "1ec88188cdb37eeecfc7452adf1b86a43b6a3ea7ac71d9c5ea7c57087f844cbb",
+    "/Users/zhubby/Repository/CyberAudio/dist/CyberAudio.app/Contents/Helpers/CyberAudioService": "cc556b65e263e16218db4315ed8585dccaede7b5f539be7bbd68a4b04e841a89",
+    "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/final-bytes-language-routing/CyberAudio.app/Contents/Helpers/CyberAudioService": "b33c26734ee4a18d48f9fa7efe5c018f88fa6ae7f4ce18f3e59d210c36893215"
+  },
+  "executable_sha256": "db5c6abc454117dd1cd8cd8dbc87ce2fdec8589ea0fd2e2cf9567b01162f5d96",
+  "elapsed_seconds": 138.1318417500006,
+  "shared_and_production_inputs_preserved": true,
+  "full_private_receipt_sha256": "c51c03599af5218083607d11ae5bb989788c633e197ccd97072f34a07499b3c7"
+}

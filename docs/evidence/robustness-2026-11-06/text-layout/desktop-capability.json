@@ -1,0 +1,16 @@
+{
+  "recorded_at": "2026-11-06T16:00:51.841083+00:00",
+  "orca_cli": "not_found",
+  "orca_app_paths_absent": [
+    "/Applications/Orca.app",
+    "/Users/zhubby/Applications/Orca.app"
+  ],
+  "cua_health_report": {
+    "isError": true,
+    "error": "Transport closed"
+  },
+  "cua_driver_cli": "not_found",
+  "permission_prompts_requested": false,
+  "desktop_lock_state": "unknown",
+  "physical_or_interactive_acceptance": false
+}

@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "verified_at": "2026-11-06T16:00:51.841607+00:00",
+  "current_source_files_match_last_final_build": 96,
+  "original_failure_PCM_and_tokens_identical": true,
+  "English_numeric_prefill_pairs_match_R11": 2,
+  "generation_PCM_and_token_pairs": 10,
+  "ASR_requests": 17,
+  "WAV_payload_rows_verified": 17,
+  "unique_WAV_files_verified": 13,
+  "owned_processes_absent": [
+    25022,
+    25598
+  ],
+  "owned_port_closed": 18886,
+  "temporary_requests_clean": true,
+  "production_and_frozen_artifacts_preserved": true,
+  "sampling_defaults_changed": false,
+  "candidate_promoted": false,
+  "human_listening_accepted": false,
+  "reference_snapshot_sha256": "25c42656bcf810f06ef6bc1839bd7083f3c8cfedac3a147c4060b4262b1c96a0"
+}

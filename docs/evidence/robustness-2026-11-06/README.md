@@ -29,6 +29,7 @@
 | [adaptive-ranges/README.md](adaptive-ranges/README.md) | `f42bafe` 大分段失败后一次 1MiB 降级、36／39／14 完整检查；新最终 App 原生／运行器实际通过和 100／100 同 M1 一致；同一 Assets 的 M4 TLS 失败终态 |
 | [subtalker-followup/README.md](subtalker-followup/README.md) | 仅私有辅助生成器温度变化，六个重复对照及 144 新候选／144 旧基线、294 ASR；总指标改善但 11 对变差，默认值未修改 |
 | [language-routing/README.md](language-routing/README.md) | R11 方言音色显式英文路由红绿修复及 36／40／14 完整检查；最新 `5479313` App 实际完整验收与同 M1 100／100 一致；英文数字自动回读仍未确认正确 |
+| [text-layout/README.md](text-layout/README.md) | 当前 R11 私有 SDK 的两种官方文本布局：五组配对／十次生成、17 次最终 App ASR；已知失败能结束但正常控制回读回退，数字质量仍未接受，未采用；追加桌面工具不可用和字节保留证据 |
 
 完整原始记录保留在开发工作区 `.context/robustness/`，原始检查日志在 `/tmp/cyberaudio-robustness-*.log`，不会作为分发材料上传。
 

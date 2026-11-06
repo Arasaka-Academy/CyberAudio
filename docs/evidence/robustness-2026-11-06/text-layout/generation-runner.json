@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "started": "2026-11-06T15:54:51.382031+00:00",
+  "scope": "Ten fixed paired generations with current dialect routing and original sampling",
+  "production_before": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "build_sha256": "c51c03599af5218083607d11ae5bb989788c633e197ccd97072f34a07499b3c7",
+  "elapsed_seconds": 73.56924758298555,
+  "owned_group_pid": 25022,
+  "owned_identity": "25022 Fri Nov  6 23:54:51 2026     /usr/bin/caffeinate -i /usr/bin/sandbox-exec -f /Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/final-bytes-language-routing/CyberAudio.app/Contents/Resources/offline.sb /Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/text-layout-build/text-layout-probe /Users/zhubby/Library/Application Support/CyberAudio/models/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit /Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/final-bytes-language-routing/CyberAudio.app/Contents/Resources/mlx.metallib /Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-text-layout-probe /Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/text-layout-plan.json /Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-seeded-tts-probe/report.json",
+  "exit_code": 0,
+  "owned_process_exit_code": 0,
+  "production_after": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "production_preserved": true,
+  "sdk_and_helpers_preserved": true,
+  "finished": "2026-11-06T15:56:04.968648+00:00"
+}
