@@ -51,9 +51,10 @@ public final class QwenEngine: InferenceEngine, @unchecked Sendable {
     public func transcribe(audio: URL,language: String?,cancellation: CancellationToken) throws -> [String:Any] {
         try cancellation.check()
         return try Device.withDefaultDevice(.gpu) {
-            let (_,samples) = try loadAudioArray(from:audio,sampleRate:16000)
-            let result = asr.generate(audio:samples,maxTokens:1024,temperature:0,language:language)
             defer { Memory.clearCache() }
+            let (_,samples) = try loadAudioArray(from:audio,sampleRate:16000)
+            let result = try asr.generateManaged(audio:samples,maxTokens:1024,temperature:0,language:language,
+                                                checkCancellation:{ try cancellation.check() })
             try cancellation.check()
             guard result.generationTokens < 1024 else { throw ServiceError(422,"generation_limit","识别达到长度上限，请缩短音频。") }
             let detected = result.language.map { ["Chinese":"zh","English":"en"][$0] ?? $0 }

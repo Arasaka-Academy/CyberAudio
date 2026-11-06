@@ -52,6 +52,7 @@ final class AudioWorkspace: NSObject, ObservableObject {
     private var player: AVAudioPlayer?
     private var engine: AVAudioEngine?
     private var node: AVAudioPlayerNode?
+    private var playbackSession = UUID()
     private let recordings: URL
     private let microphoneAccess: () async -> Bool
     private var recordingAttempt = UUID()
@@ -289,10 +290,14 @@ final class AudioWorkspace: NSObject, ObservableObject {
                     self.ttsTiming = String(format: "首段 %.2f 秒 · 音频 %.2f 秒 · 总耗时 %.2f 秒", first ?? 0, Double(pcm.count) / 48000, Date().timeIntervalSince(start))
                     // A zero-length completion buffer marks when queued audio finishes.
                     if let format = self.node?.outputFormat(forBus: 0), let tail = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: 1) {
+                        let session = self.playbackSession
                         tail.frameLength = 1
                         tail.floatChannelData?[0][0] = 0
                         self.node?.scheduleBuffer(tail, completionCallbackType: .dataPlayedBack) { [weak self] _ in
-                            Task { @MainActor in self?.playing = false }
+                            Task { @MainActor in
+                                guard let self, self.playbackSession == session else { return }
+                                self.stopPlayback()
+                            }
                         }
                     }
                 } else {
@@ -352,6 +357,8 @@ final class AudioWorkspace: NSObject, ObservableObject {
     }
 
     func stopPlayback() {
+        // Stopping a node invokes its queued completions. Invalidate them first.
+        playbackSession = UUID()
         player?.stop(); player = nil
         node?.stop(); node = nil
         engine?.stop(); engine = nil
@@ -402,6 +409,9 @@ final class AudioWorkspace: NSObject, ObservableObject {
 
 extension AudioWorkspace: AVAudioPlayerDelegate {
     nonisolated func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        Task { @MainActor in self.playing = false }
+        Task { @MainActor in
+            guard self.player === player else { return }
+            self.stopPlayback()
+        }
     }
 }

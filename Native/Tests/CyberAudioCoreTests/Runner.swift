@@ -68,6 +68,7 @@ class XCTestCase {
             ("slow HTTP reader bounds producer",{ try $0.testSlowHTTPReaderBoundsProducerAndDisconnectRecovers() }),
             ("update rejects unread audio bodies",{ try $0.testUpdateRejectsAudioAtHeadersAfterAuthentication() }),
             ("update waits for WAV response flush",{ try $0.testUpdateWaitsForCompletedModelResponseToFlush() }),
+            ("unread WAV send deadline releases update drain",{ try $0.testUnreadWAVExpiresWithoutClientDisconnect() }),
             ("health and scoped cleanup",{ try await $0.testLoadingFailureHealthAndScopedCleanup() }),
             ("native setup preservation",{ try $0.testNativeAssetSetupPreservesExistingTokenAndConfiguration() }),
             ("tokenizer process and locale stability",{ try $0.testTokenizerComparisonAcrossProcessesAndLocales() }),

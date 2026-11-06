@@ -59,4 +59,72 @@ if text.hasSuffix(adapter) {
     text = try modify(text)
     try text.write(to:source,atomically:true,encoding:.utf8)
 }
-print("Verified CyberAudio managed Qwen generation adapter.")
+// Preserve the upstream nonthrowing ASR entry point. The managed entry point
+// shares its implementation, with cancellation while retaining the producer.
+let asrSource = checkout.appendingPathComponent("Sources/MLXAudioSTT/Models/Qwen3ASR/Qwen3ASR.swift")
+let asrHash = "71f5cbc43ab0591bee0c10f843d216e03596e55dad458c62cf9b5040e3c6d883"
+let asrMarker = "\n// CyberAudio cancellable ASR adapter.\n"
+let asrSignature = """
+    public func generate(
+        audio: MLXArray,
+        maxTokens: Int = 8192,
+        temperature: Float = 0.0,
+        context: String = "",
+        language: String? = nil,
+        chunkDuration: Float = 1200.0,
+        minChunkDuration: Float = 1.0,
+        repetitionPenalty: Float = 1.0,
+        repetitionContextSize: Int = 32
+    ) -> STTOutput {
+"""
+let managedASRSignature = asrSignature.replacingOccurrences(of: "public func generate(", with: "public func generateManaged(")
+    .replacingOccurrences(of: "repetitionContextSize: Int = 32\n    ) ->", with: "repetitionContextSize: Int = 32,\n        checkCancellation: () throws -> Void\n    ) rethrows ->")
+let asrWrapper = asrSignature + """
+
+        generateManaged(audio: audio, maxTokens: maxTokens, temperature: temperature,
+            context: context, language: language, chunkDuration: chunkDuration,
+            minChunkDuration: minChunkDuration, repetitionPenalty: repetitionPenalty,
+            repetitionContextSize: repetitionContextSize, checkCancellation: {})
+    }
+
+"""
+let asrChanges: [(String,String)] = [
+    (asrSignature, asrWrapper + managedASRSignature + "\n        try checkCancellation()"),
+    ("repetitionContextSize: Int = 32\n    ) -> (text: String, language: String?, promptTokens: Int, generationTokens: Int) {",
+     "repetitionContextSize: Int = 32,\n        checkCancellation: () throws -> Void\n    ) rethrows -> (text: String, language: String?, promptTokens: Int, generationTokens: Int) {\n        try checkCancellation()"),
+    ("        let (inputFeatures, featureAttentionMask, numAudioTokens) = preprocessAudio(audio)",
+     "        let (inputFeatures, featureAttentionMask, numAudioTokens) = preprocessAudio(audio)\n        try checkCancellation()"),
+    ("        eval(audioFeatures)\n\n        let embeds =", "        eval(audioFeatures)\n        try checkCancellation()\n\n        let embeds ="),
+    ("        while totalTokens - processedTokens > 1 {", "        while totalTokens - processedTokens > 1 {\n            try checkCancellation()"),
+    ("        var prevTokenArr = firstLast.argMax(axis: -1)\n        asyncEval(prevTokenArr)",
+     "        var prevTokenArr = firstLast.argMax(axis: -1)\n        defer { eval(prevTokenArr) } // Join any pipelined GPU work before returning.\n        asyncEval(prevTokenArr)"),
+    ("            let prevTokenInt = prevTokenArr.item(Int.self)", "            let prevTokenInt = prevTokenArr.item(Int.self)\n            try checkCancellation()"),
+    ("        for (chunkAudio, offsetSec) in chunks {", "        for (chunkAudio, offsetSec) in chunks {\n            try checkCancellation()"),
+    ("            let result = generateSingleChunk(", "            let result = try generateSingleChunk("),
+    ("                repetitionContextSize: repetitionContextSize\n            )",
+     "                repetitionContextSize: repetitionContextSize,\n                checkCancellation: checkCancellation\n            )")
+]
+func changeASR(_ input: String, reverse: Bool = false) throws -> String {
+    var result = input
+    let changes = reverse ? Array(asrChanges.reversed()).map { ($0.1,$0.0) } : asrChanges
+    for (before,after) in changes {
+        guard result.components(separatedBy:before).count-1 == 1 else {
+            throw NSError(domain:"Unexpected ASR source; refusing to patch",code:1)
+        }
+        result = result.replacingOccurrences(of:before,with:after)
+    }
+    return result
+}
+let asrText = try String(contentsOf:asrSource,encoding:.utf8)
+let alreadyPatched = asrText.hasSuffix(asrMarker)
+let originalASR = alreadyPatched ? try changeASR(String(asrText.dropLast(asrMarker.count)),reverse:true) : asrText
+guard SHA256.hash(data:Data(originalASR.utf8)).map({ String(format:"%02x",$0) }).joined() == asrHash else {
+    fatalError("ASR source revision mismatch")
+}
+let patchedASR = try changeASR(originalASR) + asrMarker
+if alreadyPatched {
+    guard patchedASR == asrText else { fatalError("Modified ASR does not match the pinned patch") }
+} else {
+    try patchedASR.write(to:asrSource,atomically:true,encoding:.utf8)
+}
+print("Verified CyberAudio managed Qwen TTS and cancellable ASR adapters.")

@@ -311,6 +311,34 @@ final class ServiceTests: XCTestCase {
         while try state.update(action:"prepare",instance:"test",lease:"flush")["busy"] as? Bool == true,uptime() < drained { Thread.sleep(forTimeInterval:0.01) }
         XCTAssertEqual(try state.update(action:"prepare",instance:"test",lease:"flush")["busy"] as? Bool,false)
     }
+    func testUnreadWAVExpiresWithoutClientDisconnect() throws {
+        let (_,state,engine) = try setup(timeout:0.3)
+        engine.chunkCount = 1; engine.chunkBytes = 4_000_000
+        let server = HTTPService(coordinator:state),port = try server.start(port:0)
+        defer { try? server.stop() }
+        let fd = try connectedSocket(port:port); defer { close(fd) }
+        var smallBuffer: Int32 = 1024
+        setsockopt(fd,SOL_SOCKET,SO_RCVBUF,&smallBuffer,socklen_t(MemoryLayout<Int32>.size))
+        let payload = "{\"input\":\"test\"}"
+        try sendAll(fd,request:"POST /v1/audio/speech HTTP/1.1\r\nHost: localhost\r\nAuthorization: Bearer \(testToken)\r\nContent-Length: \(payload.utf8.count)\r\n\r\n\(payload)")
+        XCTAssertEqual(engine.started.wait(timeout:.now()+2),.success)
+        let generated = uptime()+0.2
+        while state.ready["busy"] as? Bool == true && uptime() < generated { Thread.sleep(forTimeInterval:0.005) }
+        XCTAssertEqual(state.ready["busy"] as? Bool,false)
+        XCTAssertEqual(try state.update(action:"prepare",instance:"test",lease:"send-timeout")["busy"] as? Bool,true,
+                       "The response must block updates while still within its deadline")
+        let expired = uptime()+2
+        while try state.update(action:"prepare",instance:"test",lease:"send-timeout")["busy"] as? Bool == true,uptime() < expired {
+            Thread.sleep(forTimeInterval:0.01)
+        }
+        XCTAssertEqual(try state.update(action:"prepare",instance:"test",lease:"send-timeout")["busy"] as? Bool,false,
+                       "An unread WAV must release update drain at its deadline without client cleanup")
+        _ = try state.update(action:"cancel",instance:"test",lease:"send-timeout")
+        engine.chunkBytes = 4800
+        XCTAssertTrue(try rawRequest(port:port,request:"GET /health HTTP/1.1\r\nHost: localhost\r\n\r\n").hasPrefix("HTTP/1.1 200"))
+        let resumed = try rawRequest(port:port,request:"POST /v1/audio/speech HTTP/1.1\r\nHost: localhost\r\nAuthorization: Bearer \(testToken)\r\nContent-Length: \(payload.utf8.count)\r\n\r\n\(payload)")
+        XCTAssertTrue(resumed.hasPrefix("HTTP/1.1 200"),"A timed-out writer must not prevent subsequent inference")
+    }
     func testTokenizerComparisonAcrossProcessesAndLocales() throws {
         let (root,_,_) = try setup()
         var vocabulary: [String:Int] = [:]

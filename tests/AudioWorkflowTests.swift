@@ -81,6 +81,29 @@ struct AudioWorkflowTests {
         try await until({ !audio.generating }, message: "Streaming generation did not finish")
         try require(audio.errorMessage == nil && audio.generated.starts(with: Data("RIFF".utf8)) && audio.generated.count > 44,
                     "Streaming generation must retain a complete WAV: \(audio.errorMessage ?? "no audio")")
+        try require(audio.playing, "The stream must still have queued playback for the replay regression")
+        try audio.playGenerated()
+        try await Task.sleep(for: .milliseconds(100))
+        try require(audio.playing, "A stopped stream's completion must not mark the new replay idle")
+        var installed = false
+        let gate = UpdateGate(audioBusy: { audio.working || audio.playing }, prepare: { _ in true }, resume: { _ in })
+        gate.begin { installed = true }
+        try await Task.sleep(for: .milliseconds(100))
+        try require(gate.waiting && !installed, "Updates must wait for the replacement playback")
+        try await until({ installed }, message: "Update did not resume when replacement playback finished")
+        gate.reset()
+
+        let stalePlayer = try AVAudioPlayer(data: audio.generated)
+        audio.audioPlayerDidFinishPlaying(stalePlayer, successfully: true)
+        try audio.playGenerated()
+        try await Task.sleep(for: .milliseconds(100))
+        try require(audio.playing, "A queued delegate callback from another player must not finish the current replay")
+        for _ in 0..<3 {
+            audio.stopPlayback()
+            try audio.playGenerated()
+            try await Task.sleep(for: .milliseconds(20))
+            try require(audio.playing, "Rapid stop/replay must retain the current playback state")
+        }
         try await until({ !audio.playing }, message: "Queued PCM playback did not finish")
         let saved = backend.root.appendingPathComponent("generated.wav")
         try audio.generated.write(to: saved)
@@ -103,7 +126,7 @@ struct AudioWorkflowTests {
         try await until({ !audio.generating }, message: "WAV generation did not finish")
         try require(audio.errorMessage == nil && !audio.generated.isEmpty, "The service must accept new generation after cancellation")
         audio.stopPlayback()
-        print("AudioWorkflow: native HTTP import, session result, cancellation, streaming PCM, complete WAV, replay and recovery passed")
+        print("AudioWorkflow: native HTTP import, session result, cancellation, streaming PCM, complete WAV, replay ownership, update wait and recovery passed")
         print("Evidence uses the Swift synthetic fixture; it does not establish microphone, speaker or Qwen accuracy acceptance.")
     }
 }

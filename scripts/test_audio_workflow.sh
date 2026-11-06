@@ -3,15 +3,13 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 scratch="${CYBERAUDIO_NATIVE_SCRATCH:-$PWD/.context/native-build}"
 native_bin="$(swift build --build-system native --package-path Native --scratch-path "$scratch" -c release --show-bin-path)"
-if [[ ! -x "$native_bin/CyberAudioFixture" ]]; then
-  swift build --build-system native --package-path Native --scratch-path "$scratch" -c release --skip-update --product CyberAudioFixture
-fi
+swift build --build-system native --package-path Native --scratch-path "$scratch" -c release --skip-update --product CyberAudioFixture
 fixture="$(mktemp -d "${TMPDIR:-/tmp}/CyberAudio-workflow.XXXXXX")"
 trap 'rm -rf "$fixture"' EXIT
 app="$fixture/AudioWorkflowTests.app"
 mkdir -p "$app/Contents/MacOS" "$app/Contents/Helpers" "$app/Contents/Resources"
 swiftc -swift-version 5 -parse-as-library -target arm64-apple-macos26.0 \
-  Sources/CyberAudio/AudioWorkspace.swift Sources/CyberAudio/BackendController.swift tests/AudioWorkflowTests.swift \
+  Sources/CyberAudio/AudioWorkspace.swift Sources/CyberAudio/BackendController.swift Sources/CyberAudio/UpdateGate.swift tests/AudioWorkflowTests.swift \
   -o "$app/Contents/MacOS/AudioWorkflowTests"
 cp "$native_bin/CyberAudioFixture" "$app/Contents/Helpers/CyberAudioService"
 cp packaging/offline.sb "$app/Contents/Resources/offline.sb"

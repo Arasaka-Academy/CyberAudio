@@ -46,7 +46,9 @@ bash scripts/build_app.sh
 
 [GitHub Releases](https://github.com/Arasaka-Academy/CyberAudio/releases) 提供 DMG、完整 App 更新 ZIP、SHA-256 校验与签名 appcast。稳定更新地址固定为 [appcast.xml](https://arasaka-academy.github.io/CyberAudio/appcast.xml)。
 
-发布工作流仅由 `release.published` 触发。它从 tag 构建一次 App，产出 DMG 和 ZIP，签名并验证清单，上传并重新下载校验所有资产，最后部署 Pages 清单。预发布不进入稳定通道，旧版本不能覆盖新清单；失败时原清单继续生效。
+每个 PR 和 main 推送都执行 `Checks`：原生契约、音频／听写／更新与布局回归、当前开发工具测试，以及真实推理 Helper 的编译。检查不需要模型或发布密钥。
+
+发布工作流由 `release.published` 触发。它先执行相同检查，再从 tag 构建 App，产出 DMG 和 ZIP，签名并验证清单，上传并重新下载校验所有资产，最后部署 Pages 清单。预发布不进入稳定通道，旧版本不能覆盖新清单；失败时原清单继续生效。
 
 ```bash
 make check app
@@ -61,10 +63,13 @@ make update
 
 ```bash
 make check
-make legacy-test # 可选：现有 .venv 中的历史 Python 与发布工具测试
+make tools-test # 当前发布、资产和语料工具的回归检查（已包含在 check）
+make legacy-test # 可选：现有 .venv 中的历史 Python 服务测试
 ```
 
-原生协议测试使用真实 SwiftNIO／FFmpeg 与受控推理替身，无需下载模型，Command Line Tools 即可运行。真实模型隔离验收使用 `scripts/verify_native.swift`；证据见 [Swift 迁移报告](docs/NATIVE_SWIFT.md)。历史 Python 测试和发布编排用于开发，不进入 App。
+原生协议测试使用真实 SwiftNIO／FFmpeg 与受控推理替身，无需下载模型，Command Line Tools 即可运行。开发检查还需要 [uv](https://docs.astral.sh/uv/)；它按 `uv.lock` 准备 Python 3.14／pytest，在 `.context/tool-tests-venv` 运行当前工具回归，不改动旧 `.venv`，这些依赖不进入 App。真实模型隔离验收使用 `scripts/verify_native.swift`；证据见 [Swift 迁移报告](docs/NATIVE_SWIFT.md)。
+
+`make check` 也编译真实 ASR 取消验收驱动 `CyberAudioInferenceTests`。显式传入本地 ASR 模型目录、匹配的 `mlx.metallib` 和一段有足够语音内容的音频，即可验证预先取消、生成中取消及同一模型恢复；它不修改正式服务或配置，也不证明麦克风与人耳音质。
 
 ## 调用
 

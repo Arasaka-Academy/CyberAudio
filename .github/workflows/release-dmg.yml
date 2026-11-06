@@ -35,6 +35,13 @@ jobs:
         with:
           swift-version: "6.3"
 
+      - name: Set up locked development tools
+        uses: astral-sh/setup-uv@94527f2e458b27549849d47d273a16bec83a01e9 # v7
+        with:
+          version: "0.13.7"
+          enable-cache: true
+          cache-dependency-glob: uv.lock
+
       - name: Install FFmpeg for native protocol tests
         env:
           HOMEBREW_NO_AUTO_UPDATE: "1"

@@ -31,7 +31,12 @@ let package = Package(
         .executableTarget(name: "CyberAudioFixture", dependencies: ["CyberAudioCore"]),
         // An executable test harness also runs with Command Line Tools alone.
         // XCTest is distributed only with full Xcode on macOS.
-        .executableTarget(name: "CyberAudioCoreTests", dependencies: ["CyberAudioCore"], path: "Tests/CyberAudioCoreTests")
+        .executableTarget(name: "CyberAudioCoreTests", dependencies: ["CyberAudioCore"], path: "Tests/CyberAudioCoreTests"),
+        .executableTarget(name: "CyberAudioInferenceTests", dependencies: ["CyberAudioCore", "CyberAudioInference",
+            .product(name: "MLXAudioSTT", package: "mlx-audio-swift"),
+            .product(name: "MLXAudioCore", package: "mlx-audio-swift"),
+            .product(name: "MLX", package: "mlx-swift")
+        ], path: "Tests/CyberAudioInferenceTests")
     ],
     swiftLanguageModes: [.v5]
 )

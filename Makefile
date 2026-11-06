@@ -1,4 +1,4 @@
-.PHONY: app dmg update native native-test test legacy-test check
+.PHONY: app dmg update native native-test test tools-test legacy-test check
 
 app:
 	bash scripts/build_app.sh
@@ -24,8 +24,12 @@ test: native-test
 	bash scripts/test_workspace_layout.sh
 
 legacy-test:
-	.venv/bin/python -m pytest -q
+	.venv/bin/python -m pytest backend/ -q
 
-check: test
+tools-test:
+	bash scripts/test_tools.sh
+
+check: test tools-test
+	bash scripts/build_native.sh
 	for script in scripts/*.sh; do bash -n "$$script"; done
 	plutil -lint packaging/Info.plist

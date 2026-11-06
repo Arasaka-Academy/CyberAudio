@@ -1,0 +1,55 @@
+name: Checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checks-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Native app, inference and tool regressions
+    runs-on: macos-26
+    timeout-minutes: 40
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: "1"
+      CYBERAUDIO_BUILD_JOBS: "4"
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Select Swift 6.3
+        uses: swift-actions/setup-swift@364295d9c23900ce04d4e5cc708387921b4e50f9 # v3
+        with:
+          swift-version: "6.3"
+
+      - name: Set up locked development tools
+        uses: astral-sh/setup-uv@94527f2e458b27549849d47d273a16bec83a01e9 # v7
+        with:
+          version: "0.13.7"
+          enable-cache: true
+          cache-dependency-glob: uv.lock
+
+      - name: Cache pinned Swift dependencies and build products
+        uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5
+        with:
+          path: |
+            .build
+            .context/native-build
+            .context/local-cache
+          key: swift-${{ runner.os }}-${{ runner.arch }}-6.3-${{ hashFiles('Package.resolved', 'Native/Package.resolved', 'scripts/patch_mlx_audio.swift') }}
+
+      - name: Install FFmpeg
+        run: brew list ffmpeg >/dev/null 2>&1 || brew install ffmpeg
+
+      - name: Check native contracts, UI, tools and production inference build
+        run: make check

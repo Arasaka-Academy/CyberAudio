@@ -66,7 +66,7 @@ public final class HTTPHandler: ChannelInboundHandler {
 
     public func handlerAdded(context: ChannelHandlerContext) {
         timeout = context.eventLoop.scheduleTask(in: .seconds(30)) { [weak self] in
-            self?.fail(ServiceError(408, "upload_timeout", "上传超时。"), context: context)
+            self?.expire(ServiceError(408, "upload_timeout", "上传超时。"), context: context)
         }
     }
     public func channelRead(context: ChannelHandlerContext, data: NIOAny) {
@@ -107,6 +107,7 @@ public final class HTTPHandler: ChannelInboundHandler {
         } catch { fail(error as? ServiceError ?? ServiceError(400,"invalid_request","请求无效。"), context: context) }
     }
     public func channelInactive(context: ChannelHandlerContext) {
+        finished = true
         timeout?.cancel(); slot?.cancellation.cancel(); completeAudioResponse(); context.fireChannelInactive()
     }
     public func errorCaught(context: ChannelHandlerContext, error: Error) {
@@ -197,12 +198,23 @@ public final class HTTPHandler: ChannelInboundHandler {
     private func begin(kind: String, context: ChannelHandlerContext) throws -> InferenceSlot {
         let slot = try coordinator.acquire(kind: kind); self.slot = slot
         timeout = context.eventLoop.scheduleTask(in: .milliseconds(Int64(coordinator.settings.timeout*1000))) { [weak self] in
-            slot.cancellation.cancel(.timeout); self?.fail(.timeout,context:context)
+            self?.expire(.timeout,context:context)
         }
         return slot
     }
     private func respond(_ object: [String:Any], status: Int = 200, context: ChannelHandlerContext) {
         send((try? jsonData(object)) ?? Data(), status:status,type:"application/json",context:context)
+    }
+    private func expire(_ error: ServiceError, context: ChannelHandlerContext) {
+        slot?.cancellation.cancel(error)
+        // A queued .end is not a completed send. Close even when finished was
+        // set by end(), so an unread response cannot retain update drain forever.
+        if sentHeaders {
+            finished = true
+            context.close(promise:nil)
+        } else {
+            fail(error,context:context)
+        }
     }
     private func fail(_ error: ServiceError, context: ChannelHandlerContext) {
         guard !finished else { return }
@@ -231,8 +243,9 @@ public final class HTTPHandler: ChannelInboundHandler {
         end(context:context)
     }
     private func end(context: ChannelHandlerContext) {
-        guard !finished else { return }; finished = true; timeout?.cancel()
+        guard !finished else { return }; finished = true
         context.writeAndFlush(wrapOutboundOut(.end(nil))).whenComplete { _ in
+            self.timeout?.cancel(); self.timeout = nil
             self.completeAudioResponse(); context.close(promise:nil)
         }
     }
