@@ -1,0 +1,38 @@
+[
+  {
+    "source": "/Users/zhubby/Repository/CyberAudio/.context/robustness/model-preservation-20261107/build-final-candidate.py",
+    "source_sha256": "bed1b45b4c209715ef496da029dcacbf04c3bbdb0be32e0b7206a6f8af4862ca",
+    "target": "build-final-candidate.py",
+    "target_sha256": "3da8e35b55650afb90868cceb1bbf4004fdbc006838a14a2d1af740b7f6d4aa0",
+    "replacements": [
+      [
+        "final-bytes-model-preservation",
+        "final-bytes-stream-failure"
+      ],
+      [
+        "native = project / \".context/icon-native-build/arm64-apple-macosx/release\"",
+        "native = base / \"native-build/arm64-apple-macosx/release\""
+      ],
+      [
+        "\"git\", \"ls-files\", \"Sources\"",
+        "\"git\", \"ls-files\", \"--cached\", \"--others\", \"--exclude-standard\", \"Sources\""
+      ]
+    ]
+  },
+  {
+    "source": "/Users/zhubby/Repository/CyberAudio/.context/robustness/model-preservation-20261107/run-final-candidate.py",
+    "source_sha256": "60b6c85c92a23641ce26ad47e5b1ff43c6bff35d9b60e10baab0ea239f6ac0da",
+    "target": "run-final-candidate.py",
+    "target_sha256": "7595f900c18c1f2698c34e4a7f370ad506983a05bb26285002444198a66553d5",
+    "replacements": [
+      [
+        "final-bytes-model-preservation",
+        "final-bytes-stream-failure"
+      ],
+      [
+        "port = 18887",
+        "port = 18895"
+      ]
+    ]
+  }
+]

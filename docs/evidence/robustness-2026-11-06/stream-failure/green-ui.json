@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "name": "green-ui",
+  "command": [
+    "bash",
+    "scripts/test_audio_workflow.sh"
+  ],
+  "started": "2026-11-06T23:03:01.124353+00:00",
+  "budget_seconds": 180,
+  "native_scratch": "/Users/zhubby/Repository/CyberAudio/.context/robustness/stream-failure-20261107/native-build",
+  "source_sha256": "df4d75c8b9d14a38d625c139870b3e35e6a63fcd747bd721ceefb49ef0057630",
+  "elapsed_seconds": 58.94409129099222,
+  "owned_group_pid": 31029,
+  "exit_code": 0,
+  "finished": "2026-11-06T23:04:00.068696+00:00",
+  "log_sha256": "c24f77d8c2a842c89503eb679d283b2a400c292c9f1e63cc88e0e93fdde53831"
+}

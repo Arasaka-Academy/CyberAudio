@@ -1,0 +1,11 @@
+{
+  "displayed_error" : "语音生成达到长度上限，请重试或分段生成。",
+  "failure_code" : "generation_limit",
+  "failure_elapsed_seconds" : 94.61978016665671,
+  "legacy_message_field_absent" : true,
+  "observed_actual_playback" : true,
+  "partial_audio_export_rejected" : true,
+  "physical_or_listening_acceptance" : false,
+  "same_instance_recovery_wav_bytes" : 76844,
+  "status" : "passed"
+}

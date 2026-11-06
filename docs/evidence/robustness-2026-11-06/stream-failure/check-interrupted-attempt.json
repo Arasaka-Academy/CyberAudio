@@ -1,0 +1,19 @@
+{
+  "status": "failed",
+  "name": "full-check-fixed",
+  "command": [
+    "/usr/bin/caffeinate",
+    "-i",
+    "make",
+    "check"
+  ],
+  "started": "2026-11-06T23:16:44.316687+00:00",
+  "budget_seconds": 1200,
+  "native_scratch": "/Users/zhubby/Repository/CyberAudio/.context/robustness/stream-failure-20261107/native-build",
+  "source_sha256": "df4d75c8b9d14a38d625c139870b3e35e6a63fcd747bd721ceefb49ef0057630",
+  "elapsed_seconds": 36.582356541999616,
+  "owned_group_pid": 64087,
+  "exit_code": -15,
+  "finished": "2026-11-06T23:17:20.898952+00:00",
+  "log_sha256": "623dab342fb6c66201fb6cde9f6cac4ac92c56824e492eaa8d26db912a5aa351"
+}

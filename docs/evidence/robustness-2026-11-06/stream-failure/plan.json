@@ -1,0 +1,17 @@
+{
+  "source_commit": "7239d81",
+  "problem": "The App can lose the terminal TTS failure when a chunked PCM connection closes before its final chunk; it also collapses clean-terminal failures into a shorten-text suggestion.",
+  "hypothesis": "The App only queries /v1/requests after byte iteration returns normally. A real streaming error throws before that query, while the coordinator has already recorded the safe failure code.",
+  "scope": "Preserve authoritative terminal errors through a bounded authenticated status lookup; use typed request records, reject mismatched identity/kind, retain the transport error when no terminal failure is available, preserve cancellation and partial-audio rejection.",
+  "required_regressions": [
+    "Real native HTTP late generation_limit, timeout and inference failure preserve the same safe message for WAV and streaming PCM",
+    "A failed streamed request retains no exportable WAV or playback ownership and the same service accepts a later successful request",
+    "Safe terminal messages survive status lookup; unrelated raw errors remain sanitized",
+    "Cancellation does not launch diagnostic work or replace output-device errors",
+    "Existing successful streaming, replay, device interruption, update drain and cancellation contracts remain passing"
+  ],
+  "protected": "Production App/service/config/Token, all original models, frozen artifacts and earlier shared diagnostic objects",
+  "excluded_acceptance": "No TTS content-quality, natural mixed-speech, physical listening, strict 7200s M4, public download or distribution pass inferred",
+  "default_parameters_changed": false,
+  "no_install_push_or_release": true
+}

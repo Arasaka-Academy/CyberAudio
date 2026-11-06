@@ -1,0 +1,31 @@
+{
+  "status": "failed",
+  "name": "red-behavior-native",
+  "command": [
+    "swift",
+    "run",
+    "--build-system",
+    "native",
+    "--package-path",
+    "Native",
+    "--scratch-path",
+    "/Users/zhubby/Repository/CyberAudio/.context/robustness/stream-failure-20261107/native-build",
+    "--cache-path",
+    "/Users/zhubby/Repository/CyberAudio/.context/local-cache",
+    "-c",
+    "release",
+    "--skip-update",
+    "-j",
+    "6",
+    "CyberAudioCoreTests"
+  ],
+  "started": "2026-11-06T23:00:59.016604+00:00",
+  "budget_seconds": 180,
+  "native_scratch": "/Users/zhubby/Repository/CyberAudio/.context/robustness/stream-failure-20261107/native-build",
+  "source_sha256": "df4d75c8b9d14a38d625c139870b3e35e6a63fcd747bd721ceefb49ef0057630",
+  "elapsed_seconds": 74.23691629199311,
+  "owned_group_pid": 22271,
+  "exit_code": 1,
+  "finished": "2026-11-06T23:02:13.253374+00:00",
+  "log_sha256": "7c080b4cc2d48e96ed6aa7fe8c90991ada7151f7dbd740d7f53040a7740452d8"
+}

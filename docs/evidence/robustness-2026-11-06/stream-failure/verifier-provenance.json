@@ -1,0 +1,10 @@
+{
+  "source": "/Users/zhubby/Repository/CyberAudio/.context/robustness/model-preservation-20261107/verify-final-candidate-result.py",
+  "source_sha256": "7eac919e7cd33c862d174c740b67a6108d60ffab38e79e23d65529ba49d46725",
+  "target": "verify-final-candidate-result.py",
+  "target_sha256": "d7ed6e41f73769c618f77147116f3ef59cbca35db5bff03240d8857788642215",
+  "replacement": [
+    "final-bytes-model-preservation",
+    "final-bytes-stream-failure"
+  ]
+}

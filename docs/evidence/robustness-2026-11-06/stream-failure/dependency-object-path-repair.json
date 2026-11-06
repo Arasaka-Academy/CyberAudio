@@ -1,0 +1,20 @@
+{
+  "status": "repaired_private_metadata",
+  "root_cause": "APFS-cloned Git alternates referenced removed coreml-native workspace",
+  "old_alternates": "/Users/zhubby/.codex/worktrees/coreml-native/CyberAudio/.context/native-build/repositories/mlx-audio-swift-57ff1f36/objects",
+  "new_alternates": "/Users/zhubby/Repository/CyberAudio/.context/robustness/stream-failure-20261107/native-build/repositories/mlx-audio-swift-57ff1f36/objects",
+  "private_metadata_mode_restored": true,
+  "sdk_working_source_preserved": {
+    "Sources/MLXAudioTTS/Models/Qwen3TTS/Qwen3TTS.swift": "17301a083f323673bc548aff031b83d9df60b2c04715af87592b1c68d42bd48a",
+    "Sources/MLXAudioSTT/Models/Qwen3ASR/Qwen3ASR.swift": "97e3f0a328cd866e9aa7a0f90b958431f9baa19b78031fe136347e6114caaf28"
+  },
+  "upstream_files_readable": {
+    "Sources/MLXAudioTTS/Models/Qwen3TTS/Qwen3TTS.swift": "6d4d6efc3f19437a512dfe2446242d16cfedbe190d3a7ac39caa673442de6f7a",
+    "Sources/MLXAudioSTT/Models/Qwen3ASR/Qwen3ASR.swift": "71f5cbc43ab0591bee0c10f843d216e03596e55dad458c62cf9b5040e3c6d883"
+  },
+  "original_checkout_metadata_preserved": true,
+  "failed_full_check": "full-check.json",
+  "interrupted_premature_retry": "full-check-fixed.json",
+  "failed_and_interrupted_attempts_are_not_behavioral_red": true,
+  "model_load_or_inference": false
+}

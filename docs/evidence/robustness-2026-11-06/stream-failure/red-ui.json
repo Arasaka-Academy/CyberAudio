@@ -1,0 +1,17 @@
+{
+  "status": "failed",
+  "name": "red-behavior-ui",
+  "command": [
+    "bash",
+    "scripts/test_audio_workflow.sh"
+  ],
+  "started": "2026-11-06T22:59:00.812944+00:00",
+  "budget_seconds": 300,
+  "native_scratch": "/Users/zhubby/Repository/CyberAudio/.context/robustness/stream-failure-20261107/native-build",
+  "source_sha256": "df4d75c8b9d14a38d625c139870b3e35e6a63fcd747bd721ceefb49ef0057630",
+  "elapsed_seconds": 97.50273074995494,
+  "owned_group_pid": 18493,
+  "exit_code": 133,
+  "finished": "2026-11-06T23:00:38.315380+00:00",
+  "log_sha256": "8328a5da8e8f5e13877bb61e5f647bba83b44cd69bf9e815e10d75cda8074053"
+}

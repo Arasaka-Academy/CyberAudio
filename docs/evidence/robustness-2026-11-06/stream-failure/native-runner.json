@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "started": "2026-11-06T23:21:58.049328+00:00",
+  "port": 18895,
+  "scope": "Current isolated App/Service/Assets; full fixed 100 corpus, formats/voices/stream/cancel/update/EOF and actual App TERM/KILL/restart; no long soak or physical acceptance",
+  "source_commit": "57c8152da56b48563554e87e18071228b0b69e7e",
+  "build_sha256": "8175f8a2a87ee4fbc2e4ae1984cc1863079d4c4b9b19a0408088e56dc982366f",
+  "driver_sha256": "90152a026e328d0a747ae976eab798a567cd493c1edf1ce505e5a2a95852f13d",
+  "corpus_manifest_sha256": "dc67d7b52bea55f7ea6fcd0934e0460811699ad510c0befe9f938c60c84ef7eb",
+  "production_before": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "maximum_seconds": 1800,
+  "elapsed_seconds": 172.33107050001854,
+  "owned_group_pid": 80099,
+  "owned_process_identity": "80099 Sat Nov  7 07:21:58 2026     (caffeinate)",
+  "exit_code": 0,
+  "native_report_status": "passed",
+  "temporary_request_cleanup": true,
+  "production_after": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "production_preserved": true,
+  "frozen_preserved": true,
+  "candidate_bytes_preserved": true,
+  "owned_listener_closed": true,
+  "finished": "2026-11-06T23:24:50.395013+00:00"
+}

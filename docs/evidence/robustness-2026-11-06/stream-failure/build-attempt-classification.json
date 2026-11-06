@@ -1,0 +1,7 @@
+{
+  "dependency_attempt": "not a red behavior result; stopped during dependency checkout",
+  "relocated_cache_attempt": "not a red behavior result; Clang module cache paths refer to the original scratch directory",
+  "remedy": "Preserve the rejected private module cache, then let the private build generate its own cache",
+  "original_scratch_modified": false,
+  "model_loaded": false
+}

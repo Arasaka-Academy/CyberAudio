@@ -31,6 +31,7 @@
 | [language-routing/README.md](language-routing/README.md) | R11 方言音色显式英文路由红绿修复及 36／40／14 完整检查；最新 `5479313` App 实际完整验收与同 M1 100／100 一致；英文数字自动回读仍未确认正确 |
 | [text-layout/README.md](text-layout/README.md) | 当前 R11 私有 SDK 的两种官方文本布局：五组配对／十次生成、17 次最终 App ASR；已知失败能结束但正常控制回读回退，数字质量仍未接受，未采用；追加桌面工具不可用和字节保留证据 |
 | [model-preservation/README.md](model-preservation/README.md) | R12 移除 SDK 异常加载时整目录删除；真实权重加载红绿对照、八项适配器回归和 36／44／14 完整检查；`b5607f2` 当前 App 完整原生验收及独立复核通过，同 M1 旧版 100／100 一致 |
+| [stream-failure/README.md](stream-failure/README.md) | R13 流式晚期失败保留具体原因、旧 Helper 兼容、完整响应超时和部分音频拒绝；36／44／14 完整检查及 9 项状态查询／3 类晚期故障；`57c8152` 当前 App 完整验收和同 M1 100／100 一致，真实固定失败／同实例恢复及全部文件保留复核 |
 | [reference-parity/README.md](reference-parity/README.md) | 五个固定样本、146 个强制 codec 步骤的 Swift／未修改 Python 参考前向对照；750 项张量比较数值一致、误差为零，原失败前缀和生产数据保留；不包含采样、完整解码或质量通过结论 |
 | [sampling-order/README.md](sampling-order/README.md) | 实际采样器的 2336 次重放及 bfloat16／top-k 顺序差异；当前语言路由 144 对、294 次 ASR，无 EOS 减少但仍有 5 对回读回退，候选未采用；正式源码与生产数据保留 |
 | [reference-generation/README.md](reference-generation/README.md) | 七次未修改 Python 完整生成、观察／无观察控制与九次 ASR；相同完整 codec 的解码对照定位 72 帧窗口差异，并保留已知失败第 84 帧之后的未归因差异；未采用新策略 |

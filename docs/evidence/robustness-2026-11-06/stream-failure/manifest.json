@@ -1,0 +1,130 @@
+{
+  "LegacyFailureProbe.swift": {
+    "bytes": 4583,
+    "sha256": "e85519e39fc7bdfd3a5db729ae254d620df5d5401f1ddce38381428207febe07"
+  },
+  "README.md": {
+    "bytes": 5053,
+    "sha256": "8f9aff21c255c3f209ca44ea659849c7509ce446a5e0a3aec9f23d263c02b2a5"
+  },
+  "build-attempt-classification.json": {
+    "bytes": 388,
+    "sha256": "04940a838e4a66964d25594e5ffdbae61561acd3bb63f87744efa551d9bb0275"
+  },
+  "build-final-candidate.py": {
+    "bytes": 5243,
+    "sha256": "3da8e35b55650afb90868cceb1bbf4004fdbc006838a14a2d1af740b7f6d4aa0"
+  },
+  "build-runner.json": {
+    "bytes": 657,
+    "sha256": "20b23f31094ac3c0f378bf559cb1295bec32d67ca69af8cdd1fabe7405c1f82a"
+  },
+  "build.json": {
+    "bytes": 13735,
+    "sha256": "8175f8a2a87ee4fbc2e4ae1984cc1863079d4c4b9b19a0408088e56dc982366f"
+  },
+  "check-interrupted-attempt.json": {
+    "bytes": 637,
+    "sha256": "71594c9c411f63996b2cf92b24e14908c80881567538af97a380ebb9c19befb3"
+  },
+  "check-setup-failure.json": {
+    "bytes": 628,
+    "sha256": "d1003b218109fc69aa108faf2879d74f7fc2c6e8024e3dfe906578f5f6cc0c37"
+  },
+  "checks.json": {
+    "bytes": 637,
+    "sha256": "3340a8079fd142e4328d0c8280e7c43a016c4008ca594d35ed7d195428f057ec"
+  },
+  "dependency-object-path-repair.json": {
+    "bytes": 1313,
+    "sha256": "60101be5d8e6cecb9260a5c542ca1e36c1bb426097aacfee0d8a653bae9a8f00"
+  },
+  "driver-provenance.json": {
+    "bytes": 1354,
+    "sha256": "3fdc99f5851bce25e404c10c466dcedc768ae501836405e6cb393b7af0c407d7"
+  },
+  "green-ui.json": {
+    "bytes": 613,
+    "sha256": "3a5417d38580bc68547de958d878e128fff59ec1ec98cc0b67f59ebf8cbd5e84"
+  },
+  "independent-verification.json": {
+    "bytes": 2979,
+    "sha256": "1892611fdf9fc32c366c94f932d05a58798d78b80a0e80c6e11462230dacb780"
+  },
+  "legacy-client-result.json": {
+    "bytes": 410,
+    "sha256": "319292db940230bcee4be45d61c0b5fec7ec14600f9a1d7757bac952d2a09fe1"
+  },
+  "legacy-client.json": {
+    "bytes": 2163,
+    "sha256": "cf020d6d4477fc71153e4a39a4d111a0114b39e61aa87cf47cecfbda3f48747b"
+  },
+  "native-runner.json": {
+    "bytes": 1622,
+    "sha256": "182146923018fa9e49c8834ce3f832a1efa16ae77eaa7cf1135f1f9c5b377026"
+  },
+  "native-service.json": {
+    "bytes": 118613,
+    "sha256": "01f796b82ab81b5abf0b28e9e014088b43ed0cbfaf6b6278a617b17af4f019cf"
+  },
+  "plan.json": {
+    "bytes": 1675,
+    "sha256": "f044480fa00dca9421165a5dd864648546473a481ab78ff8742aa1c59c0c4bec"
+  },
+  "red-confirmation.json": {
+    "bytes": 360,
+    "sha256": "f1aba0e7ce03528f0925cc77f8e9780f2d519870502a33b89e2d4225d22dffff"
+  },
+  "red-native.json": {
+    "bytes": 968,
+    "sha256": "5dcd142c5e5c1691b04fc0a0c4fed81201c12d1fe76fb353c157f939148c38b7"
+  },
+  "red-ui.json": {
+    "bytes": 622,
+    "sha256": "5d20de1b192e378dd52483641912c40fd9df46bbe4436481b8c610f7791aa838"
+  },
+  "run-final-candidate-launched.py": {
+    "bytes": 6208,
+    "sha256": "7595f900c18c1f2698c34e4a7f370ad506983a05bb26285002444198a66553d5"
+  },
+  "run-final-candidate.py": {
+    "bytes": 6208,
+    "sha256": "7595f900c18c1f2698c34e4a7f370ad506983a05bb26285002444198a66553d5"
+  },
+  "run-legacy-client.py": {
+    "bytes": 7039,
+    "sha256": "4589dfffeaddad3b94437ad21c98e50a7bdaf2a3f3fcad78a15058e6cf821b8b"
+  },
+  "run-step.py": {
+    "bytes": 2404,
+    "sha256": "df4d75c8b9d14a38d625c139870b3e35e6a63fcd747bd721ceefb49ef0057630"
+  },
+  "source-commit.json": {
+    "bytes": 588,
+    "sha256": "bab747c0712afb78a5365eb04438a036892a543f424e1bc31395bd75945b62af"
+  },
+  "source-sha256.json": {
+    "bytes": 10396,
+    "sha256": "db424c3c44217b949d64898fc6f76f8eb7a71f0a39d9e97932db5cfa3f1201a0"
+  },
+  "status-transport.json": {
+    "bytes": 616,
+    "sha256": "f7a9016dff21324db3b5387a1d20ea71a37a9fedd8bbc9970cedfee9255801f6"
+  },
+  "verification.json": {
+    "bytes": 1753,
+    "sha256": "48a63ce7052538fc50a1a3d56a9c406b8941726c6afc6883a84c2176395916ad"
+  },
+  "verifier-provenance.json": {
+    "bytes": 452,
+    "sha256": "1e337a57e32baf65da5e2c284527f482716853ceb433d2e8c5d43e648182c267"
+  },
+  "verify-final-candidate-result.py": {
+    "bytes": 6519,
+    "sha256": "d7ed6e41f73769c618f77147116f3ef59cbca35db5bff03240d8857788642215"
+  },
+  "verify.py": {
+    "bytes": 8454,
+    "sha256": "553aa021cec01e48dcf48d264962e8b5e4fd63700ead2b5dbf2213b92e943519"
+  }
+}

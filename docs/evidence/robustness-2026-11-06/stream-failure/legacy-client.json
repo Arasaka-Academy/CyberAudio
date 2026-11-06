@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "started": "2026-11-06T23:25:07.370403+00:00",
+  "scope": "Current production App client code with retained private seed-196 original-model Helper; no production/default changes",
+  "original_helper_sha256": "13379551ed4db5568c1b824794a372e8593b3afc1fec4b625c64a23da7127a13",
+  "client_source_sha256": "e85519e39fc7bdfd3a5db729ae254d620df5d5401f1ddce38381428207febe07",
+  "production_before": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "port": 18896,
+  "elapsed_seconds": 120.70292720803991,
+  "isolated_config_sha256": "f4623257d844ccdfa4667f07b4d8b6712f83f2b2a46ce5588ff43bda08e0cddf",
+  "isolated_token_sha256": "c8acf1e0866b1a4e5e47845ec708fbccb2c3af10d92ce3d7eb7d32a8180b7829",
+  "bundled_helper_sha256": "37e5573b57d38c3eb8019cff1649f8ba3981ee47338903f15d052a52344bc425",
+  "client_binary_sha256": "531225a50ea84217c9b55e2f0c5f4767de8771c7888dbc7e9fd5c6989964c26c",
+  "owned_group_pid": 80880,
+  "exit_code": 0,
+  "client": {
+    "displayed_error": "\u8bed\u97f3\u751f\u6210\u8fbe\u5230\u957f\u5ea6\u4e0a\u9650\uff0c\u8bf7\u91cd\u8bd5\u6216\u5206\u6bb5\u751f\u6210\u3002",
+    "failure_code": "generation_limit",
+    "failure_elapsed_seconds": 94.61978016665671,
+    "legacy_message_field_absent": true,
+    "observed_actual_playback": true,
+    "partial_audio_export_rejected": true,
+    "physical_or_listening_acceptance": false,
+    "same_instance_recovery_wav_bytes": 76844,
+    "status": "passed"
+  },
+  "production_after": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "production_preserved": true,
+  "original_helper_preserved": true,
+  "owned_processes_absent": true,
+  "listener_closed": true,
+  "finished": "2026-11-06T23:27:08.131985+00:00"
+}

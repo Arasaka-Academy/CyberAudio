@@ -1,0 +1,7 @@
+{
+  "behavioral_failure_observed": true,
+  "assertion": "Late generation_limit must preserve the WAV server reason",
+  "observed_path": "URLSession byte iteration returned; failed terminal record was reduced to a generic shorten-text error",
+  "transport_throw_observed_in_this_run": false,
+  "prior_dependency_and_cache_errors_are_not_behavioral_red": true
+}

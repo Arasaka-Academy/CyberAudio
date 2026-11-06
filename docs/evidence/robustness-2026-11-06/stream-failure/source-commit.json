@@ -1,0 +1,17 @@
+{
+  "source_commit": "57c8152da56b48563554e87e18071228b0b69e7e",
+  "files": [
+    "Native/Sources/CyberAudioCore/Coordinator.swift",
+    "Native/Sources/CyberAudioFixture/Main.swift",
+    "Native/Tests/CyberAudioCoreTests/ServiceTests.swift",
+    "Sources/CyberAudio/AudioWorkspace.swift",
+    "Sources/CyberAudio/BackendController.swift",
+    "docs/GUIDE.md",
+    "scripts/test_dictation.sh",
+    "tests/AudioWorkflowTests.swift",
+    "tests/SpeechRequestStatusTests.swift"
+  ],
+  "checked_sources": 97,
+  "git_blob_hashes_match_checked_sources": true,
+  "push_install_release": false
+}
