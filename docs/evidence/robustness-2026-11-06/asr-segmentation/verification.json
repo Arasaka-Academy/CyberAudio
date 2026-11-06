@@ -1,0 +1,117 @@
+{
+  "status": "verified",
+  "verified_at": "2026-11-06T19:33:34.902938+00:00",
+  "model_loaded_by_verifier": false,
+  "inference_rerun": false,
+  "source_cases": 12,
+  "all_original_baseline_texts_reproduced": true,
+  "all_boundaries_recomputed_without_transcripts": true,
+  "new_segment_wavs": [
+    {
+      "file": "audio/segment-rms-composite-zh-002-1883-en-008-1846-clean-0.wav",
+      "sha256": "8bf36292cf9521a49fcf0c4b953d50e9122aa0a63e58ebecc1d95763e1fddf80",
+      "pcm_sha256": "9144d23b2bf21f058d0d18518a5a6f01525df8b569d5ade7d6f797c25de789e8"
+    },
+    {
+      "file": "audio/segment-rms-composite-zh-002-1883-en-008-1846-clean-1.wav",
+      "sha256": "ce262f524e457cb62dd37cee4734da4cc0cf876f2ffe56e0c1ed7d11590f3a57",
+      "pcm_sha256": "58bdbf3d7bd4025414b806ddbf691452cf07c534a3fa060b0f5949aadc81bb4a"
+    },
+    {
+      "file": "audio/segment-rms-composite-zh-002-1883-en-008-1846-snr20-0.wav",
+      "sha256": "4b29ce76e1b975f2e05ba3d9ac8201b0663c9a9d4384a95612f2fbf87609f10b",
+      "pcm_sha256": "9d03327b03091428fdeacb8e40d906d5dae213aacfc5743f8d5a74077b5e9a29"
+    },
+    {
+      "file": "audio/segment-rms-composite-zh-002-1883-en-008-1846-snr20-1.wav",
+      "sha256": "b09981e329e0f7ebf75321c2f3677837dd823560eab533fd80d0cf29a106e6a7",
+      "pcm_sha256": "1d64f9dc4bf1d6ea206c0802a7c1bfc867c4fe1d3cc5e8d09184d67ba6e502af"
+    },
+    {
+      "file": "audio/segment-rms-composite-en-008-1846-zh-002-1883-clean-0.wav",
+      "sha256": "be361d9d84c646deafae15d3da684e987f032ed24cde0031e8e9f0223df9299b",
+      "pcm_sha256": "6d26024fa2e6b3946b6f9ae941235abb53fe33f0e839485794e48b126277ffd0"
+    },
+    {
+      "file": "audio/segment-rms-composite-en-008-1846-zh-002-1883-clean-1.wav",
+      "sha256": "91436b18e4ee8e0ee6c3d7f173b558717c098ed43254b302c1d848f40a65deb8",
+      "pcm_sha256": "848e4424363702419cd64e72bdfd1d408dfcf47f1cc4b2f92cdf7883a48d4721"
+    },
+    {
+      "file": "audio/segment-rms-composite-en-008-1846-zh-002-1883-snr20-0.wav",
+      "sha256": "045ca52181e9c38f19b8616e9df1730d927a54c1239a15b757b2e775b2da140c",
+      "pcm_sha256": "be354a26038e7e795a57fac0394b920d1a60a3a3fb50c2c221edc9a6568aaa00"
+    },
+    {
+      "file": "audio/segment-rms-composite-en-008-1846-zh-002-1883-snr20-1.wav",
+      "sha256": "800a86b51fc7e318604f63753eb85e5e23298d7e9d6bf7fbee3e9fd5e58c3170",
+      "pcm_sha256": "2a9142b462e8025ed4ebacd8e03bcfb9704f95a731523344d68162377cac5d2d"
+    },
+    {
+      "file": "audio/segment-rms-composite-zh-020-1779-en-046-1710-clean-0.wav",
+      "sha256": "2e6aaa9e4276604d53a7802e6b6c8c289441d31e8bd800eb20c2ae6df01e396f",
+      "pcm_sha256": "221d0148c544a42049df0b9fc203fd3aadc9fcf8d2be1be0b98eb666a49f9765"
+    },
+    {
+      "file": "audio/segment-rms-composite-zh-020-1779-en-046-1710-clean-1.wav",
+      "sha256": "514cb798d80b954797cc4517c4d4c9637755ed0ac40ea490e89a2c7c99b0258b",
+      "pcm_sha256": "bd3129594b9470fdc396a4bb5b8c70fb5d0f52b7c2d9ca3b6d25aabc9f73e460"
+    },
+    {
+      "file": "audio/segment-rms-composite-zh-020-1779-en-046-1710-snr20-0.wav",
+      "sha256": "5ae360fc1df9a337c446be86ce1d48ccd7e2c8aca4bcdab3c8af7d924422d4d9",
+      "pcm_sha256": "910c42899a334470e7f912eae65eb707bfd1d5c7e8323be6ef31132a8dcb64a4"
+    },
+    {
+      "file": "audio/segment-rms-composite-zh-020-1779-en-046-1710-snr20-1.wav",
+      "sha256": "96150614082230bf7695bd6c1a8830619c39ad34b21d9ab3ea8f1ce46ef14511",
+      "pcm_sha256": "2207806be7b25d4695f23c4bd5a4ced855e54fd4bf9048915693bc62770cb721"
+    },
+    {
+      "file": "audio/segment-rms-composite-en-046-1710-zh-020-1779-clean-0.wav",
+      "sha256": "8ee8f50bd43908e78c39d2c1af01963eb6e27c74953c9e82858a93140a0ade25",
+      "pcm_sha256": "736b95fe33f98f1be07307aaa503a861d23aaf1719c30b5dd16e2ce790a086dc"
+    },
+    {
+      "file": "audio/segment-rms-composite-en-046-1710-zh-020-1779-clean-1.wav",
+      "sha256": "28addac1d6764a1a0f49c62ac932430712118b3c6d69478b78251d035f1b624d",
+      "pcm_sha256": "39dbcbffcce4a3b8d5edd2a32fa0e38a19a2ea9054ff24d69f56a3ba47c883e1"
+    },
+    {
+      "file": "audio/segment-rms-composite-en-046-1710-zh-020-1779-snr20-0.wav",
+      "sha256": "457413b4919544a844aadada2aaf5d516d50fde0b1b5ed2e6f12b87ff345f02e",
+      "pcm_sha256": "7f7c57892f36c1de54d5adffc400f0c046f4f5f16ea35998a810f1053a2aaf93"
+    },
+    {
+      "file": "audio/segment-rms-composite-en-046-1710-zh-020-1779-snr20-1.wav",
+      "sha256": "eef247ae19c59499e570c52bb7b1c1853c3ad7cb8c9f3e43c67d3e425816edbd",
+      "pcm_sha256": "049bc50dc168749edaa4c06b0d7c56f15b9e91ee170dc5a73f08f6f7db2bfd67"
+    }
+  ],
+  "all_source_pcm_exactly_reconstructed": true,
+  "all_new_wav_production_decode_payloads_exact": true,
+  "actual_http_requests": 28,
+  "diagnostic_scores_independently_recomputed": true,
+  "baseline_edits": 154,
+  "candidate_edits": 92,
+  "pilot_passed": false,
+  "more_edit_cases": 2,
+  "candidate_promoted": false,
+  "formal_source_or_defaults_changed": false,
+  "formal_source_hashes_verified": 96,
+  "original_model_files_verified": 568,
+  "frozen_files_verified": 8,
+  "protected_inputs_verified": 1357,
+  "owned_processes_absent": true,
+  "listener_closed": true,
+  "request_directories_empty": true,
+  "production_preserved": true,
+  "limits": [
+    "Controlled concatenation remains distinct from natural code-switching and physical speech",
+    "Chunking can lose context, split words, duplicate or hallucinate text; edits and language scripts are incomplete quality measures",
+    "No candidate adoption, strict-soak rerun or original gate waiver",
+    "Mixed-unit edit distance is a diagnostic measure, not formal CER/WER or adjudicated content correctness",
+    "Parenthetical names, numeral rendering and references not aligned to exact spoken words can affect this metric",
+    "The four short monolingual controls reuse their identical full-file request; they do not exercise chunk-boundary behavior"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "status": "diagnostic_completed",
+  "started": "2026-11-06T19:29:30.834510+00:00",
+  "source_sha256": "4b91b1b8269099662b504c98ddc9c6e77ed6b4123f367fedf3c6d5f86a7e788e",
+  "production_before": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "steps": [
+    {
+      "name": "prepare",
+      "args": [
+        "/Users/zhubby/Repository/CyberAudio/.context/robustness/reference-parity-20261107/runtime/bin/python",
+        "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-segmentation-20261107/prepare.py"
+      ],
+      "status": "completed",
+      "owned_group_pid": 77035,
+      "exit_code": 0
+    },
+    {
+      "name": "prepare-runner",
+      "args": [
+        "/Users/zhubby/Repository/CyberAudio/.context/robustness/reference-parity-20261107/runtime/bin/python",
+        "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-segmentation-20261107/prepare-runner.py"
+      ],
+      "status": "completed",
+      "owned_group_pid": 77045,
+      "exit_code": 0
+    },
+    {
+      "name": "native-http",
+      "args": [
+        "/Users/zhubby/Repository/CyberAudio/.context/robustness/reference-parity-20261107/runtime/bin/python",
+        "-u",
+        "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-segmentation-20261107/run-native.py"
+      ],
+      "status": "completed",
+      "owned_group_pid": 77053,
+      "exit_code": 0
+    }
+  ],
+  "elapsed_seconds": 33.68528033402981,
+  "plan_sha256": "24c90fcb20be7e54f299f5be267042b0317c3679836748e160e3d002bb3424ad",
+  "production_after": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "production_preserved": true,
+  "protected_inputs_preserved": true,
+  "finished": "2026-11-06T19:30:04.532787+00:00"
+}

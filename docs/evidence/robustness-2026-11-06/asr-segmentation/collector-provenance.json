@@ -1,0 +1,31 @@
+{
+  "source": "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/run-native.py",
+  "original_sha256": "bb723a14b0486a182625a6e706a71b89fec74c272caefe0a80ca7240504a5dfe",
+  "generated_sha256": "e9e8c53ff3ac14266c61bf26ee3b7312a08d78f90fdd28181b7899a480367a0b",
+  "exact_replacements": [
+    [
+      "\"\"\"Transcribe every predeclared matrix output after the TTS process terminates.\"\"\"",
+      "\"\"\"Transcribe all fixed one-shot and energy-segment requests serially.\"\"\""
+    ],
+    [
+      "power-kernel-20261107/verification.json",
+      "asr-mel-20261107/verification.json"
+    ],
+    [
+      "previous[\"all_owned_processes_absent\"]",
+      "previous[\"owned_processes_absent\"]"
+    ],
+    [
+      "port = 18892",
+      "port = 18894"
+    ],
+    [
+      "Current final-App auto-ASR on all twelve fixed prior bilingual/control inputs; no synthetic regeneration or parameter changes",
+      "Current final-App paired original/energy-segment pilot on all twelve retained inputs; no SDK/model/default change"
+    ],
+    [
+      "report[\"expected_source_outputs\"] = len(plan[\"cases\"])",
+      "report[\"expected_source_outputs\"] = len(plan[\"source_cases\"])"
+    ]
+  ]
+}
