@@ -26,7 +26,7 @@
 `scripts/build_app.sh` 将应用图标和菜单栏的 1× / 2× PNG 一起复制到应用包 `Contents/Resources`。
 
 1. `packaging/Info.plist` 的 `CFBundleIconFile` 指向 `CyberAudio.icns`，供 Finder、关于窗口等系统入口使用。
-2. `CyberAudioApp.swift` 通过 AppKit `Bundle.main.image(forResource:)` 加载 PNG 和 Retina 表示，再交给 SwiftUI `Image(nsImage:)`。`MenuBarExtra` 使用 `.renderingMode(.template)`，由系统根据外观与选中状态着色；逻辑尺寸固定为 18 × 18 pt。
+2. `CyberAudioApp.swift` 的菜单栏标签使用 `MenuBarIcon`，通过 AppKit `Bundle.main.image(forResource:)` 加载 PNG 和 Retina 表示。图标视图跟随自身 `colorScheme` 更新：浅色主题将原有 alpha 蒙版填为白色并使用 `.original`，保留透明背景；深色主题使用 `.template`，由系统根据外观与选中状态着色。逻辑尺寸固定为 18 × 18 pt，待机与工作状态使用相同的主题规则。
 3. `backend.busy` 为真时使用 `MenuBarActive`，其余情况使用 `MenuBarIdle`。菜单栏标签保留应用名称与状态，供辅助功能读取。
 
 打包直接使用本目录已导出的素材，不需要额外安装图像生成或转换工具。
@@ -39,4 +39,6 @@ SVG XML 解析通过；PNG 尺寸与透明通道通过；菜单栏像素为黑�
 
 接入后，完整应用构建、嵌套代码签名校验和资源准备检查通过。应用包内五个图标文件与设计源文件的 SHA-256 一致；AppKit 可读取 ICNS 的 10 个尺寸表示，以及每个菜单栏图标的 18 / 36 像素表示。使用包内素材的 SwiftUI 原生渲染通过像素检查，确认深浅色下图形可见、待机与工作状态轮廓不同。
 
-这是设计展示板，菜单栏画面是效果示意，不代表已安装应用的截图。
+2026-11-07 主题修正通过 Release 编译，以及浅色／深色、待机／工作、1×／2× 的八组原生渲染检查。浅色图形为白色、背景透明，alpha 与原图一致；深色与原模板渲染一致。同一原生视图完成浅色→深色→浅色切换，确认浅色保留白色，深色接受系统前景着色。应用图标和原始 PNG 素材保持不变。
+
+这是初版设计展示板，菜单栏画面是效果示意，不代表已安装应用的截图；浅色主题的白色透明图标以当前原生实现为准。

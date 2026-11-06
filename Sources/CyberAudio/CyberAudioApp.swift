@@ -140,21 +140,10 @@ struct CyberAudioApp: App {
             Label {
                 Text("CyberAudio · \(backend.statusLabel)")
             } icon: {
-                menuBarIcon
-                    .renderingMode(.template)
-                    .resizable()
-                    .frame(width: 18, height: 18)
+                MenuBarIcon(busy: backend.busy)
             }
             .labelStyle(.iconOnly)
         }
-    }
-
-    private var menuBarIcon: Image {
-        let name = backend.busy ? "MenuBarActive" : "MenuBarIdle"
-        if let image = Bundle.main.image(forResource: name) {
-            return Image(nsImage: image)
-        }
-        return Image(systemName: backend.busy ? "waveform" : "waveform.circle")
     }
 
     private func showMain() {
