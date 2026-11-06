@@ -100,7 +100,7 @@ struct CyberAudioApp: App {
             ServiceSettingsView().environmentObject(backend).environmentObject(audio).environmentObject(updater).environmentObject(dictation)
         }
 
-        MenuBarExtra("CyberAudio · \(backend.statusLabel)", systemImage: backend.busy ? "waveform" : "waveform.circle") {
+        MenuBarExtra {
             Text("CyberAudio · \(backend.statusLabel)")
             Button("显示主窗口") { showMain() }
             Button(dictation.enabled ? "暂停快捷听写" : "启用快捷听写") { dictation.setEnabled(!dictation.enabled) }
@@ -121,7 +121,25 @@ struct CyberAudioApp: App {
                 .disabled(audio.cannotStart || dictation.blocksUpdate || backend.status == "stopping")
             Divider()
             Button("退出 CyberAudio") { NSApp.terminate(nil) }.keyboardShortcut("q")
+        } label: {
+            Label {
+                Text("CyberAudio · \(backend.statusLabel)")
+            } icon: {
+                menuBarIcon
+                    .renderingMode(.template)
+                    .resizable()
+                    .frame(width: 18, height: 18)
+            }
+            .labelStyle(.iconOnly)
         }
+    }
+
+    private var menuBarIcon: Image {
+        let name = backend.busy ? "MenuBarActive" : "MenuBarIdle"
+        if let image = Bundle.main.image(forResource: name) {
+            return Image(nsImage: image)
+        }
+        return Image(systemName: backend.busy ? "waveform" : "waveform.circle")
     }
 
     private func showMain() {

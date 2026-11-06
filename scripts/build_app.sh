@@ -40,6 +40,7 @@ for bundle in "$native_binary_dir"/*.bundle; do
 done
 cp packaging/Info.plist "$app/Contents/Info.plist"
 cp packaging/offline.sb "$metal_file" "$app/Contents/Resources/"
+cp design/icons/CyberAudio.icns design/icons/MenuBarIdle{,@2x}.png design/icons/MenuBarActive{,@2x}.png "$app/Contents/Resources/"
 cp "$project_root/.build/checkouts/Sparkle/LICENSE" "$app/Contents/Resources/ThirdParty/Sparkle-LICENSE"
 for checkout in "$native_scratch"/checkouts/*; do
   for license in "$checkout"/LICENSE "$checkout"/LICENSE.txt "$checkout"/LICENSE.md "$checkout"/NOTICE "$checkout"/COPYING; do

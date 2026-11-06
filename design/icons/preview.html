@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CyberAudio · Neon Signal 图标设计</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #0b0e14; color: #f1f4f6; font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; -webkit-font-smoothing: antialiased; }
+  .board { width: 1400px; min-height: 1000px; margin: auto; padding: 54px 64px 38px; background: radial-gradient(ellipse at 23% 40%, #15333544, transparent 47%), radial-gradient(ellipse at 79% 68%, #49213d22, transparent 44%), #0b0e14; }
+  header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 29px; border-bottom: 1px solid #ffffff17; }
+  .brand { display: flex; align-items: center; gap: 13px; font-size: 17px; font-weight: 650; letter-spacing: 3px; }
+  .brand img { width: 23px; height: 23px; filter: invert(1); }
+  .eyebrow, .number { font-family: "SFMono-Regular", Menlo, monospace; font-size: 11px; letter-spacing: 1.5px; color: #83929e; }
+  h1 { margin: 0; font-size: 48px; font-weight: 560; letter-spacing: -1.9px; }
+  .intro { display: flex; align-items: flex-end; justify-content: space-between; margin: 32px 0 18px; }
+  .intro p { margin: 11px 0 0; color: #96a3af; font-size: 14px; letter-spacing: .4px; }
+  .tag { font-family: Menlo, monospace; font-size: 10px; letter-spacing: 1px; color: #4ff8eb; border: 1px solid #4ff8eb33; border-radius: 5px; padding: 9px 11px; }
+  .main { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .hero { position: relative; min-height: 466px; display: grid; place-items: center; }
+  .hero::after { content: ""; position: absolute; inset: 27px 37px; border: 1px solid #ffffff06; border-radius: 50%; z-index: 0; }
+  .hero img { width: 468px; height: 468px; position: relative; z-index: 1; }
+  .hero .corner { position: absolute; left: 2px; top: 34px; color: #74838f; font-family: Menlo, monospace; font-size: 10px; }
+  .details { padding-top: 12px; }
+  .section-label { display: flex; align-items: center; gap: 12px; margin-bottom: 17px; font-size: 14px; font-weight: 550; }
+  .number { font-size: 10px; color: #50d8d1; }
+  .menubar { height: 43px; display: flex; align-items: center; justify-content: flex-end; gap: 18px; padding: 0 20px; border-radius: 10px 10px 0 0; font-size: 12px; font-weight: 520; border: 1px solid #ffffff09; }
+  .menubar img { width: 18px; height: 18px; }
+  .menubar .chosen { height: 30px; width: 35px; display: grid; place-items: center; background: #0000000d; border-radius: 5px; }
+  .light { color: #182027; background: linear-gradient(110deg, #e6ecf0, #d8dfe6); }
+  .dark { color: #f1f4f6; background: linear-gradient(110deg, #2e3443, #242937); }
+  .dark img { filter: invert(1); }
+  .dark .chosen { background: #ffffff12; }
+  .menu-foot { display: flex; justify-content: space-between; padding: 12px 16px; margin-bottom: 14px; border: 1px solid #ffffff0d; border-top: none; border-radius: 0 0 10px 10px; color: #83919c; font-size: 11px; }
+  .menu-foot span:last-child { font-family: Menlo, monospace; font-size: 10px; }
+  .wifi { width: 15px; height: 12px; }
+  .battery { width: 22px; height: 10px; border: 1px solid currentColor; border-radius: 3px; position: relative; padding: 2px; }
+  .battery::before { content: ""; display: block; height: 4px; background: currentColor; border-radius: 1px; }
+  .battery::after { content: ""; position: absolute; right: -3px; top: 3px; width: 1px; height: 3px; background: currentColor; }
+  .glyphs { display: flex; align-items: center; gap: 30px; margin-top: 22px; padding: 18px 22px; border: 1px solid #ffffff10; border-radius: 10px; }
+  .glyph { display: flex; flex-direction: column; align-items: center; gap: 9px; }
+  .glyph img { width: 42px; height: 42px; filter: invert(1); }
+  .glyph span { color: #a2aeb8; font-size: 10px; }
+  .glyph-caption { margin-left: auto; font-size: 12px; color: #a4afb8; line-height: 1.8; }
+  .bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; padding-top: 17px; }
+  .sizes { display: flex; align-items: flex-end; gap: 27px; height: 124px; padding: 0 6px; }
+  .size { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .size span { font-family: Menlo, monospace; font-size: 10px; color: #7e8b97; }
+  .palette { display: flex; gap: 12px; padding-top: 11px; }
+  .color { flex: 1; }
+  .color div { height: 41px; border-radius: 6px; border: 1px solid #ffffff12; }
+  .color span { display: block; color: #8997a3; font-family: Menlo, monospace; font-size: 10px; margin-top: 10px; }
+  footer { margin-top: 39px; padding-top: 18px; border-top: 1px solid #ffffff17; display: flex; align-items: center; justify-content: space-between; color: #71808b; font-size: 11px; }
+  footer strong { font-weight: 500; color: #a7b4bd; }
+  @media (max-width: 1000px) { .board { transform-origin: top left; } }
+</style>
+<div class="board">
+  <header>
+    <div class="brand"><img src="MenuBarIdle.svg" alt="">CYBERAUDIO</div>
+    <div class="eyebrow">ICON SYSTEM &nbsp; / &nbsp; 2026.11</div>
+  </header>
+  <div class="intro">
+    <div><h1>Neon Signal<span style="color:#4ff8eb">.</span></h1><p>切角 C × 音频脉冲 &nbsp; · &nbsp; 霓虹声脉</p></div>
+    <div class="tag">CYBERPUNK / macOS</div>
+  </div>
+  <div class="main">
+    <div class="hero"><span class="corner">01 / APP ICON</span><img src="CyberAudio.svg" alt="CyberAudio 应用图标：黑曜石底色，青色 C 和洋红声波"></div>
+    <div class="details">
+      <div class="section-label"><span class="number">02</span>菜单栏图标</div>
+      <div class="menubar light"><span class="chosen"><img src="MenuBarIdle.svg" alt="浅色菜单栏图标"></span><svg class="wifi" viewBox="0 0 20 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2 4Q10-2 18 4M5 7Q10 3 15 7M8 10Q10 8 12 10"/><circle cx="10" cy="13" r="1" fill="currentColor" stroke="none"/></svg><span class="battery"></span><span>周五 11月6日 &nbsp; 09:41</span></div>
+      <div class="menu-foot"><span>明亮外观 · 黑色模板图标</span><span>18 × 18 pt</span></div>
+      <div class="menubar dark"><span class="chosen"><img src="MenuBarIdle.svg" alt="深色菜单栏图标"></span><svg class="wifi" viewBox="0 0 20 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2 4Q10-2 18 4M5 7Q10 3 15 7M8 10Q10 8 12 10"/><circle cx="10" cy="13" r="1" fill="currentColor" stroke="none"/></svg><span class="battery"></span><span>周五 11月6日 &nbsp; 09:41</span></div>
+      <div class="menu-foot"><span>深色外观 · 白色模板图标</span><span>18 × 18 pt</span></div>
+      <div class="glyphs"><div class="glyph"><img src="MenuBarIdle.svg" alt="待机图形"><span>待机</span></div><div class="glyph"><img src="MenuBarActive.svg" alt="工作图形"><span>工作中</span></div><div class="glyph-caption">同一轮廓，不同振幅<br>小尺寸保留品牌识别</div></div>
+    </div>
+  </div>
+  <div class="bottom">
+    <div>
+      <div class="section-label"><span class="number">03</span>应用图标尺寸</div>
+      <div class="sizes"><div class="size"><img src="CyberAudio.svg" width="128" height="128" alt="128像素预览"><span>128</span></div><div class="size"><img src="CyberAudio.svg" width="64" height="64" alt="64像素预览"><span>64</span></div><div class="size"><img src="CyberAudio.svg" width="32" height="32" alt="32像素预览"><span>32</span></div><div class="size"><img src="CyberAudio.svg" width="16" height="16" alt="16像素预览"><span>16</span></div></div>
+    </div>
+    <div>
+      <div class="section-label"><span class="number">04</span>视觉语言</div>
+      <div class="palette"><div class="color"><div style="background:#0c1220"></div><span>OBSIDIAN</span></div><div class="color"><div style="background:#4ff8eb"></div><span>NEON CYAN</span></div><div class="color"><div style="background:#fa4dd2"></div><span>SIGNAL PINK</span></div></div>
+      <p style="margin:18px 0 0;color:#8997a3;font-size:12px;line-height:1.8">黑曜石底色、切角几何、克制的辉光。<br>应用图标突出质感，菜单栏优先保持清晰。</p>
+    </div>
+  </div>
+  <footer><strong>C / CYBER &nbsp; + &nbsp; PULSE / AUDIO</strong><span>应用图标与菜单栏共用同一视觉标记 &nbsp; · &nbsp; 设计预览</span></footer>
+</div>
+</html>
