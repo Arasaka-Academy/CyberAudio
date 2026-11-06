@@ -1,0 +1,64 @@
+{
+  "purpose": "Compare actual Swift managed-model inputs and teacher-forced talker/code-predictor logits to the unmodified Python MLX reference; no default or production change",
+  "source_commit": "daddf07",
+  "swift_sdk_sha256": "17301a083f323673bc548aff031b83d9df60b2c04715af87592b1c68d42bd48a",
+  "python_mlx": "0.32.4",
+  "python_mlx_audio": "0.6.4",
+  "python_model_source_sha256": "9339599982a84cbc7f2b2bd153598997ca539b3cc1e67a0ba439bada4a5f0ba8",
+  "cases": [
+    {
+      "id": "known-failure",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "voice": "ono_anna",
+      "language": "chinese",
+      "seed": 196
+    },
+    {
+      "id": "short-control",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "voice": "ono_anna",
+      "language": "chinese",
+      "seed": 31
+    },
+    {
+      "id": "eric-english-numeric",
+      "text": "1234",
+      "voice": "eric",
+      "language": "english",
+      "seed": 31
+    },
+    {
+      "id": "dylan-english-numeric",
+      "text": "1234",
+      "voice": "dylan",
+      "language": "english",
+      "seed": 31
+    },
+    {
+      "id": "date-name-control",
+      "text": "Alice will meet Bob on November sixth, twenty twenty-six.",
+      "voice": "ryan",
+      "language": "english",
+      "seed": 31
+    }
+  ],
+  "max_steps_per_case": 32,
+  "temperature": 0.7,
+  "subtalker_temperature": 0.7,
+  "top_k": 50,
+  "top_p": 1.0,
+  "repetition_penalty": 1.05,
+  "max_tokens": 1200,
+  "swift_total_budget_seconds": 600,
+  "reference_total_budget_seconds": 600,
+  "individual_budget_seconds": 120,
+  "maximum_snapshot_bytes": 67108864,
+  "validity_requirements": [
+    "Swift known-failure first-codebook token prefix must exactly match retained seed196 baseline",
+    "All five input cases must retain original declared parameters",
+    "Both implementations use the same locked 8-bit weights and no outbound model access",
+    "Compare Python text tokenization and prepared inputs, then feed identical native codec vectors without random sampling in Python",
+    "Report shape/dtype/exactness/max/mean/RMS differences and EOS diagnostics for every retained step",
+    "A numerical mismatch is a lead for further localization, not automatic proof of an SDK defect; no production promotion or quality pass from this probe"
+  ]
+}

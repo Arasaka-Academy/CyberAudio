@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "started": "2026-11-06T16:36:13.252824+00:00",
+  "steps": [
+    {
+      "command": [
+        "uv",
+        "pip",
+        "compile",
+        "--python",
+        "/Users/zhubby/Repository/CyberAudio/.context/robustness/reference-parity-20261107/runtime/bin/python",
+        "--index-url",
+        "https://pypi.tuna.tsinghua.edu.cn/simple",
+        "--generate-hashes",
+        "--only-binary",
+        ":all:",
+        "requirements.in",
+        "--output-file",
+        "requirements.lock"
+      ],
+      "status": "passed",
+      "owned_group_pid": 34534,
+      "exit_code": 0,
+      "elapsed_seconds": 9.486601917014923
+    },
+    {
+      "command": [
+        "uv",
+        "pip",
+        "sync",
+        "--python",
+        "/Users/zhubby/Repository/CyberAudio/.context/robustness/reference-parity-20261107/runtime/bin/python",
+        "--index-url",
+        "https://pypi.tuna.tsinghua.edu.cn/simple",
+        "--require-hashes",
+        "--only-binary",
+        ":all:",
+        "requirements.lock"
+      ],
+      "status": "passed",
+      "owned_group_pid": 34578,
+      "exit_code": 0,
+      "elapsed_seconds": 77.95285312499618
+    }
+  ],
+  "scope": "New private Python environment only; no production app/runtime/config/models modified",
+  "elapsed_seconds": 87.44058345904341,
+  "lock_sha256": "4cac7112159b7e3706d108b94a052396bb3b8215e6a4ac2faf31f67eccac3916",
+  "finished": "2026-11-06T16:37:40.693401+00:00"
+}

@@ -1,0 +1,73 @@
+{
+  "status": "verified",
+  "verified_at": "2026-11-06T16:52:31.963718+00:00",
+  "source_commit": "daddf076bfeb1ce04292acb1cbafe27493499b7e",
+  "cases": [
+    {
+      "id": "known-failure",
+      "steps": 32,
+      "eos_seen": false,
+      "stop_reason": "step_limit",
+      "prepared_comparisons_exact": 4,
+      "step_comparisons_exact": 160,
+      "maximum_absolute_error": 0
+    },
+    {
+      "id": "short-control",
+      "steps": 32,
+      "eos_seen": false,
+      "stop_reason": "step_limit",
+      "prepared_comparisons_exact": 4,
+      "step_comparisons_exact": 160,
+      "maximum_absolute_error": 0
+    },
+    {
+      "id": "eric-english-numeric",
+      "steps": 32,
+      "eos_seen": false,
+      "stop_reason": "step_limit",
+      "prepared_comparisons_exact": 4,
+      "step_comparisons_exact": 160,
+      "maximum_absolute_error": 0
+    },
+    {
+      "id": "dylan-english-numeric",
+      "steps": 18,
+      "eos_seen": true,
+      "stop_reason": "eos",
+      "prepared_comparisons_exact": 4,
+      "step_comparisons_exact": 90,
+      "maximum_absolute_error": 0
+    },
+    {
+      "id": "date-name-control",
+      "steps": 32,
+      "eos_seen": false,
+      "stop_reason": "step_limit",
+      "prepared_comparisons_exact": 4,
+      "step_comparisons_exact": 160,
+      "maximum_absolute_error": 0
+    }
+  ],
+  "total_steps": 146,
+  "tensor_files": 151,
+  "tensor_arrays": 896,
+  "snapshot_bytes": 12541858,
+  "exact_comparisons": 750,
+  "auxiliary_top1_agreements": 2190,
+  "maximum_absolute_error": 0,
+  "original_failure_token_and_pcm_prefix_exact": true,
+  "owned_process_groups_absent": true,
+  "current_source_hashes_verified": 96,
+  "original_model_files_verified": 568,
+  "frozen_files_verified": 8,
+  "production_preserved": true,
+  "shared_sdk_and_objects_preserved": true,
+  "unmodified_reference_source_verified": true,
+  "independent_full_workload_rerun": false,
+  "limits": [
+    "At most 32 teacher-forced steps per case; no complete Python sampling/decode/content acceptance",
+    "Known failure parity is the captured prefix, not a new 1200-step failure reproduction",
+    "No M4 strict soak, complete public download, physical/listening or distribution gate acceptance"
+  ]
+}

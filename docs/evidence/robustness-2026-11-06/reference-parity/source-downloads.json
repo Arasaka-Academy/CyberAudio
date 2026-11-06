@@ -1,0 +1,52 @@
+{
+  "mlx": {
+    "recent_versions": [
+      "0.31.0",
+      "0.31.1",
+      "0.31.2",
+      "0.32.0",
+      "0.32.1",
+      "0.32.2",
+      "0.32.3",
+      "0.32.4"
+    ]
+  },
+  "mlx-lm": {
+    "recent_versions": [
+      "0.30.7",
+      "0.31.0",
+      "0.31.1",
+      "0.31.2",
+      "0.31.3",
+      "0.32.0",
+      "0.32.1",
+      "0.32.2"
+    ],
+    "selected": {
+      "version": "0.32.2",
+      "file": "mlx_lm-0.32.2-py3-none-any.whl",
+      "sha256": "5c0991248cfff5872503d74f466d2532dd8cb7fb3670cb9be7a06d7305dadc04",
+      "url": "https://pypi.tuna.tsinghua.edu.cn/packages/d1/4f/000eefdeb41388782b47e7f39904cf2d9e7e49a60df5e172097c358dba8e/mlx_lm-0.32.2-py3-none-any.whl",
+      "bytes": 546040
+    }
+  },
+  "mlx-audio": {
+    "recent_versions": [
+      "0.5.7",
+      "0.5.8",
+      "0.5.9",
+      "0.6.0",
+      "0.6.1",
+      "0.6.2",
+      "0.6.3",
+      "0.6.4"
+    ],
+    "selected": {
+      "version": "0.6.4",
+      "file": "mlx_audio-0.6.4-py3-none-any.whl",
+      "sha256": "ec5379833fb0d4aacf2cfd681ee3a35f9ca4c0fdbac47022d6e934572763f7c1",
+      "url": "https://pypi.tuna.tsinghua.edu.cn/packages/f6/8d/4b8ced39134bd2e79f1a3514caac7a52f884b83aabb41b3020cb47312d4f/mlx_audio-0.6.4-py3-none-any.whl",
+      "bytes": 2567536
+    }
+  }
+}

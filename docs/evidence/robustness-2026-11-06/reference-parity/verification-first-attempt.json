@@ -1,0 +1,7 @@
+{
+  "status": "failed_verifier_assumption",
+  "source_sha256": "6434ba35e26402541b7852182be9e4b7fc23330a95c3595e8c5f5668c0f637e5",
+  "error_type": "KeyError",
+  "error": "U32",
+  "scope": "The first independent parser assumed only signed codec integers; the corrected verifier accepts the actual U32 or I32 safetensors representation. No capture, reference comparison, workload, or model was rerun."
+}

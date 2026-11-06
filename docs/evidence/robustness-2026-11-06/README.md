@@ -31,6 +31,7 @@
 | [language-routing/README.md](language-routing/README.md) | R11 方言音色显式英文路由红绿修复及 36／40／14 完整检查；最新 `5479313` App 实际完整验收与同 M1 100／100 一致；英文数字自动回读仍未确认正确 |
 | [text-layout/README.md](text-layout/README.md) | 当前 R11 私有 SDK 的两种官方文本布局：五组配对／十次生成、17 次最终 App ASR；已知失败能结束但正常控制回读回退，数字质量仍未接受，未采用；追加桌面工具不可用和字节保留证据 |
 | [model-preservation/README.md](model-preservation/README.md) | R12 移除 SDK 异常加载时整目录删除；真实权重加载红绿对照、八项适配器回归和 36／44／14 完整检查；`b5607f2` 当前 App 完整原生验收及独立复核通过，同 M1 旧版 100／100 一致 |
+| [reference-parity/README.md](reference-parity/README.md) | 五个固定样本、146 个强制 codec 步骤的 Swift／未修改 Python 参考前向对照；750 项张量比较数值一致、误差为零，原失败前缀和生产数据保留；不包含采样、完整解码或质量通过结论 |
 
 完整原始记录保留在开发工作区 `.context/robustness/`，原始检查日志在 `/tmp/cyberaudio-robustness-*.log`，不会作为分发材料上传。
 
