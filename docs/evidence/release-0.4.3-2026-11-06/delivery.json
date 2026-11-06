@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-06T07:38:21.727131+00:00",
+  "checked_at": "2026-11-06T08:15:40.151716+00:00",
   "release_version": "0.4.3 (10)",
   "release_commit": "93721b91f379e1da310c086980a49286685abc51",
   "published_and_assets_verified": true,
@@ -21,11 +21,16 @@
   },
   "desktop_validation": {
     "attempted": true,
-    "local_screen_locked": true,
-    "result": "The official app is installed on both hosts. Local accessibility and input monitoring requirements still match the previous ad-hoc signature; refreshing them through System Settings awaits local desktop unlock. Mac mini dictation GUI permissions and physical key were not verified.",
+    "local_screen_locked": false,
+    "result": "Local 0.4.3 microphone, accessibility and input monitoring permissions are restored. The installed app reports the global listener running; the user confirmed the physical Control + Shift + K press displays the widget. Real speech insertion and Mac mini dictation GUI remain unverified.",
     "new_version_installed_menu_bar_screenshot_verified": false,
     "in_app_update_prompt_verified": false,
-    "dictation_status_evidence": "dictation-installation-status.json"
+    "dictation_status_evidence": "dictation-installation-status.json",
+    "local_permissions_granted": true,
+    "local_global_listener_running": true,
+    "local_physical_shortcut_widget_confirmed": true,
+    "local_permission_refresh_evidence": "local-permission-refresh.json",
+    "local_permission_refresh_service_smoke": "local-permission-refresh-service.json"
   },
   "signing": "ad-hoc code signing and Sparkle EdDSA; Developer ID notarization not claimed",
   "installations": {

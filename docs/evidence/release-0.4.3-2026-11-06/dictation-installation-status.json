@@ -1,13 +1,16 @@
 {
-  "checked_at": "2026-11-06T07:36:07.175476+00:00",
+  "checked_at": "2026-11-06T08:15:40.151716+00:00",
   "installed_version": "0.4.3 (10)",
-  "local_screen_locked": true,
+  "local_screen_locked": false,
   "dictation_shortcut_preserved": "Control + Shift + K",
-  "accessibility_requirement_matches_installed_app": false,
-  "input_monitoring_requirement_matches_installed_app": false,
-  "global_dictation_ready": false,
-  "action_required": "Unlock the local desktop; remove the old CyberAudio entries in normal System Settings and add the installed app. Complete any system authentication in the system window.",
-  "system_tcc_writes_performed": false,
+  "microphone_granted": true,
+  "accessibility_requirement_matches_installed_app": true,
+  "input_monitoring_requirement_matches_installed_app": true,
+  "global_dictation_ready": true,
+  "physical_shortcut_widget_confirmed_by_user": true,
+  "real_speech_transcription_verified": false,
+  "cross_app_text_insertion_verified": false,
+  "direct_tcc_database_writes_performed": false,
   "release_app_resigned": false,
   "mac_mini_dictation_gui_verified": false,
   "mac_mini_system_permissions": {
@@ -15,5 +18,25 @@
     "system_permissions": [],
     "gui_verified": false
   },
-  "mac_mini_physical_shortcut_verified": false
+  "mac_mini_physical_shortcut_verified": false,
+  "permission_refresh_evidence": "local-permission-refresh.json",
+  "initial_installation_status": {
+    "checked_at": "2026-11-06T07:36:07.175476+00:00",
+    "installed_version": "0.4.3 (10)",
+    "local_screen_locked": true,
+    "dictation_shortcut_preserved": "Control + Shift + K",
+    "accessibility_requirement_matches_installed_app": false,
+    "input_monitoring_requirement_matches_installed_app": false,
+    "global_dictation_ready": false,
+    "action_required": "Unlock the local desktop; remove the old CyberAudio entries in normal System Settings and add the installed app. Complete any system authentication in the system window.",
+    "system_tcc_writes_performed": false,
+    "release_app_resigned": false,
+    "mac_mini_dictation_gui_verified": false,
+    "mac_mini_system_permissions": {
+      "checked_at": "2026-11-06T07:36:38.364550+00:00",
+      "system_permissions": [],
+      "gui_verified": false
+    },
+    "mac_mini_physical_shortcut_verified": false
+  }
 }

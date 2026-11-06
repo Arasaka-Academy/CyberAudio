@@ -1,0 +1,115 @@
+{
+  "status": "passed",
+  "checked_at": "2026-11-06T08:15:40.151716+00:00",
+  "version": "0.4.3 (10)",
+  "method": "Normal macOS System Settings and the installed app permission requests; user completed system authentication.",
+  "system_permission_requirements": [
+    {
+      "service": "kTCCServiceListenEvent",
+      "authorization": 2,
+      "matches_installed_release": true
+    },
+    {
+      "service": "kTCCServiceAccessibility",
+      "authorization": 2,
+      "matches_installed_release": true
+    }
+  ],
+  "installed_app_cdhash": "ab0bd509116f09c7de36254be0bf9d6618098235",
+  "release_app_resigned": false,
+  "direct_tcc_database_writes_performed": false,
+  "microphone_authorized_in_installed_app": true,
+  "input_monitoring_authorized_in_installed_app": true,
+  "accessibility_authorized_in_installed_app": true,
+  "global_listener_running": true,
+  "shortcut": "Control + Shift + K",
+  "physical_shortcut": {
+    "checked_at": "2026-11-06T08:11:03.535840+00:00",
+    "version": "0.4.3 (10)",
+    "shortcut": "Control + Shift + K",
+    "hold_seconds_approximate": 2,
+    "speech_requested": false,
+    "widget_appeared": true,
+    "evidence_source": "user explicitly confirmed widget appeared after physical key press",
+    "real_speech_transcription_verified": false,
+    "cross_app_text_insertion_verified": false
+  },
+  "gui": {
+    "checked_at": "2026-11-06T08:13:32.141661+00:00",
+    "pid": 18420,
+    "window_id": 23983,
+    "window_title": "听写",
+    "version": "0.4.3 (10)",
+    "microphone_granted": true,
+    "accessibility_granted": true,
+    "input_monitoring_granted": true,
+    "enabled": true,
+    "listener_running": true,
+    "shortcut": "Control + Shift + K",
+    "listener_evidence": "The installed app displays the permissionSummary branch that requires listenerRunning == true.",
+    "tree_markdown": "- [0] AXWindow \"听写\" [id=com_apple_SwiftUI_Settings_window actions=[raise]]\n  - AXStaticText = \"随处听写\"\n  - AXStaticText = \"按住 ⌃⇧K 录音，松开后在原输入框输出\"\n  - [1] AXCheckBox (启用快捷听写) [actions=[press]]\n  - AXStaticText = \"长按录音\"\n  - AXStaticText = \"⌃⇧K\"\n  - [2] AXButton (修改…) [actions=[press]]\n  - [3] AXButton (恢复默认) [actions=[press]]\n  - AXHeading (使用权限)\n  - AXImage (已选择)\n  - AXStaticText = \"麦克风\"\n  - AXStaticText = \"录制要识别的语音\"\n  - AXButton (已开启)\n  - AXImage (已选择)\n  - AXStaticText = \"辅助功能\"\n  - AXStaticText = \"在原输入框写入识别结果\"\n  - AXButton (已开启)\n  - AXImage (已选择)\n  - AXStaticText = \"输入监控\"\n  - AXStaticText = \"在其他应用中识别听写快捷键\"\n  - AXButton (已开启)\n  - AXStaticText = \"松开结束 · Esc 取消\"\n  - AXStaticText = \"识别时切换应用或输入框，结果会保留在主窗口，供你复制。不会自动回车或发送消息。\"\n  - AXStaticText = \"关闭主窗口后仍可听写；右 Option 配合其他按键时保留正常输入。\"\n  - [4] AXToolbar [actions=[showmenu]]\n    - [5] AXButton \"听写\" (听写) [actions=[press,name:move next\ntarget:0x0\nselector:(null),name:remove from toolbar\ntarget:0x0\nselector:(null)]]\n    - [6] AXButton \"服务\" (服务) [actions=[press,name:move previous\ntarget:0x0\nselector:(null),name:move next\ntarget:0x0\nselector:(null),name:remove from toolbar\ntarget:0x0\nselector:(null)]]\n    - [7] AXButton \"通用与更新\" (通用与更新) [actions=[press,name:move previous\ntarget:0x0\nselector:(null),name:remove from toolbar\ntarget:0x0\nselector:(null)]]\n  - [8] AXButton [actions=[press]]\n  - AXStaticText = \"听写\"\n",
+    "screenshot": "local-dictation-permissions.png"
+  },
+  "original_release_identity_and_configuration": {
+    "checked_at": "2026-11-06T08:07:19.290079+00:00",
+    "version": "0.4.3 (10)",
+    "release_executables_and_icons_unchanged": true,
+    "strict_codesign": true,
+    "configuration_and_token_preserved": true,
+    "config_file_count": 4,
+    "shortcut": "Control + Shift + K",
+    "ready": {
+      "application": "CyberAudio",
+      "busy": false,
+      "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+      "model": "qwen3-asr-1.7b",
+      "models": {
+        "stt": "ready",
+        "tts": "ready"
+      },
+      "startup": {
+        "backend": "mlx-swift",
+        "device": "metal",
+        "load_ms": 2643.8770419918,
+        "metal_active_bytes": 5578423720,
+        "metal_peak_bytes": 6437814276,
+        "process_peak_rss_bytes": 3649421312,
+        "verification_ms": 5379.5506250462495,
+        "warmup_ms": 1605.0011250190437
+      },
+      "status": "ready",
+      "updating": false
+    }
+  },
+  "after_permission_refresh_service_smoke": {
+    "status": "passed",
+    "fixture_kind": "macOS synthetic speech",
+    "stt_requests": 2,
+    "tts_requests": 2,
+    "update_prepare_pause_cancel": true,
+    "configuration_and_token_preserved": true,
+    "final_ready": {
+      "application": "CyberAudio",
+      "busy": false,
+      "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+      "model": "qwen3-asr-1.7b",
+      "models": {
+        "stt": "ready",
+        "tts": "ready"
+      },
+      "startup": {
+        "backend": "mlx-swift",
+        "device": "metal",
+        "load_ms": 2643.8770419918,
+        "metal_active_bytes": 5578423720,
+        "metal_peak_bytes": 6437814276,
+        "process_peak_rss_bytes": 3649421312,
+        "verification_ms": 5379.5506250462495,
+        "warmup_ms": 1605.0011250190437
+      },
+      "status": "ready",
+      "updating": false
+    }
+  },
+  "real_speech_and_cross_app_insertion_verified": false
+}
