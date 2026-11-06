@@ -1,0 +1,167 @@
+{
+  "runner": {
+    "status": "failed",
+    "started": "2026-11-06T14:41:25.199284+00:00",
+    "maximum_seconds": 3600,
+    "disk_reserve_bytes": 3221225472,
+    "scope": "One actual final-App Assets CLI run with bounded range retries and one small-range fallback; retained public partials; no model inference or App install",
+    "candidate": {
+      "purpose": "Exact signed Assets and Core resource bundle from final f42bafe isolated App; bounded range retries and once-per-asset 1MiB fallback; no App installation or inference",
+      "source_commit": "f42bafeecdb0663020c0110ee3e1e2678fd6cb2c",
+      "helper_sha256": "06698db17958ab5adc2da7d1a1d9b23cbc34c57b67e1b1fb5cf7e9fd0e7adb1c",
+      "source_sha256": "54545d899c845fad37171991e61a1e2688c221a84494bc23e3aff7230d143be1",
+      "models_lock_sha256": "668125b12cc2c1b469925e1eb60c79171c6f9623470622c619e4583971f4e816",
+      "local_smoke": "prepare/status passed; original configuration and all installed Apps untouched",
+      "files": {
+        "CyberAudioAssets": "06698db17958ab5adc2da7d1a1d9b23cbc34c57b67e1b1fb5cf7e9fd0e7adb1c",
+        "CyberAudioNative_CyberAudioCore.bundle/Contents/Info.plist": "66a9e3ab53991203954cb488314c8254cc97bc000cb3c92503bca9cdf95e850a",
+        "CyberAudioNative_CyberAudioCore.bundle/Contents/Resources/Models.lock.json": "668125b12cc2c1b469925e1eb60c79171c6f9623470622c619e4583971f4e816",
+        "CyberAudioNative_CyberAudioCore.bundle/Contents/_CodeSignature/CodeDirectory": "ae01e6bb9b3fc66f036c2cf23f70eee126c5c11f794b0297a3c74a84a1f3fc55",
+        "CyberAudioNative_CyberAudioCore.bundle/Contents/_CodeSignature/CodeRequirements": "987920904eab650e75788c054aa0b0524e6a80bfc71aa32df8d237a61743f986",
+        "CyberAudioNative_CyberAudioCore.bundle/Contents/_CodeSignature/CodeResources": "f269a0c2925888b405544b1921d0cd88d5cfb0dd02249a9f3dc92b5fa67ad69e",
+        "CyberAudioNative_CyberAudioCore.bundle/Contents/_CodeSignature/CodeSignature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "runner_sha256": "6528e3dcb24eab780199a618510234d23ada33ee68a3d39ebb9d140ea2dde794",
+    "production_before": {
+      "instance": "5A940C69-D3EA-4444-8C04-446D211C319F",
+      "status": "ready",
+      "config_sha256": "cabe58f37637430abd7c610cc215083996ddf810a892ac469bd5c884a321d017",
+      "token_sha256": "aa8792163e9d9e591958a8ec4d4a5a94c9c2c470ec4e7af829c6117186fc5228"
+    },
+    "model_inference_not_run": true,
+    "elapsed_seconds": 15.390533625002718,
+    "before": {
+      "verified_bytes": 2469536771,
+      "missing_files": 9,
+      "ffmpeg_path": "/opt/homebrew/bin/ffmpeg",
+      "models_ready": false,
+      "required_bytes": 5622764634,
+      "event": "status",
+      "invalid_files": [],
+      "ffmpeg_ready": true,
+      "resumable_bytes": 117440512,
+      "can_download": true,
+      "available_bytes": 15558254592,
+      "invalid_partials": [],
+      "total_bytes": 5547997530
+    },
+    "child_pid": 68454,
+    "exit_code": 1,
+    "final_status": {
+      "invalid_files": [],
+      "invalid_partials": [],
+      "required_bytes": 5622764634,
+      "models_ready": false,
+      "verified_bytes": 2469536771,
+      "can_download": true,
+      "available_bytes": 15558242304,
+      "ffmpeg_path": "/opt/homebrew/bin/ffmpeg",
+      "event": "status",
+      "resumable_bytes": 117440512,
+      "ffmpeg_ready": true,
+      "total_bytes": 5547997530,
+      "missing_files": 9
+    },
+    "error": "Actual download did not complete",
+    "production_after": {
+      "instance": "5A940C69-D3EA-4444-8C04-446D211C319F",
+      "status": "ready",
+      "config_sha256": "cabe58f37637430abd7c610cc215083996ddf810a892ac469bd5c884a321d017",
+      "token_sha256": "aa8792163e9d9e591958a8ec4d4a5a94c9c2c470ec4e7af829c6117186fc5228"
+    },
+    "production_preserved": true,
+    "configuration_token_preserved": true,
+    "finished": "2026-11-06T14:41:40.598300+00:00"
+  },
+  "observed_at": "2026-11-06T14:43:48.100671+00:00",
+  "owned_processes_absent": true,
+  "final_files": [
+    {
+      "path": "asr/README.md",
+      "bytes": 1008,
+      "expected_bytes": 1008
+    },
+    {
+      "path": "asr/chat_template.json",
+      "bytes": 1161,
+      "expected_bytes": 1161
+    },
+    {
+      "path": "asr/config.json",
+      "bytes": 7188,
+      "expected_bytes": 7188
+    },
+    {
+      "path": "asr/generation_config.json",
+      "bytes": 142,
+      "expected_bytes": 142
+    },
+    {
+      "path": "asr/merges.txt",
+      "bytes": 1671853,
+      "expected_bytes": 1671853
+    },
+    {
+      "path": "asr/model.safetensors",
+      "bytes": 2463307541,
+      "expected_bytes": 2463307541
+    },
+    {
+      "path": "asr/model.safetensors.index.json",
+      "bytes": 78968,
+      "expected_bytes": 78968
+    },
+    {
+      "path": "asr/preprocessor_config.json",
+      "bytes": 330,
+      "expected_bytes": 330
+    },
+    {
+      "path": "asr/tokenizer_config.json",
+      "bytes": 12487,
+      "expected_bytes": 12487
+    },
+    {
+      "path": "asr/vocab.json",
+      "bytes": 2776833,
+      "expected_bytes": 2776833
+    },
+    {
+      "path": "tts/README.md",
+      "bytes": 1118,
+      "expected_bytes": 1118
+    },
+    {
+      "path": "tts/config.json",
+      "bytes": 6058,
+      "expected_bytes": 6058
+    },
+    {
+      "path": "tts/generation_config.json",
+      "bytes": 245,
+      "expected_bytes": 245
+    },
+    {
+      "path": "tts/merges.txt",
+      "bytes": 1671839,
+      "expected_bytes": 1671839
+    }
+  ],
+  "partials": [
+    {
+      "name": "tmp/downloads/b696f4bf45f54497b6de758981e76f1410bd68af05a657477dee466b0202df1a.partial",
+      "bytes": 117440512
+    }
+  ],
+  "raw_snapshot_sha256": "a3035532fc4e6d7850ee27b19c307fc54605e9263e5acbfcf87b0f2b796d5c30",
+  "terminal_error": {
+    "event": "error",
+    "code": "download_unavailable",
+    "message": "无法验证安全下载连接，已保留进度；请检查网络或代理后继续。"
+  },
+  "ndjson_sha256": "1cabc5611fdacb7f6a6bee5d3870b31ebe4563619ad4839c9abd9f146f1cfc56",
+  "ndjson_lines": 16,
+  "stderr_bytes": 0,
+  "scope": "Actual exact final-App Assets failed at secure-connection validation; no range fallback on TLS failures, no full public download or fresh-root inference accepted"
+}

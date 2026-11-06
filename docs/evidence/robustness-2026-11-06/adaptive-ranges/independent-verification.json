@@ -1,0 +1,80 @@
+{
+  "status": "verified_native_run",
+  "verified_at": "2026-11-06T14:43:47.167813+00:00",
+  "source_commit": "f42bafeecdb0663020c0110ee3e1e2678fd6cb2c",
+  "native_exit_code": 0,
+  "native_status": "passed",
+  "collector_status": "passed",
+  "collector_error": null,
+  "collector_failure_preserved": false,
+  "workload_rerun": false,
+  "scope": "Read-only independent verification of native report, final bytes, all corpus hashes, all nine WAV frames, cancellation/lifecycle, process cleanup, frozen artifacts and production preservation",
+  "original_runner_sha256": "43809a1db54c9a254703009dd7545b5990d0b494e0e638c7c3dfc752cecf2a71",
+  "corrected_runner_sha256": "43809a1db54c9a254703009dd7545b5990d0b494e0e638c7c3dfc752cecf2a71",
+  "raw_result_sha256": "c6734c1038af2b4bc4e7f7d34e61760141b2e55a10021f92605542e65755e5c7",
+  "native_report_sha256": "d6c2db9075e4996a6c8de05e17a52b7abc834b41e55c8145c3e1a33d417bebd0",
+  "build_sha256": "ad10a2fcda407313c6480c6a3d3ecbff0014b90548def41f48f47c81926d9857",
+  "native_duration_seconds": 156.58334224997088,
+  "same_m1_old_helper_raw_matches": 100,
+  "corpus_count": 100,
+  "same_audio_hashes_references_languages": true,
+  "differences": [],
+  "wav_verification": [
+    {
+      "voice": "serena",
+      "frames": 49920,
+      "sha256": "513bdbcb11429cf7a2b0654c36af762a37b788440018c3f0ae392c2a4d842c8e"
+    },
+    {
+      "voice": "vivian",
+      "frames": 55680,
+      "sha256": "2d75c8026500148ed7a90c2c4e5224846c05495436b8423e0523888081bd6f4c"
+    },
+    {
+      "voice": "uncle_fu",
+      "frames": 65280,
+      "sha256": "4a63a05c56067c15d55ba3ab0d921d0a59d32f722ca20d7921e6e4871228f0aa"
+    },
+    {
+      "voice": "ryan",
+      "frames": 67200,
+      "sha256": "ec485f8647d7df9d91c5c0ebb27369e34c7cdbe4fc363e4f7c98967d85b267bc"
+    },
+    {
+      "voice": "aiden",
+      "frames": 61440,
+      "sha256": "67f6acff2fc89450d4df3dd3e83a387c737ceb0f88fb10863bed5d0678f2fcc7"
+    },
+    {
+      "voice": "ono_anna",
+      "frames": 51840,
+      "sha256": "ed61c1796aa66469edc8a5266b6ec1d93da887841fc8bdb906c45a28afd7e673"
+    },
+    {
+      "voice": "sohee",
+      "frames": 48000,
+      "sha256": "f7724a6f0b8a1fb2e691b0170b30f0c6e04ff066433e1dce3f8fb807c4e12f2f"
+    },
+    {
+      "voice": "eric",
+      "frames": 71040,
+      "sha256": "926891dcf82768ddd704448610a8c4c8c4fe97fbb1a058caacec88ea0c630a31"
+    },
+    {
+      "voice": "dylan",
+      "frames": 48000,
+      "sha256": "76752170f9992ee63d9e469bda35649a0310cf4b6ef9e057a2f3481676fe06ef"
+    }
+  ],
+  "strict_nested_signatures": true,
+  "owned_processes_absent": true,
+  "owned_listener_closed": true,
+  "temporary_request_count": 0,
+  "frozen_preserved": true,
+  "candidate_bytes_preserved": true,
+  "production_preserved": true,
+  "limitations": [
+    "This is the completed local M1 full gate, not the failed strict M4 soak or public download gate",
+    "No physical microphone/listening/unplug/sleep, interactive dictation or notarized GUI upgrade acceptance"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "status": "built",
+  "at": "2026-11-06T14:39:25.124127+00:00",
+  "source_commit": "f42bafeecdb0663020c0110ee3e1e2678fd6cb2c",
+  "scope": "Isolated current App, Service and Assets; frozen dist App and DMG preserved; no installation/publication/notarization",
+  "bundle_id": "local.cyberaudio.validation.finalbytessmallrange",
+  "signing": "adhoc",
+  "strict_nested_signature": true,
+  "bundled_assets_prepare": true,
+  "app": "/Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/final-bytes-small-range/CyberAudio.app",
+  "files": {
+    "Contents/MacOS/CyberAudio": {
+      "bytes": 2528032,
+      "sha256": "8be9cf9a4b3312e3e721e13e6ef84345e074ff7e4914385b1174057b4e9ee2be"
+    },
+    "Contents/Helpers/CyberAudioService": {
+      "bytes": 73095248,
+      "sha256": "e9a9c159eb56150b07a59729c70e73b021282c07fc2331dcb468e8cdd98ad30e"
+    },
+    "Contents/Helpers/CyberAudioAssets": {
+      "bytes": 7512864,
+      "sha256": "06698db17958ab5adc2da7d1a1d9b23cbc34c57b67e1b1fb5cf7e9fd0e7adb1c"
+    },
+    "Contents/Resources/mlx.metallib": {
+      "bytes": 214156448,
+      "sha256": "c6d7a3facb83568f6e4cb2cf4a8c736ee29302571a48343cb9a3a4d1cd3e3893"
+    },
+    "Contents/Resources/offline.sb": {
+      "bytes": 52,
+      "sha256": "e210de323e5d671bb6b63b79ce1481f8314b5ac2fd65d65a180d381294ee2fa1"
+    },
+    "Contents/Info.plist": {
+      "bytes": 1619,
+      "sha256": "38749d0f48c4f67218842072eadbc1dd94b88cf51b59108e747a0043bc8b0d3b"
+    },
+    "Contents/Helpers/CyberAudioNative_CyberAudioCore.bundle/Contents/Resources/Models.lock.json": {
+      "bytes": 4163,
+      "sha256": "668125b12cc2c1b469925e1eb60c79171c6f9623470622c619e4583971f4e816"
+    }
+  },
+  "input_binaries": {
+    "Contents/MacOS/CyberAudio": "106a543c396c987fb7e4545cb79911ac665e9e3234d250135ebfffb7c4f20f37",
+    "Contents/Helpers/CyberAudioService": "209f05d2f0842ca6894f5c3d9c7a8f3ff5623b6540d33fb724e9dc47ce2351a9",
+    "Contents/Helpers/CyberAudioAssets": "9b4810163db941faab2dd3127fc4405daa63998d77e5eb43c50589d1346a1c61"
+  },
+  "driver_sha256": "90152a026e328d0a747ae976eab798a567cd493c1edf1ce505e5a2a95852f13d",
+  "driver_source_sha256": "73b90d861ea9059db126f2874696faca284d6845318fa7eb97db0172c571c03a",
+  "model_lock_sha256": "668125b12cc2c1b469925e1eb60c79171c6f9623470622c619e4583971f4e816",
+  "frozen_preserved": true,
+  "frozen_sha256": {
+    "dist/CyberAudio.app/Contents/MacOS/CyberAudio": "3781116ffa8198c7d6d45b46ccd087592db97f04300333dd32d7a3ab177f279e",
+    "dist/CyberAudio.app/Contents/Helpers/CyberAudioService": "cc556b65e263e16218db4315ed8585dccaede7b5f539be7bbd68a4b04e841a89",
+    "dist/CyberAudio.app/Contents/Helpers/CyberAudioAssets": "719cf86bd9bb4e9cfffb32e29af40d6a8dc4f5cad007273b8856b02f1f8b5d46",
+    "dist/CyberAudio.app/Contents/Resources/mlx.metallib": "c6d7a3facb83568f6e4cb2cf4a8c736ee29302571a48343cb9a3a4d1cd3e3893",
+    "dist/CyberAudio.app/Contents/Info.plist": "6e4487b0a36c696ed2fd5fb89508ac605c206bb68096f93bfd7ba80b6bffa5db",
+    "dist/CyberAudio-0.4.3-robustness.playback-macOS-arm64.dmg": "de4589039a1c42922e5cb12909804fdae1faad4cb3ddf88dfbf1bbc3c36699d7"
+  }
+}

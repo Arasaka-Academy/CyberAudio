@@ -1,0 +1,34 @@
+{
+  "source_commit": "f42bafeecdb0663020c0110ee3e1e2678fd6cb2c",
+  "red": {
+    "exit_code": 1,
+    "cases": 36,
+    "failures": 2,
+    "sha256": "86734a44a3aea08db2b9c408de765f8fb08a2c86aa00802e9f60ce62ca38d0b4",
+    "failed_assertions_or_errors": [
+      "FAIL /Users/zhubby/Repository/CyberAudio/Native/Tests/CyberAudioCoreTests/Runner.swift:98: interrupted large ranges fall back without losing prefix: ServiceError(status: 502, code: \"download_unavailable\", message: \"下载连接中断，已保留进度；请检查网络或代理后继续。\")",
+      "FAIL /Users/zhubby/Repository/CyberAudio/Native/Tests/CyberAudioCoreTests/AssetDownloadTests.swift:45: [\"bytes=0-2097151\", \"bytes=2097152-4194303\", \"bytes=2097152-4194303\", \"bytes=2097152-4194303\"] != [\"bytes=0-2097151\", \"bytes=2097152-4194303\", \"bytes=2097152-4194303\", \"bytes=2097152-4194303\", \"bytes=2097152-3145727\", \"bytes=2097152-3145727\", \"bytes=2097152-3145727\"]. One fallback may try the smaller range at most three times, then return control"
+    ]
+  },
+  "green": {
+    "exit_code": 0,
+    "cases": 36,
+    "failures": 0,
+    "skipped": 0,
+    "sha256": "f5f9439e244320ab301e7b7ca170b3c329a46b957ba23dbd5094645c88bed04a"
+  },
+  "full": {
+    "command": "CYBERAUDIO_NATIVE_SCRATCH=.context/icon-native-build make check",
+    "exit_code": 0,
+    "native_contracts": 36,
+    "failures": 0,
+    "skipped": 0,
+    "active_tools_passed": 39,
+    "native_view_renders": 14,
+    "all_behavioral_groups": true,
+    "app_inference_service_assets_compiled": true,
+    "shell_syntax_and_plist": true,
+    "private_log": "/tmp/cyberaudio-small-range-check-20261106.log",
+    "sha256": "4f3b662b0aa746a3d2798b16aa4a9bbd7e0b5b612210873162d6f39c3093a20e"
+  }
+}
