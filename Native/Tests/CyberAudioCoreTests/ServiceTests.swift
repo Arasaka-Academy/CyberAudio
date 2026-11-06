@@ -190,6 +190,21 @@ final class ServiceTests: XCTestCase {
         let payload = "{\"input\":\"test\",\"stream\":true,\"response_format\":\"pcm\"}"
         let raw = try rawRequest(port:port,request:"POST /v1/audio/speech HTTP/1.1\r\nHost: localhost\r\nAuthorization: Bearer \(testToken)\r\nContent-Length: \(payload.utf8.count)\r\n\r\n\(payload)")
         XCTAssertTrue(raw.hasPrefix("HTTP/1.1 200")); XCTAssertFalse(raw.hasSuffix("0\r\n\r\n"))
+        let idLine = try XCTUnwrap(raw.components(separatedBy:"\r\n").first { $0.lowercased().hasPrefix("x-request-id: ") })
+        let id = String(idLine.dropFirst("x-request-id: ".count))
+        let (recordData,recordResponse) = try await request(base,"v1/requests/"+id)
+        XCTAssertEqual(recordResponse.statusCode,200)
+        let record = try JSONSerialization.jsonObject(with:recordData) as! [String:Any]
+        XCTAssertEqual(record["status"] as? String,"failed")
+        XCTAssertEqual(record["code"] as? String,"generation_limit")
+        XCTAssertEqual(record["message"] as? String,"shorten text", "Late stream failure must preserve the same safe message as the WAV response")
+        engine.lateFail = false; engine.fail = true
+        let slot = try state.acquire(kind:"tts"), done = expectation(description:"private failure recorded")
+        state.synthesize(try speech(),slot:slot,emit:{ _ in }) { _ in done.fulfill() }
+        wait(for:[done],timeout:2)
+        let privateRecord = try state.record(slot.id)
+        XCTAssertEqual(privateRecord["message"] as? String,ServiceError.inference.message)
+        XCTAssertFalse(String(decoding:try jsonData(privateRecord),as:UTF8.self).contains("private text"))
     }
     func testLoadingFailureHealthAndScopedCleanup() async throws {
         let (root,state,_) = try setup(install:false); state.initializationFailed()

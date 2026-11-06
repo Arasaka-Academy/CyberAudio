@@ -22,3 +22,7 @@ swiftc -swift-version 5 -parse-as-library -target arm64-apple-macos26.0 \
   Sources/CyberAudio/AudioWorkspace.swift Sources/CyberAudio/BackendController.swift tests/AudioWorkspaceTests.swift \
   -o .build/tests/audio-workspace
 .build/tests/audio-workspace
+swiftc -swift-version 5 -parse-as-library -target arm64-apple-macos26.0 \
+  Sources/CyberAudio/BackendController.swift tests/SpeechRequestStatusTests.swift \
+  -o .build/tests/speech-request-status
+.build/tests/speech-request-status

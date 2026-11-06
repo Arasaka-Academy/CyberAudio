@@ -43,6 +43,14 @@ private final class Fixture: InferenceEngine, @unchecked Sendable {
             let samples = (0..<24000).map { Int16(3000*sin(Double($0)*2*Double.pi*440/24000)).littleEndian }
             let pcm = samples.withUnsafeBytes { Data($0) }
             for offset in stride(from:0,to:pcm.count,by:4800) {
+                if offset >= 9600, let code = options()["late_failure"] as? String {
+                    let errors = [
+                        "generation_limit": ServiceError(422,"generation_limit","语音未能在长度上限内完整结束，请重试或分段生成。"),
+                        "inference_timeout": ServiceError.timeout,
+                        "inference_failed": ServiceError.inference
+                    ]
+                    if let error = errors[code] { throw error }
+                }
                 try cancellation.check(); try emit(pcm.subdata(in:offset..<min(offset+4800,pcm.count)))
                 try wait(options()["chunk_delay"] as? Double ?? 0,cancellation:cancellation)
             }

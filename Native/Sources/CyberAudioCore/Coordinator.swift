@@ -125,7 +125,8 @@ public final class ServiceCoordinator: @unchecked Sendable {
         var values = result
         if let error {
             let error = error as? ServiceError ?? .inference
-            values.merge(["status": error.code == "cancelled" ? "cancelled" : "failed", "code": error.code]) { _, new in new }
+            values.merge(["status": error.code == "cancelled" ? "cancelled" : "failed",
+                          "code": error.code, "message": error.message]) { _, new in new }
         } else { values["status"] = "completed" }
         records[slot.id]?.merge(values) { _, new in new }
         if active?.id == slot.id { active = nil }

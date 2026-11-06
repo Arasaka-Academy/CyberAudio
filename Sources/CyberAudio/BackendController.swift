@@ -43,6 +43,52 @@ struct APIErrorEnvelope: Decodable {
     let error: Detail
 }
 
+struct SpeechRequestStatus: Decodable {
+    enum State: String, Decodable { case running, completed, failed, cancelled }
+    let request_id: String
+    let kind: String
+    let status: State
+    let code: String?
+    let message: String?
+
+    var failure: CyberAudioError? {
+        guard status == .failed || status == .cancelled else { return nil }
+        // Older Helpers record only the code. Keep their terminal failures useful.
+        let fallback: String
+        switch code {
+        case "generation_limit": fallback = "语音生成达到长度上限，请重试或分段生成。"
+        case "inference_timeout": fallback = "语音生成处理超时，请重试或分段生成。"
+        case "cancelled": fallback = "语音生成已取消。"
+        default: fallback = "语音生成失败，请重试。"
+        }
+        return .message(message.flatMap { $0.isEmpty ? nil : $0 } ?? fallback)
+    }
+
+    static func fetch(_ request: URLRequest, expectedID: String) async throws -> Self {
+        guard expectedID.utf8.count == 16, expectedID.utf8.allSatisfy({ (48...57).contains($0) || (97...102).contains($0) }) else {
+            throw CyberAudioError.message("语音请求编号无效。")
+        }
+        try Task.checkCancellation()
+        // Bound the whole diagnostic response, including a stalled response body.
+        let configuration = URLSessionConfiguration.ephemeral
+        configuration.timeoutIntervalForRequest = 3
+        configuration.timeoutIntervalForResource = 3
+        configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
+        let session = URLSession(configuration: configuration)
+        defer { session.invalidateAndCancel() }
+        let (data, response) = try await session.data(for: request)
+        try Task.checkCancellation()
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+            throw CyberAudioError.message("暂时无法确认语音生成状态。")
+        }
+        let value = try JSONDecoder().decode(Self.self, from: data)
+        guard value.request_id == expectedID, value.kind == "tts" else {
+            throw CyberAudioError.message("语音状态不属于当前请求。")
+        }
+        return value
+    }
+}
+
 enum CyberAudioError: LocalizedError {
     case message(String)
     var errorDescription: String? { if case .message(let value) = self { return value }; return nil }
@@ -265,6 +311,10 @@ final class BackendController: ObservableObject {
         if let contentType { request.setValue(contentType, forHTTPHeaderField: "Content-Type") }
         request.httpBody = body
         return request
+    }
+
+    func speechRequestStatus(id: String) async throws -> SpeechRequestStatus {
+        try await SpeechRequestStatus.fetch(request(path: "/v1/requests/\(id)"), expectedID: id)
     }
 
     func check(_ response: URLResponse, data: Data) throws {

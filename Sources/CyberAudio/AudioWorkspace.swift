@@ -251,6 +251,8 @@ final class AudioWorkspace: NSObject, ObservableObject {
             guard let self else { return }
             defer { self.generating = false; self.generation = nil }
             let start = Date()
+            var streamingRequestID: String?
+            var inspectStreamingFailure = false
             do {
                 let object: [String: Any] = ["model": "qwen3-tts-1.7b", "input": self.text,
                     "voice": self.voice, "language": self.ttsLanguage, "instructions": self.instructions,
@@ -264,7 +266,10 @@ final class AudioWorkspace: NSObject, ObservableObject {
                         try backend.check(response, data: data)
                         return
                     }
+                    guard let id = http.value(forHTTPHeaderField: "X-Request-ID") else { throw CyberAudioError.message("响应缺少请求编号。") }
+                    streamingRequestID = id
                     try self.startPCMPlayer()
+                    inspectStreamingFailure = true
                     var pcm = Data()
                     var pending = Data()
                     var first: Double?
@@ -285,12 +290,11 @@ final class AudioWorkspace: NSObject, ObservableObject {
                     try Task.checkCancellation()
                     guard pending.count % 2 == 0 else { throw CyberAudioError.message("PCM 数据不完整。") }
                     if !pending.isEmpty { pcm.append(pending); self.schedule(pending) }
-                    guard let id = http.value(forHTTPHeaderField: "X-Request-ID") else { throw CyberAudioError.message("响应缺少请求编号。") }
-                    let (stateData, stateResponse) = try await backend.session.data(for: backend.request(path: "/v1/requests/\(id)"))
+                    inspectStreamingFailure = false
+                    let state = try await backend.speechRequestStatus(id: id)
                     try Task.checkCancellation()
-                    try backend.check(stateResponse, data: stateData)
-                    let state = try JSONSerialization.jsonObject(with: stateData) as? [String: Any]
-                    guard state?["status"] as? String == "completed", !pcm.isEmpty else {
+                    if let failure = state.failure { throw failure }
+                    guard state.status == .completed, !pcm.isEmpty else {
                         throw CyberAudioError.message("语音生成未完整结束，请缩短文本后重试。")
                     }
                     self.generated = Self.wav(pcm: pcm)
@@ -323,7 +327,19 @@ final class AudioWorkspace: NSObject, ObservableObject {
                 self.stopPlayback()
                 self.generated = Data()
                 if Task.isCancelled { self.ttsTiming = "已取消" }
-                else { self.reportError(error, for: .speech) }
+                else {
+                    var failure = error
+                    // A late engine failure can close chunked HTTP before its final
+                    // chunk. Recover only an authoritative failure for this request;
+                    // a completed/running/unavailable record cannot validate partial PCM.
+                    if inspectStreamingFailure, let id = streamingRequestID,
+                       let state = try? await backend.speechRequestStatus(id: id),
+                       let terminalFailure = state.failure {
+                        failure = terminalFailure
+                    }
+                    if Task.isCancelled { self.ttsTiming = "已取消" }
+                    else { self.reportError(failure, for: .speech) }
+                }
             }
         }
     }

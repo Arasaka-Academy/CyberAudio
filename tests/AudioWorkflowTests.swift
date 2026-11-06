@@ -75,6 +75,33 @@ struct AudioWorkflowTests {
         try options([:])
         try await Task.sleep(for: .milliseconds(300))
 
+        // A late engine failure closes real chunked HTTP after PCM was emitted.
+        // Streaming must expose the same safe server reason as nonstreaming WAV.
+        for code in ["generation_limit", "inference_timeout", "inference_failed"] {
+            try options(["late_failure": code, "chunk_delay": 0.1])
+            audio.streaming = false
+            audio.generate(using: backend)
+            try await until({ !audio.generating }, message: "Failed WAV request did not settle")
+            let expectedFailure = audio.errorMessage
+            try require(expectedFailure != nil && audio.generated.isEmpty && !audio.playing,
+                        "The WAV control must report its engine failure without publishing partial audio")
+            audio.streaming = true
+            audio.generate(using: backend)
+            try await until({ audio.generating && audio.playing }, message: "Late-failure regression did not receive playable PCM")
+            var failureDrained = false
+            let failureGate = UpdateGate(audioBusy: { audio.working || audio.playing }, prepare: { _ in true }, resume: { _ in })
+            failureGate.begin { failureDrained = true }
+            try require(!failureDrained, "Updates must wait while a failing stream still owns its response")
+            try await until({ !audio.generating && failureDrained }, message: "Failed stream and its update wait did not drain")
+            failureGate.reset()
+            try require(audio.errorMessage == expectedFailure,
+                        "Late \(code) must preserve the WAV server reason; expected \(expectedFailure ?? "nil"), received \(audio.errorMessage ?? "nil")")
+            try require(audio.errorOperation == .speech && audio.generated.isEmpty && !audio.playing,
+                        "A failed stream must retain no exportable WAV or playback ownership")
+            print("AudioWorkflow late \(code): safe WAV/PCM reason preserved; partial audio rejected; update wait drained")
+        }
+        try options([:])
+
         audio.text = "测试语音播放。"; audio.instructions = "自然。"
         audio.streaming = true
         audio.generate(using: backend)

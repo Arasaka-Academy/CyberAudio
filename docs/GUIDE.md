@@ -126,6 +126,8 @@ curl --fail-with-body "$CYBERAUDIO_BASE_URL/v1/requests/REQUEST_ID" \
 
 仅当记录 `status=completed` 时视为完成；`running`、`cancelled` 和 `failed` 都不能当作完整音频。生成必须遇到 EOS，最多 1200 个 codec token、约 100 秒输出；达到上限返回 `generation_limit`，流式已输出的部分不能当作完整结果。
 
+失败记录包含 `code` 和安全的 `message`；较旧 Helper 可能只有 `code`。App 在流读取结束或读取异常时有界查询当前请求状态，保留实际的长度上限、超时或推理失败原因。主动取消不触发额外诊断；状态不可用时保留原错误，未完整接收的音频不提供 WAV 导出。
+
 取消时关闭 HTTP 连接；工作线程在模型的取消边界停止并重置解码器。某些单次 Metal 操作无法立即中断，这期间仍保持忙状态。客户端停止等待不会提前释放模型槽。
 
 ## 10. Swift 客户端
@@ -146,6 +148,8 @@ for try await byte in bytes { /* 缓冲后按 PCM16 / 24000Hz / mono 播放 */ }
 ```
 
 客户端应处理 429 的退避重试。取消 Swift Task 后也应取消对应 URLSession 请求。
+
+流读取抛错时，也可在非主动取消的前提下有界查询同一请求的失败记录以显示原因；即使该记录为 `completed`，也不能把已中断接收的 PCM 当作完整成品。
 
 ## 11. 错误与隐私
 
@@ -185,7 +189,7 @@ export CYBERAUDIO_ASSETS='/Applications/CyberAudio.app/Contents/Helpers/CyberAud
 "$CYBERAUDIO_ASSETS" download --root "$CYBERAUDIO_DATA" --proxy http://127.0.0.1:7890
 ```
 
-只有此命令需要联网，可用无凭据的 HTTP 或 SOCKS5 代理；每个文件均校验大小和 SHA-256。正确文件会复用，已有摘要错误的文件会保留并报错，不自动覆盖。失败可再次运行，复用已完成文件。目前不支持单个大文件的断点续传，失败的大文件需重新下载。网络无响应 60 秒或单文件下载超过 30 分钟会失败。
+只有此命令需要联网，可用无凭据的 HTTP 或 SOCKS5 代理；每个文件均校验大小和 SHA-256。正确文件会复用，已有摘要错误的文件会保留并报错，不自动覆盖。下载按 Range 分段保存进度，取消或失败后可再次运行，复用已完成文件与持久分段；最终完整摘要通过后才发布模型文件。临时网络错误会有界重试，大分段反复超时或中断后可降为 1MiB，TLS／摘要等错误不会绕过验证。单次网络无响应 60 秒或响应超过 30 分钟会失败。需要重新开始异常分段时，按[首次准备说明](FIRST_RUN.md)使用显式重新下载选项。
 
 ### 12.4 离线校验与启动
 
