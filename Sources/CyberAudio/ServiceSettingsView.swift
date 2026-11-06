@@ -119,20 +119,33 @@ struct ServiceSettingsView: View {
             }
             Text(backend.detail).font(.caption).foregroundStyle(.secondary).lineLimit(2).textSelection(.enabled)
             GroupBox("模型") {
-                VStack(spacing: 12) {
+                VStack(alignment: .leading, spacing: 14) {
                     model("语音识别", name: "Qwen3-ASR 1.7B · 8-bit", revision: "a8379a2e2f9e")
                     model("语音合成", name: "Qwen3-TTS 1.7B · CustomVoice · 8-bit", revision: "41d3337e8b7f")
-                }.padding(8)
+                }.frame(maxWidth: .infinity, alignment: .leading).padding(8)
             }
             GroupBox("API 连接") {
-                VStack(spacing: 12) {
-                    LabeledContent("本机") { Text(backend.localURL).font(.caption.monospaced()).textSelection(.enabled) }
-                    LabeledContent("Tailscale") { Text(backend.httpsURL).font(.caption.monospaced()).textSelection(.enabled).lineLimit(1) }
-                    LabeledContent("API Token") {
-                        Text("••••••••••••").foregroundStyle(.secondary)
-                        Button(login.tokenCopied ? "已复制" : "复制 Token") { backend.copyToken(); login.tokenCopied = true }.disabled(backend.configuration == nil)
+                VStack(alignment: .leading, spacing: 14) {
+                    serviceRow("本机") {
+                        Text(backend.localURL).font(.caption.monospaced()).textSelection(.enabled)
                     }
-                }.font(.callout).padding(8)
+                    serviceRow("Tailscale") {
+                        if backend.httpsURL.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || backend.configuration == nil {
+                            Text("未配置").foregroundStyle(.secondary)
+                        } else {
+                            Text(backend.httpsURL).font(.caption.monospaced()).textSelection(.enabled)
+                                .fixedSize(horizontal: false, vertical: true)
+                        }
+                    }
+                    serviceRow("API Token") {
+                        HStack {
+                            Text("••••••••••••").foregroundStyle(.secondary)
+                            Spacer(minLength: 12)
+                            Button(login.tokenCopied ? "已复制" : "复制 Token") { backend.copyToken(); login.tokenCopied = true }
+                                .disabled(backend.configuration == nil)
+                        }
+                    }
+                }.frame(maxWidth: .infinity, alignment: .leading).padding(8)
             }
             Text("远程客户端需加入同一 Tailscale 网络，并携带 Bearer Token。").font(.caption).foregroundStyle(.secondary)
             HStack {
@@ -158,10 +171,17 @@ struct ServiceSettingsView: View {
             Text("CyberAudio \(updater.version) · Swift + MLX Audio").font(.caption).foregroundStyle(.secondary)
         }.formStyle(.grouped).scrollContentBackground(.hidden).scrollIndicators(.hidden)
     }
+    private func serviceRow<Content: View>(_ title: String, @ViewBuilder content: () -> Content) -> some View {
+        HStack(alignment: .firstTextBaseline, spacing: 16) {
+            Text(title).font(.callout).foregroundStyle(.secondary).frame(width: 76, alignment: .leading)
+            content().frame(maxWidth: .infinity, alignment: .leading)
+        }.font(.callout)
+    }
+
     private func model(_ title: String, name: String, revision: String) -> some View {
-        LabeledContent(title) {
-            VStack(alignment: .trailing, spacing: 3) {
-                Text(name).font(.callout)
+        serviceRow(title) {
+            VStack(alignment: .leading, spacing: 3) {
+                Text(name).font(.callout.weight(.medium)).fixedSize(horizontal: false, vertical: true)
                 Text("revision \(revision)…").font(.caption.monospaced()).foregroundStyle(.secondary)
             }
         }
