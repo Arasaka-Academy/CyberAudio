@@ -1,0 +1,90 @@
+{
+  "purpose": "Run unmodified Python complete generation and forced decoder diagnostics to localize remaining content/termination behavior; no new candidate or formal source change",
+  "source_commit": "97503d027a9d805d413548a8371a66f987a575d6",
+  "scope": [
+    "Same fixed six cases as the prior private order diagnostic plus one unobserved known-failure control",
+    "Use actual generate_custom_voice with all existing application parameter values, stream=True and 0.32-second intervals",
+    "Observe returned sample arrays without forcing evaluation or changing logits, histories, decoder or RNG. Exact unobserved PCM repeat is required for observer parity",
+    "Decode every native captured codec frame through the actual reference decoder using four-frame chunks; compare PCM16 bytes, preserve any differences",
+    "Do not treat finite generation, language labels or ASR as content/listening acceptance; preserve every output and all prior failures"
+  ],
+  "cases": [
+    {
+      "id": "known-failure",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "voice": "ono_anna",
+      "language": "chinese",
+      "seed": 196,
+      "observe_sampler": true
+    },
+    {
+      "id": "short-control",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "voice": "ono_anna",
+      "language": "chinese",
+      "seed": 31,
+      "observe_sampler": true
+    },
+    {
+      "id": "eric-english-numeric",
+      "text": "1234",
+      "voice": "eric",
+      "language": "english",
+      "seed": 31,
+      "observe_sampler": true
+    },
+    {
+      "id": "dylan-english-numeric",
+      "text": "1234",
+      "voice": "dylan",
+      "language": "english",
+      "seed": 31,
+      "observe_sampler": true
+    },
+    {
+      "id": "date-name-control",
+      "text": "Alice will meet Bob on November sixth, twenty twenty-six.",
+      "voice": "ryan",
+      "language": "english",
+      "seed": 31,
+      "observe_sampler": true
+    },
+    {
+      "id": "known-failure-repeat",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "voice": "ono_anna",
+      "language": "chinese",
+      "seed": 196,
+      "observe_sampler": true
+    },
+    {
+      "id": "known-failure-unobserved",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "voice": "ono_anna",
+      "language": "chinese",
+      "seed": 196,
+      "observe_sampler": false
+    }
+  ],
+  "temperature": 0.7,
+  "top_k": 50,
+  "top_p": 1.0,
+  "repetition_penalty": 1.05,
+  "max_tokens": 1200,
+  "streaming_interval": 0.32,
+  "individual_budget_seconds": 120,
+  "total_budget_seconds": 900,
+  "maximum_output_bytes": 67108864,
+  "native_capture": ".context/robustness/reference-parity-20261107/native-capture",
+  "source_sha256": {
+    ".context/robustness/reference-parity-20261107/vendor/mlx_audio/tts/models/qwen3_tts/qwen3_tts.py": "9339599982a84cbc7f2b2bd153598997ca539b3cc1e67a0ba439bada4a5f0ba8",
+    ".context/robustness/reference-parity-20261107/vendor/mlx_audio/tts/models/qwen3_tts/speech_tokenizer.py": "527a0fb912988fc5f70676229ec0c4a77d92dd5c2504a4ad3f575166ee5aaa07",
+    ".context/robustness/reference-parity-20261107/vendor/mlx_audio/lm/sample_utils.py": "9a6a7279c7aff850cdf80dd7f77ece1c31c3441ddacee595fbf83d013f60cc41"
+  },
+  "versions": {
+    "mlx": "0.32.4",
+    "mlx-audio": "0.6.4"
+  },
+  "default_changed": false,
+  "candidate_proposed": false
+}

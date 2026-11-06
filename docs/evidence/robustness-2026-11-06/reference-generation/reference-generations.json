@@ -1,0 +1,708 @@
+{
+  "status": "diagnostic_completed",
+  "started": "2026-11-06T17:30:57.350178+00:00",
+  "plan_sha256": "403c2eb6e64725c302f6fc22b12b7a981dc29a1f6b7c33d9ee88b57d116ca7c1",
+  "source_sha256": "3118523df4d88866cbe46de46e759f81a6274d26ebd554720175044685fc8e7e",
+  "sampling_parameters": {
+    "temperature": 0.7,
+    "top_k": 50,
+    "top_p": 1.0,
+    "repetition_penalty": 1.05,
+    "max_tokens": 1200,
+    "streaming_interval": 0.32
+  },
+  "decoder_results": [
+    {
+      "id": "known-failure",
+      "codec_frames": 32,
+      "pcm_bytes": 122880,
+      "reference_pcm_sha256": "44713256f60018638fbd8cd0596a41a5c2f38fa37793cab9ea424425fe0bfccf",
+      "reference_f32_sha256": "a2796fe0b00574f01085fee424edc2f2041828230485a4812d1a97e77aff7c5f",
+      "native_pcm_sha256": "a83aa151ed2585d74842d3f4d7bcfb962dd5105c27eb4ac93cdc17891570b949",
+      "pcm_exact": false,
+      "samples": 61440,
+      "different_samples": 5,
+      "maximum_pcm16_sample_delta": 1,
+      "mean_absolute_pcm16_sample_delta": 8.138020833333333e-05,
+      "elapsed_seconds": 2.163850666023791
+    },
+    {
+      "id": "short-control",
+      "codec_frames": 32,
+      "pcm_bytes": 122880,
+      "reference_pcm_sha256": "80cedd8669d46202c06f128f930435e27ea5cc45a0339eb4718365234d66ed06",
+      "reference_f32_sha256": "d820ba9196d790e6ba6e9db20acdd4b6edbd67c8490aff5e38fc1c3ce2c9307a",
+      "native_pcm_sha256": "ad8e1d920dd41ed00e5d455acaac6daf47a3b7253e80ce65662d26cb168f15dd",
+      "pcm_exact": false,
+      "samples": 61440,
+      "different_samples": 29,
+      "maximum_pcm16_sample_delta": 1,
+      "mean_absolute_pcm16_sample_delta": 0.00047200520833333334,
+      "elapsed_seconds": 0.3267010830459185
+    },
+    {
+      "id": "eric-english-numeric",
+      "codec_frames": 32,
+      "pcm_bytes": 122880,
+      "reference_pcm_sha256": "c50993af37df4344e0628a4102b6e73e22730c91b19429ed9298aad2a8ab79d5",
+      "reference_f32_sha256": "c4b3a795b35af571349b774b7f91c98dd1ce8d73664e2cc6c947d82bf212de17",
+      "native_pcm_sha256": "b29248db664b05a4e8555ac3af33fbd4d256cf5c6c56180982987737c9ca26c9",
+      "pcm_exact": false,
+      "samples": 61440,
+      "different_samples": 49,
+      "maximum_pcm16_sample_delta": 1,
+      "mean_absolute_pcm16_sample_delta": 0.0007975260416666667,
+      "elapsed_seconds": 0.2961878749774769
+    },
+    {
+      "id": "dylan-english-numeric",
+      "codec_frames": 17,
+      "pcm_bytes": 65280,
+      "reference_pcm_sha256": "3231aac0eefdfde2ed90b31ba7b3648dcbfe4029ea43b2a125a267ff8419b6fe",
+      "reference_f32_sha256": "c67df06e6e3485c820be381ad462c92696f6c92cccf0459df4d68567ea19b7a2",
+      "native_pcm_sha256": "c45d2afad91f749d0cb60daf0a5945e187f921532b7939aa5d6779d230ed16bc",
+      "pcm_exact": false,
+      "samples": 32640,
+      "different_samples": 68,
+      "maximum_pcm16_sample_delta": 1,
+      "mean_absolute_pcm16_sample_delta": 0.0020833333333333333,
+      "elapsed_seconds": 0.3886364169884473
+    },
+    {
+      "id": "date-name-control",
+      "codec_frames": 32,
+      "pcm_bytes": 122880,
+      "reference_pcm_sha256": "ff1b200b3dadecc81fd42b74609f32b342c04b42d324c01600300d29e61dea43",
+      "reference_f32_sha256": "0d4a87dbe2a731ebf956b79e0a215ef2152acee79c8f709ddf3de88367ebca60",
+      "native_pcm_sha256": "8ce15ba3f96b292f81381d52cb9f740513f6066654750d5d0ded712ebcfce061",
+      "pcm_exact": false,
+      "samples": 61440,
+      "different_samples": 99,
+      "maximum_pcm16_sample_delta": 1,
+      "mean_absolute_pcm16_sample_delta": 0.001611328125,
+      "elapsed_seconds": 0.34267504198942333
+    }
+  ],
+  "results": [
+    {
+      "id": "known-failure",
+      "case": {
+        "id": "known-failure",
+        "text": "持续验证语音服务的稳定性和恢复能力。",
+        "voice": "ono_anna",
+        "language": "chinese",
+        "seed": 196,
+        "observe_sampler": true
+      },
+      "pcm_bytes": 345600,
+      "pcm_sha256": "bb6e95cf68dbdb7cdb4416afa8b6c1704bfaee891170ba06b11698a099f85256",
+      "audio_seconds": 7.2,
+      "chunks": [
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 3840,
+          "token_count": 2
+        }
+      ],
+      "processing_seconds": 6.4756428329856135,
+      "codes_sha256": "667199dbe4400819c84e3e9b9f36ea275afc8506dca52043b5035ba370cfacda",
+      "sampled_steps": 91,
+      "eos_seen": true,
+      "audio_codec_frames": 90
+    },
+    {
+      "id": "short-control",
+      "case": {
+        "id": "short-control",
+        "text": "持续验证语音服务的稳定性和恢复能力。",
+        "voice": "ono_anna",
+        "language": "chinese",
+        "seed": 31,
+        "observe_sampler": true
+      },
+      "pcm_bytes": 130560,
+      "pcm_sha256": "8666be3749015c36b344a3b839a4df2c9504d1df0bb18940150f557170e95c80",
+      "audio_seconds": 2.72,
+      "chunks": [
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 3840,
+          "token_count": 2
+        }
+      ],
+      "processing_seconds": 2.2205003750277683,
+      "codes_sha256": "50ff7cd98ba98777102484d5603ffae85d05e21d5d3a2ace5d85dfa5e5910c6a",
+      "sampled_steps": 35,
+      "eos_seen": true,
+      "audio_codec_frames": 34
+    },
+    {
+      "id": "eric-english-numeric",
+      "case": {
+        "id": "eric-english-numeric",
+        "text": "1234",
+        "voice": "eric",
+        "language": "english",
+        "seed": 31,
+        "observe_sampler": true
+      },
+      "pcm_bytes": 307200,
+      "pcm_sha256": "9820f73e1314a41772392b47d54f1c25658c35aa03d29d38ddd884df71fd1077",
+      "audio_seconds": 6.4,
+      "chunks": [
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        }
+      ],
+      "processing_seconds": 4.4126548749627545,
+      "codes_sha256": "3c09e7218d2f013e11ed235b976ba8da11ae80d459220854c6a356560eb9d0e0",
+      "sampled_steps": 81,
+      "eos_seen": true,
+      "audio_codec_frames": 80
+    },
+    {
+      "id": "dylan-english-numeric",
+      "case": {
+        "id": "dylan-english-numeric",
+        "text": "1234",
+        "voice": "dylan",
+        "language": "english",
+        "seed": 31,
+        "observe_sampler": true
+      },
+      "pcm_bytes": 65280,
+      "pcm_sha256": "9ca7cf327bbdd72bebd4d633c83bff074604920f78d557c8b0c2f0806f894d09",
+      "audio_seconds": 1.36,
+      "chunks": [
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 1920,
+          "token_count": 1
+        }
+      ],
+      "processing_seconds": 0.9622968339826912,
+      "codes_sha256": "a9aa3929d90635379ae159a1dde86e4a83aaeca8d3a4c513014601110aee7205",
+      "sampled_steps": 18,
+      "eos_seen": true,
+      "audio_codec_frames": 17
+    },
+    {
+      "id": "date-name-control",
+      "case": {
+        "id": "date-name-control",
+        "text": "Alice will meet Bob on November sixth, twenty twenty-six.",
+        "voice": "ryan",
+        "language": "english",
+        "seed": 31,
+        "observe_sampler": true
+      },
+      "pcm_bytes": 192000,
+      "pcm_sha256": "28233b6e730eb74ae75d9a3d805c4fff6eeda29920dce5d30558d922afb707dc",
+      "audio_seconds": 4.0,
+      "chunks": [
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 3840,
+          "token_count": 2
+        }
+      ],
+      "processing_seconds": 3.080454875016585,
+      "codes_sha256": "f385ba25e98469e9f4d815d1af757e3fa3e3a1b11365027857c82cf7c8cd9af5",
+      "sampled_steps": 51,
+      "eos_seen": true,
+      "audio_codec_frames": 50
+    },
+    {
+      "id": "known-failure-repeat",
+      "case": {
+        "id": "known-failure-repeat",
+        "text": "持续验证语音服务的稳定性和恢复能力。",
+        "voice": "ono_anna",
+        "language": "chinese",
+        "seed": 196,
+        "observe_sampler": true
+      },
+      "pcm_bytes": 345600,
+      "pcm_sha256": "bb6e95cf68dbdb7cdb4416afa8b6c1704bfaee891170ba06b11698a099f85256",
+      "audio_seconds": 7.2,
+      "chunks": [
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 3840,
+          "token_count": 2
+        }
+      ],
+      "processing_seconds": 5.666042916011065,
+      "codes_sha256": "667199dbe4400819c84e3e9b9f36ea275afc8506dca52043b5035ba370cfacda",
+      "sampled_steps": 91,
+      "eos_seen": true,
+      "audio_codec_frames": 90
+    },
+    {
+      "id": "known-failure-unobserved",
+      "case": {
+        "id": "known-failure-unobserved",
+        "text": "持续验证语音服务的稳定性和恢复能力。",
+        "voice": "ono_anna",
+        "language": "chinese",
+        "seed": 196,
+        "observe_sampler": false
+      },
+      "pcm_bytes": 345600,
+      "pcm_sha256": "bb6e95cf68dbdb7cdb4416afa8b6c1704bfaee891170ba06b11698a099f85256",
+      "audio_seconds": 7.2,
+      "chunks": [
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 7680,
+          "token_count": 4
+        },
+        {
+          "samples": 3840,
+          "token_count": 2
+        }
+      ],
+      "processing_seconds": 5.528050584020093,
+      "sampled_steps": null,
+      "eos_seen": null,
+      "audio_codec_frames": 90
+    }
+  ],
+  "default_changed": false,
+  "candidate_proposed": false,
+  "elapsed_seconds": 37.984933500003535,
+  "actual_model_source_sha256": "9339599982a84cbc7f2b2bd153598997ca539b3cc1e67a0ba439bada4a5f0ba8",
+  "actual_decoder_source_sha256": "527a0fb912988fc5f70676229ec0c4a77d92dd5c2504a4ad3f575166ee5aaa07",
+  "actual_sampling_source_sha256": "9a6a7279c7aff850cdf80dd7f77ece1c31c3441ddacee595fbf83d013f60cc41",
+  "failure_repeat_pcm_exact": true,
+  "failure_repeat_codes_exact": true,
+  "observer_unobserved_pcm_exact": true,
+  "finished": "2026-11-06T17:31:35.335164+00:00"
+}

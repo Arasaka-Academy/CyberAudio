@@ -1,0 +1,66 @@
+{
+  "candidate_proposed" : false,
+  "default_changed" : false,
+  "elapsed_seconds" : 5.7728107916773297,
+  "finished" : "2026-11-06T17:43:11Z",
+  "native_sliding_window" : 72,
+  "plan_sha256" : "f1f28e93b0929e4cca2fe4f01daf7b8674392ccfdfa8e16b6a7d44c4e2d45e66",
+  "results" : [
+    {
+      "codec_frames" : 90,
+      "codes_sha256" : "667199dbe4400819c84e3e9b9f36ea275afc8506dca52043b5035ba370cfacda",
+      "id" : "known-failure",
+      "pcm_bytes" : 345600,
+      "pcm_sha256" : "962163ba1222163e8de2555f037713daf28746197eaccca875b61d96fbcf3ff6",
+      "prior_order_pcm_exact" : false,
+      "processing_seconds" : 1.1814072083798237
+    },
+    {
+      "codec_frames" : 34,
+      "codes_sha256" : "50ff7cd98ba98777102484d5603ffae85d05e21d5d3a2ace5d85dfa5e5910c6a",
+      "id" : "short-control",
+      "pcm_bytes" : 130560,
+      "pcm_sha256" : "3d0ca995d4cfccc5bf28421ff4f386b3377f03727cb6594cacfb4cb7332f2903",
+      "prior_order_pcm_exact" : true,
+      "processing_seconds" : 0.24111658334732056
+    },
+    {
+      "codec_frames" : 80,
+      "codes_sha256" : "3c09e7218d2f013e11ed235b976ba8da11ae80d459220854c6a356560eb9d0e0",
+      "id" : "eric-english-numeric",
+      "pcm_bytes" : 307200,
+      "pcm_sha256" : "8814f4567b8f5861a8d19a840c08395a65c2750120acbc7925c881d40805bac3",
+      "prior_order_pcm_exact" : true,
+      "processing_seconds" : 0.5754791249637492
+    },
+    {
+      "codec_frames" : 17,
+      "codes_sha256" : "a9aa3929d90635379ae159a1dde86e4a83aaeca8d3a4c513014601110aee7205",
+      "id" : "dylan-english-numeric",
+      "pcm_bytes" : 65280,
+      "pcm_sha256" : "506497f1290909c8e774891189d16185b05a82cde38b8709dd2fcedacaf60725",
+      "prior_order_pcm_exact" : true,
+      "processing_seconds" : 0.13278883328894153
+    },
+    {
+      "codec_frames" : 50,
+      "codes_sha256" : "f385ba25e98469e9f4d815d1af757e3fa3e3a1b11365027857c82cf7c8cd9af5",
+      "id" : "date-name-control",
+      "pcm_bytes" : 192000,
+      "pcm_sha256" : "4cac9b90f0d4c518b4089fa4f0e98d408f1839769233af9b1bc14b32314ee3d1",
+      "prior_order_pcm_exact" : true,
+      "processing_seconds" : 0.35819333331892267
+    },
+    {
+      "codec_frames" : 90,
+      "codes_sha256" : "667199dbe4400819c84e3e9b9f36ea275afc8506dca52043b5035ba370cfacda",
+      "id" : "known-failure-repeat",
+      "pcm_bytes" : 345600,
+      "pcm_sha256" : "962163ba1222163e8de2555f037713daf28746197eaccca875b61d96fbcf3ff6",
+      "prior_order_pcm_exact" : false,
+      "processing_seconds" : 0.63574891665484756
+    }
+  ],
+  "started" : "2026-11-06T17:43:05Z",
+  "status" : "diagnostic_completed"
+}

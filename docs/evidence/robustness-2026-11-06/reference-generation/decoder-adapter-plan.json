@@ -1,0 +1,82 @@
+{
+  "purpose": "Same six complete codec inputs and configured native decoder behavior through a private access wrapper; no sampler or decoder algorithm changes",
+  "hypothesis": "Earlier prefix tests stop before frame72; three long outputs first differ beyond PCM16 rounding at frame72. Swift uses configured rotating72-frame cache and local attention, reference uses unbounded KVCache and causal attention. Same-code native decoding can separate decoder differences from sampling.",
+  "reference_report_sha256": "5b76c60187e867e3b421c827ceca718d61179fda7a4ce93522db959c6e4aeb93",
+  "cases": [
+    {
+      "id": "known-failure",
+      "codes_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/reference-generation-20261107/known-failure/codes.json",
+      "codes_sha256": "667199dbe4400819c84e3e9b9f36ea275afc8506dca52043b5035ba370cfacda",
+      "reference_pcm_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/reference-generation-20261107/known-failure/reference.pcm",
+      "reference_pcm_sha256": "bb6e95cf68dbdb7cdb4416afa8b6c1704bfaee891170ba06b11698a099f85256",
+      "order_pcm_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/sampling-parity-20261107/order-generations/known-failure.pcm",
+      "order_pcm_sha256": "09165a3231155b2a8af924ade08ba1afe63ec71d4690cf00ec201fd0d9238a9f",
+      "sampled_steps": 91,
+      "eos_seen": true
+    },
+    {
+      "id": "short-control",
+      "codes_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/reference-generation-20261107/short-control/codes.json",
+      "codes_sha256": "50ff7cd98ba98777102484d5603ffae85d05e21d5d3a2ace5d85dfa5e5910c6a",
+      "reference_pcm_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/reference-generation-20261107/short-control/reference.pcm",
+      "reference_pcm_sha256": "8666be3749015c36b344a3b839a4df2c9504d1df0bb18940150f557170e95c80",
+      "order_pcm_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/sampling-parity-20261107/order-generations/short-control.pcm",
+      "order_pcm_sha256": "3d0ca995d4cfccc5bf28421ff4f386b3377f03727cb6594cacfb4cb7332f2903",
+      "sampled_steps": 35,
+      "eos_seen": true
+    },
+    {
+      "id": "eric-english-numeric",
+      "codes_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/reference-generation-20261107/eric-english-numeric/codes.json",
+      "codes_sha256": "3c09e7218d2f013e11ed235b976ba8da11ae80d459220854c6a356560eb9d0e0",
+      "reference_pcm_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/reference-generation-20261107/eric-english-numeric/reference.pcm",
+      "reference_pcm_sha256": "9820f73e1314a41772392b47d54f1c25658c35aa03d29d38ddd884df71fd1077",
+      "order_pcm_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/sampling-parity-20261107/order-generations/eric-english-numeric.pcm",
+      "order_pcm_sha256": "8814f4567b8f5861a8d19a840c08395a65c2750120acbc7925c881d40805bac3",
+      "sampled_steps": 81,
+      "eos_seen": true
+    },
+    {
+      "id": "dylan-english-numeric",
+      "codes_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/reference-generation-20261107/dylan-english-numeric/codes.json",
+      "codes_sha256": "a9aa3929d90635379ae159a1dde86e4a83aaeca8d3a4c513014601110aee7205",
+      "reference_pcm_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/reference-generation-20261107/dylan-english-numeric/reference.pcm",
+      "reference_pcm_sha256": "9ca7cf327bbdd72bebd4d633c83bff074604920f78d557c8b0c2f0806f894d09",
+      "order_pcm_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/sampling-parity-20261107/order-generations/dylan-english-numeric.pcm",
+      "order_pcm_sha256": "506497f1290909c8e774891189d16185b05a82cde38b8709dd2fcedacaf60725",
+      "sampled_steps": 18,
+      "eos_seen": true
+    },
+    {
+      "id": "date-name-control",
+      "codes_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/reference-generation-20261107/date-name-control/codes.json",
+      "codes_sha256": "f385ba25e98469e9f4d815d1af757e3fa3e3a1b11365027857c82cf7c8cd9af5",
+      "reference_pcm_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/reference-generation-20261107/date-name-control/reference.pcm",
+      "reference_pcm_sha256": "28233b6e730eb74ae75d9a3d805c4fff6eeda29920dce5d30558d922afb707dc",
+      "order_pcm_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/sampling-parity-20261107/order-generations/date-name-control.pcm",
+      "order_pcm_sha256": "4cac9b90f0d4c518b4089fa4f0e98d408f1839769233af9b1bc14b32314ee3d1",
+      "sampled_steps": 51,
+      "eos_seen": true
+    },
+    {
+      "id": "known-failure-repeat",
+      "codes_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/reference-generation-20261107/known-failure-repeat/codes.json",
+      "codes_sha256": "667199dbe4400819c84e3e9b9f36ea275afc8506dca52043b5035ba370cfacda",
+      "reference_pcm_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/reference-generation-20261107/known-failure-repeat/reference.pcm",
+      "reference_pcm_sha256": "bb6e95cf68dbdb7cdb4416afa8b6c1704bfaee891170ba06b11698a099f85256",
+      "order_pcm_file": "/Users/zhubby/Repository/CyberAudio/.context/robustness/sampling-parity-20261107/order-generations/known-failure-repeat.pcm",
+      "order_pcm_sha256": "09165a3231155b2a8af924ade08ba1afe63ec71d4690cf00ec201fd0d9238a9f",
+      "sampled_steps": 91,
+      "eos_seen": true
+    }
+  ],
+  "chunk_codec_frames": 4,
+  "individual_budget_seconds": 60,
+  "total_budget_seconds": 300,
+  "decoder_source_sha256": "945920f78d321d743436746187ec55cab232fbc84d5c8424f3d479f63f1bb36f",
+  "access": "A private module appends a public diagnostic entry point because the original optimized object does not export its internal decoder getter. Existing generation and decoder bodies remain unchanged. Shared sources/objects are preserved.",
+  "default_changed": false,
+  "candidate_proposed": false,
+  "first_attempt_plan_sha256": "ab0a43b01b1f2d2317c0bd985108090d274b276b1839aadfbc01441756b36616",
+  "first_attempt_build_sha256": "de235bc6851cfd766722775925ad3b1dbcacea14070750696b13bb48ba588e52"
+}

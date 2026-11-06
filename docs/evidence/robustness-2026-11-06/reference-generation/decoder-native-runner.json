@@ -1,0 +1,40 @@
+{
+  "status": "completed",
+  "started": "2026-11-06T17:43:04.455346+00:00",
+  "production_before": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "source_sha256": "05d6883fe925af01d94840445b6d43a81129f5c9f2b6becd1a6ed9eaf50f3f9a",
+  "plan_sha256": "f1f28e93b0929e4cca2fe4f01daf7b8674392ccfdfa8e16b6a7d44c4e2d45e66",
+  "elapsed_seconds": 7.011286207998637,
+  "command": [
+    "/usr/bin/caffeinate",
+    "-i",
+    "/usr/bin/sandbox-exec",
+    "-f",
+    "/Users/zhubby/Repository/CyberAudio/.context/robustness/model-preservation-20261107/final-bytes-model-preservation/CyberAudio.app/Contents/Resources/offline.sb",
+    "/Users/zhubby/Repository/CyberAudio/.context/robustness/reference-generation-20261107/decoder-adapter-build/reference-decode-adapter-probe",
+    "/Users/zhubby/Library/Application Support/CyberAudio/models/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit",
+    "/Users/zhubby/Repository/CyberAudio/.context/robustness/model-preservation-20261107/final-bytes-model-preservation/CyberAudio.app/Contents/Resources/mlx.metallib",
+    "/Users/zhubby/Repository/CyberAudio/.context/robustness/reference-generation-20261107/decoder-native",
+    "/Users/zhubby/Repository/CyberAudio/.context/robustness/reference-generation-20261107/decoder-adapter-plan.json"
+  ],
+  "owned_group_pid": 33682,
+  "owned_identity": "33682 Sat Nov  7 01:43:04 2026     /usr/bin/caffeinate -i /usr/bin/sandbox-exec -f /Users/zhubby/Repository/CyberAudio/.context/robustness/model-preservation-20261107/final-bytes-model-preservation/CyberAudio.app/Contents/Resources/offline.sb /Users/zhubby/Repository/CyberAudio/.context/robustness/reference-generation-20261107/decoder-adapter-build/reference-decode-adapter-probe /Users/zhubby/Library/Application Support/CyberAudio/models/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit /Users/zhubby/Repository/CyberAudio/.context/robustness/model-preservation-20261107/final-bytes-model-preservation/CyberAudio.app/Contents/Resources/mlx.metallib /Users/zhubby/Repository/CyberAudio/.context/robustness/reference-generation-20261107/decoder-native /Users/zhubby/Repository/CyberAudio/.context/robustness/reference-generation-20261107/decoder-adapter-plan.json",
+  "exit_code": 0,
+  "owned_process_exit_code": 0,
+  "production_after": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "production_preserved": true,
+  "sdk_and_helpers_preserved": true,
+  "finished": "2026-11-06T17:43:11.492555+00:00"
+}

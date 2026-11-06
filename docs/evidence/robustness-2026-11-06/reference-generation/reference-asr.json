@@ -1,0 +1,249 @@
+{
+  "status": "diagnostic_completed",
+  "started": "2026-11-06T17:32:22.344772+00:00",
+  "scope": "All seven unmodified Python reference generations through the same final App ASR; auto detection plus two forced-English numeric diagnostics; no listening acceptance",
+  "matrix_report_sha256": "5b76c60187e867e3b421c827ceca718d61179fda7a4ce93522db959c6e4aeb93",
+  "plan_sha256": "403c2eb6e64725c302f6fc22b12b7a981dc29a1f6b7c33d9ee88b57d116ca7c1",
+  "helper_sha256": "46083a4f7ba269b7f28377bd9532ede44ac0a812a55a55d1e1f0a9bd225cf86d",
+  "port": 18890,
+  "results": [
+    {
+      "id": "reference-known-failure-part0",
+      "source_id": "reference-known-failure",
+      "part": 0,
+      "asr_language": "auto",
+      "http_status": 200,
+      "response": {
+        "duration": 7.2,
+        "inference_ms": 482.9721249989234,
+        "language": "zh",
+        "metal_active_bytes": 5578898892,
+        "metal_peak_bytes": 6602091552,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4287070208,
+        "processing_ms": 653.9241659920663,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "8b144a6023c14973",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "此句验证语音服务的稳定性和恢复能力。"
+      }
+    },
+    {
+      "id": "reference-short-control-part0",
+      "source_id": "reference-short-control",
+      "part": 0,
+      "asr_language": "auto",
+      "http_status": 200,
+      "response": {
+        "duration": 2.72,
+        "inference_ms": 363.06237505050376,
+        "language": "zh",
+        "metal_active_bytes": 5578603980,
+        "metal_peak_bytes": 6602091552,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4287070208,
+        "processing_ms": 479.0490410523489,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "b0f97e13be714a14",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "持续验证语音服务的稳定性和恢复能力。"
+      }
+    },
+    {
+      "id": "reference-eric-english-numeric-part0",
+      "source_id": "reference-eric-english-numeric",
+      "part": 0,
+      "asr_language": "auto",
+      "http_status": 200,
+      "response": {
+        "duration": 6.4,
+        "inference_ms": 524.2085409699939,
+        "language": "en",
+        "metal_active_bytes": 5578833356,
+        "metal_peak_bytes": 6602091552,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4287070208,
+        "processing_ms": 667.3835000256076,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "ed2e87d0c25149a3",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "You, toward side."
+      }
+    },
+    {
+      "id": "reference-dylan-english-numeric-part0",
+      "source_id": "reference-dylan-english-numeric",
+      "part": 0,
+      "asr_language": "auto",
+      "http_status": 200,
+      "response": {
+        "duration": 1.36,
+        "inference_ms": 205.52937500178814,
+        "language": "zh",
+        "metal_active_bytes": 5578522060,
+        "metal_peak_bytes": 6602091552,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4287070208,
+        "processing_ms": 323.66433303104714,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "603a22f3d8794174",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "一枪来三十四。"
+      }
+    },
+    {
+      "id": "reference-date-name-control-part0",
+      "source_id": "reference-date-name-control",
+      "part": 0,
+      "asr_language": "auto",
+      "http_status": 200,
+      "response": {
+        "duration": 4,
+        "inference_ms": 337.9215419990942,
+        "language": "en",
+        "metal_active_bytes": 5578685900,
+        "metal_peak_bytes": 6602091552,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4287070208,
+        "processing_ms": 466.2809169967659,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "5aab88e76d9941e6",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "Alice will meet Bob on November sixth, twenty twenty six."
+      }
+    },
+    {
+      "id": "reference-known-failure-repeat-part0",
+      "source_id": "reference-known-failure-repeat",
+      "part": 0,
+      "asr_language": "auto",
+      "http_status": 200,
+      "response": {
+        "duration": 7.2,
+        "inference_ms": 411.73020796850324,
+        "language": "zh",
+        "metal_active_bytes": 5578898892,
+        "metal_peak_bytes": 6602091564,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4287070208,
+        "processing_ms": 527.7002500370145,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "da203fd1706c4c9e",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "此句验证语音服务的稳定性和恢复能力。"
+      }
+    },
+    {
+      "id": "reference-known-failure-unobserved-part0",
+      "source_id": "reference-known-failure-unobserved",
+      "part": 0,
+      "asr_language": "auto",
+      "http_status": 200,
+      "response": {
+        "duration": 7.2,
+        "inference_ms": 571.6929589980282,
+        "language": "zh",
+        "metal_active_bytes": 5578898892,
+        "metal_peak_bytes": 6602091564,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4287070208,
+        "processing_ms": 695.4926659818739,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "3813d342a6874474",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "此句验证语音服务的稳定性和恢复能力。"
+      }
+    },
+    {
+      "id": "reference-eric-english-numeric-part0-en",
+      "source_id": "reference-eric-english-numeric",
+      "part": 0,
+      "asr_language": "en",
+      "http_status": 200,
+      "response": {
+        "duration": 6.4,
+        "inference_ms": 363.3910829667002,
+        "language": "en",
+        "metal_active_bytes": 5578833356,
+        "metal_peak_bytes": 6602091564,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4287070208,
+        "processing_ms": 495.5076670157723,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "b9e17cfc8ff24fda",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "You, toward side."
+      }
+    },
+    {
+      "id": "reference-dylan-english-numeric-part0-en",
+      "source_id": "reference-dylan-english-numeric",
+      "part": 0,
+      "asr_language": "en",
+      "http_status": 200,
+      "response": {
+        "duration": 1.36,
+        "inference_ms": 206.37470798101276,
+        "language": "en",
+        "metal_active_bytes": 5578522060,
+        "metal_peak_bytes": 6602091564,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4287070208,
+        "processing_ms": 317.2162079717964,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "aa7d093df1b6485f",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "一枪来三十四。"
+      }
+    }
+  ],
+  "production_before": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "expected_requests": 9,
+  "expected_source_outputs": 7,
+  "elapsed_seconds": 15.990835292031989,
+  "owned_helper_pid": 23751,
+  "startup": {
+    "application": "CyberAudio",
+    "busy": false,
+    "instance": "55a7f05a89d94c06aebb8dd676f6776e",
+    "model": "qwen3-asr-1.7b",
+    "models": {
+      "stt": "ready",
+      "tts": "ready"
+    },
+    "startup": {
+      "backend": "mlx-swift",
+      "device": "metal",
+      "load_ms": 2448.909458995331,
+      "metal_active_bytes": 5578423720,
+      "metal_peak_bytes": 6437814276,
+      "process_peak_rss_bytes": 4287070208,
+      "verification_ms": 6071.247167012189,
+      "warmup_ms": 1481.0970830149017
+    },
+    "status": "ready",
+    "updating": false
+  },
+  "owned_helper_exit_code": 0,
+  "temporary_request_cleanup": true,
+  "production_after": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "production_and_config_preserved": true,
+  "finished": "2026-11-06T17:32:38.387439+00:00"
+}

@@ -1,0 +1,117 @@
+[
+  {
+    "path": ".context/robustness/reference-generation-20261107/decoder-known-failure/reference.pcm",
+    "bytes": 122880,
+    "sha256": "44713256f60018638fbd8cd0596a41a5c2f38fa37793cab9ea424425fe0bfccf"
+  },
+  {
+    "path": ".context/robustness/reference-generation-20261107/decoder-known-failure/reference.f32",
+    "bytes": 245760,
+    "sha256": "a2796fe0b00574f01085fee424edc2f2041828230485a4812d1a97e77aff7c5f"
+  },
+  {
+    "path": ".context/robustness/reference-generation-20261107/decoder-short-control/reference.pcm",
+    "bytes": 122880,
+    "sha256": "80cedd8669d46202c06f128f930435e27ea5cc45a0339eb4718365234d66ed06"
+  },
+  {
+    "path": ".context/robustness/reference-generation-20261107/decoder-short-control/reference.f32",
+    "bytes": 245760,
+    "sha256": "d820ba9196d790e6ba6e9db20acdd4b6edbd67c8490aff5e38fc1c3ce2c9307a"
+  },
+  {
+    "path": ".context/robustness/reference-generation-20261107/decoder-eric-english-numeric/reference.pcm",
+    "bytes": 122880,
+    "sha256": "c50993af37df4344e0628a4102b6e73e22730c91b19429ed9298aad2a8ab79d5"
+  },
+  {
+    "path": ".context/robustness/reference-generation-20261107/decoder-eric-english-numeric/reference.f32",
+    "bytes": 245760,
+    "sha256": "c4b3a795b35af571349b774b7f91c98dd1ce8d73664e2cc6c947d82bf212de17"
+  },
+  {
+    "path": ".context/robustness/reference-generation-20261107/decoder-dylan-english-numeric/reference.pcm",
+    "bytes": 65280,
+    "sha256": "3231aac0eefdfde2ed90b31ba7b3648dcbfe4029ea43b2a125a267ff8419b6fe"
+  },
+  {
+    "path": ".context/robustness/reference-generation-20261107/decoder-dylan-english-numeric/reference.f32",
+    "bytes": 130560,
+    "sha256": "c67df06e6e3485c820be381ad462c92696f6c92cccf0459df4d68567ea19b7a2"
+  },
+  {
+    "path": ".context/robustness/reference-generation-20261107/decoder-date-name-control/reference.pcm",
+    "bytes": 122880,
+    "sha256": "ff1b200b3dadecc81fd42b74609f32b342c04b42d324c01600300d29e61dea43"
+  },
+  {
+    "path": ".context/robustness/reference-generation-20261107/decoder-date-name-control/reference.f32",
+    "bytes": 245760,
+    "sha256": "0d4a87dbe2a731ebf956b79e0a215ef2152acee79c8f709ddf3de88367ebca60"
+  },
+  {
+    "path": ".context/robustness/reference-generation-20261107/known-failure/reference.pcm",
+    "bytes": 345600,
+    "sha256": "bb6e95cf68dbdb7cdb4416afa8b6c1704bfaee891170ba06b11698a099f85256"
+  },
+  {
+    "path": ".context/robustness/reference-generation-20261107/short-control/reference.pcm",
+    "bytes": 130560,
+    "sha256": "8666be3749015c36b344a3b839a4df2c9504d1df0bb18940150f557170e95c80"
+  },
+  {
+    "path": ".context/robustness/reference-generation-20261107/eric-english-numeric/reference.pcm",
+    "bytes": 307200,
+    "sha256": "9820f73e1314a41772392b47d54f1c25658c35aa03d29d38ddd884df71fd1077"
+  },
+  {
+    "path": ".context/robustness/reference-generation-20261107/dylan-english-numeric/reference.pcm",
+    "bytes": 65280,
+    "sha256": "9ca7cf327bbdd72bebd4d633c83bff074604920f78d557c8b0c2f0806f894d09"
+  },
+  {
+    "path": ".context/robustness/reference-generation-20261107/date-name-control/reference.pcm",
+    "bytes": 192000,
+    "sha256": "28233b6e730eb74ae75d9a3d805c4fff6eeda29920dce5d30558d922afb707dc"
+  },
+  {
+    "path": ".context/robustness/reference-generation-20261107/known-failure-repeat/reference.pcm",
+    "bytes": 345600,
+    "sha256": "bb6e95cf68dbdb7cdb4416afa8b6c1704bfaee891170ba06b11698a099f85256"
+  },
+  {
+    "path": ".context/robustness/reference-generation-20261107/known-failure-unobserved/reference.pcm",
+    "bytes": 345600,
+    "sha256": "bb6e95cf68dbdb7cdb4416afa8b6c1704bfaee891170ba06b11698a099f85256"
+  },
+  {
+    "path": ".context/robustness/reference-generation-20261107/decoder-native/known-failure.pcm",
+    "bytes": 345600,
+    "sha256": "962163ba1222163e8de2555f037713daf28746197eaccca875b61d96fbcf3ff6"
+  },
+  {
+    "path": ".context/robustness/reference-generation-20261107/decoder-native/short-control.pcm",
+    "bytes": 130560,
+    "sha256": "3d0ca995d4cfccc5bf28421ff4f386b3377f03727cb6594cacfb4cb7332f2903"
+  },
+  {
+    "path": ".context/robustness/reference-generation-20261107/decoder-native/eric-english-numeric.pcm",
+    "bytes": 307200,
+    "sha256": "8814f4567b8f5861a8d19a840c08395a65c2750120acbc7925c881d40805bac3"
+  },
+  {
+    "path": ".context/robustness/reference-generation-20261107/decoder-native/dylan-english-numeric.pcm",
+    "bytes": 65280,
+    "sha256": "506497f1290909c8e774891189d16185b05a82cde38b8709dd2fcedacaf60725"
+  },
+  {
+    "path": ".context/robustness/reference-generation-20261107/decoder-native/date-name-control.pcm",
+    "bytes": 192000,
+    "sha256": "4cac9b90f0d4c518b4089fa4f0e98d408f1839769233af9b1bc14b32314ee3d1"
+  },
+  {
+    "path": ".context/robustness/reference-generation-20261107/decoder-native/known-failure-repeat.pcm",
+    "bytes": 345600,
+    "sha256": "962163ba1222163e8de2555f037713daf28746197eaccca875b61d96fbcf3ff6"
+  }
+]
