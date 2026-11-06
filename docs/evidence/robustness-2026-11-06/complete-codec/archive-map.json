@@ -1,0 +1,132 @@
+[
+  {
+    "source": ".context/robustness/complete-codec-20261107/build-native.py",
+    "archived": "build-native.py",
+    "sha256": "2fde38504d463784c017892b8507c77d1d864eddcbaef6bd97b6b63a3e56b217"
+  },
+  {
+    "source": ".context/robustness/complete-codec-20261107/compare-codecs.py",
+    "archived": "compare-codecs.py",
+    "sha256": "1b5c6adc2573fac97fdee0b9c8425966071a3a5cf15112f9bc2c327dfca2afa2"
+  },
+  {
+    "source": ".context/robustness/complete-codec-20261107/compare-reference.py",
+    "archived": "compare-reference.py",
+    "sha256": "b91a0a498b41e3ca959527ab5f4722df3be9703d628b40933dfff031b090c534"
+  },
+  {
+    "source": ".context/robustness/complete-codec-20261107/run-native.py",
+    "archived": "run-native.py",
+    "sha256": "3076942bfa33ef48c945dcf54e2c5e64fb169096a02acf02c794ea3708f00cc5"
+  },
+  {
+    "source": ".context/robustness/complete-codec-20261107/run-reference.py",
+    "archived": "run-reference.py",
+    "sha256": "31a795f6da957fc7671ceabec6298379fdbd480b8f94e76f7b6326034074172c"
+  },
+  {
+    "source": ".context/robustness/complete-codec-20261107/verify-first-attempt.py",
+    "archived": "verify-first-attempt.py",
+    "sha256": "3d785c049f6342fb61fb4ead7a350b71f8d340db6dc8956896a317ca878861aa"
+  },
+  {
+    "source": ".context/robustness/complete-codec-20261107/verify.py",
+    "archived": "verify.py",
+    "sha256": "a8432c13a94afc973f5e915cb63fd012d1796f653fd24441969fef6a97ec233d"
+  },
+  {
+    "source": ".context/robustness/complete-codec-20261107/code-comparison.json",
+    "archived": "code-comparison.json",
+    "sha256": "fbb7721a69175c925a7e277818e4168a67e17107a619873794fd0b24e2cfc78e"
+  },
+  {
+    "source": ".context/robustness/complete-codec-20261107/forward-summary.json",
+    "archived": "forward-summary.json",
+    "sha256": "08a27696628853d075dba65c0d5c0ffa39438ec73dd69f42ddaf5fd46eed75e1"
+  },
+  {
+    "source": ".context/robustness/complete-codec-20261107/native-runner.json",
+    "archived": "native-runner.json",
+    "sha256": "b99c3faa61bbd3b96d8871b7dfea117c7d01e9108ea15d66260660e465c1456c"
+  },
+  {
+    "source": ".context/robustness/complete-codec-20261107/plan.json",
+    "archived": "plan.json",
+    "sha256": "3a7ac324a9768b7d9fe153a5fbebadb3f767a4022c36ab3a52ce44f40baff215"
+  },
+  {
+    "source": ".context/robustness/complete-codec-20261107/reference-comparison.json",
+    "archived": "reference-comparison.json",
+    "sha256": "3dbdc04011a2b7646ca8fc7bf9ad17ff2ce9fec92dc84a73fcb150564b47281b"
+  },
+  {
+    "source": ".context/robustness/complete-codec-20261107/reference-runner.json",
+    "archived": "reference-runner.json",
+    "sha256": "a14f8ae468487f6528a0798a7caf5c03197caefc655003a8c74132e893036ba2"
+  },
+  {
+    "source": ".context/robustness/complete-codec-20261107/verification-first-attempt.json",
+    "archived": "verification-first-attempt.json",
+    "sha256": "de61d598cb4037eca10715c070b993443804592096de361b8425907dadde4d54"
+  },
+  {
+    "source": ".context/robustness/complete-codec-20261107/verification.json",
+    "archived": "verification.json",
+    "sha256": "7119c7c0d0c4230c116f85dde741dbb94c15f18b0c05b9719f8e5f958195e90d"
+  },
+  {
+    "source": ".context/robustness/complete-codec-20261107/CompleteCodecProbe.swift",
+    "archived": "CompleteCodecProbe.swift",
+    "sha256": "7994e2399d4d0a56511a1e77d5bc066ede6d8a744b72fae243af8e667ec1e38d"
+  },
+  {
+    "source": ".context/robustness/complete-codec-20261107/native-build/build.json",
+    "archived": "native-build.json",
+    "sha256": "c45822af30a7bae1960015bf736629d437686504d40361c0a18541d7e1cf0e48"
+  },
+  {
+    "source": ".context/robustness/complete-codec-20261107/native-capture/report.json",
+    "archived": "native-complete-capture.json",
+    "sha256": "ad01a7f4c0689b7cf08bfbbf53741f73ff270e23776d82a25bda336afff11d26"
+  },
+  {
+    "source": ".context/robustness/complete-codec-20261107/native-capture.log",
+    "archived": "native-capture.txt",
+    "sha256": "660d7324de967a990c8590f3007d7c739bef704d059dcaae9be079e568382bcb"
+  },
+  {
+    "source": ".context/robustness/complete-codec-20261107/reference.log",
+    "archived": "reference.txt",
+    "sha256": "75963e94d8a7eb90dbeea8ec382bbd6006e64fe0687ab9fb29f87c1fd0a4ce2c"
+  },
+  {
+    "source": ".context/robustness/complete-codec-20261107/native-codes/date-name-control.json",
+    "archived": "native-codes/date-name-control.json",
+    "sha256": "f385ba25e98469e9f4d815d1af757e3fa3e3a1b11365027857c82cf7c8cd9af5"
+  },
+  {
+    "source": ".context/robustness/complete-codec-20261107/native-codes/dylan-english-numeric.json",
+    "archived": "native-codes/dylan-english-numeric.json",
+    "sha256": "a9aa3929d90635379ae159a1dde86e4a83aaeca8d3a4c513014601110aee7205"
+  },
+  {
+    "source": ".context/robustness/complete-codec-20261107/native-codes/eric-english-numeric.json",
+    "archived": "native-codes/eric-english-numeric.json",
+    "sha256": "3c09e7218d2f013e11ed235b976ba8da11ae80d459220854c6a356560eb9d0e0"
+  },
+  {
+    "source": ".context/robustness/complete-codec-20261107/native-codes/known-failure-repeat.json",
+    "archived": "native-codes/known-failure-repeat.json",
+    "sha256": "03c56f7a41eabe97984f886edb3aaa7183e21afd761fc482e278536716d1f845"
+  },
+  {
+    "source": ".context/robustness/complete-codec-20261107/native-codes/known-failure.json",
+    "archived": "native-codes/known-failure.json",
+    "sha256": "03c56f7a41eabe97984f886edb3aaa7183e21afd761fc482e278536716d1f845"
+  },
+  {
+    "source": ".context/robustness/complete-codec-20261107/native-codes/short-control.json",
+    "archived": "native-codes/short-control.json",
+    "sha256": "50ff7cd98ba98777102484d5603ffae85d05e21d5d3a2ace5d85dfa5e5910c6a"
+  }
+]

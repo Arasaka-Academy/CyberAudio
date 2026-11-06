@@ -1,0 +1,417 @@
+{
+  "status": "diagnostic_completed",
+  "head_dim": 128,
+  "rope_theta": 1000000,
+  "native_snapshot_sha256": "62feaadd3f3f564543910fd749d5e17cd45c26971f61212fe693d25328516aa6",
+  "reference_snapshot_sha256": "f36806b28dac2e9c0d92187e640016372d8a57c620d0154beee01838b5d624ab",
+  "formulas": [
+    {
+      "device": "DeviceType.gpu",
+      "formula": "actual_reference_class",
+      "native": {
+        "exact": false,
+        "maximum_abs": 2.9802322387695312e-08,
+        "different_values": 42
+      },
+      "reference": {
+        "exact": true,
+        "maximum_abs": 0.0,
+        "different_values": 0
+      },
+      "float32_sha256": "bb9a34488d9025a877d5306b146a1de4b09cb10fb25a540354e7907b62b0349f"
+    },
+    {
+      "device": "DeviceType.gpu",
+      "formula": "literal_power",
+      "native": {
+        "exact": false,
+        "maximum_abs": 2.9802322387695312e-08,
+        "different_values": 42
+      },
+      "reference": {
+        "exact": true,
+        "maximum_abs": 0.0,
+        "different_values": 0
+      },
+      "float32_sha256": "bb9a34488d9025a877d5306b146a1de4b09cb10fb25a540354e7907b62b0349f"
+    },
+    {
+      "device": "DeviceType.gpu",
+      "formula": "array_power",
+      "native": {
+        "exact": false,
+        "maximum_abs": 2.9802322387695312e-08,
+        "different_values": 42
+      },
+      "reference": {
+        "exact": true,
+        "maximum_abs": 0.0,
+        "different_values": 0
+      },
+      "float32_sha256": "bb9a34488d9025a877d5306b146a1de4b09cb10fb25a540354e7907b62b0349f"
+    },
+    {
+      "device": "DeviceType.gpu",
+      "formula": "reciprocal_power",
+      "native": {
+        "exact": false,
+        "maximum_abs": 2.9802322387695312e-08,
+        "different_values": 42
+      },
+      "reference": {
+        "exact": true,
+        "maximum_abs": 0.0,
+        "different_values": 0
+      },
+      "float32_sha256": "bb9a34488d9025a877d5306b146a1de4b09cb10fb25a540354e7907b62b0349f"
+    },
+    {
+      "device": "DeviceType.gpu",
+      "formula": "negative_power",
+      "native": {
+        "exact": false,
+        "maximum_abs": 5.960464477539063e-08,
+        "different_values": 62
+      },
+      "reference": {
+        "exact": false,
+        "maximum_abs": 5.960464477539063e-08,
+        "different_values": 56
+      },
+      "float32_sha256": "123770ad49caa438e4910343bfa50dc19175dbcc4920f80c0cee04c0c5c249a3"
+    },
+    {
+      "device": "DeviceType.cpu",
+      "formula": "actual_reference_class",
+      "native": {
+        "exact": false,
+        "maximum_abs": 5.960464477539063e-08,
+        "different_values": 48
+      },
+      "reference": {
+        "exact": false,
+        "maximum_abs": 5.960464477539063e-08,
+        "different_values": 28
+      },
+      "float32_sha256": "708d64e50ebb09e09e2f8205d5b6ee4b60a28db734d258ab7f2c00efcae24db0"
+    },
+    {
+      "device": "DeviceType.cpu",
+      "formula": "literal_power",
+      "native": {
+        "exact": false,
+        "maximum_abs": 5.960464477539063e-08,
+        "different_values": 48
+      },
+      "reference": {
+        "exact": false,
+        "maximum_abs": 5.960464477539063e-08,
+        "different_values": 28
+      },
+      "float32_sha256": "708d64e50ebb09e09e2f8205d5b6ee4b60a28db734d258ab7f2c00efcae24db0"
+    },
+    {
+      "device": "DeviceType.cpu",
+      "formula": "array_power",
+      "native": {
+        "exact": false,
+        "maximum_abs": 5.960464477539063e-08,
+        "different_values": 48
+      },
+      "reference": {
+        "exact": false,
+        "maximum_abs": 5.960464477539063e-08,
+        "different_values": 28
+      },
+      "float32_sha256": "708d64e50ebb09e09e2f8205d5b6ee4b60a28db734d258ab7f2c00efcae24db0"
+    },
+    {
+      "device": "DeviceType.cpu",
+      "formula": "reciprocal_power",
+      "native": {
+        "exact": false,
+        "maximum_abs": 5.960464477539063e-08,
+        "different_values": 48
+      },
+      "reference": {
+        "exact": false,
+        "maximum_abs": 5.960464477539063e-08,
+        "different_values": 28
+      },
+      "float32_sha256": "708d64e50ebb09e09e2f8205d5b6ee4b60a28db734d258ab7f2c00efcae24db0"
+    },
+    {
+      "device": "DeviceType.cpu",
+      "formula": "negative_power",
+      "native": {
+        "exact": false,
+        "maximum_abs": 2.9802322387695312e-08,
+        "different_values": 46
+      },
+      "reference": {
+        "exact": false,
+        "maximum_abs": 1.4901161193847656e-08,
+        "different_values": 27
+      },
+      "float32_sha256": "f7a6214d26d7afea7185d7fa77a85aaa307caa644c031c88179bfa0b63be5f5e"
+    }
+  ],
+  "position_controls": [
+    {
+      "position": 102,
+      "cos": {
+        "exact": true,
+        "maximum_abs": 0.0,
+        "different_values": 0
+      },
+      "sin": {
+        "exact": true,
+        "maximum_abs": 0.0,
+        "different_values": 0
+      }
+    },
+    {
+      "position": 103,
+      "cos": {
+        "exact": true,
+        "maximum_abs": 0.0,
+        "different_values": 0
+      },
+      "sin": {
+        "exact": true,
+        "maximum_abs": 0.0,
+        "different_values": 0
+      }
+    },
+    {
+      "position": 104,
+      "cos": {
+        "exact": false,
+        "maximum_abs": 0.000244140625,
+        "different_values": 1
+      },
+      "sin": {
+        "exact": true,
+        "maximum_abs": 0.0,
+        "different_values": 0
+      }
+    }
+  ],
+  "inv_freq_differences": [
+    {
+      "index": 5,
+      "native": 0.33982086181640625,
+      "reference": 0.33982083201408386
+    },
+    {
+      "index": 10,
+      "native": 0.11547821015119553,
+      "reference": 0.11547820270061493
+    },
+    {
+      "index": 12,
+      "native": 0.0749894231557846,
+      "reference": 0.07498941570520401
+    },
+    {
+      "index": 13,
+      "native": 0.0604296438395977,
+      "reference": 0.060429636389017105
+    },
+    {
+      "index": 15,
+      "native": 0.03924190625548363,
+      "reference": 0.03924189880490303
+    },
+    {
+      "index": 18,
+      "native": 0.02053525485098362,
+      "reference": 0.02053525112569332
+    },
+    {
+      "index": 20,
+      "native": 0.013335217721760273,
+      "reference": 0.01333521492779255
+    },
+    {
+      "index": 21,
+      "native": 0.010746079497039318,
+      "reference": 0.010746078565716743
+    },
+    {
+      "index": 23,
+      "native": 0.006978307384997606,
+      "reference": 0.006978305988013744
+    },
+    {
+      "index": 24,
+      "native": 0.0056234137155115604,
+      "reference": 0.005623413249850273
+    },
+    {
+      "index": 26,
+      "native": 0.003651742357760668,
+      "reference": 0.003651741426438093
+    },
+    {
+      "index": 27,
+      "native": 0.0029427274130284786,
+      "reference": 0.002942727180197835
+    },
+    {
+      "index": 29,
+      "native": 0.00191095273476094,
+      "reference": 0.001910952851176262
+    },
+    {
+      "index": 30,
+      "native": 0.0015399272087961435,
+      "reference": 0.0015399266267195344
+    },
+    {
+      "index": 31,
+      "native": 0.0012409380869939923,
+      "reference": 0.0012409377377480268
+    },
+    {
+      "index": 32,
+      "native": 0.0010000001639127731,
+      "reference": 0.0010000000474974513
+    },
+    {
+      "index": 34,
+      "native": 0.0006493816035799682,
+      "reference": 0.0006493816617876291
+    },
+    {
+      "index": 35,
+      "native": 0.0005232993280515075,
+      "reference": 0.0005232990952208638
+    },
+    {
+      "index": 36,
+      "native": 0.0004216966626700014,
+      "reference": 0.00042169654625467956
+    },
+    {
+      "index": 37,
+      "native": 0.00033982089371420443,
+      "reference": 0.00033982080640271306
+    },
+    {
+      "index": 38,
+      "native": 0.0002738419861998409,
+      "reference": 0.00027384195709601045
+    },
+    {
+      "index": 40,
+      "native": 0.00017782804206945002,
+      "reference": 0.00017782794020604342
+    },
+    {
+      "index": 41,
+      "native": 0.00014330130943562835,
+      "reference": 0.00014330126577988267
+    },
+    {
+      "index": 42,
+      "native": 0.0001154782366938889,
+      "reference": 0.00011547820759005845
+    },
+    {
+      "index": 43,
+      "native": 9.305722051067278e-05,
+      "reference": 9.305720595875755e-05
+    },
+    {
+      "index": 45,
+      "native": 6.042963650543243e-05,
+      "reference": 6.042964378139004e-05
+    },
+    {
+      "index": 46,
+      "native": 4.8696776502765715e-05,
+      "reference": 4.869675467489287e-05
+    },
+    {
+      "index": 47,
+      "native": 3.924190968973562e-05,
+      "reference": 3.92418987757992e-05
+    },
+    {
+      "index": 48,
+      "native": 3.162278517265804e-05,
+      "reference": 3.162277425872162e-05
+    },
+    {
+      "index": 49,
+      "native": 2.548297015891876e-05,
+      "reference": 2.5482966520939954e-05
+    },
+    {
+      "index": 51,
+      "native": 1.654817970120348e-05,
+      "reference": 1.6548170606256463e-05
+    },
+    {
+      "index": 52,
+      "native": 1.333521959168138e-05,
+      "reference": 1.333521413471317e-05
+    },
+    {
+      "index": 53,
+      "native": 1.0746073712653015e-05,
+      "reference": 1.0746077350631822e-05
+    },
+    {
+      "index": 54,
+      "native": 8.659644663566723e-06,
+      "reference": 8.659643754072022e-06
+    },
+    {
+      "index": 55,
+      "native": 6.978310921113007e-06,
+      "reference": 6.978306373639498e-06
+    },
+    {
+      "index": 56,
+      "native": 5.6234130170196295e-06,
+      "reference": 5.62341347176698e-06
+    },
+    {
+      "index": 57,
+      "native": 4.531586000666721e-06,
+      "reference": 4.531583726929966e-06
+    },
+    {
+      "index": 58,
+      "native": 3.651740371424239e-06,
+      "reference": 3.6517415082926163e-06
+    },
+    {
+      "index": 59,
+      "native": 2.942727860499872e-06,
+      "reference": 2.942727405752521e-06
+    },
+    {
+      "index": 60,
+      "native": 2.3713755581411533e-06,
+      "reference": 2.3713737391517498e-06
+    },
+    {
+      "index": 62,
+      "native": 1.5399273252114654e-06,
+      "reference": 1.5399264157167636e-06
+    },
+    {
+      "index": 63,
+      "native": 1.2409374221533653e-06,
+      "reference": 1.2409377632138785e-06
+    }
+  ],
+  "elapsed_seconds": 0.06471658300142735,
+  "model_loaded": false,
+  "limits": [
+    "Formula controls alone do not qualify a production model change"
+  ]
+}

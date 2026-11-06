@@ -1,0 +1,40 @@
+{
+  "status": "diagnostic_completed",
+  "model_loaded": false,
+  "native_snapshot_sha256": "092996a65265f7f2e24d36b2f3364d076c10feb69b2ea97faf6fe9faf7db7329",
+  "reference_snapshot_sha256": "58dcb9618ceedafb2dffe9d107ce74de9cd233f1f92bab33ba7d67467df47b61",
+  "results": [
+    {
+      "tensor": "indices",
+      "values_exact": true,
+      "different_values": 0,
+      "max_abs": 0.0,
+      "first_difference_index": null
+    },
+    {
+      "tensor": "exponent",
+      "values_exact": true,
+      "different_values": 0,
+      "max_abs": 0.0,
+      "first_difference_index": null
+    },
+    {
+      "tensor": "power",
+      "values_exact": false,
+      "different_values": 46,
+      "max_abs": 0.375,
+      "first_difference_index": 5
+    },
+    {
+      "tensor": "inverse",
+      "values_exact": false,
+      "different_values": 42,
+      "max_abs": 2.9802322387695312e-08,
+      "first_difference_index": 5
+    }
+  ],
+  "limits": [
+    "Localizes primitive output differences; does not assign their lower-level compiler or backend cause",
+    "No formula or default was changed"
+  ]
+}

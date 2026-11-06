@@ -1,0 +1,1430 @@
+{
+  "capture_report_sha256" : "ad01a7f4c0689b7cf08bfbbf53741f73ff270e23776d82a25bda336afff11d26",
+  "elapsed_seconds" : 7.5011658750008792,
+  "finished" : "2026-11-06T18:09:34Z",
+  "plan_sha256" : "16de1bb1f2a83d242c1c8513eed6985b8e1103c3ec030b5d98a45a797b6cea20",
+  "results" : [
+    {
+      "all_original_native_forward_exact" : true,
+      "case" : {
+        "id" : "known-failure",
+        "language" : "chinese",
+        "seed" : 196,
+        "text" : "持续验证语音服务的稳定性和恢复能力。",
+        "voice" : "ono_anna"
+      },
+      "id" : "known-failure",
+      "processing_seconds" : 4.1215013333712704,
+      "snapshots" : [
+        {
+          "array_count" : 396,
+          "bytes" : 12997393,
+          "file" : "step-082.safetensors",
+          "sha256" : "626b0cf071538e4310c4be340246af1f164a0eab3fb93e26759a9130c2834d73",
+          "step" : 82
+        },
+        {
+          "array_count" : 396,
+          "bytes" : 13112081,
+          "file" : "step-083.safetensors",
+          "sha256" : "61aa01b486e335d72355c798e75cd961b2a88f29c7089801df3670e65439e299",
+          "step" : 83
+        },
+        {
+          "array_count" : 396,
+          "bytes" : 13226813,
+          "file" : "step-084.safetensors",
+          "sha256" : "62feaadd3f3f564543910fd749d5e17cd45c26971f61212fe693d25328516aa6",
+          "step" : 84
+        }
+      ],
+      "steps" : [
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 0
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 1
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 2
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 3
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 4
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 5
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 6
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 7
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 8
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 9
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 10
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 11
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 12
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 13
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 14
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 15
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 16
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 17
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 18
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 19
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 20
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 21
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 22
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 23
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 24
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 25
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 26
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 27
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 28
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 29
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 30
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 31
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 32
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 33
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 34
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 35
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 36
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 37
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 38
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 39
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 40
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 41
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 42
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 43
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 44
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 45
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 46
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 47
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 48
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 49
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 50
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 51
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 52
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 53
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 54
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 55
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 56
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 57
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 58
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 59
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 60
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 61
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 62
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 63
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 64
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 65
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 66
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 67
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 68
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 69
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 70
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 71
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 72
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 73
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 74
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 75
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 76
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 77
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 78
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 79
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 80
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 81
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 82
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 83
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 84
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 85
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 86
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 87
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 88
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 89
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 90
+        }
+      ]
+    },
+    {
+      "all_original_native_forward_exact" : true,
+      "case" : {
+        "id" : "eric-english-numeric",
+        "language" : "english",
+        "seed" : 31,
+        "text" : "1234",
+        "voice" : "eric"
+      },
+      "id" : "eric-english-numeric",
+      "processing_seconds" : 1.0556515833595768,
+      "snapshots" : [
+        {
+          "array_count" : 396,
+          "bytes" : 11965089,
+          "file" : "step-079.safetensors",
+          "sha256" : "ab965b816b66030c324a9577d2362aa2bb6d4f7fd9debb8fada861b6c9d347d2",
+          "step" : 79
+        },
+        {
+          "array_count" : 396,
+          "bytes" : 12079785,
+          "file" : "step-080.safetensors",
+          "sha256" : "bce54ac30c0a4bd5bb71d1ef3532bedd0ca26a32b529b86ef0eef01c0802cc3a",
+          "step" : 80
+        }
+      ],
+      "steps" : [
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 0
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 1
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 2
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 3
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 4
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 5
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 6
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 7
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 8
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 9
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 10
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 11
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 12
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 13
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 14
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 15
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 16
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 17
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 18
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 19
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 20
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 21
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 22
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 23
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 24
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 25
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 26
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 27
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 28
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 29
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 30
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 31
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 32
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 33
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 34
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 35
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 36
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 37
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 38
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 39
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 40
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 41
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 42
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 43
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 44
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 45
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 46
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 47
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 48
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 49
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 50
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 51
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 52
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 53
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 54
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 55
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 56
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 57
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 58
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 59
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 60
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 61
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 62
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 63
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 64
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 65
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 66
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 67
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 68
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 69
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 70
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 71
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 72
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 73
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 74
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 75
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 76
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 77
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 78
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 79
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 80
+        }
+      ]
+    },
+    {
+      "all_original_native_forward_exact" : true,
+      "case" : {
+        "id" : "known-failure-repeat",
+        "language" : "chinese",
+        "seed" : 196,
+        "text" : "持续验证语音服务的稳定性和恢复能力。",
+        "voice" : "ono_anna"
+      },
+      "id" : "known-failure-repeat",
+      "processing_seconds" : 1.1348310832981952,
+      "snapshots" : [
+        {
+          "array_count" : 396,
+          "bytes" : 12997393,
+          "file" : "step-082.safetensors",
+          "sha256" : "626b0cf071538e4310c4be340246af1f164a0eab3fb93e26759a9130c2834d73",
+          "step" : 82
+        },
+        {
+          "array_count" : 396,
+          "bytes" : 13112081,
+          "file" : "step-083.safetensors",
+          "sha256" : "61aa01b486e335d72355c798e75cd961b2a88f29c7089801df3670e65439e299",
+          "step" : 83
+        },
+        {
+          "array_count" : 396,
+          "bytes" : 13226813,
+          "file" : "step-084.safetensors",
+          "sha256" : "62feaadd3f3f564543910fd749d5e17cd45c26971f61212fe693d25328516aa6",
+          "step" : 84
+        }
+      ],
+      "steps" : [
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 0
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 1
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 2
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 3
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 4
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 5
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 6
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 7
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 8
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 9
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 10
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 11
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 12
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 13
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 14
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 15
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 16
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 17
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 18
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 19
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 20
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 21
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 22
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 23
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 24
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 25
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 26
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 27
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 28
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 29
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 30
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 31
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 32
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 33
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 34
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 35
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 36
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 37
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 38
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 39
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 40
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 41
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 42
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 43
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 44
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 45
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 46
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 47
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 48
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 49
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 50
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 51
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 52
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 53
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 54
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 55
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 56
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 57
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 58
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 59
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 60
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 61
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 62
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 63
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 64
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 65
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 66
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 67
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 68
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 69
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 70
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 71
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 72
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 73
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 74
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 75
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 76
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 77
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 78
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 79
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 80
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 81
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 82
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 83
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 84
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 85
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 86
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 87
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 88
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 89
+        },
+        {
+          "hidden_exact" : true,
+          "logits_exact" : true,
+          "step" : 90
+        }
+      ]
+    }
+  ],
+  "snapshot_bytes" : 102717448,
+  "started" : "2026-11-06T18:09:26Z",
+  "status" : "diagnostic_completed"
+}

@@ -1,0 +1,5 @@
+Loaded speech tokenizer decoder
+Loaded Qwen3-TTS model (custom_voice)
+TRACED known-failure steps 91 snapshots 3 forward exact true
+TRACED eric-english-numeric steps 81 snapshots 2 forward exact true
+TRACED known-failure-repeat steps 91 snapshots 3 forward exact true

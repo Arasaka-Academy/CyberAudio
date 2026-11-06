@@ -1,0 +1,11 @@
+[transformers] You are using a model of type `qwen3_tts` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.
+  Initialized encoder codebooks
+Loaded speech tokenizer from /Users/zhubby/Library/Application Support/CyberAudio/models/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit/speech_tokenizer
+BOUNDARY known-failure 82 inv_freq 1
+BOUNDARY known-failure 83 inv_freq 1
+BOUNDARY known-failure 84 inv_freq 386
+BOUNDARY eric-english-numeric 79 inv_freq 1
+BOUNDARY eric-english-numeric 80 inv_freq 1
+BOUNDARY known-failure-repeat 82 inv_freq 1
+BOUNDARY known-failure-repeat 83 inv_freq 1
+BOUNDARY known-failure-repeat 84 inv_freq 386

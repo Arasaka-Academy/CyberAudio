@@ -1,0 +1,29 @@
+{
+  "status": "completed",
+  "started": "2026-11-06T18:09:41.498180+00:00",
+  "production_before": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "source_sha256": "ebd4d3bda03563dc636984208b6baae24d40f386906f6be873d9d509b4b1cdc8",
+  "requirements_sha256": "4cac7112159b7e3706d108b94a052396bb3b8215e6a4ac2faf31f67eccac3916",
+  "plan_sha256": "16de1bb1f2a83d242c1c8513eed6985b8e1103c3ec030b5d98a45a797b6cea20",
+  "elapsed_seconds": 10.648092292016372,
+  "owned_group_pid": 92371,
+  "owned_identity": "92371 Sat Nov  7 02:09:41 2026     /usr/bin/sandbox-exec -f /Users/zhubby/Repository/CyberAudio/.context/robustness/model-preservation-20261107/final-bytes-model-preservation/CyberAudio.app/Contents/Resources/offline.sb /Users/zhubby/Repository/CyberAudio/.context/robustness/reference-parity-20261107/runtime/bin/python /Users/zhubby/Repository/CyberAudio/.context/robustness/layer-parity-20261107/compare-reference.py",
+  "exit_code": 0,
+  "owned_process_exit_code": 0,
+  "production_after": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "production_preserved": true,
+  "sdk_and_helpers_preserved": true,
+  "finished": "2026-11-06T18:09:52.160324+00:00"
+}

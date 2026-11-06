@@ -1,0 +1,9 @@
+{
+  "status": "running",
+  "source_sha256": "58466fced0358b345080331d7dfd91beaa6ca880d5f7651435e8135e404707e6",
+  "model_loaded": false,
+  "compile_exit_code": 0,
+  "link_exit_code": 1,
+  "elapsed_seconds": 0.892535583989229,
+  "shared_inputs_preserved": true
+}

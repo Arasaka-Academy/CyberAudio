@@ -1,0 +1,138 @@
+{
+  "status": "verified",
+  "verified_at": "2026-11-06T18:17:55.959012+00:00",
+  "source_commit": "163a355d94ce3ed9e0da5102257ae8bbf42a3023",
+  "native_original_forward_replay_steps": 263,
+  "all_native_original_outputs_exact": true,
+  "reference_unobserved_and_observed_replay_steps_each": 263,
+  "all_reference_observer_controls_exact": true,
+  "native_snapshot_files": 8,
+  "reference_snapshot_files": 8,
+  "snapshot_bytes_verified": 205434434,
+  "boundary_comparisons": 3168,
+  "exact_boundary_comparisons": 2390,
+  "nonexact_boundary_comparisons": 778,
+  "boundary_summary": [
+    {
+      "id": "known-failure",
+      "step": 82,
+      "absolute_position": [
+        102,
+        102,
+        102
+      ],
+      "nonexact_boundaries": 1,
+      "cos_exact": true,
+      "sin_exact": true
+    },
+    {
+      "id": "known-failure",
+      "step": 83,
+      "absolute_position": [
+        103,
+        103,
+        103
+      ],
+      "nonexact_boundaries": 1,
+      "cos_exact": true,
+      "sin_exact": true
+    },
+    {
+      "id": "known-failure",
+      "step": 84,
+      "absolute_position": [
+        104,
+        104,
+        104
+      ],
+      "nonexact_boundaries": 386,
+      "cos_exact": false,
+      "sin_exact": true
+    },
+    {
+      "id": "eric-english-numeric",
+      "step": 79,
+      "absolute_position": [
+        93,
+        93,
+        93
+      ],
+      "nonexact_boundaries": 1,
+      "cos_exact": true,
+      "sin_exact": true
+    },
+    {
+      "id": "eric-english-numeric",
+      "step": 80,
+      "absolute_position": [
+        94,
+        94,
+        94
+      ],
+      "nonexact_boundaries": 1,
+      "cos_exact": true,
+      "sin_exact": true
+    },
+    {
+      "id": "known-failure-repeat",
+      "step": 82,
+      "absolute_position": [
+        102,
+        102,
+        102
+      ],
+      "nonexact_boundaries": 1,
+      "cos_exact": true,
+      "sin_exact": true
+    },
+    {
+      "id": "known-failure-repeat",
+      "step": 83,
+      "absolute_position": [
+        103,
+        103,
+        103
+      ],
+      "nonexact_boundaries": 1,
+      "cos_exact": true,
+      "sin_exact": true
+    },
+    {
+      "id": "known-failure-repeat",
+      "step": 84,
+      "absolute_position": [
+        104,
+        104,
+        104
+      ],
+      "nonexact_boundaries": 386,
+      "cos_exact": false,
+      "sin_exact": true
+    }
+  ],
+  "inverse_frequency_different_values": 42,
+  "inverse_frequency_maximum_abs": 2.9802322387695312e-08,
+  "first_propagating_position": 104,
+  "first_propagating_step_zero_based": 84,
+  "causal_injection_cases": 6,
+  "causal_injection_steps": 367,
+  "causal_injection_tensor_comparisons": 1859,
+  "causal_injection_all_exact": true,
+  "scalar_indices_and_exponents_exact": true,
+  "scalar_power_different_values": 46,
+  "scalar_inverse_different_values": 42,
+  "initial_wrapper_compile_failure_retained": true,
+  "initial_scalar_link_failure_retained": true,
+  "all_owned_model_processes_absent": true,
+  "source_hashes_verified": 96,
+  "original_model_files_verified": 568,
+  "frozen_files_verified": 8,
+  "production_preserved": true,
+  "model_or_default_or_installed_reference_source_changed": false,
+  "limits": [
+    "Causal injection explains these complete forward divergences, not all content or termination failures",
+    "Lower-level compiler/backend cause of primitive power difference remains unassigned",
+    "The injection is a diagnostic in Python memory, not an adopted Swift model patch",
+    "No new listening, strict-soak, public-download, device or distribution gate accepted"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "purpose": "Capture all16 native codec values and full forward tensors for the six already retained order-candidate generations; require exact original tokens and PCM before interpreting the frame84 divergence",
+  "source_commit": "163a355d94ce3ed9e0da5102257ae8bbf42a3023",
+  "cases": [
+    {
+      "id": "known-failure",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "voice": "ono_anna",
+      "language": "chinese",
+      "seed": 196
+    },
+    {
+      "id": "short-control",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "voice": "ono_anna",
+      "language": "chinese",
+      "seed": 31
+    },
+    {
+      "id": "eric-english-numeric",
+      "text": "1234",
+      "voice": "eric",
+      "language": "english",
+      "seed": 31
+    },
+    {
+      "id": "dylan-english-numeric",
+      "text": "1234",
+      "voice": "dylan",
+      "language": "english",
+      "seed": 31
+    },
+    {
+      "id": "date-name-control",
+      "text": "Alice will meet Bob on November sixth, twenty twenty-six.",
+      "voice": "ryan",
+      "language": "english",
+      "seed": 31
+    },
+    {
+      "id": "known-failure-repeat",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "voice": "ono_anna",
+      "language": "chinese",
+      "seed": 196
+    }
+  ],
+  "candidate_report": "/Users/zhubby/Repository/CyberAudio/.context/robustness/sampling-parity-20261107/order-generations/report.json",
+  "candidate_report_sha256": "9403c2097f20cb3a2ab628c20a256789912c4eab6c1cc898099cd903c027ce3e",
+  "temperature": 0.7,
+  "top_k": 50,
+  "top_p": 1.0,
+  "repetition_penalty": 1.05,
+  "maximum_steps_per_case": 1200,
+  "maximum_snapshot_bytes": 67108864,
+  "individual_budget_seconds": 120,
+  "swift_total_budget_seconds": 600,
+  "reference_total_budget_seconds": 600,
+  "python_mlx": "0.32.4",
+  "python_mlx_audio": "0.6.4",
+  "python_model_source_sha256": "9339599982a84cbc7f2b2bd153598997ca539b3cc1e67a0ba439bada4a5f0ba8",
+  "qualification": [
+    "Retain every planned result and every failure",
+    "All six main token vectors and complete PCM must exactly reproduce the original order candidate",
+    "The only private semantic delta remains previously measured temperature-before-top-k order; new hooks only capture after native eval",
+    "Full auxiliary-code equality is tested separately from main-code equality",
+    "No change to formal SDK, model files, production service, strict gates or defaults"
+  ]
+}

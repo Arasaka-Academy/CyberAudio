@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "started": "2026-11-06T17:56:14.231244+00:00",
+  "production_before": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "build_sha256": "c45822af30a7bae1960015bf736629d437686504d40361c0a18541d7e1cf0e48",
+  "plan_sha256": "3a7ac324a9768b7d9fe153a5fbebadb3f767a4022c36ab3a52ce44f40baff215",
+  "elapsed_seconds": 18.681809583038557,
+  "owned_group_pid": 58391,
+  "owned_identity": "58391 Sat Nov  7 01:56:14 2026     /usr/bin/caffeinate -i /usr/bin/sandbox-exec -f /Users/zhubby/Repository/CyberAudio/.context/robustness/model-preservation-20261107/final-bytes-model-preservation/CyberAudio.app/Contents/Resources/offline.sb /Users/zhubby/Repository/CyberAudio/.context/robustness/complete-codec-20261107/native-build/complete-codec-probe /Users/zhubby/Library/Application Support/CyberAudio/models/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit /Users/zhubby/Repository/CyberAudio/.context/robustness/model-preservation-20261107/final-bytes-model-preservation/CyberAudio.app/Contents/Resources/mlx.metallib /Users/zhubby/Repository/CyberAudio/.context/robustness/complete-codec-20261107/native-capture /Users/zhubby/Repository/CyberAudio/.context/robustness/complete-codec-20261107/plan.json",
+  "exit_code": 0,
+  "owned_process_exit_code": 0,
+  "production_after": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "production_preserved": true,
+  "sdk_and_helpers_preserved": true,
+  "finished": "2026-11-06T17:56:32.927537+00:00"
+}

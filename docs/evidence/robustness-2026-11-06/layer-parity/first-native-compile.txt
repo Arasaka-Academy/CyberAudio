@@ -1,0 +1,7 @@
+/Users/zhubby/Repository/CyberAudio/.context/robustness/layer-parity-20261107/native-build/Qwen3TTS.swift:1404:15: error: initializer for conditional binding must have Optional type, not 'Qwen3TTSTalkerForConditionalGeneration'
+1402 |     ) throws {
+1403 |         try requireGenerationComponents()
+1404 |         guard let talker else { return }
+     |               `- error: initializer for conditional binding must have Optional type, not 'Qwen3TTSTalkerForConditionalGeneration'
+1405 |         let cache = talker.makeCache()
+1406 |         for (index, input) in inputs.enumerated() {

@@ -1,0 +1,251 @@
+{
+  "status": "verified",
+  "verified_at": "2026-11-06T18:08:51.026276+00:00",
+  "source_commit": "163a355d94ce3ed9e0da5102257ae8bbf42a3023",
+  "cases": 6,
+  "sampled_steps": 367,
+  "codec_values_compared": 5872,
+  "snapshot_files_verified": 373,
+  "snapshot_bytes_verified": 30490779,
+  "original_candidate_main_tokens_and_complete_pcm_exact": true,
+  "pairs": [
+    {
+      "id": "known-failure",
+      "sampled_steps": 91,
+      "all_main_tokens_equal": true,
+      "original_candidate_complete_pcm_exact": true,
+      "all_codec_values_equal": false,
+      "codec_differences_including_eos": 97,
+      "audio_codec_differences": 82,
+      "eos_auxiliary_differences": 15,
+      "first_codec_difference": {
+        "step": 84,
+        "group": 3,
+        "native": 409,
+        "reference": 405,
+        "audio_frame": true
+      }
+    },
+    {
+      "id": "short-control",
+      "sampled_steps": 35,
+      "all_main_tokens_equal": true,
+      "original_candidate_complete_pcm_exact": true,
+      "all_codec_values_equal": true,
+      "codec_differences_including_eos": 0,
+      "audio_codec_differences": 0,
+      "eos_auxiliary_differences": 0,
+      "first_codec_difference": null
+    },
+    {
+      "id": "eric-english-numeric",
+      "sampled_steps": 81,
+      "all_main_tokens_equal": true,
+      "original_candidate_complete_pcm_exact": true,
+      "all_codec_values_equal": true,
+      "codec_differences_including_eos": 0,
+      "audio_codec_differences": 0,
+      "eos_auxiliary_differences": 0,
+      "first_codec_difference": null
+    },
+    {
+      "id": "dylan-english-numeric",
+      "sampled_steps": 18,
+      "all_main_tokens_equal": true,
+      "original_candidate_complete_pcm_exact": true,
+      "all_codec_values_equal": true,
+      "codec_differences_including_eos": 0,
+      "audio_codec_differences": 0,
+      "eos_auxiliary_differences": 0,
+      "first_codec_difference": null
+    },
+    {
+      "id": "date-name-control",
+      "sampled_steps": 51,
+      "all_main_tokens_equal": true,
+      "original_candidate_complete_pcm_exact": true,
+      "all_codec_values_equal": true,
+      "codec_differences_including_eos": 0,
+      "audio_codec_differences": 0,
+      "eos_auxiliary_differences": 0,
+      "first_codec_difference": null
+    },
+    {
+      "id": "known-failure-repeat",
+      "sampled_steps": 91,
+      "all_main_tokens_equal": true,
+      "original_candidate_complete_pcm_exact": true,
+      "all_codec_values_equal": false,
+      "codec_differences_including_eos": 97,
+      "audio_codec_differences": 82,
+      "eos_auxiliary_differences": 15,
+      "first_codec_difference": {
+        "step": 84,
+        "group": 3,
+        "native": 409,
+        "reference": 405,
+        "audio_frame": true
+      }
+    }
+  ],
+  "tensor_comparisons": 1859,
+  "exact_tensor_comparisons": 1817,
+  "nonexact_tensor_comparisons": 42,
+  "maximum_absolute_tensor_difference": 0.501953125,
+  "first_numerical_differences": [
+    {
+      "case": "known-failure",
+      "step": 84,
+      "tensor": "logits",
+      "reference_shape": [
+        1,
+        1,
+        3072
+      ],
+      "native_shape": [
+        1,
+        1,
+        3072
+      ],
+      "reference_dtype": "mlx.core.bfloat16",
+      "native_dtype": "mlx.core.bfloat16",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "values_exact": false,
+      "max_abs": 0.1875,
+      "mean_abs": 0.030380864938100178,
+      "rms_abs": 0.042811481260352544
+    },
+    {
+      "case": "known-failure",
+      "step": 84,
+      "tensor": "hidden",
+      "reference_shape": [
+        1,
+        1,
+        2048
+      ],
+      "native_shape": [
+        1,
+        1,
+        2048
+      ],
+      "reference_dtype": "mlx.core.bfloat16",
+      "native_dtype": "mlx.core.bfloat16",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "values_exact": false,
+      "max_abs": 0.25,
+      "mean_abs": 0.0277448371052742,
+      "rms_abs": 0.03677160191918492
+    },
+    {
+      "case": "known-failure",
+      "step": 84,
+      "tensor": "code_logits",
+      "reference_shape": [
+        1,
+        15,
+        2048
+      ],
+      "native_shape": [
+        1,
+        15,
+        2048
+      ],
+      "reference_dtype": "mlx.core.bfloat16",
+      "native_dtype": "mlx.core.bfloat16",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "values_exact": false,
+      "max_abs": 0.4375,
+      "mean_abs": 0.06780050074060757,
+      "rms_abs": 0.08949732950876506
+    },
+    {
+      "case": "known-failure-repeat",
+      "step": 84,
+      "tensor": "logits",
+      "reference_shape": [
+        1,
+        1,
+        3072
+      ],
+      "native_shape": [
+        1,
+        1,
+        3072
+      ],
+      "reference_dtype": "mlx.core.bfloat16",
+      "native_dtype": "mlx.core.bfloat16",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "values_exact": false,
+      "max_abs": 0.1875,
+      "mean_abs": 0.030380864938100178,
+      "rms_abs": 0.042811481260352544
+    },
+    {
+      "case": "known-failure-repeat",
+      "step": 84,
+      "tensor": "hidden",
+      "reference_shape": [
+        1,
+        1,
+        2048
+      ],
+      "native_shape": [
+        1,
+        1,
+        2048
+      ],
+      "reference_dtype": "mlx.core.bfloat16",
+      "native_dtype": "mlx.core.bfloat16",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "values_exact": false,
+      "max_abs": 0.25,
+      "mean_abs": 0.0277448371052742,
+      "rms_abs": 0.03677160191918492
+    },
+    {
+      "case": "known-failure-repeat",
+      "step": 84,
+      "tensor": "code_logits",
+      "reference_shape": [
+        1,
+        15,
+        2048
+      ],
+      "native_shape": [
+        1,
+        15,
+        2048
+      ],
+      "reference_dtype": "mlx.core.bfloat16",
+      "native_dtype": "mlx.core.bfloat16",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "values_exact": false,
+      "max_abs": 0.4375,
+      "mean_abs": 0.06780050074060757,
+      "rms_abs": 0.08949732950876506
+    }
+  ],
+  "all_input_and_next_embeddings_exact": true,
+  "source_hashes_verified": 96,
+  "original_model_files_verified": 568,
+  "frozen_files_verified": 8,
+  "shared_build_inputs_preserved": true,
+  "owned_process_groups_absent": true,
+  "production_preserved": true,
+  "new_listeners_or_requests_created": false,
+  "new_asr_calls": 0,
+  "candidate_promoted": false,
+  "limits": [
+    "Full tensor parity fails at step84; do not generalize the earlier short-prefix parity result",
+    "Only two deliberate repeats diverge; no population failure-rate claim",
+    "Main talker uses full KVCache on both sides; decoder72-frame policy is a separate finding",
+    "No automatic or physical quality/stability gate relaxed"
+  ]
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "path": ".context/robustness/layer-parity-20261107/native-capture/eric-english-numeric/step-079.safetensors",
+    "bytes": 11965089,
+    "sha256": "ab965b816b66030c324a9577d2362aa2bb6d4f7fd9debb8fada861b6c9d347d2"
+  },
+  {
+    "path": ".context/robustness/layer-parity-20261107/native-capture/eric-english-numeric/step-080.safetensors",
+    "bytes": 12079785,
+    "sha256": "bce54ac30c0a4bd5bb71d1ef3532bedd0ca26a32b529b86ef0eef01c0802cc3a"
+  },
+  {
+    "path": ".context/robustness/layer-parity-20261107/native-capture/known-failure/step-082.safetensors",
+    "bytes": 12997393,
+    "sha256": "626b0cf071538e4310c4be340246af1f164a0eab3fb93e26759a9130c2834d73"
+  },
+  {
+    "path": ".context/robustness/layer-parity-20261107/native-capture/known-failure/step-083.safetensors",
+    "bytes": 13112081,
+    "sha256": "61aa01b486e335d72355c798e75cd961b2a88f29c7089801df3670e65439e299"
+  },
+  {
+    "path": ".context/robustness/layer-parity-20261107/native-capture/known-failure/step-084.safetensors",
+    "bytes": 13226813,
+    "sha256": "62feaadd3f3f564543910fd749d5e17cd45c26971f61212fe693d25328516aa6"
+  },
+  {
+    "path": ".context/robustness/layer-parity-20261107/native-capture/known-failure-repeat/step-082.safetensors",
+    "bytes": 12997393,
+    "sha256": "626b0cf071538e4310c4be340246af1f164a0eab3fb93e26759a9130c2834d73"
+  },
+  {
+    "path": ".context/robustness/layer-parity-20261107/native-capture/known-failure-repeat/step-083.safetensors",
+    "bytes": 13112081,
+    "sha256": "61aa01b486e335d72355c798e75cd961b2a88f29c7089801df3670e65439e299"
+  },
+  {
+    "path": ".context/robustness/layer-parity-20261107/native-capture/known-failure-repeat/step-084.safetensors",
+    "bytes": 13226813,
+    "sha256": "62feaadd3f3f564543910fd749d5e17cd45c26971f61212fe693d25328516aa6"
+  },
+  {
+    "path": ".context/robustness/layer-parity-20261107/native-rope-formula.safetensors",
+    "bytes": 1307,
+    "sha256": "092996a65265f7f2e24d36b2f3364d076c10feb69b2ea97faf6fe9faf7db7329"
+  },
+  {
+    "path": ".context/robustness/layer-parity-20261107/reference-capture/eric-english-numeric/step-079.safetensors",
+    "bytes": 11965027,
+    "sha256": "6535ff063d650985b9f8fb918c7e92eab820be23ce61672a1408054e36f92ad4"
+  },
+  {
+    "path": ".context/robustness/layer-parity-20261107/reference-capture/eric-english-numeric/step-080.safetensors",
+    "bytes": 12079729,
+    "sha256": "c6c088774729b82aac303179a571d10a08236fbcb919962304151a6cf1706a24"
+  },
+  {
+    "path": ".context/robustness/layer-parity-20261107/reference-capture/known-failure/step-082.safetensors",
+    "bytes": 12997339,
+    "sha256": "e1e30207cd25635c27249bf261ceaae4f18100d8b6c87b4c417e1f8398ce85d6"
+  },
+  {
+    "path": ".context/robustness/layer-parity-20261107/reference-capture/known-failure/step-083.safetensors",
+    "bytes": 13112027,
+    "sha256": "d13bd9230ebadf994edbe40724e1e041c80821346acfa2ab668edd6d46bbd210"
+  },
+  {
+    "path": ".context/robustness/layer-parity-20261107/reference-capture/known-failure/step-084.safetensors",
+    "bytes": 13226749,
+    "sha256": "f36806b28dac2e9c0d92187e640016372d8a57c620d0154beee01838b5d624ab"
+  },
+  {
+    "path": ".context/robustness/layer-parity-20261107/reference-capture/known-failure-repeat/step-082.safetensors",
+    "bytes": 12997339,
+    "sha256": "e1e30207cd25635c27249bf261ceaae4f18100d8b6c87b4c417e1f8398ce85d6"
+  },
+  {
+    "path": ".context/robustness/layer-parity-20261107/reference-capture/known-failure-repeat/step-083.safetensors",
+    "bytes": 13112027,
+    "sha256": "d13bd9230ebadf994edbe40724e1e041c80821346acfa2ab668edd6d46bbd210"
+  },
+  {
+    "path": ".context/robustness/layer-parity-20261107/reference-capture/known-failure-repeat/step-084.safetensors",
+    "bytes": 13226749,
+    "sha256": "f36806b28dac2e9c0d92187e640016372d8a57c620d0154beee01838b5d624ab"
+  },
+  {
+    "path": ".context/robustness/layer-parity-20261107/reference-rope-formula.safetensors",
+    "bytes": 1307,
+    "sha256": "58dcb9618ceedafb2dffe9d107ce74de9cd233f1f92bab33ba7d67467df47b61"
+  }
+]

@@ -1,0 +1,1430 @@
+{
+  "status": "diagnostic_completed",
+  "native_report_sha256": "ad01a7f4c0689b7cf08bfbbf53741f73ff270e23776d82a25bda336afff11d26",
+  "reference_report_sha256": "5b76c60187e867e3b421c827ceca718d61179fda7a4ce93522db959c6e4aeb93",
+  "cases": 6,
+  "steps": 367,
+  "codec_values": 5872,
+  "all_original_candidate_pcm_and_main_tokens_exact": true,
+  "results": [
+    {
+      "id": "known-failure",
+      "steps": 91,
+      "native_codes_sha256": "03c56f7a41eabe97984f886edb3aaa7183e21afd761fc482e278536716d1f845",
+      "reference_codes_sha256": "667199dbe4400819c84e3e9b9f36ea275afc8506dca52043b5035ba370cfacda",
+      "all_groups_equal": false,
+      "main_tokens_equal": true,
+      "differences": [
+        {
+          "step": 84,
+          "group": 3,
+          "native": 409,
+          "reference": 405,
+          "audio_frame": true
+        },
+        {
+          "step": 84,
+          "group": 4,
+          "native": 97,
+          "reference": 22,
+          "audio_frame": true
+        },
+        {
+          "step": 84,
+          "group": 5,
+          "native": 1764,
+          "reference": 1481,
+          "audio_frame": true
+        },
+        {
+          "step": 84,
+          "group": 7,
+          "native": 77,
+          "reference": 88,
+          "audio_frame": true
+        },
+        {
+          "step": 84,
+          "group": 8,
+          "native": 338,
+          "reference": 1438,
+          "audio_frame": true
+        },
+        {
+          "step": 84,
+          "group": 9,
+          "native": 1297,
+          "reference": 1206,
+          "audio_frame": true
+        },
+        {
+          "step": 84,
+          "group": 10,
+          "native": 891,
+          "reference": 1061,
+          "audio_frame": true
+        },
+        {
+          "step": 84,
+          "group": 11,
+          "native": 708,
+          "reference": 722,
+          "audio_frame": true
+        },
+        {
+          "step": 84,
+          "group": 12,
+          "native": 994,
+          "reference": 1220,
+          "audio_frame": true
+        },
+        {
+          "step": 84,
+          "group": 13,
+          "native": 1507,
+          "reference": 975,
+          "audio_frame": true
+        },
+        {
+          "step": 84,
+          "group": 14,
+          "native": 370,
+          "reference": 827,
+          "audio_frame": true
+        },
+        {
+          "step": 84,
+          "group": 15,
+          "native": 2047,
+          "reference": 1659,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 1,
+          "native": 1632,
+          "reference": 1556,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 2,
+          "native": 1209,
+          "reference": 1566,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 3,
+          "native": 1442,
+          "reference": 1577,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 4,
+          "native": 1480,
+          "reference": 1381,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 5,
+          "native": 1294,
+          "reference": 1542,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 6,
+          "native": 1771,
+          "reference": 637,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 7,
+          "native": 264,
+          "reference": 158,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 8,
+          "native": 1404,
+          "reference": 1436,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 9,
+          "native": 197,
+          "reference": 816,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 10,
+          "native": 779,
+          "reference": 400,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 11,
+          "native": 426,
+          "reference": 216,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 12,
+          "native": 1460,
+          "reference": 438,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 13,
+          "native": 135,
+          "reference": 705,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 14,
+          "native": 1777,
+          "reference": 1774,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 15,
+          "native": 512,
+          "reference": 552,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 2,
+          "native": 1985,
+          "reference": 1441,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 3,
+          "native": 1747,
+          "reference": 713,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 4,
+          "native": 6,
+          "reference": 293,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 5,
+          "native": 1005,
+          "reference": 82,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 6,
+          "native": 237,
+          "reference": 219,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 7,
+          "native": 1242,
+          "reference": 348,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 8,
+          "native": 82,
+          "reference": 174,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 9,
+          "native": 1404,
+          "reference": 1494,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 10,
+          "native": 1088,
+          "reference": 1434,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 11,
+          "native": 1993,
+          "reference": 1787,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 12,
+          "native": 243,
+          "reference": 753,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 13,
+          "native": 1040,
+          "reference": 600,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 14,
+          "native": 1041,
+          "reference": 681,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 15,
+          "native": 38,
+          "reference": 108,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 2,
+          "native": 1274,
+          "reference": 1072,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 4,
+          "native": 588,
+          "reference": 262,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 5,
+          "native": 241,
+          "reference": 1439,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 6,
+          "native": 842,
+          "reference": 1224,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 7,
+          "native": 918,
+          "reference": 1534,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 8,
+          "native": 1327,
+          "reference": 728,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 9,
+          "native": 943,
+          "reference": 1059,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 10,
+          "native": 354,
+          "reference": 1490,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 11,
+          "native": 1121,
+          "reference": 1490,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 12,
+          "native": 568,
+          "reference": 884,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 13,
+          "native": 1258,
+          "reference": 1358,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 14,
+          "native": 1651,
+          "reference": 1974,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 15,
+          "native": 1865,
+          "reference": 1784,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 2,
+          "native": 1317,
+          "reference": 623,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 3,
+          "native": 1569,
+          "reference": 980,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 4,
+          "native": 1889,
+          "reference": 1599,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 5,
+          "native": 1052,
+          "reference": 1551,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 6,
+          "native": 1299,
+          "reference": 1573,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 7,
+          "native": 74,
+          "reference": 853,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 8,
+          "native": 773,
+          "reference": 791,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 9,
+          "native": 150,
+          "reference": 124,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 10,
+          "native": 1854,
+          "reference": 1387,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 11,
+          "native": 983,
+          "reference": 1351,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 12,
+          "native": 101,
+          "reference": 486,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 13,
+          "native": 621,
+          "reference": 759,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 14,
+          "native": 508,
+          "reference": 469,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 15,
+          "native": 357,
+          "reference": 380,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 2,
+          "native": 761,
+          "reference": 2005,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 3,
+          "native": 1985,
+          "reference": 2007,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 4,
+          "native": 1137,
+          "reference": 31,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 5,
+          "native": 69,
+          "reference": 623,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 6,
+          "native": 274,
+          "reference": 428,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 7,
+          "native": 360,
+          "reference": 95,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 8,
+          "native": 1040,
+          "reference": 902,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 9,
+          "native": 1776,
+          "reference": 1328,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 10,
+          "native": 541,
+          "reference": 1077,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 11,
+          "native": 107,
+          "reference": 692,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 12,
+          "native": 1677,
+          "reference": 1885,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 13,
+          "native": 1518,
+          "reference": 978,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 14,
+          "native": 289,
+          "reference": 357,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 15,
+          "native": 1570,
+          "reference": 1478,
+          "audio_frame": true
+        },
+        {
+          "step": 90,
+          "group": 1,
+          "native": 877,
+          "reference": 782,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 2,
+          "native": 1726,
+          "reference": 1507,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 3,
+          "native": 1307,
+          "reference": 832,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 4,
+          "native": 748,
+          "reference": 599,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 5,
+          "native": 1223,
+          "reference": 1015,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 6,
+          "native": 656,
+          "reference": 1479,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 7,
+          "native": 417,
+          "reference": 228,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 8,
+          "native": 1555,
+          "reference": 1527,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 9,
+          "native": 571,
+          "reference": 771,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 10,
+          "native": 355,
+          "reference": 221,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 11,
+          "native": 462,
+          "reference": 166,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 12,
+          "native": 1707,
+          "reference": 1003,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 13,
+          "native": 1428,
+          "reference": 1224,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 14,
+          "native": 555,
+          "reference": 1011,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 15,
+          "native": 937,
+          "reference": 518,
+          "audio_frame": false
+        }
+      ]
+    },
+    {
+      "id": "short-control",
+      "steps": 35,
+      "native_codes_sha256": "50ff7cd98ba98777102484d5603ffae85d05e21d5d3a2ace5d85dfa5e5910c6a",
+      "reference_codes_sha256": "50ff7cd98ba98777102484d5603ffae85d05e21d5d3a2ace5d85dfa5e5910c6a",
+      "all_groups_equal": true,
+      "main_tokens_equal": true,
+      "differences": []
+    },
+    {
+      "id": "eric-english-numeric",
+      "steps": 81,
+      "native_codes_sha256": "3c09e7218d2f013e11ed235b976ba8da11ae80d459220854c6a356560eb9d0e0",
+      "reference_codes_sha256": "3c09e7218d2f013e11ed235b976ba8da11ae80d459220854c6a356560eb9d0e0",
+      "all_groups_equal": true,
+      "main_tokens_equal": true,
+      "differences": []
+    },
+    {
+      "id": "dylan-english-numeric",
+      "steps": 18,
+      "native_codes_sha256": "a9aa3929d90635379ae159a1dde86e4a83aaeca8d3a4c513014601110aee7205",
+      "reference_codes_sha256": "a9aa3929d90635379ae159a1dde86e4a83aaeca8d3a4c513014601110aee7205",
+      "all_groups_equal": true,
+      "main_tokens_equal": true,
+      "differences": []
+    },
+    {
+      "id": "date-name-control",
+      "steps": 51,
+      "native_codes_sha256": "f385ba25e98469e9f4d815d1af757e3fa3e3a1b11365027857c82cf7c8cd9af5",
+      "reference_codes_sha256": "f385ba25e98469e9f4d815d1af757e3fa3e3a1b11365027857c82cf7c8cd9af5",
+      "all_groups_equal": true,
+      "main_tokens_equal": true,
+      "differences": []
+    },
+    {
+      "id": "known-failure-repeat",
+      "steps": 91,
+      "native_codes_sha256": "03c56f7a41eabe97984f886edb3aaa7183e21afd761fc482e278536716d1f845",
+      "reference_codes_sha256": "667199dbe4400819c84e3e9b9f36ea275afc8506dca52043b5035ba370cfacda",
+      "all_groups_equal": false,
+      "main_tokens_equal": true,
+      "differences": [
+        {
+          "step": 84,
+          "group": 3,
+          "native": 409,
+          "reference": 405,
+          "audio_frame": true
+        },
+        {
+          "step": 84,
+          "group": 4,
+          "native": 97,
+          "reference": 22,
+          "audio_frame": true
+        },
+        {
+          "step": 84,
+          "group": 5,
+          "native": 1764,
+          "reference": 1481,
+          "audio_frame": true
+        },
+        {
+          "step": 84,
+          "group": 7,
+          "native": 77,
+          "reference": 88,
+          "audio_frame": true
+        },
+        {
+          "step": 84,
+          "group": 8,
+          "native": 338,
+          "reference": 1438,
+          "audio_frame": true
+        },
+        {
+          "step": 84,
+          "group": 9,
+          "native": 1297,
+          "reference": 1206,
+          "audio_frame": true
+        },
+        {
+          "step": 84,
+          "group": 10,
+          "native": 891,
+          "reference": 1061,
+          "audio_frame": true
+        },
+        {
+          "step": 84,
+          "group": 11,
+          "native": 708,
+          "reference": 722,
+          "audio_frame": true
+        },
+        {
+          "step": 84,
+          "group": 12,
+          "native": 994,
+          "reference": 1220,
+          "audio_frame": true
+        },
+        {
+          "step": 84,
+          "group": 13,
+          "native": 1507,
+          "reference": 975,
+          "audio_frame": true
+        },
+        {
+          "step": 84,
+          "group": 14,
+          "native": 370,
+          "reference": 827,
+          "audio_frame": true
+        },
+        {
+          "step": 84,
+          "group": 15,
+          "native": 2047,
+          "reference": 1659,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 1,
+          "native": 1632,
+          "reference": 1556,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 2,
+          "native": 1209,
+          "reference": 1566,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 3,
+          "native": 1442,
+          "reference": 1577,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 4,
+          "native": 1480,
+          "reference": 1381,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 5,
+          "native": 1294,
+          "reference": 1542,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 6,
+          "native": 1771,
+          "reference": 637,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 7,
+          "native": 264,
+          "reference": 158,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 8,
+          "native": 1404,
+          "reference": 1436,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 9,
+          "native": 197,
+          "reference": 816,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 10,
+          "native": 779,
+          "reference": 400,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 11,
+          "native": 426,
+          "reference": 216,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 12,
+          "native": 1460,
+          "reference": 438,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 13,
+          "native": 135,
+          "reference": 705,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 14,
+          "native": 1777,
+          "reference": 1774,
+          "audio_frame": true
+        },
+        {
+          "step": 85,
+          "group": 15,
+          "native": 512,
+          "reference": 552,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 2,
+          "native": 1985,
+          "reference": 1441,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 3,
+          "native": 1747,
+          "reference": 713,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 4,
+          "native": 6,
+          "reference": 293,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 5,
+          "native": 1005,
+          "reference": 82,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 6,
+          "native": 237,
+          "reference": 219,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 7,
+          "native": 1242,
+          "reference": 348,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 8,
+          "native": 82,
+          "reference": 174,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 9,
+          "native": 1404,
+          "reference": 1494,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 10,
+          "native": 1088,
+          "reference": 1434,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 11,
+          "native": 1993,
+          "reference": 1787,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 12,
+          "native": 243,
+          "reference": 753,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 13,
+          "native": 1040,
+          "reference": 600,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 14,
+          "native": 1041,
+          "reference": 681,
+          "audio_frame": true
+        },
+        {
+          "step": 86,
+          "group": 15,
+          "native": 38,
+          "reference": 108,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 2,
+          "native": 1274,
+          "reference": 1072,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 4,
+          "native": 588,
+          "reference": 262,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 5,
+          "native": 241,
+          "reference": 1439,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 6,
+          "native": 842,
+          "reference": 1224,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 7,
+          "native": 918,
+          "reference": 1534,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 8,
+          "native": 1327,
+          "reference": 728,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 9,
+          "native": 943,
+          "reference": 1059,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 10,
+          "native": 354,
+          "reference": 1490,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 11,
+          "native": 1121,
+          "reference": 1490,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 12,
+          "native": 568,
+          "reference": 884,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 13,
+          "native": 1258,
+          "reference": 1358,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 14,
+          "native": 1651,
+          "reference": 1974,
+          "audio_frame": true
+        },
+        {
+          "step": 87,
+          "group": 15,
+          "native": 1865,
+          "reference": 1784,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 2,
+          "native": 1317,
+          "reference": 623,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 3,
+          "native": 1569,
+          "reference": 980,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 4,
+          "native": 1889,
+          "reference": 1599,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 5,
+          "native": 1052,
+          "reference": 1551,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 6,
+          "native": 1299,
+          "reference": 1573,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 7,
+          "native": 74,
+          "reference": 853,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 8,
+          "native": 773,
+          "reference": 791,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 9,
+          "native": 150,
+          "reference": 124,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 10,
+          "native": 1854,
+          "reference": 1387,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 11,
+          "native": 983,
+          "reference": 1351,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 12,
+          "native": 101,
+          "reference": 486,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 13,
+          "native": 621,
+          "reference": 759,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 14,
+          "native": 508,
+          "reference": 469,
+          "audio_frame": true
+        },
+        {
+          "step": 88,
+          "group": 15,
+          "native": 357,
+          "reference": 380,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 2,
+          "native": 761,
+          "reference": 2005,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 3,
+          "native": 1985,
+          "reference": 2007,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 4,
+          "native": 1137,
+          "reference": 31,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 5,
+          "native": 69,
+          "reference": 623,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 6,
+          "native": 274,
+          "reference": 428,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 7,
+          "native": 360,
+          "reference": 95,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 8,
+          "native": 1040,
+          "reference": 902,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 9,
+          "native": 1776,
+          "reference": 1328,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 10,
+          "native": 541,
+          "reference": 1077,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 11,
+          "native": 107,
+          "reference": 692,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 12,
+          "native": 1677,
+          "reference": 1885,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 13,
+          "native": 1518,
+          "reference": 978,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 14,
+          "native": 289,
+          "reference": 357,
+          "audio_frame": true
+        },
+        {
+          "step": 89,
+          "group": 15,
+          "native": 1570,
+          "reference": 1478,
+          "audio_frame": true
+        },
+        {
+          "step": 90,
+          "group": 1,
+          "native": 877,
+          "reference": 782,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 2,
+          "native": 1726,
+          "reference": 1507,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 3,
+          "native": 1307,
+          "reference": 832,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 4,
+          "native": 748,
+          "reference": 599,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 5,
+          "native": 1223,
+          "reference": 1015,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 6,
+          "native": 656,
+          "reference": 1479,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 7,
+          "native": 417,
+          "reference": 228,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 8,
+          "native": 1555,
+          "reference": 1527,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 9,
+          "native": 571,
+          "reference": 771,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 10,
+          "native": 355,
+          "reference": 221,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 11,
+          "native": 462,
+          "reference": 166,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 12,
+          "native": 1707,
+          "reference": 1003,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 13,
+          "native": 1428,
+          "reference": 1224,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 14,
+          "native": 555,
+          "reference": 1011,
+          "audio_frame": false
+        },
+        {
+          "step": 90,
+          "group": 15,
+          "native": 937,
+          "reference": 518,
+          "audio_frame": false
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Two known-failure repetitions are deliberate repeats, not independent samples",
+    "Codec differences localize generation divergence but do not establish its numerical or sampling cause",
+    "No source/default/promotion or listening acceptance change"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "stage": "file-only safetensors header parser",
+  "error": "AssertionError: set(header) == set(meta[\"arrays\"])",
+  "cause": "Swift safetensors header includes reserved __metadata__: null",
+  "inference_rerun": false
+}

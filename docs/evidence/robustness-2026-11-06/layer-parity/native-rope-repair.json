@@ -1,0 +1,12 @@
+{
+  "status": "diagnostic_completed",
+  "source_sha256": "c3496bc3e0089f657f00945a551024bf719e7b0681eb4dc0cb185128417f22a5",
+  "retained_first_attempt_sha256": "f47afcc4f340c95a47c08d8a5662fa60dc83ed5be2097317a0c9a42e7d4b0547",
+  "model_loaded": false,
+  "reused_compilation": true,
+  "link_exit_code": 0,
+  "run_exit_code": 0,
+  "output_sha256": "092996a65265f7f2e24d36b2f3364d076c10feb69b2ea97faf6fe9faf7db7329",
+  "elapsed_seconds": 14.251125957991462,
+  "shared_inputs_preserved": true
+}

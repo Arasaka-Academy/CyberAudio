@@ -34,6 +34,8 @@
 | [reference-parity/README.md](reference-parity/README.md) | 五个固定样本、146 个强制 codec 步骤的 Swift／未修改 Python 参考前向对照；750 项张量比较数值一致、误差为零，原失败前缀和生产数据保留；不包含采样、完整解码或质量通过结论 |
 | [sampling-order/README.md](sampling-order/README.md) | 实际采样器的 2336 次重放及 bfloat16／top-k 顺序差异；当前语言路由 144 对、294 次 ASR，无 EOS 减少但仍有 5 对回读回退，候选未采用；正式源码与生产数据保留 |
 | [reference-generation/README.md](reference-generation/README.md) | 七次未修改 Python 完整生成、观察／无观察控制与九次 ASR；相同完整 codec 的解码对照定位 72 帧窗口差异，并保留已知失败第 84 帧之后的未归因差异；未采用新策略 |
+| [complete-codec/README.md](complete-codec/README.md) | 六组完整原生码／PCM 重现旧候选；5,872 个码值对照发现两次重复各 97 项不同；1,859 项完整前向比较中 42 项不同，明确短前缀零误差的范围 |
+| [layer-parity/README.md](layer-parity/README.md) | 263 步原生重放及参考观察控制、3,168 项边界比较；定位 RoPE 逆频率在位置 104 的舍入传播，只替换参考进程内的该数组后完整 1,859 项比较零误差；正式策略未改 |
 
 完整原始记录保留在开发工作区 `.context/robustness/`，原始检查日志在 `/tmp/cyberaudio-robustness-*.log`，不会作为分发材料上传。
 

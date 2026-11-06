@@ -1,0 +1,99 @@
+{
+  "comparisons": 1859,
+  "exact": 1817,
+  "maximum_abs": 0.501953125,
+  "first_differences": [
+    {
+      "case": "known-failure",
+      "step": 84,
+      "tensor": "logits",
+      "reference_shape": [
+        1,
+        1,
+        3072
+      ],
+      "native_shape": [
+        1,
+        1,
+        3072
+      ],
+      "reference_dtype": "mlx.core.bfloat16",
+      "native_dtype": "mlx.core.bfloat16",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "values_exact": false,
+      "max_abs": 0.1875,
+      "mean_abs": 0.030380864938100178,
+      "rms_abs": 0.042811481260352544
+    },
+    {
+      "case": "known-failure",
+      "step": 84,
+      "tensor": "hidden",
+      "reference_shape": [
+        1,
+        1,
+        2048
+      ],
+      "native_shape": [
+        1,
+        1,
+        2048
+      ],
+      "reference_dtype": "mlx.core.bfloat16",
+      "native_dtype": "mlx.core.bfloat16",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "values_exact": false,
+      "max_abs": 0.25,
+      "mean_abs": 0.0277448371052742,
+      "rms_abs": 0.03677160191918492
+    },
+    {
+      "case": "known-failure",
+      "step": 84,
+      "tensor": "code_logits",
+      "reference_shape": [
+        1,
+        15,
+        2048
+      ],
+      "native_shape": [
+        1,
+        15,
+        2048
+      ],
+      "reference_dtype": "mlx.core.bfloat16",
+      "native_dtype": "mlx.core.bfloat16",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "values_exact": false,
+      "max_abs": 0.4375,
+      "mean_abs": 0.06780050074060757,
+      "rms_abs": 0.08949732950876506
+    },
+    {
+      "case": "known-failure",
+      "step": 85,
+      "tensor": "logits",
+      "reference_shape": [
+        1,
+        1,
+        3072
+      ],
+      "native_shape": [
+        1,
+        1,
+        3072
+      ],
+      "reference_dtype": "mlx.core.bfloat16",
+      "native_dtype": "mlx.core.bfloat16",
+      "shape_equal": true,
+      "dtype_equal": true,
+      "values_exact": false,
+      "max_abs": 0.25,
+      "mean_abs": 0.032700784193972744,
+      "rms_abs": 0.04851394076047248
+    }
+  ]
+}
