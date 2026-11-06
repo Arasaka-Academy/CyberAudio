@@ -6,6 +6,21 @@ guard CommandLine.arguments.count == 2 else { fatalError("Usage: swift patch_mlx
 let checkout = URL(fileURLWithPath:CommandLine.arguments[1])
 let source = checkout.appendingPathComponent("Sources/MLXAudioTTS/Models/Qwen3TTS/Qwen3TTS.swift")
 var text = try String(contentsOf:source,encoding:.utf8)
+let destructiveCacheRecovery = """
+            // speech_tokenizer exists but is not a directory — stale cache
+            // Remove the entire model cache so it re-downloads cleanly next time
+            print("speech_tokenizer is not a directory (stale cache), clearing model cache...")
+            try? fm.removeItem(at: modelDir)
+            throw AudioGenerationError.modelNotInitialized(
+                "Model cache was corrupted (speech_tokenizer). It has been cleared. Please try loading again."
+            )
+"""
+let preservingCacheFailure = """
+            // Configured model directories may contain user-owned files.
+            throw AudioGenerationError.modelNotInitialized(
+                "speech_tokenizer is not a directory. Model files were preserved; check the configured model directory."
+            )
+"""
 let adapter = """
 
 // CyberAudio managed generation: the caller owns the producer and its completion.
@@ -38,6 +53,7 @@ func modify(_ original: String) throws -> String {
     try replace("let effectiveMaxTokens = min(maxTokens, max(75, targetTokenCount * 6))", "let effectiveMaxTokens = checkCancellation == nil ? min(maxTokens, max(75, targetTokenCount * 6)) : maxTokens")
     // A dialect speaker may specialize Chinese/auto, but must honor explicit English.
     try replace("if let dialectMap = talkerConfig.spkIsDialect,", "if [\"chinese\", \"auto\"].contains(language.lowercased()),\n               let dialectMap = talkerConfig.spkIsDialect,")
+    try replace(destructiveCacheRecovery, preservingCacheFailure)
     let start = result.range(of:"    func generateVoiceDesign(")!.lowerBound
     let end = result.range(of:"    static func parseCustomVoicePrompt",range:start..<result.endIndex)!.lowerBound
     let section = String(result[start..<end])
@@ -53,12 +69,14 @@ if text.hasSuffix(adapter) {
     original = original.replacingOccurrences(of:"onAudioChunk: ((MaterializedArray) -> Void)? = nil,\n        checkCancellation: (() throws -> Void)? = nil",with:"onAudioChunk: ((MaterializedArray) -> Void)? = nil")
     original = original.replacingOccurrences(of:"let effectiveMaxTokens = checkCancellation == nil ? min(maxTokens, max(75, targetTokenCount * 6)) : maxTokens",with:"let effectiveMaxTokens = min(maxTokens, max(75, targetTokenCount * 6))")
     original = original.replacingOccurrences(of:"if [\"chinese\", \"auto\"].contains(language.lowercased()),\n               let dialectMap = talkerConfig.spkIsDialect,",with:"if let dialectMap = talkerConfig.spkIsDialect,")
+    original = original.replacingOccurrences(of:preservingCacheFailure,with:destructiveCacheRecovery)
     original = original.replacingOccurrences(of:"try checkCancellation?(); try Task.checkCancellation()",with:"try Task.checkCancellation()")
     let hash = SHA256.hash(data:Data(original.utf8)).map { String(format:"%02x",$0) }.joined()
     let prepared = try modify(original)
     let previous = SHA256.hash(data:Data(text.utf8)).map { String(format:"%02x",$0) }.joined()
     guard hash == "6d4d6efc3f19437a512dfe2446242d16cfedbe190d3a7ac39caa673442de6f7a",
-          prepared == text || previous == "0fcfeaaadd8eb6bb793d985162450968fa1b4e6c8d198962a988e8e4aaa55426" else { fatalError("Modified SDK does not match the pinned patch") }
+          prepared == text || ["0fcfeaaadd8eb6bb793d985162450968fa1b4e6c8d198962a988e8e4aaa55426",
+                               "0190fd2a02d6ce0eaa3732ca7b7d373be251747edc5d14a0d0b4fe8ce3c0dd6b"].contains(previous) else { fatalError("Modified SDK does not match the pinned patch") }
     if prepared != text {
         text = prepared
         try text.write(to:source,atomically:true,encoding:.utf8)
