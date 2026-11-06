@@ -1,0 +1,39 @@
+{
+  "tagName": "v0.4.3",
+  "isDraft": false,
+  "isPrerelease": false,
+  "publishedAt": "2026-11-06T06:44:07Z",
+  "url": "https://github.com/Arasaka-Academy/CyberAudio/releases/tag/v0.4.3",
+  "assets": [
+    {
+      "name": "appcast.xml",
+      "size": 2064,
+      "url": "https://github.com/Arasaka-Academy/CyberAudio/releases/download/v0.4.3/appcast.xml"
+    },
+    {
+      "name": "CyberAudio-0.4.3-macOS-arm64.dmg",
+      "size": 107989250,
+      "url": "https://github.com/Arasaka-Academy/CyberAudio/releases/download/v0.4.3/CyberAudio-0.4.3-macOS-arm64.dmg"
+    },
+    {
+      "name": "CyberAudio-0.4.3-macOS-arm64.dmg.sha256",
+      "size": 99,
+      "url": "https://github.com/Arasaka-Academy/CyberAudio/releases/download/v0.4.3/CyberAudio-0.4.3-macOS-arm64.dmg.sha256"
+    },
+    {
+      "name": "CyberAudio-0.4.3-macOS-arm64.zip",
+      "size": 93049775,
+      "url": "https://github.com/Arasaka-Academy/CyberAudio/releases/download/v0.4.3/CyberAudio-0.4.3-macOS-arm64.zip"
+    },
+    {
+      "name": "CyberAudio-0.4.3-macOS-arm64.zip.sha256",
+      "size": 99,
+      "url": "https://github.com/Arasaka-Academy/CyberAudio/releases/download/v0.4.3/CyberAudio-0.4.3-macOS-arm64.zip.sha256"
+    },
+    {
+      "name": "release.json",
+      "size": 694,
+      "url": "https://github.com/Arasaka-Academy/CyberAudio/releases/download/v0.4.3/release.json"
+    }
+  ]
+}

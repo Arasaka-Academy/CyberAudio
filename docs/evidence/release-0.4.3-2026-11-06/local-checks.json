@@ -1,0 +1,104 @@
+{
+  "checked_at": "2026-11-06T06:43:26.793646+00:00",
+  "version": "0.4.3",
+  "build": "10",
+  "make_check": "passed",
+  "stable_feed_version_guard": "passed",
+  "local_app_build": "passed",
+  "strict_nested_codesign": true,
+  "icon_resources_match_source": true,
+  "icon_sha256": {
+    "CyberAudio.icns": "e023717b007da32f18e5ac288069888814446c9c3746edfee820ece6d288ef9e",
+    "MenuBarIdle.png": "a223c7b1bce0ba6d911adb2fbb3841d146874806a2e2f63525f155be765c2a87",
+    "MenuBarIdle@2x.png": "386847d185f50e75f7778190e817e55dde3ac5f5010654d82a189403c26f7fbd",
+    "MenuBarActive.png": "f0dceffc0b42c72dc7e34175c9a2883213d00db0a7fd909d8bba8d1a451f70cf",
+    "MenuBarActive@2x.png": "b2a645915fdcdd11cb7b915457a695de6e4307a4ef09ed964f19add95ea0cf5d"
+  },
+  "appkit_icon_loading": {
+    "icns_representations": [
+      [
+        1024,
+        1024
+      ],
+      [
+        512,
+        512
+      ],
+      [
+        512,
+        512
+      ],
+      [
+        256,
+        256
+      ],
+      [
+        256,
+        256
+      ],
+      [
+        128,
+        128
+      ],
+      [
+        64,
+        64
+      ],
+      [
+        32,
+        32
+      ],
+      [
+        32,
+        32
+      ],
+      [
+        16,
+        16
+      ]
+    ],
+    "menu_icons": [
+      {
+        "logical_size": [
+          18,
+          18
+        ],
+        "monochrome_with_alpha": true,
+        "name": "MenuBarIdle",
+        "pixel_representations": [
+          [
+            18,
+            18
+          ],
+          [
+            36,
+            36
+          ]
+        ]
+      },
+      {
+        "logical_size": [
+          18,
+          18
+        ],
+        "monochrome_with_alpha": true,
+        "name": "MenuBarActive",
+        "pixel_representations": [
+          [
+            18,
+            18
+          ],
+          [
+            36,
+            36
+          ]
+        ]
+      }
+    ],
+    "status": "passed"
+  },
+  "release_tag": "v0.4.3",
+  "release_commit": "93721b91f379e1da310c086980a49286685abc51",
+  "icon_commit": "96d64d6",
+  "ci_url": "https://github.com/Arasaka-Academy/CyberAudio/actions/runs/42176322233"
+}

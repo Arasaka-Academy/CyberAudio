@@ -1,0 +1,14 @@
+{
+  "tag": "v0.4.3",
+  "version": "0.4.3",
+  "build": "10",
+  "prerelease": false,
+  "commit": "93721b91f379e1da310c086980a49286685abc51",
+  "artifacts": {
+    "CyberAudio-0.4.3-macOS-arm64.dmg": "a511e5cc021be1850c0db8734a532ec5a7cc7d1a2cd540a42f9c871c0bce4a8f",
+    "CyberAudio-0.4.3-macOS-arm64.dmg.sha256": "23124a115e0744448155b8d1a1b4409f138013a5d344addacdaaf5382cb7f619",
+    "CyberAudio-0.4.3-macOS-arm64.zip": "31c2b3810707d2ef89c76f7d800253a335fc3154834d4dc50962fce85f699dad",
+    "CyberAudio-0.4.3-macOS-arm64.zip.sha256": "2d91f07a5a24db117a1e4fe0819a92614f0240249381a091d77cc9fa622681b8",
+    "appcast.xml": "3e36cd9f86388496035fdc36201f62e986b14b739e18422da4d6d5bb2bcf0ea8"
+  }
+}

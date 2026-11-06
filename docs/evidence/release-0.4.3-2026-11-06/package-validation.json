@@ -1,0 +1,109 @@
+{
+  "status": "passed",
+  "version": "0.4.3",
+  "build": "10",
+  "strict_codesign": true,
+  "signed_feed_verified": true,
+  "signed_zip_verified": true,
+  "arm64": true,
+  "python_runtime": false,
+  "dmg_internal_checksum": true,
+  "dmg_and_zip_executables_match": true,
+  "executable_sha256": {
+    "CyberAudio": "a6107f73f978c963b953fc88f63492aa052192ffe40b775381cac42547452c6c",
+    "CyberAudioService": "b784db35f533a50dbb604bf7791d122cf6887384f4b9c0bca4fb1e829d69193a",
+    "CyberAudioAssets": "2f7a9a3230f425840bf7b0da3e2b3b1318660890dce9c5eab94a54941f7c72e8"
+  },
+  "icon_resources_match_source": true,
+  "dmg_and_zip_icons_match": true,
+  "icon_sha256": {
+    "CyberAudio.icns": "e023717b007da32f18e5ac288069888814446c9c3746edfee820ece6d288ef9e",
+    "MenuBarIdle.png": "a223c7b1bce0ba6d911adb2fbb3841d146874806a2e2f63525f155be765c2a87",
+    "MenuBarIdle@2x.png": "386847d185f50e75f7778190e817e55dde3ac5f5010654d82a189403c26f7fbd",
+    "MenuBarActive.png": "f0dceffc0b42c72dc7e34175c9a2883213d00db0a7fd909d8bba8d1a451f70cf",
+    "MenuBarActive@2x.png": "b2a645915fdcdd11cb7b915457a695de6e4307a4ef09ed964f19add95ea0cf5d"
+  },
+  "appkit_icon_loading": {
+    "icns_representations": [
+      [
+        1024,
+        1024
+      ],
+      [
+        512,
+        512
+      ],
+      [
+        512,
+        512
+      ],
+      [
+        256,
+        256
+      ],
+      [
+        256,
+        256
+      ],
+      [
+        128,
+        128
+      ],
+      [
+        64,
+        64
+      ],
+      [
+        32,
+        32
+      ],
+      [
+        32,
+        32
+      ],
+      [
+        16,
+        16
+      ]
+    ],
+    "menu_icons": [
+      {
+        "logical_size": [
+          18,
+          18
+        ],
+        "monochrome_with_alpha": true,
+        "name": "MenuBarIdle",
+        "pixel_representations": [
+          [
+            18,
+            18
+          ],
+          [
+            36,
+            36
+          ]
+        ]
+      },
+      {
+        "logical_size": [
+          18,
+          18
+        ],
+        "monochrome_with_alpha": true,
+        "name": "MenuBarActive",
+        "pixel_representations": [
+          [
+            18,
+            18
+          ],
+          [
+            36,
+            36
+          ]
+        ]
+      }
+    ],
+    "status": "passed"
+  }
+}

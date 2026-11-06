@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-11-06T07:14:45.707332+00:00",
+  "release_version": "0.4.3 (10)",
+  "release_commit": "93721b91f379e1da310c086980a49286685abc51",
+  "published_and_assets_verified": true,
+  "pages_feed_matches_signed_release": true,
+  "installed_app_replaced": false,
+  "current_installed_version": "0.4.2 (9)",
+  "configuration_and_token_match_original_backup": true,
+  "running_service": {
+    "status": "ready",
+    "busy": false,
+    "updating": false
+  },
+  "desktop_validation": {
+    "attempted": true,
+    "result": "Current running app window accessibility surface unresolved by Cua; no UI action performed.",
+    "new_version_installed_menu_bar_screenshot_verified": false,
+    "in_app_update_prompt_verified": false
+  },
+  "signing": "ad-hoc code signing and Sparkle EdDSA; Developer ID notarization not claimed"
+}

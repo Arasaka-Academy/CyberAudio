@@ -1,0 +1,176 @@
+{
+  "conclusion": "success",
+  "headSha": "93721b91f379e1da310c086980a49286685abc51",
+  "jobs": [
+    {
+      "completedAt": "2026-11-06T07:08:19Z",
+      "conclusion": "success",
+      "databaseId": 127755502866,
+      "name": "Sign and publish release assets",
+      "startedAt": "2026-11-06T06:44:15Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-06T06:44:21Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-06T06:44:16Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-06T06:44:25Z",
+          "conclusion": "success",
+          "name": "Check out release tag",
+          "number": 2,
+          "startedAt": "2026-11-06T06:44:21Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-06T06:45:37Z",
+          "conclusion": "success",
+          "name": "Select Swift 6.3 for native Qwen",
+          "number": 3,
+          "startedAt": "2026-11-06T06:44:25Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-06T06:46:06Z",
+          "conclusion": "success",
+          "name": "Install FFmpeg for native protocol tests",
+          "number": 4,
+          "startedAt": "2026-11-06T06:45:37Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-06T06:46:12Z",
+          "conclusion": "success",
+          "name": "Guard stable feed against version rollback",
+          "number": 5,
+          "startedAt": "2026-11-06T06:46:06Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-06T06:46:12Z",
+          "conclusion": "success",
+          "name": "Validate published release and stable channel classification",
+          "number": 6,
+          "startedAt": "2026-11-06T06:46:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-06T06:46:13Z",
+          "conclusion": "success",
+          "name": "Read release notes",
+          "number": 7,
+          "startedAt": "2026-11-06T06:46:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-06T06:53:01Z",
+          "conclusion": "success",
+          "name": "Validate native service and update behavior",
+          "number": 8,
+          "startedAt": "2026-11-06T06:46:13Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-06T07:07:50Z",
+          "conclusion": "success",
+          "name": "Build, sign and verify app, DMG, ZIP and feed",
+          "number": 9,
+          "startedAt": "2026-11-06T06:53:01Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-06T07:08:06Z",
+          "conclusion": "success",
+          "name": "Upload immutable assets and verify public downloads",
+          "number": 10,
+          "startedAt": "2026-11-06T07:07:50Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-06T07:08:12Z",
+          "conclusion": "success",
+          "name": "Retain build evidence",
+          "number": 11,
+          "startedAt": "2026-11-06T07:08:06Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-06T07:08:13Z",
+          "conclusion": "success",
+          "name": "Stage stable update site",
+          "number": 12,
+          "startedAt": "2026-11-06T07:08:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-06T07:08:14Z",
+          "conclusion": "success",
+          "name": "Prepare Pages artifact after all release assets are verified",
+          "number": 13,
+          "startedAt": "2026-11-06T07:08:13Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-06T07:08:14Z",
+          "conclusion": "success",
+          "name": "Post Check out release tag",
+          "number": 26,
+          "startedAt": "2026-11-06T07:08:14Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-06T07:08:15Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 27,
+          "startedAt": "2026-11-06T07:08:14Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/Arasaka-Academy/CyberAudio/actions/runs/42176322233/job/127755502866"
+    },
+    {
+      "completedAt": "2026-11-06T07:08:35Z",
+      "conclusion": "success",
+      "databaseId": 127763621802,
+      "name": "Publish stable update feed",
+      "startedAt": "2026-11-06T07:08:24Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-06T07:08:26Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-06T07:08:25Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-06T07:08:33Z",
+          "conclusion": "success",
+          "name": "Atomically publish verified feed",
+          "number": 2,
+          "startedAt": "2026-11-06T07:08:26Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-06T07:08:33Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 3,
+          "startedAt": "2026-11-06T07:08:33Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/Arasaka-Academy/CyberAudio/actions/runs/42176322233/job/127763621802"
+    }
+  ],
+  "startedAt": "2026-11-06T06:44:08Z",
+  "status": "completed",
+  "updatedAt": "2026-11-06T07:08:35Z",
+  "url": "https://github.com/Arasaka-Academy/CyberAudio/actions/runs/42176322233"
+}
