@@ -5,6 +5,8 @@ import Foundation
 private struct NativeReport: Decodable {
     let status: String
     let asr_corpus: [Row]
+    let os: String?
+    let physical_memory_bytes: UInt64?
     struct Row: Decodable {
         let id: String
         let reference: String
@@ -49,6 +51,8 @@ private struct NativeReport: Decodable {
         let originalRows = raw["results"] as! [[String:Any]]
         let baseInference = originalRows.map { ($0["response"] as! [String:Any])["inference_ms"] as! Double }
         let baseHTTP = originalRows.map { $0["http_milliseconds"] as! Double }
+        var environment: [String:Any] = ["os":native.os ?? "not recorded"]
+        if let memory = native.physical_memory_bytes { environment["physical_memory_bytes"] = memory }
         var report: [String:Any] = [
             "samples":candidate.count,
             "same_audio_hashes_and_references":true,
@@ -70,8 +74,10 @@ private struct NativeReport: Decodable {
                 "native_http_p95":Statistics.percentile(native.asr_corpus.map(\.http_ms),0.95)!
             ],
             "scoring":"NFC lowercase; punctuation to spaces; aggregate character/word edits; nearest-rank P95",
+            "baseline_environment":["platform":raw["platform"] as? String ?? "not recorded"],
+            "candidate_environment":environment,
             "limitations":["50 Mandarin and 50 English public FLEURS recordings; no dedicated code-switch or entity labels",
-                "Measurements are successive runs on the same M4, not simultaneous controlled energy tests"]
+                "Hardware and background load must be checked separately; latency observations do not establish speedup or energy gains"]
         ]
         report["accuracy_and_processing"] = try JSONSerialization.jsonObject(with:JSONEncoder().encode(processing))
         let output = try JSONSerialization.data(withJSONObject:report,options:[.prettyPrinted,.sortedKeys,.withoutEscapingSlashes])

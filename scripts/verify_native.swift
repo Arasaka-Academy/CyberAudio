@@ -54,13 +54,13 @@ private final class Stream: NSObject,URLSessionDataDelegate,@unchecked Sendable 
     }
     func urlSession(_ session: URLSession,task: URLSessionTask,didCompleteWithError error: Error?) { self.error = self.error ?? error; done.signal() }
 }
-private func stream(_ base: URL,token: String,text: String,allowDisconnect: Bool = false,onFirst: ((HTTPURLResponse,URLSessionDataTask) throws -> Void)? = nil) throws -> Stream {
+private func stream(_ base: URL,token: String,text: String,voice: String = "serena",language: String = "chinese",allowDisconnect: Bool = false,onFirst: ((HTTPURLResponse,URLSessionDataTask) throws -> Void)? = nil) throws -> Stream {
     let value = Stream(onFirst:onFirst),queue = OperationQueue(); queue.maxConcurrentOperationCount = 1
     let session = URLSession(configuration:.ephemeral,delegate:value,delegateQueue:queue)
     defer { session.invalidateAndCancel() }
     var request = URLRequest(url:base.appendingPathComponent("v1/audio/speech")); request.httpMethod = "POST"
     request.setValue("Bearer "+token,forHTTPHeaderField:"Authorization"); request.setValue("application/json",forHTTPHeaderField:"Content-Type")
-    request.httpBody = try json(["input":text,"language":"chinese","response_format":"pcm","stream":true]); request.timeoutInterval = 150
+    request.httpBody = try json(["input":text,"voice":voice,"language":language,"response_format":"pcm","stream":true]); request.timeoutInterval = 150
     let task = session.dataTask(with:request); task.resume()
     try require(value.done.wait(timeout:.now()+155) == .success,"Stream driver timeout")
     try require(value.response?.statusCode == 200,"Stream HTTP failure")
@@ -68,6 +68,121 @@ private func stream(_ base: URL,token: String,text: String,allowDisconnect: Bool
     if let error = value.error, !allowDisconnect && (onFirst == nil || (error as NSError).code != NSURLErrorCancelled) { throw error }
     try require(!value.data.isEmpty && value.data.count%2 == 0,"No valid PCM received")
     return value
+}
+
+private func soak(_ base: URL,root: URL,corpus: URL,rows: [[String:Any]],token: String,instance: String,
+                  processID: Int32,seconds: Double,drain: () throws -> Void) throws -> [String:Any] {
+    let reportFile = root.appendingPathComponent("reports/soak.json"),began = now()
+    let voices = ["serena","vivian","uncle_fu","ryan","aiden","ono_anna","sohee","eric","dylan"]
+    var metrics: [[String:Any]] = [],disconnects = 0,updates = 0
+    var report: [String:Any] = ["status":"running","started":ISO8601DateFormatter().string(from:Date()),
+        "duration_target_seconds":seconds,"corpus_samples":rows.count,"single_instance":instance,
+        "physical_memory_bytes":ProcessInfo.processInfo.physicalMemory,"os":ProcessInfo.processInfo.operatingSystemVersionString,
+        "memory_pressure_before":try command("/usr/bin/memory_pressure",["-Q"]),
+        "swap_before":try command("/usr/sbin/sysctl",["-n","vm.swapusage"]),
+        "evidence_kind":"round-robin fixed corpus ASR, nine voices, alternating WAV/PCM, disconnect and update recovery"]
+    func checkpoint() throws {
+        report["duration_seconds"] = now()-began; report["cycles"] = metrics.count
+        report["disconnect_recovered"] = disconnects; report["update_pause_resume"] = updates
+        report["metrics"] = metrics
+        try json(report).write(to:reportFile,options:.atomic)
+    }
+    defer {
+        if report["status"] as? String != "passed" {
+            report["status"] = "failed"; try? checkpoint()
+        }
+    }
+    func record(_ requestID: String?) throws -> [String:Any] {
+        guard let id = requestID else { throw Failure(message:"Soak response lacks request identity") }
+        let (data,response) = try http(base,"v1/requests/"+id,token:token)
+        let value = try object(data)
+        try require(response.statusCode == 200 && value["status"] as? String == "completed","Soak request did not complete")
+        return value
+    }
+    try require(!rows.isEmpty,"Soak requires a verified input corpus")
+    let executable = try command("/bin/ps",["-p",String(processID),"-o","comm="]).trimmingCharacters(in:.whitespacesAndNewlines)
+    try require(executable.hasSuffix("CyberAudioService"),"Soak RSS must refer to the owned model helper")
+    try checkpoint()
+    var lastProgress = began
+    while metrics.isEmpty || now()-began < seconds {
+        let cycle = metrics.count,row = rows[cycle%rows.count]
+        guard let audioPath = row["audio"] as? String,let expectedHash = row["audio_sha256"] as? String,
+              let id = row["id"] as? String else { throw Failure(message:"Soak corpus metadata is incomplete") }
+        let audio = try Data(contentsOf:corpus.appendingPathComponent(audioPath))
+        try require(SHA256.hash(data:audio).map { String(format:"%02x",$0) }.joined() == expectedHash,"Soak corpus bytes changed")
+        let boundary = "native-soak-"+UUID().uuidString
+        var body = Data("--\(boundary)\r\nContent-Disposition: form-data; name=\"file\"; filename=\"audio.wav\"\r\n\r\n".utf8)
+        body.append(audio); body.append(Data("\r\n--\(boundary)--\r\n".utf8))
+        let (sttData,sttResponse) = try http(base,"v1/audio/transcriptions",token:token,body:body,type:"multipart/form-data; boundary=\(boundary)")
+        try require(sttResponse.statusCode == 200,"Soak ASR request failed")
+        let transcription = try object(sttData)
+        try require(!(transcription["text"] as? String ?? "").isEmpty,"Soak ASR returned no text")
+        _ = try record(transcription["request_id"] as? String)
+        let voice = voices[cycle%voices.count],english = ["ryan","aiden"].contains(voice)
+        let text = english ? "CyberAudio stays responsive during a sustained mixed workload." : "持续验证语音服务的稳定性和恢复能力。"
+        let language = english ? "english" : "chinese"
+        let ttsResponse: HTTPURLResponse,outputBytes: Int,format: String
+        if cycle%2 == 0 {
+            let (data,response) = try http(base,"v1/audio/speech",token:token,body:json(["input":text,"voice":voice,"language":language,"response_format":"wav"]))
+            try require(response.statusCode == 200 && data.count > 44 && data.prefix(4) == Data("RIFF".utf8),"Soak WAV generation failed")
+            try require(Array(data[24..<28]) == [0xc0,0x5d,0,0] && (data.count-44)%2 == 0,"Soak WAV format changed")
+            ttsResponse = response; outputBytes = data.count; format = "wav"
+        } else {
+            let value = try stream(base,token:token,text:text,voice:voice,language:language)
+            ttsResponse = value.response!; outputBytes = value.data.count; format = "pcm"
+        }
+        let ttsRecord = try record(ttsResponse.value(forHTTPHeaderField:"x-request-id"))
+        if (cycle+1)%5 == 0 {
+            let value = try stream(base,token:token,text:String(repeating:"检查取消后能否恢复。",count:12)) { _,task in task.cancel() }
+            try drain()
+            guard let requestID = value.response?.value(forHTTPHeaderField:"x-request-id") else { throw Failure(message:"Cancelled soak response lacks identity") }
+            let cancelled = try object(http(base,"v1/requests/"+requestID,token:token).0)
+            try require(cancelled["status"] as? String == "cancelled","Soak disconnect did not cancel inference")
+            let (_,recovery) = try http(base,"v1/audio/speech",token:token,body:json(["input":"恢复正常。","response_format":"wav"]))
+            try require(recovery.statusCode == 200,"Soak inference did not recover after disconnect")
+            disconnects += 1
+        }
+        if (cycle+1)%10 == 0 {
+            let headers = ["x-cyberaudio-instance":instance,"x-cyberaudio-update":UUID().uuidString]
+            defer { _ = try? http(base,"internal/update/cancel",token:token,body:Data(),headers:headers) }
+            let (_,prepared) = try http(base,"internal/update/prepare",token:token,body:Data(),headers:headers)
+            try require(prepared.statusCode == 200,"Soak update preparation failed")
+            let (_,paused) = try http(base,"v1/audio/speech",token:token,body:json(["input":"暂停的新请求"]))
+            try require(paused.statusCode == 503,"Soak update did not pause admission")
+            let (_,resumed) = try http(base,"internal/update/cancel",token:token,body:Data(),headers:headers)
+            try require(resumed.statusCode == 200,"Soak update lease did not resume")
+            updates += 1
+        }
+        try drain()
+        let temporary = try FileManager.default.contentsOfDirectory(atPath:root.appendingPathComponent("tmp").path)
+        try require(!temporary.contains(where:{$0.hasPrefix("request-")}),"Soak left temporary request directories")
+        let rssText = try command("/bin/ps",["-p",String(processID),"-o","rss="]).trimmingCharacters(in:.whitespacesAndNewlines)
+        guard let rss = Int(rssText) else { throw Failure(message:"Cannot observe owned helper RSS") }
+        var sample: [String:Any] = ["cycle":cycle+1,"elapsed_seconds":now()-began,"corpus_id":id,
+            "stt_text":transcription["text"]!,"stt_processing_ms":transcription["processing_ms"]!,
+            "voice":voice,"format":format,"output_bytes":outputBytes,"observed_rss_bytes":rss*1024]
+        for key in ["metal_active_bytes","metal_peak_bytes","process_peak_rss_bytes","processing_ms"] {
+            guard let value = ttsRecord[key] as? NSNumber else { throw Failure(message:"Soak request lacks memory/timing metric: "+key) }
+            sample[key] = value
+        }
+        metrics.append(sample); try checkpoint()
+        if now()-lastProgress >= 30 {
+            print("SOAK \(Int(now()-began))/\(Int(seconds)) seconds; \(metrics.count) cycles, \(disconnects) disconnect recoveries, \(updates) update rounds")
+            fflush(stdout); lastProgress = now()
+        }
+    }
+    var summary: [String:Any] = [:]
+    for key in ["metal_active_bytes","metal_peak_bytes","process_peak_rss_bytes","observed_rss_bytes"] {
+        let values = metrics.compactMap { ($0[key] as? NSNumber)?.uint64Value }
+        summary[key] = ["first":values.first!,"last":values.last!,"minimum":values.min()!,"maximum":values.max()!]
+    }
+    report["memory_summary"] = summary; report["no_request_temporary_directories"] = true
+    report["memory_pressure_after"] = try command("/usr/bin/memory_pressure",["-Q"])
+    report["swap_after"] = try command("/usr/sbin/sysctl",["-n","vm.swapusage"])
+    report["status"] = "passed"; report["finished"] = ISO8601DateFormatter().string(from:Date())
+    try checkpoint()
+    return ["status":"passed","report":"soak.json","duration_seconds":now()-began,"cycles":metrics.count,
+        "disconnect_recovered":disconnects,"update_pause_resume":updates,"memory_summary":summary]
 }
 
 @main enum NativeValidation {
@@ -85,11 +200,19 @@ private func stream(_ base: URL,token: String,text: String,allowDisconnect: Bool
     private static func validate() throws {
         signal(SIGPIPE,SIG_IGN); umask(0o077)
         let arguments = Array(CommandLine.arguments.dropFirst()); var options: [String:String] = [:]
-        try require(arguments.count%2 == 0,"Use --app path --root NEW_TEST_ROOT --models path --corpus path --port 18765")
+        try require(arguments.count%2 == 0,"Use --app path --root NEW_TEST_ROOT --models path --corpus path --port 18765 [--asr-count 100] [--soak-seconds 7200]")
         for index in stride(from:0,to:arguments.count,by:2) { options[arguments[index]] = arguments[index+1] }
+        let soakSeconds = options["--soak-seconds"].flatMap(Double.init) ?? 0
+        try require(options["--soak-seconds"] == nil || soakSeconds.isFinite && soakSeconds > 0 && soakSeconds <= 86400,
+                    "--soak-seconds must be between 0 and 86400 seconds (exclusive of zero)")
+        try require(soakSeconds == 0 || options["--phase"] != "lifecycle","Soak requires the inference phase")
         guard let appPath = options["--app"],let rootPath = options["--root"],let modelsPath = options["--models"],let corpusPath = options["--corpus"],
               let port = options["--port"].flatMap(Int.init),(1024...65535).contains(port),port != 8765 else { throw Failure(message:"Explicit isolated paths and non-production port are required") }
         let app = URL(fileURLWithPath:appPath),root = URL(fileURLWithPath:rootPath),models = URL(fileURLWithPath:modelsPath),corpus = URL(fileURLWithPath:corpusPath)
+        let appInfo = try PropertyListSerialization.propertyList(from:Data(contentsOf:app.appendingPathComponent("Contents/Info.plist")),format:nil) as? [String:Any]
+        guard let bundleID = appInfo?["CFBundleIdentifier"] as? String,bundleID != "local.cyberaudio.mac" else {
+            throw Failure(message:"Use an isolated App copy with a separate bundle ID; production identity is forbidden")
+        }
         try require(root.resolvingSymlinksInPath().path != FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Application Support/CyberAudio").path,"Production root is forbidden")
         let marker = root.appendingPathComponent(".native-validation")
         if FileManager.default.fileExists(atPath:root.path) { try require(FileManager.default.fileExists(atPath:marker.path),"Existing root lacks validation marker") }
@@ -240,6 +363,10 @@ private func stream(_ base: URL,token: String,text: String,allowDisconnect: Bool
             cancellations.append(["round":index+1,"drain_ms":drainedMS,"status":record["status"]!,"recovery_http_status":recovered.statusCode])
         }
         try save("stream_disconnect_recovery",cancellations)
+        if soakSeconds > 0 {
+            try save("soak",soak(base,root:root,corpus:corpus,rows:corpusRows,token:token,instance:startup["instance"] as! String,
+                                processID:service.processIdentifier,seconds:soakSeconds,drain:drain))
+        }
         try input.fileHandleForWriting.close(); try save("stdin_eof_stop_ms",waitStopped(service))
         }
         var appExits: [[String:Any]] = []
