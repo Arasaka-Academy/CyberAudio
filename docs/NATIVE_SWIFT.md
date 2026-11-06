@@ -133,7 +133,9 @@ swiftc -parse-as-library -swift-version 5 -target arm64-apple-macos26.0 \
   --corpus /absolute/path/to/corpus --port 18765 --asr-count 100
 ```
 
-`--models` 下须有 `asr/`、`tts/`；`--corpus` 下为固定 `corpus.json` 和 WAV。驱动拒绝默认生产目录、8765 端口、无专用标记的已有数据目录和占用端口；它会写入测试配置、启动测试 App、在生成中退出该 App，因此只能用于隔离副本。旧 Python 生命周期脚本仍为历史工具，不能用于这套隔离验收。
+`--models` 下须有 `asr/`、`tts/`；`--corpus` 下为固定 `corpus.json` 和 WAV。驱动在创建数据目录之前拒绝生产 bundle ID，同时拒绝默认生产目录、8765 端口、无专用标记的已有数据目录和占用端口；它会写入测试配置、启动测试 App、在生成中退出该 App，因此只能用于隔离副本。旧 Python 生命周期脚本仍为历史工具，不能用于这套隔离验收。
+
+追加 `--soak-seconds 7200` 可在同一服务实例运行两小时混合负载：轮换固定语料、九个音色和 WAV／PCM，每五轮检查断流取消及恢复，每十轮检查更新暂停／恢复。时长须为正且不超过 86400 秒，不能与仅生命周期阶段一起使用。逐轮结果原子写入 `reports/soak.json`，其中 `running` 仅为检查点；须等待完整驱动退出，再检查负载和生命周期最终报告。2026-11-06 的固定语料恢复、M1／M4 回归及运行中任务证据见 [目标机验收](evidence/robustness-2026-11-06/target-validation/README.md)。
 
 重算已保留的报告：
 

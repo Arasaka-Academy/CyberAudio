@@ -1,0 +1,10 @@
+{
+  "stage": "full",
+  "started": "2026-11-06T11:25:48.885404+00:00",
+  "source_commit": "e2f34df30eab49e526a3dfd2fa7d6fffbfb81d0b",
+  "status": "passed",
+  "exit_code": 0,
+  "native_report_status": "passed",
+  "elapsed_seconds": 215.3834120829997,
+  "finished": "2026-11-06T11:29:24.269651+00:00"
+}

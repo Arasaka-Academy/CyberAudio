@@ -1,0 +1,34 @@
+{
+  "accuracy_and_processing" : {
+    "accuracyNonRegressing" : true,
+    "baselineP95Milliseconds" : 943.67362500634044,
+    "candidateP95Milliseconds" : 932.75637499755248,
+    "languages" : {
+      "en" : {
+        "baselineCER" : 0.018325617283950619,
+        "baselineWER" : 0.032527881040892194,
+        "candidateCER" : 0.018325617283950619,
+        "candidateWER" : 0.032527881040892194,
+        "samples" : 50
+      },
+      "zh" : {
+        "baselineCER" : 0.080300404390525701,
+        "baselineWER" : 0.52261306532663321,
+        "candidateCER" : 0.080300404390525701,
+        "candidateWER" : 0.52261306532663321,
+        "samples" : 50
+      }
+    },
+    "samples" : 100
+  },
+  "current_helper_sha256" : "cc556b65e263e16218db4315ed8585dccaede7b5f539be7bbd68a4b04e841a89",
+  "differences" : [
+
+  ],
+  "installed_helper_sha256" : "b784db35f533a50dbb604bf7791d122cf6887384f4b9c0bca4fb1e829d69193a",
+  "limitations" : "Sequential runs with different background load; no speedup or energy claim",
+  "raw_text_matches_installed_baseline" : 100,
+  "same_audio_hashes_and_references" : true,
+  "samples" : 100,
+  "scope" : "Same local M1 Max: isolated installed 0.4.3 Helper vs e2f34df Helper"
+}

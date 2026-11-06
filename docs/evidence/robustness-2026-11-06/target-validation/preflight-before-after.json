@@ -1,0 +1,8 @@
+{
+  "original_driver_exit": 1,
+  "created_data_root_before_rejecting_production_identity": true,
+  "created_validation_marker": true,
+  "helper_executable_present": false,
+  "current_driver_permanent_preflight_cases": 7,
+  "current_preflight_cases_passed": true
+}

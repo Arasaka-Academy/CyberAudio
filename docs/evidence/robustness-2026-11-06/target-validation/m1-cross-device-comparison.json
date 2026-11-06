@@ -1,0 +1,472 @@
+{
+  "accuracy_and_processing" : {
+    "accuracyNonRegressing" : false,
+    "baselineP95Milliseconds" : 1173.8800000000001,
+    "candidateP95Milliseconds" : 932.75637499755248,
+    "languages" : {
+      "en" : {
+        "baselineCER" : 0.01871141975308642,
+        "baselineWER" : 0.033457249070631967,
+        "candidateCER" : 0.018325617283950619,
+        "candidateWER" : 0.032527881040892194,
+        "samples" : 50
+      },
+      "zh" : {
+        "baselineCER" : 0.079722703639514725,
+        "baselineWER" : 0.52261306532663321,
+        "candidateCER" : 0.080300404390525701,
+        "candidateWER" : 0.52261306532663321,
+        "samples" : 50
+      }
+    },
+    "samples" : 100
+  },
+  "baseline_environment" : {
+    "platform" : "macOS-27.2-arm64-arm-64bit-Mach-O"
+  },
+  "candidate_environment" : {
+    "os" : "Version 27.0.1 (Build 26A434)",
+    "physical_memory_bytes" : 34359738368
+  },
+  "detected_language_mismatches" : [
+    "zh-003-1852",
+    "zh-010-1903",
+    "zh-021-1792",
+    "zh-025-1958",
+    "zh-032-2002",
+    "zh-043-1729"
+  ],
+  "differences_from_previous_swift" : [
+    {
+      "id" : "zh-001-2006",
+      "native" : "钙、钾等元素属于金属，银和金等元素当然也是金属。",
+      "normalized_text_equal" : false,
+      "previous" : "钙钾等元素属于金属、银和金等元素当然也是金属。"
+    },
+    {
+      "id" : "zh-002-1883",
+      "native" : "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+      "normalized_text_equal" : false,
+      "previous" : "桥下垂直净空15米，该项目于2011年8月完工，但直到2017年3月才开始通车。"
+    },
+    {
+      "id" : "zh-003-1852",
+      "native" : "适当使用博客可以使学生变得更善于分析和进行思辨。通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。Work 2002.",
+      "normalized_text_equal" : false,
+      "previous" : "适当使用博客，可以使学生变得更善于分析和进行思辨，通过积极回忆网络材料，学生们可以在他人的文章的上下文语境中找到自己的立场，并能够针对特定问题提出自己的观点。work2002。"
+    },
+    {
+      "id" : "zh-004-1734",
+      "native" : "科学家们可以得出结论：暗物质对其他暗物质的影响方式与普通物质相同。",
+      "normalized_text_equal" : false,
+      "previous" : "科学作家们可以得出结论，暗物质对其他暗物质的影响方式与普通物质相同。"
+    },
+    {
+      "id" : "zh-005-1890",
+      "native" : "大多数现代科研望远镜都是巨型设施，位于大气大气条件优良的偏远地区。",
+      "normalized_text_equal" : false,
+      "previous" : "大多数现代科研望远镜都是巨型设施，位于大体大气条件优良的偏远地区。"
+    },
+    {
+      "id" : "zh-007-1869",
+      "native" : "它的长下颚上布满了七十多颗剃刀般锋利的牙齿，上颚上还有一排，这意味着任何与它相遇的东西都无路可逃。",
+      "normalized_text_equal" : false,
+      "previous" : "他的床下颚上铺满了70多颗剃刀般锋利的牙齿，上颚上还有一排，这意味着任何与他相遇的东西都无路可逃。"
+    },
+    {
+      "id" : "zh-008-1805",
+      "native" : "Scoturb四零三路公交汽车定期发车，前往新特拉，在罗卡角停靠。",
+      "normalized_text_equal" : false,
+      "previous" : "scool tube403路公交汽车定期发车前往新特拉，在罗卡角停靠。"
+    },
+    {
+      "id" : "zh-011-1953",
+      "native" : "他随后被转转送到剑桥的阿登布鲁克医院。",
+      "normalized_text_equal" : false,
+      "previous" : "他随后被传转送到剑桥的阿登布鲁克医院。"
+    },
+    {
+      "id" : "zh-012-1830",
+      "native" : "执政党西南非洲人民组织也在议会选举中保住了多数席位。",
+      "normalized_text_equal" : false,
+      "previous" : "执政党西南非洲人民组织也在议会选举中保述了多数席位。"
+    },
+    {
+      "id" : "zh-013-1910",
+      "native" : "巴黎人是出了名的以自我为中心、粗鲁和傲慢。",
+      "normalized_text_equal" : false,
+      "previous" : "巴黎人士出了名的，以自我为中心、粗鲁和傲慢。"
+    },
+    {
+      "id" : "zh-014-1902",
+      "native" : "起初，他被送往位于大雅茅斯的詹姆斯·佩吉特医院进行救治。",
+      "normalized_text_equal" : false,
+      "previous" : "起初，他被送往位于大亚毛斯的詹姆斯佩吉特医院进行救治。"
+    },
+    {
+      "id" : "zh-015-1874",
+      "native" : "有些人认为他是对的，但也有很多人持反对意见。他们认为太阳系是围绕着地球运转的，太阳也是，甚至其他恒星也是。",
+      "normalized_text_equal" : false,
+      "previous" : "有些人认为它是对的，但也有很多人是反对引界。他们认为太阳系是围绕着地球运转的，太阳也是，甚至其他恒星也是。"
+    },
+    {
+      "id" : "zh-016-1763",
+      "native" : "就像月球对地球施加拉力，引起潮汐一样，银河系也对人马座星系施加着作用力。",
+      "normalized_text_equal" : false,
+      "previous" : "就像月球对地球施加拉力，引起潮汐一样，银河系也对人马做星息，施加着作用力。"
+    },
+    {
+      "id" : "zh-017-1837",
+      "native" : "自由派人士对重建工作的批判，主要集中在把重建合同授予了视为华盛顿内部人士的这一做法。",
+      "normalized_text_equal" : false,
+      "previous" : "自有派人士对重建工作的批判主要集中在把重建合同授予了市委华盛顿内部人士的这一做法。"
+    },
+    {
+      "id" : "zh-018-1905",
+      "native" : "摩尔多瓦的首都是新基纳乌，当地的语言是罗马尼亚语，但俄语也被广泛使用。",
+      "normalized_text_equal" : false,
+      "previous" : "摩尔多瓦的首都是新基那乌，当地的语言是罗马尼亚语，但俄语也被广泛使用。"
+    },
+    {
+      "id" : "zh-020-1779",
+      "native" : "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后，发表了声明。",
+      "normalized_text_equal" : false,
+      "previous" : "特朗普与土耳其总统雷杰普、塔伊普、埃尔多安通话后发表了声明。"
+    },
+    {
+      "id" : "zh-021-1792",
+      "native" : "这被称为化学物质的 pH 值。你可以用红甘蓝汁制作指示剂。",
+      "normalized_text_equal" : false,
+      "previous" : "这被称为化学物质的TH值，你可以用红甘蓝汁制作指示剂。"
+    },
+    {
+      "id" : "zh-022-1780",
+      "native" : "在昆达里尼瑜伽中，昆达里尼能量、启迪能量，通过瑜伽姿势、呼吸练习、念语和视觉形象被唤醒。",
+      "normalized_text_equal" : false,
+      "previous" : "在昆达里尼瑜伽中，昆达里尼能量启迪能量通过瑜伽姿势、呼吸练习、念语和视觉形象被唤醒。"
+    },
+    {
+      "id" : "zh-023-1962",
+      "native" : "pH值被测化学品中的氢pH中的H离子数量表示。",
+      "normalized_text_equal" : false,
+      "previous" : "ph值被测化学品中的氢 ph中的H离子数量表示。"
+    },
+    {
+      "id" : "zh-029-1989",
+      "native" : "他还参与了许多国家的纸币雕版制作，近期作品包括加拿大新版五元和一百元纸币正面的总理肖像。",
+      "normalized_text_equal" : false,
+      "previous" : "他还参与了许多国家的纸币雕版制作。近期作品包括加拿大新版5元和100元纸币正面的总理肖像。"
+    },
+    {
+      "id" : "zh-030-1725",
+      "native" : "早先于全球发布的华硕EPC个人笔记本，因成本节约及功能性因素，成为2007年台北IT资讯月备受瞩目的话题。",
+      "normalized_text_equal" : false,
+      "previous" : "早些全球发布的华硕EPC个人笔记本，因成本节约及功能性因素成为2007年台北IT资讯月备受瞩目的话题。"
+    },
+    {
+      "id" : "zh-031-1712",
+      "native" : "自1966年以来，孙德尔本斯一直是野生动物保护区。据估计，目前该区生活着400只皇家孟加拉虎和大约3万只梅花鹿。",
+      "normalized_text_equal" : false,
+      "previous" : "自1九六六年以来孙德尔本斯一直是野生动物保护区。据估计目前该区生活着400只皇家孟加拉虎和大约3万只梅花鹿。"
+    },
+    {
+      "id" : "zh-032-2002",
+      "native" : "它让玩家可以通过在空中移动设备来控制电子游戏中的运动和操作。",
+      "normalized_text_equal" : false,
+      "previous" : "他让玩家可以通过在空中移动设备来控制电子游戏中的运动和操作。"
+    },
+    {
+      "id" : "zh-033-1804",
+      "native" : "海地正义与民主研究所引用的独立研究表明，是尼泊尔的联合国维和部队在不知情的情况下，将这种疾病带到了海地。",
+      "normalized_text_equal" : false,
+      "previous" : "海地正义与民主研究所引用的独立研究表明是尼泊尔的联合国维和部队在不知情的情况下将这种疾病带到了海地。"
+    },
+    {
+      "id" : "zh-034-1661",
+      "native" : "它没有设定削减数额，只是表示将根据中国的经济产出来决定数额。",
+      "normalized_text_equal" : false,
+      "previous" : "他没有设定削减数额，只是表示将根据中国的经济产出来决定数额。"
+    },
+    {
+      "id" : "zh-036-1951",
+      "native" : "2002年，戈马被尼拉贡戈火山的熔岩所摧毁，火山熔岩掩埋了该镇的大部分街道，尤其是镇中心。",
+      "normalized_text_equal" : false,
+      "previous" : "2002年，戈玛被尼拉贡歌火山的熔岩所摧毁，火山熔岩掩埋了该镇的大部分街道，尤其是镇中心。"
+    },
+    {
+      "id" : "zh-039-1971",
+      "native" : "狂风、冰雹、过量降水、山火，还有雷雨、龙卷风、水龙卷、气旋，都是极端天气的表现和影响。",
+      "normalized_text_equal" : false,
+      "previous" : "狂风冰雹，过量降水、山火还有雷雨、龙卷风、水、龙卷、气旋都是极端天气的表现和影响。"
+    },
+    {
+      "id" : "zh-041-1914",
+      "native" : "二十世纪的研究表明，基因变异有有两种库：显性和隐性。",
+      "normalized_text_equal" : false,
+      "previous" : "20世纪的研究表明，基因变异有有两种库显性和隐性。"
+    },
+    {
+      "id" : "zh-043-1729",
+      "native" : "例如，北卡罗来纳州本尼特学校的学生每一年都会设计一个有关他们的州政府知情的网站。网站每年都会重新设计，但是老版本会在线保存，用作剪切簿。",
+      "normalized_text_equal" : false,
+      "previous" : "例如，北卡罗莱纳州本尼特学校的学生每一年都会设计一个有关他们的州政府知行的网站，网站每年都会重新设计，但是老版本会在线保存，用作剪切布。"
+    },
+    {
+      "id" : "zh-045-1760",
+      "native" : "苍龙是那个时代的顶级掠食者，除了同类，它什么都不怕。",
+      "normalized_text_equal" : false,
+      "previous" : "苍龙是那个时代的顶级掠势者，除了同类，他什么都不怕。"
+    },
+    {
+      "id" : "zh-046-1816",
+      "native" : "杜瓦尔已婚，有两个已经成年的孩子，他并没有给故事的讲述者米勒留下太大印象。",
+      "normalized_text_equal" : false,
+      "previous" : "杜娃儿已婚，有两个已经成年的孩子，他并没有给故事的讲述者米勒留下太大印象。"
+    },
+    {
+      "id" : "zh-047-1723",
+      "native" : "该海湾曾在1889年发生过一场臭名昭著的海军对峙，当时来自德国、美国和英国的七艘舰船拒绝驶离这个海湾。",
+      "normalized_text_equal" : false,
+      "previous" : "该海湾曾在1889年发生过一场臭名昭著的海军对峙。当时来自德国美国和英国的7艘舰船拒绝驶离这个海湾。"
+    },
+    {
+      "id" : "en-000-1904",
+      "native" : "However, due to the slow communication channels, styles in the West could lag behind by 25 to 30 years.",
+      "normalized_text_equal" : false,
+      "previous" : "However, due to the slow communication channels, Sts in the West could lag behind by 25 to 30 years."
+    },
+    {
+      "id" : "en-001-1675",
+      "native" : "All nouns, alongside the words say for you, always begin with a capital letter, even in the middle of a sentence.",
+      "normalized_text_equal" : false,
+      "previous" : "All nouns alongside the world say for you. always begin with a capital letter, even in the middle of a sentence."
+    },
+    {
+      "id" : "en-002-1950",
+      "native" : "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splendours recorded by Lord Byron.",
+      "normalized_text_equal" : false,
+      "previous" : "To the north and within easy reach is the romantic and fascinating town of Sintra, and which was made famous to foreigners after a glowing account of its splenorous recorded by Lord Byron."
+    },
+    {
+      "id" : "en-003-1728",
+      "native" : "The cabbage juice changes color depending on how acidic, basic, alkaline the chemical is.",
+      "normalized_text_equal" : false,
+      "previous" : "The cabbage juice changes color, depending on how acid, basic alkaline the chemical is."
+    },
+    {
+      "id" : "en-006-1876",
+      "native" : "The Northern Marianas Emergency Management Office said that there were no damages reported in the nation.",
+      "normalized_text_equal" : false,
+      "previous" : "The northern Mariana's emergencyency management office said that there were no damages reported in the nation."
+    },
+    {
+      "id" : "en-008-1846",
+      "native" : "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3:2.",
+      "normalized_text_equal" : false,
+      "previous" : "The aspect ratio of this format dividing by 12 to obtains the simplest whole number ratio, is therefore said to be3 to2."
+    },
+    {
+      "id" : "en-009-1806",
+      "native" : "As light pollution in their heyday was not the kind of problem it is today, they are usually located in cities or at campuses, easier to reach than those built in modern times.",
+      "normalized_text_equal" : true,
+      "previous" : "As light pollution in their heyday was not the kind of problem it is today, they are usually located in cities or at campuses easier to reach than those built in modern times."
+    },
+    {
+      "id" : "en-010-1776",
+      "native" : "For the night, between 150 and 200 copies were made, now known as Dunlap broadsides.",
+      "normalized_text_equal" : false,
+      "previous" : "So the night between 1,50 and 200 copies were made now known as Denlap broadsides."
+    },
+    {
+      "id" : "en-011-1729",
+      "native" : "For example, each year students from Bennett School in North Carolina design a website about their trip to the state capital. Each year the website gets remodeled, but old versions are kept online to serve as a scrapbook.",
+      "normalized_text_equal" : false,
+      "previous" : "For example, each year students from Bennett School in North Carolina design a website about their trip to the state capitalit. Each year, the website gets remodeled, but old versions are kept online to service a scrapbook."
+    },
+    {
+      "id" : "en-012-1855",
+      "native" : "Lion prides act much like packs of wolves or dogs, animals surprisingly similar to lions, but not other big cats in behavior, and also very deadly to their prey.",
+      "normalized_text_equal" : false,
+      "previous" : "Lion Pri acts much like packs of wolves or dogs, animals surprisingly similar to lions, but not other big cats in behavior, and also very deadly to their prey."
+    },
+    {
+      "id" : "en-013-1919",
+      "native" : "The city is also the base to climb the Nyiragongo volcano, along with some of the cheapest mountain gorilla trafficking in Africa.",
+      "normalized_text_equal" : false,
+      "previous" : "The city is also the base to climb the Nraango volcano, along with some of the cheapest mountain gorilla trafficking in Africa."
+    },
+    {
+      "id" : "en-015-1711",
+      "native" : "These theories look at what it is about certain people that make them want the things that they do, and what things in their environment will make them do or not do certain things.",
+      "normalized_text_equal" : false,
+      "previous" : "These look at what it is about certain people that make them want the things that they do and what things in their environment will make them do or not do certain things."
+    },
+    {
+      "id" : "en-017-1992",
+      "native" : "The term safari, in popular use, refers to overland travel to view the stunning African wildlife, particularly on savanna.",
+      "normalized_text_equal" : false,
+      "previous" : "The term safari in popular loosee refers to overland travel to view the stunning African wildlife, particularly on Savannah."
+    },
+    {
+      "id" : "en-019-1982",
+      "native" : "Women, is recommended that any women travelers say that they are married, regardless of actual marital status.",
+      "normalized_text_equal" : true,
+      "previous" : "Women is recommended that any women travelers say that they are married, regardless of actual marital status."
+    },
+    {
+      "id" : "en-020-1674",
+      "native" : "In some areas, boiling water for a minute is enough, and in others, several minutes are needed.",
+      "normalized_text_equal" : false,
+      "previous" : "In some areas, boiling water for a minute is enough and other several minutes are needed."
+    },
+    {
+      "id" : "en-021-1952",
+      "native" : "Anyone who is going to drive at high latitudes or over mountain passes should consider the possibility of snow, ice, or freezing temperatures.",
+      "normalized_text_equal" : false,
+      "previous" : "Anyone who's going to dry at hot latitudes or overer mutton passes should consider the possibility of snow, ice or freezing temperatures."
+    },
+    {
+      "id" : "en-022-1752",
+      "native" : "As a result, two fish species have become extinct, and two others have become endangered, including the humpback chub.",
+      "normalized_text_equal" : true,
+      "previous" : "As a result, two fish species have become extinct and two others have become endangered, including the humpback chub."
+    },
+    {
+      "id" : "en-023-1749",
+      "native" : "It was ruled by the Vichy French. These were French people who had made peace with the Germans in 1940 and worked with the invaders instead of fighting them.",
+      "normalized_text_equal" : false,
+      "previous" : "It was ruled by the Vicki French. These were French people who had made peace with the Germans in 1940 and worked with the invaders instead of fighting them."
+    },
+    {
+      "id" : "en-024-1705",
+      "native" : "On August 15, 1940, the Allies invaded southern France, and the invasion was called Operation Dragoon.",
+      "normalized_text_equal" : false,
+      "previous" : "On August 15, 1940, the Allies invaded southern France and the Invision was called Operation Droon."
+    },
+    {
+      "id" : "en-025-1662",
+      "native" : "Alloys are basically a mixture of two or more metals. Don't forget there are many elements on the periodic table.",
+      "normalized_text_equal" : false,
+      "previous" : "Alloys are basically a mixture of two or more metals. Don't forget, there are many elements on the Pi table."
+    },
+    {
+      "id" : "en-026-1729",
+      "native" : "For example, each year students from Bennett School in North Carolina design a website about their trip to the state capital. Each year the website gets remodeled, but older versions are kept online to serve as a scrapbook.",
+      "normalized_text_equal" : false,
+      "previous" : "For example, each year, students from Bennett School in North Carolina design a website about their trip to the state capitalitol. Each year, the website gets remodeled, but older versions are kept online to serve as a scrapbook."
+    },
+    {
+      "id" : "en-027-1790",
+      "native" : "His work is of such recognized quality and detail that he is one of the very few household names among philatelists, some specializing in collecting his work alone.",
+      "normalized_text_equal" : false,
+      "previous" : "His work is of such recognized quality in detail that he is one of the very few household names among philists. Some specialize in collecting his work alone."
+    },
+    {
+      "id" : "en-028-1858",
+      "native" : "Danielle Lantagne, a UN expert on the disease, stated that the outbreak was likely caused by the peacekeepers.",
+      "normalized_text_equal" : false,
+      "previous" : "Daanelle Ligim, a U expert on the disease, stated the outbreak was likely caused by the peacekeepers."
+    },
+    {
+      "id" : "en-029-1789",
+      "native" : "The other nominations include Best Picture, Director, Cinematography, Costume Design, Film Editing, Original Score, Production Design, Sound Editing, Sound Mixing, and Original Screenplay.",
+      "normalized_text_equal" : false,
+      "previous" : "The other nominations include best picture, director of cinematography, costume design, film editing, original score, production design, sound editing, sound mixing and original screenplay."
+    },
+    {
+      "id" : "en-031-1897",
+      "native" : "In the north, the region is bounded by the Sahel, and in the south and west by the Atlantic Ocean.",
+      "normalized_text_equal" : true,
+      "previous" : "In the north, the region is bounded by the Sahel and in the south and west by the Atlantic Ocean."
+    },
+    {
+      "id" : "en-032-1680",
+      "native" : "A well-rounded athlete, the tiger can climb, though not well, swim, leap great distances, and pull with five times the force of a strong human.",
+      "normalized_text_equal" : true,
+      "previous" : "A well rounded athlete, the tiger can climb, though not well, swim, leap great distances and pull with five times the force of a strong human."
+    },
+    {
+      "id" : "en-033-1953",
+      "native" : "He was subsequently relocated to Addenbrooke's Hospital in Cambridge.",
+      "normalized_text_equal" : false,
+      "previous" : "He was subsequently relocated to Addinbrouck's Hospital in Cambridge."
+    },
+    {
+      "id" : "en-034-1740",
+      "native" : "The Pyramids Sound and Light Show is one of the most interesting things in the area for kids.",
+      "normalized_text_equal" : true,
+      "previous" : "The pyramids Sound and light show is one of the most interesting things in the area for kids."
+    },
+    {
+      "id" : "en-036-1987",
+      "native" : "The crash occurred high up in mountainous terrain, and is believed to have been the result of hostile fire.",
+      "normalized_text_equal" : true,
+      "previous" : "The crash occurred high up in mountainous terrain and is believed to have been the result of hostile fire."
+    },
+    {
+      "id" : "en-037-1990",
+      "native" : "Blogs can also help improve student writing. While students often begin their blog experience with sloppy grammar and spelling, the presence of an audience generally changes that.",
+      "normalized_text_equal" : true,
+      "previous" : "Blogs can also help improve student writing while students often begin their blog experience with sloppy grammar and spelling. The presence of an audience generally changes that."
+    },
+    {
+      "id" : "en-041-1678",
+      "native" : "Oliver Sacks, in his paper \"The President's Speech,\" indicated how people who are unable to understand speech because of brain damage are nevertheless able to assess sincerity accurately.",
+      "normalized_text_equal" : false,
+      "previous" : "Oliver Saacks in his paper, the president's speech indicated how people who are unable to understand speech because of brain damage are nevertheless able to assess sincerity accurately."
+    },
+    {
+      "id" : "en-042-1701",
+      "native" : "Goats seem to have been first domesticated roughly 10,000 years ago in the Zagros Mountains of Iran.",
+      "normalized_text_equal" : false,
+      "previous" : "Goats seem to have been first domesticated roughly 10000 years ago in the Zagros Mountains of Iran."
+    },
+    {
+      "id" : "en-043-2001",
+      "native" : "Travelers are strongly advised to be aware of any risk of severe weather affecting their area, as it may affect any travel plans.",
+      "normalized_text_equal" : false,
+      "previous" : "Travelers are strongly advised to be aware of any risk of severe weather affecting their area, as they may affect any travel plans."
+    },
+    {
+      "id" : "en-045-1895",
+      "native" : "As knowledge of Greek declined, the West found itself cut off from its Greek philosophical and scientific roots.",
+      "normalized_text_equal" : false,
+      "previous" : "As knowledge of Greek decline, the West found itself cut off from its Greek, philosophical and scientific roots."
+    },
+    {
+      "id" : "en-046-1710",
+      "native" : "Last week, Mediatech announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.",
+      "normalized_text_equal" : false,
+      "previous" : "Last week, M Medi announced that Apple had informed it of 34 additional overheating incidents, which the company called non serious."
+    },
+    {
+      "id" : "en-048-1864",
+      "native" : "Mrs. Kirchner announced her intention to run for president at the Argentine Theater, same location she used to start her 2005 campaign for the Senate as member of the Buenos Aires province delegation.",
+      "normalized_text_equal" : false,
+      "previous" : "Mrs. Kirchner announced her intention to run for president at the Argentine Theater. same location she used to start her 2005 campaign for the Senate as a member of the Buenos Aires Province delegation."
+    },
+    {
+      "id" : "en-049-1720",
+      "native" : "The hot chocolate is up to Belgian standards. Fruit juices are pricey but excellent.",
+      "normalized_text_equal" : false,
+      "previous" : "The hot chocolate is up to Belgian standards. Freit juices are pricey, but excellent."
+    }
+  ],
+  "latency_ms" : {
+    "native_http_p95" : 936.87962502008304,
+    "native_inference_p95" : 804.89808297716081,
+    "native_processing_p95" : 932.75637499755248,
+    "python_http_p95" : 1178.7077079934534,
+    "python_inference_p95" : 1144.1800000000001,
+    "python_processing_p95" : 1173.8800000000001
+  },
+  "limitations" : [
+    "50 Mandarin and 50 English public FLEURS recordings; no dedicated code-switch or entity labels",
+    "Hardware and background load must be checked separately; latency observations do not establish speedup or energy gains"
+  ],
+  "raw_text_matches_previous_swift" : 31,
+  "raw_text_matches_python" : 97,
+  "same_audio_hashes_and_references" : true,
+  "samples" : 100,
+  "scoring" : "NFC lowercase; punctuation to spaces; aggregate character/word edits; nearest-rank P95"
+}

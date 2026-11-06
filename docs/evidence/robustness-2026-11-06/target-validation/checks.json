@@ -1,0 +1,21 @@
+{
+  "acceptance_driver_safety_tests": 7,
+  "acceptance_tool_commit": "56b7eca",
+  "active_tool_tests": 36,
+  "command": "rtk proxy env CYBERAUDIO_NATIVE_SCRATCH=/Users/zhubby/Repository/CyberAudio/.context/icon-native-build make check",
+  "log": "/tmp/cyberaudio-target-validation-check-20261106.log",
+  "log_sha256": "3fe377747318d45b4915823f71e23febc65961e00a7a490e21a284cee77044e1",
+  "native_contracts": {
+    "failures": 0,
+    "passed": 28,
+    "skipped": 0
+  },
+  "native_renders": 14,
+  "native_workflows": "preparation, updates, dictation, text insertion, shortcuts, recording/playback, interrupted devices and stale events",
+  "production_app_and_helpers_compiled": true,
+  "remote_ci_run": false,
+  "runtime_fix_commit": "e2f34df30eab49e526a3dfd2fa7d6fffbfb81d0b",
+  "source_snapshot_files": 97,
+  "status": "passed",
+  "uncommitted_production_code": false
+}

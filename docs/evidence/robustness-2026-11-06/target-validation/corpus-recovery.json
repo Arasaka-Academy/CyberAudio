@@ -1,0 +1,19 @@
+{
+  "all_selected_audio_sha256_verified": true,
+  "attribution": "FLEURS, Google, Conneau et al., 2022",
+  "audio_redistributed": false,
+  "languages": {
+    "en": 50,
+    "zh": 50
+  },
+  "license": "CC-BY-4.0",
+  "manifest_sha256": "dc67d7b52bea55f7ea6fcd0934e0460811699ad510c0befe9f938c60c84ef7eb",
+  "matches_repository_baseline_manifest": true,
+  "restored_from": "Existing M4 fixed corpus cache over SSH",
+  "samples": 100,
+  "selected_audio_bytes": 64676520,
+  "selection": "Fixed first 50 Mandarin and first 50 US English; no selection based on model output",
+  "source": "google/fleurs@168de341b3db6859a9bac1c50a2ef5e3b47647e0",
+  "status": "verified",
+  "unselected_extra_files_not_accepted": true
+}

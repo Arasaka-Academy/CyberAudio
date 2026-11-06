@@ -1,0 +1,65 @@
+{
+  "acceptance_state": "running, not terminal success",
+  "disk_free_bytes": 17786040320,
+  "download": {
+    "checkpoint": {
+      "attempts": [],
+      "cancel_exit_code": 130,
+      "elapsed_seconds": 45.395183125,
+      "retained_partials_after_cancel": {
+        "bf304b009cc7eca79283056f787b44c952d24ac22cec787b39732bba3c23c13c.partial": 8388608
+      },
+      "status": "running",
+      "status_after_cancel": {
+        "available_bytes": 17925373952,
+        "can_download": true,
+        "event": "status",
+        "ffmpeg_path": "/opt/homebrew/bin/ffmpeg",
+        "ffmpeg_ready": true,
+        "invalid_files": [],
+        "invalid_partials": [],
+        "missing_files": 18,
+        "models_ready": false,
+        "required_bytes": 8269670567,
+        "resumable_bytes": 8388608,
+        "total_bytes": 5547997530,
+        "verified_bytes": 1681352
+      }
+    },
+    "command": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python /Users/zhubby/Library/Caches/CyberAudio/RobustnessValidation/20261106-e2f34df-target1/run-download.py",
+    "durable_partial_bytes": 150994944,
+    "last_download_event": {
+      "completed_bytes": 152676296,
+      "event": "progress",
+      "path": "asr/model.safetensors",
+      "phase": "downloading",
+      "total_bytes": 5547997530
+    },
+    "live_identity_matches": true,
+    "observed_start": "Fri Nov  6 19:44:01 2026",
+    "pid": 54552,
+    "recorded_start": "Fri Nov  6 19:44:01 2026"
+  },
+  "observed_at": "2026-11-06T11:47:37.878970+00:00",
+  "soak": {
+    "checkpoint": {
+      "cycles": 175,
+      "disconnect_recovered": 35,
+      "duration_seconds": 714.3749828339787,
+      "duration_target_seconds": 7200,
+      "status": "running",
+      "update_pause_resume": 17
+    },
+    "command": "/opt/homebrew/Cellar/python@3.15/3.15.2/Frameworks/Python.framework/Versions/3.15/Resources/Python.app/Contents/MacOS/Python /Users/zhubby/Library/Caches/CyberAudio/RobustnessValidation/20261106-e2f34df-target1/run-acceptance.py soak",
+    "latest_memory": {
+      "metal_active_bytes": 5578423828,
+      "metal_peak_bytes": 6546342180,
+      "observed_rss_bytes": 221282304,
+      "process_peak_rss_bytes": 3739385856
+    },
+    "live_identity_matches": true,
+    "observed_start": "Fri Nov  6 19:34:53 2026",
+    "pid": 53772,
+    "recorded_start": "Fri Nov  6 19:34:53 2026"
+  }
+}

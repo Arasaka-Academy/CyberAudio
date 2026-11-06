@@ -1,0 +1,29 @@
+{
+  "runtime_fix_commit": "e2f34df30eab49e526a3dfd2fa7d6fffbfb81d0b",
+  "original_five_components_match_local": true,
+  "nested_signature_verified": true,
+  "isolated_bundle_id": "local.cyberaudio.validation.robustness-m4-20261106",
+  "driver_sha256": "a8c2297b70fd9b05922d42a4a29f435ab1937769f96eb2da2dd18d45f7d6063e",
+  "artifacts": {
+    "Contents/MacOS/CyberAudio": {
+      "bytes": 2527872,
+      "sha256": "777cff66b9141f89a2c66f8074f6e4467927d649a29e8acda6b79da9c6351dde"
+    },
+    "Contents/Helpers/CyberAudioService": {
+      "bytes": 73067280,
+      "sha256": "cc556b65e263e16218db4315ed8585dccaede7b5f539be7bbd68a4b04e841a89"
+    },
+    "Contents/Helpers/CyberAudioAssets": {
+      "bytes": 7481568,
+      "sha256": "719cf86bd9bb4e9cfffb32e29af40d6a8dc4f5cad007273b8856b02f1f8b5d46"
+    },
+    "Contents/Info.plist": {
+      "bytes": 1621,
+      "sha256": "ee123c951bec3410c30f2f31ce7c12e631b6bc6f38f2600791c3d56859f6839c"
+    },
+    "Contents/Resources/mlx.metallib": {
+      "bytes": 214156448,
+      "sha256": "c6d7a3facb83568f6e4cb2cf4a8c736ee29302571a48343cb9a3a4d1cd3e3893"
+    }
+  }
+}
