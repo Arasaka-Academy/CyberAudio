@@ -89,14 +89,21 @@ private func soak(_ base: URL,root: URL,corpus: URL,rows: [[String:Any]],token: 
     }
     defer {
         if report["status"] as? String != "passed" {
-            report["status"] = "failed"; try? checkpoint()
+            report["status"] = "failed"
+            report["finished"] = ISO8601DateFormatter().string(from:Date())
+            try? checkpoint()
         }
     }
     func record(_ requestID: String?) throws -> [String:Any] {
         guard let id = requestID else { throw Failure(message:"Soak response lacks request identity") }
         let (data,response) = try http(base,"v1/requests/"+id,token:token)
         let value = try object(data)
-        try require(response.statusCode == 200 && value["status"] as? String == "completed","Soak request did not complete")
+        guard response.statusCode == 200 && value["status"] as? String == "completed" else {
+            report["failed_request"] = value
+            report["failed_request_http_status"] = response.statusCode
+            let status = value["status"] as? String ?? "missing",code = value["code"] as? String ?? "missing"
+            throw Failure(message:"Soak request did not complete (id=\(id), status=\(status), code=\(code))")
+        }
         return value
     }
     try require(!rows.isEmpty,"Soak requires a verified input corpus")
@@ -104,10 +111,13 @@ private func soak(_ base: URL,root: URL,corpus: URL,rows: [[String:Any]],token: 
     try require(executable.hasSuffix("CyberAudioService"),"Soak RSS must refer to the owned model helper")
     try checkpoint()
     var lastProgress = began
+    do {
     while metrics.isEmpty || now()-began < seconds {
         let cycle = metrics.count,row = rows[cycle%rows.count]
         guard let audioPath = row["audio"] as? String,let expectedHash = row["audio_sha256"] as? String,
               let id = row["id"] as? String else { throw Failure(message:"Soak corpus metadata is incomplete") }
+        report["active_workload"] = ["cycle":cycle+1,"corpus_id":id,"voice":voices[cycle%voices.count],
+                                     "format":cycle%2 == 0 ? "wav" : "pcm"]
         let audio = try Data(contentsOf:corpus.appendingPathComponent(audioPath))
         try require(SHA256.hash(data:audio).map { String(format:"%02x",$0) }.joined() == expectedHash,"Soak corpus bytes changed")
         let boundary = "native-soak-"+UUID().uuidString
@@ -179,10 +189,15 @@ private func soak(_ base: URL,root: URL,corpus: URL,rows: [[String:Any]],token: 
     report["memory_summary"] = summary; report["no_request_temporary_directories"] = true
     report["memory_pressure_after"] = try command("/usr/bin/memory_pressure",["-Q"])
     report["swap_after"] = try command("/usr/sbin/sysctl",["-n","vm.swapusage"])
+    report.removeValue(forKey:"active_workload")
     report["status"] = "passed"; report["finished"] = ISO8601DateFormatter().string(from:Date())
     try checkpoint()
     return ["status":"passed","report":"soak.json","duration_seconds":now()-began,"cycles":metrics.count,
         "disconnect_recovered":disconnects,"update_pause_resume":updates,"memory_summary":summary]
+    } catch {
+        report["failure"] = String(describing:error)
+        throw error
+    }
 }
 
 @main enum NativeValidation {
@@ -228,11 +243,18 @@ private func soak(_ base: URL,root: URL,corpus: URL,rows: [[String:Any]],token: 
             "ffmpeg":"/opt/homebrew/bin/ffmpeg","port":port,"https_url":""]
         try json(config).write(to:root.appendingPathComponent("config/service.json"),options:.atomic)
         let token = try String(contentsOf:root.appendingPathComponent("config/api-token"),encoding:.utf8).trimmingCharacters(in:.whitespacesAndNewlines)
-        var report: [String:Any] = ["started":ISO8601DateFormatter().string(from:Date()),"port":port,"phase":options["--phase"] ?? "all","production_root_modified":false,
+        var report: [String:Any] = ["status":"running","started":ISO8601DateFormatter().string(from:Date()),"port":port,"phase":options["--phase"] ?? "all","production_root_modified":false,
             "production_instance_checked":beforeProduction != nil,"os":ProcessInfo.processInfo.operatingSystemVersionString,
             "physical_memory_bytes":ProcessInfo.processInfo.physicalMemory,
             "helper_sha256":SHA256.hash(data:try Data(contentsOf:helper)).map { String(format:"%02x",$0) }.joined()]
         let reportFile = root.appendingPathComponent("reports/native-service.json")
+        defer {
+            if report["status"] as? String != "passed" {
+                report["status"] = "failed"
+                report["finished"] = ISO8601DateFormatter().string(from:Date())
+                try? json(report).write(to:reportFile,options:.atomic)
+            }
+        }
         func save(_ name: String,_ value: Any) throws {
             report[name] = value; try json(report).write(to:reportFile,options:.atomic)
             print("PASS \(name)"); fflush(stdout)
