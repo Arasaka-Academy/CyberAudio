@@ -1,0 +1,11 @@
+{
+  "accessibility_trusted_for_this_probe": true,
+  "activated_application": false,
+  "observed_at": "2026-11-06T19:46:49Z",
+  "post_event_access_for_this_probe": true,
+  "requested_permissions": false,
+  "scope": "Current probe process only; not the installed App or an end-to-end dictation result",
+  "screen_lock_key_present": true,
+  "screen_locked": true,
+  "session_dictionary_available": true
+}

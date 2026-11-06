@@ -41,6 +41,7 @@
 | [asr-reference/README.md](asr-reference/README.md) | 十二个固定混合／单语输入完成 84 次实际 ASR；原生／未修改 Python 文本 10／12 一致。单变量注入原生 Mel 重现一个加噪样本的中文遗漏，注入 encoded 后 12／12 匹配；双方共有遗漏／翻译与数值敏感性分别保留，质量门槛未通过 |
 | [asr-mel/README.md](asr-mel/README.md) | 无模型 DSP 拆解在全部十二个输入上复现原生／参考 Mel；定位窗口／滤波常量及数值流程的多处差异，266 项独立重算通过。常量替换不能建立一致，未据此改变实现或接受质量门槛 |
 | [asr-segmentation/README.md](asr-segmentation/README.md) | 固定音频能量分段完成 28 次实际 ASR；八个混合文本恢复双脚本，总诊断编辑数 154→92，但两条件数字／实体拼写导致编辑数增加，未通过预定条件。评分限制和全部原值保留，未采用或扩大候选 |
+| [acceptance-audit/README.md](acceptance-audit/README.md) | 剩余条件自动复核：M4 同一正常 TLS Range 仍失败，原生会话明确当前锁屏，无 Developer ID，新语料路径未成功；96／568／8／1357 文件摘要及既有完整测试日志核验通过。没有重复推理、修改默认值或接受尚未通过的门槛 |
 
 完整原始记录保留在开发工作区 `.context/robustness/`，原始检查日志在 `/tmp/cyberaudio-robustness-*.log`，不会作为分发材料上传。
 

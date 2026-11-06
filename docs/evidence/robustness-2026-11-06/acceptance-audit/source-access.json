@@ -1,0 +1,27 @@
+{
+  "observed_at": "2026-11-06T19:47:17.539528+00:00",
+  "scope": "Two bounded alternate public metadata routes; no audio or model loads",
+  "results": [
+    {
+      "name": "hf_dataset_card",
+      "url": "https://hf.co/datasets/CAiRE/ASCEND/raw/main/README.md",
+      "started": "2026-11-06T19:47:16.576986+00:00",
+      "error_type": "URLError",
+      "reason_type": "OSError",
+      "errno": 65,
+      "finished": "2026-11-06T19:47:17.538446+00:00"
+    },
+    {
+      "name": "github_repository_metadata",
+      "url": "https://api.github.com/repos/CAiRE/ASCEND",
+      "started": "2026-11-06T19:47:16.577384+00:00",
+      "http_status": 403,
+      "error_type": "HTTPError",
+      "finished": "2026-11-06T19:47:16.949127+00:00"
+    }
+  ],
+  "tls_bypassed": false,
+  "proxy_configuration_changed": false,
+  "natural_code_switch_acceptance": false,
+  "source_sha256": "a2fbc175a848b2bfede043b684b04ce7381a1f0f1b4acc64e68590bb3a66a81b"
+}

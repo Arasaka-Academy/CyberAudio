@@ -1,0 +1,11 @@
+{
+  "observed_at": "2026-11-06T19:49:15.778204+00:00",
+  "identity_command_exit": 0,
+  "apple_development_count": 1,
+  "developer_id_application_count": 0,
+  "orca_cli_present": false,
+  "orca_app_present": false,
+  "identity_names_or_certificates_retained": false,
+  "configuration_changed": false,
+  "source_sha256": "f2ae75f5baac7f2eae078d2ba7cb2573d920d71db7b2456cccca564e2e66b019"
+}

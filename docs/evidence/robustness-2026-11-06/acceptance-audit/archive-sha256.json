@@ -1,0 +1,16 @@
+{
+  "README.md": "4d677c26eac894476cde0c24f426784a90b2e97620a5332227a6653cd23a3f39",
+  "archive.py": "e8d6e1226a6e4d6163d1f98c0beb686a599f5b13bf0c3798a78010c3178fa422",
+  "desktop-capabilities.json": "31844a7a58435cc168f5d10f587281311fa7293ab12c0d5fd876056cd1cad021",
+  "desktop-capabilities.swift": "7b80bb52c23fc2aa491db67517997201a0b198a9000ac1a41674c2a261e6ffd7",
+  "github-ssh-observation.json": "ecf756c906f78293b815171ae6c68798ebf01eeebb1316fc14c612dcbdc56d29",
+  "m4-refresh.json": "19d4625d27f85bf5a31960131939848c164edf6d2b75ac1389950da80f5aa08b",
+  "refresh-m4.py": "4877549cbc71a4e7816ed113fc8f402cb569d504f294d8c3b1f86ae23039de96",
+  "remote-range-refresh.py": "d87a2c83539fe4207287102f6e4329e55d2e0494acc0afa11be4635758c1f1a3",
+  "signing-inventory.json": "a0ee1bba82aff87274d8eefc51d159ee95015f4b26d94d99fb2a08c2d178e350",
+  "signing-inventory.py": "f2ae75f5baac7f2eae078d2ba7cb2573d920d71db7b2456cccca564e2e66b019",
+  "source-access.json": "d1235f84b8c437d1f386572f231878ca3c20198e585fceaefd85406e2b1b85b8",
+  "source-access.py": "a2fbc175a848b2bfede043b684b04ce7381a1f0f1b4acc64e68590bb3a66a81b",
+  "verification.json": "1cf11a37d226a92a5d022e1ce3c4e4d45739f12f514dcc27ad9cb7b5dc1e75c8",
+  "verify.py": "088bc2949e2b1a3d63bbca79b55cb707b26ef7181ace274a9075050812bcd381"
+}
