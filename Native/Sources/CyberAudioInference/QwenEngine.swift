@@ -22,7 +22,10 @@ public final class QwenEngine: InferenceEngine, @unchecked Sendable {
         Memory.cacheLimit = 512*1024*1024
         let verified = uptime()
         _ = try AssetStore.verify(settings.configuration)
-        let asrRoot = URL(fileURLWithPath:settings.configuration.asr_dir), ttsRoot = URL(fileURLWithPath:settings.configuration.tts_dir)
+        // The SDK enumerates model directories and rejects symlink URLs on
+        // macOS even though individual files passed our asset verification.
+        let asrRoot = URL(fileURLWithPath:settings.configuration.asr_dir,isDirectory:true).resolvingSymlinksInPath()
+        let ttsRoot = URL(fileURLWithPath:settings.configuration.tts_dir,isDirectory:true).resolvingSymlinksInPath()
         _ = try AssetStore.prepareTokenizer(directory:asrRoot,asr:true)
         _ = try AssetStore.prepareTokenizer(directory:ttsRoot,asr:false)
         let verification = (uptime()-verified)*1000

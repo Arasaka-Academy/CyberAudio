@@ -16,6 +16,7 @@ native-test:
 	bash scripts/build_native.sh test
 
 test: native-test
+	bash scripts/test_preparation.sh
 	bash scripts/test_update_gate.sh
 	bash scripts/test_coreml_evidence.sh
 	bash scripts/test_dictation.sh

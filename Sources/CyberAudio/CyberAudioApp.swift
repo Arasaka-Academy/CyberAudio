@@ -6,13 +6,23 @@ final class AppState {
     static let shared = AppState()
     let backend: BackendController
     let audio: AudioWorkspace
+    let preparation: PreparationController
     lazy var dictation = DictationController(backend: backend, audio: audio)
-    lazy var updater = UpdaterController(backend: backend, audio: audio, dictation: dictation)
+    lazy var updater = UpdaterController(backend: backend, audio: audio, dictation: dictation,
+                                         preparationBusy: { [preparation] in preparation.busy })
 
     private init() {
         let backend = BackendController()
         self.backend = backend
-        audio = AudioWorkspace(recordingsDirectory: backend.root.appendingPathComponent("tmp/recordings", isDirectory: true))
+        let audio = AudioWorkspace(recordingsDirectory: backend.root.appendingPathComponent("tmp/recordings", isDirectory: true))
+        self.audio = audio
+        let preparation = PreparationController(root: backend.root) { [weak backend, weak audio] in
+            if audio?.preparingUpdate == false { backend?.startPrepared() }
+        }
+        self.preparation = preparation
+        backend.requestPreparation = { [weak preparation, weak audio] in
+            if audio?.preparingUpdate == false { preparation?.check() }
+        }
     }
 }
 
@@ -27,7 +37,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         source.setEventHandler { NSApp.terminate(nil) }
         source.resume()
         terminationSignal = source
-        AppState.shared.backend.start()
+        AppState.shared.preparation.check()
         AppState.shared.updater.start()
         AppState.shared.dictation.start()
     }
@@ -51,6 +61,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     private func finishTermination() {
         terminating = true
+        AppState.shared.preparation.shutdown()
         AppState.shared.dictation.cleanup()
         AppState.shared.audio.cleanup()
         AppState.shared.backend.stopForTermination()
@@ -64,12 +75,16 @@ struct CyberAudioApp: App {
     @StateObject private var audio = AppState.shared.audio
     @StateObject private var updater = AppState.shared.updater
     @StateObject private var dictation = AppState.shared.dictation
+    @StateObject private var preparation = AppState.shared.preparation
     @Environment(\.openWindow) private var openWindow
     @Environment(\.openSettings) private var openSettings
 
     var body: some Scene {
         Window("CyberAudio", id: "main") {
-            ContentView().environmentObject(backend).environmentObject(audio).environmentObject(updater).environmentObject(dictation)
+            Group {
+                if preparation.ready { ContentView() }
+                else { PreparationView(preparation: preparation) }
+            }.environmentObject(backend).environmentObject(audio).environmentObject(updater).environmentObject(dictation)
         }
         .defaultSize(width: 560, height: 440)
         .windowResizability(.contentMinSize)

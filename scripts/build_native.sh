@@ -17,6 +17,7 @@ if [[ "${1:-}" == "test" ]]; then
   swift run "${native_options[@]}" -c release --skip-update -j "${CYBERAUDIO_BUILD_JOBS:-6}" CyberAudioCoreTests
   # Keep the opt-in real-model acceptance driver compiling in model-free CI.
   swift build "${native_options[@]}" -c release --skip-update -j "${CYBERAUDIO_BUILD_JOBS:-6}" --product CyberAudioInferenceTests
+  swift build "${native_options[@]}" -c release --skip-update -j "${CYBERAUDIO_BUILD_JOBS:-6}" --product CyberAudioAssets
 else
   swift build "${native_options[@]}" -c release --skip-update -j "${CYBERAUDIO_BUILD_JOBS:-6}" --product CyberAudioService
   swift build "${native_options[@]}" -c release --skip-update -j "${CYBERAUDIO_BUILD_JOBS:-6}" --product CyberAudioAssets

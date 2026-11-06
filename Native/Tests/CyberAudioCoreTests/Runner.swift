@@ -72,7 +72,15 @@ class XCTestCase {
             ("health and scoped cleanup",{ try await $0.testLoadingFailureHealthAndScopedCleanup() }),
             ("native setup preservation",{ try $0.testNativeAssetSetupPreservesExistingTokenAndConfiguration() }),
             ("tokenizer process and locale stability",{ try $0.testTokenizerComparisonAcrossProcessesAndLocales() }),
-            ("native proxy download preserves failed assets",{ try await $0.testNativeDownloadUsesProxyAndPreservesAssetsOnFailure() })
+            ("native proxy download preserves failed assets",{ try await $0.testNativeDownloadUsesProxyAndPreservesAssetsOnFailure() }),
+            ("ranged asset download and reuse",{ try await $0.testRangedAssetDownloadAndVerifiedReuse() }),
+            ("interrupted download resumes completed chunks",{ try await $0.testInterruptedAssetDownloadResumes() }),
+            ("ignored ranges never append a full response",{ try await $0.testIgnoredRangeReplacesOnlyVerifiedPartial() }),
+            ("download rejects bad ranges and checksums",{ try await $0.testAssetDownloadRejectsBadRangeAndDigest() }),
+            ("asset cancellation preserves resumable progress",{ try await $0.testAssetDownloadCancellationPreservesProgress() }),
+            ("asset download preserves final files and rejects symlinks",{ try await $0.testAssetDownloadPreservesFilesAndRejectsSymlinks() }),
+            ("preparation readiness and disk capacity",{ try $0.testPreparationReadinessAndDiskCapacity() }),
+            ("preparation checks actual FFmpeg identity",{ try $0.testPreparationRejectsUnrelatedExecutable() })
         ]
         var skipped = 0
         for (name,work) in cases {

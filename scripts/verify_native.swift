@@ -245,7 +245,8 @@ private func stream(_ base: URL,token: String,text: String,allowDisconnect: Bool
         var appExits: [[String:Any]] = []
         for sig in [SIGTERM,SIGKILL] {
             let process = Process(); process.executableURL = app.appendingPathComponent("Contents/MacOS/CyberAudio")
-            process.arguments = ["--data-dir",root.path]; process.standardOutput = FileHandle.nullDevice; process.standardError = FileHandle.nullDevice
+            process.arguments = ["--data-dir",root.path,"-DictationEnabled","NO","-SUEnableAutomaticChecks","NO","-SUAutomaticallyUpdate","NO"]
+            process.standardOutput = FileHandle.nullDevice; process.standardError = FileHandle.nullDevice
             try process.run()
             defer { if process.isRunning { process.terminate(); _ = try? waitStopped(process) } }
             let started = try waitReady(process)

@@ -2,8 +2,9 @@ import Foundation
 import CryptoKit
 import Security
 import CoreFoundation
+import Darwin
 
-public struct LockedAsset: Codable {
+public struct LockedAsset: Codable,Sendable {
     public let path: String
     public let size: Int
     public let sha256: String
@@ -15,7 +16,10 @@ public enum AssetStore {
     public static func digest(_ file: URL) throws -> String {
         let handle = try FileHandle(forReadingFrom:file); defer { try? handle.close() }
         var hash = SHA256()
-        while let data = try handle.read(upToCount:1024*1024), !data.isEmpty { hash.update(data:data) }
+        while let data = try handle.read(upToCount:1024*1024), !data.isEmpty {
+            try Task.checkCancellation()
+            hash.update(data:data)
+        }
         return hash.finalize().map { String(format:"%02x",$0) }.joined()
     }
     public static func lock() throws -> ModelLock {
@@ -122,7 +126,8 @@ public enum AssetStore {
             try Data("(version 1)\n(allow default)\n(deny network-outbound)\n".utf8).write(to:sandbox,options:.atomic)
         }
     }
-    public static func download(root: URL,proxy: String? = nil) async throws {
+    public static func download(root: URL,proxy: String? = nil,restart: Bool = false,
+                                progress: @escaping @Sendable (AssetDownloadProgress)->Void = { _ in }) async throws {
         let config = try configuration(root:root)
         let network = URLSessionConfiguration.ephemeral
         network.timeoutIntervalForRequest = 60
@@ -139,31 +144,38 @@ public enum AssetStore {
         }
         let session = URLSession(configuration:network)
         defer { session.invalidateAndCancel() }
-        for file in try lock().files {
+        let temporaryRoot = root.appendingPathComponent("tmp")
+        try FileManager.default.createDirectory(at:temporaryRoot,withIntermediateDirectories:true,attributes:[.posixPermissions:0o700])
+        let descriptor = open(temporaryRoot.appendingPathComponent("asset-download.lock").path,O_CREAT|O_RDWR|O_NOFOLLOW,0o600)
+        guard descriptor >= 0 else { throw AssetDownloader.unsafePath }
+        defer { close(descriptor) }
+        guard flock(descriptor,LOCK_EX|LOCK_NB) == 0 else {
+            throw ServiceError(409,"setup_busy","已有模型准备任务正在进行，请等待它结束。")
+        }
+        let status = try preparationStatus(root:root)
+        guard status.invalid_files.isEmpty else {
+            throw ServiceError(500,"invalid_assets","已有模型文件摘要不匹配；保留文件，请检查后重试。")
+        }
+        guard status.can_download else {
+            throw ServiceError(507,"insufficient_storage","剩余磁盘空间不足，请释放空间后继续下载。")
+        }
+        let files = try lock().files
+        let total = files.reduce(Int64(0)) { $0+Int64($1.size) }
+        var completed: Int64 = 0
+        for file in files {
+            try Task.checkCancellation()
             let component = file.path.hasPrefix("asr/") ? "asr" : "tts"
-            let directory = URL(fileURLWithPath:component == "asr" ? config.asr_dir : config.tts_dir)
             let relative = String(file.path.dropFirst(component.count+1))
-            let target = directory.appendingPathComponent(relative)
-            if FileManager.default.fileExists(atPath:target.path), try digest(target) == file.sha256 { continue }
-            guard !FileManager.default.fileExists(atPath:target.path) else { throw ServiceError(500,"invalid_assets","已有模型文件摘要不匹配；保留文件，请检查后重试。") }
-            try FileManager.default.createDirectory(at:target.deletingLastPathComponent(),withIntermediateDirectories:true)
+            let target = try AssetPreparation.destination(file,configuration:config)
             let repository = component == "asr" ? ModelCatalog.asrRepository : ModelCatalog.ttsRepository
             let revision = component == "asr" ? ModelCatalog.asrRevision : ModelCatalog.ttsRevision
             let url = URL(string:"https://huggingface.co/\(repository)/resolve/\(revision)/\(relative)?download=true")!
-            print("Downloading \(component)/\(relative) (\(file.size) bytes)")
-            print("Fetching pinned asset; network errors preserve existing files.")
-            let temporary: URL,response: URLResponse
-            do { (temporary,response) = try await session.download(for:URLRequest(url:url)) }
-            catch {
-                // Proxy tunnel failures can be CFNetwork NSError rather than URLError.
-                throw ServiceError(502,"download_unavailable","网络下载失败（代码 \((error as NSError).code)），请检查网络或使用 --proxy 后重试。")
+            let base = completed
+            try await AssetDownloader.download(file,from:url,to:target,staging:temporaryRoot.appendingPathComponent("downloads"),
+                session:session,restart:restart) { bytes in
+                progress(AssetDownloadProgress(event:"progress",path:file.path,completed_bytes:base+bytes,total_bytes:total,phase:"downloading"))
             }
-            defer { try? FileManager.default.removeItem(at:temporary) }
-            guard (response as? HTTPURLResponse)?.statusCode == 200, try digest(temporary) == file.sha256,
-                  (try FileManager.default.attributesOfItem(atPath:temporary.path)[.size] as? NSNumber)?.intValue == file.size else {
-                throw ServiceError(500,"download_failed","下载文件校验失败，原模型文件未更改。")
-            }
-            try FileManager.default.moveItem(at:temporary,to:target)
+            completed += Int64(file.size)
         }
     }
 }

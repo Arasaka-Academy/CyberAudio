@@ -1,5 +1,6 @@
 import Foundation
 import CyberAudioCore
+import CyberAudioInference
 import MLX
 import MLXAudioCore
 import MLXAudioSTT
@@ -17,6 +18,14 @@ import MLXAudioSTT
     }
     static func run() async throws {
         let args = CommandLine.arguments
+        if args.count == 4,args[1] == "--load" {
+            let root = URL(fileURLWithPath:args[2])
+            let settings = try ServiceSettings(root:root,configuration:AssetStore.configuration(root:root),
+                                               token:String(repeating:"x",count:64),instance:"isolated-model-load")
+            let engine = try await QwenEngine.load(settings:settings,metallib:URL(fileURLWithPath:args[3]))
+            print("Real ASR/TTS load and warmup passed: \(engine.metrics)")
+            return
+        }
         guard args.count == 4 else {
             throw Failure(message: "Usage: CyberAudioInferenceTests ASR_DIRECTORY METALLIB AUDIO_FILE")
         }

@@ -51,7 +51,7 @@ struct WorkspaceLayoutTests {
         window.contentView = nil
         return host
     }
-    static func main() throws {
+    static func main() async throws {
         _ = NSApplication.shared
         NSApp.setActivationPolicy(.prohibited)
         UserDefaults.standard.set("Always", forKey: "AppleShowScrollBars")
@@ -94,8 +94,49 @@ struct WorkspaceLayoutTests {
                 .environmentObject(updater).environmentObject(dictation)
             _ = try render(view, size: NSSize(width: 620, height: 560), name: "settings-\(tab)", output: output, editors: nil)
         }
+        let setupRoot = output.appendingPathComponent("setup-fixture")
+        try FileManager.default.createDirectory(at: setupRoot, withIntermediateDirectories: true)
+        let setupHelper = setupRoot.appendingPathComponent("assets")
+        let fixture = #"""
+        #!/bin/sh
+        case "$1" in
+          prepare) echo '{"event":"prepared"}';;
+          status) echo '{"event":"status","total_bytes":5547997530,"verified_bytes":0,"resumable_bytes":0,"missing_files":23,"invalid_files":[],"invalid_partials":[],"models_ready":false,"ffmpeg_ready":false,"ffmpeg_path":"/missing/ffmpeg","available_bytes":20000000000,"required_bytes":8000000000,"can_download":true}';;
+          download)
+            echo '{"event":"progress","path":"asr/model.safetensors","completed_bytes":2400000000,"total_bytes":5547997530,"phase":"downloading"}'
+            while [ -f "$3/hold" ]; do /bin/sleep 0.05; done
+            echo '{"event":"error","message":"下载中断，已保留进度；请检查网络或代理后继续。"}'; exit 1;;
+        esac
+        """#
+        try Data(fixture.utf8).write(to: setupHelper)
+        try FileManager.default.setAttributes([.posixPermissions: 0o700], ofItemAtPath: setupHelper.path)
+        let setup = PreparationController(root: setupRoot, helper: setupHelper, onReady: {})
+        func setupRender(_ name: String, dark: Bool = false) throws {
+            NSApp.appearance = NSAppearance(named: dark ? .darkAqua : .aqua)
+            _ = try render(PreparationView(preparation: setup).environment(\.colorScheme, dark ? .dark : .light),
+                           size: NSSize(width: 560, height: 440), name: name, output: output, editors: nil)
+        }
+        func waitForSetup(_ condition: () -> Bool) async throws {
+            let deadline = Date().addingTimeInterval(5)
+            while !condition() {
+                try require(Date() < deadline, "Setup layout fixture timed out")
+                try await Task.sleep(for: .milliseconds(10))
+            }
+        }
+        try setupRender("setup-checking")
+        setup.check(); try await waitForSetup { !setup.busy }
+        try setupRender("setup-missing-ffmpeg")
+        let hold = setupRoot.appendingPathComponent("hold")
+        try Data().write(to: hold)
+        setup.download(); try await waitForSetup { setup.completedBytes > 0 }
+        try setupRender("setup-downloading-dark", dark: true)
+        setup.cancel(); try await waitForSetup { !setup.busy }
+        try FileManager.default.removeItem(at: hold)
+        setup.download(); try await waitForSetup { !setup.busy }
+        try setupRender("setup-failed")
+        setup.shutdown()
         audio.cleanup(); dictation.cleanup()
-        print("WorkspaceLayout: 7 minimum-window states and 3 settings tabs rendered with native views; no main-window scrollers")
+        print("WorkspaceLayout: 7 workspace states, 3 settings tabs and 4 preparation states rendered at minimum size")
         print("Native view captures: \(output.path)")
     }
 }

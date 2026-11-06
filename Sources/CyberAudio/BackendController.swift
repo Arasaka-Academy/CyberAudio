@@ -63,6 +63,9 @@ final class BackendController: ObservableObject {
     private var stopping = false
     let root: URL
     let session: URLSession
+    // The App routes all start/restart entry points through resource preparation.
+    // Integration fixtures may start directly without an application coordinator.
+    var requestPreparation: (() -> Void)?
 
     init() {
         let arguments = ProcessInfo.processInfo.arguments
@@ -90,6 +93,12 @@ final class BackendController: ObservableObject {
     }
 
     func start() {
+        guard child == nil, !stopping else { return }
+        if let requestPreparation { requestPreparation(); return }
+        startPrepared()
+    }
+
+    func startPrepared() {
         guard child == nil, !stopping else { return }
         status = "loading"
         detail = "正在启动本地推理引擎…"
