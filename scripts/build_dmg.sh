@@ -44,7 +44,7 @@ ditto "$app" "$image/CyberAudio.app"
 ln -s /Applications "$image/Applications"
 cp packaging/DMG-README.txt "$image/使用说明.txt"
 cp docs/GUIDE.md "$image/Deployment/GUIDE.md"
-cp docs/NATIVE_SWIFT.md docs/AUTOMATIC_UPDATES.md docs/GUIDE-PYTHON-LEGACY.md "$image/Deployment/"
+cp docs/NATIVE_SWIFT.md docs/AUTOMATIC_UPDATES.md docs/DICTATION.md docs/GUIDE-PYTHON-LEGACY.md "$image/Deployment/"
 mkdir -p "$image/Deployment/evidence"
 cp -R docs/evidence/native-swift-2026-11-05 "$image/Deployment/evidence/"
 

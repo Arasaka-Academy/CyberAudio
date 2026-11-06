@@ -7,187 +7,118 @@ enum WorkspaceMode: String, CaseIterable, Identifiable {
     var id: Self { self }
 }
 
-@MainActor
-private final class WorkspaceNavigation: ObservableObject {
-    @Published var mode = WorkspaceMode.transcription
-    @Published var instructionsExpanded = false
-}
-
 struct ContentView: View {
     @EnvironmentObject private var backend: BackendController
     @EnvironmentObject private var audio: AudioWorkspace
     @EnvironmentObject private var updater: UpdaterController
+    @EnvironmentObject private var dictation: DictationController
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    @StateObject private var navigation = WorkspaceNavigation()
+    @ViewState private var mode: WorkspaceMode = .transcription
+
+    init(initialMode: WorkspaceMode = .transcription) { _mode = ViewState(wrappedValue: initialMode) }
 
     var body: some View {
-        GeometryReader { geometry in
-            ScrollView {
-                VStack(spacing: 20) {
-                    if !backend.ready { engineNotice }
-                    Group {
-                        switch navigation.mode {
-                        case .transcription: TranscriptionWorkspace()
-                        case .speech: SpeechWorkspace(instructionsExpanded: $navigation.instructionsExpanded)
-                        }
-                    }
-                    .id(navigation.mode)
-                    .transition(.opacity)
-                }
-                .frame(maxWidth: 1120)
-                .padding(geometry.size.width < 900 ? 24 : 32)
-                .frame(maxWidth: .infinity)
+        VStack(spacing: 12) {
+            switch mode {
+            case .transcription: TranscriptionWorkspace()
+            case .speech: SpeechWorkspace()
             }
-            .safeAreaInset(edge: .bottom, spacing: 0) {
-                VStack(spacing: 8) {
-                    if updater.gate.waiting { UpdateWaitingBar() }
-                    if audio.working || audio.playing { ActiveAudioBar(mode: $navigation.mode) }
-                }
-                .padding(.horizontal, 24).padding(.bottom, 16).padding(.top, 8)
-            }
+            WorkspaceStatus(mode: mode)
         }
+        .padding(16)
         .background { WorkspaceBackground() }
-        // The unified toolbar adds 54 points to the window's content minimum.
-        .frame(minWidth: 820, minHeight: 586)
+        .background(CompactWindowSizing())
+        .frame(minWidth: 560, minHeight: 440)
         .tint(StudioStyle.accent)
-        .animation(reduceMotion ? nil : .easeInOut(duration: 0.18), value: navigation.mode)
+        .animation(reduceMotion ? nil : .easeInOut(duration: 0.16), value: mode)
         .toolbar {
             ToolbarItem(placement: .principal) {
-                Picker("工作模式", selection: $navigation.mode) {
-                    ForEach(WorkspaceMode.allCases) { item in
-                        Text(item.rawValue).tag(item)
-                    }
+                Picker("工作模式", selection: $mode) {
+                    ForEach(WorkspaceMode.allCases) { Text($0.rawValue).tag($0) }
                 }
-                .pickerStyle(.segmented).frame(width: 280)
+                .pickerStyle(.segmented).frame(width: 224)
                 .accessibilityIdentifier("workspace-mode")
             }
             ToolbarItem(placement: .primaryAction) { EngineStatus() }
-            if updater.availableVersion != nil || updater.gate.waiting {
-                ToolbarItem(placement: .primaryAction) {
-                    Button { updater.checkForUpdates() } label: { Image(systemName: "arrow.down.circle") }
-                        .help(updater.menuTitle).accessibilityLabel(updater.menuTitle)
-                        .disabled(!updater.canPerformAction)
-                }
-            }
             ToolbarItem(placement: .primaryAction) {
                 SettingsLink { Image(systemName: "gearshape") }
                     .help("设置 (⌘,)").accessibilityLabel("打开设置")
             }
         }
     }
-
-    private var engineNotice: some View {
-        HStack(spacing: 12) {
-            if backend.status == "loading" || backend.status == "stopping" { ProgressView().controlSize(.small) }
-            else { Image(systemName: "exclamationmark.circle").foregroundStyle(.orange) }
-            VStack(alignment: .leading, spacing: 3) {
-                Text(backend.statusLabel).font(.callout.weight(.semibold))
-                Text(backend.detail).font(.caption).foregroundStyle(.secondary).textSelection(.enabled)
-            }
-            Spacer(minLength: 8)
-            SettingsLink { Text("查看设置") }.studioButton()
-        }
-        .padding(16).contentSurface()
-    }
 }
 
 private struct TranscriptionWorkspace: View {
     @EnvironmentObject private var backend: BackendController
     @EnvironmentObject private var audio: AudioWorkspace
+    @EnvironmentObject private var dictation: DictationController
 
-    private var title: String {
-        if audio.requestingMicrophone { return "正在开启麦克风" }
-        if audio.recording { return audio.recordingSeconds >= 59 ? "录音已达上限" : "正在聆听" }
-        if audio.transcribing { return "正在识别语音" }
-        return "让声音，成为文字。"
-    }
-
-    private var subtitle: String {
-        if audio.recording { return audio.recordingSeconds >= 59 ? "点击停止，将这段录音转成文字。" : "说完后，点击停止并识别。" }
-        if audio.transcribing { return "正在本机处理，识别结果即将显示在下方。" }
-        return "录下此刻的想法，或导入一段音频。"
+    private var recordingTitle: String {
+        if dictation.blocksUpdate { return "取消听写" }
+        if audio.recording { return "停止并识别" }
+        if audio.transcribing { return "取消识别" }
+        return "开始录音"
     }
 
     var body: some View {
-        VStack(spacing: 20) {
-            VStack(spacing: 0) {
-                HStack(spacing: 30) {
-                    AudioVisual(symbol: audio.recording ? "mic.fill" : "mic", active: audio.recording,
-                                recording: audio.recording, levels: audio.recordingLevels)
-                    VStack(alignment: .leading, spacing: 14) {
-                        Label("语音转文字", systemImage: "waveform")
-                            .font(.caption.weight(.semibold)).foregroundStyle(StudioStyle.accent)
-                        Text(title).font(.system(size: 29, weight: .semibold)).tracking(-0.6)
-                        Text(subtitle).font(.callout).foregroundStyle(.secondary)
-                        GlassEffectContainer(spacing: 14) {
-                            HStack(spacing: 12) {
-                                Button {
-                                    Task {
-                                        if audio.recording { await audio.stopAndTranscribe(using: backend) }
-                                        else { await audio.beginRecording() }
-                                    }
-                                } label: {
-                                    Label(audio.recording ? "停止并识别" : "开始录音", systemImage: audio.recording ? "stop.fill" : "mic.fill")
-                                        .padding(.horizontal, 8)
-                                }
-                                .studioButton(prominent: true, tint: audio.recording ? .red : StudioStyle.accent)
-                                .disabled(!audio.recording && (!backend.ready || backend.busy || audio.cannotStart))
-                                .help("开始录音／停止并识别 (⇧⌘R)")
-                                Button("导入音频…", systemImage: "square.and.arrow.down") { audio.importAudio(using: backend) }
-                                    .studioButton().disabled(!backend.ready || backend.busy || audio.cannotStart)
-                            }.controlSize(.large)
-                        }.padding(.top, 6)
-                    }.frame(maxWidth: .infinity, alignment: .leading)
-                }.padding(.horizontal, 28).padding(.vertical, 16)
-                Divider().overlay(.primary.opacity(0.025)).padding(.horizontal, 24)
-                HStack(spacing: 16) {
-                    Picker("识别语言", selection: $audio.sttLanguage) {
-                        Text("自动识别").tag("auto")
-                        Text("中文").tag("zh")
-                        Text("English").tag("en")
-                    }.frame(width: 200).disabled(audio.cannotStart)
-                    Spacer()
-                    if audio.recording {
-                        Label(String(format: "%02d:%02d", audio.recordingSeconds / 60, audio.recordingSeconds % 60), systemImage: "record.circle")
-                            .font(.callout.monospacedDigit()).foregroundStyle(.red)
-                            .accessibilityLabel("录音 \(audio.recordingSeconds) 秒")
-                    } else {
-                        Text("最长 60 秒 · 20MiB").font(.caption).foregroundStyle(.secondary)
-                    }
-                }.padding(.horizontal, 26).padding(.vertical, 16)
-            }.contentSurface()
-
-            if let message = audio.errorMessage, audio.errorOperation == .transcription {
-                InlineNotice(message: message) { audio.errorMessage = nil }
-            }
-            VStack(alignment: .leading, spacing: 14) {
+        VStack(spacing: 12) {
+            VStack(alignment: .leading, spacing: 8) {
                 HStack(spacing: 10) {
-                    Label("识别结果", systemImage: "text.alignleft").font(.headline)
-                    if audio.transcribing { ProgressView().controlSize(.mini) }
+                    Label("识别结果", systemImage: "text.alignleft").font(.callout.weight(.semibold))
                     Spacer()
-                    Button("复制", systemImage: "doc.on.doc") {
-                        NSPasteboard.general.clearContents()
-                        NSPasteboard.general.setString(audio.transcript, forType: .string)
-                    }.disabled(audio.transcript.isEmpty).studioButton()
-                    Button("清空", systemImage: "trash") { audio.transcript = ""; audio.sttTiming = "" }
-                        .disabled(audio.transcript.isEmpty || audio.transcribing).studioButton()
-                }
+                    Button { NSPasteboard.general.clearContents(); NSPasteboard.general.setString(audio.transcript, forType: .string) } label: {
+                        Image(systemName: "doc.on.doc")
+                    }.help("复制识别结果").accessibilityLabel("复制识别结果").disabled(audio.transcript.isEmpty)
+                    Button { audio.transcript = ""; audio.sttTiming = "" } label: { Image(systemName: "trash") }
+                        .help("清空识别结果").accessibilityLabel("清空识别结果")
+                        .disabled(audio.transcript.isEmpty || audio.working || dictation.blocksUpdate)
+                }.buttonStyle(.borderless)
                 ZStack(alignment: .topLeading) {
-                    TextEditor(text: $audio.transcript)
-                        .font(.system(size: 17)).lineSpacing(6)
-                        .scrollContentBackground(.hidden)
-                        .accessibilityLabel("识别结果").disabled(audio.transcribing)
+                    PlainTextEditor(text: $audio.transcript, editable: !audio.transcribing, label: "识别结果")
                     if audio.transcript.isEmpty {
-                        Text(audio.transcribing ? "正在将声音整理成文字…" : "识别完成后，文字会显示在这里。\n你可以继续编辑，或复制到其他应用。")
-                            .font(.system(size: 15)).foregroundStyle(.secondary).lineSpacing(7)
-                            .padding(.horizontal, 5).padding(.top, 1).allowsHitTesting(false)
+                        Text(audio.transcribing ? "正在本机识别语音…" : "录音或导入音频，文字会显示在这里。")
+                            .font(.system(size: 15)).foregroundStyle(.tertiary)
+                            .padding(.horizontal, 9).padding(.top, 6).allowsHitTesting(false)
                     }
-                }.frame(minHeight: 160)
-                if !audio.sttTiming.isEmpty {
-                    Text(audio.sttTiming).font(.caption.monospacedDigit()).foregroundStyle(.secondary).textSelection(.enabled)
                 }
-            }.padding(22).contentSurface(editor: true)
-            WorkspaceFooter(detail: "录音临时处理，不写入历史记录")
+            }.padding(14).contentSurface(editor: true).frame(maxHeight: .infinity)
+
+            HStack(spacing: 10) {
+                if audio.recording {
+                    CompactWaveform(levels: audio.recordingLevels, color: .red).frame(width: 116, height: 22)
+                    Text(String(format: "%02d:%02d", audio.recordingSeconds / 60, audio.recordingSeconds % 60))
+                        .font(.caption.monospacedDigit()).foregroundStyle(.red)
+                } else {
+                    Image(systemName: "keyboard").foregroundStyle(.secondary)
+                    Text("按住 \(dictation.shortcut.display) 听写").font(.caption).foregroundStyle(.secondary)
+                }
+                Spacer(minLength: 4)
+                Picker("识别语言", selection: $audio.sttLanguage) {
+                    Text("自动识别").tag("auto"); Text("中文").tag("zh"); Text("English").tag("en")
+                }.labelsHidden().frame(width: 110).disabled(audio.cannotStart || dictation.blocksUpdate)
+            }.frame(height: 26)
+
+            HStack(spacing: 10) {
+                Button {
+                    if dictation.blocksUpdate { dictation.cancel() }
+                    else if audio.transcribing { audio.cancelTranscription() }
+                    else {
+                        Task {
+                            if audio.recording { await audio.stopAndTranscribe(using: backend) }
+                            else { await audio.beginRecording() }
+                        }
+                    }
+                } label: {
+                    Label(recordingTitle, systemImage: audio.recording || audio.transcribing || dictation.blocksUpdate ? "stop.fill" : "mic.fill")
+                        .frame(minWidth: 120)
+                }
+                .studioButton(prominent: true, tint: audio.recording ? .red : StudioStyle.accent)
+                .disabled(!dictation.blocksUpdate && !audio.recording && !audio.transcribing && (!backend.ready || backend.busy || audio.cannotStart))
+                Button("导入音频…", systemImage: "square.and.arrow.down") { audio.importAudio(using: backend) }
+                    .studioButton().disabled(!backend.ready || backend.busy || audio.cannotStart || dictation.blocksUpdate)
+                Spacer(minLength: 0)
+                Text("最长 60 秒").font(.caption).foregroundStyle(.tertiary)
+            }.controlSize(.large)
         }
     }
 }
@@ -195,154 +126,154 @@ private struct TranscriptionWorkspace: View {
 private struct SpeechWorkspace: View {
     @EnvironmentObject private var backend: BackendController
     @EnvironmentObject private var audio: AudioWorkspace
-    @Binding var instructionsExpanded: Bool
+    @EnvironmentObject private var dictation: DictationController
+    @ViewState private var options: Bool = false
     private let voices = ["serena", "vivian", "uncle_fu", "ryan", "aiden", "ono_anna", "sohee", "eric", "dylan"]
-
     private var canGenerate: Bool {
-        backend.ready && !backend.busy && !audio.cannotStart && !audio.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-            && audio.text.unicodeScalars.count <= 500 && audio.instructions.unicodeScalars.count <= 200
-    }
-
-    private var title: String {
-        if audio.generating { return audio.playing ? "边生成，边播放。" : "正在生成语音" }
-        if audio.playing { return "正在播放" }
-        return audio.generated.isEmpty ? "赋予文字，自然的声音。" : "语音已准备好"
+        backend.ready && !backend.busy && !audio.cannotStart && !dictation.blocksUpdate
+        && !audio.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        && audio.text.unicodeScalars.count <= 500 && audio.instructions.unicodeScalars.count <= 200
     }
 
     var body: some View {
-        VStack(spacing: 20) {
-            VStack(spacing: 0) {
-                HStack(spacing: 30) {
-                    AudioVisual(symbol: audio.playing ? "speaker.wave.2.fill" : "speaker.wave.2", active: audio.playing || audio.generating)
-                    VStack(alignment: .leading, spacing: 14) {
-                        Label("文字转语音", systemImage: "waveform")
-                            .font(.caption.weight(.semibold)).foregroundStyle(StudioStyle.accent)
-                        Text(title).font(.system(size: 29, weight: .semibold)).tracking(-0.6)
-                        Text(audio.generating ? "语音正在本机生成，随时可以取消。" : "选择一个声音，让文字在这台 Mac 上被听见。")
-                            .font(.callout).foregroundStyle(.secondary)
-                        GlassEffectContainer(spacing: 14) {
-                            HStack(spacing: 12) {
-                                if audio.generating {
-                                    Button("取消生成", systemImage: "stop.fill") { audio.cancelGeneration() }.studioButton(prominent: true)
-                                } else {
-                                    Button("生成并播放", systemImage: "play.fill") { audio.generate(using: backend) }
-                                        .studioButton(prominent: true).disabled(!canGenerate)
-                                        .keyboardShortcut(.return, modifiers: .command)
-                                }
-                                if audio.playing && !audio.generating {
-                                    Button("停止播放", systemImage: "stop.fill") { audio.stopPlayback() }.studioButton()
-                                } else if !audio.generating {
-                                    Button("重播", systemImage: "arrow.counterclockwise") {
-                                        do { try audio.playGenerated() } catch { audio.reportError(error, for: .speech) }
-                                    }.studioButton().disabled(audio.generated.isEmpty || audio.working)
-                                }
-                            }.controlSize(.large)
-                        }.padding(.top, 6)
-                    }.frame(maxWidth: .infinity, alignment: .leading)
-                }.padding(.horizontal, 28).padding(.vertical, 16)
-                Divider().padding(.horizontal, 24)
+        VStack(spacing: 12) {
+            VStack(alignment: .leading, spacing: 8) {
                 HStack {
-                    Toggle("流式播放", isOn: $audio.streaming).toggleStyle(.switch).controlSize(.small).disabled(audio.generating)
-                        .help("开启后，语音生成过程中即可开始播放。")
-                    Spacer()
-                    Button("保存 WAV…", systemImage: "square.and.arrow.up") { audio.save() }
-                        .studioButton().disabled(audio.generated.isEmpty || audio.generating)
-                }.padding(.horizontal, 26).padding(.vertical, 16)
-            }.contentSurface()
-
-            if let message = audio.errorMessage, audio.errorOperation == .speech {
-                InlineNotice(message: message) { audio.errorMessage = nil }
-            }
-            VStack(alignment: .leading, spacing: 14) {
-                HStack {
-                    Label("朗读文本", systemImage: "text.alignleft").font(.headline)
+                    Label("朗读文本", systemImage: "text.alignleft").font(.callout.weight(.semibold))
                     Spacer()
                     Text("\(audio.text.unicodeScalars.count) / 500")
                         .font(.caption.monospacedDigit()).foregroundStyle(audio.text.unicodeScalars.count > 500 ? .red : .secondary)
                 }
-                TextEditor(text: $audio.text).font(.system(size: 17)).lineSpacing(6)
-                    .scrollContentBackground(.hidden).frame(minHeight: 130)
-                    .accessibilityLabel("朗读文本").disabled(audio.generating)
-                if audio.text.unicodeScalars.count > 500 {
-                    Text("朗读文本最多 500 个字符，请缩短后再生成。").font(.caption).foregroundStyle(.red)
+                PlainTextEditor(text: $audio.text, editable: !audio.generating, label: "朗读文本")
+            }.padding(14).contentSurface(editor: true).frame(maxHeight: .infinity)
+
+            HStack(spacing: 10) {
+                Picker("音色", selection: $audio.voice) {
+                    ForEach(voices, id: \.self) { Text($0.replacingOccurrences(of: "_", with: " ").capitalized).tag($0) }
+                }.frame(width: 158)
+                Picker("语言", selection: $audio.ttsLanguage) {
+                    Text("自动").tag("auto"); Text("中文").tag("chinese"); Text("English").tag("english")
+                }.frame(width: 128)
+                Spacer(minLength: 0)
+                Button { options.toggle() } label: { Image(systemName: "slider.horizontal.3") }
+                    .studioButton().help("表达指令与播放选项").accessibilityLabel("表达指令与播放选项")
+                    .popover(isPresented: $options) { speechOptions }
+            }.disabled(audio.generating).frame(height: 26)
+
+            HStack(spacing: 10) {
+                if audio.generating {
+                    Button("取消生成", systemImage: "stop.fill") { audio.cancelGeneration() }.studioButton(prominent: true)
+                } else {
+                    Button { audio.generate(using: backend) } label: {
+                        Label("生成并播放", systemImage: "play.fill").frame(minWidth: 120)
+                    }.studioButton(prominent: true).disabled(!canGenerate).keyboardShortcut(.return, modifiers: .command)
                 }
-                Divider()
-                HStack(spacing: 28) {
-                    Picker("音色", selection: $audio.voice) {
-                        ForEach(voices, id: \.self) { Text($0.replacingOccurrences(of: "_", with: " ").capitalized).tag($0) }
-                    }
-                    Picker("语言", selection: $audio.ttsLanguage) {
-                        Text("自动").tag("auto"); Text("中文").tag("chinese"); Text("English").tag("english")
-                    }
-                }.disabled(audio.generating)
-                DisclosureGroup("表达指令", isExpanded: $instructionsExpanded) {
-                    VStack(alignment: .leading, spacing: 8) {
-                        TextField("例如：自然、清晰、亲切地朗读。", text: $audio.instructions, axis: .vertical)
-                            .textFieldStyle(.roundedBorder).lineLimit(2...4).disabled(audio.generating)
-                        HStack {
-                            Text("描述语气、节奏或情绪。")
-                            Spacer()
-                            Text("\(audio.instructions.unicodeScalars.count) / 200").monospacedDigit()
-                        }.font(.caption).foregroundStyle(audio.instructions.unicodeScalars.count > 200 ? .red : .secondary)
-                    }.padding(.top, 10)
+                if audio.playing {
+                    Button("停止播放", systemImage: "stop.fill") { audio.stopPlayback() }.studioButton()
+                } else {
+                    Button("重播", systemImage: "arrow.counterclockwise") {
+                        do { try audio.playGenerated() } catch { audio.reportError(error, for: .speech) }
+                    }.studioButton().disabled(audio.generated.isEmpty || audio.cannotStart || dictation.blocksUpdate)
                 }
-                if audio.instructions.unicodeScalars.count > 200 {
-                    Text("表达指令最多 200 个字符，请缩短后再生成。").font(.caption).foregroundStyle(.red)
-                }
-            }.padding(22).contentSurface(editor: true)
-            WorkspaceFooter(detail: audio.ttsTiming.isEmpty ? "24kHz · 单声道 · PCM 16-bit" : audio.ttsTiming)
+                Spacer(minLength: 0)
+                Button { audio.save() } label: { Image(systemName: "square.and.arrow.up") }
+                    .studioButton().help("保存 WAV…").accessibilityLabel("保存 WAV")
+                    .disabled(audio.generated.isEmpty || audio.generating)
+            }.controlSize(.large)
         }
+    }
+
+    private var speechOptions: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            Text("语音选项").font(.headline)
+            Text("表达指令").font(.callout.weight(.medium))
+            PlainTextEditor(text: $audio.instructions, label: "表达指令").frame(height: 100).contentSurface(editor: true)
+            HStack {
+                Text("描述语气、节奏或情绪。")
+                Spacer()
+                Text("\(audio.instructions.unicodeScalars.count) / 200").monospacedDigit()
+            }.font(.caption).foregroundStyle(audio.instructions.unicodeScalars.count > 200 ? .red : .secondary)
+            Toggle("流式播放", isOn: $audio.streaming)
+            Text("生成过程中即可开始播放。").font(.caption).foregroundStyle(.secondary)
+        }.padding(20).frame(width: 350)
     }
 }
 
-private struct ActiveAudioBar: View {
+private struct WorkspaceStatus: View {
+    let mode: WorkspaceMode
     @EnvironmentObject private var backend: BackendController
     @EnvironmentObject private var audio: AudioWorkspace
-    @Binding var mode: WorkspaceMode
+    @EnvironmentObject private var updater: UpdaterController
+    @EnvironmentObject private var dictation: DictationController
+    @ViewState private var details: Bool = false
 
-    private var taskMode: WorkspaceMode {
-        audio.recording || audio.transcribing || audio.requestingMicrophone ? .transcription : .speech
+    private var error: String? {
+        if let message = updater.gate.failure ?? updater.errorMessage { return message }
+        if let message = audio.errorMessage,
+           (mode == .transcription && audio.errorOperation == .transcription || mode == .speech && audio.errorOperation == .speech) { return message }
+        if backend.status == "failed" { return backend.detail }
+        return nil
     }
-
-    private var title: String {
-        if audio.requestingMicrophone { return "等待麦克风授权" }
-        if audio.recording { return audio.recordingSeconds >= 59 ? "已达录音上限，请停止并识别" : "正在录音" }
-        if audio.transcribing { return "正在识别语音" }
-        if audio.generating { return audio.playing ? "正在生成并播放" : "正在生成语音" }
-        return "正在播放语音"
+    private var message: String {
+        if updater.gate.waiting { return updater.displayStatus }
+        if let error { return error }
+        if !backend.ready { return backend.detail }
+        if dictation.blocksUpdate { return dictation.statusText }
+        if audio.requestingMicrophone { return "等待麦克风授权…" }
+        if audio.recording { return audio.recordingSeconds >= 59 ? "已达录音上限，请停止并识别" : "正在聆听，说完后停止并识别" }
+        if audio.transcribing { return "正在本机识别语音…" }
+        if audio.generating { return audio.playing ? "正在生成并播放…" : "正在生成语音…" }
+        if audio.playing { return "正在播放语音" }
+        let timing = mode == .transcription ? audio.sttTiming : audio.ttsTiming
+        return timing.isEmpty ? "本地处理 · 录音临时使用" : timing
     }
 
     var body: some View {
-        HStack(spacing: 14) {
-            if audio.transcribing || audio.generating || audio.requestingMicrophone {
-                ProgressView().controlSize(.small)
+        HStack(spacing: 8) {
+            if audio.transcribing || audio.generating || audio.requestingMicrophone || updater.gate.waiting {
+                ProgressView().controlSize(.mini)
             } else {
-                Image(systemName: audio.recording ? "record.circle.fill" : "speaker.wave.2.fill")
-                    .foregroundStyle(audio.recording ? .red : StudioStyle.accent)
+                Image(systemName: error == nil ? "waveform" : "exclamationmark.circle")
+                    .foregroundStyle(error == nil ? StudioStyle.accent : .orange)
             }
-            Text(title).font(.callout.weight(.medium))
-            if audio.recording {
-                Text(String(format: "%02d:%02d", audio.recordingSeconds / 60, audio.recordingSeconds % 60))
-                    .font(.callout.monospacedDigit()).foregroundStyle(.secondary)
-            }
-            Spacer(minLength: 12)
-            if mode != taskMode {
-                Button("查看任务") { mode = taskMode }.studioButton()
-            }
-            if audio.recording {
-                Button("停止并识别", systemImage: "stop.fill") { Task { await audio.stopAndTranscribe(using: backend) } }
-                    .studioButton(prominent: true, tint: .red)
-            } else if audio.transcribing {
-                Button("取消识别", systemImage: "stop.fill") { audio.cancelTranscription() }.studioButton()
-            } else if audio.generating {
-                Button("取消生成", systemImage: "stop.fill") { audio.cancelGeneration() }.studioButton()
-            } else if audio.playing {
-                Button("停止播放", systemImage: "stop.fill") { audio.stopPlayback() }.studioButton()
+            Text(message).font(.caption).foregroundStyle(error == nil ? .secondary : .primary).lineLimit(1)
+            Spacer(minLength: 0)
+            if updater.gate.waiting {
+                Button("取消等待") { updater.gate.cancel() }.buttonStyle(.borderless)
+            } else if error != nil || !backend.ready {
+                Button("详情") { details = true }.buttonStyle(.borderless)
+                    .popover(isPresented: $details) {
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text(error == nil ? "引擎状态" : "暂时无法完成").font(.headline)
+                            PlainTextEditor(text: .constant(message), editable: false, label: "状态详情").frame(height: 180)
+                            SettingsLink { Text("打开设置") }
+                        }.padding(20).frame(width: 350)
+                    }
+            } else if mode == .transcription && !dictation.available {
+                SettingsLink { Text("启用快捷听写") }.buttonStyle(.borderless)
+            } else if updater.availableVersion != nil {
+                Button("更新可用") { updater.checkForUpdates() }.buttonStyle(.borderless).disabled(!updater.canPerformAction)
             }
         }
-        .padding(.horizontal, 18).padding(.vertical, 13)
-        .studioGlass(in: RoundedRectangle(cornerRadius: 20))
-        .frame(maxWidth: 1072)
-        .accessibilityIdentifier("active-audio-controls")
+        .frame(height: 28)
+        .padding(.horizontal, 3)
+        .accessibilityElement(children: .contain)
+        .accessibilityIdentifier("workspace-status")
+    }
+}
+
+struct CompactWaveform: View {
+    let levels: [Float]
+    var color: Color = StudioStyle.accent
+    var body: some View {
+        GeometryReader { geometry in
+            HStack(spacing: 2) {
+                ForEach(0..<24, id: \.self) { index in
+                    let level = levels.isEmpty ? 0 : levels[min(levels.count - 1, index * levels.count / 24)]
+                    Capsule().fill(color.opacity(level > 0 ? 0.8 : 0.22))
+                        .frame(height: max(3, CGFloat(level) * geometry.size.height))
+                }
+            }.frame(height: geometry.size.height)
+        }.accessibilityHidden(true)
     }
 }

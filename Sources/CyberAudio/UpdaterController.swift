@@ -71,9 +71,9 @@ final class UpdaterController: NSObject, ObservableObject, SPUUpdaterDelegate, @
     private let backend: BackendController
     private let log = Logger(subsystem: Bundle.main.bundleIdentifier ?? "local.cyberaudio.mac", category: "updates")
 
-    init(backend: BackendController, audio: AudioWorkspace) {
+    init(backend: BackendController, audio: AudioWorkspace, dictation: DictationController) {
         self.backend = backend
-        gate = UpdateGate(audioBusy: { audio.working || audio.playing },
+        gate = UpdateGate(audioBusy: { audio.working || audio.playing || dictation.blocksUpdate },
                           prepare: { try await backend.prepareForUpdate(lease: $0) },
                           resume: { await backend.cancelUpdatePreparation(lease: $0) })
         super.init()

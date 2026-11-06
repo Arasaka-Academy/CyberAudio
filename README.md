@@ -2,11 +2,12 @@
 
 原生 SwiftUI macOS 语音工作台。一个 App 同时提供本地 STT、TTS 和统一 HTTP API。
 
-当前文档见 [部署指南](docs/GUIDE.md) 和 [Swift 迁移报告](docs/NATIVE_SWIFT.md)。[Notion 手册](https://app.notion.com/p/CyberAudio-Mac-STT-TTS-App-API-40d1d9761945811081c6ddd41d45e2c8) 与 [旧验收报告](docs/VERIFICATION.md) 保留历史 Python 版本记录。
+当前文档见 [部署指南](docs/GUIDE.md)、[快捷听写说明](docs/DICTATION.md) 和 [Swift 迁移报告](docs/NATIVE_SWIFT.md)。[Notion 手册](https://app.notion.com/p/CyberAudio-Mac-STT-TTS-App-API-40d1d9761945811081c6ddd41d45e2c8) 与 [旧验收报告](docs/VERIFICATION.md) 保留历史 Python 版本记录。
 
 - **STT**：Qwen3-ASR 1.7B 8-bit，中文／英文／混合语音，录音或导入文件。
 - **TTS**：Qwen3-TTS 1.7B CustomVoice 8-bit，9 个预设音色，表达指令，WAV 与流式 PCM。
-- **界面**：原生 Liquid Glass 工作台，顶部切换录音／朗读模式，独立设置窗口，跟随系统浅色／深色；跨模式保留任务和停止／取消入口。
+- **界面**：560 × 440 pt 的原生 Liquid Glass 工作台，顶部切换录音／朗读模式，文本区内部滚动且隐藏滚动条；独立设置窗口，跟随系统浅色／深色。
+- **快捷听写**：默认按住右 Option 录音，松开识别并在原输入框粘贴；支持配置快捷键，输入位置变化时保留结果供复制，详见 [听写说明](docs/DICTATION.md)。
 - **生命周期**：打开 App 加载模型；仅在菜单栏显示，不显示 Dock 图标；关闭窗口后继续运行，可从菜单栏恢复主窗口；退出 App 停止 API、卸载模型。没有后台系统守护服务。
 - **更新**：Sparkle 2.10.1，每天检查稳定版并自动下载；确认重启或主动退出时安装，等待音频和 API 任务完成。0.2.0（4）起支持更新，首次需手动安装最新版，详见 [自动更新与发布](docs/AUTOMATIC_UPDATES.md)。
 - **API**：保持 `/v1/audio/transcriptions`，新增 `/v1/audio/speech`，共用地址与 Bearer Token。

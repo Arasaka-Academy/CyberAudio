@@ -1,8 +1,11 @@
 import SwiftUI
 
+// Use the stable property wrapper on SDKs that also export a State macro.
+typealias ViewState<Value> = SwiftUI.State<Value>
+
 enum StudioStyle {
     static let accent = Color.teal
-    static let corner: CGFloat = 26
+    static let corner: CGFloat = 16
 }
 
 struct WorkspaceBackground: View {
@@ -129,66 +132,5 @@ struct InlineNotice: View {
         .padding(14)
         .background(.orange.opacity(0.09), in: .rect(cornerRadius: 14))
         .accessibilityElement(children: .contain)
-    }
-}
-
-struct AudioVisual: View {
-    let symbol: String
-    var active = false
-    var recording = false
-    var levels: [Float] = []
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
-
-    private var color: Color { recording ? .red : StudioStyle.accent }
-
-    var body: some View {
-        ZStack {
-            Circle().fill(color.opacity(0.045)).frame(width: 174, height: 174)
-            Circle().stroke(color.opacity(0.1), lineWidth: 1).frame(width: 146, height: 146)
-            Circle().stroke(color.opacity(0.08), lineWidth: 1).frame(width: 174, height: 174)
-            Image(systemName: symbol)
-                .font(.system(size: 35, weight: .medium))
-                .foregroundStyle(color.gradient)
-                .symbolEffect(.pulse, options: .repeating, isActive: active && !reduceMotion)
-                .frame(width: 94, height: 94)
-                .studioGlass(in: Circle(), tint: color.opacity(0.08))
-            if !levels.isEmpty {
-                RecordingWaveform(levels: levels, color: color)
-                    .frame(width: 192, height: 30).offset(y: 98)
-            }
-        }
-        .frame(width: 216, height: levels.isEmpty ? 190 : 220)
-        .accessibilityHidden(true)
-    }
-}
-
-private struct RecordingWaveform: View {
-    let levels: [Float]
-    let color: Color
-
-    var body: some View {
-        GeometryReader { geometry in
-            HStack(spacing: 2) {
-                ForEach(levels.indices, id: \.self) { index in
-                    Capsule().fill(color.opacity(levels[index] > 0 ? 0.75 : 0.2))
-                        .frame(height: max(3, CGFloat(levels[index]) * geometry.size.height))
-                }
-            }.frame(height: geometry.size.height)
-        }
-    }
-}
-
-struct WorkspaceFooter: View {
-    let detail: String
-
-    var body: some View {
-        HStack(spacing: 8) {
-            Label(detail, systemImage: "lock.shield")
-            Spacer(minLength: 12)
-            Text("本地处理 · Apple GPU").font(.caption.monospaced())
-        }
-        .font(.caption).foregroundStyle(.secondary)
-        .padding(.horizontal, 4)
-        .accessibilityElement(children: .combine)
     }
 }

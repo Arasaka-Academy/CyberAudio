@@ -4,9 +4,16 @@ import SwiftUI
 @MainActor
 final class AppState {
     static let shared = AppState()
-    let backend = BackendController()
-    let audio = AudioWorkspace()
-    lazy var updater = UpdaterController(backend: backend, audio: audio)
+    let backend: BackendController
+    let audio: AudioWorkspace
+    lazy var dictation = DictationController(backend: backend, audio: audio)
+    lazy var updater = UpdaterController(backend: backend, audio: audio, dictation: dictation)
+
+    private init() {
+        let backend = BackendController()
+        self.backend = backend
+        audio = AudioWorkspace(recordingsDirectory: backend.root.appendingPathComponent("tmp/recordings", isDirectory: true))
+    }
 }
 
 @MainActor
@@ -22,6 +29,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         terminationSignal = source
         AppState.shared.backend.start()
         AppState.shared.updater.start()
+        AppState.shared.dictation.start()
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { false }
@@ -43,6 +51,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     private func finishTermination() {
         terminating = true
+        AppState.shared.dictation.cleanup()
         AppState.shared.audio.cleanup()
         AppState.shared.backend.stopForTermination()
     }
@@ -54,14 +63,15 @@ struct CyberAudioApp: App {
     @StateObject private var backend = AppState.shared.backend
     @StateObject private var audio = AppState.shared.audio
     @StateObject private var updater = AppState.shared.updater
+    @StateObject private var dictation = AppState.shared.dictation
     @Environment(\.openWindow) private var openWindow
     @Environment(\.openSettings) private var openSettings
 
     var body: some Scene {
         Window("CyberAudio", id: "main") {
-            ContentView().environmentObject(backend).environmentObject(audio).environmentObject(updater)
+            ContentView().environmentObject(backend).environmentObject(audio).environmentObject(updater).environmentObject(dictation)
         }
-        .defaultSize(width: 1040, height: 760)
+        .defaultSize(width: 560, height: 440)
         .windowResizability(.contentMinSize)
         .windowToolbarStyle(.unified)
         .commands {
@@ -76,23 +86,25 @@ struct CyberAudioApp: App {
                         else { await audio.beginRecording() }
                     }
                 }
-                .keyboardShortcut("r", modifiers: [.command, .shift])
-                .disabled(!audio.recording && (!backend.ready || backend.busy || audio.cannotStart))
+                .disabled(dictation.blocksUpdate || !audio.recording && (!backend.ready || backend.busy || audio.cannotStart))
                 Button("取消任务") {
-                    if audio.transcribing { audio.cancelTranscription() }
+                    if dictation.blocksUpdate { dictation.cancel() }
+                    else if audio.transcribing { audio.cancelTranscription() }
                     else { audio.cancelGeneration() }
                 }
-                .keyboardShortcut(".", modifiers: .command).disabled(!audio.generating && !audio.transcribing)
+                .keyboardShortcut(".", modifiers: .command).disabled(!dictation.blocksUpdate && !audio.generating && !audio.transcribing)
             }
         }
 
         Settings {
-            ServiceSettingsView().environmentObject(backend).environmentObject(audio).environmentObject(updater)
+            ServiceSettingsView().environmentObject(backend).environmentObject(audio).environmentObject(updater).environmentObject(dictation)
         }
 
         MenuBarExtra("CyberAudio · \(backend.statusLabel)", systemImage: backend.busy ? "waveform" : "waveform.circle") {
             Text("CyberAudio · \(backend.statusLabel)")
             Button("显示主窗口") { showMain() }
+            Button(dictation.enabled ? "暂停快捷听写" : "启用快捷听写") { dictation.setEnabled(!dictation.enabled) }
+            Text("长按 \(dictation.shortcut.display) 听写")
             if let version = updater.availableVersion { Text("新版本 \(version)") }
             Button(updater.menuTitle) { updater.checkForUpdates() }.disabled(!updater.canPerformAction)
             Button("设置…") {
@@ -101,12 +113,12 @@ struct CyberAudioApp: App {
             }.keyboardShortcut(",", modifiers: .command)
             Divider()
             if backend.running {
-                Button("停止引擎") { Task { await backend.stop() } }.disabled(audio.cannotStart)
+                Button("停止引擎") { Task { await backend.stop() } }.disabled(audio.cannotStart || dictation.blocksUpdate)
             } else {
                 Button("启动引擎") { backend.start() }.disabled(audio.preparingUpdate)
             }
             Button("重启引擎") { Task { await backend.restart() } }
-                .disabled(audio.cannotStart || backend.status == "stopping")
+                .disabled(audio.cannotStart || dictation.blocksUpdate || backend.status == "stopping")
             Divider()
             Button("退出 CyberAudio") { NSApp.terminate(nil) }.keyboardShortcut("q")
         }

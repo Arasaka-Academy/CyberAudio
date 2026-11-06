@@ -14,6 +14,12 @@ enum AudioOperation {
     case transcription, speech
 }
 
+enum TranscriptionOutcome {
+    case success(UUID, Transcription)
+    case cancelled(UUID)
+    case failed(UUID, String)
+}
+
 @MainActor
 final class AudioWorkspace: NSObject, ObservableObject {
     @Published var recording = false
@@ -41,14 +47,18 @@ final class AudioWorkspace: NSObject, ObservableObject {
     private var recordingURL: URL?
     private var ticker: Task<Void, Never>?
     private var meter: Task<Void, Never>?
-    private var transcription: Task<Void, Never>?
+    private var transcription: Task<TranscriptionOutcome, Never>?
     private var generation: Task<Void, Never>?
     private var player: AVAudioPlayer?
     private var engine: AVAudioEngine?
     private var node: AVAudioPlayerNode?
-    private let recordings = FileManager.default.temporaryDirectory.appendingPathComponent("CyberAudio-recordings", isDirectory: true)
+    private let recordings: URL
+    private let microphoneAccess: () async -> Bool
+    private var recordingAttempt = UUID()
 
-    override init() {
+    init(recordingsDirectory: URL? = nil, microphoneAccess: @escaping () async -> Bool = { await AVCaptureDevice.requestAccess(for: .audio) }) {
+        recordings = recordingsDirectory ?? FileManager.default.temporaryDirectory.appendingPathComponent("CyberAudio-recordings", isDirectory: true)
+        self.microphoneAccess = microphoneAccess
         super.init()
         try? FileManager.default.createDirectory(at: recordings, withIntermediateDirectories: true, attributes: [.posixPermissions: 0o700])
         // Recover only this application's temporary recordings after a previous crash.
@@ -60,14 +70,18 @@ final class AudioWorkspace: NSObject, ObservableObject {
     var working: Bool { generating || transcribing || recording || requestingMicrophone }
     var cannotStart: Bool { working || preparingUpdate }
 
-    func beginRecording() async {
-        guard !cannotStart else { return }
+    @discardableResult
+    func beginRecording(requestPermission: Bool = true) async -> Bool {
+        guard !cannotStart, !Task.isCancelled else { return false }
+        let attempt = UUID()
+        recordingAttempt = attempt
         requestingMicrophone = true
-        defer { requestingMicrophone = false }
+        defer { if recordingAttempt == attempt { requestingMicrophone = false } }
         errorOperation = .transcription
         errorMessage = nil
-        let permitted = await AVCaptureDevice.requestAccess(for: .audio)
-        guard permitted else { errorMessage = "麦克风权限未开启，请在系统设置 → 隐私与安全性 → 麦克风中允许 CyberAudio。"; return }
+        let permitted = requestPermission ? await microphoneAccess() : AVCaptureDevice.authorizationStatus(for: .audio) == .authorized
+        guard recordingAttempt == attempt, !Task.isCancelled else { return false }
+        guard permitted else { errorMessage = "麦克风权限未开启，请在系统设置 → 隐私与安全性 → 麦克风中允许 CyberAudio。"; return false }
         do {
             stopPlayback()
             let url = recordings.appendingPathComponent("recording-\(UUID().uuidString).wav")
@@ -78,43 +92,58 @@ final class AudioWorkspace: NSObject, ObservableObject {
                 AVLinearPCMIsFloatKey: false, AVLinearPCMIsBigEndianKey: false
             ])
             recorder.isMeteringEnabled = true
-            guard recorder.record() else { throw CyberAudioError.message("无法开启麦克风，请检查输入设备。") }
+            guard recorder.record(forDuration: 59) else { throw CyberAudioError.message("无法开启麦克风，请检查输入设备。") }
             self.recorder = recorder
             recordingURL = url
             recording = true
             recordingSeconds = 0
             recordingLevels = [Float](repeating: 0, count: 48)
             startMetering()
+            let startedAt = ProcessInfo.processInfo.systemUptime
             ticker = Task { [weak self] in
                 while !Task.isCancelled {
-                    try? await Task.sleep(for: .seconds(1))
+                    try? await Task.sleep(for: .milliseconds(200))
                     guard !Task.isCancelled, let self, self.recording else { return }
-                    self.recordingSeconds += 1
+                    self.recordingSeconds = min(59, Int(ProcessInfo.processInfo.systemUptime - startedAt))
                     if self.recordingSeconds >= 59 {
-                        self.recorder?.pause()
                         self.stopMetering()
                         return
                     }
                 }
             }
+            return true
         } catch {
             if let recordingURL { try? FileManager.default.removeItem(at: recordingURL) }
             recordingURL = nil
             errorMessage = error.localizedDescription
+            return false
         }
     }
 
-    func stopAndTranscribe(using backend: BackendController) async {
+    func cancelRecording() {
+        recordingAttempt = UUID()
+        requestingMicrophone = false
+        recorder?.stop(); recorder = nil
+        ticker?.cancel(); ticker = nil
+        stopMetering()
+        recording = false
+        if let recordingURL { try? FileManager.default.removeItem(at: recordingURL) }
+        recordingURL = nil
+    }
+
+    @discardableResult
+    func stopAndTranscribe(using backend: BackendController, sessionID: UUID = UUID()) async -> TranscriptionOutcome {
+        recordingAttempt = UUID()
         recorder?.stop()
         recorder = nil
         ticker?.cancel()
         ticker = nil
         stopMetering()
         recording = false
-        guard let url = recordingURL else { return }
+        guard let url = recordingURL else { return .cancelled(sessionID) }
         recordingURL = nil
         defer { try? FileManager.default.removeItem(at: url) }
-        await transcribe(url: url, using: backend, completingRecording: true)
+        return await transcribe(url: url, using: backend, completingRecording: true, sessionID: sessionID)
     }
 
     private func startMetering() {
@@ -156,8 +185,9 @@ final class AudioWorkspace: NSObject, ObservableObject {
         }
     }
 
-    func transcribe(url: URL, using backend: BackendController, completingRecording: Bool = false) async {
-        guard !working, !preparingUpdate || completingRecording else { return }
+    @discardableResult
+    func transcribe(url: URL, using backend: BackendController, completingRecording: Bool = false, sessionID: UUID = UUID()) async -> TranscriptionOutcome {
+        guard !working, !preparingUpdate || completingRecording, !Task.isCancelled else { return .cancelled(sessionID) }
         stopPlayback()
         errorOperation = .transcription
         errorMessage = nil
@@ -165,14 +195,14 @@ final class AudioWorkspace: NSObject, ObservableObject {
         sttTiming = ""
         defer { transcribing = false; transcription = nil }
         let task = Task { [weak self] in
-            guard let self else { return }
-            await self.performTranscription(url: url, using: backend)
+            guard let self else { return TranscriptionOutcome.cancelled(sessionID) }
+            return await self.performTranscription(url: url, using: backend, sessionID: sessionID)
         }
         transcription = task
-        await task.value
+        return await withTaskCancellationHandler { await task.value } onCancel: { task.cancel() }
     }
 
-    private func performTranscription(url: URL, using backend: BackendController) async {
+    private func performTranscription(url: URL, using backend: BackendController, sessionID: UUID) async -> TranscriptionOutcome {
         do {
             try Task.checkCancellation()
             let size = try url.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0
@@ -193,9 +223,11 @@ final class AudioWorkspace: NSObject, ObservableObject {
             let result = try JSONDecoder().decode(Transcription.self, from: data)
             transcript = result.text
             sttTiming = String(format: "音频 %.1f 秒 · 处理 %.2f 秒 · %@", result.duration, result.processing_ms / 1000, result.language ?? "自动")
+            return .success(sessionID, result)
         } catch {
-            if Task.isCancelled { sttTiming = "已取消" }
-            else { reportError(error, for: .transcription) }
+            if Task.isCancelled { sttTiming = "已取消"; return .cancelled(sessionID) }
+            reportError(error, for: .transcription)
+            return .failed(sessionID, error.localizedDescription)
         }
     }
 
@@ -351,10 +383,7 @@ final class AudioWorkspace: NSObject, ObservableObject {
     func cleanup() {
         transcription?.cancel()
         generation?.cancel()
-        ticker?.cancel()
-        stopMetering()
-        recorder?.stop()
-        if let recordingURL { try? FileManager.default.removeItem(at: recordingURL) }
+        cancelRecording()
         stopPlayback()
     }
 

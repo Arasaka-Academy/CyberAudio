@@ -18,6 +18,10 @@ native-test:
 test: native-test
 	bash scripts/test_update_gate.sh
 	bash scripts/test_coreml_evidence.sh
+	bash scripts/test_dictation.sh
+	bash scripts/test_audio_workflow.sh
+	swift build --build-system native -c release
+	bash scripts/test_workspace_layout.sh
 
 legacy-test:
 	.venv/bin/python -m pytest -q
@@ -25,4 +29,3 @@ legacy-test:
 check: test
 	for script in scripts/*.sh; do bash -n "$$script"; done
 	plutil -lint packaging/Info.plist
-	swift build --build-system native -c release

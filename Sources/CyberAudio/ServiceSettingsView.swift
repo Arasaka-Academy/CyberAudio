@@ -8,17 +8,13 @@ private final class LoginState: ObservableObject {
     @Published var error: String?
     @Published var tokenCopied = false
     var enabled: Bool { status == .enabled || status == .requiresApproval }
-
     func refresh() { status = SMAppService.mainApp.status }
-
     func setEnabled(_ enabled: Bool) throws {
         defer { refresh() }
         if enabled {
             try SMAppService.mainApp.register()
             if SMAppService.mainApp.status == .requiresApproval { SMAppService.openSystemSettingsLoginItems() }
-        } else {
-            try SMAppService.mainApp.unregister()
-        }
+        } else { try SMAppService.mainApp.unregister() }
     }
 }
 
@@ -26,110 +22,145 @@ struct ServiceSettingsView: View {
     @EnvironmentObject private var backend: BackendController
     @EnvironmentObject private var audio: AudioWorkspace
     @EnvironmentObject private var updater: UpdaterController
+    @EnvironmentObject private var dictation: DictationController
     @StateObject private var login = LoginState()
+    @ViewState private var recordingShortcut: Bool = false
+    @ViewState private var shortcutError: String = ""
+    @ViewState private var tab: Int = 0
+
+    init(initialTab: Int = 0) { _tab = ViewState(wrappedValue: initialTab) }
 
     var body: some View {
-        Form {
-            Section {
-                HStack(spacing: 14) {
-                    Image(systemName: "waveform.circle.fill")
-                        .font(.system(size: 38)).foregroundStyle(StudioStyle.accent.gradient)
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text("CyberAudio").font(.title2.weight(.semibold))
-                        Text("本地语音工作台").font(.callout).foregroundStyle(.secondary)
-                    }
+        TabView(selection: $tab) {
+            dictationSettings.tabItem { Label("听写", systemImage: "mic") }.tag(0)
+            serviceSettings.tabItem { Label("服务", systemImage: "waveform") }.tag(1)
+            generalSettings.tabItem { Label("通用与更新", systemImage: "gearshape") }.tag(2)
+        }
+        .padding(16).frame(width: 620, height: 560)
+        .background { WorkspaceBackground() }.tint(StudioStyle.accent)
+        .sheet(isPresented: $recordingShortcut, onDismiss: { dictation.configureShortcut(false) }) {
+            VStack(spacing: 16) {
+                Text("设置听写快捷键").font(.headline)
+                Text(shortcutError.isEmpty ? "按下组合键，或单独按右 Option。" : shortcutError)
+                    .font(.callout).foregroundStyle(shortcutError.isEmpty ? Color.secondary : .red)
+                ShortcutRecorder(capture: { value in dictation.setShortcut(value); recordingShortcut = false },
+                                 cancel: { recordingShortcut = false }, error: { shortcutError = $0 })
+                    .frame(width: 320, height: 54)
+                    .background(.quaternary, in: .rect(cornerRadius: 12))
+                    .overlay { Text("等待按键…").foregroundStyle(.secondary).allowsHitTesting(false) }
+                Button("取消") { recordingShortcut = false }.keyboardShortcut(.cancelAction)
+            }.padding(24).frame(width: 400)
+        }
+        .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in login.refresh() }
+        .task(id: login.tokenCopied) {
+            if login.tokenCopied { try? await Task.sleep(for: .seconds(2)); if !Task.isCancelled { login.tokenCopied = false } }
+        }
+    }
+
+    private var dictationSettings: some View {
+        VStack(alignment: .leading, spacing: 18) {
+            HStack {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("随处听写").font(.title3.weight(.semibold))
+                    Text(dictation.permissionSummary).font(.caption).foregroundStyle(.secondary)
+                }
+                Spacer()
+                Toggle("启用快捷听写", isOn: Binding(get: { dictation.enabled }, set: { dictation.setEnabled($0) }))
+                    .toggleStyle(.switch).labelsHidden().accessibilityLabel("启用快捷听写")
+            }
+            GroupBox {
+                HStack(spacing: 12) {
+                    Text("长按录音").font(.callout)
                     Spacer()
-                    EngineStatus()
-                }.padding(.vertical, 6)
+                    Text(dictation.shortcut.display).font(.system(.callout, design: .monospaced).weight(.medium))
+                        .padding(.horizontal, 12).padding(.vertical, 6).background(.quaternary, in: .rect(cornerRadius: 7))
+                    Button("修改…") { shortcutError = ""; dictation.configureShortcut(true); recordingShortcut = true }
+                    Button("恢复默认") { dictation.setShortcut(.rightOption) }.disabled(dictation.shortcut == .rightOption)
+                }.padding(8)
             }
-            Section("引擎与模型") {
-                Text(backend.detail).font(.callout).foregroundStyle(.secondary).textSelection(.enabled)
-                HStack {
-                    if backend.running {
-                        Button("停止引擎", systemImage: "stop.circle") { Task { await backend.stop() } }
-                            .disabled(audio.cannotStart || backend.status == "stopping")
-                    } else {
-                        Button("启动引擎", systemImage: "play.circle") { backend.start() }.disabled(audio.preparingUpdate)
+            GroupBox("使用权限") {
+                VStack(spacing: 0) {
+                    permission("麦克风", detail: "录制要识别的语音", granted: dictation.microphoneGranted) {
+                        Task { await dictation.requestMicrophone() }
+                        dictation.openPrivacy("Microphone")
                     }
-                    Button("重启", systemImage: "arrow.clockwise") { Task { await backend.restart() } }
-                        .disabled(audio.cannotStart || backend.status == "stopping")
-                }
-                model("语音识别", name: "Qwen3-ASR 1.7B · 8-bit", revision: "a8379a2e2f9e")
-                model("语音合成", name: "Qwen3-TTS 1.7B · CustomVoice · 8-bit", revision: "41d3337e8b7f")
-                if let load = backend.startup["load_ms"], let warm = backend.startup["warmup_ms"] {
-                    Text("本次加载 \(load.display) ms · 预热 \(warm.display) ms")
-                        .font(.caption.monospacedDigit()).foregroundStyle(.secondary)
-                }
+                    Divider()
+                    permission("辅助功能", detail: "在原输入框写入识别结果", granted: dictation.accessibilityGranted) { dictation.requestAccessibility() }
+                    Divider()
+                    permission("输入监控", detail: "在其他应用中识别听写快捷键", granted: dictation.inputMonitoringGranted) { dictation.requestInputMonitoring() }
+                }.padding(.horizontal, 8)
             }
-            Section {
-                LabeledContent("本机 API") {
-                    Text(backend.localURL).font(.callout.monospaced()).textSelection(.enabled)
-                }
-                LabeledContent("Tailscale HTTPS") {
-                    Text(backend.httpsURL).font(.caption.monospaced()).textSelection(.enabled)
-                        .lineLimit(2).multilineTextAlignment(.trailing)
-                }
-                LabeledContent("API Token") {
-                    Text("••••••••••••").foregroundStyle(.secondary)
-                    Button(login.tokenCopied ? "已复制" : "复制 Token", systemImage: login.tokenCopied ? "checkmark" : "doc.on.doc") {
-                        backend.copyToken()
-                        login.tokenCopied = true
-                    }.disabled(backend.configuration == nil)
-                }
-            } header: {
-                Text("API 连接")
-            } footer: {
-                Text("远程客户端需加入同一 Tailscale 网络，并携带 Bearer Token。")
+            VStack(alignment: .leading, spacing: 8) {
+                Label("松开结束 · Esc 取消", systemImage: "keyboard")
+                Text("识别时切换应用或输入框，结果会保留在主窗口，供你复制。不会自动回车或发送消息。")
+                Text("关闭主窗口后仍可听写；右 Option 配合其他按键时保留正常输入。")
+            }.font(.caption).foregroundStyle(.secondary)
+            Spacer(minLength: 0)
+        }.padding(16)
+    }
+
+    private func permission(_ title: String, detail: String, granted: Bool, action: @escaping () -> Void) -> some View {
+        HStack(spacing: 10) {
+            Image(systemName: granted ? "checkmark.circle.fill" : "circle.dotted").foregroundStyle(granted ? StudioStyle.accent : .secondary)
+            VStack(alignment: .leading, spacing: 2) { Text(title).font(.callout); Text(detail).font(.caption).foregroundStyle(.secondary) }
+            Spacer()
+            Button(granted ? "已开启" : "去开启", action: action).disabled(granted)
+        }.padding(.vertical, 10)
+    }
+
+    private var serviceSettings: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            HStack {
+                Text("本地语音引擎").font(.title3.weight(.semibold)); Spacer(); EngineStatus()
+                if backend.running {
+                    Button("停止") { Task { await backend.stop() } }.disabled(audio.cannotStart || dictation.blocksUpdate || backend.status == "stopping")
+                } else { Button("启动") { backend.start() }.disabled(audio.preparingUpdate || dictation.blocksUpdate) }
+                Button("重启") { Task { await backend.restart() } }.disabled(audio.cannotStart || dictation.blocksUpdate || backend.status == "stopping")
             }
-            Section {
+            Text(backend.detail).font(.caption).foregroundStyle(.secondary).lineLimit(2).textSelection(.enabled)
+            GroupBox("模型") {
+                VStack(spacing: 12) {
+                    model("语音识别", name: "Qwen3-ASR 1.7B · 8-bit", revision: "a8379a2e2f9e")
+                    model("语音合成", name: "Qwen3-TTS 1.7B · CustomVoice · 8-bit", revision: "41d3337e8b7f")
+                }.padding(8)
+            }
+            GroupBox("API 连接") {
+                VStack(spacing: 12) {
+                    LabeledContent("本机") { Text(backend.localURL).font(.caption.monospaced()).textSelection(.enabled) }
+                    LabeledContent("Tailscale") { Text(backend.httpsURL).font(.caption.monospaced()).textSelection(.enabled).lineLimit(1) }
+                    LabeledContent("API Token") {
+                        Text("••••••••••••").foregroundStyle(.secondary)
+                        Button(login.tokenCopied ? "已复制" : "复制 Token") { backend.copyToken(); login.tokenCopied = true }.disabled(backend.configuration == nil)
+                    }
+                }.font(.callout).padding(8)
+            }
+            Text("远程客户端需加入同一 Tailscale 网络，并携带 Bearer Token。").font(.caption).foregroundStyle(.secondary)
+            HStack {
+                Button("数据目录", systemImage: "folder") { NSWorkspace.shared.open(backend.root) }
+                Button("日志", systemImage: "doc.text") { NSWorkspace.shared.open(backend.root.appendingPathComponent("logs")) }
+            }
+            Spacer(minLength: 0)
+        }.padding(16)
+    }
+
+    private var generalSettings: some View {
+        Form {
+            Section("登录启动") {
                 Toggle("登录时打开 CyberAudio", isOn: Binding(get: { login.enabled }, set: { enabled in
                     do { try login.setEnabled(enabled); login.error = nil }
                     catch { login.error = "登录启动设置失败：\(error.localizedDescription)" }
                 }))
-                if login.status == .requiresApproval {
-                    Label("请在系统设置中批准 CyberAudio 登录项。", systemImage: "exclamationmark.circle")
-                        .font(.callout).foregroundStyle(.orange)
-                }
-                if let loginError = login.error {
-                    InlineNotice(message: loginError) { login.error = nil }
-                }
-                Button("打开系统登录项设置", systemImage: "arrow.up.forward.app") { SMAppService.openSystemSettingsLoginItems() }
-            } header: {
-                Text("登录启动")
-            } footer: {
-                Text("App 仅显示在菜单栏。关闭窗口后继续运行；从菜单栏恢复主窗口，或退出 App 以停止 API 并卸载模型。")
+                if login.status == .requiresApproval { Text("请在系统设置中批准登录项。").font(.caption).foregroundStyle(.orange) }
+                if let error = login.error { Text(error).font(.caption).foregroundStyle(.red).lineLimit(2) }
+                Button("打开系统登录项设置") { SMAppService.openSystemSettingsLoginItems() }
             }
             SoftwareUpdateSection()
-            Section("数据与日志") {
-                HStack {
-                    Button("打开数据目录", systemImage: "folder") { NSWorkspace.shared.open(backend.root) }
-                    Button("打开日志", systemImage: "doc.text") { NSWorkspace.shared.open(backend.root.appendingPathComponent("logs")) }
-                }
-                Text("模型与运行环境保存在数据目录，App 直接管理本地推理进程。")
-                    .font(.caption).foregroundStyle(.secondary)
-            }
-            Section {
-                Text("CyberAudio \(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "0.1.0") · SwiftUI + MLX Audio")
-                    .font(.caption).foregroundStyle(.secondary).frame(maxWidth: .infinity)
-            }
-        }
-        .formStyle(.grouped).scrollContentBackground(.hidden)
-        .background { WorkspaceBackground() }
-        .frame(width: 620, height: 640)
-        .tint(StudioStyle.accent)
-        .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in login.refresh() }
-        .task(id: login.tokenCopied) {
-            if login.tokenCopied {
-                try? await Task.sleep(for: .seconds(2))
-                guard !Task.isCancelled else { return }
-                login.tokenCopied = false
-            }
-        }
+            Text("CyberAudio \(updater.version) · Swift + MLX Audio").font(.caption).foregroundStyle(.secondary)
+        }.formStyle(.grouped).scrollContentBackground(.hidden).scrollIndicators(.hidden)
     }
-
     private func model(_ title: String, name: String, revision: String) -> some View {
         LabeledContent(title) {
-            VStack(alignment: .trailing, spacing: 4) {
+            VStack(alignment: .trailing, spacing: 3) {
                 Text(name).font(.callout)
                 Text("revision \(revision)…").font(.caption.monospaced()).foregroundStyle(.secondary)
             }
