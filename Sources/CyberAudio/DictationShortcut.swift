@@ -27,9 +27,10 @@ struct DictationShortcut: Codable, Equatable {
 struct ShortcutMatcher {
     enum Input: Equatable { case press, release, interrupt }
     enum Hardware { case down(UInt16, UInt64, Bool), up(UInt16), flags(UInt16, UInt64, Bool) }
-    var shortcut: DictationShortcut = .rightOption
+    var shortcut: DictationShortcut
     private(set) var held = false
     private var hardwarePressObserved = false
+    init(shortcut: DictationShortcut = .rightOption) { self.shortcut = shortcut }
     mutating func handle(_ event: Hardware) -> Input? {
         switch (shortcut.kind, event) {
         case (.rightOption, .flags(61, let flags, let down)):
