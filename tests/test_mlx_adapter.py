@@ -1,4 +1,5 @@
 """Exercise the adapter command against pristine and tampered pinned SDK files."""
+import hashlib
 import os
 from pathlib import Path
 import subprocess
@@ -40,6 +41,25 @@ def test_reapplying_adapter_is_idempotent(checkout):
     second = patch(checkout)
     assert second.returncode == 0, second.stderr.decode()
     assert [(checkout / source).read_bytes() for source in SOURCES] == prepared
+
+
+def test_existing_managed_checkout_upgrades_without_changing_asr(checkout):
+    assert patch(checkout).returncode == 0
+    path = checkout / SOURCES[0]
+    previous = path.read_text().replace(
+        'if ["chinese", "auto"].contains(language.lowercased()),\n               let dialectMap = talkerConfig.spkIsDialect,',
+        'if let dialectMap = talkerConfig.spkIsDialect,',
+    ).encode()
+    assert hashlib.sha256(previous).hexdigest() == "0fcfeaaadd8eb6bb793d985162450968fa1b4e6c8d198962a988e8e4aaa55426"
+    asr = (checkout / SOURCES[1]).read_bytes()
+    path.write_bytes(previous)
+    updated = patch(checkout)
+    assert updated.returncode == 0, updated.stderr.decode()
+    assert path.read_bytes() != previous
+    assert (checkout / SOURCES[1]).read_bytes() == asr
+    prepared = path.read_bytes()
+    assert patch(checkout).returncode == 0
+    assert path.read_bytes() == prepared
 
 
 @pytest.mark.parametrize("source", SOURCES)
