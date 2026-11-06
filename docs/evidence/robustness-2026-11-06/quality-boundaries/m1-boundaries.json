@@ -1,0 +1,227 @@
+{
+  "status": "passed",
+  "started": "2026-11-06T12:00:51.942321+00:00",
+  "runtime_fix_commit": "e2f34df30eab49e526a3dfd2fa7d6fffbfb81d0b",
+  "device": "Apple M1 Max",
+  "port": 18871,
+  "checks": {
+    "startup": {
+      "application": "CyberAudio",
+      "busy": false,
+      "instance": "676f3c509b8d48ddb5a08f40a138c201",
+      "model": "qwen3-asr-1.7b",
+      "models": {
+        "stt": "ready",
+        "tts": "ready"
+      },
+      "startup": {
+        "backend": "mlx-swift",
+        "device": "metal",
+        "load_ms": 1860.1502499659546,
+        "metal_active_bytes": 5578423720,
+        "metal_peak_bytes": 6437814276,
+        "process_peak_rss_bytes": 5400018944,
+        "verification_ms": 5851.223875011783,
+        "warmup_ms": 1488.2438750355504
+      },
+      "status": "ready",
+      "updating": false
+    },
+    "asr_60_seconds": {
+      "http_status": 200,
+      "response": {
+        "duration": 60,
+        "inference_ms": 2310.926624981221,
+        "language": "zh",
+        "metal_active_bytes": 5582273960,
+        "metal_peak_bytes": 7040137752,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 5400018944,
+        "processing_ms": 2439.7933750296943,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "efb095c544df4ac4",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "这并不是告别，这是一个篇章的结束，也是新篇章的开始。这并不是告别，这是一个篇章的结束，也是新篇章的开始。这并不是告别，这是一个篇章的结束，也是新篇章的开始。这并不是告别，这是一个篇章的结束，也是新篇章的开始。这并不是告别，这是一个篇章的结束，也是新篇章的开始。这并不是告别，这是一个篇章的结束，也是新篇章的开始。"
+      },
+      "audio_sha256": "b87a3166f528417eefd23cdafffff056ea73e96e32b30041c960c914efaeca50",
+      "construction": "Loop fixed public FLEURS sample and trim; controlled duration input"
+    },
+    "asr_60.1_seconds": {
+      "http_status": 413,
+      "response": {
+        "error": {
+          "code": "audio_too_long",
+          "message": "音频不能超过 60 秒。"
+        }
+      },
+      "audio_sha256": "99b7c26e9e73c562f20771051701f569f31736bbcb20a58bb375b5c68899e5b1",
+      "construction": "Loop fixed public FLEURS sample and trim; controlled duration input"
+    },
+    "actual_http_asr_cancellation_and_recovery": {
+      "request": {
+        "code": "cancelled",
+        "kind": "stt",
+        "request_id": "49ac9f6072fd4188",
+        "status": "cancelled"
+      },
+      "disconnect_to_idle_ms": 299.0968340309337,
+      "observed_busy_before_disconnect": true,
+      "cancelled_during_active_work": true,
+      "recovery": {
+        "duration": 10.38,
+        "inference_ms": 439.20591700589284,
+        "language": "zh",
+        "metal_active_bytes": 5579095500,
+        "metal_peak_bytes": 7040137776,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 5400018944,
+        "processing_ms": 557.5779170030728,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "2259bbcd2952493e",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "这并不是告别，这是一个篇章的结束，也是新篇章的开始。"
+      }
+    },
+    "long-english": {
+      "input": "Today we are checking the local speech service with a longer paragraph. The meeting starts at nine thirty tomorrow morning, and the order number is one two three four five six. Please read every sentence clearly, leave a short pause between ideas, and continue until the final words. The application should keep the complete audio available for playback and export. This final sentence marks the end of the paragraph.",
+      "unicode_scalars": 417,
+      "voice": "ryan",
+      "instructions": "Read naturally and clearly.",
+      "http_status": 200,
+      "http_ms": 14285.845750011504,
+      "request": {
+        "duration": 31.68,
+        "first_audio_ms": 276.68787498259917,
+        "kind": "tts",
+        "metal_active_bytes": 5578423768,
+        "metal_peak_bytes": 7040137776,
+        "process_peak_rss_bytes": 5400018944,
+        "processing_ms": 14281.644832983147,
+        "request_id": "5d35f99dfe86476e",
+        "status": "completed"
+      },
+      "wav": {
+        "frames": 760320,
+        "duration_seconds": 31.68,
+        "channels": 1,
+        "sample_rate": 24000,
+        "sample_width": 2
+      },
+      "audio_sha256": "5bde30b3156450c3a6c3abd809f2acc25c0c872d9823b48245d4ea05c79b9bb6",
+      "synthetic_roundtrip_transcription": {
+        "duration": 31.68,
+        "inference_ms": 1523.7880409695208,
+        "language": "en",
+        "metal_active_bytes": 5580455384,
+        "metal_peak_bytes": 7040137776,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 5400018944,
+        "processing_ms": 1671.7704170150682,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "6c2b5081633c420f",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "Today we are checking the local speech service with a longer paragraph. The meeting starts at 9:30 tomorrow morning, and the order number is one, two, three, four, five, six. Please read every sentence clearly, leave a short pause between ideas, and continue until the final words. The application should keep the complete audio available for playback and export. This final sentence marks the end of the paragraph."
+      },
+      "roundtrip_scope": "Content observation only; not human pronunciation or naturalness acceptance"
+    },
+    "maximum-500-scalars": {
+      "input": "今天我们检查本地语音系统在较长段落中的表现。每句话都应该清楚自然，数字按顺序朗读，句子之间保留适当停顿。完成以后，可以重播和导出音频。今天我们检查本地语音系统在较长段落中的表现。每句话都应该清楚自然，数字按顺序朗读，句子之间保留适当停顿。完成以后，可以重播和导出音频。今天我们检查本地语音系统在较长段落中的表现。每句话都应该清楚自然，数字按顺序朗读，句子之间保留适当停顿。完成以后，可以重播和导出音频。今天我们检查本地语音系统在较长段落中的表现。每句话都应该清楚自然，数字按顺序朗读，句子之间保留适当停顿。完成以后，可以重播和导出音频。今天我们检查本地语音系统在较长段落中的表现。每句话都应该清楚自然，数字按顺序朗读，句子之间保留适当停顿。完成以后，可以重播和导出音频。今天我们检查本地语音系统在较长段落中的表现。每句话都应该清楚自然，数字按顺序朗读，句子之间保留适当停顿。完成以后，可以重播和导出音频。今天我们检查本地语音系统在较长段落中的表现。每句话都应该清楚自然，数字按顺序朗读，句子之间保留适当停顿。完成以后，可以重播和导出音频。今天我们检查本地语音系统在较长段落中的表现。每句话都应该清楚自",
+      "unicode_scalars": 500,
+      "voice": "serena",
+      "instructions": "自然清晰地朗读。",
+      "http_status": 422,
+      "http_ms": 43937.24233395187,
+      "request": {
+        "code": "generation_limit",
+        "kind": "tts",
+        "request_id": "3842db97b01a4e27",
+        "status": "failed"
+      },
+      "generation_limit": {
+        "error": {
+          "code": "generation_limit",
+          "message": "生成达到长度上限，请缩短文本。"
+        }
+      }
+    },
+    "controlled-style": {
+      "input": "请在明天上午九点半提醒我开会。订单号是一二三四五六，温度是二十三点五度。",
+      "unicode_scalars": 36,
+      "voice": "vivian",
+      "instructions": "语气温和，放慢速度，数字清楚。",
+      "http_status": 200,
+      "http_ms": 11513.186709024012,
+      "request": {
+        "duration": 20.4,
+        "first_audio_ms": 449.8253330239095,
+        "kind": "tts",
+        "metal_active_bytes": 5578423732,
+        "metal_peak_bytes": 7040137776,
+        "process_peak_rss_bytes": 5400018944,
+        "processing_ms": 11507.125667005312,
+        "request_id": "367ce1e33a5647b7",
+        "status": "completed"
+      },
+      "wav": {
+        "frames": 489600,
+        "duration_seconds": 20.4,
+        "channels": 1,
+        "sample_rate": 24000,
+        "sample_width": 2
+      },
+      "audio_sha256": "e9e03e86457196f10945a5646b2c8a5daec4ca3ebda7b6443f4040f4bfa763d9",
+      "synthetic_roundtrip_transcription": {
+        "duration": 20.4,
+        "inference_ms": 1422.9875419987366,
+        "language": "zh",
+        "metal_active_bytes": 5579734476,
+        "metal_peak_bytes": 7040137776,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 5400018944,
+        "processing_ms": 1567.439167003613,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "9594f95658504990",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "请在明天上午九点半提醒我开会。订单号是一二三四五六，温度是二十三点五度。"
+      },
+      "roundtrip_scope": "Content observation only; not human pronunciation or naturalness acceptance"
+    },
+    "actual_nonstreaming_tts_cancel_and_recovery": {
+      "request": {
+        "code": "cancelled",
+        "kind": "tts",
+        "request_id": "b5084aed15ea458c",
+        "status": "cancelled"
+      },
+      "disconnect_to_idle_ms": 364.3208750290796,
+      "observed_busy_before_disconnect": true,
+      "cancelled_during_active_work": true,
+      "recovery_wav": {
+        "frames": 34560,
+        "duration_seconds": 1.44,
+        "channels": 1,
+        "sample_rate": 24000,
+        "sample_width": 2
+      }
+    },
+    "temporary_request_cleanup": true,
+    "stdin_eof": {
+      "exit_code": 0,
+      "stop_ms": 145.82320902263746
+    }
+  },
+  "limitations": "Actual models and controlled audio inputs; no physical microphone or human listening acceptance",
+  "helper_sha256": "cc556b65e263e16218db4315ed8585dccaede7b5f539be7bbd68a4b04e841a89",
+  "production_before": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+  "physical_memory_bytes": 34359738368,
+  "os": "27.0.1",
+  "instance": "676f3c509b8d48ddb5a08f40a138c201",
+  "elapsed_seconds": 88.06152074999409,
+  "production_preserved": true,
+  "isolated_configuration_and_token_preserved": true,
+  "finished": "2026-11-06T12:02:20.003780+00:00"
+}

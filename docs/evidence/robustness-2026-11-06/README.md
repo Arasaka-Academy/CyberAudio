@@ -19,6 +19,7 @@
 | [package.json](package.json) | 本地 DMG 生成后的外部验收回执：映像／SHA、只读挂载、App 嵌套签名和指定文档／二进制逐字节检查 |
 | [playback-recovery/README.md](playback-recovery/README.md) | R8 设备中断续审的独立回归、源码快照与后续构建证据；上列历史回执未被替换 |
 | [target-validation/README.md](target-validation/README.md) | 后续固定 100 条真人语料、M1 新旧同设备对照、M4 完整服务验收、36 项工具测试，以及尚在运行的两小时负载／公网下载快照 |
+| [quality-boundaries/README.md](quality-boundaries/README.md) | 实际 ASR／TTS 长度和取消边界，30 个受控专名／数字／噪声输入的新旧对照、已排除的生成器错误，以及中英拼接整段遗漏的质量限制 |
 
 完整原始记录保留在开发工作区 `.context/robustness/`，原始检查日志在 `/tmp/cyberaudio-robustness-*.log`，不会作为分发材料上传。
 

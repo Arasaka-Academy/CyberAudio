@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "runtime_fix_commit": "e2f34df30eab49e526a3dfd2fa7d6fffbfb81d0b",
+  "tracked_source_at_run": "96ea078",
+  "device": "Apple M1 Max",
+  "os": "27.0.1",
+  "physical_memory_bytes": 34359738368,
+  "helper_sha256": "cc556b65e263e16218db4315ed8585dccaede7b5f539be7bbd68a4b04e841a89",
+  "boundary_driver_exit_code": 0,
+  "quality_driver_exit_code": 0,
+  "quality_comparator_exit_code": 0,
+  "boundary_driver_log": "/tmp/cyberaudio-actual-boundaries-20261106.log",
+  "quality_driver_log": "/tmp/cyberaudio-controlled-quality-v2-20261106.log",
+  "quality_comparator_log": "/tmp/cyberaudio-controlled-comparison-v2-20261106.log",
+  "accepted_audio_files_verified": 30,
+  "all_copied_source_and_reports_byte_identical": true,
+  "raw_audio_in_git": false,
+  "physical_microphone_or_human_listening": false,
+  "production_instance_preserved": true
+}

@@ -1,0 +1,154 @@
+{
+  "baseline_helper_sha256" : "b784db35f533a50dbb604bf7791d122cf6887384f4b9c0bca4fb1e829d69193a",
+  "candidate_helper_sha256" : "cc556b65e263e16218db4315ed8585dccaede7b5f539be7bbd68a4b04e841a89",
+  "composites_and_controls" : [
+    {
+      "baseline" : "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3:2.",
+      "candidate" : "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3:2.",
+      "id" : "composite-zh-002-1883-en-008-1846-clean",
+      "language" : "composite",
+      "raw_text_match" : true,
+      "reference" : "桥下垂直净空 15 米。该项目于 2011 年 8 月完工，但直到 2017 年 3 月才开始通车。 The aspect ratio of this format (dividing by twelve to obtain the simplest whole-number ratio) is therefore said to be 3:2."
+    },
+    {
+      "baseline" : "The aspect ratio of this format, dividing by twelve to obtain the simplest whole number ratio, is therefore said to be three to two.",
+      "candidate" : "The aspect ratio of this format, dividing by twelve to obtain the simplest whole number ratio, is therefore said to be three to two.",
+      "id" : "composite-zh-002-1883-en-008-1846-snr20",
+      "language" : "composite",
+      "raw_text_match" : true,
+      "reference" : "桥下垂直净空 15 米。该项目于 2011 年 8 月完工，但直到 2017 年 3 月才开始通车。 The aspect ratio of this format (dividing by twelve to obtain the simplest whole-number ratio) is therefore said to be 3:2."
+    },
+    {
+      "baseline" : "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后发表了声明。",
+      "candidate" : "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后发表了声明。",
+      "id" : "composite-zh-020-1779-en-046-1710-clean",
+      "language" : "composite",
+      "raw_text_match" : true,
+      "reference" : "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安（Recep Tayyip Erdoğan）通话后发表了声明。 Last week, METI announced that Apple had informed it of 34 additional overheating incidents, which the company called \"non-serious.\""
+    },
+    {
+      "baseline" : "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后发表了声明。",
+      "candidate" : "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后发表了声明。",
+      "id" : "composite-zh-020-1779-en-046-1710-snr20",
+      "language" : "composite",
+      "raw_text_match" : true,
+      "reference" : "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安（Recep Tayyip Erdoğan）通话后发表了声明。 Last week, METI announced that Apple had informed it of 34 additional overheating incidents, which the company called \"non-serious.\""
+    },
+    {
+      "baseline" : "",
+      "candidate" : "",
+      "id" : "silence-control",
+      "language" : "control",
+      "raw_text_match" : true,
+      "reference" : ""
+    },
+    {
+      "baseline" : "",
+      "candidate" : "",
+      "id" : "noise-only-control",
+      "language" : "control",
+      "raw_text_match" : true,
+      "reference" : ""
+    }
+  ],
+  "conditions" : {
+    "clean" : {
+      "accuracyNonRegressing" : true,
+      "baselineP95Milliseconds" : 791.40074999304488,
+      "candidateP95Milliseconds" : 891.44099998520687,
+      "languages" : {
+        "en" : {
+          "baselineCER" : 0.044817927170868348,
+          "baselineWER" : 0.068493150684931503,
+          "candidateCER" : 0.044817927170868348,
+          "candidateWER" : 0.068493150684931503,
+          "samples" : 4
+        },
+        "zh" : {
+          "baselineCER" : 0.29166666666666669,
+          "baselineWER" : 0.7857142857142857,
+          "candidateCER" : 0.29166666666666669,
+          "candidateWER" : 0.7857142857142857,
+          "samples" : 4
+        }
+      },
+      "samples" : 8
+    },
+    "snr10" : {
+      "accuracyNonRegressing" : true,
+      "baselineP95Milliseconds" : 747.53129197051749,
+      "candidateP95Milliseconds" : 763.16116703674197,
+      "languages" : {
+        "en" : {
+          "baselineCER" : 0.10084033613445378,
+          "baselineWER" : 0.12328767123287671,
+          "candidateCER" : 0.10084033613445378,
+          "candidateWER" : 0.12328767123287671,
+          "samples" : 4
+        },
+        "zh" : {
+          "baselineCER" : 0.29166666666666669,
+          "baselineWER" : 0.7857142857142857,
+          "candidateCER" : 0.29166666666666669,
+          "candidateWER" : 0.7857142857142857,
+          "samples" : 4
+        }
+      },
+      "samples" : 8
+    },
+    "snr20" : {
+      "accuracyNonRegressing" : true,
+      "baselineP95Milliseconds" : 760.45833301031962,
+      "candidateP95Milliseconds" : 821.23454101383686,
+      "languages" : {
+        "en" : {
+          "baselineCER" : 0.17927170868347339,
+          "baselineWER" : 0.20547945205479451,
+          "candidateCER" : 0.17927170868347339,
+          "candidateWER" : 0.20547945205479451,
+          "samples" : 4
+        },
+        "zh" : {
+          "baselineCER" : 0.29166666666666669,
+          "baselineWER" : 0.7857142857142857,
+          "candidateCER" : 0.29166666666666669,
+          "candidateWER" : 0.7857142857142857,
+          "samples" : 4
+        }
+      },
+      "samples" : 8
+    }
+  },
+  "corpus_sha256" : "c48623b26410a3129695cb06cbdc32ac8a21a198cf611be61151c2800c5375f2",
+  "differences" : [
+
+  ],
+  "limitations" : "Eight public human recordings transformed to 24 monolingual inputs; four concatenated composites and two controls. No natural code-switch, entity labels, physical microphone, room noise, human listening, speedup or energy claim.",
+  "monolingual_accuracy" : {
+    "accuracyNonRegressing" : true,
+    "baselineP95Milliseconds" : 760.45833301031962,
+    "candidateP95Milliseconds" : 821.23454101383686,
+    "languages" : {
+      "en" : {
+        "baselineCER" : 0.10830999066293184,
+        "baselineWER" : 0.13242009132420091,
+        "candidateCER" : 0.10830999066293184,
+        "candidateWER" : 0.13242009132420091,
+        "samples" : 12
+      },
+      "zh" : {
+        "baselineCER" : 0.29166666666666669,
+        "baselineWER" : 0.7857142857142857,
+        "candidateCER" : 0.29166666666666669,
+        "candidateWER" : 0.7857142857142857,
+        "samples" : 12
+      }
+    },
+    "samples" : 24
+  },
+  "raw_text_matches" : 30,
+  "samples" : 30,
+  "scope" : "Same M1 Max; installed 0.4.3 and current Helper run sequentially",
+  "status" : "completed",
+  "strict_id_hash_reference_language_repetition_match" : true
+}

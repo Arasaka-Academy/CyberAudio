@@ -1,0 +1,11 @@
+{
+  "status": "rejected_as_quality_evidence",
+  "reason": "The v1 private generator treated IEEE float32 WAV samples as signed Int32. FFprobe identifies pcm_f32le; direct float decoding matches FFmpeg exactly. The invalid v1 transformed audio and reports remain in the private workspace.",
+  "v1_driver_sha256": "ff282989a2e4903e1741da580eec1e6454b1b39a57cbe17052b01c9bb9db7785",
+  "v1_corpus_sha256": "008dde576c5a34c551a2bf0bece1b5a95f1b39bfbb63518362f8d0ceeaecd950",
+  "v1_installed_report_sha256": "b023c407cd4ab570e1e3c26b5489ca2160ff2bfa0c50be413289524b59420e1f",
+  "v1_candidate_report_sha256": "2f3836221f247b355d2c9b83f57f487b234aa5016caef091eac1ab6dabc11c08",
+  "accepted_cohort": "quality-corpus.json",
+  "accepted_generator": "quality-driver.py",
+  "production_code_changed_for_this_correction": false
+}
