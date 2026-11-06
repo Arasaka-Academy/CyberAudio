@@ -182,11 +182,19 @@ struct AudioWorkflowTests {
         try await until({ !audio.generating }, message: "Completed PCM route regression did not finish")
         let completedEngine = try resource("engine", as: AVAudioEngine.self)
         let completedWAV = audio.generated
+        let completedNode = try resource("node", as: AVAudioPlayerNode.self)
+        try require(!completedWAV.isEmpty && audio.playing, "Route regression requires completed audio with queued playback")
         completedEngine.stop()
+        // A device reconfiguration can flush the queued tail before its
+        // configuration notification reaches MainActor. Force that ordering.
+        completedNode.stop()
+        try await until({ !audio.playing }, message: "Flushed playback tail did not release the stopped engine")
         NotificationCenter.default.post(name: .AVAudioEngineConfigurationChange, object: completedEngine)
         try await until({ !audio.playing }, message: "A route change after generation must release queued playback")
-        try require(audio.generated == completedWAV && !completedWAV.isEmpty && audio.errorMessage != nil,
-                    "An output route change must retain a complete WAV for saving or replay")
+        try require(audio.generated == completedWAV && !completedWAV.isEmpty,
+                    "An output route change must retain a complete WAV for saving or replay; before \(completedWAV.count), after \(audio.generated.count)")
+        try require(audio.errorMessage?.contains("输出设备") == true,
+                    "A flushed tail on a stopped engine must explain the device interruption before its late configuration notification")
 
         try options(["hold": true])
         audio.generate(using: backend)

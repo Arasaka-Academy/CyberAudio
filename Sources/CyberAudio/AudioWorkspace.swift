@@ -303,7 +303,8 @@ final class AudioWorkspace: NSObject, ObservableObject {
                         self.node?.scheduleBuffer(tail, completionCallbackType: .dataPlayedBack) { [weak self] _ in
                             Task { @MainActor in
                                 guard let self, self.playbackSession == session else { return }
-                                self.stopPlayback()
+                                if self.engine?.isRunning == false { self.outputDeviceInterrupted() }
+                                else { self.stopPlayback() }
                             }
                         }
                     }
@@ -343,11 +344,15 @@ final class AudioWorkspace: NSObject, ObservableObject {
             // The audio thread must not wait for MainActor while it stops the engine.
             Task { @MainActor in
                 guard let self, let engine, self.engine === engine else { return }
-                self.cancelGeneration()
-                self.reportError(CyberAudioError.message("音频输出设备发生变化，播放已停止。请检查设备后重试。"), for: .speech)
+                self.outputDeviceInterrupted()
             }
         }
         playing = true
+    }
+
+    private func outputDeviceInterrupted() {
+        cancelGeneration()
+        reportError(CyberAudioError.message("音频输出设备发生变化，播放已停止。请检查设备后重试。"), for: .speech)
     }
 
     private func schedule(_ pcm: Data) {
