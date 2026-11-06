@@ -1,0 +1,37 @@
+{
+  "status": "recorded",
+  "original_jit_source_sha256": "ca1bb384d25625fb73e25e5e0782df13a3e5de7177f603b09843b8cdb502b9c9",
+  "original_nojit_source_sha256": "16d64d6a660c9a9a31c6561a8d59b283afffb6042a7d84b4eb44aaf6a704ee81",
+  "private_source_sha256": "ac67e1b049b0eab04c453ba261eb726acdbe79433e7413d29ebe4521995526f5",
+  "native_compile_version_flags": [
+    "-DMLX_VERSION=\"0.32.0\""
+  ],
+  "native_version_header": "// Copyright \u00a9 2025 Apple Inc.\n\n#pragma once\n\n#include \"mlx/api.h\"\n\n#define MLX_VERSION_MAJOR 0\n#define MLX_VERSION_MINOR 32\n#define MLX_VERSION_PATCH 4\n#define MLX_VERSION_NUMERIC \\\n  (100000 * MLX_VERSION_MAJOR + 1000 * MLX_VERSION_MINOR + MLX_VERSION_PATCH)\n\nnamespace mlx::core {\n\n/* A string representation of the MLX version in the format\n * \"major.minor.patch\".\n *\n * For dev builds, the version will include the suffix \".devYYYYMMDD+hash\"\n */\nMLX_API const char* version();\n\n} // namespace mlx::core\n",
+  "reference_binary_sha256": "d8c9393d584e781393c3effccfccd8ba85ad0c70264edaf9f897dca9875375c6",
+  "reference_runtime_version_recorded": "0.32.4",
+  "shader_sha256": "c6d7a3facb83568f6e4cb2cf4a8c736ee29302571a48343cb9a3a4d1cd3e3893",
+  "native_package_resolved_sha256": "e328f8d53d216b4e6df917f65ab4dd572e8283263c4d5d00f2a4b9b8475ba375",
+  "native_packages": [
+    {
+      "identity": "mlx-audio-swift",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/Neywa-Labs/mlx-audio-swift.git",
+      "state": {
+        "revision": "927d4e30cf1dd3bcfdbf2cec8c9a6fd7edf4b4fe"
+      }
+    },
+    {
+      "identity": "mlx-swift",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/ml-explore/mlx-swift.git",
+      "state": {
+        "revision": "7ede4fd6d05f63305c1c0ebf4f8c1909a637c574",
+        "version": "0.33.0"
+      }
+    }
+  ],
+  "limits": [
+    "Version headers, compiler flags and package tags identify distinct build layers; they do not establish equal native/reference backend builds",
+    "The controlled single-object dispatch comparison provides causal evidence; no math-mode or Metal-language cause is claimed"
+  ]
+}

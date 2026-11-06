@@ -36,6 +36,8 @@
 | [reference-generation/README.md](reference-generation/README.md) | 七次未修改 Python 完整生成、观察／无观察控制与九次 ASR；相同完整 codec 的解码对照定位 72 帧窗口差异，并保留已知失败第 84 帧之后的未归因差异；未采用新策略 |
 | [complete-codec/README.md](complete-codec/README.md) | 六组完整原生码／PCM 重现旧候选；5,872 个码值对照发现两次重复各 97 项不同；1,859 项完整前向比较中 42 项不同，明确短前缀零误差的范围 |
 | [layer-parity/README.md](layer-parity/README.md) | 263 步原生重放及参考观察控制、3,168 项边界比较；定位 RoPE 逆频率在位置 104 的舍入传播，只替换参考进程内的该数组后完整 1,859 项比较零误差；正式策略未改 |
+| [power-dispatch/README.md](power-dispatch/README.md) | 单个私有 C++ 对象的 float32 Power 分派对照：预编译标量值与 Python 全部一致；十二次原采样器生成／28 次 ASR 后，失败种子仍输出 84.72 秒且回读为空，未采用候选 |
+| [transport-refresh/README.md](transport-refresh/README.md) | 最新 M4 URLSession 1MiB 探针仍在 TLS 失败；四个有界 HEAD 控制显示代理路径的两个站点均 TLS 失败、HF 直连超时；已有文件／分段和生产保留，未重启完整下载 |
 
 完整原始记录保留在开发工作区 `.context/robustness/`，原始检查日志在 `/tmp/cyberaudio-robustness-*.log`，不会作为分发材料上传。
 

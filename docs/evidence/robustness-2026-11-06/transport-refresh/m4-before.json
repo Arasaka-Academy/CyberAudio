@@ -1,0 +1,88 @@
+{
+  "at": "2026-11-06T18:44:17.599378+00:00",
+  "processes": [],
+  "partial_files": [
+    {
+      "name": "tmp/downloads/b696f4bf45f54497b6de758981e76f1410bd68af05a657477dee466b0202df1a.partial",
+      "bytes": 117440512
+    }
+  ],
+  "final_files": [
+    {
+      "path": "asr/README.md",
+      "bytes": 1008,
+      "expected_bytes": 1008
+    },
+    {
+      "path": "asr/chat_template.json",
+      "bytes": 1161,
+      "expected_bytes": 1161
+    },
+    {
+      "path": "asr/config.json",
+      "bytes": 7188,
+      "expected_bytes": 7188
+    },
+    {
+      "path": "asr/generation_config.json",
+      "bytes": 142,
+      "expected_bytes": 142
+    },
+    {
+      "path": "asr/merges.txt",
+      "bytes": 1671853,
+      "expected_bytes": 1671853
+    },
+    {
+      "path": "asr/model.safetensors",
+      "bytes": 2463307541,
+      "expected_bytes": 2463307541
+    },
+    {
+      "path": "asr/model.safetensors.index.json",
+      "bytes": 78968,
+      "expected_bytes": 78968
+    },
+    {
+      "path": "asr/preprocessor_config.json",
+      "bytes": 330,
+      "expected_bytes": 330
+    },
+    {
+      "path": "asr/tokenizer_config.json",
+      "bytes": 12487,
+      "expected_bytes": 12487
+    },
+    {
+      "path": "asr/vocab.json",
+      "bytes": 2776833,
+      "expected_bytes": 2776833
+    },
+    {
+      "path": "tts/README.md",
+      "bytes": 1118,
+      "expected_bytes": 1118
+    },
+    {
+      "path": "tts/config.json",
+      "bytes": 6058,
+      "expected_bytes": 6058
+    },
+    {
+      "path": "tts/generation_config.json",
+      "bytes": 245,
+      "expected_bytes": 245
+    },
+    {
+      "path": "tts/merges.txt",
+      "bytes": 1671839,
+      "expected_bytes": 1671839
+    }
+  ],
+  "production": {
+    "instance": "5A940C69-D3EA-4444-8C04-446D211C319F",
+    "status": "ready",
+    "config_sha256": "cabe58f37637430abd7c610cc215083996ddf810a892ac469bd5c884a321d017",
+    "token_sha256": "aa8792163e9d9e591958a8ec4d4a5a94c9c2c470ec4e7af829c6117186fc5228"
+  }
+}

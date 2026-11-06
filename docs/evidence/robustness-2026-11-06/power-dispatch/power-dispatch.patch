@@ -1,0 +1,13 @@
+--- original/jit_kernels.cpp
++++ private/precompiled-power/jit_kernels.cpp
+@@ -150,6 +150,10 @@
+     Dtype in_type,
+     Dtype out_type,
+     const char* op) {
++  // PRIVATE DIAGNOSTIC: only float32 Power dispatch uses the shipped library.
++  if (std::string(op) == "Power" && in_type == float32 && out_type == float32) {
++    return d.get_kernel(kernel_name);
++  }
+   std::string lib_name = kernel_name.substr(kernel_name.find("_") + 1);
+   auto lib = d.get_library(lib_name, [&]() {
+     std::string kernel_source;

@@ -1,0 +1,455 @@
+{
+  "status": "diagnostic_completed",
+  "generation_plan_sha256": "b34f42c8d5054d12eea01c1ec16a5a3b4a69b94c902954bfbce37bb01b6e7e2b",
+  "generation_runner_sha256": "375789275272e8d35dd81ba81e0e16a96a59c35d1a0fca1e9f4c546f2c4cb8bc",
+  "asr_report_sha256": "1cb43109e1b5ecb07a5ba13fd5cf2dcc5d831696281d2c6024759f0dad62e9de",
+  "generation_report_sha256": {
+    "original-jit": "18cd1ff03f7e1a2a1a66a41a33605d1db7e3d965784d4c74759bf22a22218dd0",
+    "precompiled-power": "ed0a923709714507d2486ca667a57a519d0e4f7fe144af967aecf7ad5cbbb7fb"
+  },
+  "total_generations": 12,
+  "paired_cases": 6,
+  "asr_requests": 28,
+  "historical_original_prefill_token_and_pcm_controls_exact": 5,
+  "repeat_tokens_and_pcm_exact_each_arm": true,
+  "groups": [
+    {
+      "group": "original-jit",
+      "generations": 6,
+      "without_eos": 2,
+      "maximum_audio_seconds": 96
+    },
+    {
+      "group": "precompiled-power",
+      "generations": 6,
+      "without_eos": 0,
+      "maximum_audio_seconds": 84.72
+    }
+  ],
+  "pairs": [
+    {
+      "id": "known-failure",
+      "case": {
+        "id": "known-failure",
+        "language": "chinese",
+        "seed": 196,
+        "text": "持续验证语音服务的稳定性和恢复能力。",
+        "voice": "ono_anna"
+      },
+      "baseline": {
+        "token_count": 1200,
+        "eos_seen": false,
+        "audio_seconds": 96
+      },
+      "candidate": {
+        "token_count": 1060,
+        "eos_seen": true,
+        "audio_seconds": 84.72
+      },
+      "main_tokens_exact": false,
+      "first_main_token_difference_zero_based": 251,
+      "pcm_exact": false,
+      "pcm_shared_prefix_samples": 2033280,
+      "pcm_shared_prefix_different_samples": 1372424,
+      "pcm_shared_prefix_maximum_abs_quantization_units": 15,
+      "first_pcm_difference_sample_zero_based": 6726,
+      "baseline_signal": {
+        "pcm_sha256": "5aeb4109035957d1b6627d0f76a9621aab6e8e9b6e72c4805f6963624b286b92",
+        "rms_full_scale": 0.0006801077572104223,
+        "maximum_abs_full_scale": 0.051177978515625,
+        "zero_sample_fraction": 0.11369878472222222
+      },
+      "candidate_signal": {
+        "pcm_sha256": "4d713bd6be71b3cad97ff381fe2b8434e6eaf949533c87e111c9e25341c78e92",
+        "rms_full_scale": 0.0007249334954698705,
+        "maximum_abs_full_scale": 0.051177978515625,
+        "zero_sample_fraction": 0.10672361898016997
+      },
+      "baseline_auto_asr": [
+        {
+          "part": 0,
+          "text": "",
+          "detected_language": "None"
+        },
+        {
+          "part": 1,
+          "text": "",
+          "detected_language": "None"
+        },
+        {
+          "part": 2,
+          "text": "",
+          "detected_language": "None"
+        },
+        {
+          "part": 3,
+          "text": "",
+          "detected_language": "None"
+        }
+      ],
+      "candidate_auto_asr": [
+        {
+          "part": 0,
+          "text": "",
+          "detected_language": "None"
+        },
+        {
+          "part": 1,
+          "text": "",
+          "detected_language": "None"
+        },
+        {
+          "part": 2,
+          "text": "",
+          "detected_language": "None"
+        },
+        {
+          "part": 3,
+          "text": "",
+          "detected_language": "None"
+        }
+      ],
+      "auto_asr_results_exact": true
+    },
+    {
+      "id": "short-control",
+      "case": {
+        "id": "short-control",
+        "language": "chinese",
+        "seed": 31,
+        "text": "持续验证语音服务的稳定性和恢复能力。",
+        "voice": "ono_anna"
+      },
+      "baseline": {
+        "token_count": 33,
+        "eos_seen": true,
+        "audio_seconds": 2.56
+      },
+      "candidate": {
+        "token_count": 33,
+        "eos_seen": true,
+        "audio_seconds": 2.56
+      },
+      "main_tokens_exact": true,
+      "first_main_token_difference_zero_based": null,
+      "pcm_exact": false,
+      "pcm_shared_prefix_samples": 61440,
+      "pcm_shared_prefix_different_samples": 23,
+      "pcm_shared_prefix_maximum_abs_quantization_units": 1,
+      "first_pcm_difference_sample_zero_based": 2932,
+      "baseline_signal": {
+        "pcm_sha256": "ad8e1d920dd41ed00e5d455acaac6daf47a3b7253e80ce65662d26cb168f15dd",
+        "rms_full_scale": 0.03048633253342558,
+        "maximum_abs_full_scale": 0.13934326171875,
+        "zero_sample_fraction": 0.04694010416666667
+      },
+      "candidate_signal": {
+        "pcm_sha256": "0c24ff37f32952b053ca39a98ee19c2c10cd500a19b671640276a2cf43f27704",
+        "rms_full_scale": 0.03048633513708893,
+        "maximum_abs_full_scale": 0.13934326171875,
+        "zero_sample_fraction": 0.04694010416666667
+      },
+      "baseline_auto_asr": [
+        {
+          "part": 0,
+          "text": "持续验证语音服务的稳定性和恢复能力。",
+          "detected_language": "zh"
+        }
+      ],
+      "candidate_auto_asr": [
+        {
+          "part": 0,
+          "text": "持续验证语音服务的稳定性和恢复能力。",
+          "detected_language": "zh"
+        }
+      ],
+      "auto_asr_results_exact": true
+    },
+    {
+      "id": "eric-english-numeric",
+      "case": {
+        "id": "eric-english-numeric",
+        "language": "english",
+        "seed": 31,
+        "text": "1234",
+        "voice": "eric"
+      },
+      "baseline": {
+        "token_count": 87,
+        "eos_seen": true,
+        "audio_seconds": 6.88
+      },
+      "candidate": {
+        "token_count": 87,
+        "eos_seen": true,
+        "audio_seconds": 6.88
+      },
+      "main_tokens_exact": true,
+      "first_main_token_difference_zero_based": null,
+      "pcm_exact": false,
+      "pcm_shared_prefix_samples": 165120,
+      "pcm_shared_prefix_different_samples": 92,
+      "pcm_shared_prefix_maximum_abs_quantization_units": 1,
+      "first_pcm_difference_sample_zero_based": 2207,
+      "baseline_signal": {
+        "pcm_sha256": "fcb480f0c2c115f3070a1476c76f727d7703507959b34873e001ba865b409d5b",
+        "rms_full_scale": 0.045110907938167674,
+        "maximum_abs_full_scale": 0.3961181640625,
+        "zero_sample_fraction": 0.4212996608527132
+      },
+      "candidate_signal": {
+        "pcm_sha256": "997b30d924e0cfba5ba27d17b32b4e89b160c5f877d8b4bae225d95ef6adec7d",
+        "rms_full_scale": 0.04511090300105492,
+        "maximum_abs_full_scale": 0.3961181640625,
+        "zero_sample_fraction": 0.4212996608527132
+      },
+      "baseline_auto_asr": [
+        {
+          "part": 0,
+          "text": "ब्यू थर बेव सॉर सॉर",
+          "detected_language": "Hindi"
+        }
+      ],
+      "candidate_auto_asr": [
+        {
+          "part": 0,
+          "text": "ब्यू थर बेव सॉर सॉर",
+          "detected_language": "Hindi"
+        }
+      ],
+      "auto_asr_results_exact": true,
+      "baseline_forced_english_asr": [
+        {
+          "part": 0,
+          "text": "View Thor, Bev, Sir, Sir.",
+          "detected_language": "en"
+        }
+      ],
+      "candidate_forced_english_asr": [
+        {
+          "part": 0,
+          "text": "View Thor, Bev, Sir, Sir.",
+          "detected_language": "en"
+        }
+      ],
+      "forced_english_asr_results_exact": true
+    },
+    {
+      "id": "dylan-english-numeric",
+      "case": {
+        "id": "dylan-english-numeric",
+        "language": "english",
+        "seed": 31,
+        "text": "1234",
+        "voice": "dylan"
+      },
+      "baseline": {
+        "token_count": 18,
+        "eos_seen": true,
+        "audio_seconds": 1.36
+      },
+      "candidate": {
+        "token_count": 18,
+        "eos_seen": true,
+        "audio_seconds": 1.36
+      },
+      "main_tokens_exact": true,
+      "first_main_token_difference_zero_based": null,
+      "pcm_exact": false,
+      "pcm_shared_prefix_samples": 32640,
+      "pcm_shared_prefix_different_samples": 52,
+      "pcm_shared_prefix_maximum_abs_quantization_units": 1,
+      "first_pcm_difference_sample_zero_based": 2255,
+      "baseline_signal": {
+        "pcm_sha256": "c45d2afad91f749d0cb60daf0a5945e187f921532b7939aa5d6779d230ed16bc",
+        "rms_full_scale": 0.05664771302402038,
+        "maximum_abs_full_scale": 0.400787353515625,
+        "zero_sample_fraction": 0.09375
+      },
+      "candidate_signal": {
+        "pcm_sha256": "01eeaca9c327112ba3532a1112830a148c33c24a6f35d7eaecb8fb5c39936150",
+        "rms_full_scale": 0.05664772519631129,
+        "maximum_abs_full_scale": 0.400787353515625,
+        "zero_sample_fraction": 0.09375
+      },
+      "baseline_auto_asr": [
+        {
+          "part": 0,
+          "text": "一枪来三十四。",
+          "detected_language": "zh"
+        }
+      ],
+      "candidate_auto_asr": [
+        {
+          "part": 0,
+          "text": "一枪来三十四。",
+          "detected_language": "zh"
+        }
+      ],
+      "auto_asr_results_exact": true,
+      "baseline_forced_english_asr": [
+        {
+          "part": 0,
+          "text": "一枪来三十四。",
+          "detected_language": "en"
+        }
+      ],
+      "candidate_forced_english_asr": [
+        {
+          "part": 0,
+          "text": "一枪来三十四。",
+          "detected_language": "en"
+        }
+      ],
+      "forced_english_asr_results_exact": true
+    },
+    {
+      "id": "date-name-control",
+      "case": {
+        "id": "date-name-control",
+        "language": "english",
+        "seed": 31,
+        "text": "Alice will meet Bob on November sixth, twenty twenty-six.",
+        "voice": "ryan"
+      },
+      "baseline": {
+        "token_count": 53,
+        "eos_seen": true,
+        "audio_seconds": 4.16
+      },
+      "candidate": {
+        "token_count": 53,
+        "eos_seen": true,
+        "audio_seconds": 4.16
+      },
+      "main_tokens_exact": true,
+      "first_main_token_difference_zero_based": null,
+      "pcm_exact": false,
+      "pcm_shared_prefix_samples": 99840,
+      "pcm_shared_prefix_different_samples": 124,
+      "pcm_shared_prefix_maximum_abs_quantization_units": 1,
+      "first_pcm_difference_sample_zero_based": 2202,
+      "baseline_signal": {
+        "pcm_sha256": "514c5f94b2d5eddd0916de01ffd51b84367bd65d5a669c48276969c4436e5876",
+        "rms_full_scale": 0.07667280153905007,
+        "maximum_abs_full_scale": 0.671844482421875,
+        "zero_sample_fraction": 0.032692307692307694
+      },
+      "candidate_signal": {
+        "pcm_sha256": "6cc2664a9efce43728bdd306b157c903e3cdb587a82518e603672f5414e8c9a8",
+        "rms_full_scale": 0.07667280167750119,
+        "maximum_abs_full_scale": 0.671844482421875,
+        "zero_sample_fraction": 0.032692307692307694
+      },
+      "baseline_auto_asr": [
+        {
+          "part": 0,
+          "text": "Alice will meet Bob on November sixth, twenty twenty-six.",
+          "detected_language": "en"
+        }
+      ],
+      "candidate_auto_asr": [
+        {
+          "part": 0,
+          "text": "Alice will meet Bob on November sixth, twenty twenty-six.",
+          "detected_language": "en"
+        }
+      ],
+      "auto_asr_results_exact": true
+    },
+    {
+      "id": "known-failure-repeat",
+      "case": {
+        "id": "known-failure-repeat",
+        "language": "chinese",
+        "seed": 196,
+        "text": "持续验证语音服务的稳定性和恢复能力。",
+        "voice": "ono_anna"
+      },
+      "baseline": {
+        "token_count": 1200,
+        "eos_seen": false,
+        "audio_seconds": 96
+      },
+      "candidate": {
+        "token_count": 1060,
+        "eos_seen": true,
+        "audio_seconds": 84.72
+      },
+      "main_tokens_exact": false,
+      "first_main_token_difference_zero_based": 251,
+      "pcm_exact": false,
+      "pcm_shared_prefix_samples": 2033280,
+      "pcm_shared_prefix_different_samples": 1372424,
+      "pcm_shared_prefix_maximum_abs_quantization_units": 15,
+      "first_pcm_difference_sample_zero_based": 6726,
+      "baseline_signal": {
+        "pcm_sha256": "5aeb4109035957d1b6627d0f76a9621aab6e8e9b6e72c4805f6963624b286b92",
+        "rms_full_scale": 0.0006801077572104223,
+        "maximum_abs_full_scale": 0.051177978515625,
+        "zero_sample_fraction": 0.11369878472222222
+      },
+      "candidate_signal": {
+        "pcm_sha256": "4d713bd6be71b3cad97ff381fe2b8434e6eaf949533c87e111c9e25341c78e92",
+        "rms_full_scale": 0.0007249334954698705,
+        "maximum_abs_full_scale": 0.051177978515625,
+        "zero_sample_fraction": 0.10672361898016997
+      },
+      "baseline_auto_asr": [
+        {
+          "part": 0,
+          "text": "",
+          "detected_language": "None"
+        },
+        {
+          "part": 1,
+          "text": "",
+          "detected_language": "None"
+        },
+        {
+          "part": 2,
+          "text": "",
+          "detected_language": "None"
+        },
+        {
+          "part": 3,
+          "text": "",
+          "detected_language": "None"
+        }
+      ],
+      "candidate_auto_asr": [
+        {
+          "part": 0,
+          "text": "",
+          "detected_language": "None"
+        },
+        {
+          "part": 1,
+          "text": "",
+          "detected_language": "None"
+        },
+        {
+          "part": 2,
+          "text": "",
+          "detected_language": "None"
+        },
+        {
+          "part": 3,
+          "text": "",
+          "detected_language": "None"
+        }
+      ],
+      "auto_asr_results_exact": true
+    }
+  ],
+  "candidate_promoted": false,
+  "formal_source_or_defaults_changed": false,
+  "conclusion": "JIT versus precompiled Power explains the scalar parity discrepancy but does not resolve the short-sentence content/termination defect. Seed196 still emits 84.72 seconds and all four ASR segments are empty in both candidate repetitions.",
+  "limits": [
+    "All ASR outcomes are combined TTS/ASR evidence, not human listening",
+    "Identical main tokens do not establish full auxiliary-code or decoder equality",
+    "Switching global float32 Power also affects other model components; this was a private diagnostic, not a production patch",
+    "No larger matrix or strict M4 soak is justified by this failed content control",
+    "Original quality, target runtime, public download, physical and distribution gates remain unchanged"
+  ]
+}

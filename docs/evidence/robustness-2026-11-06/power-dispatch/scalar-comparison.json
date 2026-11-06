@@ -1,0 +1,78 @@
+{
+  "status": "verified",
+  "model_loaded": false,
+  "only_private_float32_power_dispatch_changed": true,
+  "runner_sha256": "3a8f05df6e7d0524c9346e53c98919e971759a57294c4cf60ac7d02eea3ace6c",
+  "plan_sha256": "846e6a4d08103a837b59721537fff36fa5291eb7717e6e820a1798d7c9cab8a8",
+  "output_file_sha256": {
+    "original-jit": "a73b0e7e5b36145b4243ced053d7cbec1a59a592f65853222d3c572abadfe3aa",
+    "precompiled-power": "aee9aac64d9c4e6c03ea3fa9b4abb8cc12d11e4ca6543975d3afaf672350f271"
+  },
+  "prior_native_formula_sha256": "092996a65265f7f2e24d36b2f3364d076c10feb69b2ea97faf6fe9faf7db7329",
+  "prior_python_formula_sha256": "58dcb9618ceedafb2dffe9d107ce74de9cd233f1f92bab33ba7d67467df47b61",
+  "results": [
+    {
+      "tensor": "exponent",
+      "shape": [
+        64
+      ],
+      "original_jit_matches_prior_native": true,
+      "precompiled_power_matches_prior_python": true,
+      "different_values": 0,
+      "max_abs": 0.0,
+      "original_float32_sha256": "3e903c2a0b4a3fd830334bd5930ef492793bdfdffe82d32e8f6131c7834b0a84",
+      "precompiled_float32_sha256": "3e903c2a0b4a3fd830334bd5930ef492793bdfdffe82d32e8f6131c7834b0a84"
+    },
+    {
+      "tensor": "indices",
+      "shape": [
+        64
+      ],
+      "original_jit_matches_prior_native": true,
+      "precompiled_power_matches_prior_python": true,
+      "different_values": 0,
+      "max_abs": 0.0,
+      "original_float32_sha256": "01844a5cdef848980d74d1901f7523a2795d137a9bba0189bf354b89d0657fa8",
+      "precompiled_float32_sha256": "01844a5cdef848980d74d1901f7523a2795d137a9bba0189bf354b89d0657fa8"
+    },
+    {
+      "tensor": "inverse",
+      "shape": [
+        64
+      ],
+      "original_jit_matches_prior_native": true,
+      "precompiled_power_matches_prior_python": true,
+      "different_values": 42,
+      "max_abs": 2.9802322387695312e-08,
+      "original_float32_sha256": "60881cf0ba762fb0bd8cb63c815f6c70288aba4ed9805d5fab191cab88f7ef6e",
+      "precompiled_float32_sha256": "bb9a34488d9025a877d5306b146a1de4b09cb10fb25a540354e7907b62b0349f"
+    },
+    {
+      "tensor": "power",
+      "shape": [
+        64
+      ],
+      "original_jit_matches_prior_native": true,
+      "precompiled_power_matches_prior_python": true,
+      "different_values": 46,
+      "max_abs": 0.375,
+      "original_float32_sha256": "c9f3f0654b887bbf9502ffaf2d13c620976298ed407c5eb2a85888d05754cd64",
+      "precompiled_float32_sha256": "edd04a02498871fbc6d33df7a71816314b651a85364ca28a4ecd9516411facc8"
+    }
+  ],
+  "python_binary_direct_precompiled_dispatch_observed": true,
+  "full_disassembly_retained_privately": {
+    "status": "extracted",
+    "full_bytes": 157949250,
+    "full_sha256": "1a337d0d0f0bbb62ada43e60926b4b0d7f0561721a00d196da1edeed4259df2f",
+    "selected_bytes": 2913,
+    "selected_sha256": "79779297db19ce4e5bd03754a8ea05f638f8eff0d302d4b488fe8cc07b7dabc0",
+    "note": "Mach-O objdump emitted entire text despite symbol selector; complete output retained privately"
+  },
+  "limits": [
+    "This isolates JIT versus precompiled Power dispatch on this native runtime and shader",
+    "The exact Metal compiler transformation causing the rounding difference remains unassigned",
+    "Native and Python package/version labels do not prove equal backend builds",
+    "This model-free control does not establish content, termination or human listening quality"
+  ]
+}

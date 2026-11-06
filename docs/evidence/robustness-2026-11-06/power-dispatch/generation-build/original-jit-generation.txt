@@ -1,0 +1,20 @@
+Loaded speech tokenizer decoder
+Loaded Qwen3-TTS model (custom_voice)
+[Qwen3TTS] CustomVoice: speaker 'ono_anna' → spkId=2873
+[Qwen3TTS] CustomVoice: codec prefix length = 7
+CANDIDATE known-failure EOS false seconds 96.0
+[Qwen3TTS] CustomVoice: speaker 'ono_anna' → spkId=2873
+[Qwen3TTS] CustomVoice: codec prefix length = 7
+CANDIDATE short-control EOS true seconds 2.56
+[Qwen3TTS] CustomVoice: speaker 'eric' → spkId=2875
+[Qwen3TTS] CustomVoice: codec prefix length = 7
+CANDIDATE eric-english-numeric EOS true seconds 6.88
+[Qwen3TTS] CustomVoice: speaker 'dylan' → spkId=2878
+[Qwen3TTS] CustomVoice: codec prefix length = 7
+CANDIDATE dylan-english-numeric EOS true seconds 1.36
+[Qwen3TTS] CustomVoice: speaker 'ryan' → spkId=3061
+[Qwen3TTS] CustomVoice: codec prefix length = 7
+CANDIDATE date-name-control EOS true seconds 4.16
+[Qwen3TTS] CustomVoice: speaker 'ono_anna' → spkId=2873
+[Qwen3TTS] CustomVoice: codec prefix length = 7
+CANDIDATE known-failure-repeat EOS false seconds 96.0

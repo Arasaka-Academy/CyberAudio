@@ -1,0 +1,8 @@
+{
+  "status": "extracted",
+  "full_bytes": 157949250,
+  "full_sha256": "1a337d0d0f0bbb62ada43e60926b4b0d7f0561721a00d196da1edeed4259df2f",
+  "selected_bytes": 2913,
+  "selected_sha256": "79779297db19ce4e5bd03754a8ea05f638f8eff0d302d4b488fe8cc07b7dabc0",
+  "note": "Mach-O objdump emitted entire text despite symbol selector; complete output retained privately"
+}

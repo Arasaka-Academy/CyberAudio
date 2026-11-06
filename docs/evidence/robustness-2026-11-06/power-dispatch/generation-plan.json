@@ -1,0 +1,69 @@
+{
+  "purpose": "Fresh original managed-sampler control versus only float32 Power JIT-to-precompiled dispatch; no sampler-order candidate combined",
+  "source_commit": "2a19135444335d3837947a52eb47d59e45920f1c",
+  "cases": [
+    {
+      "id": "known-failure",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "voice": "ono_anna",
+      "language": "chinese",
+      "seed": 196
+    },
+    {
+      "id": "short-control",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "voice": "ono_anna",
+      "language": "chinese",
+      "seed": 31
+    },
+    {
+      "id": "eric-english-numeric",
+      "text": "1234",
+      "voice": "eric",
+      "language": "english",
+      "seed": 31
+    },
+    {
+      "id": "dylan-english-numeric",
+      "text": "1234",
+      "voice": "dylan",
+      "language": "english",
+      "seed": 31
+    },
+    {
+      "id": "date-name-control",
+      "text": "Alice will meet Bob on November sixth, twenty twenty-six.",
+      "voice": "ryan",
+      "language": "english",
+      "seed": 31
+    },
+    {
+      "id": "known-failure-repeat",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "voice": "ono_anna",
+      "language": "chinese",
+      "seed": 196
+    }
+  ],
+  "temperature": 0.7,
+  "subtalker_temperature": 0.7,
+  "top_k": 50,
+  "top_p": 1.0,
+  "repetition_penalty": 1.05,
+  "max_tokens": 1200,
+  "total_budget_seconds": 600,
+  "individual_budget_seconds": 120,
+  "scalar_plan_sha256": "846e6a4d08103a837b59721537fff36fa5291eb7717e6e820a1798d7c9cab8a8",
+  "baseline_report_sha256": "b13a5950fb87bfbf125e60ea6e49e5567bc19825415d95de726b3bbfe9536cd0",
+  "caller_source_sha256": "560be455a818a602babc4be24f69308508ad397b26cc1e4b6a1a4d97cc5049cc",
+  "caller_object_sha256": "360843cb8243852a5c7bea0678a726cf45565acadb7f681096d0a853e49bdd80",
+  "private_power_object_sha256": "7a9119b07f8ad86ffae51a695c1970c9efb64298112c647afd36405ebc9bf6b4",
+  "shader_sha256": "c6d7a3facb83568f6e4cb2cf4a8c736ee29302571a48343cb9a3a4d1cd3e3893",
+  "qualification": [
+    "All five historical original-prefill token files and PCM digests must match the fresh original-JIT control before starting the candidate",
+    "Retain all twelve outputs, including generation-limit failures",
+    "Both fixed seed196 repeats must have identical tokens and PCM in each arm",
+    "Same final-App ASR and fixed broad cohort required before any adoption",
+    "No production source/default changes or strict-soak reruns based only on this small cohort"
+  ]
+}

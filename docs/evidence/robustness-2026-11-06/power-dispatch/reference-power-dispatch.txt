@@ -1,0 +1,59 @@
+__ZN3mlx4core17get_binary_kernelERNS0_5metal6DeviceERKNSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEENS0_5DtypeESD_PKc:
+  d05478:	ff c3 01 d1	sub	sp, sp, #0x70
+  d0547c:	f4 4f 05 a9	stp	x20, x19, [sp, #0x50]
+  d05480:	fd 7b 06 a9	stp	x29, x30, [sp, #0x60]
+  d05484:	fd 83 01 91	add	x29, sp, #0x60
+  d05488:	bf f3 1e 38	sturb	wzr, [x29, #-0x11]
+  d0548c:	bf 83 1d 38	sturb	wzr, [x29, #-0x28]
+  d05490:	ff 7f 02 a9	stp	xzr, xzr, [sp, #0x20]
+  d05494:	ff 1b 00 f9	str	xzr, [sp, #0x30]
+  d05498:	ff ff 00 a9	stp	xzr, xzr, [sp, #0x8]
+  d0549c:	ff 0f 00 f9	str	xzr, [sp, #0x18]
+  d054a0:	a2 a3 00 d1	sub	x2, x29, #0x28
+  d054a4:	e3 83 00 91	add	x3, sp, #0x20
+  d054a8:	e4 23 00 91	add	x4, sp, #0x8
+  d054ac:	6f 9a 00 94	bl	__ZN3mlx4core5metal6Device10get_kernelERKNSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEESB_RKNS3_6vectorINS3_5tupleIJPKvN3MTL8DataTypeEmEEENS7_ISI_EEEERKNSC_IPNSG_8FunctionENS7_ISO_EEEE
+  d054b0:	f3 03 00 aa	mov	x19, x0
+  d054b4:	e0 07 40 f9	ldr	x0, [sp, #0x8]
+  d054b8:	60 00 00 b4	cbz	x0, 0xd054c4
+  d054bc:	e0 0b 00 f9	str	x0, [sp, #0x10]
+  d054c0:	76 0c 03 94	bl	0xdc8698 ; symbol stub for: __ZdlPv
+  d054c4:	e0 13 40 f9	ldr	x0, [sp, #0x20]
+  d054c8:	60 00 00 b4	cbz	x0, 0xd054d4
+  d054cc:	e0 17 00 f9	str	x0, [sp, #0x28]
+  d054d0:	72 0c 03 94	bl	0xdc8698 ; symbol stub for: __ZdlPv
+  d054d4:	a8 f3 de 38	ldursb	w8, [x29, #-0x11]
+  d054d8:	c8 00 f8 37	tbnz	w8, #0x1f, 0xd054f0
+  d054dc:	e0 03 13 aa	mov	x0, x19
+  d054e0:	fd 7b 46 a9	ldp	x29, x30, [sp, #0x60]
+  d054e4:	f4 4f 45 a9	ldp	x20, x19, [sp, #0x50]
+  d054e8:	ff c3 01 91	add	sp, sp, #0x70
+  d054ec:	c0 03 5f d6	ret
+  d054f0:	a0 83 5d f8	ldur	x0, [x29, #-0x28]
+  d054f4:	69 0c 03 94	bl	0xdc8698 ; symbol stub for: __ZdlPv
+  d054f8:	e0 03 13 aa	mov	x0, x19
+  d054fc:	fd 7b 46 a9	ldp	x29, x30, [sp, #0x60]
+  d05500:	f4 4f 45 a9	ldp	x20, x19, [sp, #0x50]
+  d05504:	ff c3 01 91	add	sp, sp, #0x70
+  d05508:	c0 03 5f d6	ret
+  d0550c:	f3 03 00 aa	mov	x19, x0
+  d05510:	e0 07 40 f9	ldr	x0, [sp, #0x8]
+  d05514:	e0 00 00 b5	cbnz	x0, 0xd05530
+  d05518:	e0 13 40 f9	ldr	x0, [sp, #0x20]
+  d0551c:	20 01 00 b5	cbnz	x0, 0xd05540
+  d05520:	a8 f3 de 38	ldursb	w8, [x29, #-0x11]
+  d05524:	68 01 f8 37	tbnz	w8, #0x1f, 0xd05550
+  d05528:	e0 03 13 aa	mov	x0, x19
+  d0552c:	cf 0a 03 94	bl	0xdc8068 ; symbol stub for: __Unwind_Resume
+  d05530:	e0 0b 00 f9	str	x0, [sp, #0x10]
+  d05534:	59 0c 03 94	bl	0xdc8698 ; symbol stub for: __ZdlPv
+  d05538:	e0 13 40 f9	ldr	x0, [sp, #0x20]
+  d0553c:	20 ff ff b4	cbz	x0, 0xd05520
+  d05540:	e0 17 00 f9	str	x0, [sp, #0x28]
+  d05544:	55 0c 03 94	bl	0xdc8698 ; symbol stub for: __ZdlPv
+  d05548:	a8 f3 de 38	ldursb	w8, [x29, #-0x11]
+  d0554c:	e8 fe ff 36	tbz	w8, #0x1f, 0xd05528
+  d05550:	a0 83 5d f8	ldur	x0, [x29, #-0x28]
+  d05554:	51 0c 03 94	bl	0xdc8698 ; symbol stub for: __ZdlPv
+  d05558:	e0 03 13 aa	mov	x0, x19
+  d0555c:	c3 0a 03 94	bl	0xdc8068 ; symbol stub for: __Unwind_Resume

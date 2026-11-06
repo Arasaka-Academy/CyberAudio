@@ -1,0 +1,8 @@
+{
+  "status": "failed_before_compile",
+  "error_type": "FileNotFoundError",
+  "error": "Link-file-list selector matched @loader_path",
+  "script_sha256": "39de4cf3c9346902b23568470f4eda49d8b7e745047eb73a11ae0c4b46b98604",
+  "model_started": false,
+  "any_child_started": false
+}

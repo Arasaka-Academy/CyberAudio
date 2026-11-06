@@ -1,0 +1,75 @@
+{
+  "started": "2026-11-06T18:46:51.696134+00:00",
+  "production_before": {
+    "instance": "5A940C69-D3EA-4444-8C04-446D211C319F",
+    "status": "ready",
+    "config_sha256": "cabe58f37637430abd7c610cc215083996ddf810a892ac469bd5c884a321d017",
+    "token_sha256": "aa8792163e9d9e591958a8ec4d4a5a94c9c2c470ec4e7af829c6117186fc5228"
+  },
+  "scope": "At most four HEAD requests, each20seconds; unchanged proxy and production; no model or full asset downloads",
+  "cases": [
+    {
+      "id": "huggingface-proxy-default",
+      "url": "https://huggingface.co/",
+      "exit_code": 35,
+      "elapsed_seconds": 0.012751915986882523,
+      "metrics": "000 1 0.003016 0",
+      "tls_validation": "default",
+      "safe_error_categories": [
+        "ssl_syscall"
+      ],
+      "http_status_lines": [
+        "HTTP/1.1 200 Connection established"
+      ]
+    },
+    {
+      "id": "huggingface-proxy-http1",
+      "url": "https://huggingface.co/",
+      "exit_code": 35,
+      "elapsed_seconds": 0.007874208997236565,
+      "metrics": "000 1 0.002090 0",
+      "tls_validation": "default",
+      "safe_error_categories": [
+        "ssl_syscall"
+      ],
+      "http_status_lines": [
+        "HTTP/1.1 200 Connection established"
+      ]
+    },
+    {
+      "id": "apple-proxy-http1",
+      "url": "https://www.apple.com/",
+      "exit_code": 35,
+      "elapsed_seconds": 5.028927000006661,
+      "metrics": "000 1 5.019299 0",
+      "tls_validation": "default",
+      "safe_error_categories": [
+        "ssl_syscall"
+      ],
+      "http_status_lines": [
+        "HTTP/1.1 200 Connection established"
+      ]
+    },
+    {
+      "id": "huggingface-direct-http1",
+      "url": "https://huggingface.co/",
+      "exit_code": 28,
+      "elapsed_seconds": 8.033596041001147,
+      "metrics": "000 0 8.010767 0",
+      "tls_validation": "default",
+      "safe_error_categories": [
+        "connect_refused"
+      ],
+      "http_status_lines": []
+    }
+  ],
+  "production_after": {
+    "instance": "5A940C69-D3EA-4444-8C04-446D211C319F",
+    "status": "ready",
+    "config_sha256": "cabe58f37637430abd7c610cc215083996ddf810a892ac469bd5c884a321d017",
+    "token_sha256": "aa8792163e9d9e591958a8ec4d4a5a94c9c2c470ec4e7af829c6117186fc5228"
+  },
+  "production_preserved": true,
+  "finished": "2026-11-06T18:47:04.793635+00:00",
+  "status": "diagnostic_completed"
+}
