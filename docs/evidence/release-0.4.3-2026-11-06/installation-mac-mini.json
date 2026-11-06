@@ -1,0 +1,51 @@
+{
+  "status": "installed_ready",
+  "checked_at": "2026-11-06T07:35:43.954049+00:00",
+  "old_version": "0.3.0",
+  "old_build": "6",
+  "version": "0.4.3",
+  "build": "10",
+  "backup": "/Users/zhubby/Library/Application Support/CyberAudio/Backups/0.3.0-to-0.4.3-20261106T073500Z",
+  "installation_method": "controlled replacement using original release ZIP",
+  "strict_codesign": true,
+  "executables_match_release": true,
+  "icons_match_release": true,
+  "config_and_token_preserved": true,
+  "config_file_count": 4,
+  "dictation_preferences_preserved": true,
+  "models_and_legacy_runtime_retained": true,
+  "old_app_and_helper_stopped": true,
+  "update_lease_obtained": true,
+  "app_pid": 37435,
+  "helper_pid": 37446,
+  "one_app_and_owned_native_helper": true,
+  "ready": {
+    "application": "CyberAudio",
+    "busy": false,
+    "instance": "5A940C69-D3EA-4444-8C04-446D211C319F",
+    "model": "qwen3-asr-1.7b",
+    "models": {
+      "stt": "ready",
+      "tts": "ready"
+    },
+    "startup": {
+      "backend": "mlx-swift",
+      "device": "metal",
+      "load_ms": 3877.3314999998547,
+      "metal_active_bytes": 5578423720,
+      "metal_peak_bytes": 6273318916,
+      "process_peak_rss_bytes": 2753462272,
+      "verification_ms": 4540.954292024253,
+      "warmup_ms": 3704.7100409981795
+    },
+    "status": "ready",
+    "updating": false
+  },
+  "host": "Mac mini",
+  "hardware": {
+    "cpu": "Apple M4",
+    "memory_bytes": 17179869184,
+    "macos": "27.2"
+  },
+  "signing": "original ad-hoc release signature; not re-signed"
+}

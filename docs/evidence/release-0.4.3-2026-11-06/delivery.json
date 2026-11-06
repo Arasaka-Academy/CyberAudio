@@ -1,22 +1,68 @@
 {
-  "checked_at": "2026-11-06T07:14:45.707332+00:00",
+  "checked_at": "2026-11-06T07:38:21.727131+00:00",
   "release_version": "0.4.3 (10)",
   "release_commit": "93721b91f379e1da310c086980a49286685abc51",
   "published_and_assets_verified": true,
   "pages_feed_matches_signed_release": true,
-  "installed_app_replaced": false,
-  "current_installed_version": "0.4.2 (9)",
+  "installed_app_replaced": true,
+  "current_installed_version": "0.4.3 (10)",
   "configuration_and_token_match_original_backup": true,
   "running_service": {
-    "status": "ready",
-    "busy": false,
-    "updating": false
+    "local": {
+      "status": "ready",
+      "busy": false,
+      "updating": false
+    },
+    "mac_mini": {
+      "status": "ready",
+      "busy": false,
+      "updating": false
+    }
   },
   "desktop_validation": {
     "attempted": true,
-    "result": "Current running app window accessibility surface unresolved by Cua; no UI action performed.",
+    "local_screen_locked": true,
+    "result": "The official app is installed on both hosts. Local accessibility and input monitoring requirements still match the previous ad-hoc signature; refreshing them through System Settings awaits local desktop unlock. Mac mini dictation GUI permissions and physical key were not verified.",
     "new_version_installed_menu_bar_screenshot_verified": false,
-    "in_app_update_prompt_verified": false
+    "in_app_update_prompt_verified": false,
+    "dictation_status_evidence": "dictation-installation-status.json"
   },
-  "signing": "ad-hoc code signing and Sparkle EdDSA; Developer ID notarization not claimed"
+  "signing": "ad-hoc code signing and Sparkle EdDSA; Developer ID notarization not claimed",
+  "installations": {
+    "local": {
+      "version": "0.4.3 (10)",
+      "status": "installed_ready",
+      "evidence": "installation-local.json",
+      "service_smoke": "service-local.json"
+    },
+    "mac_mini": {
+      "version": "0.4.3 (10)",
+      "status": "installed_ready",
+      "evidence": "installation-mac-mini.json",
+      "service_smoke": "service-mac-mini.json",
+      "external_https": "external-https-mac-mini.json"
+    }
+  },
+  "initial_release_check": {
+    "checked_at": "2026-11-06T07:14:45.707332+00:00",
+    "release_version": "0.4.3 (10)",
+    "release_commit": "93721b91f379e1da310c086980a49286685abc51",
+    "published_and_assets_verified": true,
+    "pages_feed_matches_signed_release": true,
+    "installed_app_replaced": false,
+    "current_installed_version": "0.4.2 (9)",
+    "configuration_and_token_match_original_backup": true,
+    "running_service": {
+      "status": "ready",
+      "busy": false,
+      "updating": false
+    },
+    "desktop_validation": {
+      "attempted": true,
+      "result": "Current running app window accessibility surface unresolved by Cua; no UI action performed.",
+      "new_version_installed_menu_bar_screenshot_verified": false,
+      "in_app_update_prompt_verified": false
+    },
+    "signing": "ad-hoc code signing and Sparkle EdDSA; Developer ID notarization not claimed"
+  }
 }
