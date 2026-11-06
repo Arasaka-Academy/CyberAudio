@@ -1,0 +1,49 @@
+{
+  "status": "completed",
+  "started": "2026-11-06T17:12:53.341428+00:00",
+  "stages": [
+    {
+      "stage": "baseline",
+      "status": "completed",
+      "started": "2026-11-06T17:12:53.400456+00:00",
+      "owned_group_pid": 78126,
+      "owned_identity": "78126 Sat Nov  7 01:12:53 2026     /usr/bin/sandbox-exec -f /Users/zhubby/Repository/CyberAudio/.context/robustness/model-preservation-20261107/final-bytes-model-preservation/CyberAudio.app/Contents/Resources/offline.sb /Users/zhubby/Repository/CyberAudio/.context/robustness/sampling-parity-20261107/matrix-build/baseline-matrix-probe /Users/zhubby/Library/Application Support/CyberAudio/models/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit /Users/zhubby/Repository/CyberAudio/.context/robustness/model-preservation-20261107/final-bytes-model-preservation/CyberAudio.app/Contents/Resources/mlx.metallib /Users/zhubby/Repository/CyberAudio/.context/robustness/sampling-parity-20261107/matrix-baseline /Users/zhubby/Repository/CyberAudio/.context/robustness/sampling-parity-20261107/matrix-plan.json /Users/zhubby/Repository/CyberAudio/.context/robustness/sampling-parity-20261107/order-generations/report.json baseline",
+      "exit_code": 0,
+      "finished": "2026-11-06T17:13:48.105234+00:00",
+      "completed_generations": 16,
+      "report_sha256": "440ce96afa825e5b94f61b19e374a142978b04d7b62b186be82fd0e84ce5bcee"
+    },
+    {
+      "stage": "candidate",
+      "status": "completed",
+      "started": "2026-11-06T17:13:48.158985+00:00",
+      "owned_group_pid": 80594,
+      "owned_identity": "80594 Sat Nov  7 01:13:48 2026     /usr/bin/sandbox-exec -f /Users/zhubby/Repository/CyberAudio/.context/robustness/model-preservation-20261107/final-bytes-model-preservation/CyberAudio.app/Contents/Resources/offline.sb /Users/zhubby/Repository/CyberAudio/.context/robustness/sampling-parity-20261107/matrix-build/candidate-matrix-probe /Users/zhubby/Library/Application Support/CyberAudio/models/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit /Users/zhubby/Repository/CyberAudio/.context/robustness/model-preservation-20261107/final-bytes-model-preservation/CyberAudio.app/Contents/Resources/mlx.metallib /Users/zhubby/Repository/CyberAudio/.context/robustness/sampling-parity-20261107/matrix-candidate /Users/zhubby/Repository/CyberAudio/.context/robustness/sampling-parity-20261107/matrix-plan.json /Users/zhubby/Repository/CyberAudio/.context/robustness/sampling-parity-20261107/order-generations/report.json candidate",
+      "exit_code": 0,
+      "finished": "2026-11-06T17:20:06.860511+00:00",
+      "completed_generations": 144,
+      "report_sha256": "7c19a841ca7fbb234bfb3d3a63ca816f2c5970f4a7049e9351982d2993ca90a4"
+    }
+  ],
+  "plan_sha256": "05bc75c6917973d3c048440ee344470694ff1146ab40299ba00f84a3ddf6c098",
+  "build_sha256": "47f6f082532ccd0706540d9033319b0a7132b8fd499f39a6136ba9979efd1de2",
+  "production_before": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "elapsed_seconds": 433.7168285830412,
+  "last_owned_process_exit_code": 0,
+  "production_after": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "production_preserved": true,
+  "sdk_and_helpers_preserved": true,
+  "finished": "2026-11-06T17:20:07.076595+00:00"
+}

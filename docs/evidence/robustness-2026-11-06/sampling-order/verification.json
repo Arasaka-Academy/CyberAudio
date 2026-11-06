@@ -1,0 +1,37 @@
+{
+  "status": "verified",
+  "verified_at": "2026-11-06T17:23:48.212037+00:00",
+  "source_commit": "9807bf0967ebaa13001e9f7b5cca35dbfd2bc986",
+  "native_sample_replay_exact": 2336,
+  "native_filter_files_verified": 146,
+  "reference_sampler_actual_import_verified": true,
+  "distribution_vectors_exact": 2078,
+  "auxiliary_support_differences": 136,
+  "source_order_change_only": true,
+  "preliminary_generations": 6,
+  "reused_baselines": 128,
+  "fresh_current_route_baselines": 16,
+  "candidate_generations": 144,
+  "paired_cases": 144,
+  "wav_payload_references_verified": 312,
+  "asr_requests": [
+    18,
+    294
+  ],
+  "source_hashes_verified": 96,
+  "original_model_files_verified": 568,
+  "frozen_files_verified": 8,
+  "owned_processes_absent": true,
+  "owned_ports_closed": [
+    18888,
+    18889
+  ],
+  "temporary_requests_removed": true,
+  "production_preserved": true,
+  "default_changed": false,
+  "candidate_promoted": false,
+  "limits": [
+    "Roundtrip combines TTS/ASR errors; no number normalization or listening acceptance",
+    "Original strict M4 workload, physical/interactive and public download/distribution gates remain unaccepted"
+  ]
+}

@@ -1,0 +1,3026 @@
+[
+  {
+    "text_id": "zh-stability",
+    "voice": "ono_anna",
+    "seed": 196,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-ono_anna-s196",
+      "eos_seen": false,
+      "audio_seconds": 96,
+      "roundtrip_text": "   ",
+      "roundtrip_alphanumeric_edits": 17
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-ono_anna-s196",
+      "eos_seen": true,
+      "audio_seconds": 7.2,
+      "roundtrip_text": "此句验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 2
+    },
+    "candidate_edit_delta": -15
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "ono_anna",
+    "seed": 0,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-ono_anna-s0",
+      "eos_seen": true,
+      "audio_seconds": 5.44,
+      "roundtrip_text": "齐聚，验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 2
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-ono_anna-s0",
+      "eos_seen": true,
+      "audio_seconds": 5.44,
+      "roundtrip_text": "齐聚，验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 2
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "ono_anna",
+    "seed": 31,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-ono_anna-s31",
+      "eos_seen": true,
+      "audio_seconds": 2.56,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-ono_anna-s31",
+      "eos_seen": true,
+      "audio_seconds": 2.72,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "ono_anna",
+    "seed": 117,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-ono_anna-s117",
+      "eos_seen": true,
+      "audio_seconds": 86.72,
+      "roundtrip_text": "开大的野心，报复的稳定性，和挥。 恢复能力。嗯。 Morning, morning. ",
+      "roundtrip_alphanumeric_edits": 24
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-ono_anna-s117",
+      "eos_seen": true,
+      "audio_seconds": 8.08,
+      "roundtrip_text": "嗯，手机一验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 4
+    },
+    "candidate_edit_delta": -20
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "serena",
+    "seed": 196,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-serena-s196",
+      "eos_seen": true,
+      "audio_seconds": 3.28,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-serena-s196",
+      "eos_seen": true,
+      "audio_seconds": 3.2,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "serena",
+    "seed": 0,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-serena-s0",
+      "eos_seen": true,
+      "audio_seconds": 3.28,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-serena-s0",
+      "eos_seen": true,
+      "audio_seconds": 3.28,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "serena",
+    "seed": 31,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-serena-s31",
+      "eos_seen": true,
+      "audio_seconds": 3.2,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-serena-s31",
+      "eos_seen": true,
+      "audio_seconds": 3.2,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "serena",
+    "seed": 117,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-serena-s117",
+      "eos_seen": true,
+      "audio_seconds": 3.52,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-serena-s117",
+      "eos_seen": true,
+      "audio_seconds": 3.52,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "vivian",
+    "seed": 196,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-vivian-s196",
+      "eos_seen": true,
+      "audio_seconds": 4,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-vivian-s196",
+      "eos_seen": true,
+      "audio_seconds": 3.84,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "vivian",
+    "seed": 0,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-vivian-s0",
+      "eos_seen": true,
+      "audio_seconds": 7.36,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-vivian-s0",
+      "eos_seen": true,
+      "audio_seconds": 5.84,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "vivian",
+    "seed": 31,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-vivian-s31",
+      "eos_seen": true,
+      "audio_seconds": 3.92,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-vivian-s31",
+      "eos_seen": true,
+      "audio_seconds": 3.28,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "vivian",
+    "seed": 117,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-vivian-s117",
+      "eos_seen": true,
+      "audio_seconds": 3.44,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-vivian-s117",
+      "eos_seen": true,
+      "audio_seconds": 4.8,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "uncle_fu",
+    "seed": 196,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-uncle_fu-s196",
+      "eos_seen": true,
+      "audio_seconds": 4.08,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-uncle_fu-s196",
+      "eos_seen": true,
+      "audio_seconds": 4.64,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "uncle_fu",
+    "seed": 0,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-uncle_fu-s0",
+      "eos_seen": true,
+      "audio_seconds": 4.4,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-uncle_fu-s0",
+      "eos_seen": true,
+      "audio_seconds": 4.8,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "uncle_fu",
+    "seed": 31,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-uncle_fu-s31",
+      "eos_seen": true,
+      "audio_seconds": 4.48,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-uncle_fu-s31",
+      "eos_seen": true,
+      "audio_seconds": 4.32,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "uncle_fu",
+    "seed": 117,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-uncle_fu-s117",
+      "eos_seen": true,
+      "audio_seconds": 3.68,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-uncle_fu-s117",
+      "eos_seen": true,
+      "audio_seconds": 3.68,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "ryan",
+    "seed": 196,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-ryan-s196",
+      "eos_seen": true,
+      "audio_seconds": 4.88,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-ryan-s196",
+      "eos_seen": true,
+      "audio_seconds": 3.84,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "ryan",
+    "seed": 0,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-ryan-s0",
+      "eos_seen": true,
+      "audio_seconds": 4.4,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-ryan-s0",
+      "eos_seen": true,
+      "audio_seconds": 4.96,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "ryan",
+    "seed": 31,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-ryan-s31",
+      "eos_seen": true,
+      "audio_seconds": 4.08,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-ryan-s31",
+      "eos_seen": true,
+      "audio_seconds": 4,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "ryan",
+    "seed": 117,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-ryan-s117",
+      "eos_seen": true,
+      "audio_seconds": 4.72,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-ryan-s117",
+      "eos_seen": true,
+      "audio_seconds": 3.68,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "aiden",
+    "seed": 196,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-aiden-s196",
+      "eos_seen": true,
+      "audio_seconds": 3.6,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-aiden-s196",
+      "eos_seen": true,
+      "audio_seconds": 3.68,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "aiden",
+    "seed": 0,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-aiden-s0",
+      "eos_seen": true,
+      "audio_seconds": 3.76,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-aiden-s0",
+      "eos_seen": true,
+      "audio_seconds": 3.6,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "aiden",
+    "seed": 31,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-aiden-s31",
+      "eos_seen": true,
+      "audio_seconds": 3.6,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-aiden-s31",
+      "eos_seen": true,
+      "audio_seconds": 4,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "aiden",
+    "seed": 117,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-aiden-s117",
+      "eos_seen": true,
+      "audio_seconds": 4.08,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-aiden-s117",
+      "eos_seen": true,
+      "audio_seconds": 4,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "sohee",
+    "seed": 196,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-sohee-s196",
+      "eos_seen": true,
+      "audio_seconds": 3.68,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-sohee-s196",
+      "eos_seen": true,
+      "audio_seconds": 3.68,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "sohee",
+    "seed": 0,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-sohee-s0",
+      "eos_seen": true,
+      "audio_seconds": 4.08,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-sohee-s0",
+      "eos_seen": true,
+      "audio_seconds": 3.36,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "sohee",
+    "seed": 31,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-sohee-s31",
+      "eos_seen": true,
+      "audio_seconds": 3.68,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-sohee-s31",
+      "eos_seen": true,
+      "audio_seconds": 3.6,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "sohee",
+    "seed": 117,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-sohee-s117",
+      "eos_seen": true,
+      "audio_seconds": 3.12,
+      "roundtrip_text": "只需验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 2
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-sohee-s117",
+      "eos_seen": true,
+      "audio_seconds": 3.6,
+      "roundtrip_text": "只需验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 2
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "eric",
+    "seed": 196,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-eric-s196",
+      "eos_seen": true,
+      "audio_seconds": 3.68,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-eric-s196",
+      "eos_seen": true,
+      "audio_seconds": 4.08,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "eric",
+    "seed": 0,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-eric-s0",
+      "eos_seen": true,
+      "audio_seconds": 5.04,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-eric-s0",
+      "eos_seen": true,
+      "audio_seconds": 4.24,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "eric",
+    "seed": 31,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-eric-s31",
+      "eos_seen": true,
+      "audio_seconds": 3.44,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-eric-s31",
+      "eos_seen": true,
+      "audio_seconds": 3.76,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "eric",
+    "seed": 117,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-eric-s117",
+      "eos_seen": true,
+      "audio_seconds": 3.36,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-eric-s117",
+      "eos_seen": true,
+      "audio_seconds": 3.2,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "dylan",
+    "seed": 196,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-dylan-s196",
+      "eos_seen": true,
+      "audio_seconds": 3.2,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-dylan-s196",
+      "eos_seen": true,
+      "audio_seconds": 3.2,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "dylan",
+    "seed": 0,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-dylan-s0",
+      "eos_seen": true,
+      "audio_seconds": 3.44,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-dylan-s0",
+      "eos_seen": true,
+      "audio_seconds": 3.44,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "dylan",
+    "seed": 31,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-dylan-s31",
+      "eos_seen": true,
+      "audio_seconds": 3.44,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-dylan-s31",
+      "eos_seen": true,
+      "audio_seconds": 3.44,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-stability",
+    "voice": "dylan",
+    "seed": 117,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-dylan-s117",
+      "eos_seen": true,
+      "audio_seconds": 3.44,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-dylan-s117",
+      "eos_seen": true,
+      "audio_seconds": 3.52,
+      "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "ono_anna",
+    "seed": 196,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-ono_anna-s196",
+      "eos_seen": true,
+      "audio_seconds": 5.76,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-ono_anna-s196",
+      "eos_seen": true,
+      "audio_seconds": 5.76,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "ono_anna",
+    "seed": 0,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-ono_anna-s0",
+      "eos_seen": true,
+      "audio_seconds": 6.8,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-ono_anna-s0",
+      "eos_seen": true,
+      "audio_seconds": 6.8,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "ono_anna",
+    "seed": 31,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-ono_anna-s31",
+      "eos_seen": true,
+      "audio_seconds": 4.96,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-ono_anna-s31",
+      "eos_seen": true,
+      "audio_seconds": 5.04,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "ono_anna",
+    "seed": 117,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-ono_anna-s117",
+      "eos_seen": true,
+      "audio_seconds": 5.52,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-ono_anna-s117",
+      "eos_seen": true,
+      "audio_seconds": 5.2,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "serena",
+    "seed": 196,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-serena-s196",
+      "eos_seen": true,
+      "audio_seconds": 5.04,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-serena-s196",
+      "eos_seen": true,
+      "audio_seconds": 5.36,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "serena",
+    "seed": 0,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-serena-s0",
+      "eos_seen": true,
+      "audio_seconds": 5.6,
+      "roundtrip_text": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-serena-s0",
+      "eos_seen": true,
+      "audio_seconds": 5.6,
+      "roundtrip_text": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "serena",
+    "seed": 31,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-serena-s31",
+      "eos_seen": true,
+      "audio_seconds": 5.68,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-serena-s31",
+      "eos_seen": true,
+      "audio_seconds": 6.24,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "serena",
+    "seed": 117,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-serena-s117",
+      "eos_seen": true,
+      "audio_seconds": 4.72,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-serena-s117",
+      "eos_seen": true,
+      "audio_seconds": 4.88,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "vivian",
+    "seed": 196,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-vivian-s196",
+      "eos_seen": true,
+      "audio_seconds": 6.16,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-vivian-s196",
+      "eos_seen": true,
+      "audio_seconds": 5.84,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "vivian",
+    "seed": 0,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-vivian-s0",
+      "eos_seen": true,
+      "audio_seconds": 6.64,
+      "roundtrip_text": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-vivian-s0",
+      "eos_seen": true,
+      "audio_seconds": 7.84,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "vivian",
+    "seed": 31,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-vivian-s31",
+      "eos_seen": true,
+      "audio_seconds": 6.72,
+      "roundtrip_text": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-vivian-s31",
+      "eos_seen": true,
+      "audio_seconds": 6.88,
+      "roundtrip_text": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "vivian",
+    "seed": 117,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-vivian-s117",
+      "eos_seen": true,
+      "audio_seconds": 6.16,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-vivian-s117",
+      "eos_seen": true,
+      "audio_seconds": 5.84,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "uncle_fu",
+    "seed": 196,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-uncle_fu-s196",
+      "eos_seen": true,
+      "audio_seconds": 7.12,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-uncle_fu-s196",
+      "eos_seen": true,
+      "audio_seconds": 7.36,
+      "roundtrip_text": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "uncle_fu",
+    "seed": 0,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-uncle_fu-s0",
+      "eos_seen": true,
+      "audio_seconds": 6.16,
+      "roundtrip_text": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-uncle_fu-s0",
+      "eos_seen": true,
+      "audio_seconds": 6.56,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "uncle_fu",
+    "seed": 31,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-uncle_fu-s31",
+      "eos_seen": true,
+      "audio_seconds": 7.12,
+      "roundtrip_text": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-uncle_fu-s31",
+      "eos_seen": true,
+      "audio_seconds": 6.24,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "uncle_fu",
+    "seed": 117,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-uncle_fu-s117",
+      "eos_seen": true,
+      "audio_seconds": 6.72,
+      "roundtrip_text": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-uncle_fu-s117",
+      "eos_seen": true,
+      "audio_seconds": 6.72,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "ryan",
+    "seed": 196,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-ryan-s196",
+      "eos_seen": true,
+      "audio_seconds": 9.28,
+      "roundtrip_text": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-ryan-s196",
+      "eos_seen": true,
+      "audio_seconds": 11.04,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "ryan",
+    "seed": 0,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-ryan-s0",
+      "eos_seen": true,
+      "audio_seconds": 5.76,
+      "roundtrip_text": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-ryan-s0",
+      "eos_seen": true,
+      "audio_seconds": 5.68,
+      "roundtrip_text": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "ryan",
+    "seed": 31,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-ryan-s31",
+      "eos_seen": true,
+      "audio_seconds": 6.16,
+      "roundtrip_text": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-ryan-s31",
+      "eos_seen": true,
+      "audio_seconds": 6.16,
+      "roundtrip_text": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "ryan",
+    "seed": 117,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-ryan-s117",
+      "eos_seen": true,
+      "audio_seconds": 5.76,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-ryan-s117",
+      "eos_seen": true,
+      "audio_seconds": 6.32,
+      "roundtrip_text": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "aiden",
+    "seed": 196,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-aiden-s196",
+      "eos_seen": true,
+      "audio_seconds": 5.36,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-aiden-s196",
+      "eos_seen": true,
+      "audio_seconds": 5.36,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "aiden",
+    "seed": 0,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-aiden-s0",
+      "eos_seen": true,
+      "audio_seconds": 6.24,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-aiden-s0",
+      "eos_seen": true,
+      "audio_seconds": 6.24,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "aiden",
+    "seed": 31,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-aiden-s31",
+      "eos_seen": true,
+      "audio_seconds": 7.2,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-aiden-s31",
+      "eos_seen": true,
+      "audio_seconds": 7.44,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "aiden",
+    "seed": 117,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-aiden-s117",
+      "eos_seen": true,
+      "audio_seconds": 7.52,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-aiden-s117",
+      "eos_seen": true,
+      "audio_seconds": 7.52,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "sohee",
+    "seed": 196,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-sohee-s196",
+      "eos_seen": true,
+      "audio_seconds": 5.68,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-sohee-s196",
+      "eos_seen": true,
+      "audio_seconds": 5.6,
+      "roundtrip_text": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "sohee",
+    "seed": 0,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-sohee-s0",
+      "eos_seen": true,
+      "audio_seconds": 8.32,
+      "roundtrip_text": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-sohee-s0",
+      "eos_seen": true,
+      "audio_seconds": 8.48,
+      "roundtrip_text": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "sohee",
+    "seed": 31,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-sohee-s31",
+      "eos_seen": true,
+      "audio_seconds": 5.52,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-sohee-s31",
+      "eos_seen": true,
+      "audio_seconds": 6.48,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "sohee",
+    "seed": 117,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-sohee-s117",
+      "eos_seen": true,
+      "audio_seconds": 7.12,
+      "roundtrip_text": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-sohee-s117",
+      "eos_seen": true,
+      "audio_seconds": 10.24,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "eric",
+    "seed": 196,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-eric-s196",
+      "eos_seen": true,
+      "audio_seconds": 6.64,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-eric-s196",
+      "eos_seen": true,
+      "audio_seconds": 7.04,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "eric",
+    "seed": 0,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-eric-s0",
+      "eos_seen": true,
+      "audio_seconds": 6.88,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-eric-s0",
+      "eos_seen": true,
+      "audio_seconds": 6.96,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "eric",
+    "seed": 31,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-eric-s31",
+      "eos_seen": true,
+      "audio_seconds": 6.88,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-eric-s31",
+      "eos_seen": true,
+      "audio_seconds": 6.48,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "eric",
+    "seed": 117,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-eric-s117",
+      "eos_seen": true,
+      "audio_seconds": 6.4,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-eric-s117",
+      "eos_seen": true,
+      "audio_seconds": 5.6,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "dylan",
+    "seed": 196,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-dylan-s196",
+      "eos_seen": true,
+      "audio_seconds": 5.84,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-dylan-s196",
+      "eos_seen": true,
+      "audio_seconds": 5.84,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "dylan",
+    "seed": 0,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-dylan-s0",
+      "eos_seen": true,
+      "audio_seconds": 5.36,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-dylan-s0",
+      "eos_seen": true,
+      "audio_seconds": 5.76,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "dylan",
+    "seed": 31,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-dylan-s31",
+      "eos_seen": true,
+      "audio_seconds": 5.92,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-dylan-s31",
+      "eos_seen": true,
+      "audio_seconds": 5.92,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "zh-entities",
+    "voice": "dylan",
+    "seed": 117,
+    "reference": "请在十一月六日下午三点，把编号一二三四的文件发送给李明。",
+    "baseline": {
+      "id": "baseline-zh-entities-dylan-s117",
+      "eos_seen": true,
+      "audio_seconds": 5.36,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-zh-entities-dylan-s117",
+      "eos_seen": true,
+      "audio_seconds": 5.44,
+      "roundtrip_text": "请在十一月六日下午三点把编号一二三四的文件发送给李明。",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "ono_anna",
+    "seed": 196,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-ono_anna-s196",
+      "eos_seen": true,
+      "audio_seconds": 5.44,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-ono_anna-s196",
+      "eos_seen": true,
+      "audio_seconds": 4.56,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "ono_anna",
+    "seed": 0,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-ono_anna-s0",
+      "eos_seen": true,
+      "audio_seconds": 6.08,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-ono_anna-s0",
+      "eos_seen": true,
+      "audio_seconds": 6.16,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "ono_anna",
+    "seed": 31,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-ono_anna-s31",
+      "eos_seen": true,
+      "audio_seconds": 5.36,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-ono_anna-s31",
+      "eos_seen": true,
+      "audio_seconds": 4.8,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "ono_anna",
+    "seed": 117,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-ono_anna-s117",
+      "eos_seen": true,
+      "audio_seconds": 5.68,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-ono_anna-s117",
+      "eos_seen": true,
+      "audio_seconds": 5.28,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "serena",
+    "seed": 196,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-serena-s196",
+      "eos_seen": true,
+      "audio_seconds": 6.48,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-serena-s196",
+      "eos_seen": true,
+      "audio_seconds": 5.52,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "serena",
+    "seed": 0,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-serena-s0",
+      "eos_seen": true,
+      "audio_seconds": 5.92,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-serena-s0",
+      "eos_seen": true,
+      "audio_seconds": 5.68,
+      "roundtrip_text": "Verify that speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 3
+    },
+    "candidate_edit_delta": 3
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "serena",
+    "seed": 31,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-serena-s31",
+      "eos_seen": true,
+      "audio_seconds": 6.4,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-serena-s31",
+      "eos_seen": true,
+      "audio_seconds": 6.8,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "serena",
+    "seed": 117,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-serena-s117",
+      "eos_seen": true,
+      "audio_seconds": 6.16,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-serena-s117",
+      "eos_seen": true,
+      "audio_seconds": 6.16,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "vivian",
+    "seed": 196,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-vivian-s196",
+      "eos_seen": true,
+      "audio_seconds": 5.52,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-vivian-s196",
+      "eos_seen": true,
+      "audio_seconds": 5.44,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "vivian",
+    "seed": 0,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-vivian-s0",
+      "eos_seen": true,
+      "audio_seconds": 6.56,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-vivian-s0",
+      "eos_seen": true,
+      "audio_seconds": 7.52,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "vivian",
+    "seed": 31,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-vivian-s31",
+      "eos_seen": true,
+      "audio_seconds": 7.84,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-vivian-s31",
+      "eos_seen": true,
+      "audio_seconds": 8.72,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "vivian",
+    "seed": 117,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-vivian-s117",
+      "eos_seen": true,
+      "audio_seconds": 7.44,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-vivian-s117",
+      "eos_seen": true,
+      "audio_seconds": 6.4,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "uncle_fu",
+    "seed": 196,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-uncle_fu-s196",
+      "eos_seen": true,
+      "audio_seconds": 6.32,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-uncle_fu-s196",
+      "eos_seen": true,
+      "audio_seconds": 5.36,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "uncle_fu",
+    "seed": 0,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-uncle_fu-s0",
+      "eos_seen": true,
+      "audio_seconds": 6.48,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-uncle_fu-s0",
+      "eos_seen": true,
+      "audio_seconds": 7.12,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "uncle_fu",
+    "seed": 31,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-uncle_fu-s31",
+      "eos_seen": true,
+      "audio_seconds": 5.04,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-uncle_fu-s31",
+      "eos_seen": true,
+      "audio_seconds": 5.76,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "uncle_fu",
+    "seed": 117,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-uncle_fu-s117",
+      "eos_seen": true,
+      "audio_seconds": 6.08,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-uncle_fu-s117",
+      "eos_seen": true,
+      "audio_seconds": 6.4,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "ryan",
+    "seed": 196,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-ryan-s196",
+      "eos_seen": true,
+      "audio_seconds": 6.56,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-ryan-s196",
+      "eos_seen": true,
+      "audio_seconds": 5.2,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "ryan",
+    "seed": 0,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-ryan-s0",
+      "eos_seen": true,
+      "audio_seconds": 5.68,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-ryan-s0",
+      "eos_seen": true,
+      "audio_seconds": 6.32,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "ryan",
+    "seed": 31,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-ryan-s31",
+      "eos_seen": true,
+      "audio_seconds": 4.64,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-ryan-s31",
+      "eos_seen": true,
+      "audio_seconds": 4.72,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "ryan",
+    "seed": 117,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-ryan-s117",
+      "eos_seen": true,
+      "audio_seconds": 5.84,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-ryan-s117",
+      "eos_seen": true,
+      "audio_seconds": 5.92,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "aiden",
+    "seed": 196,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-aiden-s196",
+      "eos_seen": true,
+      "audio_seconds": 4.56,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-aiden-s196",
+      "eos_seen": true,
+      "audio_seconds": 4.8,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "aiden",
+    "seed": 0,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-aiden-s0",
+      "eos_seen": true,
+      "audio_seconds": 4.56,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-aiden-s0",
+      "eos_seen": true,
+      "audio_seconds": 5.04,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "aiden",
+    "seed": 31,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-aiden-s31",
+      "eos_seen": true,
+      "audio_seconds": 4.64,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-aiden-s31",
+      "eos_seen": true,
+      "audio_seconds": 4.96,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "aiden",
+    "seed": 117,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-aiden-s117",
+      "eos_seen": true,
+      "audio_seconds": 5.04,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-aiden-s117",
+      "eos_seen": true,
+      "audio_seconds": 5.12,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "sohee",
+    "seed": 196,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-sohee-s196",
+      "eos_seen": true,
+      "audio_seconds": 6.24,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-sohee-s196",
+      "eos_seen": true,
+      "audio_seconds": 5.76,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "sohee",
+    "seed": 0,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-sohee-s0",
+      "eos_seen": true,
+      "audio_seconds": 5.28,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-sohee-s0",
+      "eos_seen": true,
+      "audio_seconds": 5.84,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "sohee",
+    "seed": 31,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-sohee-s31",
+      "eos_seen": true,
+      "audio_seconds": 5.68,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-sohee-s31",
+      "eos_seen": true,
+      "audio_seconds": 6.88,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "sohee",
+    "seed": 117,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-sohee-s117",
+      "eos_seen": true,
+      "audio_seconds": 5.2,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-sohee-s117",
+      "eos_seen": true,
+      "audio_seconds": 6.24,
+      "roundtrip_text": "Verify that the speech service remains stable, and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "ono_anna",
+    "seed": 196,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-ono_anna-s196",
+      "eos_seen": true,
+      "audio_seconds": 5.52,
+      "roundtrip_text": "On November sixth, at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-entities-ono_anna-s196",
+      "eos_seen": true,
+      "audio_seconds": 5.52,
+      "roundtrip_text": "On November sixth, at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "ono_anna",
+    "seed": 0,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-ono_anna-s0",
+      "eos_seen": true,
+      "audio_seconds": 6.4,
+      "roundtrip_text": "On November six at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 2
+    },
+    "candidate": {
+      "id": "candidate-en-entities-ono_anna-s0",
+      "eos_seen": true,
+      "audio_seconds": 5.2,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": -2
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "ono_anna",
+    "seed": 31,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-ono_anna-s31",
+      "eos_seen": true,
+      "audio_seconds": 8.08,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-entities-ono_anna-s31",
+      "eos_seen": true,
+      "audio_seconds": 6.4,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "ono_anna",
+    "seed": 117,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-ono_anna-s117",
+      "eos_seen": true,
+      "audio_seconds": 5.28,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-entities-ono_anna-s117",
+      "eos_seen": true,
+      "audio_seconds": 5.84,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "serena",
+    "seed": 196,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-serena-s196",
+      "eos_seen": true,
+      "audio_seconds": 6.56,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-entities-serena-s196",
+      "eos_seen": true,
+      "audio_seconds": 6.88,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "serena",
+    "seed": 0,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-serena-s0",
+      "eos_seen": true,
+      "audio_seconds": 5.68,
+      "roundtrip_text": "On November six at three in the afternoon, Sin phoned one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 8
+    },
+    "candidate": {
+      "id": "candidate-en-entities-serena-s0",
+      "eos_seen": true,
+      "audio_seconds": 6,
+      "roundtrip_text": "On November six at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 2
+    },
+    "candidate_edit_delta": -6
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "serena",
+    "seed": 31,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-serena-s31",
+      "eos_seen": true,
+      "audio_seconds": 6.16,
+      "roundtrip_text": "On November six at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 2
+    },
+    "candidate": {
+      "id": "candidate-en-entities-serena-s31",
+      "eos_seen": true,
+      "audio_seconds": 6.24,
+      "roundtrip_text": "On November six at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 2
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "serena",
+    "seed": 117,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-serena-s117",
+      "eos_seen": true,
+      "audio_seconds": 7.36,
+      "roundtrip_text": "On November six at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 2
+    },
+    "candidate": {
+      "id": "candidate-en-entities-serena-s117",
+      "eos_seen": true,
+      "audio_seconds": 6.56,
+      "roundtrip_text": "On November six at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 2
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "vivian",
+    "seed": 196,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-vivian-s196",
+      "eos_seen": true,
+      "audio_seconds": 8.8,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one, two, three, four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-entities-vivian-s196",
+      "eos_seen": true,
+      "audio_seconds": 8.56,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one, two, three, four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "vivian",
+    "seed": 0,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-vivian-s0",
+      "eos_seen": true,
+      "audio_seconds": 8.96,
+      "roundtrip_text": "November sixth at three in the afternoon. Send file one, two, three, four to Alice.",
+      "roundtrip_alphanumeric_edits": 2
+    },
+    "candidate": {
+      "id": "candidate-en-entities-vivian-s0",
+      "eos_seen": true,
+      "audio_seconds": 7.84,
+      "roundtrip_text": "November six. That's three in the afternoon. Send file one, two, three, four to Alice.",
+      "roundtrip_alphanumeric_edits": 3
+    },
+    "candidate_edit_delta": 1
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "vivian",
+    "seed": 31,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-vivian-s31",
+      "eos_seen": true,
+      "audio_seconds": 7.84,
+      "roundtrip_text": "On November 6, at 3 in the afternoon, send file one, two, three, four to Alice.",
+      "roundtrip_alphanumeric_edits": 10
+    },
+    "candidate": {
+      "id": "candidate-en-entities-vivian-s31",
+      "eos_seen": true,
+      "audio_seconds": 8.4,
+      "roundtrip_text": "On November 6, at 3 in the afternoon, send file one, two, three, four to Alice.",
+      "roundtrip_alphanumeric_edits": 10
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "vivian",
+    "seed": 117,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-vivian-s117",
+      "eos_seen": true,
+      "audio_seconds": 8.08,
+      "roundtrip_text": "On November six at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 2
+    },
+    "candidate": {
+      "id": "candidate-en-entities-vivian-s117",
+      "eos_seen": true,
+      "audio_seconds": 8.08,
+      "roundtrip_text": "On November six at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 2
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "uncle_fu",
+    "seed": 196,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-uncle_fu-s196",
+      "eos_seen": true,
+      "audio_seconds": 8.56,
+      "roundtrip_text": "On November 6 at 3 in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 10
+    },
+    "candidate": {
+      "id": "candidate-en-entities-uncle_fu-s196",
+      "eos_seen": true,
+      "audio_seconds": 8.88,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": -10
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "uncle_fu",
+    "seed": 0,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-uncle_fu-s0",
+      "eos_seen": true,
+      "audio_seconds": 7.44,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-entities-uncle_fu-s0",
+      "eos_seen": true,
+      "audio_seconds": 6.88,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "uncle_fu",
+    "seed": 31,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-uncle_fu-s31",
+      "eos_seen": true,
+      "audio_seconds": 9.52,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Ellis.",
+      "roundtrip_alphanumeric_edits": 4
+    },
+    "candidate": {
+      "id": "candidate-en-entities-uncle_fu-s31",
+      "eos_seen": true,
+      "audio_seconds": 10.48,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": -4
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "uncle_fu",
+    "seed": 117,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-uncle_fu-s117",
+      "eos_seen": true,
+      "audio_seconds": 7.36,
+      "roundtrip_text": "On November six at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 2
+    },
+    "candidate": {
+      "id": "candidate-en-entities-uncle_fu-s117",
+      "eos_seen": true,
+      "audio_seconds": 6.8,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": -2
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "ryan",
+    "seed": 196,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-ryan-s196",
+      "eos_seen": true,
+      "audio_seconds": 6.56,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-entities-ryan-s196",
+      "eos_seen": true,
+      "audio_seconds": 6.32,
+      "roundtrip_text": "On November sixth, at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "ryan",
+    "seed": 0,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-ryan-s0",
+      "eos_seen": true,
+      "audio_seconds": 7.04,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-entities-ryan-s0",
+      "eos_seen": true,
+      "audio_seconds": 6.8,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "ryan",
+    "seed": 31,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-ryan-s31",
+      "eos_seen": true,
+      "audio_seconds": 5.84,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-entities-ryan-s31",
+      "eos_seen": true,
+      "audio_seconds": 6.96,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "ryan",
+    "seed": 117,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-ryan-s117",
+      "eos_seen": true,
+      "audio_seconds": 7.44,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-entities-ryan-s117",
+      "eos_seen": true,
+      "audio_seconds": 8.72,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one, two, three, four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "aiden",
+    "seed": 196,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-aiden-s196",
+      "eos_seen": true,
+      "audio_seconds": 5.84,
+      "roundtrip_text": "On November sixth, at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-entities-aiden-s196",
+      "eos_seen": true,
+      "audio_seconds": 5.92,
+      "roundtrip_text": "On November sixth, at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "aiden",
+    "seed": 0,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-aiden-s0",
+      "eos_seen": true,
+      "audio_seconds": 5.68,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-entities-aiden-s0",
+      "eos_seen": true,
+      "audio_seconds": 5.84,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "aiden",
+    "seed": 31,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-aiden-s31",
+      "eos_seen": true,
+      "audio_seconds": 5.68,
+      "roundtrip_text": "On November sixth, at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-entities-aiden-s31",
+      "eos_seen": true,
+      "audio_seconds": 6.4,
+      "roundtrip_text": "On November sixth, at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "aiden",
+    "seed": 117,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-aiden-s117",
+      "eos_seen": true,
+      "audio_seconds": 6.48,
+      "roundtrip_text": "On November sixth, at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-entities-aiden-s117",
+      "eos_seen": true,
+      "audio_seconds": 6.16,
+      "roundtrip_text": "On November sixth, at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "sohee",
+    "seed": 196,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-sohee-s196",
+      "eos_seen": true,
+      "audio_seconds": 9.04,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one, two, three, four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-entities-sohee-s196",
+      "eos_seen": true,
+      "audio_seconds": 9.04,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "sohee",
+    "seed": 0,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-sohee-s0",
+      "eos_seen": true,
+      "audio_seconds": 7.04,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one, two, three, four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-entities-sohee-s0",
+      "eos_seen": true,
+      "audio_seconds": 8.88,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one, two, three, four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "sohee",
+    "seed": 31,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-sohee-s31",
+      "eos_seen": true,
+      "audio_seconds": 7.44,
+      "roundtrip_text": "On November six at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 2
+    },
+    "candidate": {
+      "id": "candidate-en-entities-sohee-s31",
+      "eos_seen": true,
+      "audio_seconds": 7.36,
+      "roundtrip_text": "On November six at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 2
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "sohee",
+    "seed": 117,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-sohee-s117",
+      "eos_seen": true,
+      "audio_seconds": 6.24,
+      "roundtrip_text": "On November six at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 2
+    },
+    "candidate": {
+      "id": "candidate-en-entities-sohee-s117",
+      "eos_seen": true,
+      "audio_seconds": 7.52,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Ellis.",
+      "roundtrip_alphanumeric_edits": 4
+    },
+    "candidate_edit_delta": 2
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "eric",
+    "seed": 196,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-eric-s196",
+      "eos_seen": true,
+      "audio_seconds": 6.4,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-eric-s196",
+      "eos_seen": true,
+      "audio_seconds": 6.8,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "eric",
+    "seed": 0,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-eric-s0",
+      "eos_seen": true,
+      "audio_seconds": 5.92,
+      "roundtrip_text": "Verified that the speech service remains stable, and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 3
+    },
+    "candidate": {
+      "id": "candidate-en-stability-eric-s0",
+      "eos_seen": true,
+      "audio_seconds": 5.36,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": -3
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "eric",
+    "seed": 31,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-eric-s31",
+      "eos_seen": true,
+      "audio_seconds": 6.48,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-eric-s31",
+      "eos_seen": true,
+      "audio_seconds": 6.88,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "eric",
+    "seed": 117,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-eric-s117",
+      "eos_seen": true,
+      "audio_seconds": 6.24,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-eric-s117",
+      "eos_seen": true,
+      "audio_seconds": 7.04,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "dylan",
+    "seed": 196,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-dylan-s196",
+      "eos_seen": true,
+      "audio_seconds": 4.72,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-dylan-s196",
+      "eos_seen": true,
+      "audio_seconds": 4.24,
+      "roundtrip_text": "Verified that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 3
+    },
+    "candidate_edit_delta": 3
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "dylan",
+    "seed": 0,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-dylan-s0",
+      "eos_seen": true,
+      "audio_seconds": 4.88,
+      "roundtrip_text": "Verified that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 3
+    },
+    "candidate": {
+      "id": "candidate-en-stability-dylan-s0",
+      "eos_seen": true,
+      "audio_seconds": 4.88,
+      "roundtrip_text": "Verified that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 3
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "dylan",
+    "seed": 31,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-dylan-s31",
+      "eos_seen": true,
+      "audio_seconds": 5.44,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-dylan-s31",
+      "eos_seen": true,
+      "audio_seconds": 6,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-stability",
+    "voice": "dylan",
+    "seed": 117,
+    "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+    "baseline": {
+      "id": "baseline-en-stability-dylan-s117",
+      "eos_seen": true,
+      "audio_seconds": 4.88,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-stability-dylan-s117",
+      "eos_seen": true,
+      "audio_seconds": 4.8,
+      "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "eric",
+    "seed": 196,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-eric-s196",
+      "eos_seen": true,
+      "audio_seconds": 6.48,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-entities-eric-s196",
+      "eos_seen": true,
+      "audio_seconds": 8.64,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one, two, three, four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "eric",
+    "seed": 0,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-eric-s0",
+      "eos_seen": true,
+      "audio_seconds": 9.12,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one, two, three, four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-entities-eric-s0",
+      "eos_seen": true,
+      "audio_seconds": 7.6,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "eric",
+    "seed": 31,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-eric-s31",
+      "eos_seen": true,
+      "audio_seconds": 8,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one, two, three, four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-entities-eric-s31",
+      "eos_seen": true,
+      "audio_seconds": 7.2,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one, two, three, four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "eric",
+    "seed": 117,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-eric-s117",
+      "eos_seen": true,
+      "audio_seconds": 7.52,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one, two, three, four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate": {
+      "id": "candidate-en-entities-eric-s117",
+      "eos_seen": true,
+      "audio_seconds": 7.92,
+      "roundtrip_text": "On November sixth at three in the afternoon, send file one, two, three, four to Alice.",
+      "roundtrip_alphanumeric_edits": 0
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "dylan",
+    "seed": 196,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-dylan-s196",
+      "eos_seen": true,
+      "audio_seconds": 6.64,
+      "roundtrip_text": "On November six at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 2
+    },
+    "candidate": {
+      "id": "candidate-en-entities-dylan-s196",
+      "eos_seen": true,
+      "audio_seconds": 8.24,
+      "roundtrip_text": "On November six at three in the afternoon, send file one, two, three, four to Alice.",
+      "roundtrip_alphanumeric_edits": 2
+    },
+    "candidate_edit_delta": 0
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "dylan",
+    "seed": 0,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-dylan-s0",
+      "eos_seen": true,
+      "audio_seconds": 6.4,
+      "roundtrip_text": "On November six at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 2
+    },
+    "candidate": {
+      "id": "candidate-en-entities-dylan-s0",
+      "eos_seen": true,
+      "audio_seconds": 5.92,
+      "roundtrip_text": "On November six at three in the afternoon, send file one two three four to Ali.",
+      "roundtrip_alphanumeric_edits": 4
+    },
+    "candidate_edit_delta": 2
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "dylan",
+    "seed": 31,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-dylan-s31",
+      "eos_seen": true,
+      "audio_seconds": 6.4,
+      "roundtrip_text": "On November six at three in the afternoon, send file one two three four to Alex.",
+      "roundtrip_alphanumeric_edits": 5
+    },
+    "candidate": {
+      "id": "candidate-en-entities-dylan-s31",
+      "eos_seen": true,
+      "audio_seconds": 6.16,
+      "roundtrip_text": "On November six at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 2
+    },
+    "candidate_edit_delta": -3
+  },
+  {
+    "text_id": "en-entities",
+    "voice": "dylan",
+    "seed": 117,
+    "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+    "baseline": {
+      "id": "baseline-en-entities-dylan-s117",
+      "eos_seen": true,
+      "audio_seconds": 8.08,
+      "roundtrip_text": "On November six at three in the afternoon, send file one two three four to Alex.",
+      "roundtrip_alphanumeric_edits": 5
+    },
+    "candidate": {
+      "id": "candidate-en-entities-dylan-s117",
+      "eos_seen": true,
+      "audio_seconds": 7.2,
+      "roundtrip_text": "On November six at three in the afternoon, send file one two three four to Alice.",
+      "roundtrip_alphanumeric_edits": 2
+    },
+    "candidate_edit_delta": -3
+  }
+]

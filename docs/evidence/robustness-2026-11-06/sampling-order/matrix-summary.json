@@ -1,0 +1,284 @@
+{
+  "status": "diagnostic_completed",
+  "source_sha256": {
+    "matrix": "7c19a841ca7fbb234bfb3d3a63ca816f2c5970f4a7049e9351982d2993ca90a4",
+    "baseline_matrix": "440ce96afa825e5b94f61b19e374a142978b04d7b62b186be82fd0e84ce5bcee",
+    "asr": "9597af3586e57854f03a310e5097645f6abf521a109f22f4eeeee3634f589b08"
+  },
+  "generations": 288,
+  "pairs": 144,
+  "asr_requests": 294,
+  "scope": "Fixed four texts / nine voices / four predeclared seeds; seed 196 was selected from earlier failure. Not a population failure rate.",
+  "scoring_limit": "Alphanumeric edit distance after NFKC/casefold, punctuation/space removal. No number normalization. Combined TTS/ASR errors, dialect and number notation can affect this diagnostic; no human listening evidence.",
+  "default_parameters_changed": false,
+  "candidate_promoted": false,
+  "groups": [
+    {
+      "group": "baseline",
+      "temperature": 0.7,
+      "temperature_before_top_k": false,
+      "generations": 144,
+      "without_eos": 1,
+      "over_15_audio_seconds": 2,
+      "median_audio_seconds": 5.84,
+      "maximum_audio_seconds": 96,
+      "roundtrip_normalized_exact": 122,
+      "roundtrip_total_alphanumeric_edits": 113
+    },
+    {
+      "group": "candidate",
+      "temperature": 0.7,
+      "temperature_before_top_k": true,
+      "generations": 144,
+      "without_eos": 0,
+      "over_15_audio_seconds": 0,
+      "median_audio_seconds": 5.84,
+      "maximum_audio_seconds": 11.04,
+      "roundtrip_normalized_exact": 125,
+      "roundtrip_total_alphanumeric_edits": 56
+    }
+  ],
+  "paired_roundtrip_edits": {
+    "candidate_fewer": 10,
+    "equal": 129,
+    "candidate_more": 5
+  },
+  "largest_candidate_increases": [
+    {
+      "text_id": "en-stability",
+      "voice": "serena",
+      "seed": 0,
+      "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+      "baseline": {
+        "id": "baseline-en-stability-serena-s0",
+        "eos_seen": true,
+        "audio_seconds": 5.92,
+        "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+        "roundtrip_alphanumeric_edits": 0
+      },
+      "candidate": {
+        "id": "candidate-en-stability-serena-s0",
+        "eos_seen": true,
+        "audio_seconds": 5.68,
+        "roundtrip_text": "Verify that speech service remains stable and recovers after an interruption.",
+        "roundtrip_alphanumeric_edits": 3
+      },
+      "candidate_edit_delta": 3
+    },
+    {
+      "text_id": "en-stability",
+      "voice": "dylan",
+      "seed": 196,
+      "reference": "Verify that the speech service remains stable and recovers after an interruption.",
+      "baseline": {
+        "id": "baseline-en-stability-dylan-s196",
+        "eos_seen": true,
+        "audio_seconds": 4.72,
+        "roundtrip_text": "Verify that the speech service remains stable and recovers after an interruption.",
+        "roundtrip_alphanumeric_edits": 0
+      },
+      "candidate": {
+        "id": "candidate-en-stability-dylan-s196",
+        "eos_seen": true,
+        "audio_seconds": 4.24,
+        "roundtrip_text": "Verified that the speech service remains stable and recovers after an interruption.",
+        "roundtrip_alphanumeric_edits": 3
+      },
+      "candidate_edit_delta": 3
+    },
+    {
+      "text_id": "en-entities",
+      "voice": "sohee",
+      "seed": 117,
+      "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "baseline": {
+        "id": "baseline-en-entities-sohee-s117",
+        "eos_seen": true,
+        "audio_seconds": 6.24,
+        "roundtrip_text": "On November six at three in the afternoon, send file one two three four to Alice.",
+        "roundtrip_alphanumeric_edits": 2
+      },
+      "candidate": {
+        "id": "candidate-en-entities-sohee-s117",
+        "eos_seen": true,
+        "audio_seconds": 7.52,
+        "roundtrip_text": "On November sixth at three in the afternoon, send file one two three four to Ellis.",
+        "roundtrip_alphanumeric_edits": 4
+      },
+      "candidate_edit_delta": 2
+    },
+    {
+      "text_id": "en-entities",
+      "voice": "dylan",
+      "seed": 0,
+      "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "baseline": {
+        "id": "baseline-en-entities-dylan-s0",
+        "eos_seen": true,
+        "audio_seconds": 6.4,
+        "roundtrip_text": "On November six at three in the afternoon, send file one two three four to Alice.",
+        "roundtrip_alphanumeric_edits": 2
+      },
+      "candidate": {
+        "id": "candidate-en-entities-dylan-s0",
+        "eos_seen": true,
+        "audio_seconds": 5.92,
+        "roundtrip_text": "On November six at three in the afternoon, send file one two three four to Ali.",
+        "roundtrip_alphanumeric_edits": 4
+      },
+      "candidate_edit_delta": 2
+    },
+    {
+      "text_id": "en-entities",
+      "voice": "vivian",
+      "seed": 0,
+      "reference": "On November sixth at three in the afternoon, send file one two three four to Alice.",
+      "baseline": {
+        "id": "baseline-en-entities-vivian-s0",
+        "eos_seen": true,
+        "audio_seconds": 8.96,
+        "roundtrip_text": "November sixth at three in the afternoon. Send file one, two, three, four to Alice.",
+        "roundtrip_alphanumeric_edits": 2
+      },
+      "candidate": {
+        "id": "candidate-en-entities-vivian-s0",
+        "eos_seen": true,
+        "audio_seconds": 7.84,
+        "roundtrip_text": "November six. That's three in the afternoon. Send file one, two, three, four to Alice.",
+        "roundtrip_alphanumeric_edits": 3
+      },
+      "candidate_edit_delta": 1
+    },
+    {
+      "text_id": "zh-stability",
+      "voice": "ono_anna",
+      "seed": 0,
+      "reference": "持续验证语音服务的稳定性和恢复能力。",
+      "baseline": {
+        "id": "baseline-zh-stability-ono_anna-s0",
+        "eos_seen": true,
+        "audio_seconds": 5.44,
+        "roundtrip_text": "齐聚，验证语音服务的稳定性和恢复能力。",
+        "roundtrip_alphanumeric_edits": 2
+      },
+      "candidate": {
+        "id": "candidate-zh-stability-ono_anna-s0",
+        "eos_seen": true,
+        "audio_seconds": 5.44,
+        "roundtrip_text": "齐聚，验证语音服务的稳定性和恢复能力。",
+        "roundtrip_alphanumeric_edits": 2
+      },
+      "candidate_edit_delta": 0
+    },
+    {
+      "text_id": "zh-stability",
+      "voice": "ono_anna",
+      "seed": 31,
+      "reference": "持续验证语音服务的稳定性和恢复能力。",
+      "baseline": {
+        "id": "baseline-zh-stability-ono_anna-s31",
+        "eos_seen": true,
+        "audio_seconds": 2.56,
+        "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+        "roundtrip_alphanumeric_edits": 0
+      },
+      "candidate": {
+        "id": "candidate-zh-stability-ono_anna-s31",
+        "eos_seen": true,
+        "audio_seconds": 2.72,
+        "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+        "roundtrip_alphanumeric_edits": 0
+      },
+      "candidate_edit_delta": 0
+    },
+    {
+      "text_id": "zh-stability",
+      "voice": "serena",
+      "seed": 196,
+      "reference": "持续验证语音服务的稳定性和恢复能力。",
+      "baseline": {
+        "id": "baseline-zh-stability-serena-s196",
+        "eos_seen": true,
+        "audio_seconds": 3.28,
+        "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+        "roundtrip_alphanumeric_edits": 0
+      },
+      "candidate": {
+        "id": "candidate-zh-stability-serena-s196",
+        "eos_seen": true,
+        "audio_seconds": 3.2,
+        "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+        "roundtrip_alphanumeric_edits": 0
+      },
+      "candidate_edit_delta": 0
+    },
+    {
+      "text_id": "zh-stability",
+      "voice": "serena",
+      "seed": 0,
+      "reference": "持续验证语音服务的稳定性和恢复能力。",
+      "baseline": {
+        "id": "baseline-zh-stability-serena-s0",
+        "eos_seen": true,
+        "audio_seconds": 3.28,
+        "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+        "roundtrip_alphanumeric_edits": 0
+      },
+      "candidate": {
+        "id": "candidate-zh-stability-serena-s0",
+        "eos_seen": true,
+        "audio_seconds": 3.28,
+        "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+        "roundtrip_alphanumeric_edits": 0
+      },
+      "candidate_edit_delta": 0
+    },
+    {
+      "text_id": "zh-stability",
+      "voice": "serena",
+      "seed": 31,
+      "reference": "持续验证语音服务的稳定性和恢复能力。",
+      "baseline": {
+        "id": "baseline-zh-stability-serena-s31",
+        "eos_seen": true,
+        "audio_seconds": 3.2,
+        "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+        "roundtrip_alphanumeric_edits": 0
+      },
+      "candidate": {
+        "id": "candidate-zh-stability-serena-s31",
+        "eos_seen": true,
+        "audio_seconds": 3.2,
+        "roundtrip_text": "持续验证语音服务的稳定性和恢复能力。",
+        "roundtrip_alphanumeric_edits": 0
+      },
+      "candidate_edit_delta": 0
+    }
+  ],
+  "known_failure_pair": {
+    "text_id": "zh-stability",
+    "voice": "ono_anna",
+    "seed": 196,
+    "reference": "持续验证语音服务的稳定性和恢复能力。",
+    "baseline": {
+      "id": "baseline-zh-stability-ono_anna-s196",
+      "eos_seen": false,
+      "audio_seconds": 96,
+      "roundtrip_text": "   ",
+      "roundtrip_alphanumeric_edits": 17
+    },
+    "candidate": {
+      "id": "candidate-zh-stability-ono_anna-s196",
+      "eos_seen": true,
+      "audio_seconds": 7.2,
+      "roundtrip_text": "此句验证语音服务的稳定性和恢复能力。",
+      "roundtrip_alphanumeric_edits": 2
+    },
+    "candidate_edit_delta": -15
+  },
+  "original_baselines_reused": 128,
+  "current_route_baselines_generated": 16,
+  "candidate_generations": 144,
+  "baseline_language_routing_current": true,
+  "plan_sha256": "05bc75c6917973d3c048440ee344470694ff1146ab40299ba00f84a3ddf6c098"
+}

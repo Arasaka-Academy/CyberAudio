@@ -1,0 +1,29 @@
+{
+  "status": "completed",
+  "stage": "native",
+  "started": "2026-11-06T17:00:52.819537+00:00",
+  "production_before": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "plan_sha256": "718600c944fff701659936b0fd23f95c22adb3dbceff69ccc61113ed16d5e884",
+  "elapsed_seconds": 6.590147457958665,
+  "executable_sha256": "38a8ab3bef6db294747aa0c3db70ec4fe6396cfe7be8033c9d3e193fd588f33d",
+  "owned_group_pid": 63037,
+  "owned_identity": "63037 Sat Nov  7 01:00:52 2026     /usr/bin/sandbox-exec -f /Users/zhubby/Repository/CyberAudio/.context/robustness/model-preservation-20261107/final-bytes-model-preservation/CyberAudio.app/Contents/Resources/offline.sb /Users/zhubby/Repository/CyberAudio/.context/robustness/sampling-parity-20261107/native-build/sampling-parity-probe /Users/zhubby/Repository/CyberAudio/.context/robustness/reference-parity-20261107/native-capture /Users/zhubby/Repository/CyberAudio/.context/robustness/model-preservation-20261107/final-bytes-model-preservation/CyberAudio.app/Contents/Resources/mlx.metallib /Users/zhubby/Library/Application Support/CyberAudio/models/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit/config.json /Users/zhubby/Repository/CyberAudio/.context/robustness/sampling-parity-20261107/native-filters",
+  "exit_code": 0,
+  "owned_process_exit_code": 0,
+  "production_after": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "production_preserved": true,
+  "sdk_and_helpers_preserved": true,
+  "finished": "2026-11-06T17:00:59.426988+00:00"
+}

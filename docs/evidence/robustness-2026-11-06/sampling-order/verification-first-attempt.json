@@ -1,0 +1,10 @@
+{
+  "status": "verifier_failed",
+  "command": "rtk proxy .context/robustness/reference-parity-20261107/runtime/bin/python .context/robustness/sampling-parity-20261107/verify.py",
+  "exit_code": 1,
+  "verifier_source_sha256": "cb4cbf7064117b79dd8e0b870b8df2175727c4be340ade28e1a34e928d40a116",
+  "error_type": "KeyError",
+  "error": "tokens",
+  "line": 96,
+  "cause": "The historical report stores a token-file digest rather than an inline tokens array. Read and hash-verify the existing token file. No model workload is rerun."
+}

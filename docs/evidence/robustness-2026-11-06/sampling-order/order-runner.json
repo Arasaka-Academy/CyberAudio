@@ -1,0 +1,29 @@
+{
+  "status": "completed",
+  "stage": "order",
+  "started": "2026-11-06T17:07:35.898767+00:00",
+  "production_before": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "plan_sha256": "abe59b2f808b791b28df94ad765c55bf58a2d307856e5e46d0a5a0e245901a47",
+  "elapsed_seconds": 25.639043499948457,
+  "executable_sha256": "89bcbb7afb77aa421afe8d9f78f019aae89a7a66a1c5c43d96f791651b327393",
+  "owned_group_pid": 66660,
+  "owned_identity": "66660 Sat Nov  7 01:07:35 2026     /usr/bin/sandbox-exec -f /Users/zhubby/Repository/CyberAudio/.context/robustness/model-preservation-20261107/final-bytes-model-preservation/CyberAudio.app/Contents/Resources/offline.sb /Users/zhubby/Repository/CyberAudio/.context/robustness/sampling-parity-20261107/order-build/order-candidate-probe /Users/zhubby/Library/Application Support/CyberAudio/models/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit /Users/zhubby/Repository/CyberAudio/.context/robustness/model-preservation-20261107/final-bytes-model-preservation/CyberAudio.app/Contents/Resources/mlx.metallib /Users/zhubby/Repository/CyberAudio/.context/robustness/sampling-parity-20261107/order-generations /Users/zhubby/Repository/CyberAudio/.context/robustness/sampling-parity-20261107/order-plan.json /Users/zhubby/Repository/CyberAudio/.context/robustness/m4-acceptance-20261106/m1-text-layout-probe/report.json",
+  "exit_code": 0,
+  "owned_process_exit_code": 0,
+  "production_after": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "production_preserved": true,
+  "sdk_and_helpers_preserved": true,
+  "finished": "2026-11-06T17:08:01.553743+00:00"
+}

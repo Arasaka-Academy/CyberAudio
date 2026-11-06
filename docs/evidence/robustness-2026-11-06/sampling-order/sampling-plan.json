@@ -1,0 +1,20 @@
+{
+  "purpose": "Localize actual Swift/Python sampling distribution differences on the 146 retained teacher-forced steps before qualifying any model change",
+  "source_commit": "9807bf0",
+  "capture_directory": ".context/robustness/reference-parity-20261107/native-capture",
+  "hypothesis": "Temperature division in bfloat16 before versus after top-k can change tied cutoffs; compare actual sampler outputs and separate EOS restoration. Histories here are at most 31 tokens, so the 64-token repetition window cannot explain any difference in this cohort.",
+  "requirements": [
+    "Use the exact source-extracted managed Swift sampleToken body; the only addition observes its final categorical logits",
+    "Validate all 2336 native sample tokens against the original captured full codec vectors with original seeds and call ordering",
+    "Invoke the unmodified installed Python Model._sample_token and intercept only its final categorical call; retain actual implementation source hashes",
+    "Compare finite supports, logits and float64 normalized probabilities; no population failure rate or listening/quality pass",
+    "Preserve all formal source, shared objects, Helpers, model bytes and production state"
+  ],
+  "temperature": 0.7,
+  "top_k": 50,
+  "top_p": 1.0,
+  "repetition_penalty": 1.05,
+  "native_budget_seconds": 120,
+  "reference_budget_seconds": 120,
+  "candidate_generation_authorized_by_diagnostic": false
+}

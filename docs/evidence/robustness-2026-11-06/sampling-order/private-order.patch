@@ -1,0 +1,8 @@
+--- managed/Qwen3TTS.swift
++++ private/Qwen3TTS.swift
+@@ -1053,0 +1054,2 @@
++        logitsSlice = logitsSlice / temperature
++
+@@ -1127 +1129 @@
+-        let token = categorical(filteredLogits / temperature)
++        let token = categorical(filteredLogits)

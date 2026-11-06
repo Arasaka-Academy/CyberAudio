@@ -1,0 +1,73 @@
+{
+  "purpose": "Private candidate changes only temperature/top-k execution order, retaining full text prefill, original parameters, EOS protection and full repetition history",
+  "source_commit": "9807bf0",
+  "sampling_evidence_sha256": "680c93d50d56ae0e195ddac0caf8ccdfb3e507f97ff9064446367c896263f4b5",
+  "cases": [
+    {
+      "id": "known-failure",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "voice": "ono_anna",
+      "language": "chinese",
+      "seed": 196
+    },
+    {
+      "id": "short-control",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "voice": "ono_anna",
+      "language": "chinese",
+      "seed": 31
+    },
+    {
+      "id": "eric-english-numeric",
+      "text": "1234",
+      "voice": "eric",
+      "language": "english",
+      "seed": 31
+    },
+    {
+      "id": "dylan-english-numeric",
+      "text": "1234",
+      "voice": "dylan",
+      "language": "english",
+      "seed": 31
+    },
+    {
+      "id": "date-name-control",
+      "text": "Alice will meet Bob on November sixth, twenty twenty-six.",
+      "voice": "ryan",
+      "language": "english",
+      "seed": 31
+    },
+    {
+      "id": "known-failure-repeat",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "voice": "ono_anna",
+      "language": "chinese",
+      "seed": 196
+    }
+  ],
+  "temperature": 0.7,
+  "subtalker_temperature": 0.7,
+  "top_k": 50,
+  "top_p": 1.0,
+  "repetition_penalty": 1.05,
+  "max_tokens": 1200,
+  "total_budget_seconds": 600,
+  "individual_budget_seconds": 120,
+  "baseline_report": ".context/robustness/m4-acceptance-20261106/m1-text-layout-probe/report.json",
+  "candidate_does_not_change": [
+    "model weights",
+    "full-text prefill",
+    "sampling parameter values",
+    "EOS restoration",
+    "repetition history extent",
+    "original baseline failures and strict gate"
+  ],
+  "qualification": [
+    "Retain all six planned candidate outputs, including failures",
+    "Compare the five original prefill baseline outputs with exact text/voice/language/seed and PCM digest checks",
+    "Both seed196 candidate repetitions must match each other",
+    "Send all outputs through the same final App ASR with baseline reuse; any normal-control regression prevents promotion pending localization",
+    "No production adoption or strict-soak rerun from small-sample EOS completion alone"
+  ]
+}
