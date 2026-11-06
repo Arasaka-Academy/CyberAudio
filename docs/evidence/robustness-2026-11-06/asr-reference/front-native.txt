@@ -1,0 +1,12 @@
+CAPTURE rms-composite-zh-002-1883-en-008-1846-clean 327
+CAPTURE rms-composite-zh-002-1883-en-008-1846-snr20 327
+CAPTURE rms-composite-en-008-1846-zh-002-1883-clean 327
+CAPTURE rms-composite-en-008-1846-zh-002-1883-snr20 327
+CAPTURE rms-composite-zh-020-1779-en-046-1710-clean 319
+CAPTURE rms-composite-zh-020-1779-en-046-1710-snr20 319
+CAPTURE rms-composite-en-046-1710-zh-020-1779-clean 319
+CAPTURE rms-composite-en-046-1710-zh-020-1779-snr20 319
+CAPTURE zh-002-1883-clean 180
+CAPTURE zh-020-1779-clean 197
+CAPTURE en-008-1846-clean 144
+CAPTURE en-046-1710-clean 119

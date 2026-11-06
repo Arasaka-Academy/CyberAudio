@@ -1,0 +1,35 @@
+{
+  "purpose": "Separate frontend and encoder-output numerical sensitivity with one in-memory tensor substitution per arm; all twelve original cases retained",
+  "arms": [
+    "unmodified-repeat",
+    "native-mel-only",
+    "native-encoded-only"
+  ],
+  "original_plan_sha256": "5d013165f34eee9c12302d2559e983e043ce4bf702c989d496da5bd525095d36",
+  "native_front_report_sha256": "ca20f07b52a971a4c5286c92bea503359f19ec8ac601cc5099cb8b6f5095d844",
+  "reference_report_sha256": "9270e13d271b36fd8c1db18b68512c788b877ea4508be9a716d5cb069b3a1803",
+  "front_comparison_sha256": "f2db4a1abb5264cfa94e99629b37b942e419572be1c86a72260236838753c817",
+  "cases": [
+    "rms-composite-zh-002-1883-en-008-1846-clean",
+    "rms-composite-zh-002-1883-en-008-1846-snr20",
+    "rms-composite-en-008-1846-zh-002-1883-clean",
+    "rms-composite-en-008-1846-zh-002-1883-snr20",
+    "rms-composite-zh-020-1779-en-046-1710-clean",
+    "rms-composite-zh-020-1779-en-046-1710-snr20",
+    "rms-composite-en-046-1710-zh-020-1779-clean",
+    "rms-composite-en-046-1710-zh-020-1779-snr20",
+    "zh-002-1883-clean",
+    "zh-020-1779-clean",
+    "en-008-1846-clean",
+    "en-046-1710-clean"
+  ],
+  "total_budget_seconds": 600,
+  "individual_budget_seconds": 90,
+  "constraints": [
+    "Native mel injection keeps original Python mask, token count, encoder and decoder",
+    "Native encoded injection keeps original Python preprocessing, prompt and decoder",
+    "Unmodified reference text must reproduce before each pair of interventions",
+    "Restore all bound methods between interventions; model/reference/installed files unchanged",
+    "Diagnostic only; not a promoted model or application change"
+  ]
+}

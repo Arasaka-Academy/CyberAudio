@@ -1,0 +1,1297 @@
+{
+  "status": "diagnostic_completed",
+  "started": "2026-11-06T19:00:21.560197+00:00",
+  "plan_sha256": "5d013165f34eee9c12302d2559e983e043ce4bf702c989d496da5bd525095d36",
+  "native_report_sha256": "ca20f07b52a971a4c5286c92bea503359f19ec8ac601cc5099cb8b6f5095d844",
+  "reference_report_sha256": "9270e13d271b36fd8c1db18b68512c788b877ea4508be9a716d5cb069b3a1803",
+  "source_sha256": "d5394537390f317510f9ced7f621c8a2eb3d86620a6c0f12c6a254c29ef5c6a3",
+  "no_reference_methods_replaced": true,
+  "results": [
+    {
+      "id": "rms-composite-zh-002-1883-en-008-1846-clean",
+      "original_reference_text_exact": true,
+      "num_audio_tokens": 327,
+      "native_num_audio_tokens": 327,
+      "file": "rms-composite-zh-002-1883-en-008-1846-clean.safetensors",
+      "sha256": "33f8e65aaf71c7fe69cd98a7be513f78dc4ec1acb100522e1ab17d013defd7e5",
+      "bytes": 5589258,
+      "comparisons": {
+        "audio": {
+          "native_shape": [
+            402400
+          ],
+          "reference_shape": [
+            402400
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "mel": {
+          "native_shape": [
+            1,
+            128,
+            2515
+          ],
+          "reference_shape": [
+            1,
+            128,
+            2515
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": false,
+          "different_values": 292768,
+          "max_abs": 0.000125885009765625,
+          "mean_abs": 6.208646205618652e-07,
+          "rms_abs": 1.472191008815576e-06
+        },
+        "mask": {
+          "native_shape": [
+            1,
+            2515
+          ],
+          "reference_shape": [
+            1,
+            2515
+          ],
+          "native_dtype": "mlx.core.int32",
+          "reference_dtype": "mlx.core.int32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "prompt": {
+          "native_shape": [
+            1,
+            342
+          ],
+          "reference_shape": [
+            1,
+            342
+          ],
+          "native_dtype": "mlx.core.int32",
+          "reference_dtype": "mlx.core.int64",
+          "shape_equal": true,
+          "dtype_equal": false,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "encoded": {
+          "native_shape": [
+            327,
+            2048
+          ],
+          "reference_shape": [
+            327,
+            2048
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": false,
+          "different_values": 659591,
+          "max_abs": 1.6801059246063232e-06,
+          "mean_abs": 4.1284586331967765e-08,
+          "rms_abs": 7.208508795316965e-08
+        }
+      },
+      "processing_seconds": 1.2437874999595806
+    },
+    {
+      "id": "rms-composite-zh-002-1883-en-008-1846-snr20",
+      "original_reference_text_exact": true,
+      "num_audio_tokens": 327,
+      "native_num_audio_tokens": 327,
+      "file": "rms-composite-zh-002-1883-en-008-1846-snr20.safetensors",
+      "sha256": "db2f5c9065d1194cdccab0f726cbb5ad1f9a1feb58e9ff2076c2cfcdb30b57ab",
+      "bytes": 5589258,
+      "comparisons": {
+        "audio": {
+          "native_shape": [
+            402400
+          ],
+          "reference_shape": [
+            402400
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "mel": {
+          "native_shape": [
+            1,
+            128,
+            2515
+          ],
+          "reference_shape": [
+            1,
+            128,
+            2515
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": false,
+          "different_values": 287429,
+          "max_abs": 0.00012791156768798828,
+          "mean_abs": 4.4566340314939056e-07,
+          "rms_abs": 9.390973296334091e-07
+        },
+        "mask": {
+          "native_shape": [
+            1,
+            2515
+          ],
+          "reference_shape": [
+            1,
+            2515
+          ],
+          "native_dtype": "mlx.core.int32",
+          "reference_dtype": "mlx.core.int32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "prompt": {
+          "native_shape": [
+            1,
+            342
+          ],
+          "reference_shape": [
+            1,
+            342
+          ],
+          "native_dtype": "mlx.core.int32",
+          "reference_dtype": "mlx.core.int64",
+          "shape_equal": true,
+          "dtype_equal": false,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "encoded": {
+          "native_shape": [
+            327,
+            2048
+          ],
+          "reference_shape": [
+            327,
+            2048
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": false,
+          "different_values": 659339,
+          "max_abs": 2.9942020773887634e-06,
+          "mean_abs": 4.5007750547226206e-08,
+          "rms_abs": 9.65790555252006e-08
+        }
+      },
+      "processing_seconds": 1.0405211670440622
+    },
+    {
+      "id": "rms-composite-en-008-1846-zh-002-1883-clean",
+      "original_reference_text_exact": true,
+      "num_audio_tokens": 327,
+      "native_num_audio_tokens": 327,
+      "file": "rms-composite-en-008-1846-zh-002-1883-clean.safetensors",
+      "sha256": "81121036043775234f39db21421ab9eed022c3566320b7b702e07d6c8457958d",
+      "bytes": 5589258,
+      "comparisons": {
+        "audio": {
+          "native_shape": [
+            402400
+          ],
+          "reference_shape": [
+            402400
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "mel": {
+          "native_shape": [
+            1,
+            128,
+            2515
+          ],
+          "reference_shape": [
+            1,
+            128,
+            2515
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": false,
+          "different_values": 292495,
+          "max_abs": 0.00012540817260742188,
+          "mean_abs": 6.190173431608834e-07,
+          "rms_abs": 1.4661849816076279e-06
+        },
+        "mask": {
+          "native_shape": [
+            1,
+            2515
+          ],
+          "reference_shape": [
+            1,
+            2515
+          ],
+          "native_dtype": "mlx.core.int32",
+          "reference_dtype": "mlx.core.int32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "prompt": {
+          "native_shape": [
+            1,
+            342
+          ],
+          "reference_shape": [
+            1,
+            342
+          ],
+          "native_dtype": "mlx.core.int32",
+          "reference_dtype": "mlx.core.int64",
+          "shape_equal": true,
+          "dtype_equal": false,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "encoded": {
+          "native_shape": [
+            327,
+            2048
+          ],
+          "reference_shape": [
+            327,
+            2048
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": false,
+          "different_values": 658925,
+          "max_abs": 1.1473894119262695e-06,
+          "mean_abs": 3.447180706565189e-08,
+          "rms_abs": 5.4006693405441624e-08
+        }
+      },
+      "processing_seconds": 1.0887879999936558
+    },
+    {
+      "id": "rms-composite-en-008-1846-zh-002-1883-snr20",
+      "original_reference_text_exact": true,
+      "num_audio_tokens": 327,
+      "native_num_audio_tokens": 327,
+      "file": "rms-composite-en-008-1846-zh-002-1883-snr20.safetensors",
+      "sha256": "821b9e03ac47bdeaf531041deaa3f98527f89e47aadefb927d867048dba9ffcd",
+      "bytes": 5589258,
+      "comparisons": {
+        "audio": {
+          "native_shape": [
+            402400
+          ],
+          "reference_shape": [
+            402400
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "mel": {
+          "native_shape": [
+            1,
+            128,
+            2515
+          ],
+          "reference_shape": [
+            1,
+            128,
+            2515
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": false,
+          "different_values": 287209,
+          "max_abs": 0.00012350082397460938,
+          "mean_abs": 4.4637476325509087e-07,
+          "rms_abs": 1.0345496142995246e-06
+        },
+        "mask": {
+          "native_shape": [
+            1,
+            2515
+          ],
+          "reference_shape": [
+            1,
+            2515
+          ],
+          "native_dtype": "mlx.core.int32",
+          "reference_dtype": "mlx.core.int32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "prompt": {
+          "native_shape": [
+            1,
+            342
+          ],
+          "reference_shape": [
+            1,
+            342
+          ],
+          "native_dtype": "mlx.core.int32",
+          "reference_dtype": "mlx.core.int64",
+          "shape_equal": true,
+          "dtype_equal": false,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "encoded": {
+          "native_shape": [
+            327,
+            2048
+          ],
+          "reference_shape": [
+            327,
+            2048
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": false,
+          "different_values": 659981,
+          "max_abs": 7.275491952896118e-06,
+          "mean_abs": 5.492868480754091e-08,
+          "rms_abs": 1.7784188283028952e-07
+        }
+      },
+      "processing_seconds": 1.0710767079726793
+    },
+    {
+      "id": "rms-composite-zh-020-1779-en-046-1710-clean",
+      "original_reference_text_exact": true,
+      "num_audio_tokens": 319,
+      "native_num_audio_tokens": 319,
+      "file": "rms-composite-zh-020-1779-en-046-1710-clean.safetensors",
+      "sha256": "e964caa4f153d4ad677ecef21f61bbcdc7cc9fef2314ee4f736a6cef47c5a6f0",
+      "bytes": 5451986,
+      "comparisons": {
+        "audio": {
+          "native_shape": [
+            392480
+          ],
+          "reference_shape": [
+            392480
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "mel": {
+          "native_shape": [
+            1,
+            128,
+            2453
+          ],
+          "reference_shape": [
+            1,
+            128,
+            2453
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": false,
+          "different_values": 264127,
+          "max_abs": 0.00012862682342529297,
+          "mean_abs": 5.850190265636467e-07,
+          "rms_abs": 1.6079032308307394e-06
+        },
+        "mask": {
+          "native_shape": [
+            1,
+            2453
+          ],
+          "reference_shape": [
+            1,
+            2453
+          ],
+          "native_dtype": "mlx.core.int32",
+          "reference_dtype": "mlx.core.int32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "prompt": {
+          "native_shape": [
+            1,
+            334
+          ],
+          "reference_shape": [
+            1,
+            334
+          ],
+          "native_dtype": "mlx.core.int32",
+          "reference_dtype": "mlx.core.int64",
+          "shape_equal": true,
+          "dtype_equal": false,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "encoded": {
+          "native_shape": [
+            319,
+            2048
+          ],
+          "reference_shape": [
+            319,
+            2048
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": false,
+          "different_values": 644233,
+          "max_abs": 2.2388994693756104e-06,
+          "mean_abs": 4.471732636983096e-08,
+          "rms_abs": 8.034157781575245e-08
+        }
+      },
+      "processing_seconds": 0.9320722079719417
+    },
+    {
+      "id": "rms-composite-zh-020-1779-en-046-1710-snr20",
+      "original_reference_text_exact": true,
+      "num_audio_tokens": 319,
+      "native_num_audio_tokens": 319,
+      "file": "rms-composite-zh-020-1779-en-046-1710-snr20.safetensors",
+      "sha256": "c17902f22f374c6e96b913666906000f6f62e71744b0655786338a2092305034",
+      "bytes": 5451986,
+      "comparisons": {
+        "audio": {
+          "native_shape": [
+            392480
+          ],
+          "reference_shape": [
+            392480
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "mel": {
+          "native_shape": [
+            1,
+            128,
+            2453
+          ],
+          "reference_shape": [
+            1,
+            128,
+            2453
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": false,
+          "different_values": 275286,
+          "max_abs": 9.763240814208984e-05,
+          "mean_abs": 4.3807792732825434e-07,
+          "rms_abs": 9.959165144661447e-07
+        },
+        "mask": {
+          "native_shape": [
+            1,
+            2453
+          ],
+          "reference_shape": [
+            1,
+            2453
+          ],
+          "native_dtype": "mlx.core.int32",
+          "reference_dtype": "mlx.core.int32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "prompt": {
+          "native_shape": [
+            1,
+            334
+          ],
+          "reference_shape": [
+            1,
+            334
+          ],
+          "native_dtype": "mlx.core.int32",
+          "reference_dtype": "mlx.core.int64",
+          "shape_equal": true,
+          "dtype_equal": false,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "encoded": {
+          "native_shape": [
+            319,
+            2048
+          ],
+          "reference_shape": [
+            319,
+            2048
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": false,
+          "different_values": 644456,
+          "max_abs": 6.016343832015991e-06,
+          "mean_abs": 6.317933331081723e-08,
+          "rms_abs": 1.6496418990899213e-07
+        }
+      },
+      "processing_seconds": 0.9338472500094213
+    },
+    {
+      "id": "rms-composite-en-046-1710-zh-020-1779-clean",
+      "original_reference_text_exact": true,
+      "num_audio_tokens": 319,
+      "native_num_audio_tokens": 319,
+      "file": "rms-composite-en-046-1710-zh-020-1779-clean.safetensors",
+      "sha256": "d3a8d6e4f9ea8210cb49014a674dd1db45701e190c023d41d48a793ee2d3fcf4",
+      "bytes": 5451986,
+      "comparisons": {
+        "audio": {
+          "native_shape": [
+            392480
+          ],
+          "reference_shape": [
+            392480
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "mel": {
+          "native_shape": [
+            1,
+            128,
+            2453
+          ],
+          "reference_shape": [
+            1,
+            128,
+            2453
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": false,
+          "different_values": 281805,
+          "max_abs": 0.00012803077697753906,
+          "mean_abs": 5.930763146510865e-07,
+          "rms_abs": 1.629625660536852e-06
+        },
+        "mask": {
+          "native_shape": [
+            1,
+            2453
+          ],
+          "reference_shape": [
+            1,
+            2453
+          ],
+          "native_dtype": "mlx.core.int32",
+          "reference_dtype": "mlx.core.int32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "prompt": {
+          "native_shape": [
+            1,
+            334
+          ],
+          "reference_shape": [
+            1,
+            334
+          ],
+          "native_dtype": "mlx.core.int32",
+          "reference_dtype": "mlx.core.int64",
+          "shape_equal": true,
+          "dtype_equal": false,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "encoded": {
+          "native_shape": [
+            319,
+            2048
+          ],
+          "reference_shape": [
+            319,
+            2048
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": false,
+          "different_values": 645022,
+          "max_abs": 4.202127456665039e-06,
+          "mean_abs": 5.472443910495362e-08,
+          "rms_abs": 1.0214945543546526e-07
+        }
+      },
+      "processing_seconds": 0.9270158750005066
+    },
+    {
+      "id": "rms-composite-en-046-1710-zh-020-1779-snr20",
+      "original_reference_text_exact": true,
+      "num_audio_tokens": 319,
+      "native_num_audio_tokens": 319,
+      "file": "rms-composite-en-046-1710-zh-020-1779-snr20.safetensors",
+      "sha256": "fc3e0a245a2d53ead03de148396d51dcda16c30625b718d6471df51513c9575a",
+      "bytes": 5451986,
+      "comparisons": {
+        "audio": {
+          "native_shape": [
+            392480
+          ],
+          "reference_shape": [
+            392480
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "mel": {
+          "native_shape": [
+            1,
+            128,
+            2453
+          ],
+          "reference_shape": [
+            1,
+            128,
+            2453
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": false,
+          "different_values": 275353,
+          "max_abs": 0.00011336803436279297,
+          "mean_abs": 4.354925864917912e-07,
+          "rms_abs": 9.607125080836168e-07
+        },
+        "mask": {
+          "native_shape": [
+            1,
+            2453
+          ],
+          "reference_shape": [
+            1,
+            2453
+          ],
+          "native_dtype": "mlx.core.int32",
+          "reference_dtype": "mlx.core.int32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "prompt": {
+          "native_shape": [
+            1,
+            334
+          ],
+          "reference_shape": [
+            1,
+            334
+          ],
+          "native_dtype": "mlx.core.int32",
+          "reference_dtype": "mlx.core.int64",
+          "shape_equal": true,
+          "dtype_equal": false,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "encoded": {
+          "native_shape": [
+            319,
+            2048
+          ],
+          "reference_shape": [
+            319,
+            2048
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": false,
+          "different_values": 644251,
+          "max_abs": 5.945563316345215e-06,
+          "mean_abs": 5.249844819820087e-08,
+          "rms_abs": 1.2959906703523178e-07
+        }
+      },
+      "processing_seconds": 0.9175917090033181
+    },
+    {
+      "id": "zh-002-1883-clean",
+      "original_reference_text_exact": true,
+      "num_audio_tokens": 180,
+      "native_num_audio_tokens": 180,
+      "file": "zh-002-1883-clean.safetensors",
+      "sha256": "b75effc150b6590a7dfbd9593d9eac0b170eafb424be0e7e96f3076fde42330b",
+      "bytes": 3078734,
+      "comparisons": {
+        "audio": {
+          "native_shape": [
+            221760
+          ],
+          "reference_shape": [
+            221760
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "mel": {
+          "native_shape": [
+            1,
+            128,
+            1386
+          ],
+          "reference_shape": [
+            1,
+            128,
+            1386
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": false,
+          "different_values": 159350,
+          "max_abs": 0.000125885009765625,
+          "mean_abs": 5.936072695822943e-07,
+          "rms_abs": 1.4154687866167936e-06
+        },
+        "mask": {
+          "native_shape": [
+            1,
+            1386
+          ],
+          "reference_shape": [
+            1,
+            1386
+          ],
+          "native_dtype": "mlx.core.int32",
+          "reference_dtype": "mlx.core.int32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "prompt": {
+          "native_shape": [
+            1,
+            195
+          ],
+          "reference_shape": [
+            1,
+            195
+          ],
+          "native_dtype": "mlx.core.int32",
+          "reference_dtype": "mlx.core.int64",
+          "shape_equal": true,
+          "dtype_equal": false,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "encoded": {
+          "native_shape": [
+            180,
+            2048
+          ],
+          "reference_shape": [
+            180,
+            2048
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": false,
+          "different_values": 363501,
+          "max_abs": 1.7248094081878662e-06,
+          "mean_abs": 4.553847248672187e-08,
+          "rms_abs": 7.442414562815958e-08
+        }
+      },
+      "processing_seconds": 0.6096641250187531
+    },
+    {
+      "id": "zh-020-1779-clean",
+      "original_reference_text_exact": true,
+      "num_audio_tokens": 197,
+      "native_num_audio_tokens": 197,
+      "file": "zh-020-1779-clean.safetensors",
+      "sha256": "3cb040381f74abf7487071d575563a42795953cab29ff877aa583254c13ce25a",
+      "bytes": 3368414,
+      "comparisons": {
+        "audio": {
+          "native_shape": [
+            242560
+          ],
+          "reference_shape": [
+            242560
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "mel": {
+          "native_shape": [
+            1,
+            128,
+            1516
+          ],
+          "reference_shape": [
+            1,
+            128,
+            1516
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": false,
+          "different_values": 159337,
+          "max_abs": 0.00012862682342529297,
+          "mean_abs": 5.418156448132444e-07,
+          "rms_abs": 1.4628117346190464e-06
+        },
+        "mask": {
+          "native_shape": [
+            1,
+            1516
+          ],
+          "reference_shape": [
+            1,
+            1516
+          ],
+          "native_dtype": "mlx.core.int32",
+          "reference_dtype": "mlx.core.int32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "prompt": {
+          "native_shape": [
+            1,
+            212
+          ],
+          "reference_shape": [
+            1,
+            212
+          ],
+          "native_dtype": "mlx.core.int32",
+          "reference_dtype": "mlx.core.int64",
+          "shape_equal": true,
+          "dtype_equal": false,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "encoded": {
+          "native_shape": [
+            197,
+            2048
+          ],
+          "reference_shape": [
+            197,
+            2048
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": false,
+          "different_values": 399441,
+          "max_abs": 3.155320882797241e-06,
+          "mean_abs": 7.418065971977611e-08,
+          "rms_abs": 1.2978665924099499e-07
+        }
+      },
+      "processing_seconds": 0.5606178340385668
+    },
+    {
+      "id": "en-008-1846-clean",
+      "original_reference_text_exact": true,
+      "num_audio_tokens": 144,
+      "native_num_audio_tokens": 144,
+      "file": "en-008-1846-clean.safetensors",
+      "sha256": "e680246dbbcc01ce57988b7ce3f0353f0b650ec7a7d9f34b219402e5226b68e1",
+      "bytes": 2457542,
+      "comparisons": {
+        "audio": {
+          "native_shape": [
+            176640
+          ],
+          "reference_shape": [
+            176640
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "mel": {
+          "native_shape": [
+            1,
+            128,
+            1104
+          ],
+          "reference_shape": [
+            1,
+            128,
+            1104
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": false,
+          "different_values": 130182,
+          "max_abs": 9.202957153320312e-05,
+          "mean_abs": 7.244677323362102e-07,
+          "rms_abs": 1.7720092349977957e-06
+        },
+        "mask": {
+          "native_shape": [
+            1,
+            1104
+          ],
+          "reference_shape": [
+            1,
+            1104
+          ],
+          "native_dtype": "mlx.core.int32",
+          "reference_dtype": "mlx.core.int32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "prompt": {
+          "native_shape": [
+            1,
+            159
+          ],
+          "reference_shape": [
+            1,
+            159
+          ],
+          "native_dtype": "mlx.core.int32",
+          "reference_dtype": "mlx.core.int64",
+          "shape_equal": true,
+          "dtype_equal": false,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "encoded": {
+          "native_shape": [
+            144,
+            2048
+          ],
+          "reference_shape": [
+            144,
+            2048
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": false,
+          "different_values": 290114,
+          "max_abs": 8.868519216775894e-07,
+          "mean_abs": 3.078703316666203e-08,
+          "rms_abs": 4.8080568399895524e-08
+        }
+      },
+      "processing_seconds": 0.5462649579858407
+    },
+    {
+      "id": "en-046-1710-clean",
+      "original_reference_text_exact": true,
+      "num_audio_tokens": 119,
+      "native_num_audio_tokens": 119,
+      "file": "en-046-1710-clean.safetensors",
+      "sha256": "909079192ca3f6c512ccdb1893d41cd42da7b5a84ad357fdbdba75b5e3379ceb",
+      "bytes": 2030582,
+      "comparisons": {
+        "audio": {
+          "native_shape": [
+            145920
+          ],
+          "reference_shape": [
+            145920
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "mel": {
+          "native_shape": [
+            1,
+            128,
+            912
+          ],
+          "reference_shape": [
+            1,
+            128,
+            912
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": false,
+          "different_values": 105629,
+          "max_abs": 0.00012135505676269531,
+          "mean_abs": 6.844358020380401e-07,
+          "rms_abs": 1.8840640540811556e-06
+        },
+        "mask": {
+          "native_shape": [
+            1,
+            912
+          ],
+          "reference_shape": [
+            1,
+            912
+          ],
+          "native_dtype": "mlx.core.int32",
+          "reference_dtype": "mlx.core.int32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "prompt": {
+          "native_shape": [
+            1,
+            134
+          ],
+          "reference_shape": [
+            1,
+            134
+          ],
+          "native_dtype": "mlx.core.int32",
+          "reference_dtype": "mlx.core.int64",
+          "shape_equal": true,
+          "dtype_equal": false,
+          "values_exact": true,
+          "different_values": 0,
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "rms_abs": 0.0
+        },
+        "encoded": {
+          "native_shape": [
+            119,
+            2048
+          ],
+          "reference_shape": [
+            119,
+            2048
+          ],
+          "native_dtype": "mlx.core.float32",
+          "reference_dtype": "mlx.core.float32",
+          "shape_equal": true,
+          "dtype_equal": true,
+          "values_exact": false,
+          "different_values": 239437,
+          "max_abs": 1.2260861694812775e-06,
+          "mean_abs": 2.8205367647447134e-08,
+          "rms_abs": 4.7612007530932224e-08
+        }
+      },
+      "processing_seconds": 0.5052276669885032
+    }
+  ],
+  "elapsed_seconds": 11.8854034160031,
+  "finished": "2026-11-06T19:00:33.445601+00:00"
+}

@@ -1,0 +1,128 @@
+{
+  "elapsed_seconds" : 15.571681374975014,
+  "native_report_sha256" : "c987ab496ad94b65c4de8f108663d91ac3e8bdad4514659712911659ed2fc8af",
+  "plan_sha256" : "5d013165f34eee9c12302d2559e983e043ce4bf702c989d496da5bd525095d36",
+  "results" : [
+    {
+      "bytes" : 5587890,
+      "file" : "rms-composite-zh-002-1883-en-008-1846-clean.safetensors",
+      "id" : "rms-composite-zh-002-1883-en-008-1846-clean",
+      "input_float32_sha256" : "d820a9a0f30e1dd4589b98c09e95e55ac483b66c40414ef1a4aef5a113440fae",
+      "native_http_text_exact" : true,
+      "num_audio_tokens" : 327,
+      "sha256" : "03e0934366cabff38e3528bcd48ddffe84582faed0d1163c1649a0f3c05c4259",
+      "text" : "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3:2."
+    },
+    {
+      "bytes" : 5587890,
+      "file" : "rms-composite-zh-002-1883-en-008-1846-snr20.safetensors",
+      "id" : "rms-composite-zh-002-1883-en-008-1846-snr20",
+      "input_float32_sha256" : "a84006602f0d41a77f7e5adc7f6aeed91028e1a0d90b48c9770b35788523b9f6",
+      "native_http_text_exact" : true,
+      "num_audio_tokens" : 327,
+      "sha256" : "021ed6cfbe7fc896b1a6d690ca512b50b676792311d4adad9c26138056e81f4c",
+      "text" : "The aspect ratio of this format, dividing by twelve to obtain the simplest whole number ratio, is therefore said to be three to two."
+    },
+    {
+      "bytes" : 5587886,
+      "file" : "rms-composite-en-008-1846-zh-002-1883-clean.safetensors",
+      "id" : "rms-composite-en-008-1846-zh-002-1883-clean",
+      "input_float32_sha256" : "9d7da3ffcaa9ba4a31c0796e3a13ed08b6181ffaa47a478494502105752e2e9a",
+      "native_http_text_exact" : true,
+      "num_audio_tokens" : 327,
+      "sha256" : "fd2f30c44e4d8513c2c4a720f396359bdfb7ead3fb2c1f10f67eccc487c8ea53",
+      "text" : "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3:2. The bridge is 15 meters above the river. The project was completed in August 2011, but it didn't open until March 2017."
+    },
+    {
+      "bytes" : 5587882,
+      "file" : "rms-composite-en-008-1846-zh-002-1883-snr20.safetensors",
+      "id" : "rms-composite-en-008-1846-zh-002-1883-snr20",
+      "input_float32_sha256" : "14ff612e0819adf7bc4e58f1d515d864d21c5ffe3235eec467ac5afd7699e1c6",
+      "native_http_text_exact" : true,
+      "num_audio_tokens" : 327,
+      "sha256" : "2038bb8017edafa0bbf673304879e5bee0dc62b9e9b9ee8996fbcbfa1acbcd7c",
+      "text" : "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3 to 2.桥下垂直净空15米。该项目于2011年8月完工，但直到2017年3月才开始通车。"
+    },
+    {
+      "bytes" : 5450644,
+      "file" : "rms-composite-zh-020-1779-en-046-1710-clean.safetensors",
+      "id" : "rms-composite-zh-020-1779-en-046-1710-clean",
+      "input_float32_sha256" : "2dfc26a98638b9e657d07bd0598134aa95efdc137478f3f5bdc2248f98d218e1",
+      "native_http_text_exact" : true,
+      "num_audio_tokens" : 319,
+      "sha256" : "eaf75eded2703ccbe6308853ca0ac255e988270f8ea83fdec591d7f34480bf21",
+      "text" : "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后发表了声明。 Last week, Medi announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious."
+    },
+    {
+      "bytes" : 5450650,
+      "file" : "rms-composite-zh-020-1779-en-046-1710-snr20.safetensors",
+      "id" : "rms-composite-zh-020-1779-en-046-1710-snr20",
+      "input_float32_sha256" : "27346b90d1ec0fe19f50bfa4ec42b771eb47ff02d47534ff251e5b340d96105a",
+      "native_http_text_exact" : true,
+      "num_audio_tokens" : 319,
+      "sha256" : "7ab125b5bc5350b1b2dc7c2f59b60091e71e4f2a7de1efbb91a39eb9be67a29c",
+      "text" : "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后发表了声明。Last week, Medi announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious."
+    },
+    {
+      "bytes" : 5450644,
+      "file" : "rms-composite-en-046-1710-zh-020-1779-clean.safetensors",
+      "id" : "rms-composite-en-046-1710-zh-020-1779-clean",
+      "input_float32_sha256" : "7e8d2264bdd491ff1cf2e632756df25b009b4d64624cd8944b483a2d17e56c5d",
+      "native_http_text_exact" : true,
+      "num_audio_tokens" : 319,
+      "sha256" : "8446942f613fc8f8b26368e05c6d4f775a59c901866fc1ae47027ddac9f83edf",
+      "text" : "Last week, Meddy announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious. Trump, after a call with Turkish President Recep Tayyip Erdogan, issued a statement."
+    },
+    {
+      "bytes" : 5450644,
+      "file" : "rms-composite-en-046-1710-zh-020-1779-snr20.safetensors",
+      "id" : "rms-composite-en-046-1710-zh-020-1779-snr20",
+      "input_float32_sha256" : "698c261e1a941a6614782a54c76d2d0652199eb45a608df5d90106e4430b9739",
+      "native_http_text_exact" : true,
+      "num_audio_tokens" : 319,
+      "sha256" : "40a1e1f743d6610a73da0b260974987324d5ec94169a42ddf9896003816e0d00",
+      "text" : "Last week, Meddy announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.特朗普与土耳其总统雷杰普塔伊普埃尔多安通话后发表了声明。"
+    },
+    {
+      "bytes" : 3077954,
+      "file" : "zh-002-1883-clean.safetensors",
+      "id" : "zh-002-1883-clean",
+      "input_float32_sha256" : "c6e14ee68447dc849a957dcc83b13f9492c256b37bc805bbb712bc72669dcbd9",
+      "native_http_text_exact" : true,
+      "num_audio_tokens" : 180,
+      "sha256" : "51cec8a4d83c35cad2f46b9a743381f33746690748253b807b41a20f5cdc16d7",
+      "text" : "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。"
+    },
+    {
+      "bytes" : 3367566,
+      "file" : "zh-020-1779-clean.safetensors",
+      "id" : "zh-020-1779-clean",
+      "input_float32_sha256" : "1d2e024c598f23498325181add7ac9d6c134bf377c36960355935ffbc1a4886e",
+      "native_http_text_exact" : true,
+      "num_audio_tokens" : 197,
+      "sha256" : "ad357432607f42191922d075828bd46beb1d0acdf81fd1a9a6a72c40170f38ae",
+      "text" : "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后，发表了声明。"
+    },
+    {
+      "bytes" : 2456900,
+      "file" : "en-008-1846-clean.safetensors",
+      "id" : "en-008-1846-clean",
+      "input_float32_sha256" : "1a2e8ad19ac6be2b8f90e6ea6512d46ae92077332b389de96ca6d9a2f93acc67",
+      "native_http_text_exact" : true,
+      "num_audio_tokens" : 144,
+      "sha256" : "641f6fe20a2c7430664f0c84829592a2673fcfab7211352bc02154ba81d63148",
+      "text" : "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3:2."
+    },
+    {
+      "bytes" : 2030042,
+      "file" : "en-046-1710-clean.safetensors",
+      "id" : "en-046-1710-clean",
+      "input_float32_sha256" : "418f39321ed0cf942f5dcca1e73cc3255a11d005c7be6475cd86a3245d086f21",
+      "native_http_text_exact" : true,
+      "num_audio_tokens" : 119,
+      "sha256" : "30ee76085d7d68b81d1f31ef31244ef329d579250faf6e217c82c82f7df1f04b",
+      "text" : "Last week, Meddy announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious."
+    }
+  ],
+  "status" : "diagnostic_completed"
+}

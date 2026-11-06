@@ -1,0 +1,43 @@
+{
+  "status": "diagnostic_completed",
+  "started": "2026-11-06T19:00:21.240885+00:00",
+  "plan_sha256": "5d013165f34eee9c12302d2559e983e043ce4bf702c989d496da5bd525095d36",
+  "source_sha256": "394ab8abf18686990c297fceeb8f60b40ac4fa42ab15651b8c40181b61fa184f",
+  "production_before": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "steps": [
+    {
+      "name": "front-reference",
+      "args": [
+        "/usr/bin/caffeinate",
+        "-i",
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/Users/zhubby/Repository/CyberAudio/.context/robustness/model-preservation-20261107/final-bytes-model-preservation/CyberAudio.app/Contents/Resources/offline.sb",
+        "/Users/zhubby/Repository/CyberAudio/.context/robustness/reference-parity-20261107/runtime/bin/python",
+        "-u",
+        "/Users/zhubby/Repository/CyberAudio/.context/robustness/asr-reference-20261107/compare-front-reference.py"
+      ],
+      "status": "completed",
+      "owned_group_pid": 59226,
+      "exit_code": 0
+    }
+  ],
+  "elapsed_seconds": 12.721138207998592,
+  "production_after": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "production_preserved": true,
+  "protected_inputs_preserved": true,
+  "reference_sources_preserved": true,
+  "finished": "2026-11-06T19:00:33.977321+00:00"
+}

@@ -209,6 +209,14 @@ Files: `Sources/CyberAudio/AudioWorkspace.swift`, `tests/AudioWorkflowTests.swif
 - [x] Run bounded HEAD controls: proxied Hugging Face default/HTTP1 and Apple HTTP1 all establish CONNECT then fail TLS; direct Hugging Face times out. Do not assign sole responsibility to an application, certificate or service from these controls, change the proxy/TLS policy, or restart unchanged full transfers.
 - [ ] Complete public download and all 23 fixed digests plus fresh-root inference after a working transfer route is demonstrated. No new gate accepted from these probes.
 
+## 24. ASR reference text and single-boundary causal controls
+
+- [x] Retain all eight prior equal-RMS/order/noise composites and four monolingual controls. Run current final-App HTTP and unmodified offline Python ASR with identical PCM16 and greedy parameters; preserve all twelve paired results, including shared omissions/translations and two differing texts.
+- [x] Capture public native and original Python audio/Mel/mask/prompt/encoder boundaries only after all twelve original texts reproduce; leave SDK and shared objects unchanged. Retain 24 raw snapshots privately, 110,186,840 bytes.
+- [x] Run all twelve inputs through original-repeat, native-Mel-only and native-encoded-only controls, restoring methods between arms. Native Mel reproduces the noisy Chinese omission and matches eleven native texts; native encoded matches all twelve. Separate shared reference content errors from demonstrated numerical sensitivity.
+- [x] Independently recompute all sixty retained boundary comparisons and verify twelve WAV/production-decode payloads, all runner exits, source96/model568/frozen8, 1357 protected inputs, owned processes/listener/request cleanup and production preservation without inference reruns. Evidence: asr-reference/.
+- [ ] Identify the lower-level Mel/encoder numerical origins before considering changes. The additional same-Mel encoder calculation has statistics only, no extra raw array; do not claim file-only recomputation for it. Keep natural code-switch, quality, strict M4, public download, physical/desktop and distribution gates unchanged.
+
 ## Evidence log
 
 - Starting point: clean `main@96210dd`; development branch `codex/robustness`.
@@ -272,3 +280,4 @@ Files: `Sources/CyberAudio/AudioWorkspace.swift`, `tests/AudioWorkflowTests.swif
 
 - Single-object float32 Power control completes at18:28:57 UTC; all64 precompiled inverse frequencies match Python. Twelve original-sampler generations complete in195.46s with exact five-case historical parity;28 same-final-App ASR requests finish in22.82s. Seed196 still produces84.72s with empty segmented ASR in both repetitions; candidate not promoted. File-only verification at18:44:09 UTC confirms source96/model568/frozen8,1357 protected inputs and full cleanup/production preservation. Evidence: power-dispatch/.
 - M4 live snapshot at18:44:17 UTC finds no owned validation processes and unchanged14 final files/112MiB partial. New normal-TLS1MiB URLSession probe fails -1200 at18:45:26 UTC; four bounded HEAD controls end18:47:04 UTC, showing TLS failures on the explicit-proxy route for both HF and Apple, and direct HF timeout. No configuration/TLS changes or fresh full-download retry; production preserved. Evidence: transport-refresh/.
+- Twelve retained ASR inputs complete84 actual generations: current App/Python12+12, public-boundary observation controls12+12 and causal controls36. Native/Python texts match10/12; native Mel injection reproduces the noisy Chinese omission and matches11/12, native encoded matches12/12. File-only verification at19:09:31 UTC recomputes60 comparisons from24 snapshots/110186840 bytes, checks all input/production PCM payloads and source96/model568/frozen8/protected1357/process/production boundaries. No formal/default/candidate or acceptance gate change. Evidence: asr-reference/.

@@ -1,0 +1,314 @@
+{
+  "status": "diagnostic_completed",
+  "started": "2026-11-06T18:56:12.313168+00:00",
+  "scope": "Current final-App auto-ASR on all twelve fixed prior bilingual/control inputs; no synthetic regeneration or parameter changes",
+  "plan_sha256": "5d013165f34eee9c12302d2559e983e043ce4bf702c989d496da5bd525095d36",
+  "helper_sha256": "46083a4f7ba269b7f28377bd9532ede44ac0a812a55a55d1e1f0a9bd225cf86d",
+  "port": 18892,
+  "results": [
+    {
+      "id": "rms-composite-zh-002-1883-en-008-1846-clean",
+      "source_id": "rms-composite-zh-002-1883-en-008-1846-clean",
+      "part": 0,
+      "asr_language": "auto",
+      "http_status": 200,
+      "response": {
+        "duration": 25.15,
+        "inference_ms": 825.7749999756925,
+        "language": "en",
+        "metal_active_bytes": 5580045772,
+        "metal_peak_bytes": 6895922000,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4746854400,
+        "processing_ms": 990.5312500195578,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "d2c134c4b11e4f96",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3:2."
+      }
+    },
+    {
+      "id": "rms-composite-zh-002-1883-en-008-1846-snr20",
+      "source_id": "rms-composite-zh-002-1883-en-008-1846-snr20",
+      "part": 0,
+      "asr_language": "auto",
+      "http_status": 200,
+      "response": {
+        "duration": 25.15,
+        "inference_ms": 745.3080830164254,
+        "language": "en",
+        "metal_active_bytes": 5580045772,
+        "metal_peak_bytes": 6895922012,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4746854400,
+        "processing_ms": 878.243040991947,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "1b7f0b90284946d6",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "The aspect ratio of this format, dividing by twelve to obtain the simplest whole number ratio, is therefore said to be three to two."
+      }
+    },
+    {
+      "id": "rms-composite-en-008-1846-zh-002-1883-clean",
+      "source_id": "rms-composite-en-008-1846-zh-002-1883-clean",
+      "part": 0,
+      "asr_language": "auto",
+      "http_status": 200,
+      "response": {
+        "duration": 25.15,
+        "inference_ms": 1103.98933297256,
+        "language": "en",
+        "metal_active_bytes": 5580045772,
+        "metal_peak_bytes": 6895922012,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4746854400,
+        "processing_ms": 1226.3885420397855,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "441bad33457d4039",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3:2. The bridge is 15 meters above the river. The project was completed in August 2011, but it didn't open until March 2017."
+      }
+    },
+    {
+      "id": "rms-composite-en-008-1846-zh-002-1883-snr20",
+      "source_id": "rms-composite-en-008-1846-zh-002-1883-snr20",
+      "part": 0,
+      "asr_language": "auto",
+      "http_status": 200,
+      "response": {
+        "duration": 25.15,
+        "inference_ms": 1111.4644999615848,
+        "language": "en",
+        "metal_active_bytes": 5580045772,
+        "metal_peak_bytes": 6895922012,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4746854400,
+        "processing_ms": 1232.09854203742,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "ba2f7642b68d49ca",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3 to 2.桥下垂直净空15米。该项目于2011年8月完工，但直到2017年3月才开始通车。"
+      }
+    },
+    {
+      "id": "rms-composite-zh-020-1779-en-046-1710-clean",
+      "source_id": "rms-composite-zh-020-1779-en-046-1710-clean",
+      "part": 0,
+      "asr_language": "auto",
+      "http_status": 200,
+      "response": {
+        "duration": 24.53,
+        "inference_ms": 940.2512919623405,
+        "language": "en",
+        "metal_active_bytes": 5579996620,
+        "metal_peak_bytes": 6895922012,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4746854400,
+        "processing_ms": 1060.0334160262719,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "582d7447d4e5426c",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后发表了声明。 Last week, Medi announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious."
+      }
+    },
+    {
+      "id": "rms-composite-zh-020-1779-en-046-1710-snr20",
+      "source_id": "rms-composite-zh-020-1779-en-046-1710-snr20",
+      "part": 0,
+      "asr_language": "auto",
+      "http_status": 200,
+      "response": {
+        "duration": 24.53,
+        "inference_ms": 941.2019160226919,
+        "language": "en",
+        "metal_active_bytes": 5579996620,
+        "metal_peak_bytes": 6895922012,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4746854400,
+        "processing_ms": 1067.6447080331855,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "436afbfeb26349ae",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后发表了声明。Last week, Medi announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious."
+      }
+    },
+    {
+      "id": "rms-composite-en-046-1710-zh-020-1779-clean",
+      "source_id": "rms-composite-en-046-1710-zh-020-1779-clean",
+      "part": 0,
+      "asr_language": "auto",
+      "http_status": 200,
+      "response": {
+        "duration": 24.53,
+        "inference_ms": 921.0286249872297,
+        "language": "en",
+        "metal_active_bytes": 5579996620,
+        "metal_peak_bytes": 6895922012,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4746854400,
+        "processing_ms": 1049.7064999653958,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "a22f009185a24684",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "Last week, Meddy announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious. Trump, after a call with Turkish President Recep Tayyip Erdogan, issued a statement."
+      }
+    },
+    {
+      "id": "rms-composite-en-046-1710-zh-020-1779-snr20",
+      "source_id": "rms-composite-en-046-1710-zh-020-1779-snr20",
+      "part": 0,
+      "asr_language": "auto",
+      "http_status": 200,
+      "response": {
+        "duration": 24.53,
+        "inference_ms": 920.3443329897709,
+        "language": "en",
+        "metal_active_bytes": 5579996620,
+        "metal_peak_bytes": 6895922012,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4746854400,
+        "processing_ms": 1048.9884170237929,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "ea28ae9a6c7c4143",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "Last week, Meddy announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.特朗普与土耳其总统雷杰普塔伊普埃尔多安通话后发表了声明。"
+      }
+    },
+    {
+      "id": "zh-002-1883-clean",
+      "source_id": "zh-002-1883-clean",
+      "part": 0,
+      "asr_language": "auto",
+      "http_status": 200,
+      "response": {
+        "duration": 13.86,
+        "inference_ms": 625.0757920206524,
+        "language": "zh",
+        "metal_active_bytes": 5579324876,
+        "metal_peak_bytes": 6895922012,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4746854400,
+        "processing_ms": 746.894208015874,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "f13a9316b64743dc",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。"
+      }
+    },
+    {
+      "id": "zh-020-1779-clean",
+      "source_id": "zh-020-1779-clean",
+      "part": 0,
+      "asr_language": "auto",
+      "http_status": 200,
+      "response": {
+        "duration": 15.16,
+        "inference_ms": 560.4782500304282,
+        "language": "zh",
+        "metal_active_bytes": 5579406796,
+        "metal_peak_bytes": 6895922012,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4746854400,
+        "processing_ms": 685.9647079836577,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "e0bcffe9378340cd",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后，发表了声明。"
+      }
+    },
+    {
+      "id": "en-008-1846-clean",
+      "source_id": "en-008-1846-clean",
+      "part": 0,
+      "asr_language": "auto",
+      "http_status": 200,
+      "response": {
+        "duration": 11.04,
+        "inference_ms": 572.39608297823,
+        "language": "en",
+        "metal_active_bytes": 5579460048,
+        "metal_peak_bytes": 6895922012,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4746854400,
+        "processing_ms": 697.6348749594763,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "15a6dd99242d4908",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3:2."
+      }
+    },
+    {
+      "id": "en-046-1710-clean",
+      "source_id": "en-046-1710-clean",
+      "part": 0,
+      "asr_language": "auto",
+      "http_status": 200,
+      "response": {
+        "duration": 9.12,
+        "inference_ms": 551.3789159595035,
+        "language": "en",
+        "metal_active_bytes": 5579013580,
+        "metal_peak_bytes": 6895922012,
+        "model": "qwen3-asr-1.7b",
+        "no_speech": false,
+        "process_peak_rss_bytes": 4746854400,
+        "processing_ms": 683.5327920271084,
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "request_id": "f42f1d9158df4588",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+        "text": "Last week, Meddy announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious."
+      }
+    }
+  ],
+  "production_before": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "expected_requests": 12,
+  "expected_source_outputs": 12,
+  "elapsed_seconds": 20.113673209038097,
+  "owned_helper_pid": 58923,
+  "startup": {
+    "application": "CyberAudio",
+    "busy": false,
+    "instance": "e86bce8eb09a45ca9b4324fa58db1e39",
+    "model": "qwen3-asr-1.7b",
+    "models": {
+      "stt": "ready",
+      "tts": "ready"
+    },
+    "startup": {
+      "backend": "mlx-swift",
+      "device": "metal",
+      "load_ms": 2089.481875009369,
+      "metal_active_bytes": 5578423720,
+      "metal_peak_bytes": 6437814276,
+      "process_peak_rss_bytes": 4746854400,
+      "verification_ms": 4608.841415960342,
+      "warmup_ms": 1371.8715829891153
+    },
+    "status": "ready",
+    "updating": false
+  },
+  "owned_helper_exit_code": 0,
+  "temporary_request_cleanup": true,
+  "production_after": {
+    "instance": "59A9F60E-A365-4ED1-B71A-9E78A182D34A",
+    "config_sha256": "a3967983871fe34e16ef15489c7173418166dcbd2885502213979c6f2eac4fba",
+    "token_sha256": "f81dce895ce56571d8e914929d00a35129ac9dd16fc2071a47f9f09097e8bc2c"
+  },
+  "production_and_config_preserved": true,
+  "finished": "2026-11-06T18:56:32.464245+00:00"
+}

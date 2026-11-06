@@ -1,0 +1,1139 @@
+{
+  "status": "diagnostic_completed",
+  "started": "2026-11-06T19:02:33.121862+00:00",
+  "plan_sha256": "8a71777bce811f4109b3bf23f1321ad89f48d6fc3a4e3ab89dacff310f768ef5",
+  "original_plan_sha256": "5d013165f34eee9c12302d2559e983e043ce4bf702c989d496da5bd525095d36",
+  "source_sha256": "25c918f93d40fd3e9b44f517b8ef5450333f913500e6084c34298bcd5e6d8fab",
+  "results": [
+    {
+      "id": "rms-composite-zh-002-1883-en-008-1846-clean",
+      "native_snapshot_sha256": "03e0934366cabff38e3528bcd48ddffe84582faed0d1163c1649a0f3c05c4259",
+      "encoder_comparison_with_same_native_mel": {
+        "shape": [
+          327,
+          2048
+        ],
+        "dtype": "mlx.core.float32",
+        "values_exact": false,
+        "max_abs": 7.124617695808411e-07,
+        "different_values": 446759
+      },
+      "arms": [
+        {
+          "arm": "unmodified-repeat",
+          "response": {
+            "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3 to 2.",
+            "segments": [
+              {
+                "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3 to 2.",
+                "language": "English",
+                "start": 0.0,
+                "end": 25.15
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 342,
+            "generation_tokens": 34,
+            "total_tokens": 376,
+            "prompt_tps": 440.42664570642563,
+            "generation_tps": 43.78510512870898,
+            "total_time": 0.776519775390625
+          },
+          "processing_seconds": 0.7785203339881264,
+          "native_text_exact": false,
+          "original_reference_text_exact": true
+        },
+        {
+          "arm": "native-mel-only",
+          "response": {
+            "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3 to 2.",
+            "segments": [
+              {
+                "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3 to 2.",
+                "language": "English",
+                "start": 0.0,
+                "end": 25.15
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 342,
+            "generation_tokens": 34,
+            "total_tokens": 376,
+            "prompt_tps": 525.7680678576901,
+            "generation_tps": 52.26934007941948,
+            "total_time": 0.6504769325256348
+          },
+          "processing_seconds": 0.650588583026547,
+          "native_text_exact": false,
+          "original_reference_text_exact": true
+        },
+        {
+          "arm": "native-encoded-only",
+          "response": {
+            "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3:2.",
+            "segments": [
+              {
+                "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3:2.",
+                "language": "English",
+                "start": 0.0,
+                "end": 25.15
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 342,
+            "generation_tokens": 33,
+            "total_tokens": 375,
+            "prompt_tps": 599.8199300765094,
+            "generation_tps": 57.877361674049155,
+            "total_time": 0.5701711177825928
+          },
+          "processing_seconds": 0.5702897500013933,
+          "native_text_exact": true,
+          "original_reference_text_exact": false
+        }
+      ]
+    },
+    {
+      "id": "rms-composite-zh-002-1883-en-008-1846-snr20",
+      "native_snapshot_sha256": "021ed6cfbe7fc896b1a6d690ca512b50b676792311d4adad9c26138056e81f4c",
+      "encoder_comparison_with_same_native_mel": {
+        "shape": [
+          327,
+          2048
+        ],
+        "dtype": "mlx.core.float32",
+        "values_exact": false,
+        "max_abs": 1.5101395547389984e-06,
+        "different_values": 447507
+      },
+      "arms": [
+        {
+          "arm": "unmodified-repeat",
+          "response": {
+            "text": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。The aspect ratio of this format, dividing by twelve to obtain the simplest whole number ratio, is therefore said to be three to two.",
+            "segments": [
+              {
+                "text": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。The aspect ratio of this format, dividing by twelve to obtain the simplest whole number ratio, is therefore said to be three to two.",
+                "language": "English",
+                "start": 0.0,
+                "end": 25.15
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 342,
+            "generation_tokens": 60,
+            "total_tokens": 402,
+            "prompt_tps": 391.570929805319,
+            "generation_tps": 68.69665435181035,
+            "total_time": 0.8734049797058105
+          },
+          "processing_seconds": 0.8735102909849957,
+          "native_text_exact": false,
+          "original_reference_text_exact": true
+        },
+        {
+          "arm": "native-mel-only",
+          "response": {
+            "text": "The aspect ratio of this format, dividing by twelve to obtain the simplest whole number ratio, is therefore said to be three to two.",
+            "segments": [
+              {
+                "text": "The aspect ratio of this format, dividing by twelve to obtain the simplest whole number ratio, is therefore said to be three to two.",
+                "language": "English",
+                "start": 0.0,
+                "end": 25.15
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 342,
+            "generation_tokens": 30,
+            "total_tokens": 372,
+            "prompt_tps": 567.6658902304378,
+            "generation_tps": 49.79525352898577,
+            "total_time": 0.6024670600891113
+          },
+          "processing_seconds": 0.6025850420119241,
+          "native_text_exact": true,
+          "original_reference_text_exact": false
+        },
+        {
+          "arm": "native-encoded-only",
+          "response": {
+            "text": "The aspect ratio of this format, dividing by twelve to obtain the simplest whole number ratio, is therefore said to be three to two.",
+            "segments": [
+              {
+                "text": "The aspect ratio of this format, dividing by twelve to obtain the simplest whole number ratio, is therefore said to be three to two.",
+                "language": "English",
+                "start": 0.0,
+                "end": 25.15
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 342,
+            "generation_tokens": 30,
+            "total_tokens": 372,
+            "prompt_tps": 624.1159915662116,
+            "generation_tps": 54.74701680405365,
+            "total_time": 0.5479750633239746
+          },
+          "processing_seconds": 0.5480774579918943,
+          "native_text_exact": true,
+          "original_reference_text_exact": false
+        }
+      ]
+    },
+    {
+      "id": "rms-composite-en-008-1846-zh-002-1883-clean",
+      "native_snapshot_sha256": "fd2f30c44e4d8513c2c4a720f396359bdfb7ead3fb2c1f10f67eccc487c8ea53",
+      "encoder_comparison_with_same_native_mel": {
+        "shape": [
+          327,
+          2048
+        ],
+        "dtype": "mlx.core.float32",
+        "values_exact": false,
+        "max_abs": 3.557652235031128e-07,
+        "different_values": 446518
+      },
+      "arms": [
+        {
+          "arm": "unmodified-repeat",
+          "response": {
+            "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3:2. The bridge is 15 meters above the river. The project was completed in August 2011, but it didn't open until March 2017.",
+            "segments": [
+              {
+                "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3:2. The bridge is 15 meters above the river. The project was completed in August 2011, but it didn't open until March 2017.",
+                "language": "English",
+                "start": 0.0,
+                "end": 25.15
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 342,
+            "generation_tokens": 69,
+            "total_tokens": 411,
+            "prompt_tps": 363.2135455715962,
+            "generation_tps": 73.27992586093607,
+            "total_time": 0.9415948390960693
+          },
+          "processing_seconds": 0.9416989580495283,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        },
+        {
+          "arm": "native-mel-only",
+          "response": {
+            "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3:2. The bridge is 15 meters above the river. The project was completed in August 2011, but it didn't open until March 2017.",
+            "segments": [
+              {
+                "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3:2. The bridge is 15 meters above the river. The project was completed in August 2011, but it didn't open until March 2017.",
+                "language": "English",
+                "start": 0.0,
+                "end": 25.15
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 342,
+            "generation_tokens": 69,
+            "total_tokens": 411,
+            "prompt_tps": 374.6687663098684,
+            "generation_tps": 75.59106688707871,
+            "total_time": 0.9128062725067139
+          },
+          "processing_seconds": 0.9129291250137612,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        },
+        {
+          "arm": "native-encoded-only",
+          "response": {
+            "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3:2. The bridge is 15 meters above the river. The project was completed in August 2011, but it didn't open until March 2017.",
+            "segments": [
+              {
+                "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3:2. The bridge is 15 meters above the river. The project was completed in August 2011, but it didn't open until March 2017.",
+                "language": "English",
+                "start": 0.0,
+                "end": 25.15
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 342,
+            "generation_tokens": 69,
+            "total_tokens": 411,
+            "prompt_tps": 400.9176186624527,
+            "generation_tps": 80.886887975758,
+            "total_time": 0.8530430793762207
+          },
+          "processing_seconds": 0.853150959010236,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        }
+      ]
+    },
+    {
+      "id": "rms-composite-en-008-1846-zh-002-1883-snr20",
+      "native_snapshot_sha256": "2038bb8017edafa0bbf673304879e5bee0dc62b9e9b9ee8996fbcbfa1acbcd7c",
+      "encoder_comparison_with_same_native_mel": {
+        "shape": [
+          327,
+          2048
+        ],
+        "dtype": "mlx.core.float32",
+        "values_exact": false,
+        "max_abs": 5.986541509628296e-06,
+        "different_values": 447272
+      },
+      "arms": [
+        {
+          "arm": "unmodified-repeat",
+          "response": {
+            "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3 to 2.桥下垂直净空15米。该项目于2011年8月完工，但直到2017年3月才开始通车。",
+            "segments": [
+              {
+                "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3 to 2.桥下垂直净空15米。该项目于2011年8月完工，但直到2017年3月才开始通车。",
+                "language": "English",
+                "start": 0.0,
+                "end": 25.15
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 342,
+            "generation_tokens": 67,
+            "total_tokens": 409,
+            "prompt_tps": 368.56744586155173,
+            "generation_tps": 72.20473354597651,
+            "total_time": 0.9279170036315918
+          },
+          "processing_seconds": 0.928026375011541,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        },
+        {
+          "arm": "native-mel-only",
+          "response": {
+            "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3 to 2.桥下垂直净空15米。该项目于2011年8月完工，但直到2017年3月才开始通车。",
+            "segments": [
+              {
+                "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3 to 2.桥下垂直净空15米。该项目于2011年8月完工，但直到2017年3月才开始通车。",
+                "language": "English",
+                "start": 0.0,
+                "end": 25.15
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 342,
+            "generation_tokens": 67,
+            "total_tokens": 409,
+            "prompt_tps": 380.6154177622938,
+            "generation_tps": 74.5650087429055,
+            "total_time": 0.8985447883605957
+          },
+          "processing_seconds": 0.8986570419510826,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        },
+        {
+          "arm": "native-encoded-only",
+          "response": {
+            "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3 to 2.桥下垂直净空15米。该项目于2011年8月完工，但直到2017年3月才开始通车。",
+            "segments": [
+              {
+                "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3 to 2.桥下垂直净空15米。该项目于2011年8月完工，但直到2017年3月才开始通车。",
+                "language": "English",
+                "start": 0.0,
+                "end": 25.15
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 342,
+            "generation_tokens": 67,
+            "total_tokens": 409,
+            "prompt_tps": 407.3247558951194,
+            "generation_tps": 79.79753989758187,
+            "total_time": 0.8396248817443848
+          },
+          "processing_seconds": 0.8397450420306996,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        }
+      ]
+    },
+    {
+      "id": "rms-composite-zh-020-1779-en-046-1710-clean",
+      "native_snapshot_sha256": "eaf75eded2703ccbe6308853ca0ac255e988270f8ea83fdec591d7f34480bf21",
+      "encoder_comparison_with_same_native_mel": {
+        "shape": [
+          319,
+          2048
+        ],
+        "dtype": "mlx.core.float32",
+        "values_exact": false,
+        "max_abs": 8.530914783477783e-07,
+        "different_values": 430384
+      },
+      "arms": [
+        {
+          "arm": "unmodified-repeat",
+          "response": {
+            "text": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后发表了声明。 Last week, Medi announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.",
+            "segments": [
+              {
+                "text": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后发表了声明。 Last week, Medi announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.",
+                "language": "English",
+                "start": 0.0,
+                "end": 24.53
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 334,
+            "generation_tokens": 51,
+            "total_tokens": 385,
+            "prompt_tps": 421.40963741982176,
+            "generation_tps": 64.34698056410453,
+            "total_time": 0.7925779819488525
+          },
+          "processing_seconds": 0.7926867079804651,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        },
+        {
+          "arm": "native-mel-only",
+          "response": {
+            "text": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后发表了声明。 Last week, Medi announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.",
+            "segments": [
+              {
+                "text": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后发表了声明。 Last week, Medi announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.",
+                "language": "English",
+                "start": 0.0,
+                "end": 24.53
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 334,
+            "generation_tokens": 51,
+            "total_tokens": 385,
+            "prompt_tps": 435.9971155483088,
+            "generation_tps": 66.5744098591729,
+            "total_time": 0.7660601139068604
+          },
+          "processing_seconds": 0.7661706249928102,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        },
+        {
+          "arm": "native-encoded-only",
+          "response": {
+            "text": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后发表了声明。 Last week, Medi announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.",
+            "segments": [
+              {
+                "text": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后发表了声明。 Last week, Medi announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.",
+                "language": "English",
+                "start": 0.0,
+                "end": 24.53
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 334,
+            "generation_tokens": 51,
+            "total_tokens": 385,
+            "prompt_tps": 471.09245823666714,
+            "generation_tps": 71.93327955110786,
+            "total_time": 0.7089903354644775
+          },
+          "processing_seconds": 0.7090931249549612,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        }
+      ]
+    },
+    {
+      "id": "rms-composite-zh-020-1779-en-046-1710-snr20",
+      "native_snapshot_sha256": "7ab125b5bc5350b1b2dc7c2f59b60091e71e4f2a7de1efbb91a39eb9be67a29c",
+      "encoder_comparison_with_same_native_mel": {
+        "shape": [
+          319,
+          2048
+        ],
+        "dtype": "mlx.core.float32",
+        "values_exact": false,
+        "max_abs": 4.4442713260650635e-06,
+        "different_values": 432192
+      },
+      "arms": [
+        {
+          "arm": "unmodified-repeat",
+          "response": {
+            "text": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后发表了声明。Last week, Medi announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.",
+            "segments": [
+              {
+                "text": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后发表了声明。Last week, Medi announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.",
+                "language": "English",
+                "start": 0.0,
+                "end": 24.53
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 334,
+            "generation_tokens": 51,
+            "total_tokens": 385,
+            "prompt_tps": 420.85058170851397,
+            "generation_tps": 64.26161576986291,
+            "total_time": 0.793630838394165
+          },
+          "processing_seconds": 0.7937363340170123,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        },
+        {
+          "arm": "native-mel-only",
+          "response": {
+            "text": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后发表了声明。Last week, Medi announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.",
+            "segments": [
+              {
+                "text": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后发表了声明。Last week, Medi announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.",
+                "language": "English",
+                "start": 0.0,
+                "end": 24.53
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 334,
+            "generation_tokens": 51,
+            "total_tokens": 385,
+            "prompt_tps": 435.83854687458194,
+            "generation_tps": 66.55019727725653,
+            "total_time": 0.7663388252258301
+          },
+          "processing_seconds": 0.766446708003059,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        },
+        {
+          "arm": "native-encoded-only",
+          "response": {
+            "text": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后发表了声明。Last week, Medi announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.",
+            "segments": [
+              {
+                "text": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后发表了声明。Last week, Medi announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.",
+                "language": "English",
+                "start": 0.0,
+                "end": 24.53
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 334,
+            "generation_tokens": 51,
+            "total_tokens": 385,
+            "prompt_tps": 470.31511604640514,
+            "generation_tps": 71.81458358792413,
+            "total_time": 0.7101621627807617
+          },
+          "processing_seconds": 0.7102860830491409,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        }
+      ]
+    },
+    {
+      "id": "rms-composite-en-046-1710-zh-020-1779-clean",
+      "native_snapshot_sha256": "8446942f613fc8f8b26368e05c6d4f775a59c901866fc1ae47027ddac9f83edf",
+      "encoder_comparison_with_same_native_mel": {
+        "shape": [
+          319,
+          2048
+        ],
+        "dtype": "mlx.core.float32",
+        "values_exact": false,
+        "max_abs": 2.1047890186309814e-06,
+        "different_values": 432046
+      },
+      "arms": [
+        {
+          "arm": "unmodified-repeat",
+          "response": {
+            "text": "Last week, Meddy announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious. Trump, after a call with Turkish President Recep Tayyip Erdogan, issued a statement.",
+            "segments": [
+              {
+                "text": "Last week, Meddy announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious. Trump, after a call with Turkish President Recep Tayyip Erdogan, issued a statement.",
+                "language": "English",
+                "start": 0.0,
+                "end": 24.53
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 334,
+            "generation_tokens": 50,
+            "total_tokens": 384,
+            "prompt_tps": 424.78601044910533,
+            "generation_tps": 63.59072012711158,
+            "total_time": 0.786278247833252
+          },
+          "processing_seconds": 0.7864116670098156,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        },
+        {
+          "arm": "native-mel-only",
+          "response": {
+            "text": "Last week, Meddy announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious. Trump, after a call with Turkish President Recep Tayyip Erdogan, issued a statement.",
+            "segments": [
+              {
+                "text": "Last week, Meddy announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious. Trump, after a call with Turkish President Recep Tayyip Erdogan, issued a statement.",
+                "language": "English",
+                "start": 0.0,
+                "end": 24.53
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 334,
+            "generation_tokens": 50,
+            "total_tokens": 384,
+            "prompt_tps": 438.4012287398188,
+            "generation_tps": 65.62892645805671,
+            "total_time": 0.7618591785430908
+          },
+          "processing_seconds": 0.7619565000059083,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        },
+        {
+          "arm": "native-encoded-only",
+          "response": {
+            "text": "Last week, Meddy announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious. Trump, after a call with Turkish President Recep Tayyip Erdogan, issued a statement.",
+            "segments": [
+              {
+                "text": "Last week, Meddy announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious. Trump, after a call with Turkish President Recep Tayyip Erdogan, issued a statement.",
+                "language": "English",
+                "start": 0.0,
+                "end": 24.53
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 334,
+            "generation_tokens": 50,
+            "total_tokens": 384,
+            "prompt_tps": 476.7764748564546,
+            "generation_tps": 71.37372378090637,
+            "total_time": 0.700537919998169
+          },
+          "processing_seconds": 0.700659749971237,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        }
+      ]
+    },
+    {
+      "id": "rms-composite-en-046-1710-zh-020-1779-snr20",
+      "native_snapshot_sha256": "40a1e1f743d6610a73da0b260974987324d5ec94169a42ddf9896003816e0d00",
+      "encoder_comparison_with_same_native_mel": {
+        "shape": [
+          319,
+          2048
+        ],
+        "dtype": "mlx.core.float32",
+        "values_exact": false,
+        "max_abs": 4.5746564865112305e-06,
+        "different_values": 432438
+      },
+      "arms": [
+        {
+          "arm": "unmodified-repeat",
+          "response": {
+            "text": "Last week, Meddy announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.特朗普与土耳其总统雷杰普塔伊普埃尔多安通话后发表了声明。",
+            "segments": [
+              {
+                "text": "Last week, Meddy announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.特朗普与土耳其总统雷杰普塔伊普埃尔多安通话后发表了声明。",
+                "language": "English",
+                "start": 0.0,
+                "end": 24.53
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 334,
+            "generation_tokens": 49,
+            "total_tokens": 383,
+            "prompt_tps": 429.6481798115605,
+            "generation_tps": 63.03221799630678,
+            "total_time": 0.7773802280426025
+          },
+          "processing_seconds": 0.7775105410255492,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        },
+        {
+          "arm": "native-mel-only",
+          "response": {
+            "text": "Last week, Meddy announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.特朗普与土耳其总统雷杰普塔伊普埃尔多安通话后发表了声明。",
+            "segments": [
+              {
+                "text": "Last week, Meddy announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.特朗普与土耳其总统雷杰普塔伊普埃尔多安通话后发表了声明。",
+                "language": "English",
+                "start": 0.0,
+                "end": 24.53
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 334,
+            "generation_tokens": 49,
+            "total_tokens": 383,
+            "prompt_tps": 445.42409669430447,
+            "generation_tps": 65.3466489162303,
+            "total_time": 0.7498471736907959
+          },
+          "processing_seconds": 0.7499748750124127,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        },
+        {
+          "arm": "native-encoded-only",
+          "response": {
+            "text": "Last week, Meddy announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.特朗普与土耳其总统雷杰普塔伊普埃尔多安通话后发表了声明。",
+            "segments": [
+              {
+                "text": "Last week, Meddy announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.特朗普与土耳其总统雷杰普塔伊普埃尔多安通话后发表了声明。",
+                "language": "English",
+                "start": 0.0,
+                "end": 24.53
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 334,
+            "generation_tokens": 49,
+            "total_tokens": 383,
+            "prompt_tps": 480.55975962707754,
+            "generation_tps": 70.50128210097844,
+            "total_time": 0.6950228214263916
+          },
+          "processing_seconds": 0.695127125014551,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        }
+      ]
+    },
+    {
+      "id": "zh-002-1883-clean",
+      "native_snapshot_sha256": "51cec8a4d83c35cad2f46b9a743381f33746690748253b807b41a20f5cdc16d7",
+      "encoder_comparison_with_same_native_mel": {
+        "shape": [
+          180,
+          2048
+        ],
+        "dtype": "mlx.core.float32",
+        "values_exact": false,
+        "max_abs": 6.556510925292969e-07,
+        "different_values": 151888
+      },
+      "arms": [
+        {
+          "arm": "unmodified-repeat",
+          "response": {
+            "text": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+            "segments": [
+              {
+                "text": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+                "language": "Chinese",
+                "start": 0.0,
+                "end": 13.86
+              }
+            ],
+            "language": [
+              "Chinese"
+            ],
+            "prompt_tokens": 195,
+            "generation_tokens": 33,
+            "total_tokens": 228,
+            "prompt_tps": 381.0193507632133,
+            "generation_tps": 64.48019782146687,
+            "total_time": 0.5117850303649902
+          },
+          "processing_seconds": 0.5118989589973353,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        },
+        {
+          "arm": "native-mel-only",
+          "response": {
+            "text": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+            "segments": [
+              {
+                "text": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+                "language": "Chinese",
+                "start": 0.0,
+                "end": 13.86
+              }
+            ],
+            "language": [
+              "Chinese"
+            ],
+            "prompt_tokens": 195,
+            "generation_tokens": 33,
+            "total_tokens": 228,
+            "prompt_tps": 387.6507883694708,
+            "generation_tps": 65.60244110867967,
+            "total_time": 0.5030300617218018
+          },
+          "processing_seconds": 0.5031288749887608,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        },
+        {
+          "arm": "native-encoded-only",
+          "response": {
+            "text": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+            "segments": [
+              {
+                "text": "桥下垂直净空十五米。该项目于二零一一年八月完工，但直到二零一七年三月才开始通车。",
+                "language": "Chinese",
+                "start": 0.0,
+                "end": 13.86
+              }
+            ],
+            "language": [
+              "Chinese"
+            ],
+            "prompt_tokens": 195,
+            "generation_tokens": 33,
+            "total_tokens": 228,
+            "prompt_tps": 423.0889258811321,
+            "generation_tps": 71.5996643798839,
+            "total_time": 0.46089601516723633
+          },
+          "processing_seconds": 0.4610400419915095,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        }
+      ]
+    },
+    {
+      "id": "zh-020-1779-clean",
+      "native_snapshot_sha256": "ad357432607f42191922d075828bd46beb1d0acdf81fd1a9a6a72c40170f38ae",
+      "encoder_comparison_with_same_native_mel": {
+        "shape": [
+          197,
+          2048
+        ],
+        "dtype": "mlx.core.float32",
+        "values_exact": false,
+        "max_abs": 1.0952353477478027e-06,
+        "different_values": 186175
+      },
+      "arms": [
+        {
+          "arm": "unmodified-repeat",
+          "response": {
+            "text": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后，发表了声明。",
+            "segments": [
+              {
+                "text": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后，发表了声明。",
+                "language": "Chinese",
+                "start": 0.0,
+                "end": 15.16
+              }
+            ],
+            "language": [
+              "Chinese"
+            ],
+            "prompt_tokens": 212,
+            "generation_tokens": 24,
+            "total_tokens": 236,
+            "prompt_tps": 464.05134459653755,
+            "generation_tps": 52.53411448262689,
+            "total_time": 0.4568459987640381
+          },
+          "processing_seconds": 0.45697829202981666,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        },
+        {
+          "arm": "native-mel-only",
+          "response": {
+            "text": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后，发表了声明。",
+            "segments": [
+              {
+                "text": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后，发表了声明。",
+                "language": "Chinese",
+                "start": 0.0,
+                "end": 15.16
+              }
+            ],
+            "language": [
+              "Chinese"
+            ],
+            "prompt_tokens": 212,
+            "generation_tokens": 24,
+            "total_tokens": 236,
+            "prompt_tps": 479.9573194922514,
+            "generation_tps": 54.33479088591525,
+            "total_time": 0.44170594215393066
+          },
+          "processing_seconds": 0.44180470798164606,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        },
+        {
+          "arm": "native-encoded-only",
+          "response": {
+            "text": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后，发表了声明。",
+            "segments": [
+              {
+                "text": "特朗普与土耳其总统雷杰普·塔伊普·埃尔多安通话后，发表了声明。",
+                "language": "Chinese",
+                "start": 0.0,
+                "end": 15.16
+              }
+            ],
+            "language": [
+              "Chinese"
+            ],
+            "prompt_tokens": 212,
+            "generation_tokens": 24,
+            "total_tokens": 236,
+            "prompt_tps": 534.6622123129689,
+            "generation_tps": 60.527797620336095,
+            "total_time": 0.3965120315551758
+          },
+          "processing_seconds": 0.39662362495437264,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        }
+      ]
+    },
+    {
+      "id": "en-008-1846-clean",
+      "native_snapshot_sha256": "641f6fe20a2c7430664f0c84829592a2673fcfab7211352bc02154ba81d63148",
+      "encoder_comparison_with_same_native_mel": {
+        "shape": [
+          144,
+          2048
+        ],
+        "dtype": "mlx.core.float32",
+        "values_exact": false,
+        "max_abs": 2.5960616767406464e-07,
+        "different_values": 80207
+      },
+      "arms": [
+        {
+          "arm": "unmodified-repeat",
+          "response": {
+            "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3:2.",
+            "segments": [
+              {
+                "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3:2.",
+                "language": "English",
+                "start": 0.0,
+                "end": 11.04
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 159,
+            "generation_tokens": 33,
+            "total_tokens": 192,
+            "prompt_tps": 341.18385305180266,
+            "generation_tps": 70.8117430862232,
+            "total_time": 0.46602439880371094
+          },
+          "processing_seconds": 0.46614062500884756,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        },
+        {
+          "arm": "native-mel-only",
+          "response": {
+            "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3:2.",
+            "segments": [
+              {
+                "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3:2.",
+                "language": "English",
+                "start": 0.0,
+                "end": 11.04
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 159,
+            "generation_tokens": 33,
+            "total_tokens": 192,
+            "prompt_tps": 350.60563234410427,
+            "generation_tps": 72.7672067129273,
+            "total_time": 0.45350098609924316
+          },
+          "processing_seconds": 0.45361899997806177,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        },
+        {
+          "arm": "native-encoded-only",
+          "response": {
+            "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3:2.",
+            "segments": [
+              {
+                "text": "The aspect ratio of this format, dividing by 12 to obtain the simplest whole number ratio, is therefore said to be 3:2.",
+                "language": "English",
+                "start": 0.0,
+                "end": 11.04
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 159,
+            "generation_tokens": 33,
+            "total_tokens": 192,
+            "prompt_tps": 376.87014625104547,
+            "generation_tps": 78.21833224078301,
+            "total_time": 0.42189598083496094
+          },
+          "processing_seconds": 0.42200487497029826,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        }
+      ]
+    },
+    {
+      "id": "en-046-1710-clean",
+      "native_snapshot_sha256": "30ee76085d7d68b81d1f31ef31244ef329d579250faf6e217c82c82f7df1f04b",
+      "encoder_comparison_with_same_native_mel": {
+        "shape": [
+          119,
+          2048
+        ],
+        "dtype": "mlx.core.float32",
+        "values_exact": false,
+        "max_abs": 1.601874828338623e-07,
+        "different_values": 29968
+      },
+      "arms": [
+        {
+          "arm": "unmodified-repeat",
+          "response": {
+            "text": "Last week, Meddy announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.",
+            "segments": [
+              {
+                "text": "Last week, Meddy announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.",
+                "language": "English",
+                "start": 0.0,
+                "end": 9.12
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 134,
+            "generation_tokens": 31,
+            "total_tokens": 165,
+            "prompt_tps": 306.6416509991391,
+            "generation_tps": 70.93948642517397,
+            "total_time": 0.43699216842651367
+          },
+          "processing_seconds": 0.4371079580159858,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        },
+        {
+          "arm": "native-mel-only",
+          "response": {
+            "text": "Last week, Meddy announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.",
+            "segments": [
+              {
+                "text": "Last week, Meddy announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.",
+                "language": "English",
+                "start": 0.0,
+                "end": 9.12
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 134,
+            "generation_tokens": 31,
+            "total_tokens": 165,
+            "prompt_tps": 312.6450747990608,
+            "generation_tps": 72.32833819978272,
+            "total_time": 0.4286010265350342
+          },
+          "processing_seconds": 0.4287082079681568,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        },
+        {
+          "arm": "native-encoded-only",
+          "response": {
+            "text": "Last week, Meddy announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.",
+            "segments": [
+              {
+                "text": "Last week, Meddy announced that Apple had informed it of 34 additional overheating incidents, which the company called non-serious.",
+                "language": "English",
+                "start": 0.0,
+                "end": 9.12
+              }
+            ],
+            "language": [
+              "English"
+            ],
+            "prompt_tokens": 134,
+            "generation_tokens": 31,
+            "total_tokens": 165,
+            "prompt_tps": 337.23067470527246,
+            "generation_tps": 78.01605161092124,
+            "total_time": 0.3973541259765625
+          },
+          "processing_seconds": 0.39745837496593595,
+          "native_text_exact": true,
+          "original_reference_text_exact": true
+        }
+      ]
+    }
+  ],
+  "elapsed_seconds": 26.517784208990633,
+  "finished": "2026-11-06T19:02:59.639672+00:00"
+}

@@ -1,0 +1,157 @@
+{
+  "status": "verified",
+  "verified_at": "2026-11-06T19:09:31.249967+00:00",
+  "source_commit": "a4dfab1a60047a20d21f226b82faf7d296dcce45",
+  "model_loaded_by_verifier": false,
+  "inference_rerun": false,
+  "input_wav_hashes_headers_pcm_and_production_decode_checks": 12,
+  "snapshots": [
+    {
+      "path": "native-front/rms-composite-zh-002-1883-en-008-1846-clean.safetensors",
+      "sha256": "03e0934366cabff38e3528bcd48ddffe84582faed0d1163c1649a0f3c05c4259",
+      "bytes": 5587890
+    },
+    {
+      "path": "reference-front/rms-composite-zh-002-1883-en-008-1846-clean.safetensors",
+      "sha256": "33f8e65aaf71c7fe69cd98a7be513f78dc4ec1acb100522e1ab17d013defd7e5",
+      "bytes": 5589258
+    },
+    {
+      "path": "native-front/rms-composite-zh-002-1883-en-008-1846-snr20.safetensors",
+      "sha256": "021ed6cfbe7fc896b1a6d690ca512b50b676792311d4adad9c26138056e81f4c",
+      "bytes": 5587890
+    },
+    {
+      "path": "reference-front/rms-composite-zh-002-1883-en-008-1846-snr20.safetensors",
+      "sha256": "db2f5c9065d1194cdccab0f726cbb5ad1f9a1feb58e9ff2076c2cfcdb30b57ab",
+      "bytes": 5589258
+    },
+    {
+      "path": "native-front/rms-composite-en-008-1846-zh-002-1883-clean.safetensors",
+      "sha256": "fd2f30c44e4d8513c2c4a720f396359bdfb7ead3fb2c1f10f67eccc487c8ea53",
+      "bytes": 5587886
+    },
+    {
+      "path": "reference-front/rms-composite-en-008-1846-zh-002-1883-clean.safetensors",
+      "sha256": "81121036043775234f39db21421ab9eed022c3566320b7b702e07d6c8457958d",
+      "bytes": 5589258
+    },
+    {
+      "path": "native-front/rms-composite-en-008-1846-zh-002-1883-snr20.safetensors",
+      "sha256": "2038bb8017edafa0bbf673304879e5bee0dc62b9e9b9ee8996fbcbfa1acbcd7c",
+      "bytes": 5587882
+    },
+    {
+      "path": "reference-front/rms-composite-en-008-1846-zh-002-1883-snr20.safetensors",
+      "sha256": "821b9e03ac47bdeaf531041deaa3f98527f89e47aadefb927d867048dba9ffcd",
+      "bytes": 5589258
+    },
+    {
+      "path": "native-front/rms-composite-zh-020-1779-en-046-1710-clean.safetensors",
+      "sha256": "eaf75eded2703ccbe6308853ca0ac255e988270f8ea83fdec591d7f34480bf21",
+      "bytes": 5450644
+    },
+    {
+      "path": "reference-front/rms-composite-zh-020-1779-en-046-1710-clean.safetensors",
+      "sha256": "e964caa4f153d4ad677ecef21f61bbcdc7cc9fef2314ee4f736a6cef47c5a6f0",
+      "bytes": 5451986
+    },
+    {
+      "path": "native-front/rms-composite-zh-020-1779-en-046-1710-snr20.safetensors",
+      "sha256": "7ab125b5bc5350b1b2dc7c2f59b60091e71e4f2a7de1efbb91a39eb9be67a29c",
+      "bytes": 5450650
+    },
+    {
+      "path": "reference-front/rms-composite-zh-020-1779-en-046-1710-snr20.safetensors",
+      "sha256": "c17902f22f374c6e96b913666906000f6f62e71744b0655786338a2092305034",
+      "bytes": 5451986
+    },
+    {
+      "path": "native-front/rms-composite-en-046-1710-zh-020-1779-clean.safetensors",
+      "sha256": "8446942f613fc8f8b26368e05c6d4f775a59c901866fc1ae47027ddac9f83edf",
+      "bytes": 5450644
+    },
+    {
+      "path": "reference-front/rms-composite-en-046-1710-zh-020-1779-clean.safetensors",
+      "sha256": "d3a8d6e4f9ea8210cb49014a674dd1db45701e190c023d41d48a793ee2d3fcf4",
+      "bytes": 5451986
+    },
+    {
+      "path": "native-front/rms-composite-en-046-1710-zh-020-1779-snr20.safetensors",
+      "sha256": "40a1e1f743d6610a73da0b260974987324d5ec94169a42ddf9896003816e0d00",
+      "bytes": 5450644
+    },
+    {
+      "path": "reference-front/rms-composite-en-046-1710-zh-020-1779-snr20.safetensors",
+      "sha256": "fc3e0a245a2d53ead03de148396d51dcda16c30625b718d6471df51513c9575a",
+      "bytes": 5451986
+    },
+    {
+      "path": "native-front/zh-002-1883-clean.safetensors",
+      "sha256": "51cec8a4d83c35cad2f46b9a743381f33746690748253b807b41a20f5cdc16d7",
+      "bytes": 3077954
+    },
+    {
+      "path": "reference-front/zh-002-1883-clean.safetensors",
+      "sha256": "b75effc150b6590a7dfbd9593d9eac0b170eafb424be0e7e96f3076fde42330b",
+      "bytes": 3078734
+    },
+    {
+      "path": "native-front/zh-020-1779-clean.safetensors",
+      "sha256": "ad357432607f42191922d075828bd46beb1d0acdf81fd1a9a6a72c40170f38ae",
+      "bytes": 3367566
+    },
+    {
+      "path": "reference-front/zh-020-1779-clean.safetensors",
+      "sha256": "3cb040381f74abf7487071d575563a42795953cab29ff877aa583254c13ce25a",
+      "bytes": 3368414
+    },
+    {
+      "path": "native-front/en-008-1846-clean.safetensors",
+      "sha256": "641f6fe20a2c7430664f0c84829592a2673fcfab7211352bc02154ba81d63148",
+      "bytes": 2456900
+    },
+    {
+      "path": "reference-front/en-008-1846-clean.safetensors",
+      "sha256": "e680246dbbcc01ce57988b7ce3f0353f0b650ec7a7d9f34b219402e5226b68e1",
+      "bytes": 2457542
+    },
+    {
+      "path": "native-front/en-046-1710-clean.safetensors",
+      "sha256": "30ee76085d7d68b81d1f31ef31244ef329d579250faf6e217c82c82f7df1f04b",
+      "bytes": 2030042
+    },
+    {
+      "path": "reference-front/en-046-1710-clean.safetensors",
+      "sha256": "909079192ca3f6c512ccdb1893d41cd42da7b5a84ad357fdbdba75b5e3379ceb",
+      "bytes": 2030582
+    }
+  ],
+  "snapshot_bytes": 110186840,
+  "boundary_comparisons_recomputed": 60,
+  "boundary_values_exact": 36,
+  "native_repeat_texts_exact": 12,
+  "reference_repeat_texts_exact": 12,
+  "causal_control_generations": 36,
+  "all_original_python_controls_reproduced": true,
+  "native_mel_injection_matches_native": 11,
+  "native_encoded_injection_matches_native": 12,
+  "noisy_case_omission_reproduced_by_native_mel": true,
+  "same_mel_encoder_statistics_raw_array_retained": false,
+  "formal_sources_verified": 96,
+  "original_model_files_verified": 568,
+  "frozen_files_verified": 8,
+  "protected_compiled_and_source_inputs_verified": 1357,
+  "production_preserved": true,
+  "owned_processes_absent": true,
+  "asr_listener_closed": true,
+  "request_directories_empty": true,
+  "formal_source_or_defaults_changed": false,
+  "candidate_promoted": false,
+  "limits": [
+    "Controlled concatenation, equal RMS and synthetic Gaussian noise are not natural code-switch or microphone acceptance",
+    "Reference agreement and character/script presence do not establish transcription correctness",
+    "The exact lower-level sources of Mel/encoder numeric differences remain unassigned",
+    "No new quality, strict M4 workload, public download, physical or distribution gate accepted"
+  ]
+}
