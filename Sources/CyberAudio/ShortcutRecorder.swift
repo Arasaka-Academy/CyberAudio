@@ -12,17 +12,37 @@ struct ShortcutRecorder: NSViewRepresentable {
         view.setAccessibilityLabel("按下听写快捷键")
         return view
     }
-    func updateNSView(_ nsView: CaptureView, context: Context) {}
+    func updateNSView(_ nsView: CaptureView, context: Context) {
+        nsView.capture = capture; nsView.cancel = cancel; nsView.reportError = error
+    }
+    static func dismantleNSView(_ nsView: CaptureView, coordinator: ()) { nsView.stopListening() }
 
     final class CaptureView: NSView {
         var capture: ((DictationShortcut) -> Void)?
         var cancel: (() -> Void)?
         var reportError: ((String) -> Void)?
         private var rightOptionCandidate = false
+        private var eventMonitor: Any?
         override var acceptsFirstResponder: Bool { true }
         override func viewDidMoveToWindow() {
             super.viewDidMoveToWindow()
+            stopListening()
+            guard window != nil else { return }
+            // SwiftUI's sheet focus can move to a button after this view is attached.
+            // Capture in this sheet before key equivalents, regardless of first responder.
+            eventMonitor = NSEvent.addLocalMonitorForEvents(matching: [.keyDown, .flagsChanged]) { [weak self] event in
+                guard let self, let window = self.window,
+                      event.window === window || event.window == nil && NSApp.keyWindow === window else { return event }
+                if event.type == .flagsChanged { self.flagsChanged(with: event) }
+                else { self.keyDown(with: event) }
+                return nil
+            }
             DispatchQueue.main.async { [weak self] in if let self { self.window?.makeFirstResponder(self) } }
+        }
+        func stopListening() {
+            if let eventMonitor { NSEvent.removeMonitor(eventMonitor) }
+            eventMonitor = nil
+            rightOptionCandidate = false
         }
         override func performKeyEquivalent(with event: NSEvent) -> Bool { keyDown(with: event); return true }
         override func flagsChanged(with event: NSEvent) {

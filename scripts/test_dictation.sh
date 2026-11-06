@@ -7,6 +7,14 @@ swiftc -swift-version 5 -parse-as-library -target arm64-apple-macos26.0 \
   -o .build/tests/dictation-gesture
 .build/tests/dictation-gesture
 swiftc -swift-version 5 -parse-as-library -target arm64-apple-macos26.0 \
+  Sources/CyberAudio/DictationShortcut.swift Sources/CyberAudio/ShortcutRecorder.swift tests/ShortcutRecorderTests.swift \
+  -o .build/tests/shortcut-recorder
+.build/tests/shortcut-recorder
+swiftc -swift-version 5 -parse-as-library -target arm64-apple-macos26.0 \
+  Sources/CyberAudio/{DictationController,DictationGesture,DictationShortcut,DictationOverlay,ShortcutMonitor,TextInsertionService,AudioWorkspace,BackendController,StudioStyle}.swift \
+  tests/DictationOverlayTests.swift -o .build/tests/dictation-overlay
+.build/tests/dictation-overlay
+swiftc -swift-version 5 -parse-as-library -target arm64-apple-macos26.0 \
   Sources/CyberAudio/TextInsertionService.swift Sources/CyberAudio/UpdateGate.swift tests/TextInsertionTests.swift \
   -o .build/tests/text-insertion
 .build/tests/text-insertion

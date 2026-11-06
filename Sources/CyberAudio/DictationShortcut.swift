@@ -29,6 +29,7 @@ struct ShortcutMatcher {
     enum Hardware { case down(UInt16, UInt64, Bool), up(UInt16), flags(UInt16, UInt64, Bool) }
     var shortcut: DictationShortcut = .rightOption
     private(set) var held = false
+    private var hardwarePressObserved = false
     mutating func handle(_ event: Hardware) -> Input? {
         switch (shortcut.kind, event) {
         case (.rightOption, .flags(61, let flags, let down)):
@@ -58,9 +59,14 @@ struct ShortcutMatcher {
     private mutating func release() -> Input? {
         guard held else { return nil }
         held = false
+        hardwarePressObserved = false
         return .release
     }
     mutating func reconcile(physicallyHeld: Bool) -> Input? {
-        physicallyHeld ? nil : release()
+        guard held else { return nil }
+        if physicallyHeld { hardwarePressObserved = true; return nil }
+        // Remote and virtual keyboards can deliver session events without HID state.
+        // Polling is a lost-release fallback only after it observed this press.
+        return hardwarePressObserved ? release() : nil
     }
 }

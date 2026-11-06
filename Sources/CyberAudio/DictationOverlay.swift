@@ -13,6 +13,8 @@ final class DictationOverlay {
             let panel = Panel(contentRect: NSRect(x: 0, y: 0, width: 320, height: 82),
                               styleMask: [.borderless, .nonactivatingPanel], backing: .buffered, defer: false)
             panel.isFloatingPanel = true; panel.level = .floating
+            panel.identifier = NSUserInterfaceItemIdentifier("dictation-overlay")
+            panel.title = "CyberAudio 听写"
             panel.isOpaque = false; panel.backgroundColor = .clear
             panel.hidesOnDeactivate = false
             panel.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary, .ignoresCycle]

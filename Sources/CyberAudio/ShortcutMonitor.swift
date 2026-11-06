@@ -58,10 +58,13 @@ final class ShortcutMonitor {
     }
 
     private var physicallyHeld: Bool {
-        // HID state is independent of key events swallowed by our session tap.
-        if matcher.shortcut.kind == .rightOption { return CGEventSource.keyState(.hidSystemState, key: 61) }
-        let flags = CGEventSource.flagsState(.hidSystemState).rawValue & DictationShortcut.modifierMask
-        return CGEventSource.keyState(.hidSystemState, key: matcher.shortcut.keyCode)
+        // Session state includes remote keyboards; HID state also covers swallowed keys.
+        let held = CGEventSource.keyState(.combinedSessionState, key: matcher.shortcut.keyCode)
+            || CGEventSource.keyState(.hidSystemState, key: matcher.shortcut.keyCode)
+        if matcher.shortcut.kind == .rightOption { return held }
+        let flags = (CGEventSource.flagsState(.combinedSessionState).rawValue
+            | CGEventSource.flagsState(.hidSystemState).rawValue) & DictationShortcut.modifierMask
+        return held
             && flags & matcher.shortcut.modifiers == matcher.shortcut.modifiers
     }
 

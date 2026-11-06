@@ -144,7 +144,15 @@ final class DictationController: ObservableObject {
     private func handle(_ input: ShortcutMatcher.Input, originPID: pid_t?) {
         switch input {
         case .press:
-            guard available, !blocksUpdate, backend.ready, !backend.busy, !audio.cannotStart else { return }
+            guard available, !blocksUpdate else { return }
+            guard backend.ready else {
+                showFeedback("听写引擎尚未就绪", detail: "请在主窗口检查服务状态")
+                return
+            }
+            guard !backend.busy, !audio.cannotStart else {
+                showFeedback("正在处理其他音频", detail: "请稍后再按住快捷键")
+                return
+            }
             apply(gesture.press(at: ProcessInfo.processInfo.systemUptime), originPID: originPID)
         case .release: apply(gesture.release())
         case .interrupt: apply(gesture.interrupt())
@@ -160,13 +168,15 @@ final class DictationController: ObservableObject {
             }
         }
     }
-    private func arm(originPID: pid_t?) {
+    func arm(originPID: pid_t?) {
         hideTask?.cancel()
         let id = session.begin()
         resultText = ""
+        phase = .armed; statusText = "准备听写，继续按住快捷键开始录音"
+        monitor.consumeEscape = true
+        updateOverlay()
         target = environment.focusedTarget()
         if target == nil || target?.pid != originPID { session.invalidateTarget() }
-        phase = .armed; monitor.consumeEscape = true
         installFocusObserver()
         armTask = Task { [weak self] in
             try? await Task.sleep(for: .milliseconds(150))
@@ -256,7 +266,12 @@ final class DictationController: ObservableObject {
         guard started, enabled, sessionActive, awake, !screenLocked, !configuringShortcut, !message.isEmpty else {
             overlay.hide(); return
         }
-        overlay.show(title: message, detail: copy ? "可复制，或在主窗口查看" : "CyberAudio", levels: [], seconds: nil,
+        showFeedback(message, detail: copy ? "可复制，或在主窗口查看" : "CyberAudio", copy: copy)
+    }
+
+    private func showFeedback(_ message: String, detail: String, copy: Bool = false) {
+        statusText = message
+        overlay.show(title: message, detail: detail, levels: [], seconds: nil,
                      cancel: nil, copy: copy ? { [weak self] in self?.copyResult() } : nil)
         hideTask?.cancel()
         hideTask = Task { [weak self] in
@@ -266,9 +281,11 @@ final class DictationController: ObservableObject {
     }
 
     private func updateOverlay() {
-        guard phase != .idle, phase != .armed else { return }
-        overlay.show(title: phase == .recording ? "正在聆听" : phase == .inserting ? "正在输入" : "正在识别",
-                     detail: phase == .recording ? "松开 \(shortcut.display) 结束 · Esc 取消" : "在这台 Mac 本地处理",
+        guard phase != .idle else { return }
+        let title = phase == .armed ? "准备听写" : phase == .recording ? "正在聆听" : phase == .inserting ? "正在输入" : "正在识别"
+        let detail = phase == .armed ? "继续按住 \(shortcut.display) 开始录音 · Esc 取消"
+            : phase == .recording ? "松开 \(shortcut.display) 结束 · Esc 取消" : "在这台 Mac 本地处理"
+        overlay.show(title: title, detail: detail,
                      levels: phase == .recording ? audio.recordingLevels : [],
                      seconds: phase == .recording ? audio.recordingSeconds : nil,
                      cancel: { [weak self] in self?.cancel() }, copy: nil)

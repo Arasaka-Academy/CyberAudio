@@ -134,3 +134,19 @@ struct InlineNotice: View {
         .accessibilityElement(children: .contain)
     }
 }
+
+struct CompactWaveform: View {
+    let levels: [Float]
+    var color: Color = StudioStyle.accent
+    var body: some View {
+        GeometryReader { geometry in
+            HStack(spacing: 2) {
+                ForEach(0..<24, id: \.self) { index in
+                    let level = levels.isEmpty ? 0 : levels[min(levels.count - 1, index * levels.count / 24)]
+                    Capsule().fill(color.opacity(level > 0 ? 0.8 : 0.22))
+                        .frame(height: max(3, CGFloat(level) * geometry.size.height))
+                }
+            }.frame(height: geometry.size.height)
+        }.accessibilityHidden(true)
+    }
+}
