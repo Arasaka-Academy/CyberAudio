@@ -155,6 +155,8 @@ def build(tag, notes):
     paths = [dist / (name + suffix) for suffix in [".dmg", ".dmg.sha256", ".zip", ".zip.sha256"]] + [dist / "appcast.xml"]
     manifest = {"tag": tag, "version": info["CFBundleShortVersionString"], "build": info["CFBundleVersion"],
         "prerelease": prerelease, "commit": run(["git", "rev-parse", "HEAD"], capture_output=True, text=True).stdout.strip(),
+        "app_signing": {"mode": os.environ.get("CYBERAUDIO_SIGN_MODE", "adhoc"),
+                        "notarized": os.environ.get("CYBERAUDIO_SIGN_MODE") == "distribution"},
         "artifacts": {path.name: hashlib.sha256(path.read_bytes()).hexdigest() for path in paths}}
     (dist / "release.json").write_text(json.dumps(manifest, indent=2) + "\n")
     print("Signed release archives and appcast verified")

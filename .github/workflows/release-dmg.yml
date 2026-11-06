@@ -23,6 +23,7 @@ jobs:
       RELEASE_TAG: ${{ github.event.release.tag_name }}
       GH_TOKEN: ${{ github.token }}
       SPARKLE_EDDSA_PRIVATE_KEY: ${{ secrets.SPARKLE_EDDSA_PRIVATE_KEY }}
+      CYBERAUDIO_SIGN_MODE: ${{ vars.CYBERAUDIO_SIGN_MODE || 'adhoc' }}
     steps:
       - name: Check out release tag
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -60,8 +61,67 @@ jobs:
       - name: Validate native service and update behavior
         run: make check
 
+      - name: Prepare isolated distribution keychain
+        if: ${{ env.CYBERAUDIO_SIGN_MODE == 'distribution' }}
+        env:
+          DEVELOPER_ID_P12_BASE64: ${{ secrets.DEVELOPER_ID_P12_BASE64 }}
+          DEVELOPER_ID_P12_PASSWORD: ${{ secrets.DEVELOPER_ID_P12_PASSWORD }}
+          APPLE_NOTARY_ID: ${{ secrets.APPLE_NOTARY_ID }}
+          APPLE_NOTARY_PASSWORD: ${{ secrets.APPLE_NOTARY_PASSWORD }}
+          APPLE_TEAM_ID: ${{ vars.APPLE_TEAM_ID }}
+        run: |
+          python3 - <<'PY'
+          import base64, json, os, pathlib, secrets, shlex, subprocess
+          root = pathlib.Path(os.environ['RUNNER_TEMP'])
+          keychain = root / 'cyberaudio-signing.keychain-db'
+          certificate = root / 'cyberaudio-signing.p12'
+          def run(args):
+              return subprocess.check_output(args, stderr=subprocess.STDOUT, text=True)
+          try:
+              names = ['DEVELOPER_ID_P12_BASE64', 'DEVELOPER_ID_P12_PASSWORD', 'APPLE_NOTARY_ID', 'APPLE_NOTARY_PASSWORD', 'APPLE_TEAM_ID']
+              if any(not os.environ.get(name) for name in names):
+                  raise ValueError('Distribution signing and notarization secrets are required')
+              original = shlex.split(run(['security', 'list-keychains', '-d', 'user']))
+              (root / 'cyberaudio-keychains-before.json').write_text(json.dumps(original))
+              password = secrets.token_hex(32)
+              run(['security', 'create-keychain', '-p', password, str(keychain)])
+              run(['security', 'set-keychain-settings', '-lut', '7200', str(keychain)])
+              run(['security', 'unlock-keychain', '-p', password, str(keychain)])
+              run(['security', 'list-keychains', '-d', 'user', '-s', str(keychain), *original])
+              certificate.touch(mode=0o600)
+              certificate.write_bytes(base64.b64decode(os.environ['DEVELOPER_ID_P12_BASE64'], validate=True))
+              run(['security', 'import', str(certificate), '-k', str(keychain), '-P', os.environ['DEVELOPER_ID_P12_PASSWORD'], '-T', '/usr/bin/codesign'])
+              run(['security', 'set-key-partition-list', '-S', 'apple-tool:,apple:,codesign:', '-s', '-k', password, str(keychain)])
+              run(['xcrun', 'notarytool', 'store-credentials', 'cyberaudio-ci', '--keychain', str(keychain), '--apple-id', os.environ['APPLE_NOTARY_ID'], '--team-id', os.environ['APPLE_TEAM_ID'], '--password', os.environ['APPLE_NOTARY_PASSWORD']])
+              with open(os.environ['GITHUB_ENV'], 'a') as output:
+                  output.write(f'CYBERAUDIO_SIGN_KEYCHAIN={keychain}\n')
+          except Exception:
+              raise SystemExit('Distribution keychain preparation failed; check configured secrets and certificate validity') from None
+          finally:
+              certificate.unlink(missing_ok=True)
+          PY
+
       - name: Build, sign and verify app, DMG, ZIP and feed
+        env:
+          CYBERAUDIO_SIGN_IDENTITY: ${{ secrets.DEVELOPER_ID_SIGN_IDENTITY }}
+          CYBERAUDIO_TEAM_ID: ${{ vars.APPLE_TEAM_ID }}
+          CYBERAUDIO_NOTARY_PROFILE: ${{ env.CYBERAUDIO_SIGN_MODE == 'distribution' && 'cyberaudio-ci' || '' }}
         run: python3 scripts/release_updates.py build --tag "$RELEASE_TAG" --notes "$RUNNER_TEMP/release-notes.txt"
+
+      - name: Remove isolated distribution credentials
+        if: ${{ always() && env.CYBERAUDIO_SIGN_MODE == 'distribution' }}
+        run: |
+          python3 - <<'PY'
+          import json, os, pathlib, subprocess
+          root = pathlib.Path(os.environ['RUNNER_TEMP'])
+          saved = root / 'cyberaudio-keychains-before.json'
+          if saved.exists():
+              subprocess.run(['security', 'list-keychains', '-d', 'user', '-s', *json.loads(saved.read_text())], check=True)
+          keychain = root / 'cyberaudio-signing.keychain-db'
+          if keychain.exists():
+              subprocess.run(['security', 'delete-keychain', str(keychain)], check=True)
+          (root / 'cyberaudio-signing.p12').unlink(missing_ok=True)
+          PY
 
       - name: Upload immutable assets and verify public downloads
         run: python3 scripts/release_updates.py upload --tag "$RELEASE_TAG"

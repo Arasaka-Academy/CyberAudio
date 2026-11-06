@@ -18,7 +18,7 @@
 
 ## 密钥与签名
 
-- App 使用现有 ad-hoc 签名，Sparkle 内嵌组件保留上游签名，打包后验证 `codesign --verify --deep --strict`。
+- 默认开发构建使用 ad-hoc 签名，Sparkle 内嵌组件保留上游签名，打包后验证 `codesign --verify --deep --strict`。Developer ID 分发模式会重新签名全部嵌套代码并完成 Apple 公证，详见[签名与公证](SIGNING.md)。
 - App 公钥位于 `packaging/Info.plist` 的 `SUPublicEDKey`；私钥由官方 `generate_keys` 保存在本机 login Keychain，account 为 `local.cyberaudio.mac`。
 - CI Secret 名为 `SPARKLE_EDDSA_PRIVATE_KEY`。脚本验证私钥对应的公钥；通过标准输入传给 Sparkle 工具，不写入仓库、App、日志或发布资产。
 - 完整 ZIP 和 appcast 均使用 EdDSA；App 要求签名清单并在解压前验证更新包，严格拒绝缺失或不匹配的签名。

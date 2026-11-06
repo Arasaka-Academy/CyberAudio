@@ -2,6 +2,7 @@
 set -euo pipefail
 project_root="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$project_root"
+python3 scripts/sign_app.py preflight
 native_scratch="${CYBERAUDIO_NATIVE_SCRATCH:-$project_root/.context/native-build}"
 bash scripts/build_native.sh
 native_binary_dir="$(swift build --build-system native --package-path Native --scratch-path "$native_scratch" -c release --show-bin-path)"
@@ -36,7 +37,6 @@ for bundle in "$native_binary_dir"/*.bundle; do
     /usr/libexec/PlistBuddy -c "Add :CFBundleIdentifier string local.cyberaudio.resources.${bundle_id//_/-}" \
       -c 'Add :CFBundlePackageType string BNDL' "$bundled/Contents/Info.plist"
   fi
-  codesign --force --sign - "$bundled"
 done
 cp packaging/Info.plist "$app/Contents/Info.plist"
 cp packaging/offline.sb "$metal_file" "$app/Contents/Resources/"
@@ -54,10 +54,7 @@ for component in mlx mlx-c fmt; do
 done
 cp "$native_scratch/checkouts/swift-nio/Sources/CNIOLLHTTP/LICENSE" "$app/Contents/Resources/ThirdParty/llhttp-LICENSE"
 cp Native/THIRD_PARTY.md "$app/Contents/Resources/ThirdParty/README.md"
-codesign --force --sign - "$app/Contents/Helpers/CyberAudioService"
-codesign --force --sign - "$app/Contents/Helpers/CyberAudioAssets"
-codesign --force --sign - "$app"
-codesign --verify --deep --strict "$app"
+python3 scripts/sign_app.py sign "$app"
 # Catch missing bundles and accidental reliance on a source-tree resource path.
 asset_smoke="$(mktemp -d "${TMPDIR:-/tmp}/CyberAudio-assets-smoke.XXXXXX")"
 trap 'rm -rf "$asset_smoke"' EXIT
@@ -73,4 +70,5 @@ for executable in CyberAudioService CyberAudioAssets; do
     exit 1
   fi
 done
+python3 scripts/sign_app.py notarize "$app"
 printf '%s\n' "$app"
