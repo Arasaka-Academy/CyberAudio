@@ -1,0 +1,43 @@
+{
+  "recorded_at": "2026-11-07T03:16:57.992973+00:00",
+  "base": "1425c5704d78c275f100669f93cad360b9ef689a",
+  "full_make_check": {
+    "returncode": 0,
+    "elapsed_seconds": 143.48,
+    "log": ".context/robustness/import-file-20261107/make-check.log"
+  },
+  "full_check_counts": {
+    "native_contracts": 36,
+    "native_failures": 0,
+    "native_skipped": 0,
+    "active_tool_tests": 44,
+    "rendered_states": 14
+  },
+  "supplemental_audio_workflow": {
+    "returncode": 0,
+    "elapsed_seconds": 119.603,
+    "log": ".context/robustness/import-file-20261107/audio-workflow.log"
+  },
+  "import_integrity": {
+    "source_wav_bytes": 144044,
+    "source_duration_seconds": 3,
+    "direct_decoded_duration_seconds": 3,
+    "linked_decoded_duration_seconds": 3,
+    "transport": "real native HTTP and FFmpeg decoding; synthetic inference fixture"
+  },
+  "local_full_check_scope": "production source and workspace tests before added multi-chunk workflow assertions; modified workflow then verified separately",
+  "file_sha256": {
+    "Sources/CyberAudio/AudioWorkspace.swift": "f987d2d2b1ab2a523e3ace7e28486dd195e75cd77741c31f26545df7edd385f1",
+    "tests/AudioWorkspaceTests.swift": "c6e2027aa56eebed7a5f80eb499cb6a7ac7a8b58cad20d2f531e945195d73708",
+    "tests/AudioWorkflowTests.swift": "864143b7b329951efae1ca903815c9da85cfcddb4f1cec27a7cff1814cbc5afa"
+  },
+  "private_receipts": {
+    ".context/robustness/import-file-20261107/make-check.log": "cd915fe802ba90ac5356deffd06ccdc59b11e0117f780930d9613153d0e578ec",
+    ".context/robustness/import-file-20261107/audio-workflow.log": "5fbe2a2f3bcf5755e2d0958c26a1044cb2818b86240a8be89e444776824852eb",
+    ".context/robustness/import-file-20261107/strict-baseline-compile.log": "6fcd54a002006444edfe9f16d7b3c942877b4e39f24f6eea867f287fe16210e1",
+    ".context/robustness/import-file-20261107/strict-current-compile.log": "7e6dff68e580c899a9054c957b07e23a64dfa2a499de6da05dbd4b8274f0371b",
+    ".context/robustness/import-file-20261107/strict-typecheck-harness.json": "497ecb75323d008f97509b63c8b25d6026734dc67a925947efe0c4add0206a7d"
+  },
+  "remote_ci": "pending final commit delivery",
+  "physical_or_model_acceptance": false
+}

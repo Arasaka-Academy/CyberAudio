@@ -1,0 +1,45 @@
+{
+  "at": "2026-11-07T02:26:36.949291+00:00",
+  "hypothesis": "File size resource metadata measures a symbolic link, while Data(contentsOf:) follows its regular-file target, bypassing the 20 MiB import precheck",
+  "limit": 20971520,
+  "results": [
+    {
+      "name": "oversized.wav",
+      "elapsed_seconds": 0.022,
+      "returncode": 0,
+      "events": [
+        {
+          "content_type": "com.microsoft.waveform-audio",
+          "regular": true,
+          "size": 20971521,
+          "stage": "metadata"
+        },
+        {
+          "bytes": 20971521,
+          "stage": "read"
+        }
+      ],
+      "stderr": ""
+    },
+    {
+      "name": "linked-oversized.wav",
+      "elapsed_seconds": 0.019,
+      "returncode": 0,
+      "events": [
+        {
+          "content_type": "public.symlink",
+          "regular": false,
+          "size": 13,
+          "stage": "metadata"
+        },
+        {
+          "bytes": 20971521,
+          "stage": "read"
+        }
+      ],
+      "stderr": ""
+    }
+  ],
+  "prior_fifo_hypothesis": "excluded: Foundation immediately rejected FIFO paths",
+  "production_modified": false
+}

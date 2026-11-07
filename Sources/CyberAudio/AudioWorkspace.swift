@@ -1,6 +1,7 @@
 import AppKit
 import AVFoundation
 import Combine
+import Darwin
 import UniformTypeIdentifiers
 
 struct Transcription: Decodable {
@@ -211,9 +212,9 @@ final class AudioWorkspace: NSObject, ObservableObject {
     private func performTranscription(url: URL, using backend: BackendController, sessionID: UUID) async -> TranscriptionOutcome {
         do {
             try Task.checkCancellation()
-            let size = try url.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0
-            guard size <= 20 * 1024 * 1024 else { throw CyberAudioError.message("文件不能超过 20MiB。") }
-            let audio = try Data(contentsOf: url)
+            let read = Task.detached(priority: .userInitiated) { try Self.readAudio(at: url) }
+            let audio = try await withTaskCancellationHandler { try await read.value } onCancel: { read.cancel() }
+            try Task.checkCancellation()
             let boundary = "CyberAudio-\(UUID().uuidString)"
             var body = Data()
             for (key, value) in [("model", "qwen3-asr-1.7b"), ("language", sttLanguage), ("response_format", "json")] {
@@ -234,6 +235,32 @@ final class AudioWorkspace: NSObject, ObservableObject {
             if Task.isCancelled { sttTiming = "已取消"; return .cancelled(sessionID) }
             reportError(error, for: .transcription)
             return .failed(sessionID, error.localizedDescription)
+        }
+    }
+
+    nonisolated private static func readAudio(at url: URL) throws -> Data {
+        try Task.checkCancellation()
+        // Follow valid links, then validate and read the same opened file. A
+        // nonblocking open lets us reject a FIFO before waiting for its writer.
+        let descriptor = url.withUnsafeFileSystemRepresentation { path in
+            path.map { Darwin.open($0, O_RDONLY | O_NONBLOCK | O_CLOEXEC) } ?? -1
+        }
+        guard descriptor >= 0 else { throw POSIXError(POSIXErrorCode(rawValue: errno) ?? .EIO) }
+        let file = FileHandle(fileDescriptor: descriptor, closeOnDealloc: true)
+        defer { try? file.close() }
+        var info = stat()
+        guard fstat(descriptor, &info) == 0 else { throw POSIXError(POSIXErrorCode(rawValue: errno) ?? .EIO) }
+        guard info.st_mode & S_IFMT == S_IFREG else { throw CyberAudioError.message("请选择普通音频文件。") }
+        let limit = 20 * 1024 * 1024
+        guard info.st_size <= limit else { throw CyberAudioError.message("文件不能超过 20MiB。") }
+        var audio = Data()
+        while true {
+            try Task.checkCancellation()
+            // Also bound the actual bytes if the file grows after fstat.
+            let chunk = try file.read(upToCount: min(64 * 1024, limit + 1 - audio.count)) ?? Data()
+            if chunk.isEmpty { return audio }
+            audio.append(chunk)
+            guard audio.count <= limit else { throw CyberAudioError.message("文件不能超过 20MiB。") }
         }
     }
 

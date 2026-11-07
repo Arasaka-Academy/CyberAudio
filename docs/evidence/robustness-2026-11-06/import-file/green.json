@@ -1,0 +1,9 @@
+{
+  "compiled": true,
+  "compiler_mode": "project Swift 5 concurrency mode",
+  "warnings_as_errors": true,
+  "returncode": 0,
+  "stdout": "AudioWorkspace: direct and linked oversized imports rejected before service admission\nAudioWorkspace: inclusive size boundary, valid links and nonregular imports checked\nAudioWorkspace: pending permission, stale reply, cancellation and cleanup checks passed\n",
+  "stderr": "",
+  "optional_complete_concurrency": "fails on unchanged baseline in observer deinit and AVAudioPlayer delegate captures"
+}

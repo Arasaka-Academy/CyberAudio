@@ -54,14 +54,25 @@ struct AudioWorkflowTests {
         }
         try options([:])
         let input = backend.root.appendingPathComponent("import.wav")
-        let samples = (0..<24000).map { Int16(3000 * sin(Double($0) * 2 * .pi * 440 / 24000)).littleEndian }
+        // More than two read chunks catches a reader that sends only its prefix.
+        let samples = (0..<72000).map { Int16(3000 * sin(Double($0) * 2 * .pi * 440 / 24000)).littleEndian }
         let pcm = samples.withUnsafeBytes { Data($0) }
         try AudioWorkspace.wav(pcm: pcm).write(to: input)
         let id = UUID()
         let result = await audio.transcribe(url: input, using: backend, sessionID: id)
         if case .success(let returnedID, let value) = result {
             try require(returnedID == id && !value.text.isEmpty && audio.transcript == value.text, "Import must return the correct session and update the preview")
+            try require(value.duration == 3, "File import must deliver all three seconds across read chunks")
         } else { throw Failure(message: "File transcription did not succeed: \(audio.errorMessage ?? "cancelled")") }
+        let linkedInput = backend.root.appendingPathComponent("linked-import.wav")
+        try FileManager.default.createSymbolicLink(at: linkedInput, withDestinationURL: input)
+        let linkedID = UUID()
+        let linkedResult = await audio.transcribe(url: linkedInput, using: backend, sessionID: linkedID)
+        if case .success(let returnedID, let value) = linkedResult {
+            try require(returnedID == linkedID && value.duration == 3 && value.text == audio.transcript,
+                        "A valid symbolic link must import its complete audio through native HTTP")
+        } else { throw Failure(message: "Linked audio import did not succeed") }
+        print("AudioWorkflow: complete three-second direct and linked imports passed native HTTP decoding")
         let preview = audio.transcript
         try options(["hold": true])
         let oldID = UUID()

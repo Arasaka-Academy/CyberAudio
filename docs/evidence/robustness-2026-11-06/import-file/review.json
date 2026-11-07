@@ -1,0 +1,77 @@
+{
+  "scope": {
+    "base": "1425c5704d78c275f100669f93cad360b9ef689a",
+    "files": [
+      "Sources/CyberAudio/AudioWorkspace.swift",
+      "tests/AudioWorkspaceTests.swift",
+      "tests/AudioWorkflowTests.swift"
+    ],
+    "method": "sequential main-thread review; no subagents"
+  },
+  "intent": "Enforce the existing inclusive 20MiB file-import contract against the actual opened file while preserving normal links, cancellation, session ownership and previous transcript.",
+  "reviewers": [
+    "correctness",
+    "testing",
+    "maintainability",
+    "project-standards",
+    "agent-native",
+    "learnings",
+    "reliability (file I/O and cancellation)",
+    "security (local file input)",
+    "adversarial (quick assumption/ordering pass)"
+  ],
+  "findings": [
+    {
+      "id": "R14",
+      "severity": "P2",
+      "confidence": 1.0,
+      "file": "Sources/CyberAudio/AudioWorkspace.swift",
+      "title": "Symbolic-link metadata undercounts the audio file actually read",
+      "autofix_class": "safe_auto",
+      "owner": "review-fixer",
+      "requires_verification": true,
+      "status": "fixed and verified",
+      "evidence": [
+        "A 20971521-byte target reports 13 bytes through its symbolic link, but Data(contentsOf:) reads the full target.",
+        "The real workspace red reaches stopped-backend admission instead of reporting its size limit.",
+        "Green rejects direct/linked oversize inputs, admits empty/exact-limit regular inputs, rejects nonregular paths and preserves session/transcript.",
+        "Three-second direct/linked native HTTP uploads each decode to three seconds; full make check and supplemental workflow exit 0."
+      ]
+    }
+  ],
+  "residual_actionable_work": [],
+  "advisory": [
+    {
+      "topic": "optional complete-concurrency compile",
+      "owner": "human",
+      "pre_existing": true,
+      "status": "not passed on baseline or current source",
+      "evidence": "concurrency-comparison.json"
+    },
+    {
+      "topic": "original required acceptance gates",
+      "owner": "human/release",
+      "status": "open",
+      "items": [
+        "natural mixed-language fidelity",
+        "short-utterance TTS and strict two-hour M4 load",
+        "physical dictation, recording, listening and device/sleep recovery",
+        "complete public model download",
+        "Developer ID notarization and actual GUI upgrade permission retention"
+      ]
+    }
+  ],
+  "testing_gaps": [
+    "File growth specifically between fstat and read was reviewed but not forced with a deterministic race harness.",
+    "Slow or remote filesystem kernel-read cancellation latency is not measured."
+  ],
+  "learnings": {
+    "docs_solutions": "directory not present",
+    "existing_pattern": "AssetDownloader uses fstat on an opened descriptor and checks cancellation while reading."
+  },
+  "agent_native": {
+    "new_ui_action": false,
+    "transcription_api": "existing authenticated POST /v1/audio/transcriptions unchanged"
+  },
+  "verdict": "Ready with fixes for this scoped change; original overall goal remains active"
+}

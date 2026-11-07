@@ -1,0 +1,15 @@
+{
+  "baseline_compile_returncode": 1,
+  "current_compile_returncode": 1,
+  "current_typecheck_returncode": 0,
+  "diagnostics_pre_existing": true,
+  "sites": [
+    "AudioWorkspace.deinit: non-Sendable observer token",
+    "audioPlayerDidFinishPlaying: non-Sendable player capture",
+    "audioPlayerDecodeErrorDidOccur: non-Sendable player capture"
+  ],
+  "compiler": "Apple Swift 6.4",
+  "target": "arm64-apple-macos26.0",
+  "project_mode_warnings_as_errors": "passed",
+  "optional_complete_concurrency_compile": "not passed"
+}

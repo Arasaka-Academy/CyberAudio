@@ -1,0 +1,8 @@
+{
+  "compiled": true,
+  "returncode": -5,
+  "expected_failure_observed": true,
+  "failure_excerpt": [
+    "Swift/ErrorType.swift:254: Fatal error: Error raised at top level: main.AudioWorkspaceTests.Failure(message: \"Linked oversized audio must fail the same local size validation as its target; received 模型尚未就绪。\")"
+  ]
+}

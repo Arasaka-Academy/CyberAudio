@@ -287,6 +287,17 @@ Swift 6.3.3 warning removal is verified by the normal exact-commit Checks workfl
 - [x] Independently recompute all twenty edit distances and ten WAV/PCM/float32 identities; preserve source101/protected-metadata1026, production/config/Token and owned-process cleanup. Retain full controls privately; archive the four previously attributed examples and review source in natural-context/.
 - [x] Close this unsuccessful pilot without broadening the cohort, searching more prompts or changing defaults. All original quality, strict M4, physical, download and distribution requirements remain open; one fixed instruction does not determine all context/model behavior.
 
+## 33. Bound imported audio reads to the opened file (R14)
+
+- [x] Resume the interrupted real-workspace regression from `main@1425c57`. Reproduce the linked 20MiB + 1-byte input passing the metadata precheck and reaching stopped-backend admission; preserve the original probe and fresh red receipt.
+- [x] Validate the opened regular file with `fstat`, retain valid symbolic links, and bound actual read bytes even if the file grows. Use nonblocking open to reject FIFO targets; close the descriptor on every exit.
+- [x] Move reading off MainActor, propagate cancellation to its task, and keep transcription/update ownership until it returns. Preserve session IDs and previous text on errors.
+- [x] Verify direct/linked oversize rejection, empty/exact-limit admission, normal links and directory/FIFO rejection through the real workspace. Complete `make check`: 36 native contracts, 44 active tools, 14 renders, behavior regressions and release App/Service/Assets compilation.
+- [x] Complete additional three-second direct/linked native HTTP imports, checking decoded duration across multiple read chunks. Native decoding reports all three seconds in both cases; the existing cancellation/playback/update/late-failure suite also passes. Record final sequential review in import-file/.
+- [ ] Commit and push this scoped fix under the existing main-delivery authorization; verify exact remote SHA and its required Checks result.
+
+The optional complete-concurrency/warnings-as-errors invocation fails on both unchanged and current sources in existing observer-deinit/player-delegate code. Standard project-mode warnings-as-errors passes. Do not erase that distinction, or promote software checks to physical/model/distribution acceptance. Evidence: import-file/.
+
 ## Evidence log
 
 - Starting point: clean `main@96210dd`; development branch `codex/robustness`.
