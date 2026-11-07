@@ -1,0 +1,23 @@
+{
+  "status": "pilot_complete_pending_scoring",
+  "started_at": "2026-11-07T02:10:29.289886+00:00",
+  "protocol_sha256": "2c2fc24f2f73af22d8aae1014af549983e41ca53f1173b5ca8940b489bedf411",
+  "script_sha256": "46bb47eba1c0b1bb34d435f2005c05303ad925f62da38bb676ac9f455fbd43a1",
+  "versions": {
+    "mlx": "0.32.4",
+    "mlx-audio": "0.6.4",
+    "transformers": "5.22.2",
+    "numpy": "2.3.4"
+  },
+  "completed_generations": 20,
+  "baseline_matches": 10,
+  "retries": 0,
+  "skipped": 0,
+  "reference_methods_replaced": false,
+  "elapsed_seconds": 11.152326,
+  "loaded_model_source_sha256": "2d9aaadea36945b0c7ada65fec12eaa5ff378628b6d3030aac54b5698a165da1",
+  "loaded_feature_extractor_sha256": "dcce2e7820be059e657a9e12a60e8a55cfd37b1a82ee202ca15fc7d0934374cb",
+  "model_load_seconds": 4.826099,
+  "results_sha256": "e21ba632cbc9f85c39c7d7e44bb685996a398268db9765a37a8e334fa96d8386",
+  "finished_at": "2026-11-07T02:10:40.442115+00:00"
+}

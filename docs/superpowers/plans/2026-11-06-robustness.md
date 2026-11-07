@@ -279,6 +279,14 @@ Files: `Sources/CyberAudio/AudioWorkspace.swift`, `tests/AudioWorkflowTests.swif
 
 Swift 6.3.3 warning removal is verified by the normal exact-commit Checks workflow after delivery. Local receipts remain in `.context/robustness/audio-observer-20261107/`. This compatibility improvement does not resolve or replace the original content, strict M4, physical, download or distribution requirements.
 
+## 32. Fixed natural context instruction pilot
+
+- [x] Freeze one generic, non-answer-bearing verbatim/code-switch instruction and the same four published failures plus six first/last-per-language metadata controls before inference. Keep original audio, references, auto/greedy parameters and pinned unmodified Python model methods.
+- [x] Complete ten fresh empty-context calls and require exact prior text/language equality before ten candidate calls on the same instance. All twenty complete once; all ten output texts stay identical, total mixed edits 32→32. Neither translation target qualifies.
+- [x] Verify every observed candidate prompt has 26 extra tokens. Reconstruct all twenty prompt lengths with the original builder AST and pinned tokenizer, unchanged audio token counts and no weight load or additional generation. Distinguish this reconstruction from an internal tensor trace.
+- [x] Independently recompute all twenty edit distances and ten WAV/PCM/float32 identities; preserve source101/protected-metadata1026, production/config/Token and owned-process cleanup. Retain full controls privately; archive the four previously attributed examples and review source in natural-context/.
+- [x] Close this unsuccessful pilot without broadening the cohort, searching more prompts or changing defaults. All original quality, strict M4, physical, download and distribution requirements remain open; one fixed instruction does not determine all context/model behavior.
+
 ## Evidence log
 
 - Starting point: clean `main@96210dd`; development branch `codex/robustness`.

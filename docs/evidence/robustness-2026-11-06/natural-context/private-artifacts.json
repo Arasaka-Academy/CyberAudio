@@ -1,0 +1,35 @@
+{
+  "scope": "Original private evidence; no raw audio, full control transcripts, configuration or Token contents exported",
+  "files": [
+    {
+      "path": ".context/robustness/natural-context-20261107/results.private.jsonl",
+      "bytes": 14839,
+      "sha256": "e21ba632cbc9f85c39c7d7e44bb685996a398268db9765a37a8e334fa96d8386"
+    },
+    {
+      "path": ".context/robustness/natural-context-20261107/pairs.private.jsonl",
+      "bytes": 5971,
+      "sha256": "b002c79d07f02072eebc1e8e88183ab8da2ff9ef6286da030d09af4950beeb93"
+    },
+    {
+      "path": ".context/robustness/natural-context-20261107/inference.private.log",
+      "bytes": 739,
+      "sha256": "3d23127ca4ef640dcf868c9cc4d3158b250cc3ba5b75cef1eb1d2dcf372e0e49"
+    },
+    {
+      "path": ".context/robustness/natural-context-20261107/source-before.json",
+      "bytes": 10757,
+      "sha256": "daa617f7e0a51700751defbfe230216efac9c9d1927adc4a729c8e9ac703d904"
+    },
+    {
+      "path": ".context/robustness/natural-context-20261107/protected-metadata-before.private.json",
+      "bytes": 192608,
+      "sha256": "4af13b5b329e9560a87315d9d987858b38fee67f05afcaf03c4f6cef6178e2d3"
+    },
+    {
+      "path": ".context/robustness/natural-context-20261107/production-before.private.json",
+      "bytes": 251,
+      "sha256": "404f45d8a940e0ffed3ef8c80bdf0dff9e651a4627859ba150bfb50c6d705c29"
+    }
+  ]
+}

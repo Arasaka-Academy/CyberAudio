@@ -1,0 +1,20 @@
+{
+  "status": "pilot_complete_pending_scoring",
+  "started_at": "2026-11-07T02:10:27.952748+00:00",
+  "protocol_sha256": "2c2fc24f2f73af22d8aae1014af549983e41ca53f1173b5ca8940b489bedf411",
+  "scripts_sha256": {
+    "run.py": "6b115f67d12c2eb2cf78ee20931afb776ec445fbeb4b51cd42b847c919ea4e43",
+    "transcribe-context.py": "46bb47eba1c0b1bb34d435f2005c05303ad925f62da38bb676ac9f455fbd43a1"
+  },
+  "source_count": 101,
+  "protected_file_count": 1026,
+  "elapsed_seconds": 12.717,
+  "owned_group_pid": 18190,
+  "owned_exit_code": 0,
+  "production_preserved": true,
+  "source_preserved": true,
+  "protected_metadata_preserved": true,
+  "scripts_preserved": true,
+  "owned_group_absent": true,
+  "finished_at": "2026-11-07T02:10:40.667280+00:00"
+}

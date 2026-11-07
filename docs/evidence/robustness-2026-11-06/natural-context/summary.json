@@ -1,0 +1,151 @@
+{
+  "status": "pilot_closed_without_qualification",
+  "at": "2026-11-07T02:11:46.095486+00:00",
+  "protocol_sha256": "2c2fc24f2f73af22d8aae1014af549983e41ca53f1173b5ca8940b489bedf411",
+  "results_sha256": "e21ba632cbc9f85c39c7d7e44bb685996a398268db9765a37a8e334fa96d8386",
+  "analyzer_sha256": "378743c4c3b4ef637e937d5d3f14dff113a411ec82d0dce4c0d997a8a628ea7f",
+  "completed_generations": 20,
+  "fresh_baselines_reproduced": 10,
+  "independently_recomputed_mixed_distances": 20,
+  "raw_text_equal_pairs": 10,
+  "baseline_edits": 32,
+  "candidate_edits": 32,
+  "pairs_improved": 0,
+  "pairs_equal_edits": 10,
+  "pairs_worsened": 0,
+  "both_translation_targets_qualified": false,
+  "all_controls_nonregressed": true,
+  "candidate_promoted": false,
+  "production_defaults_changed": false,
+  "quality_accepted": false,
+  "preservation": {
+    "tracked_sources": 101,
+    "protected_metadata_files": 1026,
+    "production_ready_idle_config_token_preserved": true,
+    "owned_group_absent": true
+  },
+  "known_cases": [
+    {
+      "id": "ascend_ses1_spk17_L4213_465.2000_0.6000",
+      "language": "en",
+      "reference": "thank you",
+      "arms": {
+        "baseline-empty-context": {
+          "text": "",
+          "language": [
+            "None"
+          ],
+          "mixed_edits": 2,
+          "normalized_exact": false,
+          "generation_tokens": 3
+        },
+        "fixed-verbatim-context": {
+          "text": "",
+          "language": [
+            "None"
+          ],
+          "mixed_edits": 2,
+          "normalized_exact": false,
+          "generation_tokens": 3
+        }
+      },
+      "candidate_edit_delta": 0,
+      "raw_text_equal": true,
+      "original_han_preserved_in_order": true,
+      "original_english_words_preserved_in_order": false
+    },
+    {
+      "id": "ascend_ses1_spk3_L6595_176.640_3.920",
+      "language": "mixed",
+      "reference": "那你现在住在Hong Kong大概住了多久",
+      "arms": {
+        "baseline-empty-context": {
+          "text": "那你现在住在荒矿，大概住了多久？",
+          "language": [
+            "Chinese"
+          ],
+          "mixed_edits": 2,
+          "normalized_exact": false,
+          "generation_tokens": 13
+        },
+        "fixed-verbatim-context": {
+          "text": "那你现在住在荒矿，大概住了多久？",
+          "language": [
+            "Chinese"
+          ],
+          "mixed_edits": 2,
+          "normalized_exact": false,
+          "generation_tokens": 13
+        }
+      },
+      "candidate_edit_delta": 0,
+      "raw_text_equal": true,
+      "original_han_preserved_in_order": true,
+      "original_english_words_preserved_in_order": false
+    },
+    {
+      "id": "ascend_ses1_spk3_L6677_295.500_3.170",
+      "language": "mixed",
+      "reference": "所以我们现在开始talk about our research topics",
+      "arms": {
+        "baseline-empty-context": {
+          "text": "So we now start talk about our research topics.",
+          "language": [
+            "English"
+          ],
+          "mixed_edits": 8,
+          "normalized_exact": false,
+          "generation_tokens": 13
+        },
+        "fixed-verbatim-context": {
+          "text": "So we now start talk about our research topics.",
+          "language": [
+            "English"
+          ],
+          "mixed_edits": 8,
+          "normalized_exact": false,
+          "generation_tokens": 13
+        }
+      },
+      "candidate_edit_delta": 0,
+      "raw_text_equal": true,
+      "original_han_preserved_in_order": false,
+      "original_english_words_preserved_in_order": true
+    },
+    {
+      "id": "ascend_ses1_spk3_L6828_600.360_2.580",
+      "language": "mixed",
+      "reference": "找个地方which is speak in english",
+      "arms": {
+        "baseline-empty-context": {
+          "text": "Find a place which is speaking English.",
+          "language": [
+            "English"
+          ],
+          "mixed_edits": 6,
+          "normalized_exact": false,
+          "generation_tokens": 11
+        },
+        "fixed-verbatim-context": {
+          "text": "Find a place which is speaking English.",
+          "language": [
+            "English"
+          ],
+          "mixed_edits": 6,
+          "normalized_exact": false,
+          "generation_tokens": 11
+        }
+      },
+      "candidate_edit_delta": 0,
+      "raw_text_equal": true,
+      "original_han_preserved_in_order": false,
+      "original_english_words_preserved_in_order": false
+    }
+  ],
+  "next_action": "Pilot closed: do not broaden, retune context, or change production defaults",
+  "limits": [
+    "A diagnostic selection of ten examples is not a population quality benchmark.",
+    "Python generation timing is not native HTTP or microphone end-to-end latency.",
+    "All original natural-quality, strict M4, physical, public-download and distribution gates remain open."
+  ]
+}

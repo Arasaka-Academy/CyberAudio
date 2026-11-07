@@ -1,0 +1,141 @@
+{
+  "created_at": "2026-11-07T02:08:58.289593+00:00",
+  "source_commit": "7ed9b28ac0be44ca93d41258bb69197136317bb0",
+  "previous_goal_turn_classification": "progress: scoped callback repair pushed to main and exact-SHA Swift 6.3.3 complete CI passed",
+  "purpose": "Test whether a single generic context instruction reduces shared natural code-switch translation while preserving predeclared controls; no prompt search or production change",
+  "hypothesis": "The unchanged Qwen3-ASR model may use a non-answer-bearing system context to preserve original-language text where the empty-context native/Python references translate Chinese into English. Unsupported instruction-following behavior is possible and will be measured rather than assumed.",
+  "context_prompt": "Transcribe all speech verbatim in its original language. Preserve code-switching. Do not translate, summarize, or add words.",
+  "data": {
+    "manifest_sha256": "6950c9fd603e0e7a17cb6bfe4b0d4fd33d6290c77a72b69a94dba8fba2f17eaf",
+    "ids": [
+      "ascend_ses1_spk17_L3818_9.3200_0.6400",
+      "ascend_ses1_spk17_L3825_16.5740_2.8760",
+      "ascend_ses1_spk17_L3834_25.3200_1.3600",
+      "ascend_ses1_spk17_L4213_465.2000_0.6000",
+      "ascend_ses1_spk3_L6595_176.640_3.920",
+      "ascend_ses1_spk3_L6677_295.500_3.170",
+      "ascend_ses1_spk3_L6828_600.360_2.580",
+      "ascend_ses4_spk17_L22960_616.0600_7.9400",
+      "ascend_ses4_spk17_L23193_902.2300_1.0100",
+      "ascend_ses4_spk17_L23205_911.8700_1.3300"
+    ],
+    "translation_ids": [
+      "ascend_ses1_spk3_L6677_295.500_3.170",
+      "ascend_ses1_spk3_L6828_600.360_2.580"
+    ],
+    "other_retained_failure_ids": [
+      "ascend_ses1_spk17_L4213_465.2000_0.6000",
+      "ascend_ses1_spk3_L6595_176.640_3.920"
+    ],
+    "independent_controls": [
+      {
+        "id": "ascend_ses1_spk17_L3818_9.3200_0.6400",
+        "language": "zh",
+        "selection": "first metadata row for language; not output selected"
+      },
+      {
+        "id": "ascend_ses4_spk17_L23193_902.2300_1.0100",
+        "language": "zh",
+        "selection": "last metadata row for language; not output selected"
+      },
+      {
+        "id": "ascend_ses1_spk17_L3825_16.5740_2.8760",
+        "language": "en",
+        "selection": "first metadata row for language; not output selected"
+      },
+      {
+        "id": "ascend_ses4_spk17_L22960_616.0600_7.9400",
+        "language": "en",
+        "selection": "last metadata row for language; not output selected"
+      },
+      {
+        "id": "ascend_ses1_spk17_L3834_25.3200_1.3600",
+        "language": "mixed",
+        "selection": "first metadata row for language; not output selected"
+      },
+      {
+        "id": "ascend_ses4_spk17_L23205_911.8700_1.3300",
+        "language": "mixed",
+        "selection": "last metadata row for language; not output selected"
+      }
+    ],
+    "selection": "Same four previously published failures plus first/last metadata rows for each of zh/en/mixed. No new output-dependent selection; unchanged original PCM/WAV, audio order, references and normalization.",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "ASCEND, Lovenia et al., LREC 2022, HKUST CAiRE"
+  },
+  "baseline": {
+    "relative_path": ".context/robustness/natural-reference-20261107-complete/reference-results.private.jsonl",
+    "sha256": "cdfb750f59fe32b3447870f908eb0ba072329254bb4fcd2f5013debf2fca77cd",
+    "compare_fields": [
+      "text",
+      "language"
+    ],
+    "all_ten_fresh_baselines_must_match_before_any_candidate": true
+  },
+  "reference": {
+    "max_tokens": 1024,
+    "temperature": 0.0,
+    "top_k": 0,
+    "top_p": 1.0,
+    "min_p": 0.0,
+    "repetition_penalty": 1.0,
+    "repetition_context_size": 32,
+    "prefill_step_size": 2048,
+    "chunk_duration": 1200.0,
+    "min_chunk_duration": 1.0,
+    "system_prompt": null
+  },
+  "reference_versions": {
+    "mlx": "0.32.4",
+    "mlx-audio": "0.6.4",
+    "transformers": "5.22.2",
+    "numpy": "2.3.4"
+  },
+  "reference_source_sha256": {
+    ".context/robustness/reference-parity-20261107/vendor/mlx_audio/stt/models/qwen3_asr/qwen3_asr.py": "2d9aaadea36945b0c7ada65fec12eaa5ff378628b6d3030aac54b5698a165da1",
+    ".context/robustness/reference-parity-20261107/vendor/mlx_audio/stt/models/qwen3_asr/config.py": "3140f69885ecc9ee2682c8aa3c815d479299ee42bfcce241955d678c1ca9015c",
+    ".context/robustness/reference-parity-20261107/vendor/mlx_audio/stt/utils.py": "73284e80930ae2b9dc3b8b23903076124708a0ac25c9e7a835eb28f513718349",
+    ".context/robustness/reference-parity-20261107/vendor/mlx_audio/utils.py": "f1681939d3d80caedeca22065bd225a253a6e696b2a4f66431463cd643649eb6",
+    ".context/robustness/reference-parity-20261107/vendor/mlx_audio/lm/generate.py": "69bd45c9f1445b23220e99857febd08cf96289a35f34e8fb20c40e953558d758",
+    ".context/robustness/reference-parity-20261107/vendor/mlx_audio/lm/sample_utils.py": "9a6a7279c7aff850cdf80dd7f77ece1c31c3441ddacee595fbf83d013f60cc41"
+  },
+  "reference_model_source_sha256": "2d9aaadea36945b0c7ada65fec12eaa5ff378628b6d3030aac54b5698a165da1",
+  "reference_feature_extractor_sha256": "dcce2e7820be059e657a9e12a60e8a55cfd37b1a82ee202ca15fc7d0934374cb",
+  "execution": {
+    "arms": [
+      "baseline-empty-context",
+      "fixed-verbatim-context"
+    ],
+    "order": "Ten unchanged Python baselines in metadata order, then ten candidate calls in the same order using the same model instance; clear MLX cache between calls. All model methods unmodified.",
+    "total_generations": 20,
+    "retries": 0,
+    "skips": 0,
+    "individual_timeout_seconds": 150,
+    "total_timeout_seconds": 600,
+    "outer_timeout_seconds": 750,
+    "isolated_offline_sandbox": true,
+    "max_owned_model_processes": 1,
+    "production_idle_required": true,
+    "model_hash_policy": "Reuse fixed model identity; compare original protected model/frozen file metadata and current tracked-source digests; no repeated whole-model hashing."
+  },
+  "qualification": {
+    "translation_targets": "Both retained translation cases must reduce author-tokenized edits, preserve all original Han characters in order and preserve English reference words; script presence alone is insufficient.",
+    "controls": "No increased author-tokenized edit count in any of the six independent controls or the two other known-failure controls.",
+    "action_if_failed": "Close pilot without changing defaults, broadening cohort, or searching more prompts. Retain all results.",
+    "action_if_passed": "Preliminary qualification only. A separate fixed full-cohort native candidate, original 100-corpus/per-case gates and target latency/quality evidence are required before adoption. No gate closes from this pilot."
+  },
+  "analysis": {
+    "scorer_path": ".context/robustness/post-delivery-20261107/score-natural-asr.py",
+    "scorer_sha256": "81888870cb1588b701474392a55f0fc6bc1bd6d04e7760905e2ecf7b361c05ff",
+    "independent_distance": "Recompute all twenty distances with an independently implemented full matrix.",
+    "timing": "Internal Python generation timings are not comparable to native HTTP or microphone end-to-end latency."
+  },
+  "acceptance": {
+    "candidate_promoted": false,
+    "production_defaults_changed": false,
+    "original_strict_m4_7200s_gate_preserved": true,
+    "natural_quality_not_accepted": true,
+    "physical_and_listening_still_deferred": true,
+    "public_download_developer_id_gui_upgrade_gates_preserved": true
+  }
+}

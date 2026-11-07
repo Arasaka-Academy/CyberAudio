@@ -1,0 +1,81 @@
+{
+  "status": "prompt_reconstruction_verified",
+  "source_sha256": "2d9aaadea36945b0c7ada65fec12eaa5ff378628b6d3030aac54b5698a165da1",
+  "verifier_sha256": "e333d336f467de7a10c6eaa767aec0f120f541cbde6e0f6f7304413432977c72",
+  "weight_loads": 0,
+  "additional_generations": 0,
+  "model_methods_replaced": false,
+  "verification_scope": "Original prompt-builder AST and pinned tokenizer reconstruct all twenty observed prompt counts; source dataflow passes system_prompt through the decoder. This is a file/tokenizer reconstruction, not a new tensor trace.",
+  "pairs": [
+    {
+      "id": "ascend_ses1_spk17_L3818_9.3200_0.6400",
+      "baseline_prompt_tokens": 28,
+      "candidate_prompt_tokens": 54,
+      "extra_context_tokens": 26,
+      "unchanged_audio_token_count": 13
+    },
+    {
+      "id": "ascend_ses1_spk17_L3825_16.5740_2.8760",
+      "baseline_prompt_tokens": 52,
+      "candidate_prompt_tokens": 78,
+      "extra_context_tokens": 26,
+      "unchanged_audio_token_count": 37
+    },
+    {
+      "id": "ascend_ses1_spk17_L3834_25.3200_1.3600",
+      "baseline_prompt_tokens": 33,
+      "candidate_prompt_tokens": 59,
+      "extra_context_tokens": 26,
+      "unchanged_audio_token_count": 18
+    },
+    {
+      "id": "ascend_ses1_spk17_L4213_465.2000_0.6000",
+      "baseline_prompt_tokens": 28,
+      "candidate_prompt_tokens": 54,
+      "extra_context_tokens": 26,
+      "unchanged_audio_token_count": 13
+    },
+    {
+      "id": "ascend_ses1_spk3_L6595_176.640_3.920",
+      "baseline_prompt_tokens": 66,
+      "candidate_prompt_tokens": 92,
+      "extra_context_tokens": 26,
+      "unchanged_audio_token_count": 51
+    },
+    {
+      "id": "ascend_ses1_spk3_L6677_295.500_3.170",
+      "baseline_prompt_tokens": 57,
+      "candidate_prompt_tokens": 83,
+      "extra_context_tokens": 26,
+      "unchanged_audio_token_count": 42
+    },
+    {
+      "id": "ascend_ses1_spk3_L6828_600.360_2.580",
+      "baseline_prompt_tokens": 49,
+      "candidate_prompt_tokens": 75,
+      "extra_context_tokens": 26,
+      "unchanged_audio_token_count": 34
+    },
+    {
+      "id": "ascend_ses4_spk17_L22960_616.0600_7.9400",
+      "baseline_prompt_tokens": 118,
+      "candidate_prompt_tokens": 144,
+      "extra_context_tokens": 26,
+      "unchanged_audio_token_count": 103
+    },
+    {
+      "id": "ascend_ses4_spk17_L23193_902.2300_1.0100",
+      "baseline_prompt_tokens": 29,
+      "candidate_prompt_tokens": 55,
+      "extra_context_tokens": 26,
+      "unchanged_audio_token_count": 14
+    },
+    {
+      "id": "ascend_ses4_spk17_L23205_911.8700_1.3300",
+      "baseline_prompt_tokens": 33,
+      "candidate_prompt_tokens": 59,
+      "extra_context_tokens": 26,
+      "unchanged_audio_token_count": 18
+    }
+  ]
+}
