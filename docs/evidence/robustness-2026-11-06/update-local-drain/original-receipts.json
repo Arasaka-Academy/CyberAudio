@@ -1,0 +1,54 @@
+{
+  "behavior-red": {
+    "bytes": 275,
+    "sha256": "4babb3a64d17437ab853c62c8dfe6d85b6845eecd038cce7ebdc338baab6fcda"
+  },
+  "behavior-red-build": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "behavior-red-stdout": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "behavior-red-stderr": {
+    "bytes": 189,
+    "sha256": "dc5688052a166e2dc835e82dcac31011c90819ea0f0b978c70cb44486fb88e61"
+  },
+  "behavior-green": {
+    "bytes": 513,
+    "sha256": "e8e535faace9a2c1689a084cf836bbb35432891d66a1f737d6c3995e7d5c1bb2"
+  },
+  "initial-checks": {
+    "bytes": 564,
+    "sha256": "8c916833f8cec3e7e894092ac281811f8185865ee7b28c5a7d6996415ae29af8"
+  },
+  "initial-check-log": {
+    "bytes": 5781,
+    "sha256": "28477fe7fdf2a5a4de44ee13ddd0c429f815c3d7a727167ddfeedd187a777a84"
+  },
+  "layout-correction": {
+    "bytes": 638,
+    "sha256": "b2ca0599ab9d6050d8552a9169bdb83924c5d96df5fff0c513e74700722f85d4"
+  },
+  "complete-checks": {
+    "bytes": 564,
+    "sha256": "3febc4dc4a682f911ae32aa1641da15f15575301307d0188ff3c48d56964f214"
+  },
+  "complete-check-log": {
+    "bytes": 22084,
+    "sha256": "8c74be657f0135283f220e9e445f89348d5e38c5088286f30625a1ed5b7d53ed"
+  },
+  "checks-runner": {
+    "bytes": 3006,
+    "sha256": "e37992f7abec32bb928296739076dcd58888e501e228b0f8125388a74070194e"
+  },
+  "final-preservation": {
+    "bytes": 534,
+    "sha256": "f3eb4a4d4c1cedeea19f75566a8f1e699bddce45b23bb01fb284ce1a6a4ed61d"
+  },
+  "sequential-review": {
+    "bytes": 2778,
+    "sha256": "293ca45f86c9a5e37b08acad1bceeb85973f514a07e79f6068b24b619dfc5389"
+  }
+}

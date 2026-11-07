@@ -1,0 +1,18 @@
+{
+  "at": "2026-11-07T08:01:30.871148+00:00",
+  "status": "independently_verified_after_complete_checks",
+  "expected_code_changes": [
+    "Sources/CyberAudio/UpdateGate.swift",
+    "tests/PreparationTests.swift"
+  ],
+  "source_files": 98,
+  "unrelated_sources_preserved": true,
+  "checked_sources_equal_worktree": true,
+  "shared_inputs": 1350,
+  "protected_metadata": 1026,
+  "frozen_artifacts": 6,
+  "accepted_app_files": 160,
+  "production_preserved": true,
+  "model_inference_started": false,
+  "installed_app_replaced": false
+}

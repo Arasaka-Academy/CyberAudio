@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "command": [
+    "make",
+    "check"
+  ],
+  "isolated_project_and_cloned_caches": true,
+  "exit_code": 0,
+  "elapsed_seconds": 572.602,
+  "native_contracts": 37,
+  "native_failures": 0,
+  "native_skipped": 0,
+  "tools_passed": 44,
+  "native_renders": 15,
+  "new_preparation_case_present": true,
+  "original_update_scenarios": 4,
+  "all_behavior_groups_passed": true,
+  "production_inference_build_passed": true,
+  "built_binary_sha256": {
+    "App": "1c9487ce627a027b0c10aa20cb94d58794cda4fb0bcd3c8cb0148424f07a50fe",
+    "Service": "6052c88a370995d2a8675067ed099574d2fbe7a7a0026e55b93802a2ee1a3cf0",
+    "Assets": "620db71f8e7c3121467f546a9c848acd2d679976a81f161108302ba5eb75ca68"
+  },
+  "full_log_bytes": 22084,
+  "full_log_sha256": "8c74be657f0135283f220e9e445f89348d5e38c5088286f30625a1ed5b7d53ed",
+  "selected_lines": [
+    "Native contracts: 37 cases, 0 failures, 0 skipped",
+    "Preparation: first launch, fixed source selection, progress, cancellation ownership, update drain including late preparation, failure/retry, reuse, bounded output and quit passed",
+    "UpdateGate: 4 behavioral scenarios passed",
+    "BackendLifecycle: 5 readiness ownership and process lifecycle cases passed",
+    "WorkspaceLayout: 7 workspace states, 3 settings tabs and 5 preparation states rendered at minimum size",
+    "44 passed in 16.66s",
+    "packaging/Info.plist: OK"
+  ],
+  "initial_failure_preserved": {
+    "previous_status": "failed",
+    "previous_native_contracts": {
+      "cases": 37,
+      "failures": 1,
+      "skipped": 0
+    },
+    "failing_case": "tokenizer process and locale stability",
+    "cause": "The SwiftPM legacy native runner passed a relative argv0 for an external sibling scratch; the test re-executed it from the isolated project, where that path did not exist.",
+    "change": "Move only this task-owned scratch under checks-project/.context/native-build and archive its copied module cache before relocation.",
+    "source_or_assertion_changes": false,
+    "test_selection_or_skips": false,
+    "original_failed_receipt_retained": true
+  }
+}

@@ -29,14 +29,18 @@ final class UpdateGate: ObservableObject {
         activeLease = lease
         task = Task {
             do {
-                message = "等待录音、播放与当前任务结束…"
-                while audioBusy() { try await Task.sleep(for: .milliseconds(200)) }
-                message = "暂停接收新请求，等待引擎空闲…"
                 while true {
                     try Task.checkCancellation()
+                    if audioBusy() {
+                        message = "等待录音、播放与当前任务结束…"
+                        try await Task.sleep(for: .milliseconds(200))
+                        continue
+                    }
+                    message = "暂停接收新请求，等待引擎空闲…"
                     let idle = try await prepare(lease)
                     try Task.checkCancellation()
-                    if idle { break }
+                    // Preparation can start while the asynchronous handshake is pending.
+                    if idle && !audioBusy() { break }
                     try await Task.sleep(for: .seconds(1))
                 }
                 terminationAllowed = true

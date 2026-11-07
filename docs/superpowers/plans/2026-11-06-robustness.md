@@ -70,7 +70,7 @@ Files: native asset downloader/tool, App setup controller/view, backend startup,
 - [x] Preserve valid files and configuration; detect insufficient space, missing FFmpeg, invalid assets, interrupted transfers, and unsupported proxies with actionable UI.
 - [x] Exercise download restart, server Range behavior, cancellation, corrupt/changed partial data, and native UI rendering using controlled endpoints.
 - [x] Build an isolated production App and verify preparation-to-ready using local pinned models and existing-installation startup. Verify actual cross-volume atomic publication using the bundled asset helper and a dedicated APFS image.
-- [ ] Accept a pristine installation downloading all model weights over the public network or real proxy. Latest 2026-11-07 native 1MiB probe succeeds through a task-owned reverse SSH forward to the existing local proxy: default TLS, exact Content-Range and original-model SHA. One bounded resume using the same signed Assets adds 64MiB, then both SSH channels time out and the actual downloader exits 1 at 03:56:52 UTC. Fourteen final files/176MiB partial, original prefix and production preserved; download processes and the lingering owned forwarding listener are confirmed stopped. Complete 23-file hashes and fresh-root inference remain pending; restore sustained transport before another resume. Earlier failed TLS receipts remain unchanged. Evidence: public-download-refresh/.
+- [ ] Accept a pristine installation downloading all model weights over the public network or real proxy. Explicit direct ModelScope later completed a23-file public resume and fresh-root inference (section38), reusing14finals/176MiB and existing FFmpeg. The separate empty-cache preflight (section41) stops before any write or download because13.37GiB free is below the unchanged15GiB condition. Original HF transport, full SOCKS5 transfer and from-zero FFmpeg/macOS installation remain separate open boundaries; earlier failures are preserved.
 
 ## 7. Stable signing and upgrades
 
@@ -354,6 +354,21 @@ This is a new code-review fix and concrete progress. No frozen quality experimen
 - [x] Preserve the zero-request/source-mismatch ASR preflight failure. Bind a separate execution record to the already accepted current App, verify its entire source/file manifest, and execute the unchanged 46 requests in a new directory with no inference retry.
 - [x] Verify 103 source files, 1,350 shared inputs, 1,026 protected metadata entries, 6 frozen artifacts and 160 current App files/links, production/config/Token and complete model/listener/request cleanup. Archive normalized protocols, source snapshots, exact results and original/export hashes in codec-sum/. No formal SDK/default changes or extra review-finding count.
 - [ ] Resolve original TTS content/stability with new qualified evidence before another full cohort or the original 7200s M4 workload. Natural-ASR, physical/listening, first-install boundaries and signed GUI upgrade gates remain open.
+
+## 40. Recheck local ownership after the update handshake (R16)
+
+- [x] Reproduce a new preparation download starting while the asynchronous update handshake is pending. Use the real preparation controller and a controlled owned child, with no model load or installation; the original gate incorrectly permits installation while preparation remains busy.
+- [x] Check local ownership before each handshake and again after its asynchronous result. Keep cancellation ownership intact and allow installation exactly once after both local work and the engine drain.
+- [x] Pass the added preparation integration regression and the original four update scenarios. Preserve the failing receipt separately.
+- [x] Complete isolated make check:37native/44tools/15renders, all behavior groups and production App/Service/Assets compilation. Complete sequential correctness/maintainability/testing/standards review and verify all protected inputs. Prepare scoped authorized main delivery; record the exact-revision remote CI proof after push.
+- [ ] Complete actual Sparkle GUI upgrade and permission retention only with the original credential/interactive requirements satisfied; the controlled installation callback is not a real upgrade.
+
+## 41. Empty-model-cache first-install preflight
+
+- [x] Preserve the prior successful ModelScope resume as reuse of14finals/176MiB, rather than empty-cache transfer.
+- [x] Run read-only target qualification before creating a new directory. Original line51 fails; a separately named diagnostic prints the individual conditions and confirms13.37GiB free against15GiB minimum, with the configured FFmpeg file present.
+- [x] Retain both failures and the704-entry protected metadata inventory privately. No target writes, downloads, model/App starts, deletion, fallback or relaxed conditions. Public evidence: empty-cache/.
+- [ ] Meet the same pre-existing free-space condition, freeze a new bounded single-invocation protocol, then download all23files into an empty isolated model root and verify every original size/SHA. A from-zero FFmpeg/macOS installation remains a separate requirement.
 
 ## Evidence log
 

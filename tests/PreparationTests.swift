@@ -103,6 +103,33 @@ struct PreparationTests {
         quitting.shutdown(); remove("hold")
         try await Task.sleep(for: .milliseconds(150))
         try require(starts == 2, "Late helper completion after quit must not start inference")
-        print("Preparation: first launch, fixed source selection, progress, cancellation ownership, update drain, failure/retry, reuse, bounded output and quit passed")
+
+        let raceRoot = root.appendingPathComponent("update-race")
+        try FileManager.default.createDirectory(at: raceRoot, withIntermediateDirectories: true)
+        let lateSetup = PreparationController(root: raceRoot, helper: helper, onReady: { starts += 1 })
+        defer { lateSetup.shutdown() }
+        lateSetup.check(); try await until { !lateSetup.busy }
+        var handshake: CheckedContinuation<Bool, Never>?
+        var handshakes = 0, lateInstallations = 0
+        let lateGate = UpdateGate(audioBusy: { lateSetup.busy }, prepare: { _ in
+            handshakes += 1
+            if handshakes == 1 { return await withCheckedContinuation { handshake = $0 } }
+            return true
+        }, resume: { _ in })
+        lateGate.begin { lateInstallations += 1 }
+        try await until { handshake != nil }
+        try Data().write(to: raceRoot.appendingPathComponent("hold"))
+        lateSetup.download(); try await until { lateSetup.completedBytes == 50 }
+        handshake?.resume(returning: true); handshake = nil
+        try await Task.sleep(for: .milliseconds(100))
+        try require(lateInstallations == 0 && !lateGate.terminationAllowed && lateGate.waiting,
+                    "An update must keep waiting for preparation started during its engine handshake")
+        lateSetup.cancel()
+        try require(lateSetup.busy, "The late preparation must retain cancellation ownership")
+        try await until { !lateSetup.busy }
+        try await until { lateInstallations == 1 }
+        try require(lateSetup.phase == .cancelled && starts == 2 && lateGate.terminationAllowed,
+                    "The update must install exactly once after the late helper drains")
+        print("Preparation: first launch, fixed source selection, progress, cancellation ownership, update drain including late preparation, failure/retry, reuse, bounded output and quit passed")
     }
 }

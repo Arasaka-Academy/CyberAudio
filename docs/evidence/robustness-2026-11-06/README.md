@@ -6,6 +6,8 @@
 
 | 文件 | 含义 |
 |---|---|
+| [update-local-drain/](update-local-drain/README.md) | R16：握手期间启动准备子进程的行为红测与修复，异步返回后重新检查本地排空，取消清理结束才安装一次 |
+| [empty-cache/](empty-cache/README.md) | M4 空缓存验收在只读预检被空间条件拦截：13.37 GiB < 15 GiB，FFmpeg 文件存在，零下载／模型启动／目标机写入；未放宽条件或清理数据 |
 | [codec-sum/](codec-sum/README.md) | 官方单次求和与 MLX BF16 左折叠的差异：367 帧重建、CPU／GPU 算子对照及七对完整生成／46 次双路 ASR；显式 FP32 累加通过结束／时长条件，但 dylan 数字回读退化且 seed117 仍有 3 个编辑，候选未采用或扩大 |
 | [repeated-code/](repeated-code/README.md) | 私有连续主码排除小样本的已知失败准确回读；完整 144 候选／144 当前路由基线、590 次双路 ASR，两个路由均 2 对改善／142 持平／0 回退，141 条完整字节保留；另一种子仍 29.2 秒且回读有误，时长条件失败，不采用或重启严格负载 |
 | [natural-padding/](natural-padding/README.md) | 固定七条短录音、原始／尾部／头部补零共 21 次原生请求；14 项基线匹配，总编辑数 11／11／10，但已知空转写未修复，未扩大或采用；当前源文件、App、冻结文件与生产保留 |

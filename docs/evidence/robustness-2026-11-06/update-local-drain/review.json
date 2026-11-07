@@ -1,0 +1,73 @@
+{
+  "at": "2026-11-07T07:51:43.583113+00:00",
+  "mode": "sequential main-thread review; no delegation",
+  "scope": [
+    "Sources/CyberAudio/UpdateGate.swift",
+    "tests/PreparationTests.swift"
+  ],
+  "introduced_finding": {
+    "id": "R16",
+    "priority": "P2",
+    "confidence": 1.0,
+    "trigger": "Preparation starts while the update handshake is suspended; the handshake then reports idle.",
+    "old_result": "Install runs while the real PreparationController still owns a download child.",
+    "fixed_result": "The gate rechecks local ownership after await, waits through cancellation cleanup, and installs once after both sides are idle.",
+    "red_receipt": "red.json",
+    "green_receipt": "green.json"
+  },
+  "reviews": [
+    {
+      "reviewer": "correctness",
+      "findings": [],
+      "evidence": [
+        "The local check and install state transition run on MainActor with no suspension between the final check and install callback.",
+        "The next loop waits for local work before attempting another handshake.",
+        "All existing cancellation/error/repeated-action checks are retained."
+      ],
+      "residual_risks": [
+        "A controlled installation callback does not validate actual Sparkle GUI behavior or permission retention."
+      ],
+      "testing_gaps": []
+    },
+    {
+      "reviewer": "maintainability",
+      "findings": [],
+      "evidence": [
+        "The existing state machine and busy closure are reused; no new abstraction, cross-module state or model parameters."
+      ],
+      "residual_risks": [],
+      "testing_gaps": []
+    },
+    {
+      "reviewer": "testing",
+      "findings": [],
+      "evidence": [
+        "The regression uses real PreparationController ownership and a real child; only the asynchronous handshake is controlled.",
+        "Red failed at the intended premature-install assertion, green verified waiting, retained cancellation ownership, and one eventual install.",
+        "The original four UpdateGate scenarios still pass."
+      ],
+      "residual_risks": [],
+      "testing_gaps": [
+        "Actual Sparkle GUI upgrade remains part of the original separate acceptance gate."
+      ]
+    },
+    {
+      "reviewer": "project-standards",
+      "findings": [],
+      "standards": [
+        {
+          "source": "User-provided AGENTS.md / RTK.md",
+          "rule": "Always prefix shell commands with rtk."
+        },
+        {
+          "source": "User-provided AGENTS.md",
+          "rule": "Task/Subagent/Parallel: run sequentially in main thread."
+        }
+      ],
+      "residual_risks": [],
+      "testing_gaps": []
+    }
+  ],
+  "repository_checks": "complete isolated make check exit0;37native/44tools/15renders; no failures or skipped contracts",
+  "not_a_new_model_candidate": true
+}
