@@ -294,7 +294,7 @@ Swift 6.3.3 warning removal is verified by the normal exact-commit Checks workfl
 - [x] Move reading off MainActor, propagate cancellation to its task, and keep transcription/update ownership until it returns. Preserve session IDs and previous text on errors.
 - [x] Verify direct/linked oversize rejection, empty/exact-limit admission, normal links and directory/FIFO rejection through the real workspace. Complete `make check`: 36 native contracts, 44 active tools, 14 renders, behavior regressions and release App/Service/Assets compilation.
 - [x] Complete additional three-second direct/linked native HTTP imports, checking decoded duration across multiple read chunks. Native decoding reports all three seconds in both cases; the existing cancellation/playback/update/late-failure suite also passes. Record final sequential review in import-file/.
-- [ ] Commit and push this scoped fix under the existing main-delivery authorization; verify exact remote SHA and its required Checks result.
+- [x] Commit and push this scoped fix under the existing main-delivery authorization: `35e44ba` reached main, with local HEAD and origin/main matching the successful SSH push. This delivery record changes documentation only; the final pushed HEAD's required Checks result is verified separately in the completion response and private delivery receipt.
 
 The optional complete-concurrency/warnings-as-errors invocation fails on both unchanged and current sources in existing observer-deinit/player-delegate code. Standard project-mode warnings-as-errors passes. Do not erase that distinction, or promote software checks to physical/model/distribution acceptance. Evidence: import-file/.
 

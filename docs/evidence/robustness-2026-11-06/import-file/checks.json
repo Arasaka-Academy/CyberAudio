@@ -38,6 +38,12 @@
     ".context/robustness/import-file-20261107/strict-current-compile.log": "7e6dff68e580c899a9054c957b07e23a64dfa2a499de6da05dbd4b8274f0371b",
     ".context/robustness/import-file-20261107/strict-typecheck-harness.json": "497ecb75323d008f97509b63c8b25d6026734dc67a925947efe0c4add0206a7d"
   },
-  "remote_ci": "pending final commit delivery",
-  "physical_or_model_acceptance": false
+  "remote_ci": {
+    "workflow": "Checks",
+    "job": "Native app, inference and tool regressions",
+    "scope": "final pushed HEAD",
+    "result_receipt": "completion response and private delivery receipt; GitHub Actions is authoritative"
+  },
+  "physical_or_model_acceptance": false,
+  "source_delivery_commit": "35e44ba7780e3bf90e00ae9c681ae37c153883d6"
 }
