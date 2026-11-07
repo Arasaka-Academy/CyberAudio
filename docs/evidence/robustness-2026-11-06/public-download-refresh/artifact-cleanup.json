@@ -1,0 +1,10 @@
+{
+  "observed_at": "2026-11-07T03:59:59.429649+00:00",
+  "file_owners_stopped": [],
+  "artifact_files_closed": true,
+  "retained_artifact_bytes": {
+    "candidate.tar.gz": 22717440,
+    "candidate-delta.tar.gz": 9400320
+  },
+  "scope": "Only inspect/stop SFTP owners of these two task-owned partial files; no unrelated SSH session or shared proxy touched"
+}

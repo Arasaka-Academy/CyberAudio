@@ -1,0 +1,81 @@
+{
+  "status": "failed",
+  "started_at": "2026-11-07T03:40:14.578209+00:00",
+  "maximum_seconds": 3600,
+  "disk_reserve_bytes": 3221225472,
+  "runner_pid": 8373,
+  "runner_sha256": "a6b2b1fad427f6d284f8bdfaa1c2233a3b015259d98d62e110ab2893eee8d96b",
+  "proxy": "http://127.0.0.1:17890",
+  "tls_validation": "default",
+  "scope": "One real Assets download resume using retained partials; no inference or App install",
+  "model_loaded": false,
+  "system_proxy_changed": false,
+  "elapsed_seconds": 998.382184666,
+  "helper_sha256": "06698db17958ab5adc2da7d1a1d9b23cbc34c57b67e1b1fb5cf7e9fd0e7adb1c",
+  "signature_exit_code": 0,
+  "models_lock_sha256": "668125b12cc2c1b469925e1eb60c79171c6f9623470622c619e4583971f4e816",
+  "production_before": {
+    "instance": "5A940C69-D3EA-4444-8C04-446D211C319F",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "cabe58f37637430abd7c610cc215083996ddf810a892ac469bd5c884a321d017",
+    "token_sha256": "aa8792163e9d9e591958a8ec4d4a5a94c9c2c470ec4e7af829c6117186fc5228"
+  },
+  "configuration_before": {
+    "service.json": "72d142652bbf3e9a52305e800483199c26ba5bdf951ba9ff4486b2bcb088a6b4",
+    "api-token": "847ce6f558520ecb5840c9f470aec4a03f0f0a53a07bb34ef63a3fcf4e564481"
+  },
+  "before": {
+    "ffmpeg_ready": true,
+    "invalid_files": [],
+    "resumable_bytes": 117440512,
+    "invalid_partials": [],
+    "total_bytes": 5547997530,
+    "can_download": true,
+    "ffmpeg_path": "/opt/homebrew/bin/ffmpeg",
+    "missing_files": 9,
+    "available_bytes": 18050838528,
+    "event": "status",
+    "models_ready": false,
+    "required_bytes": 5622764634,
+    "verified_bytes": 2469536771
+  },
+  "child_pid": 8386,
+  "progress": {
+    "partial_bytes": 184549376,
+    "present_locked_file_count": 14,
+    "present_locked_bytes": 2469536771
+  },
+  "exit_code": 1,
+  "final_status": {
+    "ffmpeg_ready": true,
+    "event": "status",
+    "invalid_files": [],
+    "ffmpeg_path": "/opt/homebrew/bin/ffmpeg",
+    "can_download": true,
+    "available_bytes": 17916477440,
+    "total_bytes": 5547997530,
+    "invalid_partials": [],
+    "resumable_bytes": 184549376,
+    "missing_files": 9,
+    "required_bytes": 5555655770,
+    "models_ready": false,
+    "verified_bytes": 2469536771
+  },
+  "error_type": "AssertionError",
+  "error": "Actual download did not complete",
+  "child_final_exit_code": 1,
+  "production_after": {
+    "instance": "5A940C69-D3EA-4444-8C04-446D211C319F",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "cabe58f37637430abd7c610cc215083996ddf810a892ac469bd5c884a321d017",
+    "token_sha256": "aa8792163e9d9e591958a8ec4d4a5a94c9c2c470ec4e7af829c6117186fc5228"
+  },
+  "production_preserved": true,
+  "configuration_token_preserved": true,
+  "initial_finals_preserved": true,
+  "prefixes_preserved": true,
+  "matching_download_processes_after": [],
+  "finished_at": "2026-11-07T03:56:52.969926+00:00"
+}

@@ -1,0 +1,106 @@
+{
+  "observed_at": "2026-11-07T03:57:17.635304+00:00",
+  "production_preserved": true,
+  "configuration_token_preserved": true,
+  "initial_finals_preserved": true,
+  "retained_prefix_preserved": true,
+  "initial_final_files": {
+    "models/Qwen3-ASR-1.7B-8bit/README.md": {
+      "sha256": "b356d4bdfbe7287b06b9b5ad084d9557a24ca98ca277a839beb2e682037b08f6",
+      "bytes": 1008,
+      "mtime_ns": 1793965443764962879
+    },
+    "models/Qwen3-ASR-1.7B-8bit/chat_template.json": {
+      "sha256": "75a8cfca24f00de72d796fbfed6858fc9614ef3dabd8696684cc3bc03a9c58ff",
+      "bytes": 1161,
+      "mtime_ns": 1793965445163103443
+    },
+    "models/Qwen3-ASR-1.7B-8bit/config.json": {
+      "sha256": "1b76b3b6c655fc54595da025f7a96474ad9fa86363303fbdd61a7d8483ccfaf7",
+      "bytes": 7188,
+      "mtime_ns": 1793965446170230467
+    },
+    "models/Qwen3-ASR-1.7B-8bit/generation_config.json": {
+      "sha256": "1da527824d81e07118facff437e03f2e24a23311e3bdeb2368973fe77e5f275c",
+      "bytes": 142,
+      "mtime_ns": 1793965447333877549
+    },
+    "models/Qwen3-ASR-1.7B-8bit/merges.txt": {
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "bytes": 1671853,
+      "mtime_ns": 1793965454411667085
+    },
+    "models/Qwen3-ASR-1.7B-8bit/model.safetensors": {
+      "sha256": "bf304b009cc7eca79283056f787b44c952d24ac22cec787b39732bba3c23c13c",
+      "bytes": 2463307541,
+      "mtime_ns": 1793972419340797778
+    },
+    "models/Qwen3-ASR-1.7B-8bit/model.safetensors.index.json": {
+      "sha256": "0a5d0ec11188602242ff81a9969883d0fdeb98cd5d85cd1413089d897c201af5",
+      "bytes": 78968,
+      "mtime_ns": 1793972427782919978
+    },
+    "models/Qwen3-ASR-1.7B-8bit/preprocessor_config.json": {
+      "sha256": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d",
+      "bytes": 330,
+      "mtime_ns": 1793972428764100904
+    },
+    "models/Qwen3-ASR-1.7B-8bit/tokenizer_config.json": {
+      "sha256": "4942d005604266809309cabc9f4e9cb89ce855d59b14681fdc0e1cc62ea26c4c",
+      "bytes": 12487,
+      "mtime_ns": 1793972430218181498
+    },
+    "models/Qwen3-ASR-1.7B-8bit/vocab.json": {
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "bytes": 2776833,
+      "mtime_ns": 1793972475141794646
+    },
+    "models/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit/README.md": {
+      "sha256": "50fe8f13fc95466beb50a96ae743e40573512754e80330373a043f4bd34d6212",
+      "bytes": 1118,
+      "mtime_ns": 1793972475842943123
+    },
+    "models/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit/config.json": {
+      "sha256": "43f29f9ab55cf387bd2ce1d07e9d95a5ca8974fa2fda4e2b45c13ae64aad3bfa",
+      "bytes": 6058,
+      "mtime_ns": 1793972476609259546
+    },
+    "models/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit/generation_config.json": {
+      "sha256": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+      "bytes": 245,
+      "mtime_ns": 1793972477927136260
+    },
+    "models/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit/merges.txt": {
+      "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "bytes": 1671839,
+      "mtime_ns": 1793972496476400146
+    }
+  },
+  "retained_prefixes": {
+    "tmp/downloads/b696f4bf45f54497b6de758981e76f1410bd68af05a657477dee466b0202df1a.partial": {
+      "bytes": 117440512,
+      "sha256": "af7d220bba46d667fe290aedb0c79b10df8b66bc5e96c0da0a34ef4bd40ddd18",
+      "final_path": "models/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit/model.safetensors"
+    }
+  },
+  "matching_validation_processes": [],
+  "forward_cleanup": {
+    "observed_at": "2026-11-07T03:59:27.684816+00:00",
+    "scope": "Terminate only the lingering remote half of the task-owned reverse SSH forward after its local client exited255; existing 7890 proxy untouched",
+    "owned_forward_server_pid": 7972,
+    "signal": "SIGTERM",
+    "remaining_process_identity": "",
+    "remaining_listener_output": "",
+    "port_17890_connect_errno_after": 61,
+    "owned_forward_stopped": true,
+    "production_after": {
+      "instance": "5A940C69-D3EA-4444-8C04-446D211C319F",
+      "status": "ready",
+      "busy": false,
+      "config_sha256": "cabe58f37637430abd7c610cc215083996ddf810a892ac469bd5c884a321d017",
+      "token_sha256": "aa8792163e9d9e591958a8ec4d4a5a94c9c2c470ec4e7af829c6117186fc5228"
+    },
+    "production_preserved": true
+  },
+  "artifact_files_closed": true
+}

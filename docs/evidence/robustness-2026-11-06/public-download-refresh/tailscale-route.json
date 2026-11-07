@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-07T03:49:32.291777+00:00",
+  "exit_code": 1,
+  "elapsed_seconds": 7.167458041978534,
+  "pong_count": 3,
+  "derp_observed": true,
+  "direct_reported": false,
+  "control_plane_online_is_not_transport_reachability": true,
+  "production_or_network_configuration_changed": false
+}

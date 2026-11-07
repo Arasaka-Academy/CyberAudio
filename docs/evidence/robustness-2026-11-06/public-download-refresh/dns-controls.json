@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-07T03:52:47.422194+00:00",
+  "results": [
+    {
+      "case": "default",
+      "exit_code": 35,
+      "metrics": "000 1 0.004894",
+      "elapsed_seconds": 0.024578874988947064,
+      "ssl_syscall": true,
+      "timeout": false,
+      "tls_validation": "default",
+      "host_and_sni": "huggingface.co"
+    },
+    {
+      "case": "local-answer-connect-to",
+      "exit_code": 35,
+      "metrics": "000 1 0.003259",
+      "elapsed_seconds": 0.013353333983104676,
+      "ssl_syscall": true,
+      "timeout": false,
+      "tls_validation": "default",
+      "host_and_sni": "huggingface.co"
+    }
+  ],
+  "scope": "Fixed HEAD-only pair using the existing target proxy; CONNECT address only changes in the second case; original HTTPS hostname and TLS trust checks retained"
+}

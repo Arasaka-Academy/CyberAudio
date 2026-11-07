@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-11-07T03:40:13.583386+00:00",
+  "base_commit": "d8e7ad8635a50286df42e6994a46b9ae0e0ae34b",
+  "hypothesis": "The native 1MiB Range passed through the existing local proxy; the same route can now resume the full fixed asset set.",
+  "route": "M4 loopback 17890 via task-owned reverse SSH forward to existing local loopback proxy 7890",
+  "forward_session_id": 94532,
+  "source_sha256": "a6b2b1fad427f6d284f8bdfaa1c2233a3b015259d98d62e110ab2893eee8d96b",
+  "acceptance": "Assets download exit 0; 23 files / 5547997530 bytes; independent fixed hashes; existing finals, prefix, configuration, Token and production preserved",
+  "budget_seconds": 3600,
+  "disk_reserve_bytes": 3221225472,
+  "maximum_cli_invocations": 1,
+  "tls_validation": "default",
+  "restart_partials": false,
+  "model_inference": false
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "huggingface",
+    "exit_code": 28,
+    "metrics": "000 0 7.006913",
+    "elapsed_seconds": 7.018,
+    "tls_default": true
+  },
+  {
+    "id": "apple",
+    "exit_code": 0,
+    "metrics": "200 0 0.077642",
+    "elapsed_seconds": 0.088,
+    "tls_default": true
+  }
+]

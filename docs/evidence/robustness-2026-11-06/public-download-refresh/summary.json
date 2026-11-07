@@ -1,0 +1,50 @@
+{
+  "created_at": "2026-11-07T04:01:39.857704+00:00",
+  "source_commit": "d8e7ad8635a50286df42e6994a46b9ae0e0ae34b",
+  "status": "native_range_recovered_full_download_incomplete",
+  "normal_tls_native_range": {
+    "passed": true,
+    "bytes": 1048576,
+    "content_range": "bytes 117440512-118489087/2393308931",
+    "elapsed_seconds": 6.193556070327759,
+    "maximum_resource_seconds": 55,
+    "requested_range": "117440512-118489087",
+    "sha256": "995c2090456f47cfe6a14a697a24f15fdef57f3c99c0280e9618cf4fc13cb4da",
+    "status": 206,
+    "tls_validation": "default",
+    "transport": "URLSessionDownloadTask"
+  },
+  "public_download": {
+    "status": "failed",
+    "exit_code": 1,
+    "error": {
+      "event": "error",
+      "code": "download_unavailable",
+      "message": "下载中断，已保留进度；请检查网络或代理后继续。"
+    },
+    "started_at": "2026-11-07T03:40:14.578209+00:00",
+    "finished_at": "2026-11-07T03:56:52.969926+00:00",
+    "elapsed_seconds": 998.382184666,
+    "verified_final_files": 14,
+    "verified_final_bytes": 2469536771,
+    "required_total_files": 23,
+    "required_total_bytes": 5547997530,
+    "initial_partial_bytes": 117440512,
+    "retained_partial_bytes": 184549376,
+    "additional_durable_bytes": 67108864
+  },
+  "production_and_configuration_preserved": true,
+  "original_final_files_and_prefix_preserved": true,
+  "owned_download_processes_absent": true,
+  "owned_forward_stopped": true,
+  "current_source_files_verified": 98,
+  "frozen_artifacts_verified": 6,
+  "isolated_current_app_built_locally": true,
+  "target_candidate_transfer_complete": false,
+  "fresh_root_inference_started": false,
+  "new_model_quality_experiment_run": false,
+  "full_make_check_rerun": false,
+  "production_source_modified": false,
+  "overall_goal_complete": false,
+  "next_admission": "Restore and measure a sustained transport, preserve this 176MiB partial, then resume and verify all 23 fixed hashes before fresh-root inference; avoid repeating an unchanged failing transfer."
+}

@@ -6,6 +6,7 @@
 
 | 文件 | 含义 |
 |---|---|
+| [public-download-refresh/](public-download-refresh/README.md) | 2026-11-07 新路径原生 1MiB／默认 TLS／SHA 通过；同一签名 Assets 实际续传增加 64MiB 后随 SSH 中断退出 1，14 个完整文件／176MiB 断点及生产保留，所属进程和转发确认清理；完整下载和新目录推理仍未通过 |
 | [checks.json](checks.json) | R1–R7 阶段完整 `make check`：28 项原生契约，29 项现役工具测试，14 个原生渲染，行为回归和实际推理 Helper 编译；工作流／entitlement／空白检查 |
 | [build.json](build.json) | R1–R7 阶段设备、源码提交、本地 App 与两个 Helper／Metal 的大小和 SHA；明确本地 ad-hoc、未公证、未交付 |
 | [source-sha256.json](source-sha256.json) | 本轮本仓库 App、Native、测试、工具、打包、锁文件与工作流的内容快照；不含下载的上游源码 |

@@ -1,0 +1,21 @@
+{
+  "case_order": [
+    "huggingface-http",
+    "huggingface-socks5h",
+    "apple-http",
+    "apple-socks5h"
+  ],
+  "machines": [
+    "local",
+    "M4"
+  ],
+  "head_only": true,
+  "requests_per_machine": 4,
+  "request_seconds": 12,
+  "connection_seconds": 5,
+  "retries": 0,
+  "tls_validation": "default",
+  "hypothesis": "Compare transport protocols on an actually reachable existing proxy port; TCP success alone does not prove HTTP or TLS.",
+  "no_proxy_or_production_configuration_changes": true,
+  "template_sha256": "035c8a265fe7257085b3b6bfc82d73ea63a3fdfc0001e566c2dd92d74004f86f"
+}

@@ -1,0 +1,14 @@
+{
+  "base": "d8e7ad8635a50286df42e6994a46b9ae0e0ae34b",
+  "hypothesis": "The previously failing M4 transport route may have recovered since its last observation.",
+  "range_start": 117440512,
+  "range_bytes": 1048576,
+  "acceptance": "HTTP 206, exact Content-Range, exact byte count and independently recomputed original-model digest",
+  "preservation": [
+    "production instance/config/token",
+    "all fresh-download file sizes and mtimes"
+  ],
+  "admission": "Check actual owned process state and production idle before the probe.",
+  "next_action": "Only after a passing unchanged-route probe consider resuming the original complete download.",
+  "source_sha256": "d973093ea9d751ca178f27fca0f23cf5e38d4d2592ee92146561ed95c20e3722"
+}

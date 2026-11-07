@@ -1,0 +1,40 @@
+{
+  "last_events": [
+    {
+      "path": "tts/model.safetensors",
+      "event": "progress",
+      "phase": "downloading",
+      "total_bytes": 5547997530,
+      "completed_bytes": 2628920323
+    },
+    {
+      "path": "tts/model.safetensors",
+      "event": "progress",
+      "phase": "downloading",
+      "total_bytes": 5547997530,
+      "completed_bytes": 2637308931
+    },
+    {
+      "path": "tts/model.safetensors",
+      "event": "progress",
+      "phase": "downloading",
+      "total_bytes": 5547997530,
+      "completed_bytes": 2645697539
+    },
+    {
+      "path": "tts/model.safetensors",
+      "event": "progress",
+      "phase": "downloading",
+      "total_bytes": 5547997530,
+      "completed_bytes": 2654086147
+    },
+    {
+      "event": "error",
+      "code": "download_unavailable",
+      "message": "\u4e0b\u8f7d\u4e2d\u65ad\uff0c\u5df2\u4fdd\u7559\u8fdb\u5ea6\uff1b\u8bf7\u68c0\u67e5\u7f51\u7edc\u6216\u4ee3\u7406\u540e\u7ee7\u7eed\u3002"
+    }
+  ],
+  "owned_reverse_forward_connect_errno": 0,
+  "ndjson_sha256": "cd2eb890ae0951ac9adcede96476474a2fdbd6e00bba3ccfd30fd5f0be3090cb",
+  "stderr_bytes": 0
+}

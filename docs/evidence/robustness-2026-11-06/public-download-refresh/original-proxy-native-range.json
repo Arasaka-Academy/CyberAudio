@@ -1,0 +1,44 @@
+{
+  "started_at": "2026-11-07T03:28:55.109154+00:00",
+  "status": "probe_failed",
+  "scope": "One unchanged normal-TLS URLSession 1MiB range; no full download or inference",
+  "production_before": {
+    "instance": "5A940C69-D3EA-4444-8C04-446D211C319F",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "cabe58f37637430abd7c610cc215083996ddf810a892ac469bd5c884a321d017",
+    "token_sha256": "aa8792163e9d9e591958a8ec4d4a5a94c9c2c470ec4e7af829c6117186fc5228"
+  },
+  "probe_binary_sha256": "eb80d25db3eb858005522fe5aab56a40f04b1e158d7a955da8a8cc111494d5f1",
+  "old_expected_sha256": "995c2090456f47cfe6a14a697a24f15fdef57f3c99c0280e9618cf4fc13cb4da",
+  "new_full_download_started": false,
+  "model_loaded": false,
+  "configuration_changed": false,
+  "probe_exit_code": 0,
+  "probe": {
+    "elapsed_seconds": 0.011287093162536621,
+    "error_code": -1200,
+    "error_domain": "NSURLErrorDomain",
+    "maximum_resource_seconds": 55,
+    "requested_range": "117440512-118489087",
+    "tls_validation": "default",
+    "transport": "URLSessionDownloadTask",
+    "underlying_code": -1200,
+    "underlying_domain": "kCFErrorDomainCFNetwork"
+  },
+  "expected_range_sha256": "995c2090456f47cfe6a14a697a24f15fdef57f3c99c0280e9618cf4fc13cb4da",
+  "normal_tls_correct_range_passed": false,
+  "production_after": {
+    "instance": "5A940C69-D3EA-4444-8C04-446D211C319F",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "cabe58f37637430abd7c610cc215083996ddf810a892ac469bd5c884a321d017",
+    "token_sha256": "aa8792163e9d9e591958a8ec4d4a5a94c9c2c470ec4e7af829c6117186fc5228"
+  },
+  "production_preserved": true,
+  "assets_preserved": true,
+  "owned_processes_absent": true,
+  "finished_at": "2026-11-07T03:28:55.153572+00:00",
+  "ssh_exit_code": 0,
+  "remote_source_sha256": "d973093ea9d751ca178f27fca0f23cf5e38d4d2592ee92146561ed95c20e3722"
+}

@@ -1,0 +1,53 @@
+[
+  {
+    "case": "huggingface-http",
+    "url": "https://huggingface.co/",
+    "exit_code": 35,
+    "elapsed_seconds": 0.014,
+    "metrics": "000 1 0.003422 0",
+    "status_lines": [
+      "HTTP/1.1 200 Connection established"
+    ],
+    "safe_error_categories": [
+      "ssl_syscall"
+    ],
+    "tls_validation": "default"
+  },
+  {
+    "case": "huggingface-socks5h",
+    "url": "https://huggingface.co/",
+    "exit_code": 35,
+    "elapsed_seconds": 0.009,
+    "metrics": "000 1 0.002678 0",
+    "status_lines": [],
+    "safe_error_categories": [
+      "ssl_syscall"
+    ],
+    "tls_validation": "default"
+  },
+  {
+    "case": "apple-http",
+    "url": "https://www.apple.com/",
+    "exit_code": 0,
+    "elapsed_seconds": 0.047,
+    "metrics": "200 0 0.041357 2",
+    "status_lines": [
+      "HTTP/1.1 200 Connection established",
+      "HTTP/2 200 "
+    ],
+    "safe_error_categories": [],
+    "tls_validation": "default"
+  },
+  {
+    "case": "apple-socks5h",
+    "url": "https://www.apple.com/",
+    "exit_code": 0,
+    "elapsed_seconds": 0.025,
+    "metrics": "200 0 0.018110 2",
+    "status_lines": [
+      "HTTP/2 200 "
+    ],
+    "safe_error_categories": [],
+    "tls_validation": "default"
+  }
+]

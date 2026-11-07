@@ -1,0 +1,12 @@
+{
+  "base": "d8e7ad8635a50286df42e6994a46b9ae0e0ae34b",
+  "hypothesis": "The reachable local proxy can provide the original M4 download path through an isolated SSH forward.",
+  "source": "same pinned Hugging Face URL",
+  "range_bytes": 1048576,
+  "tls_validation": "default",
+  "forward_session_id": 94532,
+  "remote_port": 17890,
+  "acceptance": "Native URLSession HTTP 206, complete Content-Range, exact 1MiB size and original-model SHA",
+  "preserve_production_and_system_settings": true,
+  "source_sha256": "17e7eecfc088d05a1e973d7ef4515a030c35ad7d46e6dae13de85d263adde36d"
+}

@@ -1,0 +1,49 @@
+{
+  "status": "built",
+  "at": "2026-11-07T03:41:58.673157+00:00",
+  "source_commit": "d8e7ad8635a50286df42e6994a46b9ae0e0ae34b",
+  "scope": "Isolated current App, Service and Assets; frozen dist App and DMG preserved; no installation/publication/notarization",
+  "bundle_id": "local.cyberaudio.validation.finalbytespublicdownload",
+  "signing": "adhoc",
+  "strict_nested_signature": true,
+  "bundled_assets_prepare": true,
+  "files": {
+    "Contents/MacOS/CyberAudio": {
+      "bytes": 2583440,
+      "sha256": "3c6734f9a0287b81aa4941f632b775ae2ec92ee7c602caa114b6f40b3f4bc8d2"
+    },
+    "Contents/Helpers/CyberAudioService": {
+      "bytes": 73166048,
+      "sha256": "efe377a791e01b88df04f32358015c5153b25e70172f29f84213723da8621659"
+    },
+    "Contents/Helpers/CyberAudioAssets": {
+      "bytes": 7526976,
+      "sha256": "8ddf11c1e83f81ffa698158e39eb018903622e179be8efa1a3baca8d8e6adf42"
+    },
+    "Contents/Resources/mlx.metallib": {
+      "bytes": 214156448,
+      "sha256": "c6d7a3facb83568f6e4cb2cf4a8c736ee29302571a48343cb9a3a4d1cd3e3893"
+    },
+    "Contents/Resources/offline.sb": {
+      "bytes": 52,
+      "sha256": "e210de323e5d671bb6b63b79ce1481f8314b5ac2fd65d65a180d381294ee2fa1"
+    },
+    "Contents/Info.plist": {
+      "bytes": 1623,
+      "sha256": "8cf6c11db6aad430ae70e6512caa1631a0819d10b058fc89ebb0807bce68b29d"
+    },
+    "Contents/Helpers/CyberAudioNative_CyberAudioCore.bundle/Contents/Resources/Models.lock.json": {
+      "bytes": 4163,
+      "sha256": "668125b12cc2c1b469925e1eb60c79171c6f9623470622c619e4583971f4e816"
+    }
+  },
+  "input_binaries": {
+    "Contents/MacOS/CyberAudio": "fa93f7306d061122676b9e4c6df71f691f9b3641d62c32b7c8d4d03bfe43ca6a",
+    "Contents/Helpers/CyberAudioService": "7b27ee2363f06dc4de51be83a10049a2d20c1b47fe73760d869e603f813f03a9",
+    "Contents/Helpers/CyberAudioAssets": "a283cd7dfad7177d057d938e39e25c59c4f1a02c77fd75e914dd21edec15cb31"
+  },
+  "driver_sha256": "90152a026e328d0a747ae976eab798a567cd493c1edf1ce505e5a2a95852f13d",
+  "driver_source_sha256": "73b90d861ea9059db126f2874696faca284d6845318fa7eb97db0172c571c03a",
+  "model_lock_sha256": "668125b12cc2c1b469925e1eb60c79171c6f9623470622c619e4583971f4e816",
+  "frozen_preserved": true
+}

@@ -1,0 +1,13 @@
+{
+  "changed": [
+    "Contents/Helpers/CyberAudioAssets",
+    "Contents/Helpers/CyberAudioService",
+    "Contents/Info.plist",
+    "Contents/MacOS/CyberAudio",
+    "Contents/_CodeSignature/CodeResources"
+  ],
+  "extra": [],
+  "unchanged_files": 155,
+  "changed_regular_bytes": 83289751,
+  "local_files": 160
+}

@@ -1,0 +1,23 @@
+{
+  "last_received_progress": {
+    "event": "progress",
+    "elapsed_seconds": 909.2,
+    "partial_bytes": 184549376,
+    "present_locked_file_count": 14,
+    "present_locked_bytes": 2469536771
+  },
+  "received_record_count": 32,
+  "transport_exit": {
+    "exit_code": 255,
+    "finished_at": "2026-11-07T03:56:15.507797+00:00"
+  },
+  "remote_terminal_status_known": true,
+  "initial_partial_bytes": 117440512,
+  "additional_durable_bytes_observed": 67108864,
+  "whole_download_gate_passed": false,
+  "fresh_root_inference_started": false,
+  "remote_status": "failed",
+  "remote_finished_at": "2026-11-07T03:56:52.969926+00:00",
+  "remote_child_exit_code": 1,
+  "owned_processes_absent": true
+}

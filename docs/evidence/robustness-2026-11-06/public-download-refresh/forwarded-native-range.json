@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-11-07T03:36:24.891775+00:00",
+  "status": "probe_passed",
+  "scope": "Original pinned URL and TLS validation through a task-owned loopback-only reverse SSH forward to the existing local proxy",
+  "netstat_reported_listeners": [],
+  "forward_binding_checks": [
+    {
+      "address": "127.0.0.1",
+      "connect_errno": 0
+    },
+    {
+      "address": "127.0.0.2",
+      "connect_errno": 35
+    },
+    {
+      "address": "::1",
+      "connect_errno": 61
+    }
+  ],
+  "production_before": {
+    "instance": "5A940C69-D3EA-4444-8C04-446D211C319F",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "cabe58f37637430abd7c610cc215083996ddf810a892ac469bd5c884a321d017",
+    "token_sha256": "aa8792163e9d9e591958a8ec4d4a5a94c9c2c470ec4e7af829c6117186fc5228"
+  },
+  "old_source_sha256": "5aecd4db1a9598beac35db27c21dfb4ec15a282f1b2860a6acb62d8e8ae3d01c",
+  "source_sha256": "79c44bc898cdfa005e0aaf3e563eca54b2e22400be971774fa53378930af8207",
+  "new_full_download_started": false,
+  "model_loaded": false,
+  "system_proxy_changed": false,
+  "compile_exit_code": 0,
+  "binary_sha256": "1cacb67d7cad7166a46527cbc65552666213fc50ced5a75580f50c0929aff5cb",
+  "probe_exit_code": 0,
+  "probe": {
+    "bytes": 1048576,
+    "content_range": "bytes 117440512-118489087/2393308931",
+    "elapsed_seconds": 6.193556070327759,
+    "maximum_resource_seconds": 55,
+    "requested_range": "117440512-118489087",
+    "sha256": "995c2090456f47cfe6a14a697a24f15fdef57f3c99c0280e9618cf4fc13cb4da",
+    "status": 206,
+    "tls_validation": "default",
+    "transport": "URLSessionDownloadTask"
+  },
+  "expected_range_sha256": "995c2090456f47cfe6a14a697a24f15fdef57f3c99c0280e9618cf4fc13cb4da",
+  "normal_tls_correct_range_passed": true,
+  "production_after": {
+    "instance": "5A940C69-D3EA-4444-8C04-446D211C319F",
+    "status": "ready",
+    "busy": false,
+    "config_sha256": "cabe58f37637430abd7c610cc215083996ddf810a892ac469bd5c884a321d017",
+    "token_sha256": "aa8792163e9d9e591958a8ec4d4a5a94c9c2c470ec4e7af829c6117186fc5228"
+  },
+  "production_preserved": true,
+  "assets_preserved": true,
+  "finished_at": "2026-11-07T03:36:35.313805+00:00",
+  "ssh_exit_code": 0,
+  "remote_source_sha256": "17e7eecfc088d05a1e973d7ef4515a030c35ad7d46e6dae13de85d263adde36d"
+}

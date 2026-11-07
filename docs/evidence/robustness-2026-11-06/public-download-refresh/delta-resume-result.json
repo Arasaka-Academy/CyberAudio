@@ -1,0 +1,15 @@
+{
+  "started_at": "2026-11-07T03:53:57.287873+00:00",
+  "status": "failed",
+  "budget_seconds": 1200,
+  "retained_prefix_bytes": 9400320,
+  "retained_prefix_sha256": "60493a9c2685c6a1c1637fe287ef941af8594ce14277554a92a3b137a9510fd0",
+  "source_sha256": "d35e992b0373645508dfbec8e39634f036598c410d488913df7789f3cc9ab812",
+  "server_alive_interval_seconds": 30,
+  "server_alive_count_max": 4,
+  "scope": "Resume the same retained artifact after verified prefix; no App execution or model operation",
+  "sftp_exit_code": 255,
+  "error_type": "AssertionError",
+  "error": "Bounded SFTP resume failed",
+  "finished_at": "2026-11-07T03:54:09.188626+00:00"
+}

@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-07T03:52:40.924179+00:00",
+  "hypothesis": "Existing target proxy failure may depend on its resolved destination; compare only the CONNECT address, retain original HTTPS hostname/SNI and default TLS trust",
+  "cases": [
+    "default",
+    "local-answer-connect-to"
+  ],
+  "head_only": true,
+  "maximum_request_seconds": 12,
+  "retries": 0,
+  "source_sha256": "44fe6f226c868c8aead6db8bc433af271876a12bd9293813b38bc6b849cc0995",
+  "no_system_or_proxy_configuration_changes": true
+}

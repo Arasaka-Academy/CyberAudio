@@ -1,0 +1,10 @@
+{
+  "scope": "Predeclared frozen setup and acceptance observations; no failed result promoted",
+  "initial_binding_guard": "netstat listener absence was not proof of closed port; failed before network probe; corrected using observed socket connectivity",
+  "whole_bundle_transfer": "240-second whole-archive setup transfer timed out; partial kept; no App or inference started",
+  "delta_transfer": "SSH server keepalive timeout; partial kept; hash its retained prefix before choosing whether bytes need resuming",
+  "dns_connect_address_control": "Both default and local-resolver CONNECT address fail curl35 SSL_ERROR_SYSCALL in existing M4 proxy; address substitution did not restore TLS; no DNS or proxy config changed",
+  "long_ssh_route": "Three Tailscale pongs via DERP; no direct path reported; this does not by itself prove the throughput bottleneck",
+  "lan": "No matching /24 private subnet found among observed en0/en1 addresses; no route or firewall changes",
+  "physical_gate": "Previously user unavailable; no interactive acceptance claimed"
+}
