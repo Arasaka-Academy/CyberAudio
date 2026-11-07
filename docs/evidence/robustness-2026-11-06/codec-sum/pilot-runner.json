@@ -1,0 +1,25 @@
+{
+  "status": "generations_complete_not_content_accepted",
+  "started_at": "2026-11-07T07:20:23.035648+00:00",
+  "completed_arms": [
+    "baseline",
+    "candidate"
+  ],
+  "asr_started": false,
+  "protected_metadata_count": 1026,
+  "protocol_sha256": "c072bfbb0a84ddc7b139d9667d580d9663b0a6d1b2d037ab3f053f5f26dc8b25",
+  "elapsed_seconds": 163.086,
+  "owned_model_pid": 69770,
+  "baseline_exact_matches": 7,
+  "all_seven_actual_eos": true,
+  "all_seven_within15_seconds": true,
+  "candidate_repeats_exact": true,
+  "all_first_samples_unchanged": true,
+  "necessary_generation_gate_passed": true,
+  "production_preserved": true,
+  "source_preserved": true,
+  "frozen_preserved": true,
+  "protected_metadata_after_count": 1026,
+  "owned_model_exit_code": 0,
+  "finished_at": "2026-11-07T07:23:06.121669+00:00"
+}

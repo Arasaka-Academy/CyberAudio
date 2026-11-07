@@ -1,0 +1,30 @@
+{
+  "repository": "QwenLM/Qwen3-TTS",
+  "revision": "022e286b98fbec7e1e916cb940cdf532cd9f488e",
+  "files": [
+    {
+      "path": "qwen_tts/inference/qwen3_tts_model.py",
+      "exit_code": 0,
+      "revision": "022e286b98fbec7e1e916cb940cdf532cd9f488e",
+      "bytes": 37121,
+      "sha256": "e1da450732857c1f5fe3e36ebab85db2f6dc6a48caaff6973f463384e30275e4",
+      "git_blob": "f4d33bf3d60c404ee540e58488545ccf5347e25f"
+    },
+    {
+      "path": "qwen_tts/core/models/modeling_qwen3_tts.py",
+      "exit_code": 0,
+      "revision": "022e286b98fbec7e1e916cb940cdf532cd9f488e",
+      "bytes": 100211,
+      "sha256": "25c42656bcf810f06ef6bc1839bd7083f3c8cfedac3a147c4060b4262b1c96a0",
+      "git_blob": "a3eb30a05771345c7511ca69eea8c96f3359ed66"
+    },
+    {
+      "path": "qwen_tts/core/models/configuration_qwen3_tts.py",
+      "exit_code": 0,
+      "revision": "022e286b98fbec7e1e916cb940cdf532cd9f488e",
+      "bytes": 26428,
+      "sha256": "f52867f14fde06a416dd14864d503ce6d13d0a08d5f5da30191e1c80c13f5d18",
+      "git_blob": "0bd426db0fb6410a21b0649c7b5804739d600106"
+    }
+  ]
+}

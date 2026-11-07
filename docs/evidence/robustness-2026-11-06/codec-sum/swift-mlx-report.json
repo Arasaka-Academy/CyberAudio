@@ -1,0 +1,4428 @@
+{
+  "new_model_generations": 0,
+  "results": [
+    {
+      "bf16_sum_exact_official_frames": 367,
+      "device": "Device(cpu, 0)",
+      "fp32_sum_exact_official_frames": 367,
+      "frame_count": 367,
+      "frames": [
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 0,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 1,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 2,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 3,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 4,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 5,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 6,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 7,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 8,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 9,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 10,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 11,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 12,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 13,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 14,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 15,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 16,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 17,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 18,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 19,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 20,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 21,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 22,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 23,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 24,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 25,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 26,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 27,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 28,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 29,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 30,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 31,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 32,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 33,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 34,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 35,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 36,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 37,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 38,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 39,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 40,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 41,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 42,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 43,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 44,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 45,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 46,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 47,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 48,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 49,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 50,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 51,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 52,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 53,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 54,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 55,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 56,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 57,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 58,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 59,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 60,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 61,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 62,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 63,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 64,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 65,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 66,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 67,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 68,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 69,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 70,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 71,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 72,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 73,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 74,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 75,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 76,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 77,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 78,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 79,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 80,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 81,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 82,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 83,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 84,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 85,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 86,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 87,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 88,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 89,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 90,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 91,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 92,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 93,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 94,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 95,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 96,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 97,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 98,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 99,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 100,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 101,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 102,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 103,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 104,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 105,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 106,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 107,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 108,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 109,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 110,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 111,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 112,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 113,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 114,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 115,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 116,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 117,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 118,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 119,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 120,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 121,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 122,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 123,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 124,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 125,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 126,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 127,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 128,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 129,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 130,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 131,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 132,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 133,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 134,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 135,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 136,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 137,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 138,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 139,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 140,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 141,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 142,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 143,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 144,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 145,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 146,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 147,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 148,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 149,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 150,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 151,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 152,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 153,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 154,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 155,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 156,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 157,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 158,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 159,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 160,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 161,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 162,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 163,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 164,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 165,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 166,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 167,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 168,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 169,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 170,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 171,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 172,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 173,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 174,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 175,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 176,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 177,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 178,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 179,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 180,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 181,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 182,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 183,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 184,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 185,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 186,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 187,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 188,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 189,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 190,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 191,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 192,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 193,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 194,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 195,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 196,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 197,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 198,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 199,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 200,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 201,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 202,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 203,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 204,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 205,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 206,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 207,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 208,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 209,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 210,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 211,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 212,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 213,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 214,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 215,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 216,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 217,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 218,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 219,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 220,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 221,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 222,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 223,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 224,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 225,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 226,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 227,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 228,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 229,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 230,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 231,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 232,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 233,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 234,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 235,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 236,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 237,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 238,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 239,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 240,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 241,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 242,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 243,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 244,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 245,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 246,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 247,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 248,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 249,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 250,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 251,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 252,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 253,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 254,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 255,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 256,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 257,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 258,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 259,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 260,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 261,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 262,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 263,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 264,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 265,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 266,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 267,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 268,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 269,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 270,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 271,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 272,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 273,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 274,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 275,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 276,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 277,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 278,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 279,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 280,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 281,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 282,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 283,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 284,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 285,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 286,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 287,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 288,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 289,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 290,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 291,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 292,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 293,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 294,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 295,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 296,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 297,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 298,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 299,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 300,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 301,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 302,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 303,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 304,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 305,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 306,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 307,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 308,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 309,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 310,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 311,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 312,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 313,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 314,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 315,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 316,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 317,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 318,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 319,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 320,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 321,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 322,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 323,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 324,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 325,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 326,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 327,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 328,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 329,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 330,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 331,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 332,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 333,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 334,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 335,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 336,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 337,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 338,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 339,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 340,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 341,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 342,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 343,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 344,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 345,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 346,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 347,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 348,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 349,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 350,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 351,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 352,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 353,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 354,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 355,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 356,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 357,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 358,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 359,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 360,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 361,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 362,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 363,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 364,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 365,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": true,
+          "fp32_sum_exact_official": true,
+          "frame": 366,
+          "sequential_exact_native": true
+        }
+      ],
+      "sequential_exact_native_frames": 367
+    },
+    {
+      "bf16_sum_exact_official_frames": 0,
+      "device": "Device(gpu, 0)",
+      "fp32_sum_exact_official_frames": 367,
+      "frame_count": 367,
+      "frames": [
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 0,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 1,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 2,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 3,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 4,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 5,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 6,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 7,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 8,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 9,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 10,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 11,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 12,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 13,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 14,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 15,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 16,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 17,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 18,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 19,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 20,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 21,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 22,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 23,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 24,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 25,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 26,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 27,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 28,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 29,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 30,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 31,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 32,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 33,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 34,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 35,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 36,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 37,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 38,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 39,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 40,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 41,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 42,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 43,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 44,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 45,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 46,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 47,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 48,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 49,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 50,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 51,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 52,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 53,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 54,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 55,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 56,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 57,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 58,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 59,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 60,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 61,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 62,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 63,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 64,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 65,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 66,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 67,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 68,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 69,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 70,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 71,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 72,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 73,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 74,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 75,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 76,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 77,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 78,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 79,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 80,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 81,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 82,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 83,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 84,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 85,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 86,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 87,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 88,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 89,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 90,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 91,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 92,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 93,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 94,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 95,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 96,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 97,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 98,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 99,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 100,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 101,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 102,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 103,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 104,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 105,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 106,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 107,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 108,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 109,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 110,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 111,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 112,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 113,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 114,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 115,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 116,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 117,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 118,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 119,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 120,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 121,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 122,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 123,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 124,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 125,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 126,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 127,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 128,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 129,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 130,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 131,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 132,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 133,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 134,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 135,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 136,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 137,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 138,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 139,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 140,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 141,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 142,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 143,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 144,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 145,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 146,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 147,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 148,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 149,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 150,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 151,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 152,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 153,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 154,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 155,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 156,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 157,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 158,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 159,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 160,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 161,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 162,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 163,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 164,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 165,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 166,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 167,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 168,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 169,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 170,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 171,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 172,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 173,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 174,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 175,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 176,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 177,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 178,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 179,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 180,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 181,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 182,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 183,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 184,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 185,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 186,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 187,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 188,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 189,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 190,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 191,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 192,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 193,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 194,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 195,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 196,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 197,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 198,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 199,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 200,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 201,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 202,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 203,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 204,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 205,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 206,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 207,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 208,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 209,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 210,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 211,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 212,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 213,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 214,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 215,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 216,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 217,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 218,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 219,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 220,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 221,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 222,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 223,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 224,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 225,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 226,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 227,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 228,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 229,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 230,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 231,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 232,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 233,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 234,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 235,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 236,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 237,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 238,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 239,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 240,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 241,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 242,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 243,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 244,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 245,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 246,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 247,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 248,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 249,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 250,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 251,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 252,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 253,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 254,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 255,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 256,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 257,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 258,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 259,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 260,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 261,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 262,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 263,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 264,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 265,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 266,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 267,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 268,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 269,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 270,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 271,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 272,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 273,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 274,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 275,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 276,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 277,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 278,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 279,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 280,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 281,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 282,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 283,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 284,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 285,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 286,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 287,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 288,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 289,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 290,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 291,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 292,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 293,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 294,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 295,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 296,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 297,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 298,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 299,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 300,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 301,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 302,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 303,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 304,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 305,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 306,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 307,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 308,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 309,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 310,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 311,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 312,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 313,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 314,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 315,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 316,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 317,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 318,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 319,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 320,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 321,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 322,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 323,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 324,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 325,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 326,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 327,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 328,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 329,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 330,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 331,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 332,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 333,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 334,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 335,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 336,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 337,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 338,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 339,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 340,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 341,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 342,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 343,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 344,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 345,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 346,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 347,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 348,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 349,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 350,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 351,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 352,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 353,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 354,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 355,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 356,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 357,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 358,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 359,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 360,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 361,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 362,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 363,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 364,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 365,
+          "sequential_exact_native": true
+        },
+        {
+          "bf16_sum_exact_official": false,
+          "fp32_sum_exact_official": true,
+          "frame": 366,
+          "sequential_exact_native": true
+        }
+      ],
+      "sequential_exact_native_frames": 367
+    }
+  ],
+  "status": "completed"
+}

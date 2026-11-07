@@ -1,0 +1,4 @@
+{
+  "before": "            var codecEmbed = talker.getInputEmbeddings()(nextToken)\n            for (i, code) in codeTokens.dropFirst().enumerated() {\n                codecEmbed = codecEmbed + talker.codePredictor.codecEmbedding[i](code)\n            }\n",
+  "after": "            // Private operator-parity diagnostic: official torch BF16 reduction\n            // accumulates in FP32, then rounds once before the text addition.\n            let codecEmbeds = [talker.getInputEmbeddings()(nextToken)]\n                + codeTokens.dropFirst().enumerated().map { i, code in\n                    talker.codePredictor.codecEmbedding[i](code)\n                }\n            let codecEmbed = sum(\n                concatenated(codecEmbeds, axis: 1).asType(.float32),\n                axis: 1, keepDims: true\n            ).asType(codecEmbeds[0].dtype)\n"
+}

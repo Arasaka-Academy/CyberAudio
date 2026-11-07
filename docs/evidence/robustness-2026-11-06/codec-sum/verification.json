@@ -1,0 +1,20 @@
+{
+  "status": "independently_verified",
+  "verified_at": "2026-11-07T07:30:15.469582+00:00",
+  "export_record_sha256": "a25acb39f87d1e9ef83c6ee559f0e4dcc1af57c0336284a1c3c3c86e93a54369",
+  "files_verified": 46,
+  "original_and_export_records_verified": 44,
+  "operator_frames": 367,
+  "actual_feedback_frames": 361,
+  "changed_feedback_elements": 453893,
+  "fresh_paired_generations": 14,
+  "asr_requests": 46,
+  "combined_routes": 28,
+  "generation_gate_passed": true,
+  "content_gate_passed": false,
+  "candidate_promoted": false,
+  "zero_request_failure_preserved": true,
+  "original_lock_dependency_bytes_preserved": true,
+  "source_files_preserved": 103,
+  "archive_has_no_home_paths_or_known_credential_patterns": true
+}

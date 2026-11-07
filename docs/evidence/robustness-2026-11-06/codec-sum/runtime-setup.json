@@ -1,0 +1,27 @@
+{
+  "started_at": "2026-11-07T07:09:45.794194+00:00",
+  "scope": "New private CPU operator environment; existing reference environments and production untouched",
+  "steps": [
+    {
+      "step": 0,
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 0.059
+    },
+    {
+      "step": 1,
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 2.306
+    },
+    {
+      "step": 2,
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 88.999
+    }
+  ],
+  "status": "ready",
+  "lock_sha256": "95c8053cd95c14eb6bfe0eff3001f182446c0ffd32daab9f072b4fd167f0502e",
+  "finished_at": "2026-11-07T07:11:17.159939+00:00"
+}

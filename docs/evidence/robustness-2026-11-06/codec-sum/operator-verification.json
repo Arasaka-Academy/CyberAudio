@@ -1,0 +1,25 @@
+{
+  "verified_at": "2026-11-07T07:18:09.785856+00:00",
+  "all367_native_reconstructions_exact": true,
+  "all367_official_numpy_comparisons_exact": true,
+  "all367_swift_cpu_and_gpu_explicit_fp32_comparisons_exact": true,
+  "native_shared_objects_preserved": true,
+  "files_sha256": {
+    "prepare-causal-pilot.py": "b9a6901df43526e77b0e047b11fc8348f1e774a0014e6d9ba6fa7142a842bc28",
+    "NativeOperatorProbe.swift": "2768f9c1adfb7eac0503185032444209c5011916503f5c74c2dc94633d8141bb",
+    "mlx-operator-report.private.json": "e2d6a848f935e693d59cca83f32c900c7d11e6a11cec7eeebd97d15f82963bd2",
+    "discovery.json": "b97b79d1e4568b8483b816fa6835728217a20a6811a35798bf1724bfda587250",
+    "setup-runtime.py": "080f3ddda3f34121ebedd5bba7fe8dba288fc713e632b17a684cbbc3f926ae39",
+    "operator-report.private.json": "e1dbb8a15be378dc39380a9f82dfbb8dd7110a93e4f6567012bcd7545548539d",
+    "audit-mlx.py": "ee93a626675db385bb247a4f218ba8977236835dde70d0f29f0883cfeeff3f57",
+    "build-operator-probe.py": "ec34f798f8a1af9c80aba63ffd05c830cafdc3e7d20afc591f1232ccc99bfcc5",
+    "operator-native-inputs.json": "b2d9581cba55c7804d85236458a507c2fe836cd4c6459ca1695841029030f576",
+    "source-provenance.json": "1e0ee28f635ff5c66c7c4484029d60fda30a4e96bb2115f45e4fa124b4bac9aa",
+    "operator-protocol.json": "8a332ee18f7897d9f12e8645cb1d6a8ece00a11bc8049e59a3918cf3ba527fb2",
+    "native-operator-report.private.json": "f88b691a75a9f38f758279259e39eb81e070c60cfb3bc9bce8130fec322f9ab7",
+    "audit-operators.py": "030ef037bb831e32f6d3d2c4d12d435b4b137a4c3fcec6cabc80379aa79413a1",
+    "runtime-setup.json": "b219ad97b5cdd408e9e99dc6f3967ef41e84673610e4e591441be037d298dbe9"
+  },
+  "no_model_generation": true,
+  "production_changed": false
+}

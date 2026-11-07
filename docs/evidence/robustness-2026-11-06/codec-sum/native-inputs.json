@@ -1,0 +1,35 @@
+{
+  "npz_sha256": "43043e3ccda8ee3d62b59c1f6847a0148d5c3e5999576e59159624808894df9a",
+  "safetensors_sha256": "e954fce20488e431ca34277bd3af18c0af6f32358f9f94455fa71877e0f70de9",
+  "arrays": {
+    "embedding_rows": {
+      "shape": [
+        367,
+        16,
+        2048
+      ],
+      "dtype": "mlx.core.bfloat16"
+    },
+    "pads": {
+      "shape": [
+        367,
+        2048
+      ],
+      "dtype": "mlx.core.bfloat16"
+    },
+    "native_next": {
+      "shape": [
+        367,
+        2048
+      ],
+      "dtype": "mlx.core.bfloat16"
+    },
+    "official_next": {
+      "shape": [
+        367,
+        2048
+      ],
+      "dtype": "mlx.core.bfloat16"
+    }
+  }
+}

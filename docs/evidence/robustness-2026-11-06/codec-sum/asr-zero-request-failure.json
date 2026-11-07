@@ -1,0 +1,23 @@
+{
+  "status": "failed",
+  "started_at": "2026-11-07T07:23:53.625845+00:00",
+  "completed_requests": 0,
+  "study_protocol_sha256": "c072bfbb0a84ddc7b139d9667d580d9663b0a6d1b2d037ab3f053f5f26dc8b25",
+  "broad_protected_metadata_before_count": 1026,
+  "study_files_sha256": {
+    "protocol.json": "c072bfbb0a84ddc7b139d9667d580d9663b0a6d1b2d037ab3f053f5f26dc8b25",
+    "run-roundtrip.py": "ecf99f609fa375601c9c43902b63a49154cfefe60603786a04be7bbc47b73647",
+    "prepare-roundtrip.py": "7307fe080aeaa1dd15ecacd58a9384e283c5b608abe114dbd85183416186d592",
+    "roundtrip-manifest.json": "52a6c296bb05d3cb6519538f5fcbb8590dedacb1237bc364ed6898bb8746c96f",
+    "roundtrip-transform.json": "77495b1b06ad666fab43ae97ec6e48a95bc5360f075284be5820a565ee7ececc"
+  },
+  "error_type": "AssertionError",
+  "error": "Native source differs from accepted Helper: Native/Sources/CyberAudioAssets/Main.swift",
+  "broad_protected_metadata_after_count": 1026,
+  "production_preserved": true,
+  "source_preserved": true,
+  "protected_file_metadata_preserved": true,
+  "owned_listener_closed": true,
+  "finished_at": "2026-11-07T07:23:53.751148+00:00",
+  "elapsed_seconds": 0.125
+}

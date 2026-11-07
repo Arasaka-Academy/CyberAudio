@@ -6,6 +6,7 @@
 
 | 文件 | 含义 |
 |---|---|
+| [codec-sum/](codec-sum/README.md) | 官方单次求和与 MLX BF16 左折叠的差异：367 帧重建、CPU／GPU 算子对照及七对完整生成／46 次双路 ASR；显式 FP32 累加通过结束／时长条件，但 dylan 数字回读退化且 seed117 仍有 3 个编辑，候选未采用或扩大 |
 | [repeated-code/](repeated-code/README.md) | 私有连续主码排除小样本的已知失败准确回读；完整 144 候选／144 当前路由基线、590 次双路 ASR，两个路由均 2 对改善／142 持平／0 回退，141 条完整字节保留；另一种子仍 29.2 秒且回读有误，时长条件失败，不采用或重启严格负载 |
 | [natural-padding/](natural-padding/README.md) | 固定七条短录音、原始／尾部／头部补零共 21 次原生请求；14 项基线匹配，总编辑数 11／11／10，但已知空转写未修复，未扩大或采用；当前源文件、App、冻结文件与生产保留 |
 | [sustained-transfer/](sustained-transfer/README.md) | M4 单一 SSH 路径的四段预定持续检查：首段 8MiB 默认 TLS／SHA 通过，第二段 45 秒超时后按规则停止；未重启完整下载，14 个最终文件／176MiB 断点及生产保留，所属转发清理通过 |
@@ -55,6 +56,8 @@
 [readiness-ownership/README.md](readiness-ownership/README.md)记录 R15：三种旧响应覆盖状态的行为红测、五项归属／控制回归、完整 36／44／14 检查和当前隔离 App 的 153.18 秒真实模型／生命周期验收。修复后固定 100 条与同 M1 旧版原始输出相同。
 
 最新 [modelscope-download/README.md](modelscope-download/README.md)记录显式固定下载源：M4 正常 TLS 直接续传 exit 0，复用原 14 个文件／176MiB 分段后，23 文件／5.55GB 全部独立摘要通过；使用这些文件的新目录当前 App 完整验收也 exit 0。M1／M4 分别 169.013／193.521 秒，各自同设备旧报告 100／100 原始文本一致；本阶段 37／44／15 检查和全部保护／清理通过。原质量、严格 M4、现场与分发门槛仍未完成；原 Hugging Face、空缓存重传及 FFmpeg 从零安装另计。
+
+后续 [codec-sum/](codec-sum/README.md)完成官方求和精度调查：全部 367 个原生快照精确重建，显式 FP32 累加在实际 Swift／MLX CPU 与 GPU 上匹配 PyTorch CPU。七个私有候选均自然结束且最长 5.12 秒，但完整双路回读存在数字退化及 seed117 开头错误；按原条件拒绝，未改正式策略或重启大队列／严格负载。
 
 完整原始记录保留在开发工作区 `.context/robustness/`，原始检查日志在 `/tmp/cyberaudio-robustness-*.log`，不会作为分发材料上传。
 

@@ -1,0 +1,427 @@
+{
+  "status": "fixed_codec_sum_pilot_content_verified",
+  "verified_at": "2026-11-07T07:26:07.699266+00:00",
+  "protocol_sha256": "c072bfbb0a84ddc7b139d9667d580d9663b0a6d1b2d037ab3f053f5f26dc8b25",
+  "generation_verification_sha256": "450df8bd9912bd1efa10a8540ce9615cb7e1da9c6198f72bbcef9dbe9231fcd2",
+  "generation_gate_passed": true,
+  "content_gate": {
+    "no_pair_worse_either_route": false,
+    "all_known_failure_routes_exact": false
+  },
+  "pilot_qualified_for_full_original_cohort": false,
+  "candidate_promoted": false,
+  "asr_requests": 46,
+  "combined_routes": 28,
+  "paired_routes": 14,
+  "all14_complete_outputs_and_both_routes_verified": true,
+  "zero_request_preflight_failure_preserved": true,
+  "inference_retries": 0,
+  "source_files_verified": 103,
+  "shared_build_inputs_verified": 1350,
+  "protected_metadata_verified": 1026,
+  "current_app_files_verified": 160,
+  "production_preserved": true,
+  "owned_model_processes_absent": true,
+  "owned_listener_closed": true,
+  "temporary_requests": 0,
+  "pairs": [
+    {
+      "id": "known-failure",
+      "route": "auto",
+      "baseline_edits": 17,
+      "candidate_edits": 0,
+      "candidate_worse": false,
+      "candidate_exact": true
+    },
+    {
+      "id": "known-failure",
+      "route": "producer",
+      "baseline_edits": 17,
+      "candidate_edits": 0,
+      "candidate_worse": false,
+      "candidate_exact": true
+    },
+    {
+      "id": "short-control",
+      "route": "auto",
+      "baseline_edits": 0,
+      "candidate_edits": 0,
+      "candidate_worse": false,
+      "candidate_exact": true
+    },
+    {
+      "id": "short-control",
+      "route": "producer",
+      "baseline_edits": 0,
+      "candidate_edits": 0,
+      "candidate_worse": false,
+      "candidate_exact": true
+    },
+    {
+      "id": "eric-english-numeric",
+      "route": "auto",
+      "baseline_edits": 15,
+      "candidate_edits": 3,
+      "candidate_worse": false,
+      "candidate_exact": false
+    },
+    {
+      "id": "eric-english-numeric",
+      "route": "producer",
+      "baseline_edits": 5,
+      "candidate_edits": 3,
+      "candidate_worse": false,
+      "candidate_exact": false
+    },
+    {
+      "id": "dylan-english-numeric",
+      "route": "auto",
+      "baseline_edits": 6,
+      "candidate_edits": 7,
+      "candidate_worse": true,
+      "candidate_exact": false
+    },
+    {
+      "id": "dylan-english-numeric",
+      "route": "producer",
+      "baseline_edits": 6,
+      "candidate_edits": 7,
+      "candidate_worse": true,
+      "candidate_exact": false
+    },
+    {
+      "id": "date-name-control",
+      "route": "auto",
+      "baseline_edits": 0,
+      "candidate_edits": 0,
+      "candidate_worse": false,
+      "candidate_exact": true
+    },
+    {
+      "id": "date-name-control",
+      "route": "producer",
+      "baseline_edits": 0,
+      "candidate_edits": 0,
+      "candidate_worse": false,
+      "candidate_exact": true
+    },
+    {
+      "id": "known-failure-repeat",
+      "route": "auto",
+      "baseline_edits": 17,
+      "candidate_edits": 0,
+      "candidate_worse": false,
+      "candidate_exact": true
+    },
+    {
+      "id": "known-failure-repeat",
+      "route": "producer",
+      "baseline_edits": 17,
+      "candidate_edits": 0,
+      "candidate_worse": false,
+      "candidate_exact": true
+    },
+    {
+      "id": "known-eos-long-s117",
+      "route": "auto",
+      "baseline_edits": 12,
+      "candidate_edits": 3,
+      "candidate_worse": false,
+      "candidate_exact": false
+    },
+    {
+      "id": "known-eos-long-s117",
+      "route": "producer",
+      "baseline_edits": 13,
+      "candidate_edits": 3,
+      "candidate_worse": false,
+      "candidate_exact": false
+    }
+  ],
+  "roundtrips": [
+    {
+      "arm": "baseline",
+      "id": "known-failure",
+      "route": "auto",
+      "text": "   ",
+      "reference": "持续验证语音服务的稳定性和恢复能力。",
+      "reference_tokens": 17,
+      "edits": 17,
+      "normalized_exact": false
+    },
+    {
+      "arm": "baseline",
+      "id": "known-failure",
+      "route": "producer",
+      "text": "啊！ 嗯。 嗯。 嗯。",
+      "reference": "持续验证语音服务的稳定性和恢复能力。",
+      "reference_tokens": 17,
+      "edits": 17,
+      "normalized_exact": false
+    },
+    {
+      "arm": "baseline",
+      "id": "short-control",
+      "route": "auto",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "reference": "持续验证语音服务的稳定性和恢复能力。",
+      "reference_tokens": 17,
+      "edits": 0,
+      "normalized_exact": true
+    },
+    {
+      "arm": "baseline",
+      "id": "short-control",
+      "route": "producer",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "reference": "持续验证语音服务的稳定性和恢复能力。",
+      "reference_tokens": 17,
+      "edits": 0,
+      "normalized_exact": true
+    },
+    {
+      "arm": "baseline",
+      "id": "eric-english-numeric",
+      "route": "auto",
+      "text": "ब्यू थर बेव सॉर सॉर",
+      "reference": "1234",
+      "reference_tokens": 1,
+      "edits": 15,
+      "normalized_exact": false
+    },
+    {
+      "arm": "baseline",
+      "id": "eric-english-numeric",
+      "route": "producer",
+      "text": "View Thor, Bev, Sir, Sir.",
+      "reference": "1234",
+      "reference_tokens": 1,
+      "edits": 5,
+      "normalized_exact": false
+    },
+    {
+      "arm": "baseline",
+      "id": "dylan-english-numeric",
+      "route": "auto",
+      "text": "一枪来三十四。",
+      "reference": "1234",
+      "reference_tokens": 1,
+      "edits": 6,
+      "normalized_exact": false
+    },
+    {
+      "arm": "baseline",
+      "id": "dylan-english-numeric",
+      "route": "producer",
+      "text": "一枪来三十四。",
+      "reference": "1234",
+      "reference_tokens": 1,
+      "edits": 6,
+      "normalized_exact": false
+    },
+    {
+      "arm": "baseline",
+      "id": "date-name-control",
+      "route": "auto",
+      "text": "Alice will meet Bob on November sixth, twenty twenty-six.",
+      "reference": "Alice will meet Bob on November sixth, twenty twenty-six.",
+      "reference_tokens": 11,
+      "edits": 0,
+      "normalized_exact": true
+    },
+    {
+      "arm": "baseline",
+      "id": "date-name-control",
+      "route": "producer",
+      "text": "Alice will meet Bob on November sixth, twenty twenty-six.",
+      "reference": "Alice will meet Bob on November sixth, twenty twenty-six.",
+      "reference_tokens": 11,
+      "edits": 0,
+      "normalized_exact": true
+    },
+    {
+      "arm": "baseline",
+      "id": "known-failure-repeat",
+      "route": "auto",
+      "text": "   ",
+      "reference": "持续验证语音服务的稳定性和恢复能力。",
+      "reference_tokens": 17,
+      "edits": 17,
+      "normalized_exact": false
+    },
+    {
+      "arm": "baseline",
+      "id": "known-failure-repeat",
+      "route": "producer",
+      "text": "啊！ 嗯。 嗯。 嗯。",
+      "reference": "持续验证语音服务的稳定性和恢复能力。",
+      "reference_tokens": 17,
+      "edits": 17,
+      "normalized_exact": false
+    },
+    {
+      "arm": "baseline",
+      "id": "known-eos-long-s117",
+      "route": "auto",
+      "text": "开大的野心，报复的稳定性，和挥。 恢复能力。嗯。 Morning, morning. ",
+      "reference": "持续验证语音服务的稳定性和恢复能力。",
+      "reference_tokens": 17,
+      "edits": 12,
+      "normalized_exact": false
+    },
+    {
+      "arm": "baseline",
+      "id": "known-eos-long-s117",
+      "route": "producer",
+      "text": "开大的野心，不负的稳定性，和会。 恢复能力。嗯。 森林。 嗯。",
+      "reference": "持续验证语音服务的稳定性和恢复能力。",
+      "reference_tokens": 17,
+      "edits": 13,
+      "normalized_exact": false
+    },
+    {
+      "arm": "candidate",
+      "id": "known-failure",
+      "route": "auto",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "reference": "持续验证语音服务的稳定性和恢复能力。",
+      "reference_tokens": 17,
+      "edits": 0,
+      "normalized_exact": true
+    },
+    {
+      "arm": "candidate",
+      "id": "known-failure",
+      "route": "producer",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "reference": "持续验证语音服务的稳定性和恢复能力。",
+      "reference_tokens": 17,
+      "edits": 0,
+      "normalized_exact": true
+    },
+    {
+      "arm": "candidate",
+      "id": "short-control",
+      "route": "auto",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "reference": "持续验证语音服务的稳定性和恢复能力。",
+      "reference_tokens": 17,
+      "edits": 0,
+      "normalized_exact": true
+    },
+    {
+      "arm": "candidate",
+      "id": "short-control",
+      "route": "producer",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "reference": "持续验证语音服务的稳定性和恢复能力。",
+      "reference_tokens": 17,
+      "edits": 0,
+      "normalized_exact": true
+    },
+    {
+      "arm": "candidate",
+      "id": "eric-english-numeric",
+      "route": "auto",
+      "text": "You tell Sebasi.",
+      "reference": "1234",
+      "reference_tokens": 1,
+      "edits": 3,
+      "normalized_exact": false
+    },
+    {
+      "arm": "candidate",
+      "id": "eric-english-numeric",
+      "route": "producer",
+      "text": "You tell Sebasi.",
+      "reference": "1234",
+      "reference_tokens": 1,
+      "edits": 3,
+      "normalized_exact": false
+    },
+    {
+      "arm": "candidate",
+      "id": "dylan-english-numeric",
+      "route": "auto",
+      "text": "一枪两百三十四。",
+      "reference": "1234",
+      "reference_tokens": 1,
+      "edits": 7,
+      "normalized_exact": false
+    },
+    {
+      "arm": "candidate",
+      "id": "dylan-english-numeric",
+      "route": "producer",
+      "text": "一枪两百三十四。",
+      "reference": "1234",
+      "reference_tokens": 1,
+      "edits": 7,
+      "normalized_exact": false
+    },
+    {
+      "arm": "candidate",
+      "id": "date-name-control",
+      "route": "auto",
+      "text": "Alice will meet Bob on November sixth, twenty twenty-six.",
+      "reference": "Alice will meet Bob on November sixth, twenty twenty-six.",
+      "reference_tokens": 11,
+      "edits": 0,
+      "normalized_exact": true
+    },
+    {
+      "arm": "candidate",
+      "id": "date-name-control",
+      "route": "producer",
+      "text": "Alice will meet Bob on November sixth, twenty twenty-six.",
+      "reference": "Alice will meet Bob on November sixth, twenty twenty-six.",
+      "reference_tokens": 11,
+      "edits": 0,
+      "normalized_exact": true
+    },
+    {
+      "arm": "candidate",
+      "id": "known-failure-repeat",
+      "route": "auto",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "reference": "持续验证语音服务的稳定性和恢复能力。",
+      "reference_tokens": 17,
+      "edits": 0,
+      "normalized_exact": true
+    },
+    {
+      "arm": "candidate",
+      "id": "known-failure-repeat",
+      "route": "producer",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "reference": "持续验证语音服务的稳定性和恢复能力。",
+      "reference_tokens": 17,
+      "edits": 0,
+      "normalized_exact": true
+    },
+    {
+      "arm": "candidate",
+      "id": "known-eos-long-s117",
+      "route": "auto",
+      "text": "可以去验证语音服务的稳定性和恢复能力。",
+      "reference": "持续验证语音服务的稳定性和恢复能力。",
+      "reference_tokens": 17,
+      "edits": 3,
+      "normalized_exact": false
+    },
+    {
+      "arm": "candidate",
+      "id": "known-eos-long-s117",
+      "route": "producer",
+      "text": "可以去验证语音服务的稳定性和恢复能力。",
+      "reference": "持续验证语音服务的稳定性和恢复能力。",
+      "reference_tokens": 17,
+      "edits": 3,
+      "normalized_exact": false
+    }
+  ],
+  "limits": [
+    "ASR readback is not human intelligibility or pronunciation acceptance.",
+    "Pilot qualification only admits the unchanged original144-case cohort, with every original strict M4/physical/distribution gate still open."
+  ]
+}

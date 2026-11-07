@@ -1,0 +1,108 @@
+{
+  "temperature": 0.7,
+  "subtalker_temperature": 0.7,
+  "top_k": 50,
+  "top_p": 1.0,
+  "repetition_penalty": 1.05,
+  "max_tokens": 1200,
+  "total_budget_seconds": 600,
+  "individual_budget_seconds": 120,
+  "model_directory": "<home>/Library/Application Support/CyberAudio/models/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit",
+  "metallib": "<workspace>/.context/robustness/readiness-ownership-20261107/final-bytes-readiness/CyberAudio.app/Contents/Resources/mlx.metallib",
+  "sdk_source": "<workspace>/.context/icon-native-build/checkouts/mlx-audio-swift/Sources/MLXAudioTTS/Models/Qwen3TTS/Qwen3TTS.swift",
+  "sdk_source_sha256": "17301a083f323673bc548aff031b83d9df60b2c04715af87592b1c68d42bd48a",
+  "app": "<workspace>/.context/robustness/readiness-ownership-20261107/final-bytes-readiness/CyberAudio.app",
+  "execution": {
+    "port": 18906,
+    "request_timeout_seconds": 150,
+    "whole_timeout_seconds": 900,
+    "helper_sha256": "c2bf7afa8767c46a097a920e2f3523e3dfe5ef0d9c426f1664807efc93efe07b",
+    "retries": 0,
+    "serial": true,
+    "maximum_owned_model_processes": 1
+  },
+  "legacy_baseline": "<workspace>/.context/robustness/m4-acceptance-20261106/m1-text-layout-probe/report.json",
+  "purpose": "Single-variable private official BF16 codec reduction parity pilot",
+  "created_at": "2026-11-07T07:17:01.426418+00:00",
+  "source_commit": "b6a7de5ec2dbf555b799b6170dce9649d29dead1",
+  "hypothesis": "Sequential BF16 codec embedding additions introduce repeated rounding absent from official tensor reduction. Exact CPU/Python-MLX/Swift-MLX evidence supports testing FP32 accumulation then one BF16 conversion, without attributing quality before generation/readback.",
+  "operator_report_sha256": "e1dbb8a15be378dc39380a9f82dfbb8dd7110a93e4f6567012bcd7545548539d",
+  "native_operator_report_sha256": "f88b691a75a9f38f758279259e39eb81e070c60cfb3bc9bce8130fec322f9ab7",
+  "operator_protocol_sha256": "8a332ee18f7897d9f12e8645cb1d6a8ece00a11bc8049e59a3918cf3ba527fb2",
+  "upstream_modeling_sha256": "25c42656bcf810f06ef6bc1839bd7083f3c8cfedac3a147c4060b4262b1c96a0",
+  "cases": [
+    {
+      "id": "known-failure",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "voice": "ono_anna",
+      "language": "chinese",
+      "seed": 196
+    },
+    {
+      "id": "short-control",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "voice": "ono_anna",
+      "language": "chinese",
+      "seed": 31
+    },
+    {
+      "id": "eric-english-numeric",
+      "text": "1234",
+      "voice": "eric",
+      "language": "english",
+      "seed": 31
+    },
+    {
+      "id": "dylan-english-numeric",
+      "text": "1234",
+      "voice": "dylan",
+      "language": "english",
+      "seed": 31
+    },
+    {
+      "id": "date-name-control",
+      "text": "Alice will meet Bob on November sixth, twenty twenty-six.",
+      "voice": "ryan",
+      "language": "english",
+      "seed": 31
+    },
+    {
+      "id": "known-failure-repeat",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "voice": "ono_anna",
+      "language": "chinese",
+      "seed": 196
+    },
+    {
+      "id": "known-eos-long-s117",
+      "text": "持续验证语音服务的稳定性和恢复能力。",
+      "language": "chinese",
+      "voice": "ono_anna",
+      "seed": 117
+    }
+  ],
+  "original_pilot_cases": 6,
+  "preexisting_long_eos_guard_seed": 117,
+  "selection": "The unchanged original six pilot cases, followed by the already known original-cohort seed117 long-EOS failure. No seed search, reselection or output-dependent expansion.",
+  "baseline_reference": "<workspace>/.context/robustness/codec-sum-20261107/baseline-reference.private.json",
+  "baseline_reference_sha256": "dffc3f6cb10acbdfb12e444cfe4ae5e111ee937af675baefbe624d252617929d",
+  "candidate": "Only replace the16 codec embedding BF16 left-fold with concatenation, FP32 tensor sum, and one BF16 conversion in generateVoiceDesign. Keep all other generation source bytes, sampling/filter order, temperatures, RNG calls, layout, EOS, decoder and1200-token budget.",
+  "qualification": [
+    "Reproduce all seven complete original baselines, including both96s/no-EOS repeats and seed11786.72s/EOS, with exact retained token and PCM bytes before starting any candidate generation.",
+    "Generate all seven fixed candidates exactly once, even after a failed EOS/length result. No truncation, automatic retry, seed search, threshold change or parameter adjustment.",
+    "Require actual EOS and <=15s complete audio in every candidate, exact failure repeats, and identical first main samples. Failed necessary generation conditions reject the pilot before ASR expansion.",
+    "Only after necessary generation gates pass, transcribe every one of the14 complete baseline/candidate outputs in deterministic<=24s chunks, with both auto and original producer language. Preserve every piece; no omission/retry. Use the unchanged author mixed-token scorer and independent edit-distance crosscheck.",
+    "Require no paired candidate edit increase in either ASR route for any case, and exact known-failure sentence readback in both routes. Human intelligibility remains a separate gate.",
+    "Only a passed pilot can qualify the unchanged full4-text x9-voice x4-seed144-case cohort. Neither pilot nor matrix alone closes the original strict7200s M4 or physical/listening/distribution gates.",
+    "Preserve production instance/config/token, models, formal SDK/shared objects, every prior artifact/failure, and App/DMG. No production promotion from operator parity."
+  ],
+  "files_sha256": {
+    "CodecSumProbe.swift": "a2232af54bedb718f74780f9972c72b8d6bdc7d0cea30b8bf667dd1b1151bb85",
+    "delta.json": "393fe8739b4a585fa8062fa15e7627fe7387299186b6b758177600a4e52dce60",
+    "build.py": "8ba4411f3e7aa8c9583611b1d48e4d9180ec3489c9736b5726470495ccf35450",
+    "run.py": "54bb47ef6d9e5d026fc36e4dd7f09bd6f40548700160542cce86d9860e530999",
+    "baseline-reference.private.json": "dffc3f6cb10acbdfb12e444cfe4ae5e111ee937af675baefbe624d252617929d"
+  },
+  "formal_source_changed": false,
+  "candidate_promoted": false
+}

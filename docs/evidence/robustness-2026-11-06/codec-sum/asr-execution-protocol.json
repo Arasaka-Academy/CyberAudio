@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-11-07T07:25:00.766653+00:00",
+  "reason": "Original ASR runner used a pre-ModelScope App manifest and failed source admission before Helper startup or any ASR request. Use the existing current-source App whose entire source/file manifest and full100-corpus acceptance verify; retain all prior failure bytes.",
+  "failed_attempt_sha256": "2081f8e938acb1d97922fda88ab6758dacbce7adf48aea9480742d65ec665d92",
+  "failed_attempt_requests": 0,
+  "frozen_study_protocol_sha256": "c072bfbb0a84ddc7b139d9667d580d9663b0a6d1b2d037ab3f053f5f26dc8b25",
+  "manifest_sha256": "52a6c296bb05d3cb6519538f5fcbb8590dedacb1237bc364ed6898bb8746c96f",
+  "app": "<workspace>/.context/robustness/model-route-20261107/current-source/CyberAudio.app",
+  "build_manifest_sha256": "389296eb7baa69da2fc2cb876665219fb9580c5ac89dcafc53275901df1fce60",
+  "helper_sha256": "986db1fb2f220dbaa70645e240f1e3c69ee6b60e90a4af459ff6a5f14f39fe99",
+  "accepted_native_report_sha256": "8dd02c6da2129482332fbc2f28fff6b7cb56154394cd0812b02edf4d44ce3c86",
+  "source_head": "b6a7de5ec2dbf555b799b6170dce9649d29dead1",
+  "output_directory": "roundtrip-current-http",
+  "expected_requests": 46,
+  "study_conditions_changed": false,
+  "inference_retries": 0
+}

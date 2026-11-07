@@ -1,0 +1,58 @@
+{
+  "purpose": "Compare official single BF16 sum with native/MLX-Python left-fold using all existing complete six-case16-codebook frames; no generation or new candidate",
+  "created_at": "2026-11-07T07:09:46.946272+00:00",
+  "original_report": ".context/robustness/complete-codec-20261107/native-capture/report.json",
+  "original_report_sha256": "ad01a7f4c0689b7cf08bfbbf53741f73ff270e23776d82a25bda336afff11d26",
+  "cases": [
+    {
+      "id": "known-failure",
+      "steps": 91,
+      "prepared_sha256": "a63c9fb8e841e7b74f66299f1a2745d58f964e6e64a92984b2854a4ca96bf02f",
+      "pcm_sha256": "09165a3231155b2a8af924ade08ba1afe63ec71d4690cf00ec201fd0d9238a9f"
+    },
+    {
+      "id": "short-control",
+      "steps": 35,
+      "prepared_sha256": "8ac163ded2be1bdac9fc19851198755a90d695942e578f4b2821deb3f497f0a5",
+      "pcm_sha256": "3d0ca995d4cfccc5bf28421ff4f386b3377f03727cb6594cacfb4cb7332f2903"
+    },
+    {
+      "id": "eric-english-numeric",
+      "steps": 81,
+      "prepared_sha256": "1fc92bb34a05c39b8408c0ec0ec1bec66c67838a2865fbd6a462852d05b0753b",
+      "pcm_sha256": "8814f4567b8f5861a8d19a840c08395a65c2750120acbc7925c881d40805bac3"
+    },
+    {
+      "id": "dylan-english-numeric",
+      "steps": 18,
+      "prepared_sha256": "6866614140263f0e38bf184db5a6d9e5803a53e674e06dedd75b491d0c4dae7b",
+      "pcm_sha256": "506497f1290909c8e774891189d16185b05a82cde38b8709dd2fcedacaf60725"
+    },
+    {
+      "id": "date-name-control",
+      "steps": 51,
+      "prepared_sha256": "88dbc9ce0491f331de58902c11342e70ec472b3ef4b0f425ecfb0832af2ab35e",
+      "pcm_sha256": "4cac9b90f0d4c518b4089fa4f0e98d408f1839769233af9b1bc14b32314ee3d1"
+    },
+    {
+      "id": "known-failure-repeat",
+      "steps": 91,
+      "prepared_sha256": "7fa7b477d61a5d55505bd0b059c95593ae750e1b9ee32518596e28388a35699a",
+      "pcm_sha256": "09165a3231155b2a8af924ade08ba1afe63ec71d4690cf00ec201fd0d9238a9f"
+    }
+  ],
+  "model_file": "model.safetensors",
+  "model_sha256": "b696f4bf45f54497b6de758981e76f1410bd68af05a657477dee466b0202df1a",
+  "main_embedding": "talker.model.codec_embedding.weight",
+  "auxiliary_embedding": "talker.code_predictor.model.codec_embedding.{0..14}.weight",
+  "comparison": [
+    "Exact reconstruction of native sequential-BF16 next_input from original BF16 embedding rows and retained tts_pad",
+    "Actual torch.bfloat16 tensor.sum(dim=0), then same retained BF16 pad addition",
+    "Independent NumPy Float64 accumulation and explicit round-to-nearest-even BF16 conversion",
+    "Terminal next-input frames marked unused, separate from feedback inputs"
+  ],
+  "acceptance": "All original traces and model hashes must verify; all native reconstructions must match; characterize any official-sum difference without claiming full model cause or quality improvement",
+  "new_model_generations": 0,
+  "candidate_promoted": false,
+  "formal_source_changed": false
+}

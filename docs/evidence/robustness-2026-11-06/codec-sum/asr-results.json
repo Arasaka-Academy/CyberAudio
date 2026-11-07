@@ -1,0 +1,922 @@
+[
+  {
+    "id": "baseline-known-failure-p0-auto",
+    "http_status": 200,
+    "response": {
+      "duration": 24,
+      "inference_ms": 518.0617499863729,
+      "language": "None",
+      "metal_active_bytes": 5579963816,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 697.1992080216296,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "e3b10876717f4a3b",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": ""
+    },
+    "elapsed_seconds": 0.7013645829865709
+  },
+  {
+    "id": "baseline-known-failure-p0-producer",
+    "http_status": 200,
+    "response": {
+      "duration": 24,
+      "inference_ms": 513.9569159946404,
+      "language": "zh",
+      "metal_active_bytes": 5579963816,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 641.2639580084942,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "b437b68344fc4c9b",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "啊！"
+    },
+    "elapsed_seconds": 0.6442267080419697
+  },
+  {
+    "id": "baseline-known-failure-p1-auto",
+    "http_status": 200,
+    "response": {
+      "duration": 24,
+      "inference_ms": 541.4694169885479,
+      "language": "None",
+      "metal_active_bytes": 5579963816,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 668.4042920242064,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "e4f20e5e1a4c4ee2",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": ""
+    },
+    "elapsed_seconds": 0.6712045419844799
+  },
+  {
+    "id": "baseline-known-failure-p1-producer",
+    "http_status": 200,
+    "response": {
+      "duration": 24,
+      "inference_ms": 507.15670798672363,
+      "language": "zh",
+      "metal_active_bytes": 5580275116,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 637.8426249721088,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "95e2d90a1ca54381",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "嗯。"
+    },
+    "elapsed_seconds": 0.6409164170036092
+  },
+  {
+    "id": "baseline-known-failure-p2-auto",
+    "http_status": 200,
+    "response": {
+      "duration": 24,
+      "inference_ms": 491.2277080002241,
+      "language": "None",
+      "metal_active_bytes": 5579963816,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 624.5230420026928,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "b69767376b564100",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": ""
+    },
+    "elapsed_seconds": 0.6275832499959506
+  },
+  {
+    "id": "baseline-known-failure-p2-producer",
+    "http_status": 200,
+    "response": {
+      "duration": 24,
+      "inference_ms": 478.48762501962483,
+      "language": "zh",
+      "metal_active_bytes": 5579963816,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 601.860916998703,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "d0f7f88ea1814b17",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "嗯。"
+    },
+    "elapsed_seconds": 0.6046670000068843
+  },
+  {
+    "id": "baseline-known-failure-p3-auto",
+    "http_status": 200,
+    "response": {
+      "duration": 24,
+      "inference_ms": 486.83641699608415,
+      "language": "None",
+      "metal_active_bytes": 5579963816,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 636.079250019975,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "9bf876224f5049d5",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": ""
+    },
+    "elapsed_seconds": 0.639291208004579
+  },
+  {
+    "id": "baseline-known-failure-p3-producer",
+    "http_status": 200,
+    "response": {
+      "duration": 24,
+      "inference_ms": 469.5920420344919,
+      "language": "zh",
+      "metal_active_bytes": 5579963816,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 596.5801250422373,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "30abcb5e49ee43cd",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "嗯。"
+    },
+    "elapsed_seconds": 0.599980290979147
+  },
+  {
+    "id": "baseline-short-control-p0-auto",
+    "http_status": 200,
+    "response": {
+      "duration": 2.56,
+      "inference_ms": 252.47220799792558,
+      "language": "zh",
+      "metal_active_bytes": 5578587560,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 360.7976669445634,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "10b218bda33f4964",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "持续验证语音服务的稳定性和恢复能力。"
+    },
+    "elapsed_seconds": 0.36256604199297726
+  },
+  {
+    "id": "baseline-short-control-p0-producer",
+    "http_status": 200,
+    "response": {
+      "duration": 2.56,
+      "inference_ms": 234.90750003838912,
+      "language": "zh",
+      "metal_active_bytes": 5578587560,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 353.70512498775497,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "1409fb235a2a4a3e",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "持续验证语音服务的稳定性和恢复能力。"
+    },
+    "elapsed_seconds": 0.35575433302437887
+  },
+  {
+    "id": "baseline-eric-english-numeric-p0-auto",
+    "http_status": 200,
+    "response": {
+      "duration": 6.88,
+      "inference_ms": 428.7610840401612,
+      "language": "Hindi",
+      "metal_active_bytes": 5578866088,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 556.5782079938799,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "a1e844796b934763",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "ब्यू थर बेव सॉर सॉर"
+    },
+    "elapsed_seconds": 0.5587511669727974
+  },
+  {
+    "id": "baseline-eric-english-numeric-p0-producer",
+    "http_status": 200,
+    "response": {
+      "duration": 6.88,
+      "inference_ms": 301.01716599892825,
+      "language": "en",
+      "metal_active_bytes": 5578866088,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 429.35362504795194,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "c4969109f2cf42ee",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "View Thor, Bev, Sir, Sir."
+    },
+    "elapsed_seconds": 0.43138274998636916
+  },
+  {
+    "id": "baseline-dylan-english-numeric-p0-auto",
+    "http_status": 200,
+    "response": {
+      "duration": 1.36,
+      "inference_ms": 204.36962496023625,
+      "language": "zh",
+      "metal_active_bytes": 5578522024,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 327.84924999577925,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "84cb1eeb86fd4200",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "一枪来三十四。"
+    },
+    "elapsed_seconds": 0.3295299590099603
+  },
+  {
+    "id": "baseline-dylan-english-numeric-p0-producer",
+    "http_status": 200,
+    "response": {
+      "duration": 1.36,
+      "inference_ms": 202.36520800972357,
+      "language": "en",
+      "metal_active_bytes": 5578522024,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 325.67225000821054,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "19a1e4769d94456d",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "一枪来三十四。"
+    },
+    "elapsed_seconds": 0.32741441699909046
+  },
+  {
+    "id": "baseline-date-name-control-p0-auto",
+    "http_status": 200,
+    "response": {
+      "duration": 4.16,
+      "inference_ms": 313.75058396952227,
+      "language": "en",
+      "metal_active_bytes": 5578702248,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 443.6733339680359,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "d9e43b0b25674ef8",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "Alice will meet Bob on November sixth, twenty twenty-six."
+    },
+    "elapsed_seconds": 0.4458083339850418
+  },
+  {
+    "id": "baseline-date-name-control-p0-producer",
+    "http_status": 200,
+    "response": {
+      "duration": 4.16,
+      "inference_ms": 286.37958300532773,
+      "language": "en",
+      "metal_active_bytes": 5578702248,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 415.70829204283655,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "6443766319b8441b",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "Alice will meet Bob on November sixth, twenty twenty-six."
+    },
+    "elapsed_seconds": 0.4179803330334835
+  },
+  {
+    "id": "baseline-known-failure-repeat-p0-auto",
+    "http_status": 200,
+    "response": {
+      "duration": 24,
+      "inference_ms": 480.5699170101434,
+      "language": "None",
+      "metal_active_bytes": 5580275116,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 606.3555409782566,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "d310d5e142014722",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": ""
+    },
+    "elapsed_seconds": 0.6088890840183012
+  },
+  {
+    "id": "baseline-known-failure-repeat-p0-producer",
+    "http_status": 200,
+    "response": {
+      "duration": 24,
+      "inference_ms": 466.2636669818312,
+      "language": "zh",
+      "metal_active_bytes": 5579963816,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 589.0796669991687,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "27927c59b2764722",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "啊！"
+    },
+    "elapsed_seconds": 0.5922463330207393
+  },
+  {
+    "id": "baseline-known-failure-repeat-p1-auto",
+    "http_status": 200,
+    "response": {
+      "duration": 24,
+      "inference_ms": 483.8827920029871,
+      "language": "None",
+      "metal_active_bytes": 5579963816,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 608.6315840366296,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "26e95df8b08f4fb7",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": ""
+    },
+    "elapsed_seconds": 0.6118457079865038
+  },
+  {
+    "id": "baseline-known-failure-repeat-p1-producer",
+    "http_status": 200,
+    "response": {
+      "duration": 24,
+      "inference_ms": 466.89675003290176,
+      "language": "zh",
+      "metal_active_bytes": 5579963816,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 606.4719579881057,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "1623e0ab39ea4a1b",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "嗯。"
+    },
+    "elapsed_seconds": 0.6091174999601208
+  },
+  {
+    "id": "baseline-known-failure-repeat-p2-auto",
+    "http_status": 200,
+    "response": {
+      "duration": 24,
+      "inference_ms": 477.3571669938974,
+      "language": "None",
+      "metal_active_bytes": 5579963816,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 602.4343749741092,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "6f9105f6629a4cd5",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": ""
+    },
+    "elapsed_seconds": 0.605123957968317
+  },
+  {
+    "id": "baseline-known-failure-repeat-p2-producer",
+    "http_status": 200,
+    "response": {
+      "duration": 24,
+      "inference_ms": 470.4842080245726,
+      "language": "zh",
+      "metal_active_bytes": 5579963816,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 597.2433330025524,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "08921d98494d4321",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "嗯。"
+    },
+    "elapsed_seconds": 0.5997997079975903
+  },
+  {
+    "id": "baseline-known-failure-repeat-p3-auto",
+    "http_status": 200,
+    "response": {
+      "duration": 24,
+      "inference_ms": 479.1722079971805,
+      "language": "None",
+      "metal_active_bytes": 5580275116,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 606.6656669718213,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "381a44c6efc243ed",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": ""
+    },
+    "elapsed_seconds": 0.6097357920370996
+  },
+  {
+    "id": "baseline-known-failure-repeat-p3-producer",
+    "http_status": 200,
+    "response": {
+      "duration": 24,
+      "inference_ms": 517.3433750169352,
+      "language": "zh",
+      "metal_active_bytes": 5579963816,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 661.4176669972949,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "72e3a86af57e4251",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "嗯。"
+    },
+    "elapsed_seconds": 0.6645160840125754
+  },
+  {
+    "id": "baseline-known-eos-long-s117-p0-auto",
+    "http_status": 200,
+    "response": {
+      "duration": 24,
+      "inference_ms": 754.9699160153978,
+      "language": "zh",
+      "metal_active_bytes": 5579963816,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 943.6885000322945,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "3be79968b09f4ebe",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "开大的野心，报复的稳定性，和挥。"
+    },
+    "elapsed_seconds": 0.9464830000069924
+  },
+  {
+    "id": "baseline-known-eos-long-s117-p0-producer",
+    "http_status": 200,
+    "response": {
+      "duration": 24,
+      "inference_ms": 746.7905829544179,
+      "language": "zh",
+      "metal_active_bytes": 5579963816,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 859.4071249826811,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "095fd8de71ae4639",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "开大的野心，不负的稳定性，和会。"
+    },
+    "elapsed_seconds": 0.8622236250084825
+  },
+  {
+    "id": "baseline-known-eos-long-s117-p1-auto",
+    "http_status": 200,
+    "response": {
+      "duration": 24,
+      "inference_ms": 626.6539999633096,
+      "language": "zh",
+      "metal_active_bytes": 5579963816,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 772.7269169990905,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "d5bcb0b059444dad",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "恢复能力。嗯。"
+    },
+    "elapsed_seconds": 0.7759869589935988
+  },
+  {
+    "id": "baseline-known-eos-long-s117-p1-producer",
+    "http_status": 200,
+    "response": {
+      "duration": 24,
+      "inference_ms": 722.1085830242373,
+      "language": "zh",
+      "metal_active_bytes": 5579963816,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 841.3995830342174,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "a681e8842c5642e5",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "恢复能力。嗯。"
+    },
+    "elapsed_seconds": 0.8450047919759527
+  },
+  {
+    "id": "baseline-known-eos-long-s117-p2-auto",
+    "http_status": 200,
+    "response": {
+      "duration": 24,
+      "inference_ms": 816.3307500071824,
+      "language": "en",
+      "metal_active_bytes": 5579963816,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 937.5415000249632,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "0445c747076a4afe",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "Morning, morning."
+    },
+    "elapsed_seconds": 0.9415336669771932
+  },
+  {
+    "id": "baseline-known-eos-long-s117-p2-producer",
+    "http_status": 200,
+    "response": {
+      "duration": 24,
+      "inference_ms": 475.2988750115037,
+      "language": "zh",
+      "metal_active_bytes": 5579963816,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 624.2021660436876,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "42dc3700f5f8419e",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "森林。"
+    },
+    "elapsed_seconds": 0.627177832997404
+  },
+  {
+    "id": "baseline-known-eos-long-s117-p3-auto",
+    "http_status": 200,
+    "response": {
+      "duration": 14.72,
+      "inference_ms": 363.75566700007766,
+      "language": "None",
+      "metal_active_bytes": 5579373992,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 481.97062499821186,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "cbc34e3d10c34ba3",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": ""
+    },
+    "elapsed_seconds": 0.48440337501233444
+  },
+  {
+    "id": "baseline-known-eos-long-s117-p3-producer",
+    "http_status": 200,
+    "response": {
+      "duration": 14.72,
+      "inference_ms": 360.46620801789686,
+      "language": "zh",
+      "metal_active_bytes": 5579373992,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 489.3976250314154,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "d2a5214b1e974bce",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "嗯。"
+    },
+    "elapsed_seconds": 0.4919205420301296
+  },
+  {
+    "id": "candidate-known-failure-p0-auto",
+    "http_status": 200,
+    "response": {
+      "duration": 3.36,
+      "inference_ms": 272.22162496764213,
+      "language": "zh",
+      "metal_active_bytes": 5578653096,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 395.8943749894388,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "7a85ab0564ea42f1",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "持续验证语音服务的稳定性和恢复能力。"
+    },
+    "elapsed_seconds": 0.39770766702713445
+  },
+  {
+    "id": "candidate-known-failure-p0-producer",
+    "http_status": 200,
+    "response": {
+      "duration": 3.36,
+      "inference_ms": 242.41212505148724,
+      "language": "zh",
+      "metal_active_bytes": 5578653096,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 365.55729201063514,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "38f4a22fe3b74380",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "持续验证语音服务的稳定性和恢复能力。"
+    },
+    "elapsed_seconds": 0.36742091696942225
+  },
+  {
+    "id": "candidate-short-control-p0-auto",
+    "http_status": 200,
+    "response": {
+      "duration": 3.92,
+      "inference_ms": 297.1755840117112,
+      "language": "zh",
+      "metal_active_bytes": 5578685864,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 420.9136249846779,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "68266a91b70f45e0",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "持续验证语音服务的稳定性和恢复能力。"
+    },
+    "elapsed_seconds": 0.42259879101766273
+  },
+  {
+    "id": "candidate-short-control-p0-producer",
+    "http_status": 200,
+    "response": {
+      "duration": 3.92,
+      "inference_ms": 265.38574998266995,
+      "language": "zh",
+      "metal_active_bytes": 5578685900,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 381.58154202392325,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "f364d66528384f29",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "持续验证语音服务的稳定性和恢复能力。"
+    },
+    "elapsed_seconds": 0.3834511660388671
+  },
+  {
+    "id": "candidate-eric-english-numeric-p0-auto",
+    "http_status": 200,
+    "response": {
+      "duration": 2,
+      "inference_ms": 218.7416660017334,
+      "language": "en",
+      "metal_active_bytes": 5578554828,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 346.58449998823926,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "ea347dae944248a0",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "You tell Sebasi."
+    },
+    "elapsed_seconds": 0.3485172080108896
+  },
+  {
+    "id": "candidate-eric-english-numeric-p0-producer",
+    "http_status": 200,
+    "response": {
+      "duration": 2,
+      "inference_ms": 200.3666670061648,
+      "language": "en",
+      "metal_active_bytes": 5578866128,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 312.7105840248987,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "ab7af1a8e9d549a2",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "You tell Sebasi."
+    },
+    "elapsed_seconds": 0.31444795802235603
+  },
+  {
+    "id": "candidate-dylan-english-numeric-p0-auto",
+    "http_status": 200,
+    "response": {
+      "duration": 1.6,
+      "inference_ms": 537.1141250361688,
+      "language": "zh",
+      "metal_active_bytes": 5578538444,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 662.4485410284251,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "1c8e68a9bc704478",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "一枪两百三十四。"
+    },
+    "elapsed_seconds": 0.6643974580219947
+  },
+  {
+    "id": "candidate-dylan-english-numeric-p0-producer",
+    "http_status": 200,
+    "response": {
+      "duration": 1.6,
+      "inference_ms": 209.511749970261,
+      "language": "en",
+      "metal_active_bytes": 5578538480,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 341.36920800665393,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "fc7bb9fed0bf4922",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "一枪两百三十四。"
+    },
+    "elapsed_seconds": 0.34310441702837124
+  },
+  {
+    "id": "candidate-date-name-control-p0-auto",
+    "http_status": 200,
+    "response": {
+      "duration": 5.12,
+      "inference_ms": 318.00204201135784,
+      "language": "en",
+      "metal_active_bytes": 5578751472,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 442.5786250503734,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "795f39c533a840f9",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "Alice will meet Bob on November sixth, twenty twenty-six."
+    },
+    "elapsed_seconds": 0.4444540829863399
+  },
+  {
+    "id": "candidate-date-name-control-p0-producer",
+    "http_status": 200,
+    "response": {
+      "duration": 5.12,
+      "inference_ms": 292.7241249708459,
+      "language": "en",
+      "metal_active_bytes": 5578751472,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 435.11750001925975,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "6192499b2827496a",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "Alice will meet Bob on November sixth, twenty twenty-six."
+    },
+    "elapsed_seconds": 0.4370009169797413
+  },
+  {
+    "id": "candidate-known-failure-repeat-p0-auto",
+    "http_status": 200,
+    "response": {
+      "duration": 3.36,
+      "inference_ms": 267.25412503583357,
+      "language": "zh",
+      "metal_active_bytes": 5578653168,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 400.0625829794444,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "58a1181fc4414e43",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "持续验证语音服务的稳定性和恢复能力。"
+    },
+    "elapsed_seconds": 0.40185095800552517
+  },
+  {
+    "id": "candidate-known-failure-repeat-p0-producer",
+    "http_status": 200,
+    "response": {
+      "duration": 3.36,
+      "inference_ms": 233.79504098556936,
+      "language": "zh",
+      "metal_active_bytes": 5578653168,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 367.7989999996498,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "7ff566e717dc4b25",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "持续验证语音服务的稳定性和恢复能力。"
+    },
+    "elapsed_seconds": 0.369648625026457
+  },
+  {
+    "id": "candidate-known-eos-long-s117-p0-auto",
+    "http_status": 200,
+    "response": {
+      "duration": 4.32,
+      "inference_ms": 303.99295897223055,
+      "language": "zh",
+      "metal_active_bytes": 5578702320,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 433.42366599244997,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "323eba6c065f4f8d",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "可以去验证语音服务的稳定性和恢复能力。"
+    },
+    "elapsed_seconds": 0.43560970801627263
+  },
+  {
+    "id": "candidate-known-eos-long-s117-p0-producer",
+    "http_status": 200,
+    "response": {
+      "duration": 4.32,
+      "inference_ms": 293.181957968045,
+      "language": "zh",
+      "metal_active_bytes": 5578702320,
+      "metal_peak_bytes": 6891563368,
+      "model": "qwen3-asr-1.7b",
+      "no_speech": false,
+      "process_peak_rss_bytes": 4625252352,
+      "processing_ms": 417.16304200235754,
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "request_id": "1416aa0605c34119",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "text": "可以去验证语音服务的稳定性和恢复能力。"
+    },
+    "elapsed_seconds": 0.4192725000320934
+  }
+]
