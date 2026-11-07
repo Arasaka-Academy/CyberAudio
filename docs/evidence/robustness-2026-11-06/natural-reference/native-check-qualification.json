@@ -1,0 +1,46 @@
+{
+  "status": "verified_native_baseline_reproduced_with_harness_error_retained",
+  "verified_at": "2026-11-07T01:20:16.874792+00:00",
+  "original_protocol_sha256": "09bd01c179c49e7413b5be39c840ad4650d2fb546cf9385449ae845baaa95491",
+  "original_runner_sha256": "4748477cc2cf7e8f5aba89b376d8a1fa0442626ffc72dceefe5aff1c5c1f8c1d",
+  "original_scripts_sha256": {
+    "analyze.py": "f73794121be26da7f6e3fb466d1bf620d3744b6de3f9e35f78359255baa09d92",
+    "native-check.py": "5523dceb75a9ebb5f521c09de2acc1eebce896ed25afab063fe4a8944b82ac3b",
+    "run.py": "47da4486860f0b77898234c67558aa51204410158413addc350b865d2f87509d",
+    "transcribe-reference.py": "d1a1f058ab945d7068840487992378ddbed86706f5e6d85a4609d17da923b339"
+  },
+  "native_result_sha256": "a96e56c2307c74e2b29b907ab40d645b1e43599bb31e15e1c3cde89af642001e",
+  "native_runner_sha256": "ca6729a4aec25cd266bc1fad55ebddf15e4279854c4870e748410a97819c1b11",
+  "baseline_raw_result_sha256": "b1799799a953735c243cc04c21bcbf66cc5f0e79cecbc4e114719286bdf478c5",
+  "native_check_count": 10,
+  "compared_fields": [
+    "text",
+    "language",
+    "duration",
+    "no_speech",
+    "model",
+    "repository",
+    "revision"
+  ],
+  "all_compared_fields_equal": true,
+  "observed_varying_fields": [
+    "inference_ms",
+    "metal_active_bytes",
+    "metal_peak_bytes",
+    "process_peak_rss_bytes",
+    "processing_ms",
+    "request_id"
+  ],
+  "allowed_dynamic_fields": [
+    "inference_ms",
+    "metal_active_bytes",
+    "metal_peak_bytes",
+    "process_peak_rss_bytes",
+    "processing_ms",
+    "request_id"
+  ],
+  "harness_error": "The first driver compared the complete HTTP response including timings, peak-memory counters and random request IDs, despite the frozen protocol requiring text/language parity. All ten substantive responses equal the retained baseline.",
+  "original_failure_unchanged": true,
+  "native_inference_repeated": false,
+  "reference_inference_previously_started": false
+}

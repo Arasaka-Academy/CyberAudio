@@ -1,0 +1,79 @@
+{
+  "purpose": "Causally test whether input level changes the retained 0.6-second empty natural-ASR result; this is a diagnostic, not an automatic gain policy",
+  "created_at": "2026-11-07T01:26:14.242302+00:00",
+  "source_commit": "8e2378b327380dcc277a0a958f85cd9e0c038c97",
+  "hypothesis": "Increasing the exact integer PCM amplitude by 4, without clipping or changing duration/prompt/language, may change the shared native/reference empty result. Six metadata-selected quiet controls distinguish this from a general quality improvement.",
+  "manifest_sha256": "6950c9fd603e0e7a17cb6bfe4b0d4fd33d6290c77a72b69a94dba8fba2f17eaf",
+  "native_baseline_sha256": "b1799799a953735c243cc04c21bcbf66cc5f0e79cecbc4e114719286bdf478c5",
+  "reference_study_sha256": "f937c60affdf2a8399b42489296d14ff4db58164e0fd40fa692e672fc63ab018",
+  "fixed_problem_id": "ascend_ses1_spk17_L4213_465.2000_0.6000",
+  "control_selection": [
+    {
+      "id": "ascend_ses1_spk17_L3907_94.6200_0.7000",
+      "selection": "first original metadata row within language with RMS <= -30 dBFS and gain4 fitting int16",
+      "language": "zh"
+    },
+    {
+      "id": "ascend_ses4_spk17_L23155_856.6000_1.1900",
+      "selection": "last original metadata row within language with RMS <= -30 dBFS and gain4 fitting int16",
+      "language": "zh"
+    },
+    {
+      "id": "ascend_ses1_spk17_L3832_24.0000_0.9000",
+      "selection": "first original metadata row within language with RMS <= -30 dBFS and gain4 fitting int16",
+      "language": "en"
+    },
+    {
+      "id": "ascend_ses4_spk17_L22960_616.0600_7.9400",
+      "selection": "last original metadata row within language with RMS <= -30 dBFS and gain4 fitting int16",
+      "language": "en"
+    },
+    {
+      "id": "ascend_ses1_spk17_L4421_726.3200_2.0000",
+      "selection": "first original metadata row within language with RMS <= -30 dBFS and gain4 fitting int16",
+      "language": "mixed"
+    },
+    {
+      "id": "ascend_ses4_spk17_L23135_833.0400_2.5000",
+      "selection": "last original metadata row within language with RMS <= -30 dBFS and gain4 fitting int16",
+      "language": "mixed"
+    }
+  ],
+  "selection_eligible_count": 147,
+  "selected_original_count": 7,
+  "expected_requests": 14,
+  "arms": {
+    "baseline": {
+      "gain": 1,
+      "required": "Original PCM values exactly; all seven native text/language/model-identity fields must equal frozen full baseline before interpreting gain results"
+    },
+    "single_variable": {
+      "gain": 4,
+      "gain_db": 12.041199826559248,
+      "operation": "Every signed int16 sample multiplied by 4; assert all fit [-32768,32767]. No clipping, normalization, filtering, dithering, padding, duration or reference alteration."
+    }
+  },
+  "execution": {
+    "port": 18896,
+    "request_timeout_seconds": 150,
+    "whole_timeout_seconds": 600,
+    "retries": 0,
+    "serial": true,
+    "maximum_owned_model_processes": 1,
+    "order": "Source metadata order, gain1 then gain4 for each source",
+    "language": "auto",
+    "helper_sha256": "efe377a791e01b88df04f32358015c5153b25e70172f29f84213723da8621659",
+    "stop_if_production_busy": true,
+    "production_preserved": true
+  },
+  "metrics": "Frozen author mixed-token distance, raw text/language, baseline parity and per-source effects; no output-dependent expansion or further gain search in this pilot",
+  "limits": [
+    "Output changes demonstrate input-level sensitivity for selected recordings only; seven selected recordings are not a general gain acceptance cohort",
+    "Correct reference text is not physical listening or intelligibility acceptance",
+    "All original corpus/quality/M4 strict/physical/download/distribution gates preserved; no candidate/default promotion"
+  ],
+  "data_license": "CC-BY-SA-4.0",
+  "data_attribution": "ASCEND, Lovenia et al., LREC 2022, HKUST CAiRE",
+  "derived_from_protocol_sha256": "e94528760559f85da376db50590d1f15094ac586b360d4bcd7c4ab0de12f7d4a",
+  "input_artifacts": "Fourteen private WAV files; full case manifest and references retained privately. Existing baseline and generated payload hashes verified by the private analyzer."
+}

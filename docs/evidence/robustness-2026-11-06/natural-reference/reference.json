@@ -1,0 +1,24 @@
+{
+  "status": "complete_reference_not_quality_accepted",
+  "started_at": "2026-11-07T01:20:23.351729+00:00",
+  "protocol_sha256": "f765fbaf8fb787a40435d660616a48fd833b68a1fce6815756e3eb2f7ba269be",
+  "script_sha256": "7b77dcd26ec0eab2199b933ba989634750a0fd5354f00ae700f6835fce429648",
+  "versions": {
+    "mlx": "0.32.4",
+    "mlx-audio": "0.6.4",
+    "transformers": "5.22.2",
+    "numpy": "2.3.4"
+  },
+  "completed_utterances": 1315,
+  "retries": 0,
+  "skipped": 0,
+  "reference_methods_replaced": false,
+  "elapsed_seconds": 300.772636,
+  "native_baseline_check_sha256": "a96e56c2307c74e2b29b907ab40d645b1e43599bb31e15e1c3cde89af642001e",
+  "loaded_model_source_sha256": "2d9aaadea36945b0c7ada65fec12eaa5ff378628b6d3030aac54b5698a165da1",
+  "loaded_feature_extractor_sha256": "dcce2e7820be059e657a9e12a60e8a55cfd37b1a82ee202ca15fc7d0934374cb",
+  "tokenizer_class": "Qwen2Tokenizer",
+  "model_load_seconds": 1.898474,
+  "results_sha256": "cdfb750f59fe32b3447870f908eb0ba072329254bb4fcd2f5013debf2fca77cd",
+  "finished_at": "2026-11-07T01:25:24.124746+00:00"
+}

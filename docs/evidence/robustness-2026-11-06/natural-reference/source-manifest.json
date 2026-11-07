@@ -1,0 +1,103 @@
+{
+  "status": "reviewed_text_only_exports",
+  "private_reference_directory": ".context/robustness/natural-reference-20261107-complete",
+  "private_first_attempt_directory": ".context/robustness/natural-reference-20261107",
+  "private_level_directory": ".context/robustness/natural-level-20261107",
+  "files": [
+    {
+      "artifact": "protocol.json",
+      "source": ".context/robustness/natural-reference-20261107-complete/protocol.json",
+      "source_sha256": "f765fbaf8fb787a40435d660616a48fd833b68a1fce6815756e3eb2f7ba269be",
+      "artifact_sha256": "f765fbaf8fb787a40435d660616a48fd833b68a1fce6815756e3eb2f7ba269be",
+      "byte_identical": true
+    },
+    {
+      "artifact": "reference.json",
+      "source": ".context/robustness/natural-reference-20261107-complete/reference.json",
+      "source_sha256": "80e2a45b82d2e43b9034582168052504be6ed2ac628be0d131413c4dfdbfcee0",
+      "artifact_sha256": "80e2a45b82d2e43b9034582168052504be6ed2ac628be0d131413c4dfdbfcee0",
+      "byte_identical": true
+    },
+    {
+      "artifact": "native-check-qualification.json",
+      "source": ".context/robustness/natural-reference-20261107-complete/native-check-qualification.json",
+      "source_sha256": "af9f9361c5fddfa7ae77a262c30bf43b971e6e46a1ba3393e137ec7b4d587fde",
+      "artifact_sha256": "af9f9361c5fddfa7ae77a262c30bf43b971e6e46a1ba3393e137ec7b4d587fde",
+      "byte_identical": true
+    },
+    {
+      "artifact": "transcribe-reference.py",
+      "source": ".context/robustness/natural-reference-20261107-complete/transcribe-reference.py",
+      "source_sha256": "7b77dcd26ec0eab2199b933ba989634750a0fd5354f00ae700f6835fce429648",
+      "artifact_sha256": "7b77dcd26ec0eab2199b933ba989634750a0fd5354f00ae700f6835fce429648",
+      "byte_identical": true
+    },
+    {
+      "artifact": "analyze-reference.py",
+      "source": ".context/robustness/natural-reference-20261107-complete/analyze.py",
+      "source_sha256": "75daebb7bd1a3fb0c9816b7c8f1865995682d19b6cc15e9d4025a3d5b529119b",
+      "artifact_sha256": "75daebb7bd1a3fb0c9816b7c8f1865995682d19b6cc15e9d4025a3d5b529119b",
+      "byte_identical": true
+    },
+    {
+      "artifact": "analyze-level.py",
+      "source": ".context/robustness/natural-level-20261107/analyze.py",
+      "source_sha256": "48808cd7470ac3f305ff59c59378ed29414ec27deae18a00f01ae06874e5b9cc",
+      "artifact_sha256": "48808cd7470ac3f305ff59c59378ed29414ec27deae18a00f01ae06874e5b9cc",
+      "byte_identical": true
+    },
+    {
+      "artifact": "summary.json",
+      "source": ".context/robustness/natural-reference-20261107-complete/summary.json",
+      "source_sha256": "f937c60affdf2a8399b42489296d14ff4db58164e0fd40fa692e672fc63ab018",
+      "artifact_sha256": "75369c8cb0011663b1a69c4e709da862c45fbf49c75c0d1f5fc45095963cf445",
+      "byte_identical": false,
+      "transformation": "Reviewed derived summary; raw responses, full transcripts, private paths and runtime configuration excluded where present"
+    },
+    {
+      "artifact": "level-plan.json",
+      "source": ".context/robustness/natural-level-20261107/protocol.json",
+      "source_sha256": "e94528760559f85da376db50590d1f15094ac586b360d4bcd7c4ab0de12f7d4a",
+      "artifact_sha256": "95825f41be28e927c8edbe4d45f3f06e1da2ba899c6c5bddcceb8e3d7c9e6845",
+      "byte_identical": false,
+      "transformation": "Reviewed derived summary; raw responses, full transcripts, private paths and runtime configuration excluded where present"
+    },
+    {
+      "artifact": "level-summary.json",
+      "source": ".context/robustness/natural-level-20261107/summary.private.json",
+      "source_sha256": "c1d2c70f797c3738a1d06111315e3e86f9219efabf358629d2dbd3a6a47fd30c",
+      "artifact_sha256": "864c2885738d4d164f28cca0b68853b11da1272bc7020df09a1273e9dc957b7b",
+      "byte_identical": false,
+      "transformation": "Reviewed derived summary; raw responses, full transcripts, private paths and runtime configuration excluded where present"
+    },
+    {
+      "artifact": "run-reference.py",
+      "source": ".context/robustness/natural-reference-20261107-complete/run.py",
+      "source_sha256": "74601d7c9fd44da3bfb595ee4239e0c52f356d3f2261d7f92227dd31eb994600",
+      "artifact_sha256": "74601d7c9fd44da3bfb595ee4239e0c52f356d3f2261d7f92227dd31eb994600",
+      "byte_identical": true
+    },
+    {
+      "artifact": "run-level.py",
+      "source": ".context/robustness/natural-level-20261107/run.py",
+      "source_sha256": "bec8166c143deff6097b59e6d40350750091e9b0e7fd7ddb17f23039ded46397",
+      "artifact_sha256": "bec8166c143deff6097b59e6d40350750091e9b0e7fd7ddb17f23039ded46397",
+      "byte_identical": true
+    },
+    {
+      "artifact": "environment.json",
+      "source": ".context/robustness/natural-reference-20261107-complete/environment.json",
+      "source_sha256": "22b38c55478228f774cc7a93e2a0e864ef50912fe9096417cd4a53c453a1cace",
+      "artifact_sha256": "22b38c55478228f774cc7a93e2a0e864ef50912fe9096417cd4a53c453a1cace",
+      "byte_identical": true
+    }
+  ],
+  "excluded": [
+    "Raw audio, model weights, array snapshots, full paired transcripts and raw HTTP metadata",
+    "Runtime configuration, API tokens, certificates, signing credentials and full private logs"
+  ],
+  "no_model_or_production_changes": true,
+  "data_license": "CC-BY-SA-4.0",
+  "data_attribution": "ASCEND, Lovenia et al., LREC 2022, HKUST CAiRE",
+  "source_code_note": "New diagnostic callers are project code. Author scorer attribution/license retained in sibling natural-ascend; scripts import the frozen scorer from its private collection directory."
+}

@@ -1,0 +1,7 @@
+{
+  "cpu": "Apple M1 Max",
+  "memory_bytes": "34359738368",
+  "macos": "27.0.1",
+  "architecture": "arm64",
+  "note": "Observed after the completed reference and input-level study; not a fresh inference run"
+}

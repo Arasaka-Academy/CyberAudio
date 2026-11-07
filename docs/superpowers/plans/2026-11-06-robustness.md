@@ -60,6 +60,7 @@ Files: `.github/workflows/`, build scripts, development documentation.
 - [x] Validate workflow syntax and local equivalents (`actionlint`, complete `make check`, release App build).
 - [x] Merge and push the authorized 36 commits by fast-forward to main at `fe9a1bd`; verify local HEAD, origin/main and the actual remote ref match. GitHub Checks run `42314600934` succeeds for that exact SHA: 36 native contracts, 44 tools, 14 renders, all behavior/build groups.
 - [x] Configure and read back main's required GitHub Actions check `Native app, inference and tool regressions`, app ID 15368, with strict status checks. Preserve administrator bypass and do not require new PR reviews. Evidence: post-delivery/.
+- [x] Commit and push `8e2378b` to pin checks/release Swift to 6.3.3. Exact-SHA run `42320651628` passes 36/44/14, all behavioral checks and release App/Service/Assets builds from the new empty cache key; the Swift setup version error annotation is absent. Preserve the upstream Node 20 deprecation warning separately.
 
 ## 6. Recoverable first-run setup
 
@@ -253,6 +254,22 @@ Files: `Sources/CyberAudio/AudioWorkspace.swift`, `tests/AudioWorkflowTests.swif
 - [x] Exercise the current App client against the retained actual-model seed-196 old Helper: recover the code-only generation_limit reason, reject partial export, and recover on the same service instance. Keep the original Helper and production untouched.
 - [x] Verify all 97 current source hashes, 568 original model files, eight frozen artifacts, 1357 protected inputs and production/config/Token/process/listener/request boundaries; archive text-only evidence.
 - [ ] Complete the original strict M4, content quality, physical/interactive, public-download and distribution/remote-CI gates. R13 fixes error feedback and recovery, not model quality.
+
+## 29. Complete natural ASR reference attribution
+
+- [x] Freeze the entire original 1,315-row ASCEND test cohort, unchanged auto/greedy parameters, the pinned Python reference sources and serial offline execution before inference. Verify four retained failures plus six metadata-selected controls against the accepted native Helper.
+- [x] Preserve the first driver failure: complete HTTP-response equality incorrectly compared runtime metrics and random request IDs. File-only verification confirms all ten text/language/duration/silence/model-identity fields match. Correct only the driver in a new directory, reuse the ten completed requests without rerunning native inference, and retain the failed protocol/scripts/results unchanged.
+- [x] Complete all 1,315 unmodified Python generations once with zero retries/skips in 300.77 seconds. Native/Python raw text agrees 1,276/1,315 and author-normalized text 1,291/1,315. Native/reference MER is 11.0041%/11.0893%; reference improves six edit counts and worsens twelve. All four natural failure texts are shared exactly.
+- [x] Recompute 2,630 mixed edit distances with an independent full-matrix implementation, reproduce all frozen native group totals, verify every WAV/PCM/float32 digest, and confirm source101/protected-metadata1026, production, process/listener and temporary-request preservation. Keep full paired transcripts private; archive the same four attributed excerpts and aggregate evidence in natural-reference/.
+- [ ] Resolve natural content fidelity with a qualified candidate. Reference agreement does not prove correctness, exclude numerical sensitivity on other cases, or close any original quality, strict M4, physical, download or distribution gate.
+
+## 30. Fixed natural input-level causal pilot
+
+- [x] Read the complete input PCM distribution without inference: 169 utterances at RMS <= -30 dBFS, 79 shorter than one second. A hypothetical constant gain8 would clip 141, so do not apply it as a product preprocessing rule.
+- [x] Before new inference, freeze the retained 0.6-second empty case and six first/last-per-language controls selected only by metadata, RMS and gain4 headroom. Generate original/gain4 PCM pairs without clipping and verify all seven gains against FFmpeg byte-for-byte.
+- [x] Complete fourteen current-native HTTP requests once; all seven original text/language/model identities reproduce the frozen baseline. The empty case remains empty after +12.0412 dB; total edits stay 16/16 and each pair has the same edit count. Verify full protected metadata and production/process/listener/request preservation.
+- [x] Retain the existing `no_speech` contract as exact digital silence rather than generic VAD; an empty model output does not establish physical absence of speech. Existing dictation already handles empty text without insertion.
+- [ ] Keep this unsuccessful pilot unpromoted and do not broaden it or search additional gains. Preserve every original quality and acceptance requirement; a new approach requires a distinct causal hypothesis and a predeclared cohort.
 
 ## Evidence log
 

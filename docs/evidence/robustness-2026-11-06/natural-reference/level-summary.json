@@ -1,0 +1,60 @@
+{
+  "status": "level_pilot_verified_not_candidate_accepted",
+  "verified_at": "2026-11-07T01:27:39.787238+00:00",
+  "protocol_sha256": "e94528760559f85da376db50590d1f15094ac586b360d4bcd7c4ab0de12f7d4a",
+  "analyzer_sha256": "48808cd7470ac3f305ff59c59378ed29414ec27deae18a00f01ae06874e5b9cc",
+  "requests": 14,
+  "original_baseline_parity": 7,
+  "exact_gain_transforms_verified": 7,
+  "ffmpeg_exact_transforms_verified": 7,
+  "fewer_edits": 0,
+  "more_edits": 0,
+  "equal_edit_count": 7,
+  "original_edits": 16,
+  "gain4_edits": 16,
+  "source_count": 101,
+  "protected_metadata_count": 1026,
+  "production_preserved": true,
+  "source_preserved": true,
+  "protected_metadata_preserved": true,
+  "owned_helper_absent": true,
+  "owned_listener_closed": true,
+  "temporary_request_count": 0,
+  "candidate_promoted": false,
+  "original_gates_preserved": true,
+  "limits": [
+    "Output changes demonstrate input-level sensitivity for selected recordings only; seven selected recordings are not a general gain acceptance cohort",
+    "Correct reference text is not physical listening or intelligibility acceptance",
+    "All original corpus/quality/M4 strict/physical/download/distribution gates preserved; no candidate/default promotion"
+  ],
+  "data_license": "CC-BY-SA-4.0",
+  "data_attribution": "ASCEND, Lovenia et al., LREC 2022, HKUST CAiRE",
+  "evidence_sha256": {
+    "protocol.json": "e94528760559f85da376db50590d1f15094ac586b360d4bcd7c4ab0de12f7d4a",
+    "native-http/runner.json": "9f41d6cb90164fa0ae5eb72233258360edc34dba281457b9d2308c7e95ad30ce",
+    "native-http/results.jsonl": "612c1e609c6b6cf50c150adc704a4573655c2164bb946162f9196737bf807d3a",
+    "transform-verification.json": "32a7aaee99e3092f359d4502a0a877769ebe32ca07bcad93f4bfdc78a1dda6df"
+  },
+  "empty_case": {
+    "id": "ascend_ses1_spk17_L4213_465.2000_0.6000",
+    "role": "retained_empty_case",
+    "reference": "thank you",
+    "language": "en",
+    "original_rms_dbfs": -35.83009488656586,
+    "original": {
+      "text": "",
+      "language": "None"
+    },
+    "gain4": {
+      "text": "",
+      "language": "None"
+    },
+    "reference_tokens": 2,
+    "original_edits": 2,
+    "gain4_edits": 2,
+    "normalized_equal": true,
+    "original_empty": true,
+    "gain4_empty": true
+  },
+  "derivation": "All-seven aggregate counts and the previously attributed empty-case excerpt; six control transcripts remain private."
+}

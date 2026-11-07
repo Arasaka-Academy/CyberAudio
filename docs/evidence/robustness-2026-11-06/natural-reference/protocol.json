@@ -1,0 +1,154 @@
+{
+  "purpose": "Attribute natural code-switch translation, name and empty-output observations by comparing the unchanged native baseline with an unmodified pinned Python reference across the entire original ASCEND test split",
+  "created_at": "2026-11-07T01:20:16.875896+00:00",
+  "source_commit": "8e2378b327380dcc277a0a958f85cd9e0c038c97",
+  "previous_goal_turn_classification": "progress: main fast-forward delivery, exact-SHA CI success, Swift version annotation fix and remote verification completed",
+  "hypothesis": "The fixed natural translation/name/empty cases may be shared model/reference behavior; native-versus-reference Mel/encoder numerical differences can independently change other outputs. Reference agreement alone does not establish correctness or eliminate numerical sensitivity.",
+  "data": {
+    "manifest_sha256": "6950c9fd603e0e7a17cb6bfe4b0d4fd33d6290c77a72b69a94dba8fba2f17eaf",
+    "count": 1315,
+    "mixed_count": 373,
+    "selection": "Entire original test split in metadata order, original PCM16 WAV; no resampling, gain, padding, forced language, retries, skips or output-dependent selection",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "ASCEND, Lovenia et al., LREC 2022, HKUST CAiRE"
+  },
+  "baseline": {
+    "raw_results_sha256": "b1799799a953735c243cc04c21bcbf66cc5f0e79cecbc4e114719286bdf478c5",
+    "score_sha256": "34ac9af5020e7bdf5ff9d17071eb471bbc4ed1a7eda2c35c0a68ac756421f1dc",
+    "qualified_scorer_sha256": "81888870cb1588b701474392a55f0fc6bc1bd6d04e7760905e2ecf7b361c05ff",
+    "helper_sha256": "efe377a791e01b88df04f32358015c5153b25e70172f29f84213723da8621659",
+    "native_unchanged_condition": "All Native source, managed SDK adapter, inference lock and packaged resources match the accepted Helper; current tracked source snapshotted separately"
+  },
+  "native_check": {
+    "ids": [
+      "ascend_ses1_spk17_L3818_9.3200_0.6400",
+      "ascend_ses1_spk17_L3825_16.5740_2.8760",
+      "ascend_ses1_spk17_L3834_25.3200_1.3600",
+      "ascend_ses1_spk17_L4213_465.2000_0.6000",
+      "ascend_ses1_spk3_L6595_176.640_3.920",
+      "ascend_ses1_spk3_L6677_295.500_3.170",
+      "ascend_ses1_spk3_L6828_600.360_2.580",
+      "ascend_ses4_spk17_L22960_616.0600_7.9400",
+      "ascend_ses4_spk17_L23193_902.2300_1.0100",
+      "ascend_ses4_spk17_L23205_911.8700_1.3300"
+    ],
+    "problem_ids": [
+      "ascend_ses1_spk17_L4213_465.2000_0.6000",
+      "ascend_ses1_spk3_L6595_176.640_3.920",
+      "ascend_ses1_spk3_L6677_295.500_3.170",
+      "ascend_ses1_spk3_L6828_600.360_2.580"
+    ],
+    "independent_controls": [
+      {
+        "id": "ascend_ses1_spk17_L3818_9.3200_0.6400",
+        "language": "zh",
+        "selection": "first metadata row for language; not output selected"
+      },
+      {
+        "id": "ascend_ses4_spk17_L23193_902.2300_1.0100",
+        "language": "zh",
+        "selection": "last metadata row for language; not output selected"
+      },
+      {
+        "id": "ascend_ses1_spk17_L3825_16.5740_2.8760",
+        "language": "en",
+        "selection": "first metadata row for language; not output selected"
+      },
+      {
+        "id": "ascend_ses4_spk17_L22960_616.0600_7.9400",
+        "language": "en",
+        "selection": "last metadata row for language; not output selected"
+      },
+      {
+        "id": "ascend_ses1_spk17_L3834_25.3200_1.3600",
+        "language": "mixed",
+        "selection": "first metadata row for language; not output selected"
+      },
+      {
+        "id": "ascend_ses4_spk17_L23205_911.8700_1.3300",
+        "language": "mixed",
+        "selection": "last metadata row for language; not output selected"
+      }
+    ],
+    "count": 10,
+    "required": "All 10 current native HTTP texts and language values must equal retained baseline before starting reference; a mismatch stops the study without retry",
+    "port": 18895,
+    "timeout_seconds": 600,
+    "reuse_directory": ".context/robustness/natural-reference-20261107/native-check",
+    "compared_fields": [
+      "text",
+      "language",
+      "duration",
+      "no_speech",
+      "model",
+      "repository",
+      "revision"
+    ],
+    "reuse_qualification_sha256": "af9f9361c5fddfa7ae77a262c30bf43b971e6e46a1ba3393e137ec7b4d587fde"
+  },
+  "reference": {
+    "max_tokens": 1024,
+    "temperature": 0.0,
+    "top_k": 0,
+    "top_p": 1.0,
+    "min_p": 0.0,
+    "repetition_penalty": 1.0,
+    "repetition_context_size": 32,
+    "prefill_step_size": 2048,
+    "chunk_duration": 1200.0,
+    "min_chunk_duration": 1.0,
+    "system_prompt": null
+  },
+  "execution": {
+    "language": null,
+    "reference_language_tags_are_not_prompts": true,
+    "request_order": "Reuse all ten completed native controls after file-only contract-field verification, then complete Python reference once; serial maximum one owned model process",
+    "reference_total_timeout_seconds": 3000,
+    "reference_individual_timeout_seconds": 150,
+    "outer_timeout_seconds": 3900,
+    "retries": 0,
+    "isolated_offline_sandbox": true,
+    "stop_when_production_busy": true,
+    "retain_partial_failure_results": true,
+    "model_hash_policy": "Reuse validated fixed model identity; compare full protected file metadata before/after, do not repeat whole-model hashing"
+  },
+  "reference_versions": {
+    "mlx": "0.32.4",
+    "mlx-audio": "0.6.4",
+    "transformers": "5.22.2",
+    "numpy": "2.3.4"
+  },
+  "reference_source_sha256": {
+    ".context/robustness/reference-parity-20261107/vendor/mlx_audio/stt/models/qwen3_asr/qwen3_asr.py": "2d9aaadea36945b0c7ada65fec12eaa5ff378628b6d3030aac54b5698a165da1",
+    ".context/robustness/reference-parity-20261107/vendor/mlx_audio/stt/models/qwen3_asr/config.py": "3140f69885ecc9ee2682c8aa3c815d479299ee42bfcce241955d678c1ca9015c",
+    ".context/robustness/reference-parity-20261107/vendor/mlx_audio/stt/utils.py": "73284e80930ae2b9dc3b8b23903076124708a0ac25c9e7a835eb28f513718349",
+    ".context/robustness/reference-parity-20261107/vendor/mlx_audio/utils.py": "f1681939d3d80caedeca22065bd225a253a6e696b2a4f66431463cd643649eb6",
+    ".context/robustness/reference-parity-20261107/vendor/mlx_audio/lm/generate.py": "69bd45c9f1445b23220e99857febd08cf96289a35f34e8fb20c40e953558d758",
+    ".context/robustness/reference-parity-20261107/vendor/mlx_audio/lm/sample_utils.py": "9a6a7279c7aff850cdf80dd7f77ece1c31c3441ddacee595fbf83d013f60cc41"
+  },
+  "reference_model_source_sha256": "2d9aaadea36945b0c7ada65fec12eaa5ff378628b6d3030aac54b5698a165da1",
+  "reference_feature_extractor_sha256": "dcce2e7820be059e657a9e12a60e8a55cfd37b1a82ee202ca15fc7d0934374cb",
+  "analysis": {
+    "metrics": "Reuse frozen author-tokenized MER and character distance with original normalization; raw/normalized pair agreement, better/worse/equal edit counts per language/speaker/session, empties and script triage indicators",
+    "independent_check": "Recompute native and reference mixed edit distances with a full-matrix implementation over all 1315 rows; require native totals to reproduce frozen baseline",
+    "specific_examples": "All four previously retained cases; no favorable subset replaces full-cohort results",
+    "performance": "Python decoder timings are not comparable to native HTTP timings or microphone end-to-end latency"
+  },
+  "acceptance": {
+    "candidate_promoted": false,
+    "production_defaults_changed": false,
+    "quality_accepted_from_reference_agreement": false,
+    "original_m4_7200_second_gate_preserved": true,
+    "fixed_100_corpus_and_per_case_nonregression_preserved": true,
+    "physical_and_listening_still_deferred": true,
+    "public_download_developer_id_and_gui_upgrade_gates_preserved": true
+  },
+  "protocol_amendment": {
+    "reason": "Correct driver-only equality of variable HTTP metadata; retain original failed driver unchanged, no model/data/default change",
+    "original_protocol_sha256": "09bd01c179c49e7413b5be39c840ad4650d2fb546cf9385449ae845baaa95491",
+    "original_directory": ".context/robustness/natural-reference-20261107",
+    "original_failure_retained": true,
+    "native_repeat_allowed": false,
+    "reference_already_run": false
+  }
+}
