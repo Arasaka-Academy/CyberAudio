@@ -1,0 +1,31 @@
+{
+  "at": "2026-11-07T08:48:37.590912+00:00",
+  "head": "4712b4e0e96e0854f120da3327b5901d4458079e",
+  "method": "Sequential main-thread static review; no new behavioral test or model inference is claimed.",
+  "sources_sha256": {
+    "Native/Sources/CyberAudioCore/Coordinator.swift": "fa04d37f5cef97228a1038942c2d45622d4cfea8d37979430f5f6744235a1ebf",
+    "Native/Sources/CyberAudioCore/HTTPService.swift": "b5e8140e3b4f5d28e12f5e128b2c34b88978d094ee451e393a727468e0c06bd2",
+    "Native/Sources/CyberAudioCore/Contract.swift": "7a5b44074daea8bf63fbf9eb6f80e55997cd2306c2f78f85068b3009df3f0510",
+    "Native/Sources/CyberAudioCore/Multipart.swift": "ddbbdbce9aa100bf32c7829237bcfc5816890bc2e792a19051d964c0a8cb681b",
+    "Native/Sources/CyberAudioCore/AudioFile.swift": "db4dc014db9dbdd001262d1a3507adb01951782c17ac141de7e08646289d44ba",
+    "Native/Sources/CyberAudioCore/Assets.swift": "51e3fe167d131af8996773f273bb79f8621808dfc005bf4c29bd6f460ec6d90d",
+    "Native/Sources/CyberAudioCore/AssetPreparation.swift": "7bc412e5a4dc0c0c33fc7bd8facc7e682a92c408b93325cf418885bc1d04cf1d",
+    "Native/Sources/CyberAudioCore/AssetDownloader.swift": "54545d899c845fad37171991e61a1e2688c221a84494bc23e3aff7230d143be1",
+    "Sources/CyberAudio/UpdaterController.swift": "10919e4302cb2ff8fcf255e5e7fd7be67675fa1b51f8a010bfe118f626a9f43a",
+    "Sources/CyberAudio/DictationController.swift": "6d1568bc396067f93cfcbe250fbaa594a1401544b3a75972c9051e2496013502",
+    "Sources/CyberAudio/AudioWorkspace.swift": "f987d2d2b1ab2a523e3ace7e28486dd195e75cd77741c31f26545df7edd385f1",
+    "Sources/CyberAudio/PreparationController.swift": "c44ce7a90ca30b6b899895fa6266993925e8f1488b21262f973b4ff7b149d828"
+  },
+  "examined_invariants": [
+    "The service retains its single inference slot until the serial worker returns from the producer, including cancellation/timeout.",
+    "Audio-response ownership begins only after authentication at request headers and participates in the update busy check through transport flush/disconnect.",
+    "The response deadline remains enforceable after end has been queued; expire closes an unread completed-model response.",
+    "Speech validates scalar lengths, supported option keys/types and stream/PCM combinations; HTTP and transcription bodies have explicit byte bounds.",
+    "The downloader preserves durable prefixes, verifies total SHA before publication, and bounds retries/backoff without exposing redirected credentials.",
+    "Update/clipboard ownership and new local-preparation recheck retain the prior open actual Sparkle/permission and physical/IME acceptance gates."
+  ],
+  "new_reproduced_findings": [],
+  "new_review_fix_count": 0,
+  "review_fixes_total": 16,
+  "next_action": "Complete the full-weight transport prerequisites before any frozen seven-case reference. Preserve original gates; do not repeat rejected product candidates or strict7200s M4 without qualification."
+}

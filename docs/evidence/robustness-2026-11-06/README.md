@@ -6,6 +6,7 @@
 
 | 文件 | 含义 |
 |---|---|
+| [official-tts-reference/](official-tts-reference/README.md) | 官方 BF16 CPU 完整参考的源码／12 文件清单、92 包离线环境和零模型沙箱／算子预检；三种传输终态保留，完整权重未取得，七例未运行 |
 | [update-local-drain/](update-local-drain/README.md) | R16：握手期间启动准备子进程的行为红测与修复，异步返回后重新检查本地排空，取消清理结束才安装一次 |
 | [empty-cache/](empty-cache/README.md) | M4 空缓存验收在只读预检被空间条件拦截：13.37 GiB < 15 GiB，FFmpeg 文件存在，零下载／模型启动／目标机写入；未放宽条件或清理数据 |
 | [codec-sum/](codec-sum/README.md) | 官方单次求和与 MLX BF16 左折叠的差异：367 帧重建、CPU／GPU 算子对照及七对完整生成／46 次双路 ASR；显式 FP32 累加通过结束／时长条件，但 dylan 数字回读退化且 seed117 仍有 3 个编辑，候选未采用或扩大 |

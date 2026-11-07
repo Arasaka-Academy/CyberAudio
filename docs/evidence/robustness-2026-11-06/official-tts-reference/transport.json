@@ -1,0 +1,203 @@
+{
+  "original_single_stream": {
+    "started_at": "2026-11-07T08:20:24.260256+00:00",
+    "finished_at": "2026-11-07T08:35:31.079499+00:00",
+    "status": "failed",
+    "elapsed_seconds": 906.822,
+    "error_type": "AssertionError",
+    "error_message": "Reference transfer failed; retain this invocation without retry",
+    "owned_runner_reaped": true
+  },
+  "original_single_stream_limits": {
+    "invocations_per_file": 1,
+    "retries": 0,
+    "resume": false,
+    "maximum_seconds_per_file": 900,
+    "whole_maximum_seconds": 1800,
+    "no_progress_seconds": 90,
+    "minimum_bytes_per_second": 16384,
+    "minimum_free_bytes_before": 16106127360,
+    "minimum_free_bytes_during": 8589934592,
+    "network": "default TLS; fixed ModelScope revision; curl; no production downloader acceptance"
+  },
+  "original_partial_final_bytes": 1461648453,
+  "note": "The last polled received_bytes field lagged the curl terminal/file size. Final retained bytes are read from the preserved file, not the stale progress field.",
+  "completed_original_files": [
+    {
+      "path": "config.json",
+      "bytes": 4908,
+      "sha256": "17a07f527a1c25ea30b4e023a184482a23d3e279d697b1dc81b1bde498d29cf9"
+    },
+    {
+      "path": "configuration.json",
+      "bytes": 47,
+      "sha256": "c502b6328c67638b401df8dd05de89e9e8d1cff9cd0ada10dfbdbe13556c20de"
+    },
+    {
+      "path": "generation_config.json",
+      "bytes": 245,
+      "sha256": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa"
+    },
+    {
+      "path": "merges.txt",
+      "bytes": 1671839,
+      "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+    }
+  ],
+  "range_diagnosis": {
+    "at": "2026-11-07T08:37:53.210164+00:00",
+    "results": [
+      {
+        "range": [
+          0,
+          65535
+        ],
+        "exit_code": 0,
+        "http_status": "206",
+        "stderr": "",
+        "elapsed_seconds": 0.574,
+        "content_ranges": [
+          "bytes 0-65535/3833402552"
+        ],
+        "received_bytes": 65536,
+        "exact_response": true,
+        "matches_preserved_prefix": true
+      },
+      {
+        "range": [
+          1461648453,
+          1461713988
+        ],
+        "exit_code": 0,
+        "http_status": "206",
+        "stderr": "",
+        "elapsed_seconds": 0.528,
+        "content_ranges": [
+          "bytes 1461648453-1461713988/3833402552"
+        ],
+        "received_bytes": 65536,
+        "exact_response": true
+      }
+    ],
+    "exact_ranges_verified": true,
+    "original_partial_preserved": true,
+    "original_download_failure_preserved": true,
+    "model_starts": 0,
+    "generation_requests": 0
+  },
+  "range_recovery_protocol": {
+    "at": "2026-11-07T08:39:16.614057+00:00",
+    "purpose": "Recover the identical pinned official reference bytes using verified exact ranges. This is a new transport protocol, not a successful original single-stream download or product downloader acceptance.",
+    "original_protocol_sha256": "9d3bebe40209db00ff249b1eaa7b7405655db9a249e2a379d7350bbf7bb1a7a7",
+    "range_diagnosis_sha256": "10bbd950b4cf93db33ece988701947d55eb17b275f0b995c01623b881c59646d",
+    "original_partial_sha256": "dd69503d642f968441c6ccb9c1124646dafce4466c0a082e17510234a7b2ec0f",
+    "original_partial_bytes": 1461648453,
+    "parallel_ranges": 4,
+    "segment_bytes": 67108864,
+    "maximum_seconds_per_segment": 120,
+    "maximum_seconds_per_file": 900,
+    "whole_maximum_seconds": 1800,
+    "connect_timeout_seconds": 20,
+    "low_speed_bytes_per_second": 16384,
+    "low_speed_seconds": 90,
+    "invocations_per_segment": 1,
+    "retries": 0,
+    "minimum_free_bytes_before": 16106127360,
+    "minimum_free_bytes_during": 8589934592,
+    "destination": "model-ranged",
+    "original_partial_modified": false,
+    "publication_requires_original_full_size_and_sha256": true,
+    "model_starts": 0,
+    "generation_requests": 0
+  },
+  "range_recovery_result": {
+    "started_at": "2026-11-07T08:39:16.614735+00:00",
+    "status": "failed",
+    "model_starts": 0,
+    "generation_requests": 0,
+    "elapsed_seconds": 122.078,
+    "error_type": "AssertionError",
+    "error_message": "Segment transfer failed: {'first': 1595866181, 'last': 1662975044, 'expected_bytes': 67108864, 'bytes': 44923904, 'exit_code': 28, 'content_range': 'bytes 1595866181-1662975044/3833402552', 'elapsed_seconds': 120.441}",
+    "finished_at": "2026-11-07T08:41:17.905381+00:00",
+    "owned_runners_reaped": true,
+    "original_partial_preserved": true
+  },
+  "retained_incomplete_segments": [
+    {
+      "requested_first": 1461648453,
+      "requested_last": 1528757316,
+      "retained_bytes": 50002944,
+      "sha256": "102a9888e24d90cc39709c010d6fd3f2aa3427c25329ca89e4ad29d93d62626d",
+      "complete_segment": false
+    },
+    {
+      "requested_first": 1528757317,
+      "requested_last": 1595866180,
+      "retained_bytes": 47037422,
+      "sha256": "d700ccca523e40e23329eaf39f0239b0869b80f947aece3b042f7bd94afabe21",
+      "complete_segment": false
+    },
+    {
+      "requested_first": 1595866181,
+      "requested_last": 1662975044,
+      "retained_bytes": 44923904,
+      "sha256": "4f4c45e3a4ce04401cba2712f733abf61edc0b2e36ae6c38f820a5dd3964f2a6",
+      "complete_segment": false
+    },
+    {
+      "requested_first": 1662975045,
+      "requested_last": 1730083908,
+      "retained_bytes": 56982528,
+      "sha256": "a2fa3aab6b3b8b9499d27d6653d1e5142491e1942b60a6b1868293bd4dfe5065",
+      "complete_segment": false
+    }
+  ],
+  "alternate_metadata": {
+    "result": {
+      "exit_code": 0,
+      "stderr": "",
+      "elapsed_seconds": 1.096,
+      "model_starts": 0,
+      "generation_requests": 0
+    },
+    "revision": "0c0e3051f131929182e2c023b9537f8b1c68adfe",
+    "both_lfs_weight_hashes_match_original": true
+  },
+  "alternate_range_protocol": {
+    "at": "2026-11-07T08:44:22.667273+00:00",
+    "purpose": "Bounded alternate-route throughput and exact-byte probe; require the original full-model LFS hash metadata and compare all received probe bytes with the preserved prefix.",
+    "revision": "0c0e3051f131929182e2c023b9537f8b1c68adfe",
+    "metadata_lfs_sha256_matches": true,
+    "range": [
+      0,
+      16777215
+    ],
+    "maximum_seconds": 20,
+    "connect_timeout_seconds": 10,
+    "requests": 1,
+    "retries": 0,
+    "minimum_average_bytes_per_second_for_full_transfer": 4194304,
+    "model_starts": 0,
+    "generation_requests": 0
+  },
+  "alternate_range_result": {
+    "exit_code": 28,
+    "http_status": "206",
+    "stderr": "curl: (28) Operation timed out after 19437 milliseconds with 361136 out of 16777216 bytes received\n",
+    "elapsed_seconds": 20.378,
+    "received_bytes": 361136,
+    "content_ranges": [
+      "bytes 0-16777215/3833402552"
+    ],
+    "matches_preserved_prefix": true,
+    "exact_complete_probe": false,
+    "average_bytes_per_second": 17721.911512093866,
+    "full_transfer_admissible": false,
+    "model_starts": 0,
+    "generation_requests": 0
+  },
+  "original_failure_and_partial_preserved": true,
+  "all_model_file_hashes_verified": false,
+  "model_starts": 0,
+  "generation_requests": 0
+}
