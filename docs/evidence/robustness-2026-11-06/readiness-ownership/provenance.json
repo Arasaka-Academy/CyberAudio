@@ -1,0 +1,23 @@
+{
+  "exported_at": "2026-11-07T04:42:33.433038+00:00",
+  "private_root": ".context/robustness/readiness-ownership-20261107",
+  "baseline_commit": "252955188f9b56e13a2f7bda85dcdd1b50e15c5d",
+  "source_commit": "b06dc7b7640b6b1cc9c53870ffe617afdcfba59d",
+  "baseline_test_seam": "Only the optional URLSession initializer and assignment were added to a private copy. The product source remained unchanged during the red run.",
+  "raw_receipts_sha256": {
+    "red-isolated/result.json": "2dc155a2ad636857d250af9b64a7563e8a8b83905c2e20af00aa44202588ebf8",
+    "green/result.json": "cf34cd85428a10a5a71f24135047ddcbad010729fd18fffcf759c0c42defa374",
+    "checks.json": "e384054ce773d8c7827212824a14ebf46f43a5cb9c0442e355093854b5fa5b99",
+    "final-bytes-readiness/build.json": "65b1e5cef3c17c21c0817b2b4182a1f91082488786fe36c399a1989bfb9674d2",
+    "final-bytes-readiness/full-result.json": "915d2f2cc77c5b4ce04af904d29ac7236c8abbb00068e08cb8f88f06da8aaba3",
+    "final-bytes-readiness/independent-verification.json": "f0e2bceb7d6f39cf3f63aa05b2cd5ff89db84e56686017793b85b15224ad6ab1"
+  },
+  "collector_source_sha256": {
+    "run-regression.py": "ce348610e3382d29cf690100163d39f8365b541dda75cf8789e07898d14f7cc1",
+    "run-checks.py": "994ce0bb28dd64af8a745763d59d7eafab36cf1c7afecb9ecff6aeb8e3b42230",
+    "build-final-candidate.py": "e4333e1d43d11b68048926c3274da2bad15c3364052fe1b7a9b169cd9c0ee87a",
+    "run-final-candidate.py": "0b8fe931f8f7b345b7c9c68750b30f4168a1692fd72add0fad650c1861ab4a3a",
+    "verify-final-candidate-result.py": "42c1aeb44b7ab0f78dcb82b05fc8f66760c34a994f15351a9145eda23f2a9c5f",
+    "archive.py": "e13f861b70d6cac7a05140da7487d8175daad183f8a784b7e4d861a685b57d36"
+  }
+}

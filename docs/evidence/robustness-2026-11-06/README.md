@@ -48,6 +48,8 @@
 | [natural-reference/README.md](natural-reference/README.md) | 全量 1,315 条未修改 Python 参考与原生基线对照，1,291 条规范化相同，四个自然问题原样复现；独立重算 2,630 个编辑距离；七条固定音量配对仍未解决空输出，未扩大或采用候选 |
 | [acceptance-audit/README.md](acceptance-audit/README.md) | 剩余条件自动复核：M4 同一正常 TLS Range 仍失败，原生会话明确当前锁屏，无 Developer ID，新语料路径未成功；96／568／8／1357 文件摘要及既有完整测试日志核验通过。没有重复推理、修改默认值或接受尚未通过的门槛 |
 
+最新 [readiness-ownership/README.md](readiness-ownership/README.md)记录 R15：三种旧响应覆盖状态的行为红测、五项归属／控制回归、完整 36／44／14 检查和当前隔离 App 的 153.18 秒真实模型／生命周期验收。修复后固定 100 条与同 M1 旧版原始输出相同，原质量、严格 M4、公网、现场与分发门槛保持未完成。
+
 完整原始记录保留在开发工作区 `.context/robustness/`，原始检查日志在 `/tmp/cyberaudio-robustness-*.log`，不会作为分发材料上传。
 
 ## 实际服务

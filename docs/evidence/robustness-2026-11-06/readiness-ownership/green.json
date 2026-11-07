@@ -1,0 +1,8 @@
+{
+  "exit_code": 0,
+  "elapsed_seconds": 2.3378777090110816,
+  "output": "BackendLifecycle stop: passed\nBackendLifecycle termination: passed\nBackendLifecycle restart: passed\nBackendLifecycle current: passed\nBackendLifecycle wrong-instance: passed\nBackendLifecycle: 5 readiness ownership and process lifecycle cases passed\n",
+  "compiled_source_sha256": "bff051e46a903f317194426d6549abe9470a042abaafbcf8bad151095130585a",
+  "production_source_sha256": "bff051e46a903f317194426d6549abe9470a042abaafbcf8bad151095130585a",
+  "test_source_sha256": "dd0d4089cd790e854684e9da5494f10bd0d8fcc5518fd0d25bf7c605cba3bc0f"
+}

@@ -1,0 +1,17 @@
+{
+  "exit_code": 0,
+  "elapsed_seconds": 315.95950304099824,
+  "native_contracts": 36,
+  "native_failures": 0,
+  "native_skips": 0,
+  "active_tool_tests": 44,
+  "rendered_states": 14,
+  "readiness_lifecycle_cases": 5,
+  "all_behavior_groups_and_production_builds_passed": true,
+  "source_hash_count": 99,
+  "source_hashes_unchanged": true,
+  "frozen_preserved": true,
+  "production_preserved": true,
+  "log_sha256": "f3685b44675757ca6004005d838ba40a6577764dfedf4b84a633fddfebe5c114",
+  "log_bytes": 12209
+}

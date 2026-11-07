@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "started": "2026-11-07T04:39:16.313153+00:00",
+  "finished": "2026-11-07T04:41:49.518444+00:00",
+  "elapsed_seconds": 153.18106974998955,
+  "port": 18901,
+  "scope": "Current isolated App/Service/Assets; full fixed 100 corpus, formats/voices/stream/cancel/update/EOF and actual App TERM/KILL/restart; no long soak or physical acceptance",
+  "source_commit": "b06dc7b7640b6b1cc9c53870ffe617afdcfba59d",
+  "exit_code": 0,
+  "native_report_status": "passed",
+  "temporary_request_cleanup": true,
+  "production_preserved": true,
+  "frozen_preserved": true,
+  "candidate_bytes_preserved": true,
+  "owned_listener_closed": true
+}

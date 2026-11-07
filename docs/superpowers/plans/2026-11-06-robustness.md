@@ -298,6 +298,16 @@ Swift 6.3.3 warning removal is verified by the normal exact-commit Checks workfl
 
 The optional complete-concurrency/warnings-as-errors invocation fails on both unchanged and current sources in existing observer-deinit/player-delegate code. Standard project-mode warnings-as-errors passes. Do not erase that distinction, or promote software checks to physical/model/distribution acceptance. Evidence: import-file/.
 
+## 34. Bind readiness polling to the owned engine (R15)
+
+- [x] Diagnose the completed-response race from `main@2529551`. Before changing product behavior, use a private baseline with only a two-line URLSession constructor seam. With the real native test Helper, complete `/ready` while MainActor is occupied, then stop, finish synchronous cleanup, or restart. Three behavior checks fail; the current response and current port-conflict controls pass.
+- [x] Commit `b06dc7b`: retain the polling Process and instance; check cancellation and process identity after a response and in the failure branch, and reject writes during stopping. Preserve actionable current-instance conflicts and startup/busy updates.
+- [x] Add all five lifecycle cases to the normal audio-workflow test entry. Preserve initial delegate-observer, test-access and cross-case pending-response setup failures separately; only the isolated three-red/two-control run qualifies as the baseline. Identical tests pass after the fix.
+- [x] Complete `make check` in 315.96 seconds: 36 native contracts/zero failures/skips, 44 tools, 14 renders, all behavior groups and production App/Inference/Service/Assets compilation. Verify 99 source/configuration hashes, six frozen artifacts and production instance/config/Token preservation.
+- [x] Build a new isolated ad-hoc App from the committed source, then pass the full original local App/native driver in 153.18 seconds: fixed 100 corpus, 16 formats, nine voices, PCM/cancel/update/EOF/sandbox/single ownership and actual active TERM/KILL/restart. Independent read-only verification confirms 100/100 same-M1 old raw ASR matches, nine WAVs and complete owned cleanup. Evidence: readiness-ownership/.
+
+This is a new code-review fix and concrete progress. No frozen quality experiment, strict M4 repeat or public download workload was restarted. All original quality, strict target, physical/interactive, public-install and distribution gates remain open; the overall goal is not complete. Final main/CI delivery is recorded separately after the evidence commit.
+
 ## Evidence log
 
 - Starting point: clean `main@96210dd`; development branch `codex/robustness`.

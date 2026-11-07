@@ -1,0 +1,23 @@
+{
+  "initial_completion_observer": {
+    "classification": "Harness setup failure; async URLSession data did not call the selected session delegate callback",
+    "receipt_sha256": "465ca030bd4fb413a8bdadceabeb91bcc52a55b7deaf35b2bc5dc647de351618",
+    "behavior_red": false
+  },
+  "private_type_access": {
+    "classification": "Test compilation failed before launching a Helper; corrected helper access levels",
+    "log_sha256": "fb41d6ae387511d7fe5a1ec8cdd96b03bef7215fd335f4efcbcda1c2db9b8107",
+    "behavior_red": false
+  },
+  "cross_case_pending_response": {
+    "classification": "Three behavior failures reproduced, but a shared pending-response slot contaminated both controls; isolate by per-case request header before interpreting controls",
+    "receipt_sha256": "9dd04b3e2ba9b6a4d4e3e68fb34387c106d4c1b516c80d9148a3ee664bf45a04",
+    "accepted_baseline": false
+  },
+  "accepted_red": {
+    "receipt_sha256": "2dc155a2ad636857d250af9b64a7563e8a8b83905c2e20af00aa44202588ebf8",
+    "failures": 3,
+    "passing_controls": 2
+  },
+  "private_artifacts_preserved": true
+}

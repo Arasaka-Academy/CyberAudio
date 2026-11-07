@@ -1,0 +1,8 @@
+{
+  "exit_code": 1,
+  "elapsed_seconds": 2.2926357079995796,
+  "output": "BackendLifecycle current: passed\nBackendLifecycle wrong-instance: passed\nBackendLifecycle stop: FAIL Failure(message: \"A stale response must not revive a stopped or stopping engine: [\\\"stopping\\\", \\\"ready\\\", \\\"stopped\\\"]\")\nBackendLifecycle termination: FAIL Failure(message: \"A stale response must not revive a stopped or stopping engine: [\\\"stopping\\\", \\\"stopped\\\", \\\"ready\\\"]\")\nBackendLifecycle restart: FAIL Failure(message: \"An old response must not fail the replacement engine or publish its busy state: [\\\"stopping\\\", \\\"stopped\\\", \\\"loading\\\", \\\"failed\\\"]\")\n",
+  "compiled_source_sha256": "cf3fa8c64e9e24c41811077c5e934c87c441ff57662f0450dcb800b7ca68af85",
+  "production_source_sha256": "7aed2642d2a81baed16d0d517337a5adc23ae1ac814ae636491598a723784969",
+  "test_source_sha256": "dd0d4089cd790e854684e9da5494f10bd0d8fcc5518fd0d25bf7c605cba3bc0f"
+}
