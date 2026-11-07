@@ -1,0 +1,24 @@
+{
+  "command": "rtk proxy make check",
+  "started_at": "2026-11-07T12:30:26.991352+00:00",
+  "finished_at": "2026-11-07T12:33:16.698271+00:00",
+  "elapsed_seconds": 169.70686066598864,
+  "exit_code": 0,
+  "native_contracts": {
+    "cases": 37,
+    "failures": 0,
+    "skipped": 0
+  },
+  "tool_tests": {
+    "passed": 44
+  },
+  "native_view_renders": 15,
+  "backend_lifecycle_groups": 6,
+  "invalid_port_values": 4,
+  "all_existing_behavior_checks": true,
+  "production_app_service_assets_build": true,
+  "shell_syntax": true,
+  "plist_lint": true,
+  "log_sha256": "a463cf288c36b2f689d2308c84f2ece4c462bb3e25553caf53ae3f4b00b8423d",
+  "test_scope": "Automated code/build/regression verification only; no physical, model-quality or signed distribution acceptance"
+}

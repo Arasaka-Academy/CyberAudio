@@ -154,13 +154,40 @@ private final class ReadinessProtocol: URLProtocol, @unchecked Sendable {
         try require(backend.status == "stopped" && !backend.running && !backend.busy, "Engine did not stop cleanly")
     }
 
+    static func invalidPorts() async throws {
+        let backend = BackendController()
+        defer { backend.stopForTermination() }
+        let configuration = backend.root.appendingPathComponent("config/service.json")
+        try FileManager.default.createDirectory(at: configuration.deletingLastPathComponent(), withIntermediateDirectories: true)
+        let token = Data(String(repeating: "f", count: 64).utf8)
+        let tokenURL = backend.root.appendingPathComponent("config/api-token")
+        try token.write(to: tokenURL)
+        for port in [-1, 0, 65536, Int.max] {
+            let bytes = try JSONEncoder().encode(ServiceConfiguration(asr_dir: backend.root.path, tts_dir: backend.root.path,
+                ffmpeg: "/opt/homebrew/bin/ffmpeg", port: port, https_url: ""))
+            try bytes.write(to: configuration)
+            backend.startPrepared()
+            try require(backend.status == "failed" && !backend.running,
+                "An invalid configured port (\(port)) must fail before launching an engine or readiness poll")
+            try require(backend.detail.contains("端口"), "An invalid port must explain how to correct the configuration")
+            let preservedConfiguration = try Data(contentsOf: configuration), preservedToken = try Data(contentsOf: tokenURL)
+            try require(preservedConfiguration == bytes && preservedToken == token,
+                "Rejecting an invalid port must preserve the existing configuration and token")
+            await Task.yield()
+            try require(backend.status == "failed" && !backend.running,
+                "An invalid configuration must not queue a readiness poll or later revive the engine")
+        }
+    }
+
     static func main() async {
         var failures = 0
+        do { try await invalidPorts(); print("BackendLifecycle invalid-ports: passed") }
+        catch { failures += 1; fputs("BackendLifecycle invalid-ports: FAIL \(error)\n", stderr) }
         for mode in ["stop", "termination", "restart", "current", "wrong-instance"] {
             do { try await run(mode); print("BackendLifecycle \(mode): passed") }
             catch { failures += 1; fputs("BackendLifecycle \(mode): FAIL \(error)\n", stderr) }
         }
         if failures > 0 { exit(1) }
-        print("BackendLifecycle: 5 readiness ownership and process lifecycle cases passed")
+        print("BackendLifecycle: 6 configuration, readiness ownership and process lifecycle cases passed")
     }
 }

@@ -1,0 +1,28 @@
+{
+  "finding": "R17",
+  "baseline_commit": "0f844ccbb41fc2ba5b8963d074730260318a3079",
+  "invalid_ports": [
+    -1,
+    0,
+    65536,
+    9223372036854775807
+  ],
+  "red": {
+    "exit_code": 1,
+    "elapsed_seconds": 3.205003541021142,
+    "output": "BackendLifecycle stop: passed\nBackendLifecycle termination: passed\nBackendLifecycle restart: passed\nBackendLifecycle current: passed\nBackendLifecycle wrong-instance: passed\nBackendLifecycle invalid-ports: FAIL Failure(message: \"An invalid configured port (-1) must fail before launching an engine or readiness poll\")\n",
+    "compiled_source_sha256": "bff051e46a903f317194426d6549abe9470a042abaafbcf8bad151095130585a",
+    "production_source_sha256": "bff051e46a903f317194426d6549abe9470a042abaafbcf8bad151095130585a",
+    "test_source_sha256": "e4827424495c11d36ff580f10c41b3458e8c07c686d6575ba72e1faee54f8162"
+  },
+  "green": {
+    "exit_code": 0,
+    "elapsed_seconds": 2.404458000033628,
+    "output": "BackendLifecycle invalid-ports: passed\nBackendLifecycle stop: passed\nBackendLifecycle termination: passed\nBackendLifecycle restart: passed\nBackendLifecycle current: passed\nBackendLifecycle wrong-instance: passed\nBackendLifecycle: 6 configuration, readiness ownership and process lifecycle cases passed\n",
+    "compiled_source_sha256": "574d2aec677a933ebb4a953008b4accca8f2c17619a041662bded23f0cfb88ce",
+    "production_source_sha256": "574d2aec677a933ebb4a953008b4accca8f2c17619a041662bded23f0cfb88ce",
+    "test_source_sha256": "e4827424495c11d36ff580f10c41b3458e8c07c686d6575ba72e1faee54f8162"
+  },
+  "actual_crash_reproduced": false,
+  "test_environment": "Signed disposable native test App, actual BackendController and native fixture Helper, isolated data directory; no model weights"
+}

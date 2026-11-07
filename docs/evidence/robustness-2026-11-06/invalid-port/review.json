@@ -1,0 +1,46 @@
+{
+  "at": "2026-11-07T12:33:31.440970+00:00",
+  "method": "Sequential main-thread code and behavior review; no delegation",
+  "scope": [
+    "Sources/CyberAudio/BackendController.swift",
+    "tests/BackendLifecycleTests.swift"
+  ],
+  "checks": [
+    {
+      "aspect": "correctness",
+      "result": "No unresolved finding in the scoped change",
+      "evidence": [
+        "Port range matches native ServiceSettings and asset setup validation.",
+        "The synchronous guard runs on MainActor before configuration publication, token reading, Process creation and polling.",
+        "Readiness, update-control and speech URLs use a private-set configuration that now has a validated port."
+      ]
+    },
+    {
+      "aspect": "tests",
+      "result": "Red/green source digests match the current code and tests",
+      "evidence": [
+        "Original code compiled, then failed the intended immediate-rejection assertion; all five pre-existing cases passed.",
+        "Fixed code passes all four invalid port values and all five existing lifecycle cases.",
+        "The new case checks user-visible failure, no running Helper and unchanged config/token bytes."
+      ],
+      "limitations": [
+        "The isolated regression exits at the first failure; an App crash was not separately reproduced.",
+        "No physical audio, model-quality or distribution acceptance is inferred."
+      ]
+    },
+    {
+      "aspect": "maintainability",
+      "result": "Reuses the existing failure path; no new abstraction or API",
+      "evidence": [
+        "Only the port range validation and local decode binding change production behavior."
+      ]
+    },
+    {
+      "aspect": "project-instructions",
+      "result": "Sequential work with rtk-prefixed shell commands",
+      "evidence": [
+        "Only this fix and its regression/evidence files are included in delivery."
+      ]
+    }
+  ]
+}

@@ -150,7 +150,11 @@ final class BackendController: ObservableObject {
         detail = "正在启动本地推理引擎…"
         do {
             let configURL = root.appendingPathComponent("config/service.json")
-            configuration = try JSONDecoder().decode(ServiceConfiguration.self, from: Data(contentsOf: configURL))
+            let configuration = try JSONDecoder().decode(ServiceConfiguration.self, from: Data(contentsOf: configURL))
+            guard (1...65535).contains(configuration.port) else {
+                throw CyberAudioError.message("服务端口必须在 1–65535 之间，请检查服务配置。")
+            }
+            self.configuration = configuration
             token = try String(contentsOf: root.appendingPathComponent("config/api-token"), encoding: .utf8).trimmingCharacters(in: .whitespacesAndNewlines)
             guard token.count >= 32 else { throw CyberAudioError.message("API Token 配置无效。") }
             let helper = Bundle.main.bundleURL.appendingPathComponent("Contents/Helpers/CyberAudioService")

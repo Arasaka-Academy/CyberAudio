@@ -1,0 +1,7 @@
+{
+  "Sources/CyberAudio/BackendController.swift": "574d2aec677a933ebb4a953008b4accca8f2c17619a041662bded23f0cfb88ce",
+  "tests/BackendLifecycleTests.swift": "e4827424495c11d36ff580f10c41b3458e8c07c686d6575ba72e1faee54f8162",
+  "scripts/test_audio_workflow.sh": "c47f8638b085eb9c1ecbdda54e24ab902992198353b6d0906a5112c530343a51",
+  "Makefile": "d86ec3855e7098d1f29a3dca42002210a2f138dfb89ee89e7360a101ecd547b8",
+  ".github/workflows/check.yml": "f704e493e4da78d3110275a98addd53701772fd6047f4bb0adbdd6f5218d2aa9"
+}
