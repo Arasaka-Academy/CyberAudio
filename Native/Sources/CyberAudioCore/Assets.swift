@@ -134,11 +134,12 @@ public enum AssetStore {
         network.timeoutIntervalForResource = 1800
         if let proxy {
             guard let url = URLComponents(string:proxy),["http","socks5"].contains(url.scheme ?? ""),
-                  let host = url.host,!host.isEmpty,let port = url.port,(1...65535).contains(port),
+                  let host = url.url?.host,!host.isEmpty,let port = url.port,(1...65535).contains(port),
                   url.user == nil,url.password == nil,url.query == nil,url.fragment == nil,
                   url.path.isEmpty || url.path == "/" else {
                 throw ServiceError(400,"invalid_proxy","代理格式为 http://主机:端口 或 socks5://主机:端口，不接受凭据。")
             }
+            // URL.host removes IPv6 URI brackets; CFNetwork expects the address itself.
             if url.scheme == "socks5" { network.connectionProxyDictionary = ["SOCKSEnable":1,"SOCKSProxy":host,"SOCKSPort":port] }
             else { network.connectionProxyDictionary = ["HTTPEnable":1,"HTTPProxy":host,"HTTPPort":port,"HTTPSEnable":1,"HTTPSProxy":host,"HTTPSPort":port] }
         }

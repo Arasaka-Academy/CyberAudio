@@ -1,0 +1,22 @@
+{
+  "command": "rtk proxy make check",
+  "started_at": "2026-11-07T14:07:41.070176+00:00",
+  "finished_at": "2026-11-07T14:10:21.896994+00:00",
+  "exit_code": 0,
+  "elapsed_s": 160.82664795796154,
+  "log_sha256": "886c9f008c5e72b4e075d0aeecc0bddf405ac4f8274ba7f018fffe01211ebe8b",
+  "native_contracts": {
+    "cases": 38,
+    "failures": 0,
+    "skipped": 0
+  },
+  "tool_tests": {
+    "passed": 44
+  },
+  "native_view_renders": 15,
+  "backend_lifecycle_groups": 6,
+  "all_behavior_checks": true,
+  "production_app_service_assets_build": true,
+  "shell_syntax": true,
+  "plist_lint": true
+}

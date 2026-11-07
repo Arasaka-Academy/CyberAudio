@@ -393,6 +393,62 @@ final class ServiceTests: XCTestCase {
         try jsonData(value).write(to:file)
         XCTAssertThrowsError(try AssetStore.prepareTokenizer(directory:root,asr:false))
     }
+    func testIPv6DownloadProxyRoutingAndPreservation() async throws {
+        let (root,_,_) = try setup(); try AssetStore.prepare(root:root)
+        let configuration = root.appendingPathComponent("config/service.json"),token = root.appendingPathComponent("config/api-token")
+        let originalConfiguration = try Data(contentsOf:configuration),originalToken = try Data(contentsOf:token)
+        let server = socket(AF_INET6,SOCK_STREAM,0)
+        guard server >= 0 else { throw ServiceError.inference }; defer { close(server) }
+        var address = sockaddr_in6(); address.sin6_len = UInt8(MemoryLayout<sockaddr_in6>.size); address.sin6_family = sa_family_t(AF_INET6)
+        guard inet_pton(AF_INET6,"::1",&address.sin6_addr) == 1 else { throw ServiceError.inference }
+        let bound = withUnsafePointer(to:&address) { $0.withMemoryRebound(to:sockaddr.self,capacity:1) { bind(server,$0,socklen_t(MemoryLayout<sockaddr_in6>.size)) } }
+        guard bound == 0,listen(server,4) == 0 else { throw ServiceError.inference }
+        var length = socklen_t(MemoryLayout<sockaddr_in6>.size)
+        let named = withUnsafeMutablePointer(to:&address) { $0.withMemoryRebound(to:sockaddr.self,capacity:1) { getsockname(server,$0,&length) } }
+        guard named == 0 else { throw ServiceError.inference }
+        let port = Int(UInt16(bigEndian:address.sin6_port))
+        for (scheme,source,host) in [("http",AssetDownloadSource.huggingFace,"huggingface.co"),("socks5",.modelScope,"modelscope.cn")] {
+            let seen = ProxyCapture()
+            DispatchQueue.global().async {
+                defer { seen.done.signal() }
+                var descriptor = pollfd(fd:server,events:Int16(POLLIN),revents:0)
+                guard poll(&descriptor,1,5000)>0 else { return }
+                let peer = accept(server,nil,nil); guard peer >= 0 else { return }; defer { close(peer) }
+                var timeout = timeval(tv_sec:2,tv_usec:0); setsockopt(peer,SOL_SOCKET,SO_RCVTIMEO,&timeout,socklen_t(MemoryLayout<timeval>.size))
+                do {
+                    if scheme == "http" {
+                        var request = Data()
+                        while !request.suffix(4).elementsEqual([13,10,13,10]),request.count < 8192 {
+                            request.append(try receiveExactly(peer,count:1))
+                        }
+                        seen.request = String(decoding:request,as:UTF8.self)
+                        try sendAll(peer,request:"HTTP/1.1 403 Forbidden\r\nContent-Length: 0\r\nConnection: close\r\n\r\n")
+                    } else {
+                        let greeting = try receiveExactly(peer,count:2)
+                        guard greeting[0] == 5 else { throw ServiceError.inference }
+                        let methods = try receiveExactly(peer,count:Int(greeting[1]))
+                        guard methods.contains(0) else { throw ServiceError.inference }
+                        try sendAll(peer,request:"\u{5}\u{0}")
+                        guard try receiveExactly(peer,count:4) == Data([5,1,0,3]) else { throw ServiceError.inference }
+                        let hostLength = try receiveExactly(peer,count:1)[0]
+                        let name = try receiveExactly(peer,count:Int(hostLength)),port = try receiveExactly(peer,count:2)
+                        seen.request = String(decoding:name,as:UTF8.self)+":"+String(Int(port[0])*256+Int(port[1]))
+                        // Reject locally after observing the destination; never forward upstream.
+                        try sendAll(peer,request:String(decoding:[5,2,0,1,0,0,0,0,0,0],as:UTF8.self))
+                    }
+                } catch { seen.request = "Invalid proxy handshake" }
+            }
+            do { try await AssetStore.download(root:root,source:source,proxy:"\(scheme)://[::1]:\(port)"); XCTFail("Proxy rejection was accepted") }
+            catch { XCTAssertEqual((error as? ServiceError)?.code,"download_unavailable") }
+            XCTAssertEqual(seen.done.wait(timeout:.now()+6),.success)
+            if scheme == "http" { XCTAssertTrue(seen.request.hasPrefix("CONNECT \(host):443 HTTP/1.1"),"IPv6 HTTP proxy did not receive CONNECT: "+seen.request) }
+            else { XCTAssertEqual(seen.request,host+":443","IPv6 SOCKS5 proxy did not receive the requested destination") }
+        }
+        XCTAssertEqual(try Data(contentsOf:configuration),originalConfiguration)
+        XCTAssertEqual(try Data(contentsOf:token),originalToken)
+        XCTAssertFalse(FileManager.default.fileExists(atPath:root.appendingPathComponent("models/Qwen3-ASR-1.7B-8bit/README.md").path))
+    }
+
     func testNativeDownloadUsesProxyAndPreservesAssetsOnFailure() async throws {
         let (root,_,_) = try setup(); try AssetStore.prepare(root:root)
         let server = socket(AF_INET,SOCK_STREAM,0); guard server >= 0 else { throw ServiceError.inference }; defer { close(server) }
@@ -462,4 +518,13 @@ private func sendAll(_ fd: Int32,request: String) throws {
         let count = bytes.withUnsafeBytes { send(fd,$0.baseAddress!.advanced(by:written),bytes.count-written,0) }
         guard count > 0 else { throw ServiceError.inference }; written += count
     }
+}
+private func receiveExactly(_ fd: Int32,count: Int) throws -> Data {
+    var result = Data(),buffer = [UInt8](repeating:0,count:max(1,count))
+    while result.count < count {
+        let received = recv(fd,&buffer,count-result.count,0)
+        guard received > 0 else { throw ServiceError.inference }
+        result.append(contentsOf:buffer.prefix(received))
+    }
+    return result
 }

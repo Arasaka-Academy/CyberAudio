@@ -1,0 +1,8 @@
+{
+  "Native/Sources/CyberAudioCore/Assets.swift": "35ee0892452e67385bc9aba8ae35135e5d14adbb3f99e0fb6166957fa4c785d8",
+  "Native/Tests/CyberAudioCoreTests/ServiceTests.swift": "20f44cb6f841a919af51bed78d541415e390771ae3b0f4da6783e9e4c17bb654",
+  "Native/Tests/CyberAudioCoreTests/Runner.swift": "cf56d91d6d71a6e96d5f76efeefd7a9de2c77453fa5ee99e29f8fe5ce7765e38",
+  "Native/Package.swift": "7bd6ddfc7452b75f6cdb9a025e7976007e5663e7612bac61ad81aa0ad5e26270",
+  "scripts/build_native.sh": "69f256f4005710c5dab0b1ecdc111fffdf83ece4b62df87c6cc52ef9d7fae876",
+  "Makefile": "d86ec3855e7098d1f29a3dca42002210a2f138dfb89ee89e7360a101ecd547b8"
+}

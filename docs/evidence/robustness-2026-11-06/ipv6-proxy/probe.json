@@ -1,0 +1,29 @@
+{
+  "cases": [
+    {
+      "proxy_host": "[::1]",
+      "exit_code": 0,
+      "elapsed_s": 5.001671125006396,
+      "stdout": "error=kCFErrorDomainCFNetwork:310\n",
+      "stderr": "",
+      "capture": {
+        "accepted": false,
+        "request": "",
+        "server_error": "TimeoutError"
+      }
+    },
+    {
+      "proxy_host": "::1",
+      "exit_code": 0,
+      "elapsed_s": 0.022033708984963596,
+      "stdout": "error=kCFErrorDomainCFNetwork:310\n",
+      "stderr": "",
+      "capture": {
+        "accepted": true,
+        "request": "CONNECT cyberaudio-proxy-test.invalid:443 HTTP/1.1\r\nHost: cyberaudio-proxy-test.invalid\r\nProxy-Connection: keep-alive\r\nConnection: keep-alive\r\n\r\n"
+      }
+    }
+  ],
+  "source_sha256": "0f1ee1929d92e57a08a961c3e960d4871e07219d1ee3ae283f582c21a78b98b7",
+  "all_stubs_terminal": true
+}

@@ -1,0 +1,41 @@
+{
+  "finding": "R18",
+  "baseline_commit": "c6440e1d0ef5defd4f37e52cfdb5e57db2335a01",
+  "red": {
+    "exit_code": 1,
+    "elapsed_s": 53.528633957961574,
+    "compiled_successfully": true,
+    "cases": 38,
+    "assertion_failures": 2,
+    "previous_cases_passed": 37,
+    "skipped": 0,
+    "failure_messages": [
+      "FAIL Native/Tests/CyberAudioCoreTests/ServiceTests.swift:444: Expected true. IPv6 HTTP proxy did not receive CONNECT: ",
+      "FAIL Native/Tests/CyberAudioCoreTests/ServiceTests.swift:445:  != modelscope.cn:443. IPv6 SOCKS5 proxy did not receive the requested destination"
+    ],
+    "source_sha256": {
+      "Native/Sources/CyberAudioCore/Assets.swift": "51e3fe167d131af8996773f273bb79f8621808dfc005bf4c29bd6f460ec6d90d",
+      "Native/Tests/CyberAudioCoreTests/ServiceTests.swift": "20f44cb6f841a919af51bed78d541415e390771ae3b0f4da6783e9e4c17bb654",
+      "Native/Tests/CyberAudioCoreTests/Runner.swift": "cf56d91d6d71a6e96d5f76efeefd7a9de2c77453fa5ee99e29f8fe5ce7765e38"
+    },
+    "log_sha256": "c2abc375028e2ab6b268bafb4d2230c87de7ec31915278406c00431ee655294e"
+  },
+  "test_boundary": "Actual AssetStore.download and URLSession using loopback IPv6 rejection stubs; CONNECT/SOCKS5 destination observed. No upstream forwarding or model bytes.",
+  "green": {
+    "exit_code": 0,
+    "command": "rtk proxy make check",
+    "cases": 38,
+    "assertion_failures": 0,
+    "skipped": 0,
+    "proxy_cases": [
+      "IPv6 HTTP CONNECT huggingface.co:443",
+      "IPv6 SOCKS5 CONNECT modelscope.cn:443"
+    ],
+    "source_sha256": {
+      "Native/Sources/CyberAudioCore/Assets.swift": "35ee0892452e67385bc9aba8ae35135e5d14adbb3f99e0fb6166957fa4c785d8",
+      "Native/Tests/CyberAudioCoreTests/ServiceTests.swift": "20f44cb6f841a919af51bed78d541415e390771ae3b0f4da6783e9e4c17bb654",
+      "Native/Tests/CyberAudioCoreTests/Runner.swift": "cf56d91d6d71a6e96d5f76efeefd7a9de2c77453fa5ee99e29f8fe5ce7765e38"
+    },
+    "log_sha256": "886c9f008c5e72b4e075d0aeecc0bddf405ac4f8274ba7f018fffe01211ebe8b"
+  }
+}

@@ -6,6 +6,7 @@
 
 | 文件 | 含义 |
 |---|---|
+| [ipv6-proxy/](ipv6-proxy/README.md) | R18：IPv6 HTTP／SOCKS5 代理地址表示的独立原生对照及实际资产下载红绿回归，配置／Token 保留；桩只观察目标后拒绝，不转发上游 |
 | [invalid-port/](invalid-port/README.md) | R17：App 启动前拒绝四种越界服务端口，真实控制器红绿回归保留配置／Token，原五项就绪归属和进程生命周期回归通过 |
 | [official-tts-reference/](official-tts-reference/README.md) | 官方 BF16 CPU 完整参考的源码／12 文件清单、92 包离线环境和零模型沙箱／算子预检；三种传输终态保留，完整权重未取得，七例未运行 |
 | [update-local-drain/](update-local-drain/README.md) | R16：握手期间启动准备子进程的行为红测与修复，异步返回后重新检查本地排空，取消清理结束才安装一次 |

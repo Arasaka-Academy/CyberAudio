@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-07T14:10:03.727011+00:00",
+  "method": "Sequential main-thread review; no delegation",
+  "scope": [
+    "Native/Sources/CyberAudioCore/Assets.swift",
+    "Native/Tests/CyberAudioCoreTests/ServiceTests.swift",
+    "Native/Tests/CyberAudioCoreTests/Runner.swift"
+  ],
+  "finding": {
+    "id": "R18",
+    "priority": "P2",
+    "confidence": 1.0,
+    "trigger": "A valid IPv6 literal proxy URL is passed to AssetStore.download.",
+    "cause": "URLComponents.host retains IPv6 URI brackets, which CFNetwork does not accept as a proxy host.",
+    "fix": "Use URL.host, which provides the IPv6 address without URI brackets, for both proxy dictionaries."
+  },
+  "reviews": [
+    {
+      "aspect": "correctness",
+      "findings": [],
+      "evidence": [
+        "An independent URLSession probe proved bracketed host receives no proxy connection while plain host receives the exact CONNECT request.",
+        "The actual AssetStore.download red run produced two intended routing failures; all prior cases passed.",
+        "The URLComponents scheme, user/password, path, query, fragment and port checks still guard the canonical host.",
+        "The change does not touch retries, TLS, model identity or generated files."
+      ]
+    },
+    {
+      "aspect": "testing",
+      "findings": [],
+      "evidence": [
+        "The regression observes actual HTTP CONNECT and SOCKS5 domain/port bytes instead of inferring routing from error codes.",
+        "SOCKS5 negotiates no authentication and rejects the connect command only after receiving its full destination.",
+        "Each socket has bounded acceptance/read waits and signals completion before the listening socket is closed.",
+        "Configuration and token bytes remain unchanged and no asset is published."
+      ],
+      "gaps": [
+        "Proxy stubs reject locally; no upstream TLS, sustained transfer, large-file or first-install acceptance is inferred."
+      ]
+    },
+    {
+      "aspect": "maintainability",
+      "findings": [],
+      "evidence": [
+        "One parsed canonical host is reused by the existing HTTP/SOCKS5 branches; no new networking abstraction.",
+        "The binary receive helper lives only in tests."
+      ]
+    },
+    {
+      "aspect": "project-standards",
+      "findings": [],
+      "evidence": [
+        "Sequential work, rtk-prefixed shell commands, scoped branch and retained red/probe receipts."
+      ]
+    }
+  ]
+}
