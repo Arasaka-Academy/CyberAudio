@@ -11,6 +11,9 @@ mkdir -p "$app/Contents/MacOS" "$app/Contents/Helpers" "$app/Contents/Resources"
 swiftc -swift-version 5 -parse-as-library -target arm64-apple-macos26.0 \
   Sources/CyberAudio/AudioWorkspace.swift Sources/CyberAudio/BackendController.swift Sources/CyberAudio/UpdateGate.swift tests/AudioWorkflowTests.swift \
   -o "$app/Contents/MacOS/AudioWorkflowTests"
+swiftc -swift-version 5 -parse-as-library -target arm64-apple-macos26.0 \
+  Sources/CyberAudio/BackendController.swift tests/BackendLifecycleTests.swift \
+  -o "$app/Contents/MacOS/BackendLifecycleTests"
 cp "$native_bin/CyberAudioFixture" "$app/Contents/Helpers/CyberAudioService"
 cp packaging/offline.sb "$app/Contents/Resources/offline.sb"
 touch "$app/Contents/Resources/mlx.metallib"
@@ -20,4 +23,5 @@ touch "$app/Contents/Resources/mlx.metallib"
 codesign --force --sign - "$app/Contents/Helpers/CyberAudioService"
 codesign --force --sign - "$app"
 export CYBERAUDIO_TEST_FFMPEG="$(command -v ffmpeg)"
+"$app/Contents/MacOS/BackendLifecycleTests" --data-dir "$fixture/backend"
 "$app/Contents/MacOS/AudioWorkflowTests" --data-dir "$fixture/data"

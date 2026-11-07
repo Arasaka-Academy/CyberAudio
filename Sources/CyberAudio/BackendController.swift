@@ -113,7 +113,7 @@ final class BackendController: ObservableObject {
     // Integration fixtures may start directly without an application coordinator.
     var requestPreparation: (() -> Void)?
 
-    init() {
+    init(session: URLSession? = nil) {
         let arguments = ProcessInfo.processInfo.arguments
         let index = arguments.firstIndex(of: "--data-dir")
         let override = index.flatMap { $0 + 1 < arguments.count ? arguments[$0 + 1] : nil }
@@ -126,7 +126,7 @@ final class BackendController: ObservableObject {
         config.timeoutIntervalForRequest = 150
         config.timeoutIntervalForResource = 180
         config.requestCachePolicy = .reloadIgnoringLocalCacheData
-        session = URLSession(configuration: config)
+        self.session = session ?? URLSession(configuration: config)
     }
 
     var ready: Bool { status == "ready" }
@@ -193,14 +193,19 @@ final class BackendController: ObservableObject {
             try process.run()
             // Only the child's read endpoint and this writer remain open.
             try? pipe.fileHandleForReading.close()
+            let pollingInstance = instance
             poll = Task { [weak self] in
                 guard let self else { return }
                 let started = Date()
-                while !Task.isCancelled, self.child != nil {
+                while !Task.isCancelled, self.child === process, !self.stopping {
                     do {
                         let (data, _) = try await self.session.data(from: URL(string: self.localURL + "/ready")!)
+                        // A completed response can already be queued on MainActor
+                        // when stop/restart cancels its polling task.
+                        try Task.checkCancellation()
+                        guard self.child === process, !self.stopping else { return }
                         let value = try JSONDecoder().decode(Readiness.self, from: data)
-                        if value.instance != self.instance {
+                        if value.instance != pollingInstance {
                             self.detail = "端口已被其他服务占用，请先停用旧 ASR 服务。"
                             self.status = "failed"
                         } else {
@@ -210,6 +215,7 @@ final class BackendController: ObservableObject {
                             self.detail = value.status == "ready" ? "STT 与 TTS 已加载 · Apple GPU" : (value.status == "failed" ? "模型加载失败，请打开日志检查。" : "首次预热可能需要数十秒…")
                         }
                     } catch {
+                        guard !Task.isCancelled, self.child === process, !self.stopping else { return }
                         if Date().timeIntervalSince(started) > 180, self.status == "loading" {
                             self.status = "failed"
                             self.detail = "启动超过 180 秒，请检查模型文件和日志。"
