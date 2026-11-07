@@ -1,0 +1,170 @@
+{
+  "status": "fixed_repeated_code_full_cohort_verified",
+  "verified_at": "2026-11-07T05:49:24.174311+00:00",
+  "protocol_sha256": "0afea7fd3175c99ae81b719cde0db4a6b8a06422c4f58290661c2da03811642c",
+  "generations": 144,
+  "retained_current_route_baselines": 144,
+  "complete_outputs_read_back": 288,
+  "asr_requests": 590,
+  "combined_routes": 576,
+  "all_requests_http200": true,
+  "no_retries_or_omissions": true,
+  "conditions": {
+    "all144_actual_eos": true,
+    "all144_within15_seconds": false,
+    "no_pair_worse_either_route": true,
+    "known_failure_exact_both_routes": true,
+    "all_untriggered_complete_bytes_preserved": true
+  },
+  "full_cohort_qualified_for_target_validation": false,
+  "candidate_promoted": false,
+  "routes": [
+    {
+      "route": "auto",
+      "pairs": 144,
+      "improved": 2,
+      "equal": 142,
+      "worse": 0,
+      "baseline_exact": 122,
+      "candidate_exact": 123,
+      "baseline_edits": 57,
+      "candidate_edits": 37
+    },
+    {
+      "route": "producer",
+      "pairs": 144,
+      "improved": 2,
+      "equal": 142,
+      "worse": 0,
+      "baseline_exact": 123,
+      "candidate_exact": 124,
+      "baseline_edits": 58,
+      "candidate_edits": 37
+    }
+  ],
+  "no_condition_complete_bytes_exact": 141,
+  "condition_paths": [
+    {
+      "id": "zh-stability-ono_anna-s196",
+      "baseline_eos": false,
+      "candidate_eos": true,
+      "baseline_seconds": 96.0,
+      "candidate_seconds": 8.96,
+      "baseline_tokens": 1200,
+      "candidate_tokens": 113,
+      "baseline_condition_count": 771,
+      "candidate_condition_count": 1,
+      "first_condition_index": 47,
+      "full_tokens_and_pcm_exact": false
+    },
+    {
+      "id": "zh-stability-ono_anna-s117",
+      "baseline_eos": true,
+      "candidate_eos": true,
+      "baseline_seconds": 86.72,
+      "candidate_seconds": 29.2,
+      "baseline_tokens": 1085,
+      "candidate_tokens": 366,
+      "baseline_condition_count": 382,
+      "candidate_condition_count": 2,
+      "first_condition_index": 318,
+      "full_tokens_and_pcm_exact": false
+    },
+    {
+      "id": "zh-entities-eric-s31",
+      "baseline_eos": true,
+      "candidate_eos": true,
+      "baseline_seconds": 6.88,
+      "candidate_seconds": 7.6,
+      "baseline_tokens": 87,
+      "candidate_tokens": 96,
+      "baseline_condition_count": 2,
+      "candidate_condition_count": 1,
+      "first_condition_index": 22,
+      "full_tokens_and_pcm_exact": false
+    }
+  ],
+  "groups": [
+    {
+      "arm": "baseline",
+      "without_eos": 1,
+      "over15_seconds": 2,
+      "median_audio_seconds": 5.84,
+      "maximum_audio_seconds": 96.0
+    },
+    {
+      "arm": "candidate",
+      "without_eos": 0,
+      "over15_seconds": 1,
+      "median_audio_seconds": 5.84,
+      "maximum_audio_seconds": 29.2
+    }
+  ],
+  "worse_pairs": [],
+  "known_failure_pairs": [
+    {
+      "id": "zh-stability-ono_anna-s196",
+      "route": "auto",
+      "baseline": {
+        "arm": "baseline",
+        "id": "zh-stability-ono_anna-s196",
+        "route": "auto",
+        "text": "   ",
+        "reference": "持续验证语音服务的稳定性和恢复能力。",
+        "edits": 17,
+        "reference_tokens": 17,
+        "normalized_exact": false
+      },
+      "candidate": {
+        "arm": "candidate",
+        "id": "zh-stability-ono_anna-s196",
+        "route": "auto",
+        "text": "持续验证语音服务的稳定性和恢复能力。",
+        "reference": "持续验证语音服务的稳定性和恢复能力。",
+        "edits": 0,
+        "reference_tokens": 17,
+        "normalized_exact": true
+      },
+      "edit_delta": -17
+    },
+    {
+      "id": "zh-stability-ono_anna-s196",
+      "route": "producer",
+      "baseline": {
+        "arm": "baseline",
+        "id": "zh-stability-ono_anna-s196",
+        "route": "producer",
+        "text": "啊！ 嗯。 嗯。 嗯。",
+        "reference": "持续验证语音服务的稳定性和恢复能力。",
+        "edits": 17,
+        "reference_tokens": 17,
+        "normalized_exact": false
+      },
+      "candidate": {
+        "arm": "candidate",
+        "id": "zh-stability-ono_anna-s196",
+        "route": "producer",
+        "text": "持续验证语音服务的稳定性和恢复能力。",
+        "reference": "持续验证语音服务的稳定性和恢复能力。",
+        "edits": 0,
+        "reference_tokens": 17,
+        "normalized_exact": true
+      },
+      "edit_delta": -17
+    }
+  ],
+  "source_files_verified": 102,
+  "protected_metadata_verified": 1026,
+  "shared_build_inputs_verified": 1350,
+  "frozen_artifacts_verified": 6,
+  "current_app_files_verified": 7,
+  "production_preserved": true,
+  "owned_model_processes_absent": true,
+  "owned_listener_closed": true,
+  "temporary_requests": 0,
+  "limits": [
+    "Original cohort includes previously selected failure seeds; not a population failure rate",
+    "Both ASR routes combine TTS and ASR errors and do not prove human intelligibility",
+    "No target strict soak, natural-ASR, full public-download, physical or distribution gate is closed by this diagnostic"
+  ]
+}

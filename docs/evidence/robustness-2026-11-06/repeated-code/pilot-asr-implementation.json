@@ -1,0 +1,12 @@
+{
+  "created_at": "2026-11-07T05:29:32.646861+00:00",
+  "protocol_sha256": "de01e2e2a796e813ae1890bfe506260bd32bf1f892d4c6d6154c019c60469d75",
+  "necessary_generation_gate_passed": true,
+  "expected_requests": 36,
+  "files_sha256": {
+    "prepare-roundtrip.py": "f51ce164a562239368de206847833af00b10858232d16aa8ab6a259655356a80",
+    "run-roundtrip.py": "ecf99f609fa375601c9c43902b63a49154cfefe60603786a04be7bbc47b73647",
+    "roundtrip-manifest.json": "c85c46e51e58b1703b073f1580d5219846a62edb8b949a5a81adfc12952ca786",
+    "roundtrip-transform.json": "5b8930b78d9751babfabab33bb0e4e229c0bc7d614ed48af7df60939a8e10984"
+  }
+}

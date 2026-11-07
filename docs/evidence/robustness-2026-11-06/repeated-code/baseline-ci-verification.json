@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-07T05:27:04.159787+00:00",
+  "run_id": 42341750926,
+  "head_sha": "9df57a51e6aa61d89d9905e1a2552e5d182dbae3",
+  "conclusion": "success",
+  "assertions": {
+    "native36": true,
+    "tools44": true,
+    "renders14": true,
+    "readiness5": true,
+    "service_build": true,
+    "assets_build": true,
+    "toolchain": true
+  },
+  "log_sha256": "d4de5b0c91be63ec1f0235794abdd34432ac7a2e6be4d0ee3f1cd5496604f773",
+  "log_bytes": 116894,
+  "verified": true,
+  "render_counts": {
+    "workspace": 7,
+    "settings": 3,
+    "preparation": 4,
+    "total": 14
+  },
+  "verified_at": "2026-11-07T05:28:44.805961+00:00",
+  "parser_note": "Render total is7+3+4, not a literal14 in the log. Initial two file-only parser attempts retained; no CI/build/test rerun."
+}

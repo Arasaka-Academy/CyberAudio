@@ -1,0 +1,17 @@
+{
+  "verified_at": "2026-11-07T05:53:01.412246+00:00",
+  "original_export_digests_verified": 43,
+  "exact_source_copies": 15,
+  "all_json_parse": true,
+  "all_python_parse": true,
+  "changed_document_local_links_valid": true,
+  "private_token_and_home_path_absent": true,
+  "owned_ports_closed": [
+    18903,
+    18904
+  ],
+  "temporary_request_directories": 0,
+  "private_full_cohort_gate_matches_public": true,
+  "literal_snippet_bytes_reconstructed": true,
+  "archive_format_correction": "Original snippet final blank line is preserved inside JSON source_text; staged whitespace check originally rejected its raw text form. No experiment was rerun."
+}

@@ -6,6 +6,7 @@
 
 | 文件 | 含义 |
 |---|---|
+| [repeated-code/](repeated-code/README.md) | 私有连续主码排除小样本的已知失败准确回读；完整 144 候选／144 当前路由基线、590 次双路 ASR，两个路由均 2 对改善／142 持平／0 回退，141 条完整字节保留；另一种子仍 29.2 秒且回读有误，时长条件失败，不采用或重启严格负载 |
 | [natural-padding/](natural-padding/README.md) | 固定七条短录音、原始／尾部／头部补零共 21 次原生请求；14 项基线匹配，总编辑数 11／11／10，但已知空转写未修复，未扩大或采用；当前源文件、App、冻结文件与生产保留 |
 | [sustained-transfer/](sustained-transfer/README.md) | M4 单一 SSH 路径的四段预定持续检查：首段 8MiB 默认 TLS／SHA 通过，第二段 45 秒超时后按规则停止；未重启完整下载，14 个最终文件／176MiB 断点及生产保留，所属转发清理通过 |
 | [public-download-refresh/](public-download-refresh/README.md) | 2026-11-07 新路径原生 1MiB／默认 TLS／SHA 通过；同一签名 Assets 实际续传增加 64MiB 后随 SSH 中断退出 1，14 个完整文件／176MiB 断点及生产保留，所属进程和转发确认清理；完整下载和新目录推理仍未通过 |

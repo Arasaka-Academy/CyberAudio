@@ -323,6 +323,16 @@ This is a new code-review fix and concrete progress. No frozen quality experimen
 - [x] Preserve all assets and the full retained-prefix SHA, validation config/Token and production. Close the task-owned SSH master; a separate read-only connection verifies the reverse listener/server identity/probe are gone and the existing shared proxy remains reachable. Retain the local master exit255, command-channel exit0 and explicit close-command exit0 without conflating them.
 - [ ] Complete all 23 public files and fresh-root inference after new sustained transport or an effective route change. This failed admission is not grounds to restart the same full transfer; preserve the partial and every original quality/strict/physical/distribution gate.
 
+## 37. Conditional repeated-main-code exclusion
+
+- [x] Freeze a private single-insertion diagnostic after observing a retained dominant main-code run. Preserve original sampler order, temperatures, top-k/top-p, repetition history, auxiliary calls, decoder, EOS and 1200-token budget. Do not interpret codec recurrence as an audible-loop attribution.
+- [x] Reproduce six complete original token/PCM baselines before the six candidates. Both failure repetitions end with actual EOS at 113 tokens/8.96s, preserve the first 47 tokens/44 frames, and match each other exactly; all four normal controls retain complete bytes. All 36 complete-output ASR calls pass, with both known failures exact in both routes and controls preserved.
+- [x] Freeze the original four-text/nine-voice/four-seed cohort, all 144 current-route baseline byte digests, both ASR routes and unchanged author mixed-token scoring. Link the exact pilot private TTS objects to one new managed-entry caller; no production mutation or parameter search.
+- [x] Complete all 144 candidates once in 397.8s; all have real EOS, but another original seed remains 29.2s. All 141 untriggered paths retain complete token/PCM bytes; three triggered paths preserve their original prefixes.
+- [x] Read back all 288 complete baseline/candidate outputs in 590 actual HTTP calls/291.39s, zero retries/omissions and normal Helper exit. Each route has 2 improved/142 tied/0 worse pairs; known seed 196 is exact, while seed 117 still has 9 edits in each route. Independently recompute 576 combined-route distances with a separate algorithm.
+- [x] Verify 102 source hashes, 1,350 shared inputs, 1,026 protected metadata entries, 6 frozen artifacts and 7 current App files, production instance/config/Token and complete process/listener/request cleanup. Archive exact review source copies, normalized reports and original/export digests in repeated-code/.
+- [x] Reject qualification because the predeclared condition that all 144 outputs must remain within 15 seconds fails. Do not tune the threshold, promote a default or restart the original strict M4 soak. Natural ASR, full public download, physical/listening/desktop, distribution and all original gates remain open; the overall goal is incomplete.
+
 ## Evidence log
 
 - Starting point: clean `main@96210dd`; development branch `codex/robustness`.

@@ -1,0 +1,131 @@
+{
+  "all_complete_pcm_preserved": true,
+  "cases": [
+    {
+      "id": "baseline-known-failure-p0",
+      "pcm24_sha256": "205e455de928404d995d906fd86ca2a91e55d7f94511444dd28fcf71a2eb6a19",
+      "pcm16_sha256": "9a6636a34a0199104814441204fb799b3575bd29a3035c4ef335d7f80616569b",
+      "source_frames": 576000,
+      "normalized_frames": 384000
+    },
+    {
+      "id": "baseline-known-failure-p1",
+      "pcm24_sha256": "151b68df9a97ab1e9f5504830922cca2dc1f97e294bfdc298efad5a9fcd554fe",
+      "pcm16_sha256": "67d5ba55bec93ddf2147f142ea0c211b75dc69a645f17dd6fae5eccf35d9ae9b",
+      "source_frames": 576000,
+      "normalized_frames": 384000
+    },
+    {
+      "id": "baseline-known-failure-p2",
+      "pcm24_sha256": "e12191ba8993d8e66006c297167b54946b3e4f745ff271a31ffdbcbe248e26a2",
+      "pcm16_sha256": "38ecdb06f2eaf112aa1413f64fd1336159e28208baf6e7fae192a5428c998af5",
+      "source_frames": 576000,
+      "normalized_frames": 384000
+    },
+    {
+      "id": "baseline-known-failure-p3",
+      "pcm24_sha256": "6d08b306f117e788f30169e3cf04d43c87536a8016b1a7c2efa99ec1908ed13c",
+      "pcm16_sha256": "1f4e86c7020117c3eb74733eaabf99b9257a7cf3f92a90e17e3dbea2ca720c70",
+      "source_frames": 576000,
+      "normalized_frames": 384000
+    },
+    {
+      "id": "baseline-short-control-p0",
+      "pcm24_sha256": "ad8e1d920dd41ed00e5d455acaac6daf47a3b7253e80ce65662d26cb168f15dd",
+      "pcm16_sha256": "93beb488ccb26a71108d7cd5cb898e5e56991f49fbff02db60bf11cc91a6350c",
+      "source_frames": 61440,
+      "normalized_frames": 40960
+    },
+    {
+      "id": "baseline-eric-english-numeric-p0",
+      "pcm24_sha256": "fcb480f0c2c115f3070a1476c76f727d7703507959b34873e001ba865b409d5b",
+      "pcm16_sha256": "b301f06d4cf1237160d69e4a617006d080b7398ede66bac8a2d05e56d6cfc25c",
+      "source_frames": 165120,
+      "normalized_frames": 110080
+    },
+    {
+      "id": "baseline-dylan-english-numeric-p0",
+      "pcm24_sha256": "c45d2afad91f749d0cb60daf0a5945e187f921532b7939aa5d6779d230ed16bc",
+      "pcm16_sha256": "a0b2f6cf7c40959069e377331b88b94336d81b989521d0b4a82cc7006ed1ec74",
+      "source_frames": 32640,
+      "normalized_frames": 21760
+    },
+    {
+      "id": "baseline-date-name-control-p0",
+      "pcm24_sha256": "514c5f94b2d5eddd0916de01ffd51b84367bd65d5a669c48276969c4436e5876",
+      "pcm16_sha256": "77c8e462c4aad32e686c0164ac01b4ee8e000dfdf907c5dfb4c37954a5603518",
+      "source_frames": 99840,
+      "normalized_frames": 66560
+    },
+    {
+      "id": "baseline-known-failure-repeat-p0",
+      "pcm24_sha256": "205e455de928404d995d906fd86ca2a91e55d7f94511444dd28fcf71a2eb6a19",
+      "pcm16_sha256": "9a6636a34a0199104814441204fb799b3575bd29a3035c4ef335d7f80616569b",
+      "source_frames": 576000,
+      "normalized_frames": 384000
+    },
+    {
+      "id": "baseline-known-failure-repeat-p1",
+      "pcm24_sha256": "151b68df9a97ab1e9f5504830922cca2dc1f97e294bfdc298efad5a9fcd554fe",
+      "pcm16_sha256": "67d5ba55bec93ddf2147f142ea0c211b75dc69a645f17dd6fae5eccf35d9ae9b",
+      "source_frames": 576000,
+      "normalized_frames": 384000
+    },
+    {
+      "id": "baseline-known-failure-repeat-p2",
+      "pcm24_sha256": "e12191ba8993d8e66006c297167b54946b3e4f745ff271a31ffdbcbe248e26a2",
+      "pcm16_sha256": "38ecdb06f2eaf112aa1413f64fd1336159e28208baf6e7fae192a5428c998af5",
+      "source_frames": 576000,
+      "normalized_frames": 384000
+    },
+    {
+      "id": "baseline-known-failure-repeat-p3",
+      "pcm24_sha256": "6d08b306f117e788f30169e3cf04d43c87536a8016b1a7c2efa99ec1908ed13c",
+      "pcm16_sha256": "1f4e86c7020117c3eb74733eaabf99b9257a7cf3f92a90e17e3dbea2ca720c70",
+      "source_frames": 576000,
+      "normalized_frames": 384000
+    },
+    {
+      "id": "candidate-known-failure-p0",
+      "pcm24_sha256": "2aeec6342935136d5202d80a71a531ce4970ab0acb3954f56255ee963cc78f00",
+      "pcm16_sha256": "726953bf62392cb0ca3cb94984f2f6b466257e2d5b87e88fc225e9d7d909450a",
+      "source_frames": 215040,
+      "normalized_frames": 143360
+    },
+    {
+      "id": "candidate-short-control-p0",
+      "pcm24_sha256": "ad8e1d920dd41ed00e5d455acaac6daf47a3b7253e80ce65662d26cb168f15dd",
+      "pcm16_sha256": "93beb488ccb26a71108d7cd5cb898e5e56991f49fbff02db60bf11cc91a6350c",
+      "source_frames": 61440,
+      "normalized_frames": 40960
+    },
+    {
+      "id": "candidate-eric-english-numeric-p0",
+      "pcm24_sha256": "fcb480f0c2c115f3070a1476c76f727d7703507959b34873e001ba865b409d5b",
+      "pcm16_sha256": "b301f06d4cf1237160d69e4a617006d080b7398ede66bac8a2d05e56d6cfc25c",
+      "source_frames": 165120,
+      "normalized_frames": 110080
+    },
+    {
+      "id": "candidate-dylan-english-numeric-p0",
+      "pcm24_sha256": "c45d2afad91f749d0cb60daf0a5945e187f921532b7939aa5d6779d230ed16bc",
+      "pcm16_sha256": "a0b2f6cf7c40959069e377331b88b94336d81b989521d0b4a82cc7006ed1ec74",
+      "source_frames": 32640,
+      "normalized_frames": 21760
+    },
+    {
+      "id": "candidate-date-name-control-p0",
+      "pcm24_sha256": "514c5f94b2d5eddd0916de01ffd51b84367bd65d5a669c48276969c4436e5876",
+      "pcm16_sha256": "77c8e462c4aad32e686c0164ac01b4ee8e000dfdf907c5dfb4c37954a5603518",
+      "source_frames": 99840,
+      "normalized_frames": 66560
+    },
+    {
+      "id": "candidate-known-failure-repeat-p0",
+      "pcm24_sha256": "2aeec6342935136d5202d80a71a531ce4970ab0acb3954f56255ee963cc78f00",
+      "pcm16_sha256": "726953bf62392cb0ca3cb94984f2f6b466257e2d5b87e88fc225e9d7d909450a",
+      "source_frames": 215040,
+      "normalized_frames": 143360
+    }
+  ]
+}

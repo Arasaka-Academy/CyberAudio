@@ -1,0 +1,12 @@
+{
+  "outputs": 288,
+  "expected_requests": 590,
+  "protocol_sha256": "0afea7fd3175c99ae81b719cde0db4a6b8a06422c4f58290661c2da03811642c",
+  "source_runner_sha256": "ecf99f609fa375601c9c43902b63a49154cfefe60603786a04be7bbc47b73647",
+  "files_sha256": {
+    "prepare-matrix-roundtrip.py": "5899ff36de51f967f4e27b916612110eee044ca70e56a7c6ea652f649d8abadc",
+    "run-matrix-roundtrip.py": "c7f232c3fff78d032adf94c398c80761467aef3522b433c9bc6149f5d5bc5dc6",
+    "matrix-roundtrip-manifest.json": "be4ffc5eaa280caa015042cc81f2adefa97acd9c3742708fbe3b9341474ef5d3",
+    "matrix-roundtrip-transform.json": "3d76aae69af94438e633d68eef6e617a332f82aae01cafac1caa6c4d1aad22cd"
+  }
+}

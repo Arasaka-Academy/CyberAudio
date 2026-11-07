@@ -1,0 +1,16 @@
+{
+  "status": "all144_generated_not_content_accepted",
+  "started_at": "2026-11-07T05:37:01.932673+00:00",
+  "plan_sha256": "0afea7fd3175c99ae81b719cde0db4a6b8a06422c4f58290661c2da03811642c",
+  "protected_metadata_before": 1026,
+  "owned_pid": 13857,
+  "elapsed_seconds": 401.357,
+  "candidate_report_sha256": "577ab3c1cf376107be180c8e1b9b964f5966b0f63051928ef658d0738121c900",
+  "completed_generations": 144,
+  "production_preserved": true,
+  "source_preserved": true,
+  "protected_metadata_after": 1026,
+  "shared_and_private_inputs_preserved": true,
+  "owned_model_exit_code": 0,
+  "finished_at": "2026-11-07T05:43:43.290802+00:00"
+}

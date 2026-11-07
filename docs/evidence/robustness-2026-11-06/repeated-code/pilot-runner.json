@@ -1,0 +1,25 @@
+{
+  "status": "generations_complete_not_content_accepted",
+  "started_at": "2026-11-07T05:26:59.623563+00:00",
+  "completed_arms": [
+    "baseline",
+    "candidate"
+  ],
+  "asr_started": false,
+  "protected_metadata_count": 1026,
+  "protocol_sha256": "de01e2e2a796e813ae1890bfe506260bd32bf1f892d4c6d6154c019c60469d75",
+  "elapsed_seconds": 121.078,
+  "owned_model_pid": 87860,
+  "baseline_exact_matches": 6,
+  "normal_controls_exact": true,
+  "actual_eos_in_both_failure_repeats": true,
+  "candidate_repeats_exact": true,
+  "first47_tokens_first44_frames_exact": true,
+  "necessary_generation_gate_passed": true,
+  "production_preserved": true,
+  "source_preserved": true,
+  "frozen_preserved": true,
+  "protected_metadata_after_count": 1026,
+  "owned_model_exit_code": 0,
+  "finished_at": "2026-11-07T05:29:00.702105+00:00"
+}

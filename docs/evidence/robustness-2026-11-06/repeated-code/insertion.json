@@ -1,0 +1,4 @@
+{
+  "source_sha256": "2d94be216c402396a6caae350e871f990a7f7748163a9938744c32bea4472e75",
+  "source_text": "        // Private causal diagnostic: a main-code self-loop cannot choose that\n        // same code on its next sample. EOS and every other logit are untouched.\n        if let eosTokenId, let tokens = generatedTokens, tokens.count >= 8,\n           let last = tokens.last, last != eosTokenId,\n           tokens.suffix(8).allSatisfy({ $0 == last }) {\n            let repeatedId = MLXArray([Int32(last)]).reshaped(1, 1)\n            let negativeInfinity = MLXArray.full([1, 1], values: MLXArray(-Float.infinity), dtype: logitsSlice.dtype)\n            logitsSlice = putAlong(logitsSlice, repeatedId, values: negativeInfinity, axis: -1)\n        }\n\n"
+}

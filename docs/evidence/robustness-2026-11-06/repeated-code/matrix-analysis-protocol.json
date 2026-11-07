@@ -1,0 +1,7 @@
+{
+  "created_at": "2026-11-07T05:38:31.784139+00:00",
+  "matrix_plan_sha256": "0afea7fd3175c99ae81b719cde0db4a6b8a06422c4f58290661c2da03811642c",
+  "analyzer_sha256": "9a061ea7d6dba595d4d71c1ab408d4958824abcd513f1ad7432ff498526de4d3",
+  "scorer_sha256": "81888870cb1588b701474392a55f0fc6bc1bd6d04e7760905e2ecf7b361c05ff",
+  "criteria": "All declared conditions exactly as frozen in matrix-plan.json before generation; implementation frozen before any full-cohort ASR work; no tuning"
+}

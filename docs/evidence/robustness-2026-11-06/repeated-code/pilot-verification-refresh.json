@@ -1,0 +1,6 @@
+{
+  "status": "existing_pilot_independently_reverified",
+  "summary_sha256": "5b6b3be034b8a560a47d7a4e21706084605a83424f63ce5d43c387bf4d4daa56",
+  "full_analyzer_assertions_reexecuted": true,
+  "first_refresh_note": "Analyzer checked all assertions, then exclusive-create refused existing summary; original file retained. This file-only verification omits that write."
+}
