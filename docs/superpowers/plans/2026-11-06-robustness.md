@@ -271,6 +271,14 @@ Files: `Sources/CyberAudio/AudioWorkspace.swift`, `tests/AudioWorkflowTests.swif
 - [x] Retain the existing `no_speech` contract as exact digital silence rather than generic VAD; an empty model output does not establish physical absence of speech. Existing dictation already handles empty text without insertion.
 - [ ] Keep this unsuccessful pilot unpromoted and do not broaden it or search additional gains. Preserve every original quality and acceptance requirement; a new approach requires a distinct causal hypothesis and a predeclared cohort.
 
+## 31. Audio notification concurrency compatibility
+
+- [x] Preserve the exact Swift 6.3.3 CI diagnostic for capturing a non-Sendable AVAudioEngine. Local Swift 6.4 baseline typechecking passes even with complete concurrency and warnings-as-errors; do not mislabel that local invocation as a failing reproduction.
+- [x] Carry only ObjectIdentifier and the existing playback UUID across the notification callback; resolve and check the current engine on MainActor. Retain both object and session identity to reject late callbacks and possible object-address reuse. Add no unchecked sendability or warning suppression.
+- [x] Pass local strict concurrency and complete `make check`: 36 native contracts, 44 tool tests, 14 renders, all behavior and release App/Service/Assets builds. Existing real AVFoundation/native HTTP tests cover current interruption, queued old-engine notifications, replay, late player events and update draining. Preserve the initial HTTPS submodule setup failure separately, then complete the same locked build through a command-scoped SSH route. Production instance/config/Token preserved.
+
+Swift 6.3.3 warning removal is verified by the normal exact-commit Checks workflow after delivery. Local receipts remain in `.context/robustness/audio-observer-20261107/`. This compatibility improvement does not resolve or replace the original content, strict M4, physical, download or distribution requirements.
+
 ## Evidence log
 
 - Starting point: clean `main@96210dd`; development branch `codex/robustness`.

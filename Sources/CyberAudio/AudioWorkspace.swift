@@ -354,12 +354,16 @@ final class AudioWorkspace: NSObject, ObservableObject {
         node.play()
         self.engine = engine
         self.node = node
+        let engineID = ObjectIdentifier(engine)
+        let session = playbackSession
         engineConfigurationObserver = NotificationCenter.default.addObserver(
             forName: .AVAudioEngineConfigurationChange, object: engine, queue: nil
-        ) { [weak self, weak engine] _ in
+        ) { [weak self] _ in
             // The audio thread must not wait for MainActor while it stops the engine.
+            // Carry values across threads; access the current engine only on MainActor.
             Task { @MainActor in
-                guard let self, let engine, self.engine === engine else { return }
+                guard let self, self.playbackSession == session,
+                      let currentEngine = self.engine, ObjectIdentifier(currentEngine) == engineID else { return }
                 self.outputDeviceInterrupted()
             }
         }
