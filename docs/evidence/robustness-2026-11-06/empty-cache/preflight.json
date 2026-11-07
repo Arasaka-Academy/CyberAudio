@@ -1,0 +1,47 @@
+{
+  "recorded_at": "2026-11-07T07:41:59.237935+00:00",
+  "baseline_head": "67e13bf66e1058e5446567a3fc3f3ee29046245c",
+  "status": "blocked_at_readonly_preflight",
+  "device": "Apple M4 / arm64",
+  "qualification": {
+    "minimum_free_bytes": 16106127360,
+    "actual_free_bytes": 14356905984,
+    "deficit_bytes": 1749221376,
+    "configured_ffmpeg_is_file": true,
+    "candidate_directory_absent": true,
+    "helper_sha256": "f2919c66f0ae6ed4cf78f2e490f254891bfbfb30423d5d1df12253c3eaf41b6a",
+    "model_lock_sha256": "668125b12cc2c1b469925e1eb60c79171c6f9623470622c619e4583971f4e816"
+  },
+  "attempts": [
+    {
+      "phase": "original_readonly_preflight",
+      "exit_code": 1,
+      "error": "AssertionError at line51, before JSON output",
+      "model_starts": 0,
+      "downloads": 0,
+      "target_files_written": 0
+    },
+    {
+      "phase": "separate_readonly_diagnostic",
+      "exit_code": 1,
+      "failed_check": "minimum_15GiB_free",
+      "model_starts": 0,
+      "downloads": 0,
+      "target_files_written": 0
+    }
+  ],
+  "protected_metadata_entries": 704,
+  "prior_resume": {
+    "status": "download_verified",
+    "bytes": 5547997530,
+    "complete_fresh_transfer": false
+  },
+  "not_covered": [
+    "Empty-cache23-file download",
+    "Inference using a newly downloaded empty-cache set",
+    "Fresh macOS or from-zero FFmpeg installation"
+  ],
+  "changes_to_original_conditions": false,
+  "cleanup_or_deletion": false,
+  "next_condition": "Meet the pre-existing15GiB free-space check without deleting protected data, then freeze and execute a new single-invocation bounded protocol."
+}

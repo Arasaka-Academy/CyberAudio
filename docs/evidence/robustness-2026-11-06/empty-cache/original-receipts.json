@@ -1,0 +1,34 @@
+{
+  "original-readonly-source": {
+    "bytes": 3047,
+    "sha256": "e03d9f2182dfe990c26a56c155e32e0edffce5e484bfa43cdc824cbdce68ce23"
+  },
+  "original-stderr": {
+    "bytes": 89,
+    "sha256": "05bf54f52473659246795976590c660fef34f1adabf44b6aaff7c48ea0e4740f"
+  },
+  "diagnostic-readonly-source": {
+    "bytes": 3265,
+    "sha256": "7617e770141a3511cf7f914a530fba67312940c4e795df4e021b197551209800"
+  },
+  "diagnostic-stdout": {
+    "bytes": 136513,
+    "sha256": "c1dcf78b94ffe15d0ca799afad793ff8fcc25e560623fccca3741e4f9a330d2d"
+  },
+  "diagnostic-stderr": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "diagnostic-inventory": {
+    "bytes": 152078,
+    "sha256": "c9e32fb82e255db2a16e9397aedf40a19b7fb882919b9e488fd3c0312f5c7fdb"
+  },
+  "final-readonly-source": {
+    "bytes": 137311,
+    "sha256": "35e66e7801e3cd1a7bc30127c8b9aa133adfe039af8978f9993084736b8bf568"
+  },
+  "final-readonly-result": {
+    "bytes": 369,
+    "sha256": "a026ca78a0edc6d1efe2fddc03101d50cbd3b0f9206ce1fd1eae84d3f03f386e"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-07T07:54:10.260942+00:00",
+  "protected_metadata_count": 704,
+  "protected_metadata_preserved": true,
+  "production_preserved": true,
+  "candidate_root_absent": true,
+  "owned_model_or_download_workers_absent": true,
+  "disk_free_bytes": 14346092544,
+  "minimum_free_bytes": 16106127360,
+  "target_writes": 0,
+  "model_starts": 0,
+  "downloads": 0
+}
