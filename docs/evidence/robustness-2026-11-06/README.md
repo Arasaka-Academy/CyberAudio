@@ -6,6 +6,8 @@
 
 | 文件 | 含义 |
 |---|---|
+| [natural-padding/](natural-padding/README.md) | 固定七条短录音、原始／尾部／头部补零共 21 次原生请求；14 项基线匹配，总编辑数 11／11／10，但已知空转写未修复，未扩大或采用；当前源文件、App、冻结文件与生产保留 |
+| [sustained-transfer/](sustained-transfer/README.md) | M4 单一 SSH 路径的四段预定持续检查：首段 8MiB 默认 TLS／SHA 通过，第二段 45 秒超时后按规则停止；未重启完整下载，14 个最终文件／176MiB 断点及生产保留，所属转发清理通过 |
 | [public-download-refresh/](public-download-refresh/README.md) | 2026-11-07 新路径原生 1MiB／默认 TLS／SHA 通过；同一签名 Assets 实际续传增加 64MiB 后随 SSH 中断退出 1，14 个完整文件／176MiB 断点及生产保留，所属进程和转发确认清理；完整下载和新目录推理仍未通过 |
 | [checks.json](checks.json) | R1–R7 阶段完整 `make check`：28 项原生契约，29 项现役工具测试，14 个原生渲染，行为回归和实际推理 Helper 编译；工作流／entitlement／空白检查 |
 | [build.json](build.json) | R1–R7 阶段设备、源码提交、本地 App 与两个 Helper／Metal 的大小和 SHA；明确本地 ad-hoc、未公证、未交付 |

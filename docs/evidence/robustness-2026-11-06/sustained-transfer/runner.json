@@ -1,0 +1,12 @@
+{
+  "started_at": "2026-11-07T05:07:35.570324+00:00",
+  "status": "failed",
+  "remote_executed_source_sha256": "d995f2b61134edd9540613463effc982ee549421a1018063ebc075e7596cf7da",
+  "bootstrap_sha256": "82b08e17ee00cab3411e55d78366275a1dd87a69f914bb812666a2727df46b10",
+  "remote_ssh_exit_code": 0,
+  "master_close_exit_code": 0,
+  "master_exit_code": 255,
+  "owned_local_master_stopped": true,
+  "control_socket_removed": true,
+  "finished_at": "2026-11-07T05:09:11.787243+00:00"
+}

@@ -308,6 +308,21 @@ The optional complete-concurrency/warnings-as-errors invocation fails on both un
 
 This is a new code-review fix and concrete progress. No frozen quality experiment, strict M4 repeat or public download workload was restarted. All original quality, strict target, physical/interactive, public-install and distribution gates remain open; the overall goal is not complete. Final main/CI delivery is recorded separately after the evidence commit.
 
+## 35. Fixed short-audio silence-placement pilot
+
+- [x] Inspect the current SDK minimum-length boundary without inference, preserving the known 9600-frame empty case. Freeze a distinct placement hypothesis: move only existing zeros, keeping the effective model input at 16000 frames, original PCM/amplitude/order, model, prompt, language and greedy parameters unchanged.
+- [x] Select six controls only by first/last ID within each language among all 362 original short recordings; the prior 79 count described the quiet subset. Freeze all seven sources and 21 requests before model load.
+- [x] Require seven fresh original and seven explicit trailing-padding results to match the frozen baseline before seven leading-padding calls. All 21 succeed once in one offline native instance; 14 baseline controls match.
+- [x] Independently verify PCM/FFmpeg transforms, all 21 mixed distances with a separate matrix algorithm, source102/protected-metadata1026/frozen6/current-App7 and production/process/listener/request preservation. Edits are 11/11/10; the retained empty case remains empty and fails the prospective problem gate.
+- [x] End this unsuccessful pilot without expansion, length search, default changes or another strict soak. Archive sanitized evidence and exact review scripts in natural-padding/; all original acceptance requirements remain open.
+
+## 36. Sustained public-transfer admission
+
+- [x] Verify current M4 reachability, fourteen full files and the 176MiB partial. Before another full resume, freeze four exact native 8MiB ranges at 45-second start intervals over one owned multiplexed SSH connection, default TLS and a quantitative throughput budget.
+- [x] Independently verify the original complete reference model digest and fourteen final-file hashes. First range passes TLS/206/size/Content-Range/SHA in 42.65 seconds; second reaches resource timeout -1001 in 45.06 seconds. Stop at the first failure; planned rounds three/four and full Assets download are not run.
+- [x] Preserve all assets and the full retained-prefix SHA, validation config/Token and production. Close the task-owned SSH master; a separate read-only connection verifies the reverse listener/server identity/probe are gone and the existing shared proxy remains reachable. Retain the local master exit255, command-channel exit0 and explicit close-command exit0 without conflating them.
+- [ ] Complete all 23 public files and fresh-root inference after new sustained transport or an effective route change. This failed admission is not grounds to restart the same full transfer; preserve the partial and every original quality/strict/physical/distribution gate.
+
 ## Evidence log
 
 - Starting point: clean `main@96210dd`; development branch `codex/robustness`.

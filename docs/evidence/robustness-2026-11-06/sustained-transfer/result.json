@@ -1,0 +1,69 @@
+{
+  "status": "failed",
+  "started_at": "2026-11-07T05:07:36.354826+00:00",
+  "rounds": [
+    {
+      "bytes": 8388608,
+      "content_range": "bytes 184549376-192937983/2393308931",
+      "elapsed_seconds": 42.652787923812866,
+      "maximum_resource_seconds": 45,
+      "requested_range": "184549376-192937983",
+      "sha256": "1623c60bfa13ced9ecba4f3a231a80d9cb0a5be570766bcf7164004283512ab2",
+      "status": 206,
+      "tls_validation": "default",
+      "transport": "URLSessionDownloadTask",
+      "index": 0,
+      "expected_sha256": "1623c60bfa13ced9ecba4f3a231a80d9cb0a5be570766bcf7164004283512ab2",
+      "normal_tls_exact_range_passed": true
+    },
+    {
+      "elapsed_seconds": 45.05586898326874,
+      "error_code": -1001,
+      "error_domain": "NSURLErrorDomain",
+      "maximum_resource_seconds": 45,
+      "requested_range": "192937984-201326591",
+      "tls_validation": "default",
+      "transport": "URLSessionDownloadTask",
+      "index": 1,
+      "expected_sha256": "cf80776739440c70161a164e62b953c7bc0b2ac7973d439721954f0cf89ec015",
+      "normal_tls_exact_range_passed": false
+    }
+  ],
+  "model_loaded": false,
+  "download_cli_started": false,
+  "asset_bytes_written": false,
+  "tls_validation": "default",
+  "maximum_rounds": 4,
+  "requested_bytes_each": 8388608,
+  "partial_bytes": 184549376,
+  "bindings": [
+    {
+      "address": "127.0.0.1",
+      "errno": 0
+    },
+    {
+      "address": "127.0.0.2",
+      "errno": 35
+    },
+    {
+      "address": "::1",
+      "errno": 61
+    }
+  ],
+  "verified_final_count": 14,
+  "verified_final_bytes": 2469536771,
+  "remaining_bytes": 2893911383,
+  "minimum_active_bytes_per_second": 1205796.4095833334,
+  "probe_source_sha256": "db373b5e7d8c554c976800b3de5fe49e11670896f1f97de9904090d9ba8e38d1",
+  "probe_binary_sha256": "0edf664eea23bed5e1052b4b981a5eba07558f59c34ab774200cc51468190cf2",
+  "reference_model_full_digest_verified": true,
+  "elapsed_seconds": 94.563,
+  "error_type": "AssertionError",
+  "error": "A fixed sustained Range failed; stop without full resume",
+  "full_resume_admitted": false,
+  "production_preserved": true,
+  "assets_preserved": true,
+  "partial_preserved": true,
+  "finished_at": "2026-11-07T05:09:10.918044+00:00",
+  "private_result_sha256": "475733c9b7a9fbbe519b289e7dd9f4d151b307e374c29a785242d74d61ddafeb"
+}

@@ -1,0 +1,44 @@
+{
+  "protocol.json": {
+    "private_source": "protocol.json",
+    "private_sha256": "ede38fc092f64f467170c49b6d78c1442cb038ce9c4c7087661a222de5f2f9bf",
+    "archive_sha256": "64bc1112491cf02a5927dadf9f0005aa303f5f0eb6380e1d53e9d24e89e75acd",
+    "derivation": "redacted control references and absolute paths"
+  },
+  "summary.json": {
+    "private_source": "summary.private.json",
+    "private_sha256": "6bdeb868c3cbb7809fb916e601b0d478a327c21aac75429d5808f03e99dc6f1e",
+    "archive_sha256": "9c9677f44a1bef1446da941e4e195de80d76a9ad34dfed6b37bbf6cb6bd961ac",
+    "derivation": "removed full control transcripts"
+  },
+  "inference.json": {
+    "private_source": "native-http/runner.json",
+    "private_sha256": "c1ff885b804208800e473f1068883723ff0cccc4e18e9f2c3c812bdf78a231e5",
+    "archive_sha256": "86076faf1f8f79253d80c9851bd82334bd15705f4b05aafeb1e706ea1a20e586",
+    "derivation": "selected non-secret result and preservation fields"
+  },
+  "transform-verification.json": {
+    "private_source": "transform-verification.json",
+    "private_sha256": "e71b8d00e21dcd57a962e2f509531ed5b6eac1eae25a46b974b62d5d7560f268",
+    "archive_sha256": "e71b8d00e21dcd57a962e2f509531ed5b6eac1eae25a46b974b62d5d7560f268",
+    "derivation": "exact bytes"
+  },
+  "prepare.py": {
+    "private_source": "prepare.py",
+    "private_sha256": "625ca58c24f34b594ba3c40f260f3450a28b95d3b169b08e3a6b51d086119125",
+    "archive_sha256": "625ca58c24f34b594ba3c40f260f3450a28b95d3b169b08e3a6b51d086119125",
+    "derivation": "exact bytes"
+  },
+  "run.py": {
+    "private_source": "run.py",
+    "private_sha256": "3fdff2a898670543f1c28c06e34b719adec75c57138e1ec441f99fdfd7c4f6ca",
+    "archive_sha256": "3fdff2a898670543f1c28c06e34b719adec75c57138e1ec441f99fdfd7c4f6ca",
+    "derivation": "exact bytes"
+  },
+  "analyze.py": {
+    "private_source": "analyze.py",
+    "private_sha256": "8f7f3a36a6567ca86bcf5202d7a27c6a6929590ee576ec9bd552e00bd63c8e7e",
+    "archive_sha256": "8f7f3a36a6567ca86bcf5202d7a27c6a6929590ee576ec9bd552e00bd63c8e7e",
+    "derivation": "exact bytes"
+  }
+}

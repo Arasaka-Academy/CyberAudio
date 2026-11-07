@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-07T05:10:45.635616+00:00",
+  "status": "owned_cleanup_and_preservation_verified",
+  "production_preserved": true,
+  "validation_assets_preserved": true,
+  "partial_bytes": 184549376,
+  "partial_full_sha256_preserved": true,
+  "final_files": 14,
+  "final_bytes": 2469536771,
+  "owned_reverse_listener_closed": true,
+  "owned_forward_server_identity_absent": true,
+  "owned_probe_process_absent": true,
+  "shared_proxy_still_reachable": true,
+  "download_cli_started": false,
+  "fresh_inference_started": false
+}

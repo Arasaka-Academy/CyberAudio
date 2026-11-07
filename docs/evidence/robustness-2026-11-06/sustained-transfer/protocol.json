@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-11-07T05:07:35.570324+00:00",
+  "purpose": "Sustained native download admission after the prior reverse-forward failure",
+  "hypothesis": "A single owned multiplexed SSH connection carrying the forward and probe can retain the current reachable route long enough for four exact default-TLS 8MiB ranges over at least 135 seconds; no causal claim about the earlier disconnection",
+  "route": "M4 127.0.0.1:17891 via one task-owned SSH master to unchanged local 127.0.0.1:7890",
+  "ip_qos": "none for this command only",
+  "ranges": 4,
+  "bytes_each": 8388608,
+  "start_interval_seconds": 45,
+  "offset": "184549376 + round_index * 8388608",
+  "request_resource_timeout_seconds": 45,
+  "full_resume_admission": "All four exact HTTP206/Content-Range/length/reference-model SHA checks pass under default TLS; active transfer rate must project the actual remaining bytes within 2400 seconds, leaving a 1.5 margin inside the original 3600-second resume budget",
+  "stop_rule": "Stop on the first failed probe; no replay, full download, model inference, asset write or system-proxy change within this protocol",
+  "preserve": "Fourteen fixed full files, 176MiB partial including its complete SHA, validation config/Token and production instance/config/Token",
+  "files_sha256": {
+    "RangeProbe.swift": "db373b5e7d8c554c976800b3de5fe49e11670896f1f97de9904090d9ba8e38d1",
+    "remote.py": "3d0f15124ccef391f1c364eff4f79d3be8df93eacadff3fec364f6f67b9b80aa",
+    "run.py": "18a22405a5d1d5f09036cc77d1fbaf1a3263ca649097f8942d4b383d41948e66"
+  }
+}

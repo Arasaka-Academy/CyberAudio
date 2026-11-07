@@ -1,0 +1,22 @@
+{
+  "private_root": ".context/robustness/natural-padding-20261107",
+  "sha256": {
+    "protocol.json": "ede38fc092f64f467170c49b6d78c1442cb038ce9c4c7087661a222de5f2f9bf",
+    "summary.private.json": "6bdeb868c3cbb7809fb916e601b0d478a327c21aac75429d5808f03e99dc6f1e",
+    "transform-verification.json": "e71b8d00e21dcd57a962e2f509531ed5b6eac1eae25a46b974b62d5d7560f268",
+    "prepare.py": "625ca58c24f34b594ba3c40f260f3450a28b95d3b169b08e3a6b51d086119125",
+    "run.py": "3fdff2a898670543f1c28c06e34b719adec75c57138e1ec441f99fdfd7c4f6ca",
+    "analyze.py": "8f7f3a36a6567ca86bcf5202d7a27c6a6929590ee576ec9bd552e00bd63c8e7e",
+    "native-http/runner.json": "c1ff885b804208800e473f1068883723ff0cccc4e18e9f2c3c812bdf78a231e5",
+    "native-http/results.jsonl": "f46efe92998acebdb4dd62b97f8ee0610baab2316058bc69f5991ca22cc78a7f",
+    "native-http/source-before.json": "40542f1e3a7bfc73b94a4505aaf7d1eef6cc3be90bc17db3f81e123a4473b04a",
+    "native-http/helper.private.log": "3a45b3ea5863e3c4e16dbe29a53c4fdec632dd33bc92e1d068e280d05eb0a23c"
+  },
+  "not_published": [
+    "original/generated audio",
+    "full control transcripts",
+    "model weights",
+    "production or validation configuration/Token",
+    "full logs"
+  ]
+}

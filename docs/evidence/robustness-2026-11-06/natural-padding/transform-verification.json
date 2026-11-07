@@ -1,0 +1,111 @@
+{
+  "model_loaded": false,
+  "cases": [
+    {
+      "id": "ascend_ses1_spk17_L3818_9.3200_0.6400-original",
+      "ffmpeg_pcm_exact": true,
+      "frames": 10240
+    },
+    {
+      "id": "ascend_ses1_spk17_L3818_9.3200_0.6400-trailing",
+      "ffmpeg_pcm_exact": true,
+      "frames": 16000
+    },
+    {
+      "id": "ascend_ses1_spk17_L3818_9.3200_0.6400-leading",
+      "ffmpeg_pcm_exact": true,
+      "frames": 16000
+    },
+    {
+      "id": "ascend_ses1_spk17_L3832_24.0000_0.9000-original",
+      "ffmpeg_pcm_exact": true,
+      "frames": 14400
+    },
+    {
+      "id": "ascend_ses1_spk17_L3832_24.0000_0.9000-trailing",
+      "ffmpeg_pcm_exact": true,
+      "frames": 16000
+    },
+    {
+      "id": "ascend_ses1_spk17_L3832_24.0000_0.9000-leading",
+      "ffmpeg_pcm_exact": true,
+      "frames": 16000
+    },
+    {
+      "id": "ascend_ses1_spk17_L4213_465.2000_0.6000-original",
+      "ffmpeg_pcm_exact": true,
+      "frames": 9600
+    },
+    {
+      "id": "ascend_ses1_spk17_L4213_465.2000_0.6000-trailing",
+      "ffmpeg_pcm_exact": true,
+      "frames": 16000
+    },
+    {
+      "id": "ascend_ses1_spk17_L4213_465.2000_0.6000-leading",
+      "ffmpeg_pcm_exact": true,
+      "frames": 16000
+    },
+    {
+      "id": "ascend_ses2_spk17_L10865_320.8400_0.5200-original",
+      "ffmpeg_pcm_exact": true,
+      "frames": 8319
+    },
+    {
+      "id": "ascend_ses2_spk17_L10865_320.8400_0.5200-trailing",
+      "ffmpeg_pcm_exact": true,
+      "frames": 16000
+    },
+    {
+      "id": "ascend_ses2_spk17_L10865_320.8400_0.5200-leading",
+      "ffmpeg_pcm_exact": true,
+      "frames": 16000
+    },
+    {
+      "id": "ascend_ses4_spk17_L22954_608.2600_0.9400-original",
+      "ffmpeg_pcm_exact": true,
+      "frames": 15040
+    },
+    {
+      "id": "ascend_ses4_spk17_L22954_608.2600_0.9400-trailing",
+      "ffmpeg_pcm_exact": true,
+      "frames": 16000
+    },
+    {
+      "id": "ascend_ses4_spk17_L22954_608.2600_0.9400-leading",
+      "ffmpeg_pcm_exact": true,
+      "frames": 16000
+    },
+    {
+      "id": "ascend_ses4_spk17_L23187_895.7400_0.6400-original",
+      "ffmpeg_pcm_exact": true,
+      "frames": 10240
+    },
+    {
+      "id": "ascend_ses4_spk17_L23187_895.7400_0.6400-trailing",
+      "ffmpeg_pcm_exact": true,
+      "frames": 16000
+    },
+    {
+      "id": "ascend_ses4_spk17_L23187_895.7400_0.6400-leading",
+      "ffmpeg_pcm_exact": true,
+      "frames": 16000
+    },
+    {
+      "id": "ascend_ses4_spk17_L23189_897.0600_0.9400-original",
+      "ffmpeg_pcm_exact": true,
+      "frames": 15040
+    },
+    {
+      "id": "ascend_ses4_spk17_L23189_897.0600_0.9400-trailing",
+      "ffmpeg_pcm_exact": true,
+      "frames": 16000
+    },
+    {
+      "id": "ascend_ses4_spk17_L23189_897.0600_0.9400-leading",
+      "ffmpeg_pcm_exact": true,
+      "frames": 16000
+    }
+  ],
+  "all_ffmpeg_pcm_exact": true
+}

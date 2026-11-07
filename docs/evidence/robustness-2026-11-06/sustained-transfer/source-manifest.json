@@ -1,0 +1,38 @@
+{
+  "protocol.json": {
+    "source": "protocol.json",
+    "private_sha256": "505a0a9b0f4f336ea11c4b949664c40962dec57b6a7716fa53952a197da65ce6",
+    "archive_sha256": "505a0a9b0f4f336ea11c4b949664c40962dec57b6a7716fa53952a197da65ce6",
+    "derivation": "exact bytes"
+  },
+  "result.json": {
+    "source": "remote-result.private.json",
+    "private_sha256": "475733c9b7a9fbbe519b289e7dd9f4d151b307e374c29a785242d74d61ddafeb",
+    "archive_sha256": "7377f4609bb89fe3bd9b84711309fd3e49f35870a1742fe7bef71209af666b8e",
+    "derivation": "remove production identifiers, file tree and partial digest"
+  },
+  "runner.json": {
+    "source": "runner.json",
+    "private_sha256": "ec3704eb7865f4d2490c4cad2b639f4f8e9c21995666eadccebfe53d9c04026b",
+    "archive_sha256": "e3090f6b13251ef3dced3d71967e2b738dea558d32d95e8b4709921ef31db380",
+    "derivation": "remove local PID"
+  },
+  "cleanup.json": {
+    "source": "cleanup.json",
+    "private_sha256": "d894695c20a0d10ef63aae0c3156558336a6b53e9047d741be6b00e86578d1e3",
+    "archive_sha256": "d894695c20a0d10ef63aae0c3156558336a6b53e9047d741be6b00e86578d1e3",
+    "derivation": "exact bytes"
+  },
+  "RangeProbe.swift": {
+    "source": "RangeProbe.swift",
+    "private_sha256": "db373b5e7d8c554c976800b3de5fe49e11670896f1f97de9904090d9ba8e38d1",
+    "archive_sha256": "db373b5e7d8c554c976800b3de5fe49e11670896f1f97de9904090d9ba8e38d1",
+    "derivation": "exact bytes"
+  },
+  "remote.py": {
+    "source": "remote.py",
+    "private_sha256": "3d0f15124ccef391f1c364eff4f79d3be8df93eacadff3fec364f6f67b9b80aa",
+    "archive_sha256": "3d0f15124ccef391f1c364eff4f79d3be8df93eacadff3fec364f6f67b9b80aa",
+    "derivation": "exact original review source; bootstrap changes one directory creation to an existence assertion"
+  }
+}

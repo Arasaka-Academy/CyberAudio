@@ -1,0 +1,29 @@
+{
+  "status": "whole_test_transcribed_not_quality_accepted",
+  "started_at": "2026-11-07T05:04:24.062840+00:00",
+  "finished_at": "2026-11-07T05:04:39.267453+00:00",
+  "elapsed_seconds": 15.204,
+  "completed_requests": 21,
+  "expected_requests": 21,
+  "parity_counts": {
+    "original": 7,
+    "trailing": 7
+  },
+  "helper_source_commit": "b06dc7b7640b6b1cc9c53870ffe617afdcfba59d",
+  "helper_sha256": "c2bf7afa8767c46a097a920e2f3523e3dfe5ef0d9c426f1664807efc93efe07b",
+  "native_sources_match_accepted_build": true,
+  "study_protocol_sha256": "ede38fc092f64f467170c49b6d78c1442cb038ce9c4c7087661a222de5f2f9bf",
+  "runner_sha256": "3fdff2a898670543f1c28c06e34b719adec75c57138e1ec441f99fdfd7c4f6ca",
+  "scorer_sha256": "81888870cb1588b701474392a55f0fc6bc1bd6d04e7760905e2ecf7b361c05ff",
+  "scorer_lock_sha256": "1e7646478ae9db4a58e3d32a40c16ac5b4bf803348c77916798e84495f21147e",
+  "retries": 0,
+  "port": 18902,
+  "owned_helper_exit_code": 0,
+  "production_preserved": true,
+  "source_preserved": true,
+  "protected_file_metadata_preserved": true,
+  "owned_listener_closed": true,
+  "temporary_request_count": 0,
+  "broad_protected_metadata_before_count": 1026,
+  "broad_protected_metadata_after_count": 1026
+}
