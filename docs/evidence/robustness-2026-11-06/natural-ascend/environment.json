@@ -1,0 +1,7 @@
+{
+  "cpu": "Apple M1 Max",
+  "memory_bytes": 34359738368,
+  "macos": "27.0.1",
+  "process_arch": "arm64",
+  "scope": "Same local machine as the immediately completed isolated baseline; decoder/HTTP timings are limited to this environment."
+}

@@ -1,0 +1,22 @@
+{
+  "status": "verified_complete_baseline_not_quality_accepted",
+  "verified_at": "2026-11-07T00:27:13.702156+00:00",
+  "elapsed_seconds": 0.566,
+  "utterances": 1315,
+  "wav_and_pcm_digests_verified": 1315,
+  "alternate_mixed_edit_distances_verified": 1315,
+  "all_raw_ids_references_languages_outputs_match": true,
+  "protocol_scorer_runner_frozen_before_inference": true,
+  "complete_language_group_accounting": true,
+  "runner_sha256": "cef2ee6f68151bcd37f70be06914ef914937d1bb896eb2885f28cbba87effdad",
+  "score_sha256": "34ac9af5020e7bdf5ff9d17071eb471bbc4ed1a7eda2c35c0a68ac756421f1dc",
+  "manifest_sha256": "6950c9fd603e0e7a17cb6bfe4b0d4fd33d6290c77a72b69a94dba8fba2f17eaf",
+  "raw_outputs_sha256": "b1799799a953735c243cc04c21bcbf66cc5f0e79cecbc4e114719286bdf478c5",
+  "product_source_preserved": true,
+  "model_and_frozen_file_metadata_preserved": true,
+  "production_preserved": true,
+  "owned_helper_absent": true,
+  "owned_listener_closed": true,
+  "temporary_request_count": 0,
+  "no_inference_rerun": true
+}

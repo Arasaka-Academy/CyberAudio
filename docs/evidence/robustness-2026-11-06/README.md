@@ -1,6 +1,6 @@
 # 2026-11-06 工程完善与验收证据
 
-本目录对应 `codex/robustness`，审查基线 `96210dd`。问题、实现和剩余验收见[审查报告](../../reviews/2026-11-06.md)。这里只保留经过检查的结果、公开模型／合成语料元数据和源码摘要，不包含配置、Token、证书、私钥、完整日志或模型权重。
+本目录对应 `codex/robustness`，审查基线 `96210dd`；修复及图标主题提交已合并推送到 `main@fe9a1bd`，对应远程 Checks 通过。问题、实现和剩余验收见[审查报告](../../reviews/2026-11-06.md)。这里只保留经过检查的结果、公开模型／语料元数据和源码摘要，不包含配置、Token、证书、私钥、完整日志、原始录音或模型权重。
 
 ## 证据索引
 
@@ -32,6 +32,7 @@
 | [text-layout/README.md](text-layout/README.md) | 当前 R11 私有 SDK 的两种官方文本布局：五组配对／十次生成、17 次最终 App ASR；已知失败能结束但正常控制回读回退，数字质量仍未接受，未采用；追加桌面工具不可用和字节保留证据 |
 | [model-preservation/README.md](model-preservation/README.md) | R12 移除 SDK 异常加载时整目录删除；真实权重加载红绿对照、八项适配器回归和 36／44／14 完整检查；`b5607f2` 当前 App 完整原生验收及独立复核通过，同 M1 旧版 100／100 一致 |
 | [stream-failure/README.md](stream-failure/README.md) | R13 流式晚期失败保留具体原因、旧 Helper 兼容、完整响应超时和部分音频拒绝；36／44／14 完整检查及 9 项状态查询／3 类晚期故障；`57c8152` 当前 App 完整验收和同 M1 100／100 一致，真实固定失败／同实例恢复及全部文件保留复核 |
+| [post-delivery/README.md](post-delivery/README.md) | 36 个提交合并推送到 main、`fe9a1bd` 远程 Checks 成功及主分支必需检查回读；状态栏主题修复的八组原生渲染和实时切换；正式 App／配置保留 |
 | [reference-parity/README.md](reference-parity/README.md) | 五个固定样本、146 个强制 codec 步骤的 Swift／未修改 Python 参考前向对照；750 项张量比较数值一致、误差为零，原失败前缀和生产数据保留；不包含采样、完整解码或质量通过结论 |
 | [sampling-order/README.md](sampling-order/README.md) | 实际采样器的 2336 次重放及 bfloat16／top-k 顺序差异；当前语言路由 144 对、294 次 ASR，无 EOS 减少但仍有 5 对回读回退，候选未采用；正式源码与生产数据保留 |
 | [reference-generation/README.md](reference-generation/README.md) | 七次未修改 Python 完整生成、观察／无观察控制与九次 ASR；相同完整 codec 的解码对照定位 72 帧窗口差异，并保留已知失败第 84 帧之后的未归因差异；未采用新策略 |
@@ -42,6 +43,7 @@
 | [asr-reference/README.md](asr-reference/README.md) | 十二个固定混合／单语输入完成 84 次实际 ASR；原生／未修改 Python 文本 10／12 一致。单变量注入原生 Mel 重现一个加噪样本的中文遗漏，注入 encoded 后 12／12 匹配；双方共有遗漏／翻译与数值敏感性分别保留，质量门槛未通过 |
 | [asr-mel/README.md](asr-mel/README.md) | 无模型 DSP 拆解在全部十二个输入上复现原生／参考 Mel；定位窗口／滤波常量及数值流程的多处差异，266 项独立重算通过。常量替换不能建立一致，未据此改变实现或接受质量门槛 |
 | [asr-segmentation/README.md](asr-segmentation/README.md) | 固定音频能量分段完成 28 次实际 ASR；八个混合文本恢复双脚本，总诊断编辑数 154→92，但两条件数字／实体拼写导致编辑数增加，未通过预定条件。评分限制和全部原值保留，未采用或扩大候选 |
+| [natural-ascend/README.md](natural-ascend/README.md) | 正常 TLS 取得并验证 ASCEND 固定归档；完整 1,315 条自然测试集、373 条混说、零重试／跳过，整体／混说 MER 11.00%／11.41%，独立复算全部音频和编辑距离；保留实际翻译、专名及空转写问题，原质量门槛未关闭 |
 | [acceptance-audit/README.md](acceptance-audit/README.md) | 剩余条件自动复核：M4 同一正常 TLS Range 仍失败，原生会话明确当前锁屏，无 Developer ID，新语料路径未成功；96／568／8／1357 文件摘要及既有完整测试日志核验通过。没有重复推理、修改默认值或接受尚未通过的门槛 |
 
 完整原始记录保留在开发工作区 `.context/robustness/`，原始检查日志在 `/tmp/cyberaudio-robustness-*.log`，不会作为分发材料上传。
@@ -83,5 +85,5 @@ rtk proxy .context/verify-native --app /absolute/path/to/isolated/CyberAudio.app
 - 本轮没有从公网或真实代理下载全部模型权重，没有实测完整 SOCKS5 大文件下载。
 - 桌面会话锁定，桌面自动化不可用。权限标志为允许不等于物理麦克风、跨应用输入、完整键盘导航、睡眠恢复或人耳试听通过。
 - Apple Development 成功不等于 Developer ID、公证、稳定版升级或系统权限保留通过。本机没有 Developer ID Application 证书。
-- 本分支没有推送，未跑远程 CI，未改动正式安装、更新 feed 或发布资产。
+- 修复分支已合并并推送到 main，`fe9a1bd` 远程 CI 通过；主分支必需检查已配置并保留管理员豁免，见 [post-delivery/](post-delivery/README.md)。正式安装、更新 feed 与发布资产未改动。
 - Metal／RSS 指标口径不同，不能相加；预热后的短句速度不代表冷启动、内存压力、长期稳定性或能耗。

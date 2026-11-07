@@ -1,0 +1,69 @@
+{
+  "author_and_mirror_sources": [
+    {
+      "repo": "HLTCHKUST/ASCEND",
+      "revision": "8c50c2e2c65f8555eb1d7655310dd585dc1f6710",
+      "path": "README.md",
+      "blob": "bb4a4e5390fcccbdf6efbb88a61ef5a6292a67d3",
+      "sha256": "f919fce013b74e610b9aaca70fb6ea3b3294049ae5412d629cdc52449f8f2177",
+      "bytes": 2207
+    },
+    {
+      "repo": "HLTCHKUST/ASCEND",
+      "revision": "8c50c2e2c65f8555eb1d7655310dd585dc1f6710",
+      "path": "utils.py",
+      "blob": "8cc97d1db7b56e222cd0498c78ff44b03b3bdad3",
+      "sha256": "fb70e35cf1f350adfd5e64c76cd319b4c5543b6cf39edfed15749560e3b82f7d",
+      "bytes": 1267
+    },
+    {
+      "repo": "HLTCHKUST/ASCEND",
+      "revision": "8c50c2e2c65f8555eb1d7655310dd585dc1f6710",
+      "path": "eval.py",
+      "blob": "46d2303a0e60e2d15c5db6bdcbb4cff1958d9cc9",
+      "sha256": "5effdce2ed79eb06c32efcb883492a48bdecb17e1d30aa441ba38b44b4252aa0",
+      "bytes": 10683
+    },
+    {
+      "repo": "leemingynng-create/vocco-asr-benchmark",
+      "revision": "7e7287a17ba87a2fa834cf8c627ccc792fe17208",
+      "path": "scripts/models.sha256",
+      "blob": "a47a3c73318d8c4d96c02656eaff604e9704a3b5",
+      "sha256": "aa780f3b366cb807da251387156234e22e1d25c342158a8c745306e430c624e0",
+      "bytes": 1287
+    }
+  ],
+  "test300_metadata_crosscheck": [
+    {
+      "path": "data/ascend_test_300_refs.jsonl",
+      "blob": "4a3ee40de66c18389e9d51d48973877c25779866",
+      "bytes": 36243,
+      "sha256": "854d38bc2a4d2ab9896ba41aa8ba110baa526886d3a6846917dda108bdcbd8b2"
+    },
+    {
+      "path": "data/ascend_test_300.ids",
+      "blob": "48033b63cf19660a9097aab3dc2e72961a3d7b88",
+      "bytes": 11667,
+      "sha256": "396e86a46bf30261d5e670cc1fd8aef602c991e5a0d52e8ce3332db01b923678"
+    }
+  ],
+  "public_fixed_reference_repository": "leemingynng-create/vocco-asr-benchmark",
+  "public_fixed_reference_commit": "7e7287a17ba87a2fa834cf8c627ccc792fe17208",
+  "local_execution_source_sha256": {
+    "download-ascend.py": "b8bfaf7fad25d310fe3863af2a4711d9e2d3a0e8ce2af6ce0ac5027dc360b87a",
+    "prepare-natural-asr.py": "e5c5454745fd5bf728b6575a8ba71497100d2b24934319d7819f13a78d612afd",
+    "run-natural-baseline.py": "713ec999b006842b3f776f52dffcc3960de1bdfc3ed7848b8104d93265670fe1",
+    "score-natural-asr.py": "81888870cb1588b701474392a55f0fc6bc1bd6d04e7760905e2ecf7b361c05ff",
+    "verify-natural-baseline.py": "d38c6cc1ae2c1e6e04cede69b906b7f1f617fb3bed24f242f44df37c865147da"
+  },
+  "raw_audio_private": true,
+  "full_raw_transcripts_private": true,
+  "text_triage_examples_license": "CC-BY-SA-4.0",
+  "author_code_license": {
+    "repository": "HLTCHKUST/ASCEND",
+    "revision": "8c50c2e2c65f8555eb1d7655310dd585dc1f6710",
+    "path": "LICENSE",
+    "blob": "504be44e63c877cc14d3204ca0019dfe8446ab19",
+    "sha256": "940a4cb7ec12f58495ed4663bae751792369df1722ac14928054005385a2cd2a"
+  }
+}

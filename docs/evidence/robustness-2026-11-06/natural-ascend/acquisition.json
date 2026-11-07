@@ -1,0 +1,28 @@
+{
+  "finished_at": "2026-11-07T00:15:25.919367+00:00",
+  "exit_code": 0,
+  "elapsed_seconds": 547.528,
+  "expected_bytes": 930038853,
+  "actual_bytes": 930038853,
+  "expected_sha256": "de9137065136bbf32fbbb23304abeb28e6c700d948ade2424ef202684a23cc1c",
+  "actual_sha256": "de9137065136bbf32fbbb23304abeb28e6c700d948ade2424ef202684a23cc1c",
+  "verified": true,
+  "plan": {
+    "started_at": "2026-11-07T00:06:18.383907+00:00",
+    "url": "https://modelscope.cn/api/v1/datasets/opendatalab/ASCEND/repo?Revision=master&FilePath=raw%2FASCEND.tar.gz",
+    "expected_bytes": 930038853,
+    "expected_sha256": "de9137065136bbf32fbbb23304abeb28e6c700d948ade2424ef202684a23cc1c",
+    "checksum_source": {
+      "repository": "leemingynng-create/vocco-asr-benchmark",
+      "commit": "7e7287a17ba87a2fa834cf8c627ccc792fe17208",
+      "path": "scripts/models.sha256"
+    },
+    "license": "CC-BY-SA-4.0",
+    "attribution": "ASCEND, Lovenia et al., LREC 2022, HKUST CAiRE",
+    "purpose": "Acquire immutable natural-speech inputs before fixing evaluation protocol; no model inference or acceptance claim.",
+    "normal_tls": true,
+    "system_network_configuration_change": false,
+    "maximum_seconds": 900,
+    "source_code_or_models_executed": false
+  }
+}

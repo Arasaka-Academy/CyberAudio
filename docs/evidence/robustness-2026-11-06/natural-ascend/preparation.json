@@ -1,0 +1,41 @@
+{
+  "status": "verified",
+  "finished_at": "2026-11-07T00:17:59.018807+00:00",
+  "elapsed_seconds": 46.213,
+  "archive_sha256": "de9137065136bbf32fbbb23304abeb28e6c700d948ade2424ef202684a23cc1c",
+  "metadata_sha256": {
+    "test_metadata.csv": "15689bc1c1a0bc29b250f63221576392b627da9cc1d80e51bb1a422118b9732c",
+    "README.md": "93e4b299266be73d265667e87ee780c6ff9e08cdb46df60302cb8d2cc91bfc47",
+    "dataset_infos.json": "4a95925e46e4f514319f2dba0cb073e9e75ab6388d2a31a2a642f1f15a1ee9ae"
+  },
+  "protocol_sha256": "6649df774d8abe650a9aaa2e438e6b448ee15f7a6416fd4787401986175a5a09",
+  "preparer_sha256": "e5c5454745fd5bf728b6575a8ba71497100d2b24934319d7819f13a78d612afd",
+  "utterances": 1315,
+  "skipped_rows": 0,
+  "languages": {
+    "zh": 685,
+    "en": 257,
+    "mixed": 373
+  },
+  "speakers": {
+    "17": 861,
+    "3": 454
+  },
+  "sessions": {
+    "1": 443,
+    "2": 283,
+    "3": 356,
+    "4": 233
+  },
+  "duration_seconds": 3302.9861875,
+  "maximum_duration_seconds": 11.85,
+  "test_wav_bytes": 105753418,
+  "nested_member_count": 12323,
+  "nested_uncompressed_bytes": 1224808435,
+  "test300_ids_references_languages_durations_match": true,
+  "test300_ids_sha256": "396e86a46bf30261d5e670cc1fd8aef602c991e5a0d52e8ce3332db01b923678",
+  "test300_refs_sha256": "854d38bc2a4d2ab9896ba41aa8ba110baa526886d3a6846917dda108bdcbd8b2",
+  "manifest_sha256": "6950c9fd603e0e7a17cb6bfe4b0d4fd33d6290c77a72b69a94dba8fba2f17eaf",
+  "foreign_scripts_executed": false,
+  "attribution": "ASCEND, Lovenia et al., LREC 2022, HKUST CAiRE. Data, references and derived text: CC-BY-SA-4.0."
+}

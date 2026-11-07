@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "commit": "fe9a1bd232e265cbcbfaaf523e38f662c872fbe0",
+  "release_build_passed": true,
+  "native_theme_state_scale_cases": 8,
+  "live_theme_roundtrip": true,
+  "production_config_preserved": true,
+  "original_assets_preserved": true,
+  "installed_or_restarted_production_app": false,
+  "working_tree_clean": true,
+  "scope": "Previously verified native icon build/render acceptance; production installation unchanged."
+}

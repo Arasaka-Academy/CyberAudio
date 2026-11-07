@@ -1,0 +1,48 @@
+{
+  "status": "text_only_diagnostic_not_listening_acceptance",
+  "raw_scored_rows_sha256": "e778686e45e92df7045cee78e82c77599382190c4aa9635093f60da788bda87d",
+  "mixed_missing_any_script": 64,
+  "mixed_missing_chinese": 38,
+  "mixed_missing_latin": 26,
+  "script_count_limit": "The 64 indicators include fillers, transliterations and reference quirks; they are not 64 confirmed semantic omission/translation failures.",
+  "examples": [
+    {
+      "id": "ascend_ses1_spk17_L4213_465.2000_0.6000",
+      "language": "en",
+      "reference": "thank you",
+      "hypothesis": "",
+      "duration_seconds": 0.6,
+      "textual_observation": "HTTP succeeds but the hypothesis is empty for the reference thank you."
+    },
+    {
+      "id": "ascend_ses1_spk3_L6595_176.640_3.920",
+      "language": "mixed",
+      "reference": "那你现在住在Hong Kong大概住了多久",
+      "hypothesis": "那你现在住在荒矿，大概住了多久？",
+      "duration_seconds": 3.92,
+      "textual_observation": "Reference proper name Hong Kong is rendered as unrelated Chinese characters."
+    },
+    {
+      "id": "ascend_ses1_spk3_L6677_295.500_3.170",
+      "language": "mixed",
+      "reference": "所以我们现在开始talk about our research topics",
+      "hypothesis": "So we now start talk about our research topics.",
+      "duration_seconds": 3.1701875,
+      "textual_observation": "Reference Chinese clause is rendered in English; the original language is not preserved."
+    },
+    {
+      "id": "ascend_ses1_spk3_L6828_600.360_2.580",
+      "language": "mixed",
+      "reference": "找个地方which is speak in english",
+      "hypothesis": "Find a place which is speaking English.",
+      "duration_seconds": 2.58,
+      "textual_observation": "Reference Chinese phrase is rendered in English; semantic coverage does not establish verbatim transcription."
+    }
+  ],
+  "data_license": "CC-BY-SA-4.0",
+  "data_attribution": "ASCEND, Lovenia et al., LREC 2022, HKUST CAiRE",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "paper_url": "https://aclanthology.org/2022.lrec-1.788/",
+  "unchanged_model_and_defaults": true,
+  "physical_or_human_listening": false
+}

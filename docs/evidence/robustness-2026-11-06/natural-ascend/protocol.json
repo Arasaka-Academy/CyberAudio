@@ -1,0 +1,58 @@
+{
+  "purpose": "Characterize the unchanged application's natural Mandarin-English speech baseline before proposing a quality change.",
+  "application_commit": "fe9a1bd232e265cbcbfaaf523e38f662c872fbe0",
+  "helper_source_commit": "57c8152da56b48563554e87e18071228b0b69e7e",
+  "helper_sha256": "efe377a791e01b88df04f32358015c5153b25e70172f29f84213723da8621659",
+  "helper_reuse_condition": "All Native product source, managed SDK adapter, model lock and pinned inference dependencies still match this previously accepted build; the later menu icon change does not affect inference.",
+  "model": "mlx-community/Qwen3-ASR-1.7B-8bit",
+  "model_revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+  "data": {
+    "name": "ASCEND",
+    "authors": "Lovenia et al., LREC 2022, HKUST CAiRE",
+    "author_repository": "HLTCHKUST/ASCEND",
+    "author_code_revision": "8c50c2e2c65f8555eb1d7655310dd585dc1f6710",
+    "mirror": "ModelScope opendatalab/ASCEND raw/ASCEND.tar.gz",
+    "archive_bytes": 930038853,
+    "archive_sha256": "de9137065136bbf32fbbb23304abeb28e6c700d948ade2424ef202684a23cc1c",
+    "license": "CC-BY-SA-4.0",
+    "selection": "Every row of the original test metadata in metadata order; no output-dependent selection, omission, reordering, or repeated inference.",
+    "expected_test_count": 1315,
+    "invalid_or_missing_input": "Fail dataset preparation and preserve diagnostics; do not silently skip the row.",
+    "path_handling": "Historical paths are metadata only; resolve unique archive members inside the private dataset directory.",
+    "input_audio": "Require valid 16000 Hz mono PCM16 WAV, verify duration and SHA for every selected input, keep original bytes.",
+    "secondary_cross_check": "Compare the first 300 test IDs and references with the pinned public benchmark only to validate metadata order; still evaluate the entire original test split."
+  },
+  "execution": {
+    "language": "auto",
+    "reference_language_tags_are_not_prompts": true,
+    "one_request_per_utterance": true,
+    "serial": true,
+    "maximum_owned_model_helpers": 1,
+    "request_timeout_seconds": 150,
+    "overall_timeout_seconds": 3600,
+    "retries": 0,
+    "isolated_root_and_token": true,
+    "offline_sandbox": true,
+    "retain_partial_failure_records": true,
+    "production_models_config_token_instance_preserved": true
+  },
+  "scoring": {
+    "source": "HLTCHKUST/ASCEND utils.py tokenize_for_mer/tokenize_for_cer and eval.py at the pinned author revision",
+    "normalization": "Remove the exact author CHARS_TO_IGNORE set and lowercase both reference and hypothesis. Keep all other characters, fillers and repetitions. No traditional-to-simplified conversion, NFKC, digit expansion, entity rewriting or spelling correction.",
+    "tokenizer": "jieba 0.42.1; strip empty jieba tokens; retain ASCII tokens intact and split non-ASCII tokens into characters, matching the author function.",
+    "mixed_error_rate": "Sum Levenshtein edit distances divided by sum reference mixed tokens; this is not jiwer.mer match-error-rate.",
+    "character_error_rate": "Sum Levenshtein edit distances on non-whitespace normalized characters divided by sum reference characters.",
+    "groups": ["all", "zh", "en", "mixed", "original_speaker_id", "session_id"],
+    "additional_diagnostics": ["empty hypotheses", "normalized exact outputs", "actual script presence", "latency percentiles", "real-time factor", "HTTP failures"],
+    "script_presence_limit": "Absence of a reference script is a triage indicator, not automatic proof of semantic omission, translation or pronunciation failure."
+  },
+  "acceptance_boundary": {
+    "baseline_is_not_a_new_acceptance_threshold": true,
+    "no_quality_completion_claim_from_successful_http_or_aggregate_score": true,
+    "candidate_promotion": "Retain existing fixed-corpus and per-case non-regression requirements; investigate lexical/numeric equivalence without rewriting historical raw scores.",
+    "original_strict_m4_7200_second_gate_preserved": true,
+    "physical_recording_and_human_listening_still_deferred": true,
+    "public_download_and_developer_id_gates_are_independent": true,
+    "data_and_transcripts_remain_private": true
+  }
+}
