@@ -17,6 +17,11 @@ struct PreparationSnapshot: Decodable {
     let can_download: Bool
 }
 
+enum PreparationDownloadSource: String {
+    case huggingFace = "huggingface"
+    case modelScope = "modelscope"
+}
+
 private struct PreparationEvent: Decodable {
     let event: String
     let path: String?
@@ -156,6 +161,7 @@ final class PreparationController: ObservableObject {
     @Published private(set) var currentFile = ""
     @Published private(set) var verifying = false
     @Published private(set) var busy = false
+    @Published var downloadSource: PreparationDownloadSource = .huggingFace
     var proxy = ""
     private let root: URL
     private let helper: URL
@@ -181,9 +187,10 @@ final class PreparationController: ObservableObject {
 
     func download(restart: Bool = false) {
         guard snapshot?.can_download == true else { return }
+        let source = downloadSource
+        let proxy = proxy.trimmingCharacters(in: .whitespacesAndNewlines)
         begin(.downloading) { controller in
-            var options = ["--restart", restart ? "true" : "false"]
-            let proxy = controller.proxy.trimmingCharacters(in: .whitespacesAndNewlines)
+            var options = ["--restart", restart ? "true" : "false", "--source", source.rawValue]
             if !proxy.isEmpty { options += ["--proxy", proxy] }
             _ = try await controller.run("download", options: options)
             try await controller.inspect(verify: false)

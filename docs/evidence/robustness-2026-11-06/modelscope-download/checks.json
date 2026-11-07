@@ -1,0 +1,130 @@
+{
+  "native": {
+    "exit_code": 0,
+    "elapsed_seconds": 386.13,
+    "cases": 37,
+    "failures": 0,
+    "skipped": 0
+  },
+  "tools": {
+    "cases": 44,
+    "failures": 0,
+    "skipped": 0
+  },
+  "local_behavior_checks": [
+    {
+      "name": "test_preparation.sh",
+      "exit_code": 0,
+      "elapsed_seconds": 3.106
+    },
+    {
+      "name": "test_update_gate.sh",
+      "exit_code": 0,
+      "elapsed_seconds": 1.335
+    },
+    {
+      "name": "test_coreml_evidence.sh",
+      "exit_code": 0,
+      "elapsed_seconds": 1.252
+    },
+    {
+      "name": "test_dictation.sh",
+      "exit_code": 0,
+      "elapsed_seconds": 22.986
+    },
+    {
+      "name": "test_tools.sh",
+      "exit_code": 0,
+      "elapsed_seconds": 19.397
+    }
+  ],
+  "production_and_workflow": {
+    "cases": [
+      {
+        "name": "production-native",
+        "exit_code": 0,
+        "elapsed_seconds": 24.198
+      },
+      {
+        "name": "audio-workflow",
+        "exit_code": 0,
+        "elapsed_seconds": 20.715
+      }
+    ],
+    "shell_syntax_checks": 11,
+    "plist": "packaging/Info.plist: OK"
+  },
+  "app_build": {
+    "exit_code": 0,
+    "elapsed_seconds": 9.312
+  },
+  "layout": {
+    "exit_code": 0,
+    "elapsed_seconds": 9.312,
+    "render_exit_code": 0,
+    "png_count": 15
+  },
+  "preparation_red": {
+    "compiled": true,
+    "exit_code": -5,
+    "expected_failure_observed": true
+  },
+  "preparation_green": {
+    "compiled": true,
+    "exit_code": 0,
+    "stdout": "Preparation: first launch, progress, cancellation ownership, update drain, failure/retry, reuse, bounded output and quit passed\n",
+    "elapsed_seconds": 3.852
+  },
+  "cli_red": {
+    "exit_code": 1,
+    "events": [
+      {
+        "code": "invalid_options",
+        "event": "error",
+        "message": "命令参数无效。"
+      }
+    ],
+    "valid_source_rejected_as_unknown_option": true,
+    "expected_new_behavior": "Recognized source reaches the bounded download path; normal network errors remain recoverable"
+  },
+  "cli_green": {
+    "cases": [
+      {
+        "source": "default",
+        "expected_connect_host": "huggingface.co",
+        "exit_code": 1,
+        "code": "download_unavailable",
+        "connect_matched": true
+      },
+      {
+        "source": "modelscope",
+        "expected_connect_host": "modelscope.cn",
+        "exit_code": 1,
+        "code": "download_unavailable",
+        "connect_matched": true
+      },
+      {
+        "source": "unknown",
+        "exit_code": 1,
+        "code": "invalid_source"
+      },
+      {
+        "source": "https://untrusted.example",
+        "exit_code": 1,
+        "code": "invalid_source"
+      },
+      {
+        "source": "modelscope --restart true",
+        "exit_code": 1,
+        "code": "invalid_source"
+      }
+    ],
+    "config_token_preserved": true
+  },
+  "initial_native_build": {
+    "exit_code": 1,
+    "elapsed_seconds": 11.34,
+    "classification": "Copied PCM module-cache paths referred to original locations; private copied cache archived, original shared inputs preserved. Not a behavioral red."
+  },
+  "scope": "All make check targets run sequentially with task-private cloned build caches; no shared-cache rebuild or acceptance gate relaxation."
+}

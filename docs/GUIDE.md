@@ -187,9 +187,11 @@ export CYBERAUDIO_ASSETS='/Applications/CyberAudio.app/Contents/Helpers/CyberAud
 "$CYBERAUDIO_ASSETS" download --root "$CYBERAUDIO_DATA"
 # 网络需要代理时，仅下载命令可指定：
 "$CYBERAUDIO_ASSETS" download --root "$CYBERAUDIO_DATA" --proxy http://127.0.0.1:7890
+# 也可显式选择 ModelScope，继续复用已完成的进度：
+"$CYBERAUDIO_ASSETS" download --root "$CYBERAUDIO_DATA" --source modelscope
 ```
 
-只有此命令需要联网，可用无凭据的 HTTP 或 SOCKS5 代理；每个文件均校验大小和 SHA-256。正确文件会复用，已有摘要错误的文件会保留并报错，不自动覆盖。下载按 Range 分段保存进度，取消或失败后可再次运行，复用已完成文件与持久分段；最终完整摘要通过后才发布模型文件。临时网络错误会有界重试，大分段反复超时或中断后可降为 1MiB，TLS／摘要等错误不会绕过验证。单次网络无响应 60 秒或响应超过 30 分钟会失败。需要重新开始异常分段时，按[首次准备说明](FIRST_RUN.md)使用显式重新下载选项。
+只有此命令需要联网，可用无凭据的 HTTP 或 SOCKS5 代理；每个文件均校验大小和 SHA-256。默认下载源是 Hugging Face，`--source modelscope` 使用包含相同锁定文件的固定 ModelScope 快照，不改变模型或摘要要求，也不会在失败后自动换源。正确文件会复用，已有摘要错误的文件会保留并报错，不自动覆盖。下载按 Range 分段保存进度，取消或失败后可再次运行，复用已完成文件与持久分段；最终完整摘要通过后才发布模型文件。临时网络错误会有界重试，大分段反复超时或中断后可降为 1MiB，TLS／摘要等错误不会绕过验证。单次网络无响应 60 秒或响应超过 30 分钟会失败。需要重新开始异常分段时，按[首次准备说明](FIRST_RUN.md)使用显式重新下载选项。
 
 ### 12.4 离线校验与启动
 

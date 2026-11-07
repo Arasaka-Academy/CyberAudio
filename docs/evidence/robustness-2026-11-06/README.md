@@ -50,8 +50,11 @@
 | [natural-ascend/README.md](natural-ascend/README.md) | 正常 TLS 取得并验证 ASCEND 固定归档；完整 1,315 条自然测试集、373 条混说、零重试／跳过，整体／混说 MER 11.00%／11.41%，独立复算全部音频和编辑距离；保留实际翻译、专名及空转写问题，原质量门槛未关闭 |
 | [natural-reference/README.md](natural-reference/README.md) | 全量 1,315 条未修改 Python 参考与原生基线对照，1,291 条规范化相同，四个自然问题原样复现；独立重算 2,630 个编辑距离；七条固定音量配对仍未解决空输出，未扩大或采用候选 |
 | [acceptance-audit/README.md](acceptance-audit/README.md) | 剩余条件自动复核：M4 同一正常 TLS Range 仍失败，原生会话明确当前锁屏，无 Developer ID，新语料路径未成功；96／568／8／1357 文件摘要及既有完整测试日志核验通过。没有重复推理、修改默认值或接受尚未通过的门槛 |
+| [modelscope-download/README.md](modelscope-download/README.md) | 显式固定 ModelScope 源、四段直接原生资格和一次完整公网续传；23 文件／5.55GB 摘要及 M4 新目录当前 App 验收通过；M1／M4 各自同设备 100／100 原始文本一致，37／44／15 检查及独立保护／清理复核 |
 
-最新 [readiness-ownership/README.md](readiness-ownership/README.md)记录 R15：三种旧响应覆盖状态的行为红测、五项归属／控制回归、完整 36／44／14 检查和当前隔离 App 的 153.18 秒真实模型／生命周期验收。修复后固定 100 条与同 M1 旧版原始输出相同，原质量、严格 M4、公网、现场与分发门槛保持未完成。
+[readiness-ownership/README.md](readiness-ownership/README.md)记录 R15：三种旧响应覆盖状态的行为红测、五项归属／控制回归、完整 36／44／14 检查和当前隔离 App 的 153.18 秒真实模型／生命周期验收。修复后固定 100 条与同 M1 旧版原始输出相同。
+
+最新 [modelscope-download/README.md](modelscope-download/README.md)记录显式固定下载源：M4 正常 TLS 直接续传 exit 0，复用原 14 个文件／176MiB 分段后，23 文件／5.55GB 全部独立摘要通过；使用这些文件的新目录当前 App 完整验收也 exit 0。M1／M4 分别 169.013／193.521 秒，各自同设备旧报告 100／100 原始文本一致；本阶段 37／44／15 检查和全部保护／清理通过。原质量、严格 M4、现场与分发门槛仍未完成；原 Hugging Face、空缓存重传及 FFmpeg 从零安装另计。
 
 完整原始记录保留在开发工作区 `.context/robustness/`，原始检查日志在 `/tmp/cyberaudio-robustness-*.log`，不会作为分发材料上传。
 
@@ -86,7 +89,7 @@ rtk proxy .context/verify-native --app /absolute/path/to/isolated/CyberAudio.app
 
 ## 验收边界
 
-以下描述本目录 R1–R7 阶段。后续已恢复全部 100 条固定录音，并完成 M1／M4 真实语料回归；最新 `b5607f2` 隔离 App 的原生驱动与外层运行器均通过，同 M1 旧版 100／100 原始输出一致。两次 M4 两小时尝试分别在 707／1229 个完成周期后失败，第二次明确 generation_limit。公网新旧有界续传均失败，最新为 TLS 类错误，14 个最终文件和 112MiB 分段保留。主／辅助采样候选均未提升为默认值；英文数字的语言路由修复不等于发音质量通过。当前状态以新增阶段证据与[总报告](../../reviews/2026-11-06.md)为准，历史超时、合成输入和较短负载回执保留原值。
+以下条目描述本目录 R1–R7 阶段的历史边界。后续已恢复全部 100 条固定录音，并完成 M1／M4 真实语料回归；最新 ModelScope 公网续传、23 文件完整验证及新目录当前 App 验收通过，两设备各自同旧报告 100／100 原始文本一致。两次 M4 两小时尝试分别在 707／1229 个完成周期后失败，第二次明确 generation_limit。主／辅助采样候选均未提升为默认值；英文数字的语言路由修复不等于发音质量通过。当前状态以新增阶段证据与[总报告](../../reviews/2026-11-06.md)为准，历史下载失败、超时、合成输入和较短负载回执保留原值。
 
 - 本轮输入是 OS 合成语音，不用于估计真人 CER／WER 或主观音质。历史 FLEURS 100 条回归保留在前一日的证据目录，本机缺少原始录音；恢复固定数据源的中英文连接均超时，尚未重跑。
 - 本轮没有从公网或真实代理下载全部模型权重，没有实测完整 SOCKS5 大文件下载。

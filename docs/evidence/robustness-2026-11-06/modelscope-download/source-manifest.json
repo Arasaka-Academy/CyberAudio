@@ -1,0 +1,1045 @@
+{
+  "baseline_head": "90cea12254afe2035ae64457a453cb31af2fffca",
+  "locked_manifest_sha256": "668125b12cc2c1b469925e1eb60c79171c6f9623470622c619e4583971f4e816",
+  "repositories": {
+    "asr": {
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "revision": "579e237ce6ec925252973afe835d2f98a138602f"
+    },
+    "tts": {
+      "repository": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit",
+      "revision": "08b854525817066e04ef6b6430a3faa0eebd24d2"
+    }
+  },
+  "files": [
+    {
+      "path": "asr/README.md",
+      "size": 1008,
+      "sha256": "b356d4bdfbe7287b06b9b5ad084d9557a24ca98ca277a839beb2e682037b08f6"
+    },
+    {
+      "path": "asr/chat_template.json",
+      "size": 1161,
+      "sha256": "75a8cfca24f00de72d796fbfed6858fc9614ef3dabd8696684cc3bc03a9c58ff"
+    },
+    {
+      "path": "asr/config.json",
+      "size": 7188,
+      "sha256": "1b76b3b6c655fc54595da025f7a96474ad9fa86363303fbdd61a7d8483ccfaf7"
+    },
+    {
+      "path": "asr/generation_config.json",
+      "size": 142,
+      "sha256": "1da527824d81e07118facff437e03f2e24a23311e3bdeb2368973fe77e5f275c"
+    },
+    {
+      "path": "asr/merges.txt",
+      "size": 1671853,
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+    },
+    {
+      "path": "asr/model.safetensors",
+      "size": 2463307541,
+      "sha256": "bf304b009cc7eca79283056f787b44c952d24ac22cec787b39732bba3c23c13c"
+    },
+    {
+      "path": "asr/model.safetensors.index.json",
+      "size": 78968,
+      "sha256": "0a5d0ec11188602242ff81a9969883d0fdeb98cd5d85cd1413089d897c201af5"
+    },
+    {
+      "path": "asr/preprocessor_config.json",
+      "size": 330,
+      "sha256": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d"
+    },
+    {
+      "path": "asr/tokenizer_config.json",
+      "size": 12487,
+      "sha256": "4942d005604266809309cabc9f4e9cb89ce855d59b14681fdc0e1cc62ea26c4c"
+    },
+    {
+      "path": "asr/vocab.json",
+      "size": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    {
+      "path": "tts/README.md",
+      "size": 1118,
+      "sha256": "50fe8f13fc95466beb50a96ae743e40573512754e80330373a043f4bd34d6212"
+    },
+    {
+      "path": "tts/config.json",
+      "size": 6058,
+      "sha256": "43f29f9ab55cf387bd2ce1d07e9d95a5ca8974fa2fda4e2b45c13ae64aad3bfa"
+    },
+    {
+      "path": "tts/generation_config.json",
+      "size": 245,
+      "sha256": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa"
+    },
+    {
+      "path": "tts/merges.txt",
+      "size": 1671839,
+      "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+    },
+    {
+      "path": "tts/model.safetensors",
+      "size": 2393308931,
+      "sha256": "b696f4bf45f54497b6de758981e76f1410bd68af05a657477dee466b0202df1a"
+    },
+    {
+      "path": "tts/model.safetensors.index.json",
+      "size": 71786,
+      "sha256": "2551ed02dc288b90cd6b7ec98652433f08ef2ae98fb3eda5248a4b9e5b47d08b"
+    },
+    {
+      "path": "tts/preprocessor_config.json",
+      "size": 127,
+      "sha256": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119"
+    },
+    {
+      "path": "tts/speech_tokenizer/config.json",
+      "size": 2336,
+      "sha256": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167"
+    },
+    {
+      "path": "tts/speech_tokenizer/configuration.json",
+      "size": 76,
+      "sha256": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd"
+    },
+    {
+      "path": "tts/speech_tokenizer/model.safetensors",
+      "size": 682293092,
+      "sha256": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258"
+    },
+    {
+      "path": "tts/speech_tokenizer/preprocessor_config.json",
+      "size": 234,
+      "sha256": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb"
+    },
+    {
+      "path": "tts/tokenizer_config.json",
+      "size": 7344,
+      "sha256": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670"
+    },
+    {
+      "path": "tts/vocab.json",
+      "size": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  ],
+  "compiled_source_sha256": {
+    "Native/Sources/CyberAudioCore/AssetDownloadSource.swift": "e93cd1e27562282a4bc28bf43e713447d683d9263b9191cc4344f4ec498662d5",
+    "Native/Package.resolved": "e328f8d53d216b4e6df917f65ab4dd572e8283263c4d5d00f2a4b9b8475ba375",
+    "Native/Package.swift": "7bd6ddfc7452b75f6cdb9a025e7976007e5663e7612bac61ad81aa0ad5e26270",
+    "Native/Sources/CyberAudioAssets/Main.swift": "2cfa056899d7c6b3289723b464563e49612a5b4511890f703428591d87360eb1",
+    "Native/Sources/CyberAudioCore/AssetDownloader.swift": "54545d899c845fad37171991e61a1e2688c221a84494bc23e3aff7230d143be1",
+    "Native/Sources/CyberAudioCore/AssetPreparation.swift": "7bc412e5a4dc0c0c33fc7bd8facc7e682a92c408b93325cf418885bc1d04cf1d",
+    "Native/Sources/CyberAudioCore/Assets.swift": "51e3fe167d131af8996773f273bb79f8621808dfc005bf4c29bd6f460ec6d90d",
+    "Native/Sources/CyberAudioCore/AudioFile.swift": "db4dc014db9dbdd001262d1a3507adb01951782c17ac141de7e08646289d44ba",
+    "Native/Sources/CyberAudioCore/Contract.swift": "7a5b44074daea8bf63fbf9eb6f80e55997cd2306c2f78f85068b3009df3f0510",
+    "Native/Sources/CyberAudioCore/Coordinator.swift": "fa04d37f5cef97228a1038942c2d45622d4cfea8d37979430f5f6744235a1ebf",
+    "Native/Sources/CyberAudioCore/HTTPService.swift": "b5e8140e3b4f5d28e12f5e128b2c34b88978d094ee451e393a727468e0c06bd2",
+    "Native/Sources/CyberAudioCore/Models.lock.json": "668125b12cc2c1b469925e1eb60c79171c6f9623470622c619e4583971f4e816",
+    "Native/Sources/CyberAudioCore/Multipart.swift": "ddbbdbce9aa100bf32c7829237bcfc5816890bc2e792a19051d964c0a8cb681b",
+    "Native/Sources/CyberAudioFixture/Main.swift": "1a02d3186575ce38e8d3f01c17d0cc4541de1b7458a405f4a8091f11d462c703",
+    "Native/Sources/CyberAudioInference/QwenEngine.swift": "9957c2654ac1781710857782412b0213be7ee66c8c5c33c6e4b2c290aeb659f0",
+    "Native/Sources/CyberAudioService/Main.swift": "3a246e4382b90f2b5f0ec877dd5954a31f355fe20a95e7ab358e5e0eb8cabbec",
+    "Native/THIRD_PARTY.md": "79687ee3aaf8d805411198b9822a395f9a7b2b6e416bd3881ed3a6ba12d0c22b",
+    "Native/Tests/CyberAudioCoreTests/AssetDownloadTests.swift": "384abb45aa441bcf691b967a4db4ac6052bee91bfe3555abba18917b8b3eba58",
+    "Native/Tests/CyberAudioCoreTests/Runner.swift": "1f6f06555e6687916ee9ec149642792a385ad515c26aa8d1ca29d82d3bb941c7",
+    "Native/Tests/CyberAudioCoreTests/ServiceTests.swift": "3bc7677d26e983039adb40b6049be7ff94a8842242f75a554962c822022b8a3e",
+    "Native/Tests/CyberAudioInferenceTests/Main.swift": "7f0841e92738ee77323e495c46fa363215c2c68609927ba8a27ca61f3f3b1786",
+    "Package.resolved": "b55b7fa11d9220b6dddaac0f41fa0a0bd1880690dcea6fe3d3d806a572561b85",
+    "Package.swift": "c4f4c9d7b7031b42f1b2b9b568210b453aad0a12d9da56a305e61810c9ac3f2f",
+    "Sources/CyberAudio/AudioWorkspace.swift": "f987d2d2b1ab2a523e3ace7e28486dd195e75cd77741c31f26545df7edd385f1",
+    "Sources/CyberAudio/BackendController.swift": "bff051e46a903f317194426d6549abe9470a042abaafbcf8bad151095130585a",
+    "Sources/CyberAudio/CyberAudioApp.swift": "4b434af25524fa0abcdf752cbc34c117589c97b125a03d92029f5c87c46c29d9",
+    "Sources/CyberAudio/DictationController.swift": "6d1568bc396067f93cfcbe250fbaa594a1401544b3a75972c9051e2496013502",
+    "Sources/CyberAudio/DictationGesture.swift": "bbfdd4f77bcd97c11db1ca20f98dce30c314885d6d2816a8284d7016daebe42e",
+    "Sources/CyberAudio/DictationOverlay.swift": "1d3d39416a6e9075da16c06aa1fd7df48c0cebc7e466bb4fe16087f8b3bcf4f5",
+    "Sources/CyberAudio/DictationShortcut.swift": "3a110437812a64b86e0d63f5a5ec617ff0d4be1f7cf78f83e60c3bc74833bc3e",
+    "Sources/CyberAudio/MenuBarIcon.swift": "f28dda48112f4376efbeff3e53aa3c0cbcef4526ba6a09717a2de175a5120aaf",
+    "Sources/CyberAudio/PlainTextEditor.swift": "6b97274f490cfadb3687219ab36cd20bcbec12331fe13a122553c40a13027043",
+    "Sources/CyberAudio/PreparationController.swift": "c44ce7a90ca30b6b899895fa6266993925e8f1488b21262f973b4ff7b149d828",
+    "Sources/CyberAudio/PreparationView.swift": "4d007232d31ce4e96b7c9df73a86f7ddb21a2f3b78d3acb7671b7ba799948576",
+    "Sources/CyberAudio/ServiceSettingsView.swift": "a86f22614ec6a0927cddf49fa7a8a681d8a51e87be92194ede3017daea396e86",
+    "Sources/CyberAudio/ShortcutMonitor.swift": "5067369473596ce70038ce2845d93d3f2a3b105b1ecd5991ab95be9dc5223bce",
+    "Sources/CyberAudio/ShortcutRecorder.swift": "4f526c4b18c532160b7e938ae07654120002c86ed9dfbc482ac853d8860e3914",
+    "Sources/CyberAudio/SoftwareUpdateView.swift": "637c343cb5b65e33d02294d73c45b55760197e7df61790c109bbf79dec5df6f7",
+    "Sources/CyberAudio/StudioStyle.swift": "0fab3bdb1b4fe65aac2494a8b603f062351e5392dd55c2b15f26004d93bef0c8",
+    "Sources/CyberAudio/TextInsertionService.swift": "570a8ac0ebb33a48e517abb488fdb0ba0ffbfa16aa7fb05d2d5834404d30f9d7",
+    "Sources/CyberAudio/UpdateGate.swift": "65054c2fbd52729d7d3ec6d1e7f89e697d930465fc8a511a565f4f37c79cb637",
+    "Sources/CyberAudio/UpdaterController.swift": "10919e4302cb2ff8fcf255e5e7fd7be67675fa1b51f8a010bfe118f626a9f43a",
+    "Sources/CyberAudio/WorkspaceView.swift": "0c79bf57df8b8e4249935c45d01c596ea89eb4846421fed5ce58aa5744795144",
+    "packaging/App.entitlements": "10a7504b8cb89a13ba50dff8d850d3e3f3eb43e5f2684b6d400984dfcd067d28",
+    "packaging/DMG-README.txt": "8fb6894aa0652fa533621f40632e8167bb5dcb452b41c1399ba7102ac21083cb",
+    "packaging/Info.plist": "6e4487b0a36c696ed2fd5fb89508ac605c206bb68096f93bfd7ba80b6bffa5db",
+    "packaging/offline.sb": "e210de323e5d671bb6b63b79ce1481f8314b5ac2fd65d65a180d381294ee2fa1",
+    "scripts/benchmark_coreml_baseline.py": "91dd221f8d61fbbd75dd43fb40f2280e52deea22c7584799e6620cc55c835361",
+    "scripts/build_app.sh": "f01a707e69bf289583ddc03bcc5e400e16cb526fb9412506739418a7956d97f0",
+    "scripts/build_dmg.sh": "aae9259788eb48caa74ced57b4784c624d171fa2e9bc85ca7b15357b26d8c78f",
+    "scripts/build_native.sh": "69f256f4005710c5dab0b1ecdc111fffdf83ece4b62df87c6cc52ef9d7fae876",
+    "scripts/clone_runtime.py": "a4e054153eff1f51d3aaa35161f8006aa7b9faf04dec716133c167bb959f9921",
+    "scripts/compare_native.swift": "66395d07f182ba595571a2bc389af61b7082b3968a3fa216ffb7807febba1510",
+    "scripts/fetch_sparkle_tools.py": "b4da20a2af060981561fc49c355fdfaa3255fd402755ebd33a8382dc2811ef54",
+    "scripts/patch_mlx_audio.swift": "005f041264ac68da020655836c638c511748a4b5e6b99847603671f20b0de0d3",
+    "scripts/prepare_coreml_corpus.py": "baf8e2a1ca8fc9c4e220d7b3fb6a24dfd882ca0457e25d9ecd6d8d58ad9f476b",
+    "scripts/prepare_coreml_models.py": "933b0b2abe018ccd4798a228ab129ff692aff4f992f259a2f2f8e83ba8115414",
+    "scripts/prepare_metal.sh": "e588339b92e6d3b19c140b375fe7bc08890d67db98cbd6417cf31cbaf763f1f7",
+    "scripts/prepare_models.py": "46186d2fae99b6ecc743b5cd0f5357931f6b4fdf166f95775f2e789756d0edfa",
+    "scripts/prepare_qwen_swift_assets.py": "92156bc1705bc2de28c9a9a63f0f4e5596feba6a742e4a19217934b0811d39fd",
+    "scripts/prepare_runtime.py": "581abfc5e41365c79a047ec21e467a3ba97fc43e93190d15333c6b623cc722a5",
+    "scripts/release_updates.py": "9044b60974c67212f89d23484d5956e64e539f0cf0b2b2a43d65d08e73854af7",
+    "scripts/sign_app.py": "c49e316b084dfc32778c702f37e6904a11639b0b5294e0bc11ee1d914ca967a0",
+    "scripts/test_audio_workflow.sh": "c47f8638b085eb9c1ecbdda54e24ab902992198353b6d0906a5112c530343a51",
+    "scripts/test_coreml_evidence.sh": "ca126f05209b9f98ad25235616dabab614138782ae68c797d38e54b15dc0848e",
+    "scripts/test_dictation.sh": "f509ee0fe55ee7b11453543353e71be121dcf7e5aefe1c84d0361ee4d9ae1afa",
+    "scripts/test_preparation.sh": "49b380ebec8fa28171781c62cc623d2b586e03d37400fb9baf0aece6d47595e0",
+    "scripts/test_tools.sh": "57d94d5a3db5c5491b8ae7b1a1787e85ee4f730de36c04f605c9a66585536588",
+    "scripts/test_update_gate.sh": "c7332b4a780887b26ccdf5d68854590196ccd7f72ca56245c58e60ab58892fb6",
+    "scripts/test_workspace_layout.sh": "2098555853539ba1e6ad18e57e1a91b8a35c682ebdbc208e2946bb4a83977450",
+    "scripts/validate_signing_key.swift": "00073fec40b496a50ec14acbf2a9b43b539b7d3ea19fe9978a3fe8913fa95e0d",
+    "scripts/verify_active_exit.py": "dab93dfb6deb43291a04b79d5f63b383b96225cd7d0aa6612daf283f6896c3fe",
+    "scripts/verify_assets.py": "abdaefd9aa52bf053f76c9016f7e6e795e98208a39870e38680df5def348c59d",
+    "scripts/verify_client.py": "9120b00da0bf96e4f0142207e5ed2bcf0f1f6b2eae13bbbceb31c35e2ee6ef5c",
+    "scripts/verify_lifecycle.py": "a38ce94bb2a46245a3e8e63294bffcc02780cb5d870e47c0948d9428934e7d03",
+    "scripts/verify_live.py": "396a910a982ba80602c6a23165624c3de29f83aba6561934480bfa9a77608746",
+    "scripts/verify_native.swift": "73b90d861ea9059db126f2874696faca284d6845318fa7eb97db0172c571c03a",
+    "tests/AudioWorkflowTests.swift": "864143b7b329951efae1ca903815c9da85cfcddb4f1cec27a7cff1814cbc5afa",
+    "tests/AudioWorkspaceTests.swift": "c6e2027aa56eebed7a5f80eb499cb6a7ac7a8b58cad20d2f531e945195d73708",
+    "tests/BackendLifecycleTests.swift": "dd0d4089cd790e854684e9da5494f10bd0d8fcc5518fd0d25bf7c605cba3bc0f",
+    "tests/DictationGestureTests.swift": "3079aa416744cfbe8e8156303040e337344d6bc7b1949c83e31dd43092a460b7",
+    "tests/DictationOverlayTests.swift": "25cca037f3881b6ee5913f8e0eb167273e13f46a88cc018ebee0a1243f17409f",
+    "tests/PreparationTests.swift": "c3f072a0bf487f05bf0837544b2aecd42315bebe1f047d8c56aaa986b52121a4",
+    "tests/ShortcutRecorderTests.swift": "3a3e58a3a4ccddaf46ab73c70cc2f470fa8b186e286b8bbc3d17897b99522212",
+    "tests/SpeechRequestStatusTests.swift": "733647d6bd5c87eb314263d36a4ec1122be48691b1730d44b59429c53706fd6b",
+    "tests/TextInsertionTests.swift": "5a3bbb90e35553d97c4621483a90ee8e1ea1f67abfed2ed429e6b66a6169b530",
+    "tests/UpdateGateTests.swift": "1e780cf895245957c2bc32a1179ead1558da2b8cb050ab78745bef7b91280433",
+    "tests/WorkspaceLayoutTests.swift": "ecd1f379da331c627cc2a7979f9bf468b968c269f4b5a33273058522ee1e63cf",
+    "tests/prepare_update_fixture.py": "e6bad9f38ff8afa494eb90b7aa8c048ddaeb268c824a8bafbd34a11f14391983",
+    "tests/test_app_signing.py": "8879d7064e56d2eaf0952a232012ca8ed8e19f561b470c8ebb233846c3b977c1",
+    "tests/test_coreml_assets.py": "7b9b344cf3a0e069f248ce1d4462a31d2e62b3b99e20ed3b62c7d48dd43349b2",
+    "tests/test_coreml_corpus.py": "6ed1f8171bed360eab62cea1cf0d1ea81c7ba9997a2f7c6def811fa80eaf4f8c",
+    "tests/test_mlx_adapter.py": "cb5d31e60d538eb463e86b95ff2ff21cbea4e589166e22a17c8dbea98f181c12",
+    "tests/test_native_assets_cli.py": "0a340480f80dbb530d83cf67676db4cc787403d7ea583b203d934c20404316ef",
+    "tests/test_native_validation.py": "570bd33be9a65067f55a55c690e11a511ffa413660016c9d263cd4db92792688",
+    "tests/test_qwen_swift_assets.py": "d6c5306036bd81036954d814e336ec71535f024abd7c1ab07a12cd100705516f",
+    "tests/test_release_updates.py": "7d70f9a95f6b271eda4742decc70aa409342de6d8a46fce5435691956709b087",
+    "tests/ui_stub.py": "419ff634c59bdd5db341e43f495ef9ed98c3b17ef03f67e8dd377c7f2f545e26"
+  },
+  "final_app_files": {
+    "Contents/Frameworks/Sparkle.framework/Autoupdate": {
+      "type": "symlink",
+      "target": "Versions/Current/Autoupdate"
+    },
+    "Contents/Frameworks/Sparkle.framework/Headers": {
+      "type": "symlink",
+      "target": "Versions/Current/Headers"
+    },
+    "Contents/Frameworks/Sparkle.framework/Modules": {
+      "type": "symlink",
+      "target": "Versions/Current/Modules"
+    },
+    "Contents/Frameworks/Sparkle.framework/PrivateHeaders": {
+      "type": "symlink",
+      "target": "Versions/Current/PrivateHeaders"
+    },
+    "Contents/Frameworks/Sparkle.framework/Resources": {
+      "type": "symlink",
+      "target": "Versions/Current/Resources"
+    },
+    "Contents/Frameworks/Sparkle.framework/Sparkle": {
+      "type": "symlink",
+      "target": "Versions/Current/Sparkle"
+    },
+    "Contents/Frameworks/Sparkle.framework/Updater.app": {
+      "type": "symlink",
+      "target": "Versions/Current/Updater.app"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Autoupdate": {
+      "type": "file",
+      "bytes": 708288,
+      "sha256": "8e338781dbf1291503ba73e24118634a657d2d7a072f62af973f2ff95c17e83e"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Headers/SPUAppcastSigningValidationStatus.h": {
+      "type": "file",
+      "bytes": 1007,
+      "sha256": "513d4607ac9ba03c2203b03df307f404216c3ce7f3436784fbbef1842c742749"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Headers/SPUDownloadData.h": {
+      "type": "file",
+      "bytes": 1222,
+      "sha256": "58184c2c068a8d43b1ee85651f9edd30a6a9e5899ac936baf4a5f15a6081d7b7"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Headers/SPUStandardUpdaterController.h": {
+      "type": "file",
+      "bytes": 5604,
+      "sha256": "f45dfdf2315664c5891b97ad0d7ffce9ab09d067effbd2921b10b58b4831ef0f"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Headers/SPUStandardUserDriver.h": {
+      "type": "file",
+      "bytes": 1311,
+      "sha256": "0a0e476b61932196027dd7b94e78d187f810f80c7900168eb4a5956b63d54a77"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Headers/SPUStandardUserDriverDelegate.h": {
+      "type": "file",
+      "bytes": 11256,
+      "sha256": "d906e549f7b108979727fa56f13c029906fe48c5602538513a4b480bb45a8c2d"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Headers/SPUUpdateCheck.h": {
+      "type": "file",
+      "bytes": 874,
+      "sha256": "1f7d05da2e466263aefe3e09130e56b2e65b8862579e07b9829c9bf5ed921c03"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Headers/SPUUpdatePermissionRequest.h": {
+      "type": "file",
+      "bytes": 1093,
+      "sha256": "8c227246c2ea7461741db8bd7274936c3cbcbc7375fe814654d479b2650cd6bd"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Headers/SPUUpdater.h": {
+      "type": "file",
+      "bytes": 20262,
+      "sha256": "a30b876dc722a2861fb8f271a0bf0c95bd664db4cf2af57d216d190f2e010ee7"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Headers/SPUUpdaterDelegate.h": {
+      "type": "file",
+      "bytes": 23537,
+      "sha256": "20ea4bf5273eaa6560160941d680acec6565965162737f50ea4240845a7dde24"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Headers/SPUUpdaterSettings.h": {
+      "type": "file",
+      "bytes": 3428,
+      "sha256": "ad7bdfc719775fe4cdf1490f45ef902ded4dcb3756402e64884397bee425edff"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Headers/SPUUserDriver.h": {
+      "type": "file",
+      "bytes": 16622,
+      "sha256": "db9fe6cf78aca0f2f79a99898d38daff566f96c823de2bb2b985511ad77017dc"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Headers/SPUUserUpdateState.h": {
+      "type": "file",
+      "bytes": 2052,
+      "sha256": "59f95e933f8b5b2b39c1e7c465aa39af021a2c88820b4b09dbcfc55b1dd19c30"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Headers/SUAppcast.h": {
+      "type": "file",
+      "bytes": 1327,
+      "sha256": "251d6ffa7cbc890999ddda3406834f45396cf887a71e5be9ff581883559df0a0"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Headers/SUAppcastItem.h": {
+      "type": "file",
+      "bytes": 18835,
+      "sha256": "21df22d4f0ebd4eaba530f77f520a29451a057b70093efec3104ce0253026cf9"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Headers/SUErrors.h": {
+      "type": "file",
+      "bytes": 3289,
+      "sha256": "e7e84fa6ef85b549810682ec883593f560d79b776ebec5fb11d9558a6f1f78e5"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Headers/SUExport.h": {
+      "type": "file",
+      "bytes": 302,
+      "sha256": "5cef024266c54e12db620f78f4d106860de0fa2a2e230dffdfe04208bb447451"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Headers/SUStandardVersionComparator.h": {
+      "type": "file",
+      "bytes": 1845,
+      "sha256": "7d407b9ce721d5c650e741ecb692e77f12ef3b5e18ea8136f72448e8d7208c6c"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Headers/SUUpdatePermissionResponse.h": {
+      "type": "file",
+      "bytes": 2509,
+      "sha256": "f9355c8044c7dc168bdaefa37ac2e986002ec328895f17119293e084dad96f21"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Headers/SUUpdater.h": {
+      "type": "file",
+      "bytes": 6874,
+      "sha256": "96f6f598d582ca87c9d17f3ccd7bccb0ae4f057ac6e8fafb854ad8d04de336f6"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Headers/SUUpdaterDelegate.h": {
+      "type": "file",
+      "bytes": 13764,
+      "sha256": "a1a08c33fd41ebdd105916d8181d222417f9feda01cdc42afa6a3151106cde36"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Headers/SUVersionComparisonProtocol.h": {
+      "type": "file",
+      "bytes": 1011,
+      "sha256": "28bbb424ac7ab81e2b93f61e359fefa3ed09d6a38d0b265004d2103c0f46bdb4"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Headers/SUVersionDisplayProtocol.h": {
+      "type": "file",
+      "bytes": 3773,
+      "sha256": "3f23c4fb9bbdbc19714580ee4dd7f73ffc31436ea733c9bb308c3f74e7ab512c"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Headers/Sparkle.h": {
+      "type": "file",
+      "bytes": 1170,
+      "sha256": "3a442a32eb22a77bb5a08e61ac678daffdf6c697d33020b82a683baf40228e0c"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Modules/module.modulemap": {
+      "type": "file",
+      "bytes": 95,
+      "sha256": "2bcae1eb66d55dc49f58acfe856375a5bbc91c6e83bdb298d19442ae6264cfa6"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Modules/module.private.modulemap": {
+      "type": "file",
+      "bytes": 833,
+      "sha256": "db1d60f57b43a9eb17f3550f5720ac53466d4385368670fb5148da5b71f43f3a"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/PrivateHeaders/SPUAppcastItemStateResolver.h": {
+      "type": "file",
+      "bytes": 1105,
+      "sha256": "1c3be298008c19757ae3b27083622a005bce809a01f06d2c74f6dea16f3214ee"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/PrivateHeaders/SPUGentleUserDriverReminders.h": {
+      "type": "file",
+      "bytes": 475,
+      "sha256": "f56d9d277f16417d79d66a484b4afcfc47c2a9957a8c487adb5c709dad895402"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/PrivateHeaders/SPUInstallationType.h": {
+      "type": "file",
+      "bytes": 828,
+      "sha256": "52a1a445f58e7c6de94ac558c23913f8081647a499262affe9ac38ff790971d4"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/PrivateHeaders/SPUStandardUserDriver+Private.h": {
+      "type": "file",
+      "bytes": 1097,
+      "sha256": "acc764e731fe9e6d307fe32dea4d06b451964225c2b2a9745a23f035a9cdeaad"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/PrivateHeaders/SPUUserAgent+Private.h": {
+      "type": "file",
+      "bytes": 751,
+      "sha256": "0c3ea7c6aabab32840e41c56bb22cfab4dee4dde3302603b6f4aba9ac1b5850c"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/PrivateHeaders/SUAppcastItem+Private.h": {
+      "type": "file",
+      "bytes": 1641,
+      "sha256": "642ecbeecb323f7201a732b5953d60fefefa13cf894af28936dd0d7d001a101a"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/PrivateHeaders/SUInstallerLauncher+Private.h": {
+      "type": "file",
+      "bytes": 1240,
+      "sha256": "cb2e9c465f08ab0309c2bf3a4d2f7c35d9c76ff5a4480694700a22298520dd94"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/Base.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 6249,
+      "sha256": "bf93bdde8ad020f2ba210ecfa0e84b5365d0342355a3ca39d88fec0acb1e4a40"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/Info.plist": {
+      "type": "file",
+      "bytes": 1341,
+      "sha256": "b9e7615eb3409e090e69966619b88d260750540d39df3e21b192ee31aea516e5"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/ReleaseNotesColorStyle.css": {
+      "type": "file",
+      "bytes": 231,
+      "sha256": "76bd6999758fd8e51d17e6b482db434f9b4768c02b037af6bd2e3a000ce8cbc1"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/SUUpdateAlert.nib": {
+      "type": "file",
+      "bytes": 18490,
+      "sha256": "3987a333da7c2728ef2cb9656e5eeaf0832884873cabf78353fcb9099c5d8fbe"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/SUUpdatePermissionPrompt.nib": {
+      "type": "file",
+      "bytes": 25407,
+      "sha256": "b35425caab26a59cd6ee148dcb5a5f1a18d75933407ef1ab8eae9331af41e0a4"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/ar.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 3554,
+      "sha256": "441182787471a3998908044515fe13e92230edaa7e2730638e72a49610f56cba"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/ca.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 3501,
+      "sha256": "7ed0d5ca300649a7f13304015008f2dede98ad743a625c17d5a5fedacc1a3b1a"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/cs.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 10774,
+      "sha256": "99e66decf9bc46cf5622eead4e65b3b502e3775a4e8e0f03ef1b41683ea8d518"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/da.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 10280,
+      "sha256": "64e1f30b75ebc3c415f684dcc5a7987193f9f278fd437532a8eb416baa90895f"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/de.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 11559,
+      "sha256": "311035a15227fb12e85eba2a46f3f6198d98ac5590d1d38c43c4ff7430d06599"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/el.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 5934,
+      "sha256": "638981a4f095d8b1dabb6230d452e470359711b81803bc5df8c21e1211fd3757"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/es.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 7070,
+      "sha256": "3d2391b84342280e999cdfa39ace2f89675bc99fe5fbe8d75af28167b83e3ed6"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/fa.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 5716,
+      "sha256": "ed9dda9e271f7a97b8a7f327e71a1b6d06e5e061b367e7da3d153e47dc319263"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/fi.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 3252,
+      "sha256": "c14af9bac3fce436222a4ea277a7a6c0f9b42b2d84aceea75e758ce7538acae2"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/fr.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 7930,
+      "sha256": "3863a20e60029b001fe654a70476470b95dda461efb1e36785c95b41563a4c74"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/he.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 9657,
+      "sha256": "1d795bd7329d04b7ce84b6bdc845f917369e858b2b292f117b89a6666a185723"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/hr.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 6367,
+      "sha256": "920041380a08b3ba50d44e8a83f59de551139845a72748d58f2387c65920b33a"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/hu.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 4449,
+      "sha256": "cc2a16e4d487c6fab357b4f7d0fbbf7ec882371b2130413ffcb1b69cd540d2cf"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/is.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 3954,
+      "sha256": "403feba503410e9455cd0eaafe592a2576eedb24130ccf2cdb13dda4b101f87e"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/it.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 10956,
+      "sha256": "56a7445c1b68d76849ac59b98aa5c20c9002d5e07e9f0a2720486160f85b7366"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/ja.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 8697,
+      "sha256": "e404910028af70579cfa208bb4fadd9e3592505fc89af208f4071f2309553fb2"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/ko.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 7797,
+      "sha256": "a6269eb3f5a07d0c4f5d7467d5065372085aef7484c518a9d784ffd6c8f5aae4"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/nb.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 5539,
+      "sha256": "ef6f0dcae90c440b47ece09909e9cdf35f3383f34e72a614c8c5c0752ecbffe0"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/nl.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 9574,
+      "sha256": "ca9adf34fb93fe3f394ccc92114bf6a6b1f8a128bb5f362cb9f3247d7c26c77d"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/nn.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 5671,
+      "sha256": "1db8c6853a550aa25382da2d55431a1c1d308d6a37676c4f8593cc1633f8a5ae"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/pl.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 5453,
+      "sha256": "5c54b3f8e1eb3026e142e710e2167f2f839b73ab5ad7f18719230f33ae682aa9"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/pt-BR.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 9976,
+      "sha256": "0292cadc2acfc34875c1e0b54e2d50de3833cd5e20c8660c8effe2b859aac84c"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/pt-PT.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 5870,
+      "sha256": "f1eb7c97678287d02924806a94dc20e58719f2fdfe059c39213df1df5575e1dd"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/ro.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 6115,
+      "sha256": "b2bf064222c38a3672b01fe09406f799718cb0fc4e715121662639d6fdfea6ed"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/ru.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 5853,
+      "sha256": "237f81f65ca89aecff5b9abfbb7973b0ec8175266374341c5770cf19ae43c674"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/sk.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 5675,
+      "sha256": "e158daaa4f3f91b57cee05ab896f2c1bc467317932cc53bb7c01e7daee9e5238"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/sl.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 5646,
+      "sha256": "c62770c604a6c8c89e283357c8b322d8ce6a85f4d85c09002048331f65f8d980"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/sv.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 5160,
+      "sha256": "4a21ad5bcf8d836d265710c2e4a0a64f07c9551f1c49694d6734a931d23efd39"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/th.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 5339,
+      "sha256": "4b6c8dc2ab69a0425de3aa9dc386c6539348e3983e47aa10f94c17e345a157a5"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/tr.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 6183,
+      "sha256": "b040d3f02d341eba047c15dfcafb60406d0847096a94466ecab512dcfb16abb5"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/uk.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 5911,
+      "sha256": "767d33af04602fd9fe57f21a0d3a6286eb09204978ec414867ad69d363104de6"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/vi.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 12418,
+      "sha256": "2b3b4acbadf534cd0e812b97e589f80a4e1655b07c8907e98cc31df458ffd8b7"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/zh_CN.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 7475,
+      "sha256": "e7f543b92977e9abc907241c411d8db0f59c4fee480859b3e88e4b495e0976c8"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/zh_HK.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 8402,
+      "sha256": "8669b22faeab3c7386cb533132ec8f8f4a01913f4fc38b19b457b44f2445b09e"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Resources/zh_TW.lproj/Sparkle.strings": {
+      "type": "file",
+      "bytes": 7625,
+      "sha256": "76321e1dd844c9b6568cb4af7c63bb57d9d1b700109aeedd7e5721d78727b12d"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Sparkle": {
+      "type": "file",
+      "bytes": 976240,
+      "sha256": "d49c33979971b66eedd1b5b91f349c7b5f72abd3078bedcae3e079add2a75171"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Updater.app/Contents/Info.plist": {
+      "type": "file",
+      "bytes": 2400,
+      "sha256": "ed941468d1ef47aa219b0e806ef634ecadfe2dbe0bcc8acece54f4cd1a93d19f"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Updater.app/Contents/MacOS/Updater": {
+      "type": "file",
+      "bytes": 339728,
+      "sha256": "ebdd1eee8154302a8f48c9e715458453cab54c423ed7e6eb23ed99e2e24341d6"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Updater.app/Contents/PkgInfo": {
+      "type": "file",
+      "bytes": 8,
+      "sha256": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/Updater.app/Contents/_CodeSignature/CodeResources": {
+      "type": "file",
+      "bytes": 2200,
+      "sha256": "6686de10a28a2fe11b36cbb86dcbacc827cfc4ea116b4dabf1845e5aee629e9b"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/XPCServices/Downloader.xpc/Contents/Info.plist": {
+      "type": "file",
+      "bytes": 1717,
+      "sha256": "0b1cf514c04eb383f601b3fed668e9f26a7d6905ce65bd52c2de58356f1be307"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/XPCServices/Downloader.xpc/Contents/MacOS/Downloader": {
+      "type": "file",
+      "bytes": 188704,
+      "sha256": "aa5bc4438f55df821bd4a711018782cb6ff66df8e345f2045e8ef95521212e9d"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/XPCServices/Downloader.xpc/Contents/_CodeSignature/CodeResources": {
+      "type": "file",
+      "bytes": 2200,
+      "sha256": "6686de10a28a2fe11b36cbb86dcbacc827cfc4ea116b4dabf1845e5aee629e9b"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/XPCServices/Installer.xpc/Contents/Info.plist": {
+      "type": "file",
+      "bytes": 1605,
+      "sha256": "a2f90081d42b04740b63e967a8e45143d476138e0d33e0cb5fc85bee068ecafa"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/XPCServices/Installer.xpc/Contents/MacOS/Installer": {
+      "type": "file",
+      "bytes": 207072,
+      "sha256": "e4c6ad4a56a524a9955d62cd6d78051d545d5929fbeefff92d7dbf49738bda4e"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/XPCServices/Installer.xpc/Contents/_CodeSignature/CodeResources": {
+      "type": "file",
+      "bytes": 2200,
+      "sha256": "6686de10a28a2fe11b36cbb86dcbacc827cfc4ea116b4dabf1845e5aee629e9b"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/B/_CodeSignature/CodeResources": {
+      "type": "file",
+      "bytes": 22197,
+      "sha256": "17ecf146c1cfe6f4c5ad1e5b12876a0f15ab0924a712372cb8ac6914cacfcd62"
+    },
+    "Contents/Frameworks/Sparkle.framework/Versions/Current": {
+      "type": "symlink",
+      "target": "B"
+    },
+    "Contents/Frameworks/Sparkle.framework/XPCServices": {
+      "type": "symlink",
+      "target": "Versions/Current/XPCServices"
+    },
+    "Contents/Helpers/CyberAudioAssets": {
+      "type": "file",
+      "bytes": 7547968,
+      "sha256": "f2919c66f0ae6ed4cf78f2e490f254891bfbfb30423d5d1df12253c3eaf41b6a"
+    },
+    "Contents/Helpers/CyberAudioNative_CyberAudioCore.bundle/Contents/Info.plist": {
+      "type": "file",
+      "bytes": 351,
+      "sha256": "66a9e3ab53991203954cb488314c8254cc97bc000cb3c92503bca9cdf95e850a"
+    },
+    "Contents/Helpers/CyberAudioNative_CyberAudioCore.bundle/Contents/Resources/Models.lock.json": {
+      "type": "file",
+      "bytes": 4163,
+      "sha256": "668125b12cc2c1b469925e1eb60c79171c6f9623470622c619e4583971f4e816"
+    },
+    "Contents/Helpers/CyberAudioNative_CyberAudioCore.bundle/Contents/_CodeSignature/CodeDirectory": {
+      "type": "file",
+      "bytes": 235,
+      "sha256": "ae01e6bb9b3fc66f036c2cf23f70eee126c5c11f794b0297a3c74a84a1f3fc55"
+    },
+    "Contents/Helpers/CyberAudioNative_CyberAudioCore.bundle/Contents/_CodeSignature/CodeRequirements": {
+      "type": "file",
+      "bytes": 12,
+      "sha256": "987920904eab650e75788c054aa0b0524e6a80bfc71aa32df8d237a61743f986"
+    },
+    "Contents/Helpers/CyberAudioNative_CyberAudioCore.bundle/Contents/_CodeSignature/CodeResources": {
+      "type": "file",
+      "bytes": 2454,
+      "sha256": "f269a0c2925888b405544b1921d0cd88d5cfb0dd02249a9f3dc92b5fa67ad69e"
+    },
+    "Contents/Helpers/CyberAudioNative_CyberAudioCore.bundle/Contents/_CodeSignature/CodeSignature": {
+      "type": "file",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "Contents/Helpers/CyberAudioService": {
+      "type": "file",
+      "bytes": 73163840,
+      "sha256": "986db1fb2f220dbaa70645e240f1e3c69ee6b60e90a4af459ff6a5f14f39fe99"
+    },
+    "Contents/Helpers/MLXAudio_MLXAudioTTS.bundle/Contents/Info.plist": {
+      "type": "file",
+      "bytes": 340,
+      "sha256": "4d41e704bd1af5ee2b68eba8284261f6a57b6806ef49c13a236fba413498a154"
+    },
+    "Contents/Helpers/MLXAudio_MLXAudioTTS.bundle/Contents/Resources/maya2_normalization_data.json": {
+      "type": "file",
+      "bytes": 94016,
+      "sha256": "dab5a66cc0b7dabf6f39837cc6e70e676821d668acb268a2945ff3cf527e4456"
+    },
+    "Contents/Helpers/MLXAudio_MLXAudioTTS.bundle/Contents/Resources/outetts_default_speaker.json": {
+      "type": "file",
+      "bytes": 14048,
+      "sha256": "f9940c7bf15ff4aa0c5eec6858a70c06bdad8bb4358381dbdc1cddf5714504a2"
+    },
+    "Contents/Helpers/MLXAudio_MLXAudioTTS.bundle/Contents/_CodeSignature/CodeDirectory": {
+      "type": "file",
+      "bytes": 224,
+      "sha256": "5ec6696ffb24f153cadef4490f7c0e5350c021b10a67c845104e12c6daa07647"
+    },
+    "Contents/Helpers/MLXAudio_MLXAudioTTS.bundle/Contents/_CodeSignature/CodeRequirements": {
+      "type": "file",
+      "bytes": 12,
+      "sha256": "987920904eab650e75788c054aa0b0524e6a80bfc71aa32df8d237a61743f986"
+    },
+    "Contents/Helpers/MLXAudio_MLXAudioTTS.bundle/Contents/_CodeSignature/CodeResources": {
+      "type": "file",
+      "bytes": 2742,
+      "sha256": "fd69f0552d09c2ecc990713452208f6ceb1196d10fdaa4cc53ac6b0bc4337d77"
+    },
+    "Contents/Helpers/MLXAudio_MLXAudioTTS.bundle/Contents/_CodeSignature/CodeSignature": {
+      "type": "file",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "Contents/Helpers/swift-crypto_Crypto.bundle/Contents/Info.plist": {
+      "type": "file",
+      "bytes": 339,
+      "sha256": "b3aa07dc8ae2c06e477a460c72caf4d29e02c649daa3be8a91197cb7efd7b0ba"
+    },
+    "Contents/Helpers/swift-crypto_Crypto.bundle/Contents/Resources/PrivacyInfo.xcprivacy": {
+      "type": "file",
+      "bytes": 398,
+      "sha256": "42fb8a30dd8d7ba0900e1bf17fe64ed8c12cfdb8a9c791ab6b4e1eceb0f299c0"
+    },
+    "Contents/Helpers/swift-crypto_Crypto.bundle/Contents/_CodeSignature/CodeDirectory": {
+      "type": "file",
+      "bytes": 223,
+      "sha256": "8bda682e0aae8dc5c4b83c7743186df03f5d73f9bf171c688e37028115eba39d"
+    },
+    "Contents/Helpers/swift-crypto_Crypto.bundle/Contents/_CodeSignature/CodeRequirements": {
+      "type": "file",
+      "bytes": 12,
+      "sha256": "987920904eab650e75788c054aa0b0524e6a80bfc71aa32df8d237a61743f986"
+    },
+    "Contents/Helpers/swift-crypto_Crypto.bundle/Contents/_CodeSignature/CodeResources": {
+      "type": "file",
+      "bytes": 2464,
+      "sha256": "ef18096dbff5ed48c3659bec9bdd13f4cbb99b9a32bbef344b28350174a90610"
+    },
+    "Contents/Helpers/swift-crypto_Crypto.bundle/Contents/_CodeSignature/CodeSignature": {
+      "type": "file",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "Contents/Helpers/swift-nio_NIOPosix.bundle/Contents/Info.plist": {
+      "type": "file",
+      "bytes": 338,
+      "sha256": "75819e629ffb24d2605d90668b3bffd4476fc83b46eb990a5cc2177a137936c4"
+    },
+    "Contents/Helpers/swift-nio_NIOPosix.bundle/Contents/Resources/PrivacyInfo.xcprivacy": {
+      "type": "file",
+      "bytes": 599,
+      "sha256": "982f20d820bc4460acc9d4116c3e6c8ec837f717dc82edbb7308f7400515c909"
+    },
+    "Contents/Helpers/swift-nio_NIOPosix.bundle/Contents/_CodeSignature/CodeDirectory": {
+      "type": "file",
+      "bytes": 222,
+      "sha256": "d5be5697b9ef7884a425ea1330f0dee8423545469a301bc18dba4b645b4cdeba"
+    },
+    "Contents/Helpers/swift-nio_NIOPosix.bundle/Contents/_CodeSignature/CodeRequirements": {
+      "type": "file",
+      "bytes": 12,
+      "sha256": "987920904eab650e75788c054aa0b0524e6a80bfc71aa32df8d237a61743f986"
+    },
+    "Contents/Helpers/swift-nio_NIOPosix.bundle/Contents/_CodeSignature/CodeResources": {
+      "type": "file",
+      "bytes": 2464,
+      "sha256": "67ba4e51c5c6ab53b6d4b05fb6ecd54f032f365a31a915150b4564e31a072a6f"
+    },
+    "Contents/Helpers/swift-nio_NIOPosix.bundle/Contents/_CodeSignature/CodeSignature": {
+      "type": "file",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "Contents/Helpers/swift-transformers_Hub.bundle/Contents/Info.plist": {
+      "type": "file",
+      "bytes": 342,
+      "sha256": "df4b27079590046e83175c46f1a70ea3e90a00b39423833b07d7b973f35ff515"
+    },
+    "Contents/Helpers/swift-transformers_Hub.bundle/Contents/Resources/gpt2_tokenizer_config.json": {
+      "type": "file",
+      "bytes": 234,
+      "sha256": "551e26ec611d8d0c8edc3ef72e518a38418cb71f40de1347dd486a595e1557d7"
+    },
+    "Contents/Helpers/swift-transformers_Hub.bundle/Contents/Resources/t5_tokenizer_config.json": {
+      "type": "file",
+      "bytes": 20746,
+      "sha256": "e0aff0b1de9071e30d9a60a199303b6abe916a64a19932bd1c46992279b41a1f"
+    },
+    "Contents/Helpers/swift-transformers_Hub.bundle/Contents/_CodeSignature/CodeDirectory": {
+      "type": "file",
+      "bytes": 226,
+      "sha256": "8d5d30d22a011f8efb564b8c2f0849713945cfbc31dbb84f4872a53f48f19a4a"
+    },
+    "Contents/Helpers/swift-transformers_Hub.bundle/Contents/_CodeSignature/CodeRequirements": {
+      "type": "file",
+      "bytes": 12,
+      "sha256": "987920904eab650e75788c054aa0b0524e6a80bfc71aa32df8d237a61743f986"
+    },
+    "Contents/Helpers/swift-transformers_Hub.bundle/Contents/_CodeSignature/CodeResources": {
+      "type": "file",
+      "bytes": 2728,
+      "sha256": "ae3880b32a4b58e4636e028cf141099134804da084866b30e86115f17fe99df7"
+    },
+    "Contents/Helpers/swift-transformers_Hub.bundle/Contents/_CodeSignature/CodeSignature": {
+      "type": "file",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "Contents/Info.plist": {
+      "type": "file",
+      "bytes": 1617,
+      "sha256": "5d620d22c8ed91d9133cd99589e7e4ee0172ca7bc95cabee25aca28dd974b6d2"
+    },
+    "Contents/MacOS/CyberAudio": {
+      "type": "file",
+      "bytes": 2618112,
+      "sha256": "14b627aa5ac8c6cb8259492a0d0470ab2bcd1d95d4b8eb3bb8a43c3f8f480eef"
+    },
+    "Contents/Resources/CyberAudio.icns": {
+      "type": "file",
+      "bytes": 713529,
+      "sha256": "e023717b007da32f18e5ac288069888814446c9c3746edfee820ece6d288ef9e"
+    },
+    "Contents/Resources/MenuBarActive.png": {
+      "type": "file",
+      "bytes": 172,
+      "sha256": "f0dceffc0b42c72dc7e34175c9a2883213d00db0a7fd909d8bba8d1a451f70cf"
+    },
+    "Contents/Resources/MenuBarActive@2x.png": {
+      "type": "file",
+      "bytes": 197,
+      "sha256": "b2a645915fdcdd11cb7b915457a695de6e4307a4ef09ed964f19add95ea0cf5d"
+    },
+    "Contents/Resources/MenuBarIdle.png": {
+      "type": "file",
+      "bytes": 170,
+      "sha256": "a223c7b1bce0ba6d911adb2fbb3841d146874806a2e2f63525f155be765c2a87"
+    },
+    "Contents/Resources/MenuBarIdle@2x.png": {
+      "type": "file",
+      "bytes": 196,
+      "sha256": "386847d185f50e75f7778190e817e55dde3ac5f5010654d82a189403c26f7fbd"
+    },
+    "Contents/Resources/ThirdParty/EventSource-LICENSE.md": {
+      "type": "file",
+      "bytes": 1062,
+      "sha256": "2f9b695627d569a3ce452b2c03fdd34310df78c8ea94edfafd9ce38381e5b502"
+    },
+    "Contents/Resources/ThirdParty/README.md": {
+      "type": "file",
+      "bytes": 1969,
+      "sha256": "79687ee3aaf8d805411198b9822a395f9a7b2b6e416bd3881ed3a6ba12d0c22b"
+    },
+    "Contents/Resources/ThirdParty/Sparkle-LICENSE": {
+      "type": "file",
+      "bytes": 6154,
+      "sha256": "389a4e4e9a32f059775b13a06e25a591445ba229d2838d26dd3e7c0c45127cfe"
+    },
+    "Contents/Resources/ThirdParty/fmt-LICENSE": {
+      "type": "file",
+      "bytes": 1431,
+      "sha256": "07580f2a3b35709ce703d523f447b242f6dfec7582a8c0df102c7fa2849375f8"
+    },
+    "Contents/Resources/ThirdParty/llhttp-LICENSE": {
+      "type": "file",
+      "bytes": 1105,
+      "sha256": "ebca854e0134cd256d673627c20499f42577eb74bacf08b9f25b626a73c91277"
+    },
+    "Contents/Resources/ThirdParty/mlx-LICENSE": {
+      "type": "file",
+      "bytes": 1066,
+      "sha256": "ccfab7ccb2ea306f71531c8ca77bb55507606cd90768b1e32b8b52ab5b48cf01"
+    },
+    "Contents/Resources/ThirdParty/mlx-audio-swift-LICENSE": {
+      "type": "file",
+      "bytes": 1070,
+      "sha256": "fd330bb5d9adf9e65bfe4d8f6f90c808a4196ef5c98aad018a3344256fcb2374"
+    },
+    "Contents/Resources/ThirdParty/mlx-c-LICENSE": {
+      "type": "file",
+      "bytes": 1067,
+      "sha256": "44326a4ea062241ae6fc26ee2ec90bdc81af7eb7b9d3966181b733fa69d42057"
+    },
+    "Contents/Resources/ThirdParty/mlx-swift-LICENSE": {
+      "type": "file",
+      "bytes": 1067,
+      "sha256": "44326a4ea062241ae6fc26ee2ec90bdc81af7eb7b9d3966181b733fa69d42057"
+    },
+    "Contents/Resources/ThirdParty/swift-asn1-LICENSE.txt": {
+      "type": "file",
+      "bytes": 11359,
+      "sha256": "8c6db340475136df3c1201d458fa5755698eace76e510471ecc9d857d6083dac"
+    },
+    "Contents/Resources/ThirdParty/swift-atomics-LICENSE.txt": {
+      "type": "file",
+      "bytes": 11751,
+      "sha256": "770af8291f708538d8ff885a0bbc4e045cd700531741c4f99528d435c14d7f55"
+    },
+    "Contents/Resources/ThirdParty/swift-collections-LICENSE.txt": {
+      "type": "file",
+      "bytes": 11751,
+      "sha256": "770af8291f708538d8ff885a0bbc4e045cd700531741c4f99528d435c14d7f55"
+    },
+    "Contents/Resources/ThirdParty/swift-crypto-LICENSE.txt": {
+      "type": "file",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "Contents/Resources/ThirdParty/swift-huggingface-LICENSE": {
+      "type": "file",
+      "bytes": 11347,
+      "sha256": "4d6ad72952a8329063a71de28329b493de96cf57459e2ac217110d1a6a5f84ae"
+    },
+    "Contents/Resources/ThirdParty/swift-jinja-LICENSE": {
+      "type": "file",
+      "bytes": 11347,
+      "sha256": "648b81e6c6f9975c3b6cf6d630229b6c8d6f1ddaef55f5770f576adda19f3495"
+    },
+    "Contents/Resources/ThirdParty/swift-nio-LICENSE.txt": {
+      "type": "file",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "Contents/Resources/ThirdParty/swift-numerics-LICENSE.txt": {
+      "type": "file",
+      "bytes": 11751,
+      "sha256": "770af8291f708538d8ff885a0bbc4e045cd700531741c4f99528d435c14d7f55"
+    },
+    "Contents/Resources/ThirdParty/swift-system-LICENSE.txt": {
+      "type": "file",
+      "bytes": 11750,
+      "sha256": "2245a990b635558be210fb3eb4f8a6f7a49aebc0fefbf5859146a65ddc7ddcf3"
+    },
+    "Contents/Resources/ThirdParty/swift-transformers-LICENSE": {
+      "type": "file",
+      "bytes": 11347,
+      "sha256": "648b81e6c6f9975c3b6cf6d630229b6c8d6f1ddaef55f5770f576adda19f3495"
+    },
+    "Contents/Resources/ThirdParty/yyjson-LICENSE": {
+      "type": "file",
+      "bytes": 1084,
+      "sha256": "45e384d3d52c73cba3a64d6e6c25d47cd738cd8a55c30629e3201046eda62947"
+    },
+    "Contents/Resources/ThirdParty/zstd-COPYING": {
+      "type": "file",
+      "bytes": 18091,
+      "sha256": "f9c375a1be4a41f7b70301dd83c91cb89e41567478859b77eef375a52d782505"
+    },
+    "Contents/Resources/ThirdParty/zstd-LICENSE": {
+      "type": "file",
+      "bytes": 1549,
+      "sha256": "7055266497633c9025b777c78eb7235af13922117480ed5c674677adc381c9d8"
+    },
+    "Contents/Resources/mlx.metallib": {
+      "type": "file",
+      "bytes": 214156448,
+      "sha256": "c6d7a3facb83568f6e4cb2cf4a8c736ee29302571a48343cb9a3a4d1cd3e3893"
+    },
+    "Contents/Resources/offline.sb": {
+      "type": "file",
+      "bytes": 52,
+      "sha256": "e210de323e5d671bb6b63b79ce1481f8314b5ac2fd65d65a180d381294ee2fa1"
+    },
+    "Contents/_CodeSignature/CodeResources": {
+      "type": "file",
+      "bytes": 11664,
+      "sha256": "aba742885cf3fff8aa56b5eb7fb2cc8cc23b846a16bd6b8ec8a31eda025eb1f6"
+    }
+  },
+  "driver_sha256": "90152a026e328d0a747ae976eab798a567cd493c1edf1ce505e5a2a95852f13d",
+  "driver_source_sha256": "73b90d861ea9059db126f2874696faca284d6845318fa7eb97db0172c571c03a",
+  "strict_nested_signature": true,
+  "assets_prepare_passed": true,
+  "production_installed": false,
+  "frozen_preserved": true,
+  "target_transfer": {
+    "exit_code": 0,
+    "elapsed_seconds": 127.618,
+    "archive_bytes": 20086675,
+    "result": {
+      "status": "uploaded_and_verified",
+      "archive_bytes": 20086675,
+      "archive_sha256": "db0f03c00a25fcab18a1a0ebb9c5c3c189dcf6c2c2aac1ec6b3d27e02c1c4de4",
+      "changed_files": 5,
+      "final_files": 160,
+      "strict_nested_signature": true,
+      "portable_assets_prepare": true,
+      "frozen_base_preserved": true
+    }
+  }
+}

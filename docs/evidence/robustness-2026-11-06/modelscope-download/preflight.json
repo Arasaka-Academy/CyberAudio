@@ -1,0 +1,179 @@
+{
+  "admission": {
+    "exit_code": 0,
+    "elapsed_seconds": 9.231,
+    "source_sha256": "0c0ddb406212716e260a4093f2652ccb163b721be632d9e59b9061b65585f46d",
+    "result": {
+      "status": "admission_passed",
+      "requests": [
+        {
+          "path": "asr/config.json",
+          "start": -1,
+          "length": 7188,
+          "expected_sha256": "1b76b3b6c655fc54595da025f7a96474ad9fa86363303fbdd61a7d8483ccfaf7",
+          "probe_exit_code": 0,
+          "response": {
+            "bytes": 7188,
+            "elapsed_seconds": 0.7455832083360292,
+            "final_host": "modelscope.cn",
+            "maximum_bytes": 7188,
+            "maximum_resource_seconds": 45,
+            "proxy": "disabled",
+            "sha256": "1b76b3b6c655fc54595da025f7a96474ad9fa86363303fbdd61a7d8483ccfaf7",
+            "status": 200,
+            "tls_validation": "default",
+            "transport": "URLSessionDownloadTask"
+          },
+          "passed": true
+        },
+        {
+          "path": "tts/config.json",
+          "start": -1,
+          "length": 6058,
+          "expected_sha256": "43f29f9ab55cf387bd2ce1d07e9d95a5ca8974fa2fda4e2b45c13ae64aad3bfa",
+          "probe_exit_code": 0,
+          "response": {
+            "bytes": 6058,
+            "elapsed_seconds": 0.6062891250185203,
+            "final_host": "modelscope.cn",
+            "maximum_bytes": 6058,
+            "maximum_resource_seconds": 45,
+            "proxy": "disabled",
+            "sha256": "43f29f9ab55cf387bd2ce1d07e9d95a5ca8974fa2fda4e2b45c13ae64aad3bfa",
+            "status": 200,
+            "tls_validation": "default",
+            "transport": "URLSessionDownloadTask"
+          },
+          "passed": true
+        },
+        {
+          "path": "tts/model.safetensors",
+          "start": 184549376,
+          "length": 1048576,
+          "expected_sha256": "87b305c6ee098bb0a2fce5f53a5693aea42c63cd0dee782810c47a7600c490b4",
+          "probe_exit_code": 0,
+          "response": {
+            "bytes": 1048576,
+            "content_range": "bytes 184549376-185597951/2393308931",
+            "elapsed_seconds": 0.7429475833196193,
+            "final_host": "cdn-lfs-cn-1.modelscope.cn",
+            "maximum_bytes": 1048576,
+            "maximum_resource_seconds": 45,
+            "proxy": "disabled",
+            "sha256": "87b305c6ee098bb0a2fce5f53a5693aea42c63cd0dee782810c47a7600c490b4",
+            "status": 206,
+            "tls_validation": "default",
+            "transport": "URLSessionDownloadTask"
+          },
+          "passed": true
+        }
+      ],
+      "elapsed_seconds": 8.198
+    }
+  },
+  "sustained": {
+    "started_at": "2026-11-07T06:14:13.055942+00:00",
+    "finished_at": "2026-11-07T06:16:29.805260+00:00",
+    "status": "qualified",
+    "rounds": [
+      {
+        "index": 0,
+        "start": 184549376,
+        "length": 8388608,
+        "expected_sha256": "1623c60bfa13ced9ecba4f3a231a80d9cb0a5be570766bcf7164004283512ab2",
+        "probe_exit_code": 0,
+        "response": {
+          "bytes": 8388608,
+          "content_range": "bytes 184549376-192937983/2393308931",
+          "elapsed_seconds": 2.11688650000724,
+          "final_host": "cdn-lfs-cn-1.modelscope.cn",
+          "maximum_bytes": 8388608,
+          "maximum_resource_seconds": 45,
+          "proxy": "disabled",
+          "sha256": "1623c60bfa13ced9ecba4f3a231a80d9cb0a5be570766bcf7164004283512ab2",
+          "status": 206,
+          "tls_validation": "default",
+          "transport": "URLSessionDownloadTask"
+        },
+        "passed": true
+      },
+      {
+        "index": 1,
+        "start": 192937984,
+        "length": 8388608,
+        "expected_sha256": "cf80776739440c70161a164e62b953c7bc0b2ac7973d439721954f0cf89ec015",
+        "probe_exit_code": 0,
+        "response": {
+          "bytes": 8388608,
+          "content_range": "bytes 192937984-201326591/2393308931",
+          "elapsed_seconds": 2.1358162083197385,
+          "final_host": "cdn-lfs-cn-1.modelscope.cn",
+          "maximum_bytes": 8388608,
+          "maximum_resource_seconds": 45,
+          "proxy": "disabled",
+          "sha256": "cf80776739440c70161a164e62b953c7bc0b2ac7973d439721954f0cf89ec015",
+          "status": 206,
+          "tls_validation": "default",
+          "transport": "URLSessionDownloadTask"
+        },
+        "passed": true
+      },
+      {
+        "index": 2,
+        "start": 201326592,
+        "length": 8388608,
+        "expected_sha256": "6d5dc6bef85b2125816389877bf91163b90f2e35f72d91f2c53902459d9f3837",
+        "probe_exit_code": 0,
+        "response": {
+          "bytes": 8388608,
+          "content_range": "bytes 201326592-209715199/2393308931",
+          "elapsed_seconds": 0.9240239583305083,
+          "final_host": "cdn-lfs-cn-1.modelscope.cn",
+          "maximum_bytes": 8388608,
+          "maximum_resource_seconds": 45,
+          "proxy": "disabled",
+          "sha256": "6d5dc6bef85b2125816389877bf91163b90f2e35f72d91f2c53902459d9f3837",
+          "status": 206,
+          "tls_validation": "default",
+          "transport": "URLSessionDownloadTask"
+        },
+        "passed": true
+      },
+      {
+        "index": 3,
+        "start": 209715200,
+        "length": 8388608,
+        "expected_sha256": "b28e4ff9bff112f2cbbd9f253c3eb5d31959643c5c82b6b84d21dc5759cfc437",
+        "probe_exit_code": 0,
+        "response": {
+          "bytes": 8388608,
+          "content_range": "bytes 209715200-218103807/2393308931",
+          "elapsed_seconds": 0.6849930833268445,
+          "final_host": "cdn-lfs-cn-1.modelscope.cn",
+          "maximum_bytes": 8388608,
+          "maximum_resource_seconds": 45,
+          "proxy": "disabled",
+          "sha256": "b28e4ff9bff112f2cbbd9f253c3eb5d31959643c5c82b6b84d21dc5759cfc437",
+          "status": 206,
+          "tls_validation": "default",
+          "transport": "URLSessionDownloadTask"
+        },
+        "passed": true
+      }
+    ],
+    "asset_bytes_written": false,
+    "model_loaded": false,
+    "download_cli_started": false,
+    "remaining_bytes": 2893911383,
+    "minimum_active_bytes_per_second": 1205796.4095833334,
+    "elapsed_seconds": 136.748,
+    "active_seconds": 5.861719749984331,
+    "active_bytes_per_second": 5724332.351455337,
+    "all_ranges_passed": true,
+    "speed_qualified": true,
+    "full_resume_qualified": true,
+    "production_preserved": true,
+    "assets_preserved": true,
+    "partial_preserved": true
+  }
+}

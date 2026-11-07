@@ -126,6 +126,8 @@ struct WorkspaceLayoutTests {
         try setupRender("setup-checking")
         setup.check(); try await waitForSetup { !setup.busy }
         try setupRender("setup-missing-ffmpeg")
+        setup.downloadSource = .modelScope
+        try setupRender("setup-modelscope")
         let hold = setupRoot.appendingPathComponent("hold")
         try Data().write(to: hold)
         setup.download(); try await waitForSetup { setup.completedBytes > 0 }
@@ -136,7 +138,7 @@ struct WorkspaceLayoutTests {
         try setupRender("setup-failed")
         setup.shutdown()
         audio.cleanup(); dictation.cleanup()
-        print("WorkspaceLayout: 7 workspace states, 3 settings tabs and 4 preparation states rendered at minimum size")
+        print("WorkspaceLayout: 7 workspace states, 3 settings tabs and 5 preparation states rendered at minimum size")
         print("Native view captures: \(output.path)")
     }
 }

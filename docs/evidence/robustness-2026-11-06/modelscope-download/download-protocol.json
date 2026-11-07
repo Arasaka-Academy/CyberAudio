@@ -1,0 +1,37 @@
+{
+  "created_at": "2026-11-07T06:30:02.881839+00:00",
+  "purpose": "Complete the original23-file public first-install asset gate via explicit native ModelScope source after successful direct sustained admission",
+  "qualification_sha256": "f35ed63afd8242f0f62b8395d960a1b1cc3b4a45d84f495aa07f4f81d467175b",
+  "helper_sha256": "f2919c66f0ae6ed4cf78f2e490f254891bfbfb30423d5d1df12253c3eaf41b6a",
+  "helper_archive_sha256": "3ed110c612ada4793eea5df95657da5d91637f4a3856f4f3287b54c8a27ce28f",
+  "source": "modelscope",
+  "repositories": {
+    "asr": {
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "revision": "579e237ce6ec925252973afe835d2f98a138602f"
+    },
+    "tts": {
+      "repository": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit",
+      "revision": "08b854525817066e04ef6b6430a3faa0eebd24d2"
+    }
+  },
+  "maximum_native_download_invocations": 1,
+  "maximum_seconds": 3600,
+  "no_new_progress_seconds": 180,
+  "disk_reserve_bytes": 3221225472,
+  "initial_verified_finals": 14,
+  "initial_partial_bytes": 184549376,
+  "expected_files": 23,
+  "expected_bytes": 5547997530,
+  "acceptance": [
+    "Actual signed current-source Assets download exit0 and final verified event",
+    "Independent Python size/SHA256 verification of every original locked file",
+    "All14 previously verified finals retain size,mtime,SHA",
+    "Final TTS prefix176MiB equals retained partial SHA",
+    "Configuration,Token and production instance preserved",
+    "Models and FFmpeg ready; no partials or owned process remain"
+  ],
+  "model_inference": "Separate acceptance after complete download and absent previous owned model workers; not started by this runner",
+  "original_huggingface_transport_repaired": false,
+  "original_strict_M4_soak_rerun": false
+}

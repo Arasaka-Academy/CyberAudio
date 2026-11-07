@@ -64,6 +64,15 @@ struct PreparationView: View {
                             Text("可用空间 \(bytes(available)) · 下载与验证需约 \(bytes(status.required_bytes))")
                                 .font(.caption).foregroundStyle(.secondary)
                         }
+                        HStack(spacing: 12) {
+                            Picker("下载源", selection: $preparation.downloadSource) {
+                                Text("Hugging Face").tag(PreparationDownloadSource.huggingFace)
+                                Text("ModelScope").tag(PreparationDownloadSource.modelScope)
+                            }.fixedSize().disabled(preparation.busy)
+                                .accessibilityIdentifier("model-download-source")
+                            Text("切换后可继续下载").font(.caption).foregroundStyle(.secondary)
+                            Spacer(minLength: 0)
+                        }
                         DisclosureGroup("网络设置（可选）", isExpanded: $showNetwork) {
                             TextField("http://127.0.0.1:端口 或 socks5://127.0.0.1:端口", text: $proxy)
                                 .textFieldStyle(.roundedBorder).font(.caption)

@@ -36,13 +36,16 @@ import CyberAudioCore
             }
             var options: [String:String] = [:]
             for index in stride(from:1,to:args.count,by:2) {
-                guard ["--root","--port","--ffmpeg","--https-url","--proxy","--json","--restart","--parent-pid"].contains(args[index]),options[args[index]] == nil else {
+                guard ["--root","--port","--ffmpeg","--https-url","--proxy","--source","--json","--restart","--parent-pid"].contains(args[index]),options[args[index]] == nil else {
                     throw ServiceError(400,"invalid_options","命令参数无效。")
                 }
                 options[args[index]] = args[index+1]
             }
             guard ["true","false"].contains(options["--json"] ?? "false"),["true","false"].contains(options["--restart"] ?? "false") else {
                 throw ServiceError(400,"invalid_options","布尔参数应为 true 或 false。")
+            }
+            guard let source = AssetDownloadSource(rawValue:options["--source"] ?? "huggingface") else {
+                throw ServiceError(400,"invalid_source","下载源请选择 huggingface 或 modelscope。")
             }
             let root = options["--root"].map { URL(fileURLWithPath:$0,isDirectory:true) } ?? AssetStore.defaultRoot
             if let value = options["--parent-pid"] {
@@ -66,7 +69,7 @@ import CyberAudioCore
             default:
                 if command == "download" {
                     let reporter = ProgressOutput(structured:structured)
-                    try await AssetStore.download(root:root,proxy:options["--proxy"],restart:options["--restart"] == "true") { reporter.report($0) }
+                    try await AssetStore.download(root:root,source:source,proxy:options["--proxy"],restart:options["--restart"] == "true") { reporter.report($0) }
                     if structured { emit(["event":"phase","phase":"verifying"]) }
                 }
                 let config = try AssetStore.configuration(root:root)

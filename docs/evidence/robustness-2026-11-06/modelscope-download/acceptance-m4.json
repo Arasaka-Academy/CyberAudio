@@ -1,0 +1,250 @@
+{
+  "started_at": "2026-11-07T06:37:42.967792+00:00",
+  "finished_at": "2026-11-07T06:40:56.487922+00:00",
+  "status": "passed",
+  "port": 18906,
+  "maximum_seconds": 1800,
+  "driver_sha256": "90152a026e328d0a747ae976eab798a567cd493c1edf1ce505e5a2a95852f13d",
+  "scope": "Current App, Service, Assets and unmodified complete native driver; new root and public downloaded models",
+  "elapsed_seconds": 193.521,
+  "exit_code": 0,
+  "asr_corpus_samples": 100,
+  "tts_voices": 9,
+  "production_preserved": true,
+  "download_config_token_preserved": true,
+  "download_model_metadata_preserved": true,
+  "current_app_preserved": true,
+  "frozen_app_preserved": true,
+  "temporary_request_directories": 0,
+  "owned_port_closed": true,
+  "verified_download_files": 23,
+  "corpus_semantic_sha256": "478f985307125c4672e495ac50bf811bef757f4ba53061cdfbe5c22b8c5ea05b",
+  "strict_soak_started": false,
+  "models_copied": false,
+  "native": {
+    "started": "2026-11-07T06:37:45Z",
+    "finished": "2026-11-07T06:40:55Z",
+    "status": "passed",
+    "os": "Version 27.2 (Build 26B123)",
+    "physical_memory_bytes": 17179869184,
+    "helper_sha256": "986db1fb2f220dbaa70645e240f1e3c69ee6b60e90a4af459ff6a5f14f39fe99",
+    "assets": {
+      "models": [
+        {
+          "component": "asr",
+          "files_verified": 10,
+          "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55"
+        },
+        {
+          "component": "tts",
+          "files_verified": 13,
+          "revision": "41d3337e8b7f2843a75841595fc14e4b9a7a4b96"
+        }
+      ],
+      "status": "verified",
+      "tokenizers": {
+        "asr": "9f14b05f9ee224ad987e823427c76099b298e0bc66884e36e6313182d2bf9441",
+        "tts": "a210c764d0e752c234adbafe3784c987d14aabb12f6bd5f7571f327db93724a4"
+      }
+    },
+    "models": {
+      "data": [
+        {
+          "id": "qwen3-asr-1.7b",
+          "object": "model",
+          "owned_by": "local",
+          "quantization": "8bit",
+          "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+          "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55"
+        },
+        {
+          "id": "qwen3-tts-1.7b",
+          "object": "model",
+          "owned_by": "local",
+          "quantization": "8bit",
+          "repository": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit",
+          "revision": "41d3337e8b7f2843a75841595fc14e4b9a7a4b96"
+        }
+      ],
+      "object": "list"
+    },
+    "outbound_denied": true,
+    "single_owner_lock": true,
+    "stdin_eof_stop_ms": 143.98520800750703,
+    "stream_complete": {
+      "bytes": 122880,
+      "first_audio_ms": 210.2071670233272,
+      "packets": 8
+    },
+    "stream_disconnect_recovery": [
+      {
+        "drain_ms": 39.510375005193055,
+        "recovery_http_status": 200,
+        "round": 1,
+        "status": "cancelled"
+      },
+      {
+        "drain_ms": 41.49608398438431,
+        "recovery_http_status": 200,
+        "round": 2,
+        "status": "cancelled"
+      },
+      {
+        "drain_ms": 41.71745799249038,
+        "recovery_http_status": 200,
+        "round": 3,
+        "status": "cancelled"
+      }
+    ],
+    "production_root_modified": false,
+    "production_service_preserved": true,
+    "stt_formats": [
+      {
+        "language": "zh",
+        "format": "wav"
+      },
+      {
+        "language": "zh",
+        "format": "webm"
+      },
+      {
+        "language": "zh",
+        "format": "mp3"
+      },
+      {
+        "language": "zh",
+        "format": "m4a"
+      },
+      {
+        "language": "zh",
+        "format": "flac"
+      },
+      {
+        "language": "zh",
+        "format": "ogg"
+      },
+      {
+        "language": "zh",
+        "format": "aiff"
+      },
+      {
+        "language": "zh",
+        "format": "aac"
+      },
+      {
+        "language": "en",
+        "format": "wav"
+      },
+      {
+        "language": "en",
+        "format": "webm"
+      },
+      {
+        "language": "en",
+        "format": "mp3"
+      },
+      {
+        "language": "en",
+        "format": "m4a"
+      },
+      {
+        "language": "en",
+        "format": "flac"
+      },
+      {
+        "language": "en",
+        "format": "ogg"
+      },
+      {
+        "language": "en",
+        "format": "aiff"
+      },
+      {
+        "language": "en",
+        "format": "aac"
+      }
+    ],
+    "tts_voices": [
+      {
+        "duration": 2.24,
+        "first_audio_ms": 224.54329099855386,
+        "processing_ms": 1408.545290993061,
+        "rtf": 0.6288148620504735,
+        "voice": "serena"
+      },
+      {
+        "duration": 4,
+        "first_audio_ms": 216.46458300529048,
+        "processing_ms": 2433.773958007805,
+        "rtf": 0.6084434895019513,
+        "voice": "vivian"
+      },
+      {
+        "duration": 2.48,
+        "first_audio_ms": 216.29433301859535,
+        "processing_ms": 1488.9845830039121,
+        "rtf": 0.600397009275771,
+        "voice": "uncle_fu"
+      },
+      {
+        "duration": 3.28,
+        "first_audio_ms": 211.4411249931436,
+        "processing_ms": 2094.201250001788,
+        "rtf": 0.6384759908542037,
+        "voice": "ryan"
+      },
+      {
+        "duration": 2.64,
+        "first_audio_ms": 211.83929199469276,
+        "processing_ms": 1566.451833001338,
+        "rtf": 0.5933529670459613,
+        "voice": "aiden"
+      },
+      {
+        "duration": 1.84,
+        "first_audio_ms": 211.05591600644402,
+        "processing_ms": 1110.6082909973338,
+        "rtf": 0.603591462498551,
+        "voice": "ono_anna"
+      },
+      {
+        "duration": 2.32,
+        "first_audio_ms": 211.27283299574628,
+        "processing_ms": 1388.2690829923376,
+        "rtf": 0.5983918461173869,
+        "voice": "sohee"
+      },
+      {
+        "duration": 2.8,
+        "first_audio_ms": 210.53445799043402,
+        "processing_ms": 1655.8510419854429,
+        "rtf": 0.5913753721376582,
+        "voice": "eric"
+      },
+      {
+        "duration": 2,
+        "first_audio_ms": 211.06450000661425,
+        "processing_ms": 1206.9594579807017,
+        "rtf": 0.6034797289903508,
+        "voice": "dylan"
+      }
+    ],
+    "app_active_exit_and_restart": [
+      {
+        "active_inference": true,
+        "child_executable": "CyberAudioService",
+        "exit_ms": 309.09712499124,
+        "helper_gone": true,
+        "signal": 15
+      },
+      {
+        "active_inference": true,
+        "child_executable": "CyberAudioService",
+        "exit_ms": 78.75266601331532,
+        "helper_gone": true,
+        "signal": 9
+      }
+    ],
+    "same_device_prior_raw_text_matches": 100
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "sha256": {
+    "source-before.private.json": "484e9709ab2ca2fffb5e33b19644e6b2b59ee298a8e4f468f9683f93a630dba3",
+    "download-observation-2.private.json": "0ce6892eb3b81616e4c36eee7a193179efdde48c1a665585d85fda981885fb56",
+    "current-source/build.private.json": "389296eb7baa69da2fc2cb876665219fb9580c5ac89dcafc53275901df1fce60",
+    "current-source/local-result.private.json": "8458b0956b7c9078dff94377216ae244dddc60eef8809253b36a8d2d8f9d3447",
+    "current-source/data-local/reports/native-service.json": "8dd02c6da2129482332fbc2f28fff6b7cb56154394cd0812b02edf4d44ce3c86",
+    "current-source/local-full.private.log": "9eee9c5a226a63037497a5a01b08b21a626406d3d24d64d6e73898b152d1fc80",
+    "remote-fresh-results/fresh-acceptance/result.private.json": "cbf359bb4f708c716f379c5c670e0b89664ad1d5bda3700289bd522a588e21fe",
+    "remote-fresh-results/fresh-acceptance/data/reports/native-service.json": "62f2db7a7b4edd2671dc2397631200ad02cfcafddd390a05b8e282aabdaebaa1",
+    "remote-fresh-results/fresh-acceptance/native-full.private.log": "9eee9c5a226a63037497a5a01b08b21a626406d3d24d64d6e73898b152d1fc80",
+    "target-final-verification.private.json": "b834b6873f12dbe0a91e754528d6961630d6ebf1ee332268b88f44e63660712f",
+    "local-final-verification.json": "2f1cb088231586d7f89559a39202a4bed42483ff52a64b04a74e4c5cc48c800b",
+    "preparation-red.private.log": "dccf99632bcd3be328f6d6036248b444bf16ebb6ce40228beefc607d4fefff05",
+    "cli-red.private.log": "3cdf92f09e3478f7a46d924164f7b94c80d5fb92e9dd55bae32b753b9f59d561",
+    "native-test.private.log": "1f3adf3778b3c0691fde2b906251b96979de69dff3f8cd16483868dea63ceba3",
+    "native-test-after-relocation.private.log": "8bffa03a06b8aa7a78b2eea584348d79f6727ef9a8ea6f736ae47d577e722dcb",
+    "test_tools.sh.private.log": "dd93914138a155485969983b2bbf672f71d468ef31402ca1a7bc8f79a77199c7",
+    "audio-workflow.private.log": "0421fc6387b69f696ebcc7b5197d9eb7ddabf66023791dda06da4065fbf2603a"
+  },
+  "privacy": "Raw transcripts, production instances/config/Token and their hashes, private hostnames, model binaries and archives retained locally."
+}

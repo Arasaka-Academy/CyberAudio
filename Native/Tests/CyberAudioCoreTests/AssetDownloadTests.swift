@@ -6,6 +6,28 @@ import CyberAudioCore
 private let payload = Data("0123456789abcdefghijklmnopqrstuvwxyz".utf8)
 
 extension ServiceTests {
+    func testModelDownloadSourcesPinRepositoriesAndNestedPaths() throws {
+        let files = try AssetStore.lock().files
+        for asset in files {
+            let asr = asset.path.hasPrefix("asr/"), relative = String(asset.path.dropFirst(4))
+            let repository = asr ? "mlx-community/Qwen3-ASR-1.7B-8bit" : "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit"
+            let originalRevision = asr ? "a8379a2e2f9e313c9292cdf1af4055ab56d50d55" : "41d3337e8b7f2843a75841595fc14e4b9a7a4b96"
+            let original = try AssetDownloadSource.huggingFace.url(for:asset)
+            XCTAssertEqual(original.absoluteString,"https://huggingface.co/\(repository)/resolve/\(originalRevision)/\(relative)?download=true")
+            let alternative = try AssetDownloadSource.modelScope.url(for:asset)
+            let components = try XCTUnwrap(URLComponents(url:alternative,resolvingAgainstBaseURL:false))
+            XCTAssertEqual(components.scheme,"https"); XCTAssertEqual(components.host,"modelscope.cn")
+            XCTAssertEqual(components.path,"/api/v1/models/\(repository)/repo")
+            let query = Dictionary(uniqueKeysWithValues:(components.queryItems ?? []).map { ($0.name,$0.value ?? "") })
+            XCTAssertEqual(query,["Revision":asr ? "579e237ce6ec925252973afe835d2f98a138602f" : "08b854525817066e04ef6b6430a3faa0eebd24d2","FilePath":relative])
+        }
+        for path in ["other/config.json","asr/../config.json","tts/speech_tokenizer//config.json","asr/"] {
+            let asset = try JSONDecoder().decode(LockedAsset.self,from:jsonData(["path":path,"size":1,"sha256":String(repeating:"a",count:64)]))
+            for source in [AssetDownloadSource.huggingFace,.modelScope] { XCTAssertThrowsError(try source.url(for:asset)) }
+        }
+        XCTAssertEqual(AssetDownloadSource(rawValue:"https://untrusted.example"),nil)
+    }
+
     private func assetDownloadFixture(data: Data = payload) throws -> (URL, LockedAsset, URLSession) {
         let root = FileManager.default.temporaryDirectory.appendingPathComponent("CyberAudio-download-test-"+UUID().uuidString)
         try FileManager.default.createDirectory(at:root,withIntermediateDirectories:true)

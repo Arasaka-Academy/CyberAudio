@@ -126,7 +126,7 @@ public enum AssetStore {
             try Data("(version 1)\n(allow default)\n(deny network-outbound)\n".utf8).write(to:sandbox,options:.atomic)
         }
     }
-    public static func download(root: URL,proxy: String? = nil,restart: Bool = false,
+    public static func download(root: URL,source: AssetDownloadSource = .huggingFace,proxy: String? = nil,restart: Bool = false,
                                 progress: @escaping @Sendable (AssetDownloadProgress)->Void = { _ in }) async throws {
         let config = try configuration(root:root)
         let network = URLSessionConfiguration.ephemeral
@@ -164,12 +164,8 @@ public enum AssetStore {
         var completed: Int64 = 0
         for file in files {
             try Task.checkCancellation()
-            let component = file.path.hasPrefix("asr/") ? "asr" : "tts"
-            let relative = String(file.path.dropFirst(component.count+1))
             let target = try AssetPreparation.destination(file,configuration:config)
-            let repository = component == "asr" ? ModelCatalog.asrRepository : ModelCatalog.ttsRepository
-            let revision = component == "asr" ? ModelCatalog.asrRevision : ModelCatalog.ttsRevision
-            let url = URL(string:"https://huggingface.co/\(repository)/resolve/\(revision)/\(relative)?download=true")!
+            let url = try source.url(for:file)
             let base = completed
             try await AssetDownloader.download(file,from:url,to:target,staging:temporaryRoot.appendingPathComponent("downloads"),
                 session:session,restart:restart) { bytes in

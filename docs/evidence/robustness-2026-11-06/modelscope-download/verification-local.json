@@ -1,0 +1,81 @@
+{
+  "status": "independently_verified",
+  "verified_at": "2026-11-07T06:43:30.751209+00:00",
+  "corpus_files_verified": 100,
+  "same_M1_raw_texts": 100,
+  "corpus_identity_order_preserved": true,
+  "voices": [
+    {
+      "voice": "serena",
+      "frames": 48000,
+      "sha256": "6b69f1785ea82ac3807e66723236fd0155ed4f6065e3eb76fecb0f5b9cf188ad"
+    },
+    {
+      "voice": "vivian",
+      "frames": 49920,
+      "sha256": "a629f1297df227e0b0aa0d2a1b079f0ff5f9199057b52a5ba0489a30c4cd4689"
+    },
+    {
+      "voice": "uncle_fu",
+      "frames": 55680,
+      "sha256": "6c0b232598ccdc343d0bd2ae96e8e3d714d9efcb771ee23833099af02bf6b991"
+    },
+    {
+      "voice": "ryan",
+      "frames": 67200,
+      "sha256": "ed451f439f5c56da53f9978d70f64d18de4e96c464b4eed110da9ae3c391a792"
+    },
+    {
+      "voice": "aiden",
+      "frames": 53760,
+      "sha256": "7d64e79fb82dd61c1b45accb16904653f06bee67a3d3f500d615360e1b067a49"
+    },
+    {
+      "voice": "ono_anna",
+      "frames": 53760,
+      "sha256": "7a0c59ff6a8cfe03a5c424594001b778c004c06547b3a77da2402f9c692bd54d"
+    },
+    {
+      "voice": "sohee",
+      "frames": 40320,
+      "sha256": "a44e6bd9a064377a780e8b5a7da96d486f07d86511308a81b667ae91b0ea41fa"
+    },
+    {
+      "voice": "eric",
+      "frames": 55680,
+      "sha256": "fc2c84a662940942a7d33e98a0dc092f182f1e4c391d2aeca2f2b86ec642eb26"
+    },
+    {
+      "voice": "dylan",
+      "frames": 44160,
+      "sha256": "4c47a1142b3b62e3db49491143a8552e2b5c0be3f83e7c0301e3774b06c93797"
+    }
+  ],
+  "compiled_source_hashes": 98,
+  "preexisting_source_files": 100,
+  "expected_feature_source_changes": [
+    "Native/Sources/CyberAudioAssets/Main.swift",
+    "Native/Sources/CyberAudioCore/Assets.swift",
+    "Native/Tests/CyberAudioCoreTests/AssetDownloadTests.swift",
+    "Native/Tests/CyberAudioCoreTests/Runner.swift",
+    "Native/Tests/CyberAudioCoreTests/ServiceTests.swift",
+    "Sources/CyberAudio/PreparationController.swift",
+    "Sources/CyberAudio/PreparationView.swift",
+    "tests/PreparationTests.swift",
+    "tests/WorkspaceLayoutTests.swift"
+  ],
+  "unrelated_sources_preserved": true,
+  "shared_build_inputs_verified": 1350,
+  "protected_metadata_verified": 1026,
+  "frozen_artifacts_verified": 6,
+  "current_app_files_verified": 160,
+  "model_files_verified": 23,
+  "model_bytes_verified": 5547997530,
+  "production_preserved": true,
+  "model_metadata_preserved": true,
+  "driver_preserved": true,
+  "owned_port_closed": true,
+  "owned_model_processes_absent": true,
+  "temporary_request_directories": 0,
+  "native_report_sha256": "8dd02c6da2129482332fbc2f28fff6b7cb56154394cd0812b02edf4d44ce3c86"
+}

@@ -1,0 +1,171 @@
+{
+  "started_at": "2026-11-07T06:30:32.704517+00:00",
+  "finished_at": "2026-11-07T06:34:30.531029+00:00",
+  "status": "download_verified",
+  "route": "explicit native ModelScope source; no --proxy or SSH forward",
+  "maximum_cli_invocations": 1,
+  "maximum_seconds": 3600,
+  "model_loaded": false,
+  "source_models_copied": false,
+  "helper_sha256": "f2919c66f0ae6ed4cf78f2e490f254891bfbfb30423d5d1df12253c3eaf41b6a",
+  "helper_signature_valid": true,
+  "elapsed_seconds": 237.825,
+  "download_exit_code": 0,
+  "progress_events": 378,
+  "verified_files": [
+    {
+      "path": "asr/README.md",
+      "size": 1008,
+      "sha256": "b356d4bdfbe7287b06b9b5ad084d9557a24ca98ca277a839beb2e682037b08f6"
+    },
+    {
+      "path": "asr/chat_template.json",
+      "size": 1161,
+      "sha256": "75a8cfca24f00de72d796fbfed6858fc9614ef3dabd8696684cc3bc03a9c58ff"
+    },
+    {
+      "path": "asr/config.json",
+      "size": 7188,
+      "sha256": "1b76b3b6c655fc54595da025f7a96474ad9fa86363303fbdd61a7d8483ccfaf7"
+    },
+    {
+      "path": "asr/generation_config.json",
+      "size": 142,
+      "sha256": "1da527824d81e07118facff437e03f2e24a23311e3bdeb2368973fe77e5f275c"
+    },
+    {
+      "path": "asr/merges.txt",
+      "size": 1671853,
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+    },
+    {
+      "path": "asr/model.safetensors",
+      "size": 2463307541,
+      "sha256": "bf304b009cc7eca79283056f787b44c952d24ac22cec787b39732bba3c23c13c"
+    },
+    {
+      "path": "asr/model.safetensors.index.json",
+      "size": 78968,
+      "sha256": "0a5d0ec11188602242ff81a9969883d0fdeb98cd5d85cd1413089d897c201af5"
+    },
+    {
+      "path": "asr/preprocessor_config.json",
+      "size": 330,
+      "sha256": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d"
+    },
+    {
+      "path": "asr/tokenizer_config.json",
+      "size": 12487,
+      "sha256": "4942d005604266809309cabc9f4e9cb89ce855d59b14681fdc0e1cc62ea26c4c"
+    },
+    {
+      "path": "asr/vocab.json",
+      "size": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    {
+      "path": "tts/README.md",
+      "size": 1118,
+      "sha256": "50fe8f13fc95466beb50a96ae743e40573512754e80330373a043f4bd34d6212"
+    },
+    {
+      "path": "tts/config.json",
+      "size": 6058,
+      "sha256": "43f29f9ab55cf387bd2ce1d07e9d95a5ca8974fa2fda4e2b45c13ae64aad3bfa"
+    },
+    {
+      "path": "tts/generation_config.json",
+      "size": 245,
+      "sha256": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa"
+    },
+    {
+      "path": "tts/merges.txt",
+      "size": 1671839,
+      "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+    },
+    {
+      "path": "tts/model.safetensors",
+      "size": 2393308931,
+      "sha256": "b696f4bf45f54497b6de758981e76f1410bd68af05a657477dee466b0202df1a"
+    },
+    {
+      "path": "tts/model.safetensors.index.json",
+      "size": 71786,
+      "sha256": "2551ed02dc288b90cd6b7ec98652433f08ef2ae98fb3eda5248a4b9e5b47d08b"
+    },
+    {
+      "path": "tts/preprocessor_config.json",
+      "size": 127,
+      "sha256": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119"
+    },
+    {
+      "path": "tts/speech_tokenizer/config.json",
+      "size": 2336,
+      "sha256": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167"
+    },
+    {
+      "path": "tts/speech_tokenizer/configuration.json",
+      "size": 76,
+      "sha256": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd"
+    },
+    {
+      "path": "tts/speech_tokenizer/model.safetensors",
+      "size": 682293092,
+      "sha256": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258"
+    },
+    {
+      "path": "tts/speech_tokenizer/preprocessor_config.json",
+      "size": 234,
+      "sha256": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb"
+    },
+    {
+      "path": "tts/tokenizer_config.json",
+      "size": 7344,
+      "sha256": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670"
+    },
+    {
+      "path": "tts/vocab.json",
+      "size": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  ],
+  "resumed_prefix_preserved": true,
+  "verified_bytes": 5547997530,
+  "owned_helper_reaped": true,
+  "production_preserved": true,
+  "config_token_preserved": true,
+  "status_before": {
+    "can_download": true,
+    "invalid_partials": [],
+    "ffmpeg_ready": true,
+    "required_bytes": 5555655770,
+    "models_ready": false,
+    "event": "status",
+    "invalid_files": [],
+    "total_bytes": 5547997530,
+    "available_bytes": 17886277632,
+    "missing_files": 9,
+    "verified_bytes": 2469536771,
+    "resumable_bytes": 184549376
+  },
+  "status_after": {
+    "verified_bytes": 5547997530,
+    "required_bytes": 0,
+    "invalid_files": [],
+    "ffmpeg_ready": true,
+    "resumable_bytes": 0,
+    "total_bytes": 5547997530,
+    "invalid_partials": [],
+    "models_ready": true,
+    "missing_files": 0,
+    "can_download": true,
+    "available_bytes": 13897256960,
+    "event": "status"
+  },
+  "previous_verified_files": 14,
+  "previous_partial_bytes": 184549376,
+  "remaining_network_payload_bytes": 2893911383,
+  "final_verified_event": true,
+  "independent_original14_finals_preserved": true,
+  "interpretation": "One native resume reuses14publicly downloaded finals and176MiB partial; final23files total5,547,997,530bytes. Not a new empty-cache transfer."
+}

@@ -1,0 +1,22 @@
+{
+  "created_at": "2026-11-07T06:37:42.180376+00:00",
+  "purpose": "Current-source M4 complete native driver on downloaded models in a new owned data root",
+  "driver_sha256": "90152a026e328d0a747ae976eab798a567cd493c1edf1ce505e5a2a95852f13d",
+  "driver_source_sha256": "73b90d861ea9059db126f2874696faca284d6845318fa7eb97db0172c571c03a",
+  "corpus_count": 100,
+  "corpus_semantic_sha256": "478f985307125c4672e495ac50bf811bef757f4ba53061cdfbe5c22b8c5ea05b",
+  "maximum_seconds": 1800,
+  "port": 18906,
+  "maximum_driver_invocations": 1,
+  "required": [
+    "All23independent locked hashes before model start",
+    "Original ordered100 corpus and original driver; no subset or seed selection",
+    "Exit0 and native-service statuspassed;100ASRcorpus rows;9voices",
+    "Actual Helper SHA equals transferred160-file current App manifest",
+    "Production, frozen App, current App, downloaded model bytes/metadata, config and Token preserved",
+    "No owned model listener, request folders or remaining process"
+  ],
+  "long_strict_soak": false,
+  "physical_acceptance": false,
+  "failure_handling": "Keep any complete failed receipt; no retry to select a successful run"
+}

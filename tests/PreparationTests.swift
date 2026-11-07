@@ -30,6 +30,7 @@ struct PreparationTests {
             echo "{\"event\":\"status\",\"total_bytes\":100,\"verified_bytes\":0,\"resumable_bytes\":20,\"missing_files\":2,\"invalid_files\":[],\"invalid_partials\":[],\"models_ready\":$ready,\"ffmpeg_ready\":true,\"ffmpeg_path\":\"/ffmpeg\",\"available_bytes\":1000000000,\"required_bytes\":100,\"can_download\":true}";;
           verify) echo '{"event":"verified"}';;
           download)
+            /usr/bin/printf '%s\n' "$@" > "$root/download-arguments"
             echo '{"event":"progress","path":"asr/model","completed_bytes":50,"total_bytes":100,"phase":"downloading"}'
             while [ -f "$root/hold" ]; do /bin/sleep 0.05; done
             if [ -f "$root/fail" ]; then echo '{"event":"error","code":"download_unavailable","message":"请检查网络后继续。"}'; exit 1; fi
@@ -50,6 +51,8 @@ struct PreparationTests {
         try flag("hold")
         setup.download()
         try await until { setup.completedBytes == 50 }
+        let defaultArguments = try String(contentsOf: root.appendingPathComponent("download-arguments"), encoding: .utf8)
+        try require(defaultArguments.contains("--source\nhuggingface\n"), "The selected model source must reach the owned download helper")
         var installed = false
         let gate = UpdateGate(audioBusy: { setup.busy }, prepare: { _ in true }, resume: { _ in })
         gate.begin { installed = true }
@@ -63,9 +66,16 @@ struct PreparationTests {
         remove("hold")
 
         try flag("fail")
+        setup.downloadSource = .modelScope
+        setup.proxy = "  http://127.0.0.1:7890  "
         setup.download()
+        setup.downloadSource = .huggingFace
         try await until { !setup.busy }
         try require(setup.phase == .failed && setup.message.contains("网络") && starts == 0, "Download failures must remain recoverable")
+        let selectedArguments = try String(contentsOf: root.appendingPathComponent("download-arguments"), encoding: .utf8)
+        try require(selectedArguments.contains("--source\nmodelscope\n") && selectedArguments.contains("--proxy\nhttp://127.0.0.1:7890\n"),
+                    "A download must retain its selected source and proxy for the whole attempt")
+        setup.proxy = ""
         remove("fail")
         setup.download()
         try await until { !setup.busy }
@@ -93,6 +103,6 @@ struct PreparationTests {
         quitting.shutdown(); remove("hold")
         try await Task.sleep(for: .milliseconds(150))
         try require(starts == 2, "Late helper completion after quit must not start inference")
-        print("Preparation: first launch, progress, cancellation ownership, update drain, failure/retry, reuse, bounded output and quit passed")
+        print("Preparation: first launch, fixed source selection, progress, cancellation ownership, update drain, failure/retry, reuse, bounded output and quit passed")
     }
 }

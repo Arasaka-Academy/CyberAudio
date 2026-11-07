@@ -73,6 +73,7 @@ class XCTestCase {
             ("native setup preservation",{ try $0.testNativeAssetSetupPreservesExistingTokenAndConfiguration() }),
             ("tokenizer process and locale stability",{ try $0.testTokenizerComparisonAcrossProcessesAndLocales() }),
             ("native proxy download preserves failed assets",{ try await $0.testNativeDownloadUsesProxyAndPreservesAssetsOnFailure() }),
+            ("model download sources pin repositories and nested paths",{ try $0.testModelDownloadSourcesPinRepositoriesAndNestedPaths() }),
             ("ranged asset download and reuse",{ try await $0.testRangedAssetDownloadAndVerifiedReuse() }),
             ("interrupted download resumes completed chunks",{ try await $0.testInterruptedAssetDownloadResumes() }),
             ("transient asset interruption retries unchanged range",{ try await $0.testTransientAssetInterruptionRecoversWithinDownload() }),

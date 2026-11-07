@@ -1,0 +1,24 @@
+{
+  "reviewer": "adversarial",
+  "at": "2026-11-07T06:31:51.769368+00:00",
+  "depth": "standard",
+  "findings": [],
+  "validated_scenarios": [
+    "An immediate UI source change after download() retains the original helper arguments for that attempt",
+    "Both fixed sources send CONNECT to the configured explicit proxy; source selection cannot introduce an arbitrary host",
+    "23locked nested asset paths map to immutable source snapshots; malformed components are rejected",
+    "A failed alternate source retains existing ranged-download SHA, exclusive lock, retry and cancellation behavior",
+    "Source changes retain the SHA-named durable partial; full target resume separately tests the176MiB boundary"
+  ],
+  "residual_risks": [
+    "Original Hugging Face transport has not been repaired.",
+    "Known short-TTS, strict7200-second M4, natural mixed-speech, physical listening/desktop and Developer ID/Sparkle distribution gates remain open.",
+    "This public resume reused14finals and176MiB; empty-cache transfer and FFmpeg from-zero installation are separate."
+  ],
+  "testing_gaps": [],
+  "terminal_followup": {
+    "both_complete_acceptances_passed": true,
+    "independent_hashes_passed": true,
+    "same_device_original100_raw_texts_match_on_both_devices": true
+  }
+}

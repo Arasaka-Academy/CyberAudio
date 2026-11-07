@@ -402,20 +402,24 @@ final class ServiceTests: XCTestCase {
         guard bound == 0,listen(server,4) == 0 else { throw ServiceError.inference }
         var length = socklen_t(MemoryLayout<sockaddr_in>.size)
         _ = withUnsafeMutablePointer(to:&address) { $0.withMemoryRebound(to:sockaddr.self,capacity:1) { getsockname(server,$0,&length) } }
-        let port = Int(UInt16(bigEndian:address.sin_port)),seen = ProxyCapture()
-        DispatchQueue.global().async {
-            var descriptor = pollfd(fd:server,events:Int16(POLLIN),revents:0)
-            guard poll(&descriptor,1,5000)>0 else { seen.done.signal(); return }
-            let peer = accept(server,nil,nil); guard peer >= 0 else { seen.done.signal(); return }; defer { close(peer); seen.done.signal() }
-            var timeout = timeval(tv_sec:2,tv_usec:0); setsockopt(peer,SOL_SOCKET,SO_RCVTIMEO,&timeout,socklen_t(MemoryLayout<timeval>.size))
-            var bytes = [UInt8](repeating:0,count:8192); let count = recv(peer,&bytes,bytes.count,0)
-            if count > 0 { seen.request = String(decoding:bytes.prefix(count),as:UTF8.self) }
-            try? sendAll(peer,request:"HTTP/1.1 403 Forbidden\r\nContent-Length: 0\r\nConnection: close\r\n\r\n")
+        let port = Int(UInt16(bigEndian:address.sin_port))
+        for source in [AssetDownloadSource.huggingFace,.modelScope] {
+            let seen = ProxyCapture()
+            DispatchQueue.global().async {
+                var descriptor = pollfd(fd:server,events:Int16(POLLIN),revents:0)
+                guard poll(&descriptor,1,5000)>0 else { seen.done.signal(); return }
+                let peer = accept(server,nil,nil); guard peer >= 0 else { seen.done.signal(); return }; defer { close(peer); seen.done.signal() }
+                var timeout = timeval(tv_sec:2,tv_usec:0); setsockopt(peer,SOL_SOCKET,SO_RCVTIMEO,&timeout,socklen_t(MemoryLayout<timeval>.size))
+                var bytes = [UInt8](repeating:0,count:8192); let count = recv(peer,&bytes,bytes.count,0)
+                if count > 0 { seen.request = String(decoding:bytes.prefix(count),as:UTF8.self) }
+                try? sendAll(peer,request:"HTTP/1.1 403 Forbidden\r\nContent-Length: 0\r\nConnection: close\r\n\r\n")
+            }
+            do { try await AssetStore.download(root:root,source:source,proxy:"http://127.0.0.1:\(port)"); XCTFail("Proxy failure was accepted") }
+            catch { XCTAssertEqual((error as? ServiceError)?.code,"download_unavailable") }
+            XCTAssertEqual(seen.done.wait(timeout:.now()+6),.success)
+            let host = source == .huggingFace ? "huggingface.co" : "modelscope.cn"
+            XCTAssertTrue(seen.request.hasPrefix("CONNECT \(host):443 HTTP/1.1"),seen.request)
         }
-        do { try await AssetStore.download(root:root,proxy:"http://127.0.0.1:\(port)"); XCTFail("Proxy failure was accepted") }
-        catch { XCTAssertEqual((error as? ServiceError)?.code,"download_unavailable") }
-        XCTAssertEqual(seen.done.wait(timeout:.now()+6),.success)
-        XCTAssertTrue(seen.request.hasPrefix("CONNECT huggingface.co:443 HTTP/1.1"),seen.request)
         let directory = root.appendingPathComponent("models/Qwen3-ASR-1.7B-8bit")
         XCTAssertFalse(FileManager.default.fileExists(atPath:directory.appendingPathComponent("README.md").path))
         let original = Data("preserve mismatched existing asset".utf8),file = directory.appendingPathComponent("README.md")
