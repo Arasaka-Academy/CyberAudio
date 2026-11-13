@@ -1,0 +1,52 @@
+{
+  "host": "codehubmac-mini",
+  "scope": "new packaged default pair",
+  "cases": [
+    {
+      "language": "zh",
+      "stream": false,
+      "duration": 2.56,
+      "transcription": "你好，这是本地语音模型的测试。",
+      "passed": true
+    },
+    {
+      "language": "en",
+      "stream": true,
+      "duration": 3.6,
+      "transcription": "Hello. This is a local speech model test.",
+      "passed": true
+    }
+  ],
+  "startup": {
+    "backend": "mlx-swift",
+    "device": "metal",
+    "load_ms": 3491.472082969267,
+    "metal_active_bytes": 5578423720,
+    "metal_peak_bytes": 6273318916,
+    "process_peak_rss_bytes": 2430058496,
+    "verification_ms": 3549.690374988131,
+    "warmup_ms": 1158.5426250239834
+  },
+  "models": [
+    {
+      "id": "qwen3-asr-1.7b",
+      "object": "model",
+      "owned_by": "local",
+      "quantization": "8bit",
+      "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+      "supports_instructions": false
+    },
+    {
+      "id": "qwen3-tts-1.7b",
+      "object": "model",
+      "owned_by": "local",
+      "quantization": "8bit",
+      "repository": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit",
+      "revision": "41d3337e8b7f2843a75841595fc14e4b9a7a4b96",
+      "supports_instructions": true
+    }
+  ],
+  "passed": true,
+  "production_service_instance_unchanged": true
+}

@@ -1,0 +1,24 @@
+{
+  "mode": "sequential review in the main thread",
+  "base": "bda3b2bdab313698dd2e7d5fd96e141eaa10a594",
+  "branch": "codex/luminare-waveform",
+  "scope": [
+    "settings navigation, model actions and native accessibility",
+    "bounded waveform processing, asynchronous ownership and playback lifecycle",
+    "pinned dependency adaptation, resource lookup, bundling and signatures",
+    "test harness isolation and protection of the installed production service"
+  ],
+  "resolved": [
+    "Use native bordered workspace buttons after dark-mode capture showed low label contrast",
+    "Load Waveform resources from Contents/Resources and verify with the build-tree fallback absent",
+    "Use full Xcode for SwiftUI Entry macros and compile the pinned Metal shader for packaging",
+    "Await actual playback time advancement rather than racing the 100 ms sampling timer",
+    "Override accessibility settings only inside the test process and assert native environment values"
+  ],
+  "unresolved_findings": [],
+  "limits": [
+    "Native view rendering is not desktop click automation",
+    "Synthetic HTTP/audio fixtures do not establish microphone or listening quality",
+    "The complete eight-model inference matrix belongs to the preceding model-management delivery"
+  ]
+}

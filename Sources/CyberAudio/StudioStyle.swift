@@ -45,16 +45,10 @@ private struct GlassSurface<S: Shape>: ViewModifier {
 private struct StudioButton: ViewModifier {
     let prominent: Bool
     let tint: Color
-    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
 
     @ViewBuilder func body(content: Content) -> some View {
-        if reduceTransparency {
-            if prominent { content.buttonStyle(.borderedProminent).tint(tint) }
-            else { content.buttonStyle(.bordered).tint(tint) }
-        } else {
-            if prominent { content.buttonStyle(.glassProminent).tint(tint) }
-            else { content.buttonStyle(.glass).tint(tint) }
-        }
+        if prominent { content.buttonStyle(.borderedProminent).tint(tint) }
+        else { content.buttonStyle(.bordered).tint(tint) }
     }
 }
 

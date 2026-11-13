@@ -12,15 +12,12 @@ struct ModelSettingsView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment:.leading,spacing:16) {
-                HStack {
-                    VStack(alignment:.leading,spacing:4) {
-                        Text("本地模型").font(.title3.weight(.semibold))
-                        Text("按需下载，识别与合成可分别选择。下载完成后手动启用。")
-                            .font(.caption).foregroundStyle(.secondary)
-                    }
-                    Spacer()
-                    Button("重新检查") { models.refresh() }.disabled(!models.canManage)
+            VStack(alignment:.leading,spacing:20) {
+                HStack(alignment: .top, spacing: 12) {
+                    SettingsPageHeader(title: "本地模型", detail: "识别与合成分别选择，下载完成后手动启用。")
+                    Button { models.refresh() } label: { Image(systemName: "arrow.clockwise") }
+                        .settingsButton().disabled(!models.canManage).help("重新检查模型")
+                        .accessibilityLabel("重新检查模型")
                 }
                 if models.busy || firstRunDownload {
                     VStack(alignment:.leading,spacing:7) {
@@ -48,52 +45,52 @@ struct ModelSettingsView: View {
                     }.padding(12).contentSurface().accessibilityIdentifier("model-management-progress")
                 }
                 if let error = models.error {
-                    Text(error).font(.callout).foregroundStyle(.orange).fixedSize(horizontal:false,vertical:true)
+                    InlineNotice(message: error)
                         .accessibilityIdentifier("model-management-error")
                 } else if !models.busy,!models.message.isEmpty {
                     Text(models.message).font(.caption).foregroundStyle(.secondary)
                 }
                 if let snapshot = models.snapshot {
-                    modelGroup("语音识别",component:"asr",snapshot:snapshot)
-                    modelGroup("语音合成 · CustomVoice",component:"tts",snapshot:snapshot)
-                    GroupBox("模型存储") {
+                    modelGroup("语音识别 · Qwen3-ASR",component:"asr",snapshot:snapshot)
+                    modelGroup("语音合成 · Qwen3-TTS",component:"tts",snapshot:snapshot)
+                    SettingsSection("模型存储") {
                         VStack(alignment:.leading,spacing:10) {
                             Text(snapshot.models_directory).font(.caption.monospaced()).textSelection(.enabled)
                                 .fixedSize(horizontal:false,vertical:true).accessibilityIdentifier("models-directory")
-                            HStack {
+                            VStack(alignment: .leading, spacing: 4) {
                                 Text("模型占用 \(bytes(snapshot.occupied_bytes))")
                                 if let available = snapshot.available_bytes { Text("可用 \(bytes(available))") }
                             }.font(.caption).foregroundStyle(.secondary)
                             HStack {
                                 Button("在 Finder 中打开",systemImage:"folder") {
                                     NSWorkspace.shared.open(URL(fileURLWithPath:snapshot.models_directory,isDirectory:true))
-                                }
-                                Button("更改位置…",action:chooseDirectory)
+                                }.settingsButton()
+                                Button("更改位置…",action:chooseDirectory).settingsButton()
                                     .disabled(!models.canManage && models.operation != .downloading)
                             }
                             Text("支持外置磁盘。更改位置会暂停下载并迁移已下载模型，完成后继续下载。")
                                 .font(.caption).foregroundStyle(.secondary).fixedSize(horizontal:false,vertical:true)
                             Text("仅迁移已登记模型与下载暂存文件，目录中的其他文件会保留。")
                                 .font(.caption).foregroundStyle(.secondary).fixedSize(horizontal:false,vertical:true)
-                        }.frame(maxWidth:.infinity,alignment:.leading).padding(8)
+                        }.frame(maxWidth:.infinity,alignment:.leading)
                     }
                 } else if !models.busy {
                     Text("完成首次资源检查后即可管理模型。").font(.callout).foregroundStyle(.secondary)
                 }
-                GroupBox("下载设置") {
+                SettingsSection("下载设置") {
                     VStack(alignment:.leading,spacing:10) {
                         Picker("下载源",selection:Binding(get: { models.downloadSource },set: { models.downloadSource = $0 })) {
                             Text("Hugging Face").tag(PreparationDownloadSource.huggingFace)
                             Text("ModelScope").tag(PreparationDownloadSource.modelScope)
-                        }.fixedSize().disabled(models.busy || preparation.busy)
+                        }.disabled(models.busy || preparation.busy)
                         DisclosureGroup("网络设置（可选）",isExpanded:$showNetwork) {
                             TextField("http://主机:端口 或 socks5://主机:端口",text:Binding(get: { preparation.proxy },set: { preparation.proxy = $0 }))
                                 .textFieldStyle(.roundedBorder).font(.caption).disabled(models.busy || preparation.busy)
                                 .accessibilityLabel("模型下载代理")
                         }
-                    }.frame(maxWidth:.infinity,alignment:.leading).padding(8)
+                    }.frame(maxWidth:.infinity,alignment:.leading)
                 }
-            }.padding(16).frame(maxWidth:.infinity,alignment:.leading)
+            }.padding(20).frame(maxWidth:.infinity,alignment:.leading)
         }
         .scrollBounceBehavior(.basedOnSize)
         .task { if models.snapshot == nil { models.refresh() } }
@@ -106,14 +103,14 @@ struct ModelSettingsView: View {
     }
 
     private func modelGroup(_ title: String, component: String, snapshot: ManagedModelsSnapshot) -> some View {
-        GroupBox(title) {
+        SettingsSection(title) {
             VStack(spacing:0) {
                 let items = snapshot.models.filter { $0.component == component }
                 ForEach(Array(items.enumerated()),id:\.element.id) { index,model in
                     if index > 0 { Divider() }
                     modelRow(model)
                 }
-            }.padding(.horizontal,8)
+            }
         }
     }
 
@@ -123,7 +120,9 @@ struct ModelSettingsView: View {
                 HStack(spacing:8) {
                     Text("\(model.parameters) · \(model.quantization.replacingOccurrences(of:"bit",with:"-bit"))").font(.callout.weight(.medium))
                     if model.active {
-                        Text(backend.ready ? "使用中" : "当前选择").font(.caption).foregroundStyle(StudioStyle.accent)
+                        Text(backend.ready ? "使用中" : "当前选择").font(.system(size: 10, weight: .medium))
+                            .foregroundStyle(StudioStyle.accent).padding(.horizontal, 6).padding(.vertical, 3)
+                            .background(StudioStyle.accent.opacity(0.1), in: Capsule())
                     }
                 }
                 Text("\(bytes(model.total_bytes)) · \(status(model))").font(.caption).foregroundStyle(.secondary)
@@ -153,9 +152,10 @@ struct ModelSettingsView: View {
                 if !model.active,model.installed_bytes > 0 || model.resumable_bytes > 0 {
                     Button(role:.destructive) { deleting = model } label: { Image(systemName:"trash") }
                         .buttonStyle(.borderless).disabled(!models.canManage).help("删除未使用模型")
+                        .accessibilityLabel("删除 \(model.parameters) \(model.quantization) 模型")
                 }
-            }
-        }.padding(.vertical,12).accessibilityIdentifier("model-\(model.id)")
+            }.settingsButton()
+        }.padding(.vertical,6).accessibilityIdentifier("model-\(model.id)")
     }
 
     private func status(_ model: ManagedModel) -> String {

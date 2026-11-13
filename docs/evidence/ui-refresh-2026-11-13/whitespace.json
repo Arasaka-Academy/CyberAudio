@@ -1,0 +1,6 @@
+{
+  "command": "git diff --check (isolated baseline index plus final sources)",
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": ""
+}

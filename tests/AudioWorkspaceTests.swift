@@ -58,7 +58,59 @@ struct AudioWorkspaceTests {
         try require(files.isEmpty, "Cancelled authorization leaves no temporary recordings")
         try await oversizedImport(in: directory, audio: audio)
         try await boundedImports(in: directory, audio: audio)
+        try await waveforms(audio: audio)
         print("AudioWorkspace: pending permission, stale reply, cancellation and cleanup checks passed")
+    }
+
+    static func waveforms(audio: AudioWorkspace) async throws {
+        var chunk = Data(repeating: 0, count: 9600)
+        chunk[0] = 0; chunk[1] = 128 // -1.0
+        chunk[9598] = 255; chunk[9599] = 127 // largest positive PCM16
+        var overview = WaveformAccumulator()
+        var pcm = Data()
+        for _ in 0..<600 {
+            overview.appendPCM16(chunk)
+            pcm.append(chunk)
+            try require(overview.waveform.samples.count <= 1026, "Streaming waveform memory must stay bounded")
+        }
+        let streamed = overview.waveform
+        try require(abs(streamed.duration - 120) < 0.0001, "Waveform duration must use audio frames")
+        try require(streamed.samples.min() == -1 && streamed.samples.max() == Float(Int16.max) / 32768,
+                    "Downsampling must retain short transients across the full clip")
+        let wav = AudioWorkspace.wav(pcm: pcm)
+        let decoded = try AudioWaveform.decodeWAV(wav)
+        try require(decoded.samples == streamed.samples && decoded.duration == streamed.duration,
+                    "Streaming and complete WAV must show the same measured envelope")
+        var metadataWAV = wav
+        let junk = Data([74, 85, 78, 75, 3, 0, 0, 0, 1, 2, 3, 0])
+        metadataWAV.insert(contentsOf: junk, at: 12)
+        var size = UInt32(metadataWAV.count - 8).littleEndian
+        withUnsafeBytes(of: &size) { metadataWAV.replaceSubrange(4..<8, with: $0) }
+        let metadata = try AudioWaveform.decodeWAV(metadataWAV)
+        try require(metadata.samples == decoded.samples, "Padded WAV metadata must not become audio")
+        for invalid in [Data(), Data(wav.prefix(20)), Data(wav.dropLast()), Data("not audio".utf8)] {
+            let result = try AudioWaveform.decodeWAV(invalid)
+            try require(result.samples.isEmpty, "Malformed WAV must not publish a misleading waveform")
+        }
+        let cancelled = Task.detached {
+            withUnsafeCurrentTask { $0?.cancel() }
+            return try AudioWaveform.decodeWAV(wav)
+        }
+        do { _ = try await cancelled.value; throw Failure(message: "Cancelled waveform decoding must stop") }
+        catch is CancellationError {}
+
+        audio.generated = AudioWorkspace.wav(pcm: chunk)
+        try await until { audio.speechWaveform.duration > 0 }
+        try require(abs(audio.speechWaveform.duration - 0.2) < 0.0001, "Published waveform must describe the generated WAV")
+        audio.generated = wav
+        audio.generated = Data()
+        try await Task.sleep(for: .milliseconds(50))
+        try require(audio.speechWaveform.samples.isEmpty, "A stale decoder cannot restore cleared audio")
+        audio.generated = wav
+        audio.cleanup()
+        try await Task.sleep(for: .milliseconds(50))
+        try require(audio.speechWaveform.samples.isEmpty, "Exit cleanup must invalidate pending waveform work")
+        print("AudioWaveform: bounded 120-second stream, peaks, WAV parity, metadata, malformed data, cancellation and stale-result cleanup passed")
     }
 
     static func oversizedImport(in directory: URL, audio: AudioWorkspace) async throws {

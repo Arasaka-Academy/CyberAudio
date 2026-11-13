@@ -1,6 +1,15 @@
 {
-  "originHash" : "0c5da479c1bc78decc91439a2f0067186b150eba098eb7d610517d2cad00d281",
+  "originHash" : "5ba47f193651cc4a071aa611106ff7fb2a45eaf4b649719d45482197e0ac3d30",
   "pins" : [
+    {
+      "identity" : "luminare",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MrKai77/Luminare",
+      "state" : {
+        "revision" : "d8fc61c831aff8a581deac00c89aa724cc32decd",
+        "version" : "0.2.0"
+      }
+    },
     {
       "identity" : "sparkle",
       "kind" : "remoteSourceControl",
@@ -8,6 +17,33 @@
       "state" : {
         "revision" : "ab7d71291238df6e0492143b120c9b696a35f603",
         "version" : "2.10.1"
+      }
+    },
+    {
+      "identity" : "swiftui-introspect",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/siteline/swiftui-introspect",
+      "state" : {
+        "revision" : "38e59fc76180f51798faed506aa36fc2acf20661",
+        "version" : "1.5.0"
+      }
+    },
+    {
+      "identity" : "swiftui-variadic-views",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lorenzofiamingo/swiftui-variadic-views",
+      "state" : {
+        "revision" : "af67d0e85bd2b499fbfb4cda834117e7c52b12b0",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "waveform",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AudioKit/Waveform",
+      "state" : {
+        "revision" : "357de1945a36e62a27f74a9b3b8f5e45904659d9",
+        "version" : "1.0.3"
       }
     }
   ],

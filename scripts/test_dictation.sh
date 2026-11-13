@@ -11,7 +11,7 @@ swiftc -swift-version 5 -parse-as-library -target arm64-apple-macos26.0 \
   -o .build/tests/shortcut-recorder
 .build/tests/shortcut-recorder
 swiftc -swift-version 5 -parse-as-library -target arm64-apple-macos26.0 \
-  Sources/CyberAudio/{DictationController,DictationGesture,DictationShortcut,DictationOverlay,ShortcutMonitor,TextInsertionService,AudioWorkspace,BackendController,StudioStyle}.swift \
+  Sources/CyberAudio/{DictationController,DictationGesture,DictationShortcut,DictationOverlay,ShortcutMonitor,TextInsertionService,AudioWorkspace,AudioWaveform,BackendController,StudioStyle}.swift \
   tests/DictationOverlayTests.swift -o .build/tests/dictation-overlay
 .build/tests/dictation-overlay
 swiftc -swift-version 5 -parse-as-library -target arm64-apple-macos26.0 \
@@ -19,7 +19,7 @@ swiftc -swift-version 5 -parse-as-library -target arm64-apple-macos26.0 \
   -o .build/tests/text-insertion
 .build/tests/text-insertion
 swiftc -swift-version 5 -parse-as-library -target arm64-apple-macos26.0 \
-  Sources/CyberAudio/AudioWorkspace.swift Sources/CyberAudio/BackendController.swift tests/AudioWorkspaceTests.swift \
+  Sources/CyberAudio/AudioWorkspace.swift Sources/CyberAudio/AudioWaveform.swift Sources/CyberAudio/BackendController.swift tests/AudioWorkspaceTests.swift \
   -o .build/tests/audio-workspace
 .build/tests/audio-workspace
 swiftc -swift-version 5 -parse-as-library -target arm64-apple-macos26.0 \

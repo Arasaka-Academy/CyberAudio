@@ -85,7 +85,8 @@ private struct TranscriptionWorkspace: View {
 
             HStack(spacing: 10) {
                 if audio.recording {
-                    CompactWaveform(levels: audio.recordingLevels, color: .red).frame(width: 116, height: 22)
+                    AudioWaveformView(samples: audio.recordingLevels.flatMap { [-$0, $0] }, color: .red)
+                        .frame(width: 136, height: 22)
                     Text(String(format: "%02d:%02d", audio.recordingSeconds / 60, audio.recordingSeconds % 60))
                         .font(.caption.monospacedDigit()).foregroundStyle(.red)
                 } else {
@@ -146,6 +147,8 @@ private struct SpeechWorkspace: View {
                 }
                 PlainTextEditor(text: $audio.text, editable: !audio.generating, label: "朗读文本")
             }.padding(14).contentSurface(editor: true).frame(maxHeight: .infinity)
+
+            SpeechPlaybackOverview()
 
             HStack(spacing: 10) {
                 Picker("音色", selection: $audio.voice) {

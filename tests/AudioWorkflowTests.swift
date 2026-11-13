@@ -120,9 +120,15 @@ struct AudioWorkflowTests {
         try require(audio.errorMessage == nil && audio.generated.starts(with: Data("RIFF".utf8)) && audio.generated.count > 44,
                     "Streaming generation must retain a complete WAV: \(audio.errorMessage ?? "no audio")")
         try require(audio.playing, "The stream must still have queued playback for the replay regression")
+        try await until({ audio.speechWaveform.duration > 0 }, message: "Completed WAV waveform did not publish")
+        try require(abs(audio.speechWaveform.duration - 1) < 0.0001,
+                    "The waveform must describe the complete real HTTP PCM response")
         try audio.playGenerated()
         try await Task.sleep(for: .milliseconds(100))
         try require(audio.playing, "A stopped stream's completion must not mark the new replay idle")
+        try await until({ audio.playbackSeconds > 0 }, message: "Replacement player position did not advance")
+        try require(audio.playbackSeconds <= audio.speechWaveform.duration,
+                    "Playback position must advance from the actual replacement player")
         var installed = false
         let gate = UpdateGate(audioBusy: { audio.working || audio.playing }, prepare: { _ in true }, resume: { _ in })
         gate.begin { installed = true }
@@ -150,7 +156,7 @@ struct AudioWorkflowTests {
         try audio.playGenerated()
         try require(audio.playing, "Replay should start from retained audio")
         audio.stopPlayback()
-        try require(!audio.playing, "Stop playback must release the player")
+        try require(!audio.playing && audio.playbackSeconds == 0, "Stop playback must release the player and playhead ticker")
 
         // Observe the real owned AVFoundation objects without adding production test hooks.
         func resource<T>(_ name: String, as type: T.Type) throws -> T {
@@ -240,6 +246,7 @@ struct AudioWorkflowTests {
         audio.cancelGeneration()
         try await until({ !audio.generating }, message: "Cancelled generation did not finish")
         try require(!audio.playing && audio.generated.isEmpty, "Cancellation must not expose incomplete audio")
+        try require(audio.speechWaveform.samples.isEmpty, "Cancellation must discard the partial stream waveform")
         try options([:])
         audio.streaming = false
         audio.generate(using: backend)

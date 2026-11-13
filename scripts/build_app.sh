@@ -7,7 +7,8 @@ native_scratch="${CYBERAUDIO_NATIVE_SCRATCH:-$project_root/.context/native-build
 bash scripts/build_native.sh
 native_binary_dir="$(swift build --build-system native --package-path Native --scratch-path "$native_scratch" -c release --show-bin-path)"
 metal_file="$(bash scripts/prepare_metal.sh)"
-swift build --build-system native -c release --skip-update
+source scripts/ui_toolchain.sh
+bash scripts/build_ui.sh
 binary_dir="$(swift build --build-system native -c release --show-bin-path)"
 app="$project_root/dist/CyberAudio.app"
 rm -rf "$app"
@@ -21,28 +22,12 @@ ditto "$framework" "$app/Contents/Frameworks/Sparkle.framework"
 cp "$binary_dir/CyberAudio" "$app/Contents/MacOS/"
 cp "$native_binary_dir/CyberAudioService" "$native_binary_dir/CyberAudioAssets" "$app/Contents/Helpers/"
 # SwiftPM command-line resource lookup is relative to the executable directory.
-for bundle in "$native_binary_dir"/*.bundle; do
-  [[ -d "$bundle" ]] || continue
-  bundle_name="$(basename "$bundle")"
-  bundled="$app/Contents/Helpers/$bundle_name"
-  ditto "$bundle" "$bundled"
-  # Native SwiftPM emits flat resource directories without bundle metadata.
-  # Convert them to signed macOS resource bundles before nesting in Helpers.
-  if [[ ! -f "$bundled/Contents/Info.plist" && ! -f "$bundled/Info.plist" ]]; then
-    mkdir -p "$bundled/Contents/Resources"
-    for resource in "$bundled"/*; do
-      [[ "$resource" == "$bundled/Contents" ]] || mv "$resource" "$bundled/Contents/Resources/"
-    done
-    bundle_id="${bundle_name%.bundle}"
-    /usr/libexec/PlistBuddy -c "Add :CFBundleIdentifier string local.cyberaudio.resources.${bundle_id//_/-}" \
-      -c 'Add :CFBundlePackageType string BNDL' "$bundled/Contents/Info.plist"
-  fi
-done
+bash scripts/copy_swiftpm_bundles.sh "$native_binary_dir" "$app/Contents/Helpers"
+bash scripts/copy_swiftpm_bundles.sh "$binary_dir" "$app/Contents/Resources"
 cp packaging/Info.plist "$app/Contents/Info.plist"
 cp packaging/offline.sb "$metal_file" "$app/Contents/Resources/"
 cp design/icons/CyberAudio.icns design/icons/MenuBarIdle{,@2x}.png design/icons/MenuBarActive{,@2x}.png "$app/Contents/Resources/"
-cp "$project_root/.build/checkouts/Sparkle/LICENSE" "$app/Contents/Resources/ThirdParty/Sparkle-LICENSE"
-for checkout in "$native_scratch"/checkouts/*; do
+for checkout in "$project_root/.build/checkouts/"* "$native_scratch"/checkouts/*; do
   for license in "$checkout"/LICENSE "$checkout"/LICENSE.txt "$checkout"/LICENSE.md "$checkout"/NOTICE "$checkout"/COPYING; do
     if [[ -f "$license" ]]; then
       cp "$license" "$app/Contents/Resources/ThirdParty/$(basename "$checkout")-$(basename "$license")"
@@ -54,6 +39,7 @@ for component in mlx mlx-c fmt; do
 done
 cp "$native_scratch/checkouts/swift-nio/Sources/CNIOLLHTTP/LICENSE" "$app/Contents/Resources/ThirdParty/llhttp-LICENSE"
 cp Native/THIRD_PARTY.md "$app/Contents/Resources/ThirdParty/README.md"
+cp packaging/UI-THIRD-PARTY.md "$app/Contents/Resources/ThirdParty/UI.md"
 python3 scripts/sign_app.py sign "$app"
 # Catch missing bundles and accidental reliance on a source-tree resource path.
 asset_smoke="$(mktemp -d "${TMPDIR:-/tmp}/CyberAudio-assets-smoke.XXXXXX")"

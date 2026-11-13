@@ -9,7 +9,7 @@ trap 'rm -rf "$fixture"' EXIT
 app="$fixture/AudioWorkflowTests.app"
 mkdir -p "$app/Contents/MacOS" "$app/Contents/Helpers" "$app/Contents/Resources"
 swiftc -swift-version 5 -parse-as-library -target arm64-apple-macos26.0 \
-  Sources/CyberAudio/AudioWorkspace.swift Sources/CyberAudio/BackendController.swift Sources/CyberAudio/UpdateGate.swift tests/AudioWorkflowTests.swift \
+  Sources/CyberAudio/AudioWorkspace.swift Sources/CyberAudio/AudioWaveform.swift Sources/CyberAudio/BackendController.swift Sources/CyberAudio/UpdateGate.swift tests/AudioWorkflowTests.swift \
   -o "$app/Contents/MacOS/AudioWorkflowTests"
 swiftc -swift-version 5 -parse-as-library -target arm64-apple-macos26.0 \
   Sources/CyberAudio/BackendController.swift tests/BackendLifecycleTests.swift \

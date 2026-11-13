@@ -1,5 +1,26 @@
 import AppKit
+import MetalKit
+import ObjectiveC
 import SwiftUI
+
+private extension NSWorkspace {
+    @objc var cyberAudioTestReduceTransparency: Bool { true }
+    @objc var cyberAudioTestReduceMotion: Bool { true }
+    @objc var cyberAudioTestIncreaseContrast: Bool { true }
+}
+
+private struct AccessibilityProbe: View {
+    @Environment(\.accessibilityReduceTransparency) private var transparency
+    @Environment(\.accessibilityReduceMotion) private var motion
+    @Environment(\.colorSchemeContrast) private var contrast
+    let read: (Bool, Bool, ColorSchemeContrast) -> Void
+    var body: some View {
+        Color.clear.frame(width: 1, height: 1)
+            .onChange(of: transparency, initial: true) { read(transparency, motion, contrast) }
+            .onChange(of: motion) { read(transparency, motion, contrast) }
+            .onChange(of: contrast) { read(transparency, motion, contrast) }
+    }
+}
 
 /// Real AppKit/SwiftUI rendering, independent of screen capture and keyboard permissions.
 @main
@@ -13,11 +34,42 @@ struct WorkspaceLayoutTests {
         let own: [T] = (view as? T).map { [$0] } ?? []
         return own + view.subviews.flatMap { descendants($0, of: type) }
     }
+    static func metalImage(_ view: MTKView) throws -> CGImage {
+        // AppKit's bitmap cache omits Metal-backed layers. Read the real GPU
+        // output after the renderer's own queue, then composite it into capture.
+        view.framebufferOnly = false
+        guard let delegate = view.delegate,
+              let queue = Mirror(reflecting: delegate).children.first(where: { $0.label == "queue" })?.value as? MTLCommandQueue,
+              let texture = view.currentDrawable?.texture else { throw Failure(message: "Waveform has no native Metal drawable") }
+        delegate.draw(in: view)
+        let rowBytes = (texture.width * 4 + 255) / 256 * 256
+        guard let staging = view.device?.makeBuffer(length: rowBytes * texture.height, options: .storageModeShared),
+              let command = queue.makeCommandBuffer(), let blit = command.makeBlitCommandEncoder() else {
+            throw Failure(message: "Cannot read rendered waveform")
+        }
+        blit.copy(from: texture, sourceSlice: 0, sourceLevel: 0, sourceOrigin: .init(x: 0, y: 0, z: 0),
+                  sourceSize: .init(width: texture.width, height: texture.height, depth: 1), to: staging,
+                  destinationOffset: 0, destinationBytesPerRow: rowBytes, destinationBytesPerImage: rowBytes * texture.height)
+        blit.endEncoding(); command.commit(); command.waitUntilCompleted()
+        try require(command.status == .completed, "Metal waveform rendering must complete")
+        let data = Data(bytes: staging.contents(), count: staging.length)
+        guard let provider = CGDataProvider(data: data as CFData),
+              let image = CGImage(width: texture.width, height: texture.height, bitsPerComponent: 8, bitsPerPixel: 32,
+                                  bytesPerRow: rowBytes, space: CGColorSpaceCreateDeviceRGB(),
+                                  bitmapInfo: CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedFirst.rawValue).union(.byteOrder32Little),
+                                  provider: provider, decode: nil, shouldInterpolate: false, intent: .defaultIntent) else {
+            throw Failure(message: "Cannot capture Metal waveform pixels")
+        }
+        return image
+    }
     static func render<V: View>(_ view: V, size: NSSize, name: String, output: URL, editors: Int?, bottom: Bool = false) throws -> NSHostingView<V> {
         let host = NSHostingView(rootView: view)
+        host.appearance = NSApp.appearance
         let window = NSWindow(contentRect: NSRect(origin: .zero, size: size), styleMask: [.titled], backing: .buffered, defer: false)
         window.contentView = host
         window.setContentSize(size)
+        window.orderFront(nil)
+        defer { window.orderOut(nil) }
         RunLoop.main.run(until: Date().addingTimeInterval(0.08))
         host.layoutSubtreeIfNeeded()
         let scrolls = descendants(host, of: NSScrollView.self)
@@ -37,6 +89,15 @@ struct WorkspaceLayoutTests {
         try require(host.bounds.width <= size.width + 1 && host.bounds.height <= size.height + 1, "\(name): content exceeds requested size")
         guard let image = host.bitmapImageRepForCachingDisplay(in: host.bounds) else { throw Failure(message: "\(name): no native render") }
         host.cacheDisplay(in: host.bounds, to: image)
+        for metal in descendants(host, of: MTKView.self) {
+            let rendered = try metalImage(metal)
+            let rect = metal.convert(metal.bounds, to: host)
+            NSGraphicsContext.saveGraphicsState()
+            NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: image)
+            NSImage(cgImage: rendered, size: metal.bounds.size)
+                .draw(in: NSRect(x: rect.minX, y: host.bounds.height - rect.maxY, width: rect.width, height: rect.height))
+            NSGraphicsContext.restoreGraphicsState()
+        }
         guard let png = image.representation(using: .png, properties: [:]) else { throw Failure(message: "\(name): no PNG") }
         try png.write(to: output.appendingPathComponent(name + ".png"))
         if let editor = scrolls.first?.documentView as? NSTextView, name == "stt-long-dark", let scroll = scrolls.first {
@@ -59,10 +120,31 @@ struct WorkspaceLayoutTests {
     }
     static func main() async throws {
         _ = NSApplication.shared
-        NSApp.setActivationPolicy(.prohibited)
+        NSApp.setActivationPolicy(.accessory)
         UserDefaults.standard.set("Always", forKey: "AppleShowScrollBars")
-        let output = URL(fileURLWithPath: CommandLine.arguments.dropFirst().first ?? ".context/compact-dictation-20261106/layout", isDirectory: true)
+        let output = URL(fileURLWithPath: CommandLine.arguments.dropFirst().first ?? ".context/workspace-layout", isDirectory: true)
         try FileManager.default.createDirectory(at: output, withIntermediateDirectories: true)
+        func fixturePCM() -> Data {
+            var pcm = Data()
+            for frame in 0..<24000 * 6 {
+                let envelope = pow(sin(Double(frame) / 24000 * .pi * 2.3), 2) * 0.75
+                var value = Int16(sin(Double(frame) / 24000 * .pi * 440) * envelope * 32767).littleEndian
+                withUnsafeBytes(of: &value) { pcm.append(contentsOf: $0) }
+            }
+            return pcm
+        }
+        if CommandLine.arguments.contains("--resource-smoke") {
+            let resource = Bundle.main.resourceURL!.appendingPathComponent("Waveform_Waveform.bundle")
+            let bundle = try requireBundle(resource)
+            let device = MTLCreateSystemDefaultDevice()!
+            let library = try device.makeDefaultLibrary(bundle: bundle)
+            try require(library.makeFunction(name: "waveform_frag") != nil, "Packaged Metal shader must contain Waveform functions")
+            let waveform = try AudioWaveform.decodeWAV(AudioWorkspace.wav(pcm: fixturePCM()))
+            _ = try render(AudioWaveformView(samples: waveform.samples).padding(12), size: NSSize(width: 400, height: 80),
+                           name: "packaged-waveform", output: output, editors: 0)
+            print("Packaged UI: bundled precompiled Metal shader and real AudioKit GPU rendering passed without build-tree resources")
+            return
+        }
         let backend = BackendController(root:output.appendingPathComponent("layout-backend",isDirectory:true))
         let audio = AudioWorkspace(recordingsDirectory: output.appendingPathComponent("recordings", isDirectory: true))
         let defaults = UserDefaults(suiteName: "CyberAudio-LayoutTests-\(UUID())")!
@@ -88,6 +170,20 @@ struct WorkspaceLayoutTests {
         audio.generating = true
         try workspace(.speech, "tts-generating-dark", dark: true)
         audio.generating = false
+        audio.generated = AudioWorkspace.wav(pcm: fixturePCM())
+        let waveformDeadline = Date().addingTimeInterval(5)
+        while audio.speechWaveform.samples.isEmpty {
+            try require(Date() < waveformDeadline, "Generated WAV waveform did not publish")
+            try await Task.sleep(for: .milliseconds(10))
+        }
+        audio.text = "你好，欢迎使用 CyberAudio。这是运行在 Mac 上的本地语音助手。"
+        try workspace(.speech, "tts-waveform-light")
+        try audio.playGenerated()
+        try await Task.sleep(for: .milliseconds(150))
+        try workspace(.speech, "tts-playing-dark", dark: true)
+        audio.generating = true
+        try workspace(.speech, "tts-streaming-dark", dark: true)
+        audio.generating = false; audio.stopPlayback()
         audio.reportError(CyberAudioError.message(String(repeating: "很长的错误说明不会遮挡操作。", count: 100)), for: .speech)
         try workspace(.speech, "tts-long-error")
         audio.errorMessage = nil
@@ -103,6 +199,7 @@ struct WorkspaceLayoutTests {
             }
         }
         let modelRoot = output.appendingPathComponent("model-settings-fixture")
+        for flag in ["hold-download", "fail-download"] { try? FileManager.default.removeItem(at: modelRoot.appendingPathComponent(flag)) }
         let longStorage = "/Volumes/外置模型磁盘/" + String(repeating:"语音研究与本地离线模型存储/",count:7) + "CyberAudio/models"
         let modelHelper = try ModelManagementFixture.create(root:modelRoot,port:19876,storage:longStorage)
         let modelBackend = BackendController(root:modelRoot)
@@ -119,6 +216,13 @@ struct WorkspaceLayoutTests {
                 .environmentObject(modelPreparation).environmentObject(models)
             _ = try render(view, size: NSSize(width: 620, height: 560), name: "settings-\(tab)", output: output, editors: nil)
         }
+        for tab in [0, 1, 2] {
+            NSApp.appearance = NSAppearance(named: .darkAqua)
+            let view = ServiceSettingsView(initialTab: tab).environmentObject(modelBackend).environmentObject(audio)
+                .environmentObject(updater).environmentObject(dictation).environmentObject(modelPreparation).environmentObject(models)
+                .environment(\.colorScheme, .dark)
+            _ = try render(view, size: NSSize(width: 620, height: 560), name: "settings-\(tab)-dark", output: output, editors: nil)
+        }
         func modelRender(_ name: String, dark: Bool = false, bottom: Bool = false) throws {
             NSApp.appearance = NSAppearance(named:dark ? .darkAqua : .aqua)
             let view = ServiceSettingsView(initialTab:3).environmentObject(modelBackend).environmentObject(audio)
@@ -129,6 +233,19 @@ struct WorkspaceLayoutTests {
         try modelRender("models-light")
         try modelRender("models-dark",dark:true)
         try modelRender("models-long-path",bottom:true)
+        try accessibilityOptions {
+            NSApp.appearance = NSAppearance(named: .accessibilityHighContrastAqua)
+            var readOptions = false
+            var optionDescription = "not read"
+            let accessible = ServiceSettingsView(initialTab: 3).environmentObject(modelBackend).environmentObject(audio)
+                .environmentObject(updater).environmentObject(dictation).environmentObject(modelPreparation).environmentObject(models)
+                .overlay { AccessibilityProbe { transparency, motion, contrast in
+                    optionDescription = "transparency=\(transparency), motion=\(motion), contrast=\(contrast)"
+                    readOptions = transparency && motion && contrast == .increased
+                } }
+            _ = try render(accessible, size: NSSize(width: 620, height: 560), name: "models-accessible", output: output, editors: nil)
+            try require(readOptions, "Native accessibility environment must include reduced motion/transparency and increased contrast; received \(optionDescription)")
+        }
         let holdDownload = modelRoot.appendingPathComponent("hold-download")
         try Data().write(to:holdDownload)
         let pendingModel = models.snapshot!.models.first { $0.id == "qwen3-asr-0.6b-8bit" }!
@@ -189,7 +306,33 @@ struct WorkspaceLayoutTests {
         setup.shutdown()
         audio.cleanup(); dictation.cleanup()
         models.shutdown(); modelPreparation.shutdown()
-        print("WorkspaceLayout: 7 workspace states, 4 populated settings tabs, 5 model states (light/dark, long path, download, failure) and 5 preparation states rendered at minimum size")
+        print("WorkspaceLayout: 10 workspace states with real PCM/WAV waveform and playback, 7 settings states, 6 model states including accessibility, and 5 preparation states rendered at minimum size")
         print("Native view captures: \(output.path)")
+    }
+    static func requireBundle(_ url: URL) throws -> Bundle {
+        guard let bundle = Bundle(url: url) else { throw Failure(message: "Missing packaged Waveform resource bundle") }
+        return bundle
+    }
+    static func accessibilityOptions(_ body: () throws -> Void) throws {
+        // Override only this test process, never the user's system preferences.
+        let getters = [(#selector(getter: NSWorkspace.accessibilityDisplayShouldReduceTransparency),
+                        #selector(getter: NSWorkspace.cyberAudioTestReduceTransparency)),
+                       (#selector(getter: NSWorkspace.accessibilityDisplayShouldReduceMotion),
+                        #selector(getter: NSWorkspace.cyberAudioTestReduceMotion)),
+                       (#selector(getter: NSWorkspace.accessibilityDisplayShouldIncreaseContrast),
+                        #selector(getter: NSWorkspace.cyberAudioTestIncreaseContrast))]
+        let methods = try getters.map { original, replacement -> (Method, Method) in
+            guard let a = class_getInstanceMethod(NSWorkspace.self, original), let b = class_getInstanceMethod(NSWorkspace.self, replacement) else {
+                throw Failure(message: "Cannot override native accessibility getters for the test process")
+            }
+            return (a, b)
+        }
+        for (a, b) in methods { method_exchangeImplementations(a, b) }
+        defer {
+            for (a, b) in methods { method_exchangeImplementations(a, b) }
+            NSWorkspace.shared.notificationCenter.post(name: NSWorkspace.accessibilityDisplayOptionsDidChangeNotification, object: NSWorkspace.shared)
+        }
+        NSWorkspace.shared.notificationCenter.post(name: NSWorkspace.accessibilityDisplayOptionsDidChangeNotification, object: NSWorkspace.shared)
+        try body()
     }
 }

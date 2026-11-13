@@ -87,7 +87,8 @@ def targets(app, full):
                     if source.read(4) in MACHO:
                         result.append(path)
     else:
-        result = [helpers / "CyberAudioService", helpers / "CyberAudioAssets", *helpers.glob("*.bundle")]
+        result = [helpers / "CyberAudioService", helpers / "CyberAudioAssets", *helpers.glob("*.bundle"),
+                  *(app / "Contents/Resources").glob("*.bundle")]
     return sorted(result, key=lambda path: (-len(path.parts), str(path))) + [app]
 
 

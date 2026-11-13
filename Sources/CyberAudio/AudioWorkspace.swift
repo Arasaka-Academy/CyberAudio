@@ -42,7 +42,9 @@ final class AudioWorkspace: NSObject, ObservableObject {
     @Published var generating = false
     @Published var playing = false
     @Published var ttsTiming = ""
-    @Published var generated = Data()
+    @Published var generated = Data() { didSet { refreshSpeechWaveform() } }
+    @Published private(set) var speechWaveform = AudioWaveform.empty
+    @Published private(set) var playbackSeconds: Double = 0
     @Published var preparingUpdate = false
     @Published var managingModels = false
     private var recorder: AVAudioRecorder?
@@ -51,6 +53,9 @@ final class AudioWorkspace: NSObject, ObservableObject {
     private var meter: Task<Void, Never>?
     private var transcription: Task<TranscriptionOutcome, Never>?
     private var generation: Task<Void, Never>?
+    private var waveformAnalysis: Task<Void, Never>?
+    private var waveformRevision = UUID()
+    private var playbackTicker: Task<Void, Never>?
     private var player: AVAudioPlayer?
     private var engine: AVAudioEngine?
     private var node: AVAudioPlayerNode?
@@ -267,6 +272,21 @@ final class AudioWorkspace: NSObject, ObservableObject {
 
     func cancelTranscription() { transcription?.cancel() }
 
+    private func refreshSpeechWaveform() {
+        waveformAnalysis?.cancel()
+        let revision = UUID()
+        waveformRevision = revision
+        guard !generated.isEmpty else { speechWaveform = .empty; waveformAnalysis = nil; return }
+        let data = generated
+        waveformAnalysis = Task { [weak self] in
+            let worker = Task.detached(priority: .utility) { try AudioWaveform.decodeWAV(data) }
+            let waveform = await withTaskCancellationHandler { try? await worker.value } onCancel: { worker.cancel() }
+            guard !Task.isCancelled, let self, self.waveformRevision == revision else { return }
+            self.speechWaveform = waveform ?? .empty
+            self.waveformAnalysis = nil
+        }
+    }
+
     func generate(using backend: BackendController) {
         guard !cannotStart else { return }
         stopPlayback()
@@ -300,6 +320,7 @@ final class AudioWorkspace: NSObject, ObservableObject {
                     inspectStreamingFailure = true
                     var pcm = Data()
                     var pending = Data()
+                    var waveform = WaveformAccumulator()
                     var first: Double?
                     for try await byte in bytes {
                         try Task.checkCancellation()
@@ -307,6 +328,8 @@ final class AudioWorkspace: NSObject, ObservableObject {
                         if pending.count >= 9600 {
                             if first == nil { first = Date().timeIntervalSince(start) }
                             pcm.append(pending)
+                            waveform.appendPCM16(pending)
+                            self.speechWaveform = waveform.waveform
                             self.schedule(pending)
                             pending.removeAll(keepingCapacity: true)
                             // Limit audio queued ahead of real time to two seconds.
@@ -317,7 +340,12 @@ final class AudioWorkspace: NSObject, ObservableObject {
                     }
                     try Task.checkCancellation()
                     guard pending.count % 2 == 0 else { throw CyberAudioError.message("PCM 数据不完整。") }
-                    if !pending.isEmpty { pcm.append(pending); self.schedule(pending) }
+                    if !pending.isEmpty {
+                        pcm.append(pending)
+                        waveform.appendPCM16(pending)
+                        self.speechWaveform = waveform.waveform
+                        self.schedule(pending)
+                    }
                     inspectStreamingFailure = false
                     let state = try await backend.speechRequestStatus(id: id)
                     try Task.checkCancellation()
@@ -350,6 +378,7 @@ final class AudioWorkspace: NSObject, ObservableObject {
                 }
             } catch is CancellationError {
                 self.stopPlayback()
+                self.generated = Data()
                 self.ttsTiming = "已取消"
             } catch {
                 self.stopPlayback()
@@ -396,6 +425,7 @@ final class AudioWorkspace: NSObject, ObservableObject {
             }
         }
         playing = true
+        startPlaybackTicker()
     }
 
     private func outputDeviceInterrupted() {
@@ -424,18 +454,37 @@ final class AudioWorkspace: NSObject, ObservableObject {
         guard player.play() else { throw CyberAudioError.message("无法播放音频，请检查输出设备。") }
         self.player = player
         playing = true
+        startPlaybackTicker()
         if errorOperation == .speech { errorMessage = nil }
     }
 
     func stopPlayback() {
         // Stopping a node invokes its queued completions. Invalidate them first.
         playbackSession = UUID()
+        playbackTicker?.cancel(); playbackTicker = nil
+        playbackSeconds = 0
         if let engineConfigurationObserver { NotificationCenter.default.removeObserver(engineConfigurationObserver) }
         engineConfigurationObserver = nil
         player?.stop(); player = nil
         node?.stop(); node = nil
         engine?.stop(); engine = nil
         playing = false
+    }
+
+    private func startPlaybackTicker() {
+        playbackTicker?.cancel()
+        let session = playbackSession
+        playbackTicker = Task { [weak self] in
+            while !Task.isCancelled {
+                guard let self, self.playbackSession == session, self.playing else { return }
+                if let player = self.player { self.playbackSeconds = player.currentTime }
+                else if let node = self.node, let time = node.lastRenderTime,
+                        let position = node.playerTime(forNodeTime: time), position.sampleRate > 0 {
+                    self.playbackSeconds = max(0, Double(position.sampleTime) / position.sampleRate)
+                }
+                try? await Task.sleep(for: .milliseconds(100))
+            }
+        }
     }
 
     func cancelGeneration() { generation?.cancel(); stopPlayback() }
@@ -463,6 +512,9 @@ final class AudioWorkspace: NSObject, ObservableObject {
     func cleanup() {
         transcription?.cancel()
         generation?.cancel()
+        waveformAnalysis?.cancel(); waveformAnalysis = nil
+        waveformRevision = UUID()
+        speechWaveform = .empty
         cancelRecording()
         stopPlayback()
     }

@@ -4,10 +4,10 @@ struct SoftwareUpdateSection: View {
     @EnvironmentObject private var updater: UpdaterController
 
     var body: some View {
-        Section {
+        SettingsSection("软件更新") {
             LabeledContent("当前版本", value: updater.version)
-            Toggle("自动检查更新", isOn: Binding(get: { updater.automaticChecks }, set: { updater.automaticChecks = $0 }))
-            Toggle("自动下载更新", isOn: Binding(get: { updater.automaticDownloads }, set: { updater.automaticDownloads = $0 }))
+            SettingsToggle(title: "自动检查更新", isOn: Binding(get: { updater.automaticChecks }, set: { updater.automaticChecks = $0 }))
+            SettingsToggle(title: "自动下载更新", isOn: Binding(get: { updater.automaticDownloads }, set: { updater.automaticDownloads = $0 }))
                 .disabled(!updater.automaticChecks)
             HStack(spacing: 12) {
                 VStack(alignment: .leading, spacing: 4) {
@@ -18,7 +18,7 @@ struct SoftwareUpdateSection: View {
                     }
                 }
                 Spacer()
-                Button(updater.menuTitle) { updater.checkForUpdates() }
+                Button(updater.menuTitle) { updater.checkForUpdates() }.settingsButton()
                     .disabled(!updater.canPerformAction)
                     .accessibilityIdentifier("software-update-action")
             }
@@ -30,10 +30,8 @@ struct SoftwareUpdateSection: View {
             if let message = updater.gate.failure ?? updater.errorMessage {
                 Text(message).font(.callout).foregroundStyle(.red).textSelection(.enabled)
             }
-        } header: {
-            Text("软件更新")
-        } footer: {
             Text("每天检查稳定版。运行中确认重启，主动退出时安装已就绪的更新。重启前请复制文字或保存音频；模型与配置会保留。")
+                .font(.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
         }
     }
 }

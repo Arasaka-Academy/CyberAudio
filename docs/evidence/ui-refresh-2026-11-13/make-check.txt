@@ -1,0 +1,205 @@
+bash scripts/build_native.sh test
+swift-driver version: 1.168.6 warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+Verified CyberAudio managed Qwen TTS and cancellable ASR adapters.
+warning: '--skip-update' option is deprecated and will be removed in a future release
+warning: 'mlx-audio-swift': found 5 file(s) which are unhandled; explicitly declare them as resources or exclude from the target
+    /Users/codehub/Workspaces/CyberAudio-model-management/.context/native-build/checkouts/mlx-audio-swift/Sources/MLXAudioTTS/Models/OmniVoice/README.md
+    /Users/codehub/Workspaces/CyberAudio-model-management/.context/native-build/checkouts/mlx-audio-swift/Sources/MLXAudioTTS/Models/Spark/README.md
+    /Users/codehub/Workspaces/CyberAudio-model-management/.context/native-build/checkouts/mlx-audio-swift/Sources/MLXAudioTTS/Models/BreezeTTS/README.md
+    /Users/codehub/Workspaces/CyberAudio-model-management/.context/native-build/checkouts/mlx-audio-swift/Sources/MLXAudioTTS/Models/IrodoriTTS/README.md
+    /Users/codehub/Workspaces/CyberAudio-model-management/.context/native-build/checkouts/mlx-audio-swift/Sources/MLXAudioTTS/Models/MossTTS/README.md
+warning: 'mlx-audio-swift': found 1 file(s) which are unhandled; explicitly declare them as resources or exclude from the target
+    /Users/codehub/Workspaces/CyberAudio-model-management/.context/native-build/checkouts/mlx-audio-swift/Sources/MLXAudioSTT/Models/MingASR/README.md
+warning: 'mlx-audio-swift': found 1 file(s) which are unhandled; explicitly declare them as resources or exclude from the target
+    /Users/codehub/Workspaces/CyberAudio-model-management/.context/native-build/checkouts/mlx-audio-swift/Sources/MLXAudioSTS/Models/DeepFilterNet/README.md
+[0/1] Planning build
+Building for production...
+[0/2] Write swift-version--1AB21518FC5DEDBE.txt
+[1/3] Write Objects.LinkFileList
+[2/3] Linking CyberAudioCoreTests
+Build of product 'CyberAudioCoreTests' complete! (1.84s)
+PASS configured model IDs and capabilities over HTTP
+PASS strict speech
+PASS binary multipart
+PASS atomic update admission
+PASS update lease expiry
+PASS producer cancellation join
+PASS timeout slot retention
+PASS HTTP auth WAV PCM and records
+PASS FFmpeg formats and limits
+PASS chunked limit and duplicate auth
+PASS private and partial failures
+PASS HTTP disconnect update drain and recovery
+PASS HTTP timeout retains producer
+PASS slow HTTP reader bounds producer
+PASS update rejects unread audio bodies
+PASS update waits for WAV response flush
+PASS unread WAV send deadline releases update drain
+PASS health and scoped cleanup
+PASS native setup preservation
+PASS tokenizer process and locale stability
+PASS native proxy download preserves failed assets
+PASS IPv6 HTTP and SOCKS5 download proxy routing
+PASS model download sources pin repositories and nested paths
+PASS ranged asset download and reuse
+PASS interrupted download resumes completed chunks
+PASS transient asset interruption retries unchanged range
+PASS temporary asset server failure recovers
+PASS persistent asset failures stop after bounded retries
+PASS interrupted large ranges fall back without losing prefix
+PASS persistent small range failure remains bounded
+PASS HTTP unavailability does not reduce range
+PASS asset retry respects server delay and permanent errors
+PASS asset cancellation interrupts retry delay
+PASS ignored ranges never append a full response
+PASS download rejects bad ranges and checksums
+PASS asset cancellation preserves resumable progress
+PASS asset download preserves final files and rejects symlinks
+PASS preparation readiness and disk capacity
+PASS preparation checks actual FFmpeg identity
+Native contracts: 39 cases, 0 failures, 0 skipped
+warning: '--skip-update' option is deprecated and will be removed in a future release
+Building for production...
+[0/3] Write swift-version--1AB21518FC5DEDBE.txt
+[1/3] Write Objects.LinkFileList
+[2/3] Linking CyberAudioInferenceTests
+Build of product 'CyberAudioInferenceTests' complete! (7.31s)
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+warning: '--skip-update' option is deprecated and will be removed in a future release
+Building for production...
+[0/2] Write swift-version--1AB21518FC5DEDBE.txt
+Build of product 'CyberAudioAssets' complete! (0.30s)
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+bash scripts/test_preparation.sh
+Preparation: first launch, fixed source selection, progress, cancellation ownership, update drain including late preparation, failure/retry, reuse, bounded output and quit passed
+bash scripts/test_update_gate.sh
+UpdateGate: 4 behavioral scenarios passed
+bash scripts/test_coreml_evidence.sh
+CoreMLEvidence: 11 behavioral scenarios passed
+bash scripts/test_dictation.sh
+DictationGesture: hold, hardware matching, lost release, cancellation, limit and stale-session checks passed
+ShortcutRecorder: focus loss, reserved shortcuts, Escape, right Option, window scope and teardown passed
+DictationOverlay: immediate feedback, hold threshold, focus preservation and short-press cleanup passed
+TextInsertion: clipboard, Unicode selection, focus, permission, cancellation, update drain and termination checks passed
+AudioWorkspace: direct and linked oversized imports rejected before service admission
+AudioWorkspace: inclusive size boundary, valid links and nonregular imports checked
+AudioWaveform: bounded 120-second stream, peaks, WAV parity, metadata, malformed data, cancellation and stale-result cleanup passed
+AudioWorkspace: pending permission, stale reply, cancellation and cleanup checks passed
+SpeechRequestStatus: 9 real HTTP/identity/compatibility/deadline/cancellation cases passed
+bash scripts/test_audio_workflow.sh
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+warning: '--skip-update' option is deprecated and will be removed in a future release
+Building for production...
+[0/3] Write swift-version--1AB21518FC5DEDBE.txt
+[2/4] Compiling CyberAudioFixture Main.swift
+[2/4] Write Objects.LinkFileList
+[3/4] Linking CyberAudioFixture
+Build of product 'CyberAudioFixture' complete! (3.17s)
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+File Doesn't Exist, Will Create: /private/var/folders/j2/xqjq052s0g91y9rrbfxlcz7h0000gn/T//CyberAudio-workflow.6Eo3mZ/AudioWorkflowTests.app/Contents/Info.plist
+/var/folders/j2/xqjq052s0g91y9rrbfxlcz7h0000gn/T//CyberAudio-workflow.6Eo3mZ/AudioWorkflowTests.app/Contents/Helpers/CyberAudioService: replacing existing signature
+/var/folders/j2/xqjq052s0g91y9rrbfxlcz7h0000gn/T//CyberAudio-workflow.6Eo3mZ/AudioWorkflowTests.app: replacing existing signature
+BackendLifecycle invalid-ports: passed
+BackendLifecycle stop: passed
+BackendLifecycle termination: passed
+BackendLifecycle restart: passed
+BackendLifecycle current: passed
+BackendLifecycle wrong-instance: passed
+BackendLifecycle: 6 configuration, readiness ownership and process lifecycle cases passed
+AudioWorkflow: complete three-second direct and linked imports passed native HTTP decoding
+AudioWorkflow late generation_limit: safe WAV/PCM reason preserved; partial audio rejected; update wait drained
+AudioWorkflow late inference_timeout: safe WAV/PCM reason preserved; partial audio rejected; update wait drained
+AudioWorkflow late inference_failed: safe WAV/PCM reason preserved; partial audio rejected; update wait drained
+AudioWorkflow: native HTTP import, session result, cancellation, streaming PCM, complete WAV, replay ownership, device interruption, stale engine/player events, update wait and recovery passed
+Evidence uses the Swift synthetic fixture; it does not establish microphone, speaker or Qwen accuracy acceptance.
+bash scripts/test_model_management.sh
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+warning: '--skip-update' option is deprecated and will be removed in a future release
+Building for production...
+[0/2] Write swift-version--1AB21518FC5DEDBE.txt
+Build of product 'CyberAudioFixture' complete! (0.30s)
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+warning: '--skip-update' option is deprecated and will be removed in a future release
+warning: 'swiftui-introspect': /Users/codehub/Workspaces/CyberAudio-model-management/.build/checkouts/swiftui-introspect/Package@swift-6.0.swift:5:15: warning: 'init(name:defaultLocalization:platforms:pkgConfig:providers:products:dependencies:targets:swiftLanguageVersions:cLanguageStandard:cxxLanguageStandard:)' is deprecated: replaced by 'init(name:defaultLocalization:platforms:pkgConfig:providers:products:dependencies:targets:swiftLanguageModes:cLanguageStandard:cxxLanguageStandard:)' [#DeprecatedDeclaration]
+ 3 | import PackageDescription
+ 4 | 
+ 5 | let package = Package(
+   |               |- warning: 'init(name:defaultLocalization:platforms:pkgConfig:providers:products:dependencies:targets:swiftLanguageVersions:cLanguageStandard:cxxLanguageStandard:)' is deprecated: replaced by 'init(name:defaultLocalization:platforms:pkgConfig:providers:products:dependencies:targets:swiftLanguageModes:cLanguageStandard:cxxLanguageStandard:)' [#DeprecatedDeclaration]
+   |               `- note: use 'init(name:defaultLocalization:platforms:pkgConfig:providers:products:dependencies:targets:swiftLanguageModes:cLanguageStandard:cxxLanguageStandard:)' instead
+ 6 |     name: "swiftui-introspect",
+ 7 |     platforms: [
+
+[#DeprecatedDeclaration]: <https://docs.swift.org/compiler/documentation/diagnostics/deprecated-declaration>
+warning: '--skip-update' option is deprecated and will be removed in a future release
+[0/1] Planning build
+Building for production...
+[0/3] Write sources
+[1/3] Write swift-version--58304C5D6DBC2206.txt
+[3/4] Compiling CyberAudio AudioWaveform.swift
+[3/5] Write Objects.LinkFileList
+[4/5] Linking CyberAudio
+Build complete! (6.21s)
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+File Doesn't Exist, Will Create: /private/var/folders/j2/xqjq052s0g91y9rrbfxlcz7h0000gn/T//CyberAudio-models.LBC6H2/ModelManagerTests.app/Contents/Info.plist
+/var/folders/j2/xqjq052s0g91y9rrbfxlcz7h0000gn/T//CyberAudio-models.LBC6H2/ModelManagerTests.app/Contents/Helpers/CyberAudioService: replacing existing signature
+/var/folders/j2/xqjq052s0g91y9rrbfxlcz7h0000gn/T//CyberAudio-models.LBC6H2/ModelManagerTests.app: replacing existing signature
+sandbox_extension_issue_file_to_process failed for /var/folders/j2/xqjq052s0g91y9rrbfxlcz7h0000gn/T//CyberAudio-models.LBC6H2/ModelManagerTests.app: 1 (Operation not permitted)
+ModelManager: shared progress after settings closure, queue/cancel/retry, inactive engine preservation, stopped selection, capabilities, real HTTP drain, candidate admission, update exclusion, candidate rollback and download resumption after migration passed
+bash scripts/build_ui.sh
+warning: '--skip-update' option is deprecated and will be removed in a future release
+warning: 'swiftui-introspect': /Users/codehub/Workspaces/CyberAudio-model-management/.build/checkouts/swiftui-introspect/Package@swift-6.0.swift:5:15: warning: 'init(name:defaultLocalization:platforms:pkgConfig:providers:products:dependencies:targets:swiftLanguageVersions:cLanguageStandard:cxxLanguageStandard:)' is deprecated: replaced by 'init(name:defaultLocalization:platforms:pkgConfig:providers:products:dependencies:targets:swiftLanguageModes:cLanguageStandard:cxxLanguageStandard:)' [#DeprecatedDeclaration]
+ 3 | import PackageDescription
+ 4 | 
+ 5 | let package = Package(
+   |               |- warning: 'init(name:defaultLocalization:platforms:pkgConfig:providers:products:dependencies:targets:swiftLanguageVersions:cLanguageStandard:cxxLanguageStandard:)' is deprecated: replaced by 'init(name:defaultLocalization:platforms:pkgConfig:providers:products:dependencies:targets:swiftLanguageModes:cLanguageStandard:cxxLanguageStandard:)' [#DeprecatedDeclaration]
+   |               `- note: use 'init(name:defaultLocalization:platforms:pkgConfig:providers:products:dependencies:targets:swiftLanguageModes:cLanguageStandard:cxxLanguageStandard:)' instead
+ 6 |     name: "swiftui-introspect",
+ 7 |     platforms: [
+
+[#DeprecatedDeclaration]: <https://docs.swift.org/compiler/documentation/diagnostics/deprecated-declaration>
+warning: '--skip-update' option is deprecated and will be removed in a future release
+[0/1] Planning build
+Building for production...
+[0/2] Write swift-version--58304C5D6DBC2206.txt
+Build complete! (0.15s)
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+bash scripts/test_workspace_layout.sh
+warning: '--skip-update' option is deprecated and will be removed in a future release
+warning: '--skip-update' option is deprecated and will be removed in a future release
+[0/1] Planning build
+Building for production...
+[0/2] Write swift-version--58304C5D6DBC2206.txt
+Build complete! (0.15s)
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+WorkspaceLayout: 10 workspace states with real PCM/WAV waveform and playback, 7 settings states, 6 model states including accessibility, and 5 preparation states rendered at minimum size
+Native view captures: /Users/codehub/Workspaces/CyberAudio-model-management/.context/design-refresh/layout
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+File Doesn't Exist, Will Create: /private/var/folders/j2/xqjq052s0g91y9rrbfxlcz7h0000gn/T//CyberAudio-ui-resources.Wlb4ij/WaveformProbe.app/Contents/Resources/Waveform_Waveform.bundle/Contents/Info.plist
+File Doesn't Exist, Will Create: /private/var/folders/j2/xqjq052s0g91y9rrbfxlcz7h0000gn/T//CyberAudio-ui-resources.Wlb4ij/WaveformProbe.app/Contents/Info.plist
+/var/folders/j2/xqjq052s0g91y9rrbfxlcz7h0000gn/T//CyberAudio-ui-resources.Wlb4ij/WaveformProbe.app: replacing existing signature
+sandbox_extension_issue_file_to_process failed for /var/folders/j2/xqjq052s0g91y9rrbfxlcz7h0000gn/T//CyberAudio-ui-resources.Wlb4ij/WaveformProbe.app: 1 (Operation not permitted)
+Packaged UI: bundled precompiled Metal shader and real AudioKit GPU rendering passed without build-tree resources
+bash scripts/test_tools.sh
+......................................................                   [100%]
+54 passed in 12.66s
+bash scripts/build_native.sh
+swift-driver version: 1.168.6 warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+Verified CyberAudio managed Qwen TTS and cancellable ASR adapters.
+warning: '--skip-update' option is deprecated and will be removed in a future release
+Building for production...
+[0/2] Write swift-version--1AB21518FC5DEDBE.txt
+Build of product 'CyberAudioService' complete! (0.33s)
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+warning: '--skip-update' option is deprecated and will be removed in a future release
+Building for production...
+[0/2] Write swift-version--1AB21518FC5DEDBE.txt
+Build of product 'CyberAudioAssets' complete! (0.30s)
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+for script in scripts/*.sh; do bash -n "$script"; done
+plutil -lint packaging/Info.plist
+packaging/Info.plist: OK

@@ -1,0 +1,43 @@
+bash scripts/build_app.sh
+swift-driver version: 1.168.6 warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+Verified CyberAudio managed Qwen TTS and cancellable ASR adapters.
+warning: '--skip-update' option is deprecated and will be removed in a future release
+warning: 'mlx-audio-swift': found 5 file(s) which are unhandled; explicitly declare them as resources or exclude from the target
+    /Users/codehub/Workspaces/CyberAudio-model-management/.context/native-build/checkouts/mlx-audio-swift/Sources/MLXAudioTTS/Models/OmniVoice/README.md
+    /Users/codehub/Workspaces/CyberAudio-model-management/.context/native-build/checkouts/mlx-audio-swift/Sources/MLXAudioTTS/Models/Spark/README.md
+    /Users/codehub/Workspaces/CyberAudio-model-management/.context/native-build/checkouts/mlx-audio-swift/Sources/MLXAudioTTS/Models/MossTTS/README.md
+    /Users/codehub/Workspaces/CyberAudio-model-management/.context/native-build/checkouts/mlx-audio-swift/Sources/MLXAudioTTS/Models/BreezeTTS/README.md
+    /Users/codehub/Workspaces/CyberAudio-model-management/.context/native-build/checkouts/mlx-audio-swift/Sources/MLXAudioTTS/Models/IrodoriTTS/README.md
+warning: 'mlx-audio-swift': found 1 file(s) which are unhandled; explicitly declare them as resources or exclude from the target
+    /Users/codehub/Workspaces/CyberAudio-model-management/.context/native-build/checkouts/mlx-audio-swift/Sources/MLXAudioSTT/Models/MingASR/README.md
+warning: 'mlx-audio-swift': found 1 file(s) which are unhandled; explicitly declare them as resources or exclude from the target
+    /Users/codehub/Workspaces/CyberAudio-model-management/.context/native-build/checkouts/mlx-audio-swift/Sources/MLXAudioSTS/Models/DeepFilterNet/README.md
+[0/1] Planning build
+Building for production...
+[0/2] Write swift-version--1AB21518FC5DEDBE.txt
+Build of product 'CyberAudioService' complete! (1.56s)
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+warning: '--skip-update' option is deprecated and will be removed in a future release
+Building for production...
+[0/2] Write swift-version--1AB21518FC5DEDBE.txt
+Build of product 'CyberAudioAssets' complete! (0.30s)
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+warning: '--skip-update' option is deprecated and will be removed in a future release
+warning: '--skip-update' option is deprecated and will be removed in a future release
+[0/1] Planning build
+Building for production...
+[0/2] Write swift-version--58304C5D6DBC2206.txt
+Build complete! (0.15s)
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+File Doesn't Exist, Will Create: /Users/codehub/Workspaces/CyberAudio-model-management/dist/CyberAudio.app/Contents/Helpers/CyberAudioNative_CyberAudioCore.bundle/Contents/Info.plist
+File Doesn't Exist, Will Create: /Users/codehub/Workspaces/CyberAudio-model-management/dist/CyberAudio.app/Contents/Helpers/MLXAudio_MLXAudioTTS.bundle/Contents/Info.plist
+File Doesn't Exist, Will Create: /Users/codehub/Workspaces/CyberAudio-model-management/dist/CyberAudio.app/Contents/Helpers/swift-crypto_Crypto.bundle/Contents/Info.plist
+File Doesn't Exist, Will Create: /Users/codehub/Workspaces/CyberAudio-model-management/dist/CyberAudio.app/Contents/Helpers/swift-nio_NIOPosix.bundle/Contents/Info.plist
+File Doesn't Exist, Will Create: /Users/codehub/Workspaces/CyberAudio-model-management/dist/CyberAudio.app/Contents/Helpers/swift-transformers_Hub.bundle/Contents/Info.plist
+File Doesn't Exist, Will Create: /Users/codehub/Workspaces/CyberAudio-model-management/dist/CyberAudio.app/Contents/Resources/Waveform_Waveform.bundle/Contents/Info.plist
+App and nested code verified (adhoc)
+Configuration prepared. Existing settings and token preserved; credentials are not printed.
+/Users/codehub/Workspaces/CyberAudio-model-management/dist/CyberAudio.app

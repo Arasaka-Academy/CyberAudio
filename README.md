@@ -30,7 +30,10 @@ Current packages are ad-hoc signed and not notarized.
 
 ## Build
 
-Requires Swift 6.3+ and Apple Command Line Tools. Tests also use [uv](https://docs.astral.sh/uv/).
+Requires Swift 6.3+, full Xcode and its Metal Toolchain component. Tests also use [uv](https://docs.astral.sh/uv/).
+The build scripts select `/Applications/Xcode.app` when only Command Line Tools are active;
+set `DEVELOPER_DIR` to use a different Xcode installation. Install the Metal component with
+`xcodebuild -downloadComponent MetalToolchain` if needed.
 
 ```sh
 make app    # Build dist/CyberAudio.app
