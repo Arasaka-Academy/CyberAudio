@@ -1,44 +1,24 @@
-# CyberAudio · Neon Signal
+# CyberAudio · Cutline
 
-2026-11-06 确认采用的图标方案。应用图标与 macOS 菜单栏共用切角 C 和音频脉冲标记。
+沿用 2026-11-12 已选定的 Cyber 产品家族 B「断讯 / Cutline」，于 2026-11-13 接入 CyberAudio 0.4.4（11）。
 
-## 设计
+CyberAudio 使用独立的前倾 A 形，与 CyberOS 的 O 形共享横向断切、切角和重型字骨。应用图标为冰青 `#93E4EA` 标志与暖黑 `#1E1517` 底板，直接采用已确认套件的 SVG、PNG、ICNS 和完整 iconset，不添加辉光或装饰电路。
 
-应用图标使用黑曜石底板、青色 C、洋红脉冲，搭配轻微浮雕、辉光和电路细节。C 代表 Cyber，脉冲代表录音、语音识别和音频生成。图形不包含小字号文字。
+菜单栏使用套件的小尺寸 A 形，去掉底部细条并保留较宽断口。待机图标直接采用原套件的 18 / 36 px 黑色透明模板；工作图标在右下角增加独立圆点，保持主体不变。两个状态均使用 18 × 18 pt 逻辑尺寸。
 
-菜单栏单独绘制 18 × 18 pt 的单色模板，保留 C 的切角和四根脉冲，适配浅色、深色与菜单选中状态。Idle 与 Active 用振幅区分，外轮廓与画布尺寸一致。
-
-| 资源 | 用途 |
+| 文件 | 用途 |
 | --- | --- |
-| `CyberAudio.svg` | 1024 × 1024 应用图标矢量母版 |
-| `CyberAudio.png` | 1024 × 1024 RGBA 预览 / 导出母图 |
-| `CyberAudio.icns` | macOS 应用图标，含标准多尺寸表示 |
-| `CyberAudio.iconset/` | 16、32、128、256、512 pt 的 1× / 2× PNG |
-| `MenuBarIdle.svg` / `MenuBarActive.svg` | 菜单栏矢量母版 |
-| `MenuBarIdle.png` / `MenuBarActive.png` | 18 × 18 px 单色透明模板 |
-| `MenuBarIdle@2x.png` / `MenuBarActive@2x.png` | 36 × 36 px Retina 模板，逻辑尺寸为 18 × 18 pt |
-| `preview.html` / `preview.png` | 设计展示板，含浅色、深色菜单栏示意与小尺寸预览 |
+| `CyberAudio.svg` / `CyberAudio.png` | 应用图标矢量母版 / 1024 px 导出 |
+| `CyberAudio.icns` / `CyberAudio.iconset/` | macOS 多尺寸应用图标与十张源 PNG |
+| `CyberAudio-symbol.svg` | 冰青标准符号 |
+| `CyberAudio-symbol-small.svg` | 单色小尺寸符号 |
+| `CyberAudio-wordmark.svg` / `CyberAudio-wordmark-black.svg` | 轮廓化冰青 / 黑色字标，README 随深浅主题选择 |
+| `MenuBarIdle.svg` / `MenuBarActive.svg` | 菜单栏两种状态的矢量母版 |
+| `MenuBarIdle{,@2x}.png` / `MenuBarActive{,@2x}.png` | 18 / 36 px 菜单栏模板 |
+| `preview.html` / `preview.png` | 当前资产预览与尺寸对照，菜单栏为效果示意 |
 
-颜色：Obsidian `#0C1220`，Neon Cyan `#4FF8EB`，Signal Pink `#FA4DD2`。应用图标周围留有透明安全区；菜单栏素材只有黑色图形和透明通道。
+`scripts/build_app.sh` 将 ICNS 和四张菜单栏 PNG 复制到 App 的 `Contents/Resources`；`packaging/Info.plist` 通过 `CFBundleIconFile` 引用 `CyberAudio.icns`。
 
-## 应用接入
+`MenuBarIcon.swift` 通过 AppKit 加载 PNG 的 1× / 2× 表示。浅色主题沿用现有白色透明蒙版规则，深色主题使用系统模板着色；`backend.busy` 选择工作状态。缺少打包资源的源码开发运行仍使用系统波形回退。
 
-`scripts/build_app.sh` 将应用图标和菜单栏的 1× / 2× PNG 一起复制到应用包 `Contents/Resources`。
-
-1. `packaging/Info.plist` 的 `CFBundleIconFile` 指向 `CyberAudio.icns`，供 Finder、关于窗口等系统入口使用。
-2. `CyberAudioApp.swift` 的菜单栏标签使用 `MenuBarIcon`，通过 AppKit `Bundle.main.image(forResource:)` 加载 PNG 和 Retina 表示。图标视图跟随自身 `colorScheme` 更新：浅色主题将原有 alpha 蒙版填为白色并使用 `.original`，保留透明背景；深色主题使用 `.template`，由系统根据外观与选中状态着色。逻辑尺寸固定为 18 × 18 pt，待机与工作状态使用相同的主题规则。
-3. `backend.busy` 为真时使用 `MenuBarActive`，其余情况使用 `MenuBarIdle`。菜单栏标签保留应用名称与状态，供辅助功能读取。
-
-打包直接使用本目录已导出的素材，不需要额外安装图像生成或转换工具。
-
-菜单栏图片使用 AppKit 显式加载，以兼容直接复制到应用资源目录的 PNG；脱离应用包运行的开发构建在缺少素材时回退到原系统波形。
-
-## 导出检查
-
-SVG XML 解析通过；PNG 尺寸与透明通道通过；菜单栏像素为黑色加 alpha；ICNS 容器长度与多尺寸条目检查通过。预览通过浏览器渲染并目视检查。
-
-接入后，完整应用构建、嵌套代码签名校验和资源准备检查通过。应用包内五个图标文件与设计源文件的 SHA-256 一致；AppKit 可读取 ICNS 的 10 个尺寸表示，以及每个菜单栏图标的 18 / 36 像素表示。使用包内素材的 SwiftUI 原生渲染通过像素检查，确认深浅色下图形可见、待机与工作状态轮廓不同。
-
-2026-11-07 主题修正通过 Release 编译，以及浅色／深色、待机／工作、1×／2× 的八组原生渲染检查。浅色图形为白色、背景透明，alpha 与原图一致；深色与原模板渲染一致。同一原生视图完成浅色→深色→浅色切换，确认浅色保留白色，深色接受系统前景着色。应用图标和原始 PNG 素材保持不变。
-
-这是初版设计展示板，菜单栏画面是效果示意，不代表已安装应用的截图；浅色主题的白色透明图标以当前原生实现为准。
+源套件为所链接设计聊天交付的 `cyber-cutline-logo-kit/cyberaudio`。应用图标与待机模板保持原文件字节。运行时不依赖设计工具、第三方字体或 SVG 渲染器。
