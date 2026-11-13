@@ -1,0 +1,84 @@
+{
+  "target": "codehubmac-mini.civet-beta.ts.net",
+  "version": "0.4.4",
+  "build": "11",
+  "health_http": 200,
+  "ready_http": 200,
+  "models_http": 200,
+  "models": {
+    "data": [
+      {
+        "id": "qwen3-asr-1.7b",
+        "object": "model",
+        "owned_by": "local",
+        "quantization": "8bit",
+        "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+        "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55"
+      },
+      {
+        "id": "qwen3-tts-1.7b",
+        "object": "model",
+        "owned_by": "local",
+        "quantization": "8bit",
+        "repository": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit",
+        "revision": "41d3337e8b7f2843a75841595fc14e4b9a7a4b96"
+      }
+    ],
+    "object": "list"
+  },
+  "unauthenticated_models_http": 401,
+  "voices_http": 200,
+  "voices_count": 9,
+  "health": {
+    "application": "CyberAudio",
+    "instance": "AC8388A0-4B66-4E9B-A6AF-5109A45DAC69",
+    "status": "ok"
+  },
+  "ready": {
+    "application": "CyberAudio",
+    "busy": false,
+    "instance": "AC8388A0-4B66-4E9B-A6AF-5109A45DAC69",
+    "model": "qwen3-asr-1.7b",
+    "models": {
+      "stt": "ready",
+      "tts": "ready"
+    },
+    "startup": {
+      "backend": "mlx-swift",
+      "device": "metal",
+      "load_ms": 4217.451666947454,
+      "metal_active_bytes": 5578423720,
+      "metal_peak_bytes": 6273318916,
+      "process_peak_rss_bytes": 3606724608,
+      "verification_ms": 3566.201625042595,
+      "warmup_ms": 7869.062833022326
+    },
+    "status": "ready",
+    "updating": false
+  },
+  "tts": {
+    "http": 200,
+    "input": "你好，这是语音工作台的新版本测试。",
+    "bytes": 161324,
+    "duration_seconds": 3.36,
+    "sample_rate": 24000,
+    "content_type": "audio/wav",
+    "elapsed_seconds": 2.132749959011562
+  },
+  "asr": {
+    "http": 200,
+    "text": "你好，这是语音工作台的新版本测试。",
+    "elapsed_seconds": 0.6531363329850137,
+    "round_trip_text_similarity": 1.0,
+    "model": "qwen3-asr-1.7b",
+    "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55"
+  },
+  "physical_microphone_keyboard_and_listening_verified": false,
+  "CyberAudio_pids": [
+    42810
+  ],
+  "CyberAudioService_pids": [
+    42832
+  ],
+  "service_parent_pid": 42810
+}

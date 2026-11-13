@@ -1,0 +1,15 @@
+{
+  "can_download": true,
+  "invalid_files": [],
+  "ffmpeg_path": "/opt/homebrew/bin/ffmpeg",
+  "missing_files": 0,
+  "event": "status",
+  "required_bytes": 0,
+  "models_ready": true,
+  "ffmpeg_ready": true,
+  "total_bytes": 5547997530,
+  "resumable_bytes": 0,
+  "available_bytes": 78284361728,
+  "verified_bytes": 5547997530,
+  "invalid_partials": []
+}

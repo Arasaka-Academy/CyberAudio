@@ -1,5 +1,10 @@
 # CyberAudio
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="design/icons/CyberAudio-wordmark.svg">
+  <img src="design/icons/CyberAudio-wordmark-black.svg" width="320" alt="CyberAudio · Cutline">
+</picture>
+
 原生 SwiftUI macOS 语音工作台。一个 App 同时提供本地 STT、TTS 和统一 HTTP API。
 
 当前文档见 [部署指南](docs/GUIDE.md)、[快捷听写说明](docs/DICTATION.md) 和 [Swift 迁移报告](docs/NATIVE_SWIFT.md)。[Notion 手册](https://app.notion.com/p/CyberAudio-Mac-STT-TTS-App-API-40d1d9761945811081c6ddd41d45e2c8) 与 [旧验收报告](docs/VERIFICATION.md) 保留历史 Python 版本记录。
@@ -19,7 +24,7 @@
 
 ## 设备
 
-Apple Silicon Mac，macOS 26 或以上；推荐 16GB 以上统一内存、15GB 以上可用空间。既有正式回归设备是 Apple M4／16GB／macOS 27.2；本轮工程验收使用 Apple M1 Max／32GB／macOS 27.0.1，两轮语料与指标分别记录。MLX Swift 0.33.0、MLX 0.32.4，完整 Swift 依赖见 `Native/Package.resolved`。源码构建需要 Swift 6.3+。
+Apple Silicon Mac，macOS 26 或以上；推荐 16GB 以上统一内存、15GB 以上可用空间。当前测试机器为 `codehubmac-mini.civet-beta.ts.net`，登录用户 `codehub`，Apple M4／16GB／macOS 27.2；安装位置与检查方法见 [测试机部署](docs/TEST_MACHINE.md)。历史 M1 Max／32GB／macOS 27.0.1 工程验收与 M4 语料指标分别记录。MLX Swift 0.33.0、MLX 0.32.4，完整 Swift 依赖见 `Native/Package.resolved`。源码构建需要 Swift 6.3+。
 
 ## 目录
 

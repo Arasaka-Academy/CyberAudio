@@ -1,0 +1,19 @@
+{
+  "version": "0.4.4",
+  "build": "11",
+  "app_path": "/Applications/CyberAudio.app",
+  "dmg_sha256": "e409be5a8fd8f61be4f43c09cc17de323120281b069445f4dcee449205182760",
+  "architectures": {
+    "CyberAudio": "arm64",
+    "CyberAudioService": "arm64",
+    "CyberAudioAssets": "arm64"
+  },
+  "resources": {
+    "CyberAudio.icns": "2f76c3476f5740dd8a953414c9929423d5d62ed9d6f885556ab97402e96230f8",
+    "MenuBarIdle.png": "f2ef458b57d86705ba42e3b3b5a3b768bd0dc6371b34a788532e1cd15388ebe1",
+    "MenuBarIdle@2x.png": "dfefc648258c18ca945da4e7d9f60a06583ae9f1f4efe917c2963b4c5d623e64",
+    "MenuBarActive.png": "03e35a02a57c5ef76bd04b49712465f51a2d80f2c12014ed75c7d3c884078027",
+    "MenuBarActive@2x.png": "0a5f659909edf95d672a7a34e341b195a87b62c16c29453ce24a897cc7b2aaae"
+  },
+  "strict_signature_verified": true
+}

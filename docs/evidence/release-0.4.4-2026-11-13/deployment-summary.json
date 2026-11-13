@@ -1,0 +1,125 @@
+{
+  "version": "0.4.4",
+  "build": "11",
+  "packaged_assets_match_source": true,
+  "sha256": {
+    "CyberAudio.icns": "2f76c3476f5740dd8a953414c9929423d5d62ed9d6f885556ab97402e96230f8",
+    "MenuBarIdle.png": "f2ef458b57d86705ba42e3b3b5a3b768bd0dc6371b34a788532e1cd15388ebe1",
+    "MenuBarIdle@2x.png": "dfefc648258c18ca945da4e7d9f60a06583ae9f1f4efe917c2963b4c5d623e64",
+    "MenuBarActive.png": "03e35a02a57c5ef76bd04b49712465f51a2d80f2c12014ed75c7d3c884078027",
+    "MenuBarActive@2x.png": "0a5f659909edf95d672a7a34e341b195a87b62c16c29453ce24a897cc7b2aaae"
+  },
+  "target": "codehubmac-mini.civet-beta.ts.net",
+  "app_install_path": "/Applications/CyberAudio.app",
+  "dmg_filename": "CyberAudio-0.4.4-macOS-arm64.dmg",
+  "dmg_sha256": "e409be5a8fd8f61be4f43c09cc17de323120281b069445f4dcee449205182760",
+  "signing": "adhoc",
+  "notarized": false,
+  "source_commit": "0f939fc569d774b4e34c6d7d070a5ee8534e885b",
+  "source_uncommitted_logo_changes": true,
+  "native_menu_bar_rendering": "passed",
+  "tools_tests": {
+    "passed": 41,
+    "skipped": 3
+  },
+  "regression_suites": [
+    "preparation",
+    "update-gate",
+    "coreml-evidence",
+    "dictation",
+    "audio-workflow",
+    "workspace-layout"
+  ],
+  "runtime_validation": "passed",
+  "installed_assets_match_source": true,
+  "assets_verified_bytes": 5547997530,
+  "app_running": true,
+  "application_visible": true,
+  "application_launch_finished": true,
+  "service_parent_matches_app": true,
+  "runtime": {
+    "target": "codehubmac-mini.civet-beta.ts.net",
+    "version": "0.4.4",
+    "build": "11",
+    "health_http": 200,
+    "ready_http": 200,
+    "models_http": 200,
+    "models": {
+      "data": [
+        {
+          "id": "qwen3-asr-1.7b",
+          "object": "model",
+          "owned_by": "local",
+          "quantization": "8bit",
+          "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+          "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55"
+        },
+        {
+          "id": "qwen3-tts-1.7b",
+          "object": "model",
+          "owned_by": "local",
+          "quantization": "8bit",
+          "repository": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit",
+          "revision": "41d3337e8b7f2843a75841595fc14e4b9a7a4b96"
+        }
+      ],
+      "object": "list"
+    },
+    "unauthenticated_models_http": 401,
+    "voices_http": 200,
+    "voices_count": 9,
+    "health": {
+      "application": "CyberAudio",
+      "instance": "AC8388A0-4B66-4E9B-A6AF-5109A45DAC69",
+      "status": "ok"
+    },
+    "ready": {
+      "application": "CyberAudio",
+      "busy": false,
+      "instance": "AC8388A0-4B66-4E9B-A6AF-5109A45DAC69",
+      "model": "qwen3-asr-1.7b",
+      "models": {
+        "stt": "ready",
+        "tts": "ready"
+      },
+      "startup": {
+        "backend": "mlx-swift",
+        "device": "metal",
+        "load_ms": 4217.451666947454,
+        "metal_active_bytes": 5578423720,
+        "metal_peak_bytes": 6273318916,
+        "process_peak_rss_bytes": 3606724608,
+        "verification_ms": 3566.201625042595,
+        "warmup_ms": 7869.062833022326
+      },
+      "status": "ready",
+      "updating": false
+    },
+    "tts": {
+      "http": 200,
+      "input": "你好，这是语音工作台的新版本测试。",
+      "bytes": 161324,
+      "duration_seconds": 3.36,
+      "sample_rate": 24000,
+      "content_type": "audio/wav",
+      "elapsed_seconds": 2.132749959011562
+    },
+    "asr": {
+      "http": 200,
+      "text": "你好，这是语音工作台的新版本测试。",
+      "elapsed_seconds": 0.6531363329850137,
+      "round_trip_text_similarity": 1.0,
+      "model": "qwen3-asr-1.7b",
+      "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55"
+    },
+    "physical_microphone_keyboard_and_listening_verified": false,
+    "CyberAudio_pids": [
+      42810
+    ],
+    "CyberAudioService_pids": [
+      42832
+    ],
+    "service_parent_pid": 42810
+  },
+  "physical_microphone_keyboard_and_listening_verified": false
+}

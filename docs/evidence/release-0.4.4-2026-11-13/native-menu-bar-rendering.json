@@ -1,0 +1,65 @@
+{
+  "native_renders" : [
+    {
+      "light_white_verified" : true,
+      "maximum_alpha_delta" : 0.00033318014705885357,
+      "name" : "light-idle-1x",
+      "transparent_pixels" : 875,
+      "visible_pixels" : 96
+    },
+    {
+      "light_white_verified" : true,
+      "maximum_alpha_delta" : 0.00035998774509804488,
+      "name" : "light-idle-2x",
+      "transparent_pixels" : 3632,
+      "visible_pixels" : 402
+    },
+    {
+      "light_white_verified" : true,
+      "maximum_alpha_delta" : 0.00033318014705885357,
+      "name" : "light-active-1x",
+      "transparent_pixels" : 866,
+      "visible_pixels" : 99
+    },
+    {
+      "light_white_verified" : true,
+      "maximum_alpha_delta" : 0.00036381740196078649,
+      "name" : "light-active-2x",
+      "transparent_pixels" : 3608,
+      "visible_pixels" : 417
+    },
+    {
+      "light_white_verified" : false,
+      "maximum_alpha_delta" : 0,
+      "name" : "dark-idle-1x",
+      "transparent_pixels" : 875,
+      "visible_pixels" : 80
+    },
+    {
+      "light_white_verified" : false,
+      "maximum_alpha_delta" : 0,
+      "name" : "dark-idle-2x",
+      "transparent_pixels" : 3632,
+      "visible_pixels" : 369
+    },
+    {
+      "light_white_verified" : false,
+      "maximum_alpha_delta" : 0,
+      "name" : "dark-active-1x",
+      "transparent_pixels" : 866,
+      "visible_pixels" : 83
+    },
+    {
+      "light_white_verified" : false,
+      "maximum_alpha_delta" : 0,
+      "name" : "dark-active-2x",
+      "transparent_pixels" : 3608,
+      "visible_pixels" : 383
+    }
+  ],
+  "original_alpha_masks_preserved" : true,
+  "same_host_light_dark_light_verified" : true,
+  "service_or_models_started" : false,
+  "source" : "Sources\/CyberAudio\/MenuBarIcon.swift",
+  "status" : "passed"
+}
