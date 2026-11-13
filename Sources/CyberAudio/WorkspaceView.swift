@@ -132,7 +132,7 @@ private struct SpeechWorkspace: View {
     private var canGenerate: Bool {
         backend.ready && !backend.busy && !audio.cannotStart && !dictation.blocksUpdate
         && !audio.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-        && audio.text.unicodeScalars.count <= 500 && audio.instructions.unicodeScalars.count <= 200
+        && audio.text.unicodeScalars.count <= 500 && (!backend.supportsInstructions || audio.instructions.unicodeScalars.count <= 200)
     }
 
     var body: some View {
@@ -188,8 +188,9 @@ private struct SpeechWorkspace: View {
             Text("语音选项").font(.headline)
             Text("表达指令").font(.callout.weight(.medium))
             PlainTextEditor(text: $audio.instructions, label: "表达指令").frame(height: 100).contentSurface(editor: true)
+                        .disabled(!backend.supportsInstructions)
             HStack {
-                Text("描述语气、节奏或情绪。")
+                Text(backend.supportsInstructions ? "描述语气、节奏或情绪。" : "当前模型不支持表达指令，可在模型设置中更换。")
                 Spacer()
                 Text("\(audio.instructions.unicodeScalars.count) / 200").monospacedDigit()
             }.font(.caption).foregroundStyle(audio.instructions.unicodeScalars.count > 200 ? .red : .secondary)

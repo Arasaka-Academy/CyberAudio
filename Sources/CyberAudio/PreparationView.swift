@@ -3,7 +3,6 @@ import SwiftUI
 
 struct PreparationView: View {
     @ObservedObject var preparation: PreparationController
-    @ViewState private var proxy = ""
     @ViewState private var showNetwork = false
 
     private func bytes(_ value: Int64) -> String { ByteCountFormatter.string(fromByteCount: value, countStyle: .file) }
@@ -74,10 +73,9 @@ struct PreparationView: View {
                             Spacer(minLength: 0)
                         }
                         DisclosureGroup("网络设置（可选）", isExpanded: $showNetwork) {
-                            TextField("http://127.0.0.1:端口 或 socks5://127.0.0.1:端口", text: $proxy)
+                            TextField("http://127.0.0.1:端口 或 socks5://127.0.0.1:端口", text: $preparation.proxy)
                                 .textFieldStyle(.roundedBorder).font(.caption)
                                 .accessibilityLabel("模型下载代理")
-                                .onChange(of: proxy) { _, value in preparation.proxy = value }
                                 .disabled(preparation.busy)
                         }.font(.callout)
                     }
@@ -88,7 +86,7 @@ struct PreparationView: View {
                     Button("取消", action: preparation.cancel).keyboardShortcut(.cancelAction)
                         .disabled(preparation.phase == .cancelling)
                 } else {
-                    Button("重新检查", action: preparation.check)
+                    Button("重新检查") { preparation.check() }
                     if preparation.snapshot?.invalid_partials.isEmpty == false {
                         Button("重新下载") { preparation.download(restart: true) }
                             .disabled(preparation.snapshot?.can_download != true)

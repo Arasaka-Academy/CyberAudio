@@ -2,7 +2,7 @@
 
 本指南对应 Swift 迁移源码。界面使用 SwiftUI／AppKit／AVFoundation，HTTP 使用 SwiftNIO，推理使用 MLX Swift 与 MLX Audio Swift；App 自带并直接管理唯一 `CyberAudioService` 子进程。安装、模型准备、HTTP 和推理均无需 Python。FFmpeg 仍是单独配置的原生可执行文件。
 
-保留 Qwen3-ASR 1.7B 8-bit 和 Qwen3-TTS 1.7B CustomVoice 8-bit，计算设备为 Apple GPU／Metal。Core ML、ANE 与其他识别模型未进入此次替换。
+默认使用 Qwen3-ASR 1.7B 8-bit 和 Qwen3-TTS 1.7B CustomVoice 8-bit，也可在设置中选择这两个系列的 0.6B／1.7B、4-bit／8-bit 共八款固定型号。计算设备为 Apple GPU／Metal，选择、下载与存储迁移见[模型管理](MODELS.md)。
 
 ## 1. App 的运行方式
 
@@ -24,7 +24,7 @@ CyberAudio.app/Contents/
   Frameworks/Sparkle.framework     更新框架
 ```
 
-模型约 5.55GB，单独保存；App 不内置模型。本地打包使用 ad-hoc 签名，尚未进行 Developer ID 签名和 Apple 公证。源码构建不自动发布新版本。
+默认模型一对约 5.55GB，单独保存；App 不内置模型。本地打包使用 ad-hoc 签名，尚未进行 Developer ID 签名和 Apple 公证。源码构建不自动发布新版本。
 
 源码已支持显式配置 Apple Development／Developer ID 签名与公证，要求和验收边界见[签名说明](SIGNING.md)。默认开发构建及既有稳定版的签名状态不因此改变。
 
@@ -40,7 +40,7 @@ Apple Silicon、macOS 26 或以上，推荐 16GB 以上统一内存、至少 15G
 | MLX Swift / MLX | 0.33.0 / 0.32.4 |
 | SwiftNIO | 2.90.1 |
 
-全部传递依赖见 `Native/Package.resolved`，模型文件大小与 SHA-256 见 `Native/Sources/CyberAudioCore/Models.lock.json`。每次启动离线核对这些文件，不按最新版本下载。Tokenizer 由固定输入在本机生成，已有 tokenizer 必须与预期语义一致。
+全部传递依赖见 `Native/Package.resolved`，八款型号的文件大小与 SHA-256 见 `Native/Sources/CyberAudioCore/ModelCatalog.lock.json`；原默认清单继续保存在 `Models.lock.json`。每次启动离线核对当前模型，不按最新版本下载。Tokenizer 由固定输入在本机生成，已有 tokenizer 必须与预期语义一致。
 
 ## 4. 服务与并发
 
@@ -54,7 +54,7 @@ App → `sandbox-exec` → `CyberAudioService` → SwiftNIO + 串行 Qwen 工作
 
 工作台默认与最小内容尺寸为 560 × 440 pt，可放大。首次升级到紧凑界面时重置旧窗口尺寸，随后记住用户调整的大小。顶部切换“语音转文字”和“文字转语音”，并显示引擎状态与设置入口。主窗口没有外层滚动；文本编辑区可内部滚动、选择、撤销与中文输入，但始终不显示滚动条。
 
-语音转文字保留手动录音、导入、语言选择、复制和清空。文字转语音保留音色、语言、生成、播放和 WAV 保存；表达指令与流式播放选项在“语音选项”弹出面板中。错误、加载和更新等待使用固定状态区，较长错误可打开“详情”。设置分为“听写”“服务”“通用与更新”三个分页。
+语音转文字保留手动录音、导入、语言选择、复制和清空。文字转语音保留音色、语言、生成、播放和 WAV 保存；表达指令与流式播放选项在“语音选项”弹出面板中。0.6B TTS 根据模型能力禁用表达指令。错误、加载和更新等待使用固定状态区，较长错误可打开“详情”。设置分为“听写”“模型”“服务”“通用与更新”四个分页，模型页使用滚动布局。
 
 全局快捷听写默认按住右 Option 150 ms 后录音，松开后识别，并向原输入框发送一次普通粘贴；不自动回车或发送消息。首次使用先在“设置 → 听写”完成麦克风、辅助功能和输入监控授权，可修改组合键、恢复默认或暂停功能。录音与识别过程通过屏幕底部浮层反馈，关闭主窗口后仍可使用。Escape 取消，录音最长 59 秒；右 Option 配合其他按键时取消本次快捷录音并保留正常键盘输入。
 

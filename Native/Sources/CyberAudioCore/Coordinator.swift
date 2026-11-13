@@ -71,8 +71,9 @@ public final class ServiceCoordinator: @unchecked Sendable {
     public var ready: [String: Any] {
         lock.lock(); defer { lock.unlock() }
         return ["status": state, "busy": active != nil, "updating": updating, "instance": settings.instance,
-                "application": "CyberAudio", "model": ModelCatalog.asrID,
-                "models": ["stt": state, "tts": state], "startup": engine?.metrics ?? [:]]
+                "application": "CyberAudio", "model": settings.configuration.asrModelID,
+                "models": ["stt": state, "tts": state], "startup": engine?.metrics ?? [:],
+                "supports_instructions": (try? ModelCatalog.descriptor(settings.configuration.ttsModelID).supports_instructions) ?? false]
     }
     private var updating: Bool { clock() < updateDeadline }
     /// Admit before reading an audio body; keep update drain busy through HTTP flush.
@@ -148,7 +149,8 @@ public final class ServiceCoordinator: @unchecked Sendable {
                 var result: [String: Any] = decoded.silent ? ["text": "", "language": value.language as Any? ?? NSNull()] :
                     try engine.transcribe(audio: normalized, language: value.language, cancellation: slot.cancellation)
                 try slot.cancellation.check()
-                result.merge(["model": ModelCatalog.asrID, "repository": ModelCatalog.asrRepository, "revision": ModelCatalog.asrRevision,
+                let model = try ModelCatalog.descriptor(self.settings.configuration.asrModelID)
+                result.merge(["model": model.id, "repository": model.repository, "revision": model.revision,
                               "duration": decoded.duration, "inference_ms": (uptime()-start)*1000, "processing_ms": (uptime()-began)*1000,
                               "request_id": slot.id, "no_speech": decoded.silent]) { _, new in new }
                 self.finish(slot, result: ["processing_ms": result["processing_ms"]!]); completion(.success(result))

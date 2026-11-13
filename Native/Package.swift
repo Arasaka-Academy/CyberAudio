@@ -18,7 +18,7 @@ let package = Package(
             .product(name: "NIOCore", package: "swift-nio"),
             .product(name: "NIOPosix", package: "swift-nio"),
             .product(name: "NIOHTTP1", package: "swift-nio")
-        ], resources: [.copy("Models.lock.json")]),
+        ], resources: [.copy("Models.lock.json"), .copy("ModelCatalog.lock.json")]),
         .target(name: "CyberAudioInference", dependencies: ["CyberAudioCore",
             .product(name: "MLXAudioSTT", package: "mlx-audio-swift"),
             .product(name: "MLXAudioTTS", package: "mlx-audio-swift"),

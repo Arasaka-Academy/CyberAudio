@@ -35,6 +35,49 @@ private final class Engine: InferenceEngine {
 }
 
 final class ServiceTests: XCTestCase {
+    func testConfiguredModelIDsAndCapabilitiesOverHTTP() async throws {
+        let (root,_,engine) = try setup()
+        var config = ServiceConfiguration(asr_dir:root.path,tts_dir:root.path,ffmpeg:"/opt/homebrew/bin/ffmpeg")
+        config.asr_model_id = "qwen3-asr-0.6b-4bit"
+        config.tts_model_id = "qwen3-tts-0.6b-8bit"
+        let coordinator = ServiceCoordinator(settings:try ServiceSettings(root:root,configuration:config,token:testToken,instance:"selected-models"))
+        coordinator.install(engine)
+        let service = HTTPService(coordinator:coordinator),port = try service.start(port:0)
+        defer { try? service.stop() }
+        let base = URL(string:"http://127.0.0.1:\(port)")!
+        let (catalog,response) = try await request(base,"/v1/models")
+        XCTAssertEqual(response.statusCode,200)
+        let models = (try JSONSerialization.jsonObject(with:catalog) as! [String:Any])["data"] as! [[String:Any]]
+        XCTAssertEqual(models.compactMap { $0["id"] as? String },[config.asrModelID,config.ttsModelID])
+        XCTAssertEqual(models[0]["quantization"] as? String,"4bit")
+        let (voices,_) = try await request(base,"/v1/audio/voices")
+        let capabilities = try JSONSerialization.jsonObject(with:voices) as! [String:Any]
+        XCTAssertEqual(capabilities["supports_instructions"] as? Bool,false)
+        let (_,spoken) = try await request(base,"/v1/audio/speech",body:jsonData(["input":"你好。"]))
+        XCTAssertEqual(spoken.statusCode,200)
+        XCTAssertEqual(spoken.value(forHTTPHeaderField:"x-model"),config.ttsModelID)
+        let (_,streamed) = try await request(base,"/v1/audio/speech",body:jsonData(["input":"你好。","stream":true,"response_format":"pcm"]))
+        XCTAssertEqual(streamed.statusCode,200)
+        XCTAssertEqual(streamed.value(forHTTPHeaderField:"x-model"),config.ttsModelID)
+        let (unsupported,rejected) = try await request(base,"/v1/audio/speech",body:jsonData(["input":"你好。","instructions":"开心地说"]))
+        XCTAssertEqual(rejected.statusCode,400)
+        XCTAssertTrue(String(data:unsupported,encoding:.utf8)!.contains("unsupported_instructions"))
+        let (_,blankInstruction) = try await request(base,"/v1/audio/speech",body:jsonData(["input":"你好。","instructions":" "]))
+        XCTAssertEqual(blankInstruction.statusCode,400)
+        let (_,wrong) = try await request(base,"/v1/audio/speech",body:jsonData(["input":"你好。","model":ModelCatalog.ttsID]))
+        XCTAssertEqual(wrong.statusCode,400)
+        let audio = normalizedWAV(Data(repeating:1,count:3200))
+        let (transcript,recognized) = try await request(base,"/v1/audio/transcriptions",body:multipart(audio),type:"multipart/form-data; boundary=test-boundary")
+        XCTAssertEqual(recognized.statusCode,200)
+        let result = try JSONSerialization.jsonObject(with:transcript) as! [String:Any]
+        XCTAssertEqual(result["model"] as? String,config.asrModelID)
+        let otherModel = "--test-boundary\r\nContent-Disposition: form-data; name=\"model\"\r\n\r\n\(ModelCatalog.asrID)\r\n"
+        let (mismatched,mismatchedResponse) = try await request(base,"/v1/audio/transcriptions",body:multipart(audio,fields:otherModel),type:"multipart/form-data; boundary=test-boundary")
+        XCTAssertEqual(mismatchedResponse.statusCode,400)
+        XCTAssertTrue(String(decoding:mismatched,as:UTF8.self).contains("invalid_model"))
+        XCTAssertEqual(try ModelCatalog.descriptors().count,8)
+    }
+
     private func setup(timeout: Double = 5,install: Bool = true) throws -> (URL,ServiceCoordinator,Engine) {
         let root = FileManager.default.temporaryDirectory.appendingPathComponent("CyberAudio-tests-"+UUID().uuidString)
         try FileManager.default.createDirectory(at:root,withIntermediateDirectories:true)

@@ -127,8 +127,11 @@ public final class HTTPHandler: ChannelInboundHandler {
             case "/ready":
                 let ready = coordinator.ready
                 return respond(ready, status: ready["status"] as? String == "ready" ? 200 : 503, context: context)
-            case "/v1/models": return respond(ModelCatalog.models, context: context)
-            case "/v1/audio/voices": return respond(["model":ModelCatalog.ttsID,"voices":ModelCatalog.voices,"default":"serena","sample_rate":24000], context: context)
+            case "/v1/models": return respond(try ModelCatalog.models(configuration:coordinator.settings.configuration), context: context)
+            case "/v1/audio/voices":
+                let model = try ModelCatalog.descriptor(coordinator.settings.configuration.ttsModelID)
+                return respond(["model":model.id,"voices":ModelCatalog.voices,"default":"serena","sample_rate":24000,
+                                "supports_instructions":model.supports_instructions], context: context)
             case "/": return send(Data("<!doctype html><meta charset='utf-8'><title>CyberAudio</title><h1>CyberAudio</h1><p>请在 Mac 上打开 CyberAudio App。统一 API 已提供 STT 与 TTS。</p><p>就绪状态：/ready。API：/v1/audio/transcriptions、/v1/audio/speech。</p>".utf8), type:"text/html; charset=utf-8", context:context)
             default:
                 if path.hasPrefix("/v1/requests/") { return respond(try coordinator.record(String(path.dropFirst("/v1/requests/".count))), context: context) }
@@ -141,7 +144,7 @@ public final class HTTPHandler: ChannelInboundHandler {
                 return respond(value, context: context)
             }
             if path == "/v1/audio/transcriptions" {
-                let input = try Transcription(parts: Multipart.parse(body, contentType: head.headers.first(name: "content-type") ?? ""))
+                let input = try Transcription(parts: Multipart.parse(body, contentType: head.headers.first(name: "content-type") ?? ""),modelID:coordinator.settings.configuration.asrModelID)
                 let slot = try begin(kind: "stt", context: context)
                 coordinator.transcribe(input, slot: slot) { result in
                     context.eventLoop.execute {
@@ -154,9 +157,9 @@ public final class HTTPHandler: ChannelInboundHandler {
                 return
             }
             if path == "/v1/audio/speech" {
-                let speech = try Speech(data: body)
+                let speech = try Speech(data: body,modelID:coordinator.settings.configuration.ttsModelID)
                 let slot = try begin(kind: "tts", context: context)
-                let headers = ["x-request-id":slot.id,"x-audio-sample-rate":"24000","x-audio-channels":"1","x-audio-format":"pcm_s16le","x-model":ModelCatalog.ttsID]
+                let headers = ["x-request-id":slot.id,"x-audio-sample-rate":"24000","x-audio-channels":"1","x-audio-format":"pcm_s16le","x-model":coordinator.settings.configuration.ttsModelID]
                 // The worker waits for each write promise. At most one chunk crosses the
                 // event loop boundary; disconnect and deadline interrupt blocked writers.
                 coordinator.synthesize(speech, slot: slot, emit: { chunk in

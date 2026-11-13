@@ -34,8 +34,10 @@ public final class QwenEngine: InferenceEngine, @unchecked Sendable {
             let asr = try await Qwen3ASRModel.fromModelDirectory(asrRoot)
             let tts = try await Qwen3TTSModel.fromModelDirectory(ttsRoot)
             let config = try JSONSerialization.jsonObject(with:Data(contentsOf:ttsRoot.appendingPathComponent("config.json"))) as! [String:Any]
+            let selected = try ModelCatalog.descriptor(settings.configuration.ttsModelID)
             guard let talker = config["talker_config"] as? [String:Any], let eos = talker["codec_eos_token_id"] as? Int,
-                  config["tts_model_type"] as? String == "custom_voice",config["tts_model_size"] as? String == "1b7",tts.sampleRate == 24000 else { throw ServiceError.inference }
+                  config["tts_model_type"] as? String == "custom_voice",
+                  config["tts_model_size"] as? String == (selected.parameters == "0.6B" ? "0b6" : "1b7"),tts.sampleRate == 24000 else { throw ServiceError.inference }
             let engine = QwenEngine(asr:asr,tts:tts,eos:eos)
             let loaded = uptime()
             _ = asr.generate(audio:MLXArray.zeros([16000]),maxTokens:16,temperature:0,language:"Chinese")

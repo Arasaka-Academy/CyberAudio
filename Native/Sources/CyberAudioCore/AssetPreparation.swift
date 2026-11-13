@@ -23,11 +23,16 @@ public struct AssetDownloadProgress: Codable,Sendable {
     public let completed_bytes: Int64
     public let total_bytes: Int64
     public let phase: String
+    public var model_id: String? = nil
+    public init(event: String,path: String,completed_bytes: Int64,total_bytes: Int64,phase: String,model_id: String? = nil) {
+        self.event = event; self.path = path; self.completed_bytes = completed_bytes
+        self.total_bytes = total_bytes; self.phase = phase; self.model_id = model_id
+    }
 }
 
 public enum AssetPreparation {
     public static func inspect(configuration: ServiceConfiguration,assets: [LockedAsset],staging: URL,
-                               availableBytes: Int64?) throws -> AssetPreparationStatus {
+                               availableBytes: Int64?, checkFFmpeg: Bool = true) throws -> AssetPreparationStatus {
         var total: Int64 = 0,verified: Int64 = 0,resumable: Int64 = 0,largest: Int64 = 0
         var missing = 0,invalid: [String] = [],invalidPartials: [String] = []
         for asset in assets {
@@ -52,7 +57,7 @@ public enum AssetPreparation {
         let required = modelsReady ? 0 : max(0,total-verified-resumable)+largest+256*1024*1024
         return AssetPreparationStatus(event:"status",total_bytes:total,verified_bytes:verified,resumable_bytes:resumable,
             missing_files:missing,invalid_files:invalid,invalid_partials:invalidPartials,models_ready:modelsReady,
-            ffmpeg_ready:isFFmpeg(configuration.ffmpeg),ffmpeg_path:configuration.ffmpeg,available_bytes:availableBytes,
+            ffmpeg_ready:checkFFmpeg ? isFFmpeg(configuration.ffmpeg) : false,ffmpeg_path:configuration.ffmpeg,available_bytes:availableBytes,
             required_bytes:required,can_download:invalid.isEmpty && (availableBytes.map { $0 >= required } ?? true))
     }
     static func destination(_ asset: LockedAsset,configuration: ServiceConfiguration) throws -> URL {
@@ -95,8 +100,12 @@ private final class VersionOutput: @unchecked Sendable {
 
 extension AssetStore {
     public static func preparationStatus(root: URL) throws -> AssetPreparationStatus {
-        try AssetPreparation.inspect(configuration:configuration(root:root),assets:lock().files,
-            staging:root.appendingPathComponent("tmp/downloads"),availableBytes:AssetPreparation.availableBytes(at:root))
+        let config = try configuration(root:root)
+        try ModelStore.requireStorage(at:URL(fileURLWithPath:config.asr_dir))
+        try ModelStore.requireStorage(at:URL(fileURLWithPath:config.tts_dir))
+        let files = try [config.asrModelID, config.ttsModelID].flatMap { try ModelCatalog.descriptor($0).files }
+        return try AssetPreparation.inspect(configuration:config,assets:files,
+            staging:config.stagingDirectory(root:root),availableBytes:ModelStore.availableBytes(configuration:config,root:root))
     }
     public static func setFFmpeg(root: URL,path: String) throws {
         guard AssetPreparation.isFFmpeg(path) else {

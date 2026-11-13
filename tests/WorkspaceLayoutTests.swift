@@ -13,7 +13,7 @@ struct WorkspaceLayoutTests {
         let own: [T] = (view as? T).map { [$0] } ?? []
         return own + view.subviews.flatMap { descendants($0, of: type) }
     }
-    static func render<V: View>(_ view: V, size: NSSize, name: String, output: URL, editors: Int?) throws -> NSHostingView<V> {
+    static func render<V: View>(_ view: V, size: NSSize, name: String, output: URL, editors: Int?, bottom: Bool = false) throws -> NSHostingView<V> {
         let host = NSHostingView(rootView: view)
         let window = NSWindow(contentRect: NSRect(origin: .zero, size: size), styleMask: [.titled], backing: .buffered, defer: false)
         window.contentView = host
@@ -21,6 +21,12 @@ struct WorkspaceLayoutTests {
         RunLoop.main.run(until: Date().addingTimeInterval(0.08))
         host.layoutSubtreeIfNeeded()
         let scrolls = descendants(host, of: NSScrollView.self)
+        if bottom, let scroll = scrolls.first, let document = scroll.documentView {
+            try require(document.bounds.height > scroll.contentView.bounds.height,"\(name): model content must scroll at the current settings size")
+            document.scroll(NSPoint(x:0,y:max(0,document.bounds.height-scroll.contentView.bounds.height)))
+            scroll.reflectScrolledClipView(scroll.contentView)
+            host.layoutSubtreeIfNeeded()
+        }
         if let editors { try require(scrolls.count == editors, "\(name): unexpected outer scroll view (\(scrolls.count))") }
         for scroll in editors == nil ? [] : scrolls {
             try require(!scroll.hasVerticalScroller && !scroll.hasHorizontalScroller, "\(name): scrollers must remain disabled under Always")
@@ -57,7 +63,7 @@ struct WorkspaceLayoutTests {
         UserDefaults.standard.set("Always", forKey: "AppleShowScrollBars")
         let output = URL(fileURLWithPath: CommandLine.arguments.dropFirst().first ?? ".context/compact-dictation-20261106/layout", isDirectory: true)
         try FileManager.default.createDirectory(at: output, withIntermediateDirectories: true)
-        let backend = BackendController()
+        let backend = BackendController(root:output.appendingPathComponent("layout-backend",isDirectory:true))
         let audio = AudioWorkspace(recordingsDirectory: output.appendingPathComponent("recordings", isDirectory: true))
         let defaults = UserDefaults(suiteName: "CyberAudio-LayoutTests-\(UUID())")!
         defaults.set(false, forKey: "DictationEnabled")
@@ -89,11 +95,55 @@ struct WorkspaceLayoutTests {
         updater.installWhenIdle({})
         try workspace(.speech, "tts-update-waiting")
         updater.gate.cancel(); audio.generating = false
-        for tab in 0..<3 {
-            let view = ServiceSettingsView(initialTab: tab).environmentObject(backend).environmentObject(audio)
+        func waitFor(_ condition: () -> Bool) async throws {
+            let deadline = Date().addingTimeInterval(5)
+            while !condition() {
+                try require(Date() < deadline,"Model layout fixture timed out")
+                try await Task.sleep(for:.milliseconds(10))
+            }
+        }
+        let modelRoot = output.appendingPathComponent("model-settings-fixture")
+        let longStorage = "/Volumes/外置模型磁盘/" + String(repeating:"语音研究与本地离线模型存储/",count:7) + "CyberAudio/models"
+        let modelHelper = try ModelManagementFixture.create(root:modelRoot,port:19876,storage:longStorage)
+        let modelBackend = BackendController(root:modelRoot)
+        let modelPreparation = PreparationController(root:modelRoot,helper:modelHelper,onReady:{})
+        let models = ModelManagerController(backend:modelBackend,audio:audio,dictation:dictation,preparation:modelPreparation,defaults:defaults)
+        modelPreparation.check(startWhenReady:false)
+        try await waitFor { modelPreparation.ready && !modelPreparation.busy }
+        models.refresh()
+        try await waitFor { models.snapshot != nil && !models.busy }
+        models.downloadSource = .modelScope
+        for tab in 0..<4 {
+            let view = ServiceSettingsView(initialTab: tab).environmentObject(modelBackend).environmentObject(audio)
                 .environmentObject(updater).environmentObject(dictation)
+                .environmentObject(modelPreparation).environmentObject(models)
             _ = try render(view, size: NSSize(width: 620, height: 560), name: "settings-\(tab)", output: output, editors: nil)
         }
+        func modelRender(_ name: String, dark: Bool = false, bottom: Bool = false) throws {
+            NSApp.appearance = NSAppearance(named:dark ? .darkAqua : .aqua)
+            let view = ServiceSettingsView(initialTab:3).environmentObject(modelBackend).environmentObject(audio)
+                .environmentObject(updater).environmentObject(dictation).environmentObject(modelPreparation).environmentObject(models)
+                .environment(\.colorScheme,dark ? .dark : .light)
+            _ = try render(view,size:NSSize(width:620,height:560),name:name,output:output,editors:nil,bottom:bottom)
+        }
+        try modelRender("models-light")
+        try modelRender("models-dark",dark:true)
+        try modelRender("models-long-path",bottom:true)
+        let holdDownload = modelRoot.appendingPathComponent("hold-download")
+        try Data().write(to:holdDownload)
+        let pendingModel = models.snapshot!.models.first { $0.id == "qwen3-asr-0.6b-8bit" }!
+        try await waitFor { models.canManage }
+        models.download(pendingModel)
+        try await waitFor { modelPreparation.completedBytes > 0 }
+        try modelRender("models-downloading-dark",dark:true)
+        try require(modelPreparation.ready,"Background downloading must keep the workspace ready")
+        models.cancel(); try await waitFor { !models.busy }
+        try FileManager.default.removeItem(at:holdDownload)
+        try Data().write(to:modelRoot.appendingPathComponent("fail-download"))
+        models.download(pendingModel)
+        try await waitFor { !models.busy }
+        try require(models.error != nil,"Failure rendering requires an actual helper failure")
+        try modelRender("models-failed")
         let setupRoot = output.appendingPathComponent("setup-fixture")
         try FileManager.default.createDirectory(at: setupRoot, withIntermediateDirectories: true)
         let setupHelper = setupRoot.appendingPathComponent("assets")
@@ -138,7 +188,8 @@ struct WorkspaceLayoutTests {
         try setupRender("setup-failed")
         setup.shutdown()
         audio.cleanup(); dictation.cleanup()
-        print("WorkspaceLayout: 7 workspace states, 3 settings tabs and 5 preparation states rendered at minimum size")
+        models.shutdown(); modelPreparation.shutdown()
+        print("WorkspaceLayout: 7 workspace states, 4 populated settings tabs, 5 model states (light/dark, long path, download, failure) and 5 preparation states rendered at minimum size")
         print("Native view captures: \(output.path)")
     }
 }

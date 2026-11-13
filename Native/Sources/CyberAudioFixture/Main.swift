@@ -70,15 +70,17 @@ private final class Fixture: InferenceEngine, @unchecked Sendable {
         guard let path = args["--root"],let instance = args["--instance"],let parent = args["--parent-pid"].flatMap(Int32.init),parent == getppid() else { exit(64) }
         let root = URL(fileURLWithPath:path),fixture = Fixture(root:URL(fileURLWithPath:path))
         let token = try String(contentsOf:root.appendingPathComponent("config/api-token"),encoding:.utf8).trimmingCharacters(in:.whitespacesAndNewlines)
-        let state = ServiceCoordinator(settings:try ServiceSettings(root:root,configuration:AssetStore.configuration(root:root),token:token,instance:instance),log:{ text in
+        let configuration = try AssetStore.configuration(root:root)
+        let state = ServiceCoordinator(settings:try ServiceSettings(root:root,configuration:configuration,token:token,instance:instance),log:{ text in
             if text.hasPrefix("update_control") {
                 fixture.record(["event":"update-control","path":"/internal/update/"+(text.contains("action=prepare") ? "prepare" : "cancel"),"busy":text.contains("busy=true")])
             }
         })
+        if let lease = args["--maintenance-lease"] { _ = try state.update(action:"prepare",instance:instance,lease:lease) }
         let server = HTTPService(coordinator:state); _ = try server.start()
         DispatchQueue.global().async {
             Thread.sleep(forTimeInterval:fixture.options()["startup_delay"] as? Double ?? 0)
-            if fixture.options()["status"] as? String == "failed" { state.initializationFailed() }
+            if fixture.options()["status"] as? String == "failed" || fixture.options()["fail_model_id"] as? String == configuration.asrModelID { state.initializationFailed() }
             else { state.worker.async { state.install(fixture) } }
         }
         let stop = DispatchSemaphore(value:0)

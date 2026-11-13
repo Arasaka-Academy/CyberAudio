@@ -8,6 +8,12 @@ struct ServiceConfiguration: Codable {
     var ffmpeg: String
     var port: Int
     var https_url: String
+    var asr_model_id: String? = nil
+    var tts_model_id: String? = nil
+    var models_dir: String? = nil
+    var model_directories: [String: String]? = nil
+    var asrModelID: String { asr_model_id ?? "qwen3-asr-1.7b" }
+    var ttsModelID: String { tts_model_id ?? "qwen3-tts-1.7b" }
 }
 
 struct Readiness: Decodable {
@@ -15,6 +21,7 @@ struct Readiness: Decodable {
     let busy: Bool
     let instance: String?
     let startup: [String: MetricValue]?
+    let supports_instructions: Bool?
 }
 
 private struct UpdatePreparation: Decodable {
@@ -101,6 +108,7 @@ final class BackendController: ObservableObject {
     @Published private(set) var detail = "尚未启动"
     @Published private(set) var startup: [String: MetricValue] = [:]
     @Published private(set) var configuration: ServiceConfiguration?
+    @Published private(set) var supportsInstructions = true
     private var child: Process?
     private var input: Pipe?
     private var poll: Task<Void, Never>?
@@ -113,14 +121,14 @@ final class BackendController: ObservableObject {
     // Integration fixtures may start directly without an application coordinator.
     var requestPreparation: (() -> Void)?
 
-    init(session: URLSession? = nil) {
+    init(session: URLSession? = nil, root suppliedRoot: URL? = nil) {
         let arguments = ProcessInfo.processInfo.arguments
         let index = arguments.firstIndex(of: "--data-dir")
         let override = index.flatMap { $0 + 1 < arguments.count ? arguments[$0 + 1] : nil }
             ?? ProcessInfo.processInfo.environment["CYBERAUDIO_HOME"]
         let updateRoot = UserDefaults.standard.string(forKey: "PendingUpdateDataDirectory")
         UserDefaults.standard.removeObject(forKey: "PendingUpdateDataDirectory")
-        root = (override ?? updateRoot).map { URL(fileURLWithPath: $0, isDirectory: true) }
+        root = suppliedRoot ?? (override ?? updateRoot).map { URL(fileURLWithPath: $0, isDirectory: true) }
             ?? FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Application Support/CyberAudio", isDirectory: true)
         let config = URLSessionConfiguration.ephemeral
         config.timeoutIntervalForRequest = 150
@@ -130,6 +138,10 @@ final class BackendController: ObservableObject {
     }
 
     var ready: Bool { status == "ready" }
+    func reloadConfiguration(supportsInstructions: Bool? = nil) throws {
+        configuration = try JSONDecoder().decode(ServiceConfiguration.self,from:Data(contentsOf:root.appendingPathComponent("config/service.json")))
+        if let supportsInstructions { self.supportsInstructions = supportsInstructions }
+    }
     var running: Bool { child?.isRunning == true }
     var localURL: String { "http://127.0.0.1:\(configuration?.port ?? 8765)" }
     var httpsURL: String { configuration?.https_url ?? "未配置" }
@@ -144,7 +156,7 @@ final class BackendController: ObservableObject {
         startPrepared()
     }
 
-    func startPrepared() {
+    func startPrepared(maintenanceLease: String? = nil) {
         guard child == nil, !stopping else { return }
         status = "loading"
         detail = "正在启动本地推理引擎…"
@@ -170,6 +182,7 @@ final class BackendController: ObservableObject {
             process.arguments = ["-f", resources.appendingPathComponent("offline.sb").path, helper.path,
                                  "--root", root.path, "--parent-pid", String(getpid()), "--instance", instance,
                                  "--metallib", resources.appendingPathComponent("mlx.metallib").path]
+            if let maintenanceLease { process.arguments! += ["--maintenance-lease",maintenanceLease] }
             process.environment = ProcessInfo.processInfo.environment.merging([
                 "HF_HUB_OFFLINE": "1", "TRANSFORMERS_OFFLINE": "1", "TOKENIZERS_PARALLELISM": "false",
                 "PATH": "/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
@@ -216,6 +229,7 @@ final class BackendController: ObservableObject {
                             self.status = value.status
                             self.busy = value.busy
                             self.startup = value.startup ?? [:]
+                            self.supportsInstructions = value.supports_instructions ?? true
                             self.detail = value.status == "ready" ? "STT 与 TTS 已加载 · Apple GPU" : (value.status == "failed" ? "模型加载失败，请打开日志检查。" : "首次预热可能需要数十秒…")
                         }
                     } catch {

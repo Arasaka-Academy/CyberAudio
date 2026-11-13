@@ -1,0 +1,21 @@
+{
+  "host": "codehubdeMac-mini.local",
+  "cases": {
+    "cross_volume_copy_hash_rollback_commit_recovery": true,
+    "conflicting_target_preserved": true,
+    "insufficient_space_keeps_source": true,
+    "permission_error_restores_config": true,
+    "cancel_during_copy_restores_source": {
+      "passed": true,
+      "exit_code": 130
+    },
+    "crash_during_copy_restores_source": {
+      "passed": true,
+      "exit_code": -9
+    },
+    "forced_disconnect_during_copy_restores_source": true,
+    "disconnected_volume_rollback_and_reconnect": true,
+    "inactive_delete_preserves_extras_and_selection": true
+  },
+  "passed": true
+}

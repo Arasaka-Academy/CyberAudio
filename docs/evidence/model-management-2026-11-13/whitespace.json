@@ -1,0 +1,42 @@
+[
+  {
+    "path": "Native/Package.swift",
+    "returncode": 1,
+    "output": ""
+  },
+  {
+    "path": "Native/Sources",
+    "returncode": 1,
+    "output": ""
+  },
+  {
+    "path": "Native/Tests",
+    "returncode": 1,
+    "output": ""
+  },
+  {
+    "path": "Sources",
+    "returncode": 1,
+    "output": ""
+  },
+  {
+    "path": "tests",
+    "returncode": 1,
+    "output": ""
+  },
+  {
+    "path": "scripts",
+    "returncode": 1,
+    "output": ""
+  },
+  {
+    "path": "Makefile",
+    "returncode": 1,
+    "output": ""
+  },
+  {
+    "path": "docs",
+    "returncode": 1,
+    "output": ""
+  }
+]

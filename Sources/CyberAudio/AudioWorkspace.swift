@@ -44,6 +44,7 @@ final class AudioWorkspace: NSObject, ObservableObject {
     @Published var ttsTiming = ""
     @Published var generated = Data()
     @Published var preparingUpdate = false
+    @Published var managingModels = false
     private var recorder: AVAudioRecorder?
     private var recordingURL: URL?
     private var ticker: Task<Void, Never>?
@@ -75,7 +76,7 @@ final class AudioWorkspace: NSObject, ObservableObject {
     }
 
     var working: Bool { generating || transcribing || recording || requestingMicrophone }
-    var cannotStart: Bool { working || preparingUpdate }
+    var cannotStart: Bool { working || preparingUpdate || managingModels }
 
     @discardableResult
     func beginRecording(requestPermission: Bool = true) async -> Bool {
@@ -194,7 +195,7 @@ final class AudioWorkspace: NSObject, ObservableObject {
 
     @discardableResult
     func transcribe(url: URL, using backend: BackendController, completingRecording: Bool = false, sessionID: UUID = UUID()) async -> TranscriptionOutcome {
-        guard !working, !preparingUpdate || completingRecording, !Task.isCancelled else { return .cancelled(sessionID) }
+        guard !working, !(preparingUpdate || managingModels) || completingRecording, !Task.isCancelled else { return .cancelled(sessionID) }
         stopPlayback()
         errorOperation = .transcription
         errorMessage = nil
@@ -217,7 +218,7 @@ final class AudioWorkspace: NSObject, ObservableObject {
             try Task.checkCancellation()
             let boundary = "CyberAudio-\(UUID().uuidString)"
             var body = Data()
-            for (key, value) in [("model", "qwen3-asr-1.7b"), ("language", sttLanguage), ("response_format", "json")] {
+            for (key, value) in [("model", backend.configuration?.asrModelID ?? "qwen3-asr-1.7b"), ("language", sttLanguage), ("response_format", "json")] {
                 body.append(Data("--\(boundary)\r\nContent-Disposition: form-data; name=\"\(key)\"\r\n\r\n\(value)\r\n".utf8))
             }
             body.append(Data("--\(boundary)\r\nContent-Disposition: form-data; name=\"file\"; filename=\"audio.input\"\r\nContent-Type: application/octet-stream\r\n\r\n".utf8))
@@ -281,8 +282,8 @@ final class AudioWorkspace: NSObject, ObservableObject {
             var streamingRequestID: String?
             var inspectStreamingFailure = false
             do {
-                let object: [String: Any] = ["model": "qwen3-tts-1.7b", "input": self.text,
-                    "voice": self.voice, "language": self.ttsLanguage, "instructions": self.instructions,
+                let object: [String: Any] = ["model": backend.configuration?.ttsModelID ?? "qwen3-tts-1.7b", "input": self.text,
+                    "voice": self.voice, "language": self.ttsLanguage, "instructions": backend.supportsInstructions ? self.instructions : "",
                     "response_format": self.streaming ? "pcm" : "wav", "stream": self.streaming]
                 let request = try backend.request(path: "/v1/audio/speech", method: "POST", body: JSONSerialization.data(withJSONObject: object), contentType: "application/json")
                 if self.streaming {
@@ -416,7 +417,7 @@ final class AudioWorkspace: NSObject, ObservableObject {
     }
 
     func playGenerated() throws {
-        guard !preparingUpdate else { return }
+        guard !preparingUpdate, !managingModels else { return }
         stopPlayback()
         let player = try AVAudioPlayer(data: generated)
         player.delegate = self

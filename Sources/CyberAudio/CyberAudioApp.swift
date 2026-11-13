@@ -8,6 +8,7 @@ final class AppState {
     let audio: AudioWorkspace
     let preparation: PreparationController
     lazy var dictation = DictationController(backend: backend, audio: audio)
+    lazy var models = ModelManagerController(backend:backend,audio:audio,dictation:dictation,preparation:preparation)
     lazy var updater = UpdaterController(backend: backend, audio: audio, dictation: dictation,
                                          preparationBusy: { [preparation] in preparation.busy })
 
@@ -21,7 +22,7 @@ final class AppState {
         }
         self.preparation = preparation
         backend.requestPreparation = { [weak preparation, weak audio] in
-            if audio?.preparingUpdate == false { preparation?.check() }
+            if audio?.preparingUpdate == false,audio?.managingModels == false { preparation?.check() }
         }
     }
 }
@@ -61,6 +62,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     private func finishTermination() {
         terminating = true
+        AppState.shared.models.shutdown()
         AppState.shared.preparation.shutdown()
         AppState.shared.dictation.cleanup()
         AppState.shared.audio.cleanup()
@@ -76,6 +78,7 @@ struct CyberAudioApp: App {
     @StateObject private var updater = AppState.shared.updater
     @StateObject private var dictation = AppState.shared.dictation
     @StateObject private var preparation = AppState.shared.preparation
+    @StateObject private var models = AppState.shared.models
     @Environment(\.openWindow) private var openWindow
     @Environment(\.openSettings) private var openSettings
 
@@ -113,6 +116,7 @@ struct CyberAudioApp: App {
 
         Settings {
             ServiceSettingsView().environmentObject(backend).environmentObject(audio).environmentObject(updater).environmentObject(dictation)
+                .environmentObject(preparation).environmentObject(models)
         }
 
         MenuBarExtra {
@@ -130,7 +134,7 @@ struct CyberAudioApp: App {
             if backend.running {
                 Button("停止引擎") { Task { await backend.stop() } }.disabled(audio.cannotStart || dictation.blocksUpdate)
             } else {
-                Button("启动引擎") { backend.start() }.disabled(audio.preparingUpdate)
+                Button("启动引擎") { backend.start() }.disabled(audio.preparingUpdate || audio.managingModels)
             }
             Button("重启引擎") { Task { await backend.restart() } }
                 .disabled(audio.cannotStart || dictation.blocksUpdate || backend.status == "stopping")

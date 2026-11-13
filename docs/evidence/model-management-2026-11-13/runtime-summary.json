@@ -1,0 +1,621 @@
+{
+  "host": "codehubdeMac-mini.local",
+  "cases": [
+    {
+      "asr": "qwen3-asr-1.7b",
+      "tts": "qwen3-tts-1.7b",
+      "root": "/Users/codehub/Workspaces/CyberAudio-model-management/.context/model-runtime-final/00-52eb10586a94434886c1832035a0a4a6",
+      "startup": {
+        "backend": "mlx-swift",
+        "device": "metal",
+        "load_ms": 4030.963208992034,
+        "metal_active_bytes": 5578423720,
+        "metal_peak_bytes": 6273318916,
+        "process_peak_rss_bytes": 3435364352,
+        "verification_ms": 3357.341958966572,
+        "warmup_ms": 7336.0340829822235
+      },
+      "models": [
+        {
+          "id": "qwen3-asr-1.7b",
+          "object": "model",
+          "owned_by": "local",
+          "quantization": "8bit",
+          "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+          "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+          "supports_instructions": false
+        },
+        {
+          "id": "qwen3-tts-1.7b",
+          "object": "model",
+          "owned_by": "local",
+          "quantization": "8bit",
+          "repository": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit",
+          "revision": "41d3337e8b7f2843a75841595fc14e4b9a7a4b96",
+          "supports_instructions": true
+        }
+      ],
+      "transcriptions": {
+        "zh": {
+          "duration": 2.88,
+          "inference_ms": 384.3077910132706,
+          "language": "zh",
+          "metal_active_bytes": 5578620364,
+          "metal_peak_bytes": 6332470492,
+          "model": "qwen3-asr-1.7b",
+          "no_speech": false,
+          "process_peak_rss_bytes": 3435364352,
+          "processing_ms": 559.623625013046,
+          "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+          "request_id": "0f7a1f09f6074fe9",
+          "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+          "text": "你好，这是本地语音模型的测试。"
+        },
+        "en": {
+          "duration": 3.2,
+          "inference_ms": 423.75962500227615,
+          "language": "en",
+          "metal_active_bytes": 5578636784,
+          "metal_peak_bytes": 6338467092,
+          "model": "qwen3-asr-1.7b",
+          "no_speech": false,
+          "process_peak_rss_bytes": 3435364352,
+          "processing_ms": 520.9820829913951,
+          "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+          "request_id": "772cfab5ea7b49b3",
+          "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+          "text": "Hello. This is a local speech model test."
+        }
+      },
+      "passed": true
+    },
+    {
+      "asr": "qwen3-asr-0.6b-4bit",
+      "tts": "qwen3-tts-1.7b",
+      "root": "/Users/codehub/Workspaces/CyberAudio-model-management/.context/model-runtime-final/01-72534dd4f43a4991817162e24bf9b9dc",
+      "startup": {
+        "backend": "mlx-swift",
+        "device": "metal",
+        "load_ms": 1642.6972080371343,
+        "metal_active_bytes": 3822604456,
+        "metal_peak_bytes": 4396316789,
+        "process_peak_rss_bytes": 4632215552,
+        "verification_ms": 2250.1290420186706,
+        "warmup_ms": 1057.8059169929475
+      },
+      "models": [
+        {
+          "id": "qwen3-asr-0.6b-4bit",
+          "object": "model",
+          "owned_by": "local",
+          "quantization": "4bit",
+          "repository": "mlx-community/Qwen3-ASR-0.6B-4bit",
+          "revision": "70ccd0ba0c24b0c78efc313ce81c1c78c64a3dd7",
+          "supports_instructions": false
+        },
+        {
+          "id": "qwen3-tts-1.7b",
+          "object": "model",
+          "owned_by": "local",
+          "quantization": "8bit",
+          "repository": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit",
+          "revision": "41d3337e8b7f2843a75841595fc14e4b9a7a4b96",
+          "supports_instructions": true
+        }
+      ],
+      "transcriptions": {
+        "zh": {
+          "duration": 2.88,
+          "inference_ms": 142.67775003099814,
+          "language": "zh",
+          "metal_active_bytes": 3822801100,
+          "metal_peak_bytes": 4406951388,
+          "model": "qwen3-asr-0.6b-4bit",
+          "no_speech": false,
+          "process_peak_rss_bytes": 4632215552,
+          "processing_ms": 261.55954197747633,
+          "repository": "mlx-community/Qwen3-ASR-0.6B-4bit",
+          "request_id": "906a1a47738b4d01",
+          "revision": "70ccd0ba0c24b0c78efc313ce81c1c78c64a3dd7",
+          "text": "你好，这是本地语音模型的测试。"
+        },
+        "en": {
+          "duration": 3.2,
+          "inference_ms": 155.16458300407976,
+          "language": "en",
+          "metal_active_bytes": 3822817484,
+          "metal_peak_bytes": 4412472828,
+          "model": "qwen3-asr-0.6b-4bit",
+          "no_speech": false,
+          "process_peak_rss_bytes": 4632215552,
+          "processing_ms": 251.6132079763338,
+          "repository": "mlx-community/Qwen3-ASR-0.6B-4bit",
+          "request_id": "39e636c14596497d",
+          "revision": "70ccd0ba0c24b0c78efc313ce81c1c78c64a3dd7",
+          "text": "Hello. This is a local speech model test."
+        }
+      },
+      "passed": true
+    },
+    {
+      "asr": "qwen3-asr-0.6b-8bit",
+      "tts": "qwen3-tts-1.7b",
+      "root": "/Users/codehub/Workspaces/CyberAudio-model-management/.context/model-runtime-final/02-7c7dd10dc8e34ec0b86886c5bcc6f33d",
+      "startup": {
+        "backend": "mlx-swift",
+        "device": "metal",
+        "load_ms": 1918.2279579690658,
+        "metal_active_bytes": 4120596648,
+        "metal_peak_bytes": 4694308981,
+        "process_peak_rss_bytes": 4849434624,
+        "verification_ms": 2470.7099170191213,
+        "warmup_ms": 985.7723329914734
+      },
+      "models": [
+        {
+          "id": "qwen3-asr-0.6b-8bit",
+          "object": "model",
+          "owned_by": "local",
+          "quantization": "8bit",
+          "repository": "mlx-community/Qwen3-ASR-0.6B-8bit",
+          "revision": "54e4c7130621e78fd227cf3a49893c670d9057f1",
+          "supports_instructions": false
+        },
+        {
+          "id": "qwen3-tts-1.7b",
+          "object": "model",
+          "owned_by": "local",
+          "quantization": "8bit",
+          "repository": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit",
+          "revision": "41d3337e8b7f2843a75841595fc14e4b9a7a4b96",
+          "supports_instructions": true
+        }
+      ],
+      "transcriptions": {
+        "zh": {
+          "duration": 2.88,
+          "inference_ms": 174.19937503291294,
+          "language": "zh",
+          "metal_active_bytes": 4120793292,
+          "metal_peak_bytes": 4704943580,
+          "model": "qwen3-asr-0.6b-8bit",
+          "no_speech": false,
+          "process_peak_rss_bytes": 4849434624,
+          "processing_ms": 303.9269170258194,
+          "repository": "mlx-community/Qwen3-ASR-0.6B-8bit",
+          "request_id": "85db291225b144ff",
+          "revision": "54e4c7130621e78fd227cf3a49893c670d9057f1",
+          "text": "你好，这是本地语音模型的测试。"
+        },
+        "en": {
+          "duration": 3.2,
+          "inference_ms": 187.66925000818446,
+          "language": "en",
+          "metal_active_bytes": 4120809676,
+          "metal_peak_bytes": 4710465020,
+          "model": "qwen3-asr-0.6b-8bit",
+          "no_speech": false,
+          "process_peak_rss_bytes": 4849434624,
+          "processing_ms": 286.47583397105336,
+          "repository": "mlx-community/Qwen3-ASR-0.6B-8bit",
+          "request_id": "a68f9b42bd0e423d",
+          "revision": "54e4c7130621e78fd227cf3a49893c670d9057f1",
+          "text": "Hello. This is a local speech model test."
+        }
+      },
+      "passed": true
+    },
+    {
+      "asr": "qwen3-asr-1.7b-4bit",
+      "tts": "qwen3-tts-1.7b",
+      "root": "/Users/codehub/Workspaces/CyberAudio-model-management/.context/model-runtime-final/03-fae2021e804b4db2b1b09ff6ec0d2dd6",
+      "startup": {
+        "backend": "mlx-swift",
+        "device": "metal",
+        "load_ms": 2846.491749980487,
+        "metal_active_bytes": 4718198184,
+        "metal_peak_bytes": 5413093380,
+        "process_peak_rss_bytes": 4410359808,
+        "verification_ms": 2729.9683329765685,
+        "warmup_ms": 965.4885419877246
+      },
+      "models": [
+        {
+          "id": "qwen3-asr-1.7b-4bit",
+          "object": "model",
+          "owned_by": "local",
+          "quantization": "4bit",
+          "repository": "mlx-community/Qwen3-ASR-1.7B-4bit",
+          "revision": "8b78681d8e7ca07a7ef7c87e053dfa2476d37b6b",
+          "supports_instructions": false
+        },
+        {
+          "id": "qwen3-tts-1.7b",
+          "object": "model",
+          "owned_by": "local",
+          "quantization": "8bit",
+          "repository": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit",
+          "revision": "41d3337e8b7f2843a75841595fc14e4b9a7a4b96",
+          "supports_instructions": true
+        }
+      ],
+      "transcriptions": {
+        "zh": {
+          "duration": 2.88,
+          "inference_ms": 307.3607079568319,
+          "language": "zh",
+          "metal_active_bytes": 4718394828,
+          "metal_peak_bytes": 5472244956,
+          "model": "qwen3-asr-1.7b-4bit",
+          "no_speech": false,
+          "process_peak_rss_bytes": 4410359808,
+          "processing_ms": 434.70995797542855,
+          "repository": "mlx-community/Qwen3-ASR-1.7B-4bit",
+          "request_id": "8fde31b5b5ed4df8",
+          "revision": "8b78681d8e7ca07a7ef7c87e053dfa2476d37b6b",
+          "text": "你好，这是本地语音模型的测试。"
+        },
+        "en": {
+          "duration": 3.2,
+          "inference_ms": 276.63554198807105,
+          "language": "en",
+          "metal_active_bytes": 4718411176,
+          "metal_peak_bytes": 5478241532,
+          "model": "qwen3-asr-1.7b-4bit",
+          "no_speech": false,
+          "process_peak_rss_bytes": 4410359808,
+          "processing_ms": 371.79054197622463,
+          "repository": "mlx-community/Qwen3-ASR-1.7B-4bit",
+          "request_id": "7911462651034b12",
+          "revision": "8b78681d8e7ca07a7ef7c87e053dfa2476d37b6b",
+          "text": "Hello. This is a local speech model test."
+        }
+      },
+      "passed": true
+    },
+    {
+      "asr": "qwen3-asr-1.7b",
+      "tts": "qwen3-tts-0.6b-4bit",
+      "root": "/Users/codehub/Workspaces/CyberAudio-model-management/.context/model-runtime-final/04-4fec9b671f3b4b2e8bc4b038d1d78129",
+      "startup": {
+        "backend": "mlx-swift",
+        "device": "metal",
+        "load_ms": 1904.5524170505814,
+        "metal_active_bytes": 4191888808,
+        "metal_peak_bytes": 4886784004,
+        "process_peak_rss_bytes": 4011819008,
+        "verification_ms": 2423.686792026274,
+        "warmup_ms": 2057.9805829911493
+      },
+      "models": [
+        {
+          "id": "qwen3-asr-1.7b",
+          "object": "model",
+          "owned_by": "local",
+          "quantization": "8bit",
+          "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+          "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+          "supports_instructions": false
+        },
+        {
+          "id": "qwen3-tts-0.6b-4bit",
+          "object": "model",
+          "owned_by": "local",
+          "quantization": "4bit",
+          "repository": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-4bit",
+          "revision": "b3e1b295821bacbca1461f68b69676cb9015e4f1",
+          "supports_instructions": false
+        }
+      ],
+      "transcriptions": {
+        "zh": {
+          "duration": 2.88,
+          "inference_ms": 356.27854196354747,
+          "language": "zh",
+          "metal_active_bytes": 4192085452,
+          "metal_peak_bytes": 4945935580,
+          "model": "qwen3-asr-1.7b",
+          "no_speech": false,
+          "process_peak_rss_bytes": 4011819008,
+          "processing_ms": 485.03791698021814,
+          "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+          "request_id": "7cf7ba32a94c4965",
+          "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+          "text": "你好，这是本地语音模型的测试。"
+        },
+        "en": {
+          "duration": 3.2,
+          "inference_ms": 375.07212499622256,
+          "language": "en",
+          "metal_active_bytes": 4192101836,
+          "metal_peak_bytes": 4951932156,
+          "model": "qwen3-asr-1.7b",
+          "no_speech": false,
+          "process_peak_rss_bytes": 4011819008,
+          "processing_ms": 468.5542500228621,
+          "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+          "request_id": "6c75bba183ed4f38",
+          "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+          "text": "Hello. This is a local speech model test."
+        }
+      },
+      "passed": true
+    },
+    {
+      "asr": "qwen3-asr-1.7b",
+      "tts": "qwen3-tts-0.6b-8bit",
+      "root": "/Users/codehub/Workspaces/CyberAudio-model-management/.context/model-runtime-final/05-0a459dc6150f4028b2091efdf535d6c6",
+      "startup": {
+        "backend": "mlx-swift",
+        "device": "metal",
+        "load_ms": 2213.7962499982677,
+        "metal_active_bytes": 4471858600,
+        "metal_peak_bytes": 5166753796,
+        "process_peak_rss_bytes": 4361158656,
+        "verification_ms": 2418.8587079988793,
+        "warmup_ms": 1084.2077499837615
+      },
+      "models": [
+        {
+          "id": "qwen3-asr-1.7b",
+          "object": "model",
+          "owned_by": "local",
+          "quantization": "8bit",
+          "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+          "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+          "supports_instructions": false
+        },
+        {
+          "id": "qwen3-tts-0.6b-8bit",
+          "object": "model",
+          "owned_by": "local",
+          "quantization": "8bit",
+          "repository": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+          "revision": "a04a567b78dae1d0bb08bb63eb90a13976e09fd0",
+          "supports_instructions": false
+        }
+      ],
+      "transcriptions": {
+        "zh": {
+          "duration": 2.88,
+          "inference_ms": 361.1238750163466,
+          "language": "zh",
+          "metal_active_bytes": 4472055244,
+          "metal_peak_bytes": 5225905372,
+          "model": "qwen3-asr-1.7b",
+          "no_speech": false,
+          "process_peak_rss_bytes": 4361158656,
+          "processing_ms": 488.1307919858955,
+          "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+          "request_id": "e6082a942c4148a8",
+          "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+          "text": "你好，这是本地语音模型的测试。"
+        },
+        "en": {
+          "duration": 3.2,
+          "inference_ms": 388.2089169928804,
+          "language": "en",
+          "metal_active_bytes": 4472071628,
+          "metal_peak_bytes": 5231901948,
+          "model": "qwen3-asr-1.7b",
+          "no_speech": false,
+          "process_peak_rss_bytes": 4361158656,
+          "processing_ms": 486.87879100907594,
+          "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+          "request_id": "6dd04df863e042a3",
+          "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+          "text": "Hello. This is a local speech model test."
+        }
+      },
+      "passed": true
+    },
+    {
+      "asr": "qwen3-asr-1.7b",
+      "tts": "qwen3-tts-1.7b-4bit",
+      "root": "/Users/codehub/Workspaces/CyberAudio-model-management/.context/model-runtime-final/06-8bbd13d3fd034d48a09f017e789601e3",
+      "startup": {
+        "backend": "mlx-swift",
+        "device": "metal",
+        "load_ms": 2782.456750050187,
+        "metal_active_bytes": 4810341800,
+        "metal_peak_bytes": 5505236996,
+        "process_peak_rss_bytes": 2703720448,
+        "verification_ms": 2919.7090420057066,
+        "warmup_ms": 903.8557919557206
+      },
+      "models": [
+        {
+          "id": "qwen3-asr-1.7b",
+          "object": "model",
+          "owned_by": "local",
+          "quantization": "8bit",
+          "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+          "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+          "supports_instructions": false
+        },
+        {
+          "id": "qwen3-tts-1.7b-4bit",
+          "object": "model",
+          "owned_by": "local",
+          "quantization": "4bit",
+          "repository": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-4bit",
+          "revision": "3624a3894b6b8e09d202873a2e240b1326e43128",
+          "supports_instructions": true
+        }
+      ],
+      "transcriptions": {
+        "zh": {
+          "duration": 2.88,
+          "inference_ms": 396.9824160449207,
+          "language": "zh",
+          "metal_active_bytes": 4810538444,
+          "metal_peak_bytes": 5564388572,
+          "model": "qwen3-asr-1.7b",
+          "no_speech": false,
+          "process_peak_rss_bytes": 2703720448,
+          "processing_ms": 538.3869580109604,
+          "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+          "request_id": "f78522cc3fd641f5",
+          "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+          "text": "你好，这是本地语音模型的测试。"
+        },
+        "en": {
+          "duration": 3.2,
+          "inference_ms": 373.73279099119827,
+          "language": "en",
+          "metal_active_bytes": 4810554828,
+          "metal_peak_bytes": 5570385148,
+          "model": "qwen3-asr-1.7b",
+          "no_speech": false,
+          "process_peak_rss_bytes": 2703720448,
+          "processing_ms": 492.04833299154416,
+          "repository": "mlx-community/Qwen3-ASR-1.7B-8bit",
+          "request_id": "350417e4a4f04b3d",
+          "revision": "a8379a2e2f9e313c9292cdf1af4055ab56d50d55",
+          "text": "Hello. This is a local speech model test."
+        }
+      },
+      "passed": true
+    },
+    {
+      "asr": "qwen3-asr-0.6b-4bit",
+      "tts": "qwen3-tts-0.6b-8bit",
+      "root": "/Users/codehub/Workspaces/CyberAudio-model-management/.context/model-runtime-final/07-6e9a9b96341b478190843c562d01346d",
+      "startup": {
+        "backend": "mlx-swift",
+        "device": "metal",
+        "load_ms": 627.0215000258759,
+        "metal_active_bytes": 2716039336,
+        "metal_peak_bytes": 3289724825,
+        "process_peak_rss_bytes": 4113416192,
+        "verification_ms": 1704.5978750102222,
+        "warmup_ms": 780.4902499774471
+      },
+      "models": [
+        {
+          "id": "qwen3-asr-0.6b-4bit",
+          "object": "model",
+          "owned_by": "local",
+          "quantization": "4bit",
+          "repository": "mlx-community/Qwen3-ASR-0.6B-4bit",
+          "revision": "70ccd0ba0c24b0c78efc313ce81c1c78c64a3dd7",
+          "supports_instructions": false
+        },
+        {
+          "id": "qwen3-tts-0.6b-8bit",
+          "object": "model",
+          "owned_by": "local",
+          "quantization": "8bit",
+          "repository": "mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-8bit",
+          "revision": "a04a567b78dae1d0bb08bb63eb90a13976e09fd0",
+          "supports_instructions": false
+        }
+      ],
+      "transcriptions": {
+        "zh": {
+          "duration": 2.88,
+          "inference_ms": 190.71816699579358,
+          "language": "zh",
+          "metal_active_bytes": 2716235980,
+          "metal_peak_bytes": 3300386268,
+          "model": "qwen3-asr-0.6b-4bit",
+          "no_speech": false,
+          "process_peak_rss_bytes": 4113416192,
+          "processing_ms": 305.0361250061542,
+          "repository": "mlx-community/Qwen3-ASR-0.6B-4bit",
+          "request_id": "13b5a55e54374005",
+          "revision": "70ccd0ba0c24b0c78efc313ce81c1c78c64a3dd7",
+          "text": "你好，这是本地语音模型的测试。"
+        },
+        "en": {
+          "duration": 3.2,
+          "inference_ms": 229.81729201273993,
+          "language": "en",
+          "metal_active_bytes": 2716252364,
+          "metal_peak_bytes": 3305907708,
+          "model": "qwen3-asr-0.6b-4bit",
+          "no_speech": false,
+          "process_peak_rss_bytes": 4113416192,
+          "processing_ms": 347.032958001364,
+          "repository": "mlx-community/Qwen3-ASR-0.6B-4bit",
+          "request_id": "ce0d2ebe02e74e4f",
+          "revision": "70ccd0ba0c24b0c78efc313ce81c1c78c64a3dd7",
+          "text": "Hello. This is a local speech model test."
+        }
+      },
+      "passed": true
+    },
+    {
+      "asr": "qwen3-asr-1.7b-4bit",
+      "tts": "qwen3-tts-1.7b-4bit",
+      "root": "/Users/codehub/Workspaces/CyberAudio-model-management/.context/model-runtime-final/08-8371984eef184ce1a6fc3e3cd7de9ddb",
+      "startup": {
+        "backend": "mlx-swift",
+        "device": "metal",
+        "load_ms": 2061.516000016127,
+        "metal_active_bytes": 3950116264,
+        "metal_peak_bytes": 4645011460,
+        "process_peak_rss_bytes": 3447980032,
+        "verification_ms": 2265.0519590242766,
+        "warmup_ms": 1983.7263750378042
+      },
+      "models": [
+        {
+          "id": "qwen3-asr-1.7b-4bit",
+          "object": "model",
+          "owned_by": "local",
+          "quantization": "4bit",
+          "repository": "mlx-community/Qwen3-ASR-1.7B-4bit",
+          "revision": "8b78681d8e7ca07a7ef7c87e053dfa2476d37b6b",
+          "supports_instructions": false
+        },
+        {
+          "id": "qwen3-tts-1.7b-4bit",
+          "object": "model",
+          "owned_by": "local",
+          "quantization": "4bit",
+          "repository": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-4bit",
+          "revision": "3624a3894b6b8e09d202873a2e240b1326e43128",
+          "supports_instructions": true
+        }
+      ],
+      "transcriptions": {
+        "zh": {
+          "duration": 2.88,
+          "inference_ms": 285.6153339962475,
+          "language": "zh",
+          "metal_active_bytes": 3950312908,
+          "metal_peak_bytes": 4704163036,
+          "model": "qwen3-asr-1.7b-4bit",
+          "no_speech": false,
+          "process_peak_rss_bytes": 3447980032,
+          "processing_ms": 403.58295798068866,
+          "repository": "mlx-community/Qwen3-ASR-1.7B-4bit",
+          "request_id": "b3962b084a8c4854",
+          "revision": "8b78681d8e7ca07a7ef7c87e053dfa2476d37b6b",
+          "text": "你好，这是本地语音模型的测试。"
+        },
+        "en": {
+          "duration": 3.2,
+          "inference_ms": 279.55462504178286,
+          "language": "en",
+          "metal_active_bytes": 3950329292,
+          "metal_peak_bytes": 4710159612,
+          "model": "qwen3-asr-1.7b-4bit",
+          "no_speech": false,
+          "process_peak_rss_bytes": 3447980032,
+          "processing_ms": 396.47079101996496,
+          "repository": "mlx-community/Qwen3-ASR-1.7B-4bit",
+          "request_id": "4f51709a27e948e7",
+          "revision": "8b78681d8e7ca07a7ef7c87e053dfa2476d37b6b",
+          "text": "Hello. This is a local speech model test."
+        }
+      },
+      "passed": true
+    }
+  ],
+  "production_instance_before": "AC8388A0-4B66-4E9B-A6AF-5109A45DAC69",
+  "production_instance_after": "AC8388A0-4B66-4E9B-A6AF-5109A45DAC69",
+  "production_instance_unchanged": true,
+  "all_eight_models_passed": true
+}

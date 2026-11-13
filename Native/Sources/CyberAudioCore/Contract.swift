@@ -11,14 +11,6 @@ public enum ModelCatalog {
     public static let voices = ["serena", "vivian", "uncle_fu", "ryan", "aiden", "ono_anna", "sohee", "eric", "dylan"]
     public static let maxUpload = 20 * 1024 * 1024
     public static let maxTokens = 1200
-    public static var models: [String: Any] {
-        ["object": "list", "data": [
-            (asrID, asrRepository, asrRevision), (ttsID, ttsRepository, ttsRevision)
-        ].map { id, repository, revision in
-            ["id": id, "object": "model", "owned_by": "local", "repository": repository,
-             "revision": revision, "quantization": "8bit"]
-        }]
-    }
 }
 
 public struct ServiceConfiguration: Codable {
@@ -27,6 +19,10 @@ public struct ServiceConfiguration: Codable {
     public var ffmpeg: String
     public var port: Int
     public var https_url: String
+    public var asr_model_id: String?
+    public var tts_model_id: String?
+    public var models_dir: String?
+    public var model_directories: [String: String]?
     public init(asr_dir: String, tts_dir: String, ffmpeg: String, port: Int = 8765, https_url: String = "") {
         self.asr_dir = asr_dir; self.tts_dir = tts_dir; self.ffmpeg = ffmpeg
         self.port = port; self.https_url = https_url
@@ -70,7 +66,7 @@ public struct Speech {
     public var instructions: String
     public var format: String
     public var stream: Bool
-    public init(data: Data) throws {
+    public init(data: Data, modelID: String = ModelCatalog.ttsID) throws {
         let invalid = ServiceError(400, "invalid_request", "请输入 1–500 字符文本，指令最多 200 字符；检查字段类型。")
         guard let object = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
               Set(object.keys).isSubset(of: ["model", "input", "voice", "language", "instructions", "response_format", "stream"]),
@@ -79,9 +75,10 @@ public struct Speech {
             guard let value = object[name] else { return fallback }
             guard let value = value as? String else { throw invalid }; return value
         }
-        let model = try string("model", ModelCatalog.ttsID)
-        guard [ModelCatalog.ttsID, ModelCatalog.ttsRepository].contains(model) else {
-            throw ServiceError(400, "invalid_model", "仅支持已部署的 TTS 模型。")
+        let selected = try ModelCatalog.descriptor(modelID)
+        let model = try string("model", modelID)
+        guard selected.component == "tts", [selected.id, selected.repository].contains(model) else {
+            throw ServiceError(400, "invalid_model", "请求型号与当前启用的 TTS 模型不一致，请查询 /v1/models。")
         }
         self.input = input.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !self.input.isEmpty else { throw ServiceError(400, "empty_input", "文本不能为空。") }
@@ -93,6 +90,9 @@ public struct Speech {
         }
         instructions = try string("instructions", "")
         guard instructions.unicodeScalars.count <= 200 else { throw invalid }
+        guard selected.supports_instructions || instructions.isEmpty else {
+            throw ServiceError(400, "unsupported_instructions", "当前合成模型不支持表达指令，请清空指令或选择支持该功能的模型。")
+        }
         format = try string("response_format", "wav")
         if let value = object["stream"] {
             guard let number = value as? NSNumber, CFGetTypeID(number) == CFBooleanGetTypeID() else { throw invalid }
@@ -107,7 +107,7 @@ public struct Speech {
 public struct Transcription {
     public let audio: Data
     public let language: String?
-    public init(parts: [MultipartPart]) throws {
+    public init(parts: [MultipartPart], modelID: String = ModelCatalog.asrID) throws {
         let files = parts.filter { $0.filename != nil }
         guard files.count == 1, let file = files.first, file.name == "file" else {
             throw ServiceError(400, "missing_audio", "请选择音频文件。")
@@ -122,8 +122,9 @@ public struct Transcription {
             }
             fields[part.name] = text
         }
-        guard [ModelCatalog.asrID, ModelCatalog.asrRepository].contains(fields["model"] ?? ModelCatalog.asrID) else {
-            throw ServiceError(400, "invalid_model", "仅支持已部署的 ASR 模型。")
+        let selected = try ModelCatalog.descriptor(modelID)
+        guard selected.component == "asr", [selected.id, selected.repository].contains(fields["model"] ?? modelID) else {
+            throw ServiceError(400, "invalid_model", "请求型号与当前启用的 ASR 模型不一致，请查询 /v1/models。")
         }
         let lang = fields["language"] ?? "auto"
         guard ["auto", "zh", "en", "Chinese", "English", ""].contains(lang) else {

@@ -31,9 +31,10 @@ private struct PreparationEvent: Decodable {
     let message: String?
 }
 
-private struct PreparationResult {
+struct PreparationResult {
     var snapshot: PreparationSnapshot?
     var terminal = false
+    var payload: Data?
 }
 
 private enum PreparationFailure: LocalizedError {
@@ -42,7 +43,7 @@ private enum PreparationFailure: LocalizedError {
 }
 
 /// One owned helper at a time. Cancellation retains ownership until its pipe closes.
-private final class PreparationCommand: @unchecked Sendable {
+final class PreparationCommand: @unchecked Sendable {
     private let lock = NSLock()
     private var process: Process?
     private var cancelled = false
@@ -103,6 +104,7 @@ private final class PreparationCommand: @unchecked Sendable {
                     let line = Data(pending[..<newline]); pending.removeSubrange(...newline)
                     let event = try JSONDecoder().decode(PreparationEvent.self, from: line)
                     switch event.event {
+                    case "models", "catalog", "managed": result.payload = line; result.terminal = true
                     case "status":
                         result.snapshot = try JSONDecoder().decode(PreparationSnapshot.self, from: line); result.terminal = true
                     case "prepared", "verified": result.terminal = true
@@ -161,8 +163,9 @@ final class PreparationController: ObservableObject {
     @Published private(set) var currentFile = ""
     @Published private(set) var verifying = false
     @Published private(set) var busy = false
+    @Published private(set) var managing = false
     @Published var downloadSource: PreparationDownloadSource = .huggingFace
-    var proxy = ""
+    @Published var proxy = ""
     private let root: URL
     private let helper: URL
     private let onReady: () -> Void
@@ -180,7 +183,7 @@ final class PreparationController: ObservableObject {
         self.commandTimeout = commandTimeout
     }
 
-    func check() { begin(.checking) { controller in
+    func check(startWhenReady: Bool = true) { begin(.checking,startWhenReady:startWhenReady) { controller in
         _ = try await controller.run("prepare")
         try await controller.inspect(verify: true)
     } }
@@ -203,6 +206,16 @@ final class PreparationController: ObservableObject {
         try await controller.inspect(verify: true)
     } }
 
+    /// Settings and first-run preparation share one owned helper. Managing an
+    /// inactive model must not replace the ready workspace with first-run UI.
+    func manage(_ name: String, options: [String] = []) async throws -> Data? {
+        guard !busy, !stopped else { throw PreparationFailure.message("已有模型任务正在进行，请等待任务结束。") }
+        attempt = UUID(); busy = true; managing = true; verifying = false; currentFile = ""
+        completedBytes = 0; totalBytes = 0
+        defer { command = nil; busy = false; managing = false; verifying = false }
+        return try await run(name, options: options).payload
+    }
+
     private func inspect(verify: Bool) async throws {
         let result = try await run("status")
         guard let status = result.snapshot else { throw PreparationFailure.message("无法读取资源状态，请重新检查。") }
@@ -222,7 +235,7 @@ final class PreparationController: ObservableObject {
         }
     }
 
-    private func begin(_ phase: Phase, operation: @escaping (PreparationController) async throws -> Void) {
+    private func begin(_ phase: Phase, startWhenReady: Bool = true, operation: @escaping (PreparationController) async throws -> Void) {
         guard !busy, !stopped else { return }
         attempt = UUID(); let id = attempt
         self.phase = phase; busy = true; verifying = false; currentFile = ""
@@ -235,7 +248,7 @@ final class PreparationController: ObservableObject {
                 try Task.checkCancellation()
                 guard attempt == id, !stopped else { return }
                 command = nil; task = nil; busy = false; verifying = false
-                if ready { onReady() }
+                if ready && startWhenReady { onReady() }
             } catch {
                 guard attempt == id, !stopped else { return }
                 let cancelled = Task.isCancelled || error is CancellationError
@@ -251,7 +264,7 @@ final class PreparationController: ObservableObject {
         let child = PreparationCommand(), id = attempt
         command = child
         let result = try await child.run(helper: helper, root: root, command: name, options: options,
-                                         timeout: name == "download" ? 3600 : commandTimeout) { [weak self] completed, total, path, phase in
+                                         timeout: ["download", "move-models"].contains(name) ? 3600 : commandTimeout) { [weak self] completed, total, path, phase in
             Task { @MainActor in
                 guard let self, self.attempt == id, self.busy, self.phase != .cancelling, !self.stopped else { return }
                 self.verifying = phase == "verifying"
@@ -264,7 +277,8 @@ final class PreparationController: ObservableObject {
 
     func cancel() {
         guard busy else { return }
-        phase = .cancelling; message = "正在取消并保留下载进度…"
+        if !managing { phase = .cancelling }
+        message = "正在取消并保留下载进度…"
         task?.cancel(); command?.cancel()
     }
 

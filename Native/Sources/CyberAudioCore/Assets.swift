@@ -28,12 +28,14 @@ public enum AssetStore {
     public static func configuration(root: URL) throws -> ServiceConfiguration {
         try JSONDecoder().decode(ServiceConfiguration.self,from:Data(contentsOf:root.appendingPathComponent("config/service.json")))
     }
-    public static func verify(_ config: ServiceConfiguration) throws -> [[String:Any]] {
-        let assets = try lock()
+    public static func verify(_ config: ServiceConfiguration, progress: (String) -> Void = { _ in }) throws -> [[String:Any]] {
         var result: [[String:Any]] = []
-        for (component,path) in [("asr",config.asr_dir),("tts",config.tts_dir)] {
+        for (component,path,id) in [("asr",config.asr_dir,config.asrModelID),("tts",config.tts_dir,config.ttsModelID)] {
+            let model = try ModelCatalog.descriptor(id)
+            progress(id)
+            guard model.component == component else { throw ServiceError(400,"invalid_model","模型用途与配置不匹配。") }
             let root = URL(fileURLWithPath:path).resolvingSymlinksInPath()
-            let files = assets.files.filter { $0.path.hasPrefix(component+"/") }
+            let files = model.files
             for file in files {
                 let relative = String(file.path.dropFirst(component.count+1))
                 let target = root.appendingPathComponent(relative).resolvingSymlinksInPath()
@@ -44,7 +46,7 @@ public enum AssetStore {
                     throw ServiceError(500,"invalid_assets","模型文件校验失败，请运行 CyberAudioAssets verify。")
                 }
             }
-            result.append(["component":component,"files_verified":files.count,"revision":component == "asr" ? ModelCatalog.asrRevision : ModelCatalog.ttsRevision])
+            result.append(["component":component,"model":id,"files_verified":files.count,"revision":model.revision])
         }
         return result
     }
@@ -102,6 +104,7 @@ public enum AssetStore {
         return left is NSNull && right is NSNull
     }
     public static func prepare(root: URL, port: Int = 8765, ffmpeg: String = "/opt/homebrew/bin/ffmpeg", https: String = "") throws {
+        try ModelStore.recover(root:root)
         for name in ["", "config", "models", "reports", "logs", "tmp"] {
             let directory = name.isEmpty ? root : root.appendingPathComponent(name)
             try FileManager.default.createDirectory(at:directory,withIntermediateDirectories:true,attributes:[.posixPermissions:0o700])
@@ -126,9 +129,16 @@ public enum AssetStore {
             try Data("(version 1)\n(allow default)\n(deny network-outbound)\n".utf8).write(to:sandbox,options:.atomic)
         }
     }
-    public static func download(root: URL,source: AssetDownloadSource = .huggingFace,proxy: String? = nil,restart: Bool = false,
+    public static func download(root: URL,source: AssetDownloadSource = .huggingFace,proxy: String? = nil,restart: Bool = false,modelID: String? = nil,
                                 progress: @escaping @Sendable (AssetDownloadProgress)->Void = { _ in }) async throws {
-        let config = try configuration(root:root)
+        let original = try configuration(root:root)
+        let models = try (modelID.map { [$0] } ?? [original.asrModelID,original.ttsModelID]).map { try ModelCatalog.descriptor($0) }
+        guard models.allSatisfy({ $0.sources[source.rawValue] != nil }) else {
+            throw ServiceError(400,"source_unavailable","该型号尚未核验所选下载源，请选择其他可用下载源。")
+        }
+        let config = modelID == nil ? original : original.validating(models[0],root:root)
+        for model in models { try ModelStore.requireStorage(at:original.directory(for:model,root:root)) }
+        try ModelStore.requireStorage(at:config.stagingDirectory(root:root))
         let network = URLSessionConfiguration.ephemeral
         network.timeoutIntervalForRequest = 60
         network.timeoutIntervalForResource = 1800
@@ -153,24 +163,56 @@ public enum AssetStore {
         guard flock(descriptor,LOCK_EX|LOCK_NB) == 0 else {
             throw ServiceError(409,"setup_busy","已有模型准备任务正在进行，请等待它结束。")
         }
-        let status = try preparationStatus(root:root)
+        guard !FileManager.default.fileExists(atPath:root.appendingPathComponent("config/model-change.json").path) else {
+            throw ServiceError(409,"model_change_pending","模型配置正在切换，请完成或恢复操作后再下载。")
+        }
+        let files = models.flatMap(\.files)
+        var reusable: [String:[URL]] = [:]
+        for known in try ModelCatalog.descriptors() {
+            let local = original.validating(known,root:root)
+            for asset in known.files {
+                let path = try AssetPreparation.destination(asset,configuration:local)
+                reusable[asset.sha256,default:[]].append(path)
+            }
+        }
+        let status = try AssetPreparation.inspect(configuration:config,assets:files,staging:config.stagingDirectory(root:root),
+            availableBytes:ModelStore.availableBytes(configuration:config,root:root),checkFFmpeg:false)
         guard status.invalid_files.isEmpty else {
             throw ServiceError(500,"invalid_assets","已有模型文件摘要不匹配；保留文件，请检查后重试。")
         }
         guard status.can_download else {
             throw ServiceError(507,"insufficient_storage","剩余磁盘空间不足，请释放空间后继续下载。")
         }
-        let files = try lock().files
         let total = files.reduce(Int64(0)) { $0+Int64($1.size) }
         var completed: Int64 = 0
         for file in files {
             try Task.checkCancellation()
             let target = try AssetPreparation.destination(file,configuration:config)
-            let url = try source.url(for:file)
+            let model = models.first { file.path.hasPrefix($0.component+"/") }!
             let base = completed
-            try await AssetDownloader.download(file,from:url,to:target,staging:temporaryRoot.appendingPathComponent("downloads"),
+            // Qwen variants share large codec assets. Reuse verified local
+            // bytes without moving or modifying the other installed model.
+            if try AssetDownloader.regularSize(target) == nil {
+                for candidate in reusable[file.sha256] ?? [] where candidate != target {
+                    try Task.checkCancellation()
+                    guard (try? AssetDownloader.regularSize(candidate)) == Int64(file.size),
+                          (try? digest(candidate)) == file.sha256 else { continue }
+                    let staging = config.stagingDirectory(root:root)
+                    try AssetDownloader.directory(staging)
+                    let copy = staging.appendingPathComponent(".reuse-"+UUID().uuidString)
+                    defer { try? FileManager.default.removeItem(at:copy) }
+                    try FileManager.default.copyItem(at:candidate,to:copy)
+                    try Task.checkCancellation()
+                    guard try digest(copy) == file.sha256 else { throw ServiceError(500,"invalid_assets","本地复用文件校验失败，已有模型已保留。") }
+                    try FileManager.default.createDirectory(at:target.deletingLastPathComponent(),withIntermediateDirectories:true)
+                    try AssetDownloader.publish(copy,to:target)
+                    break
+                }
+            }
+            let url = try source.url(for:file,model:model)
+            try await AssetDownloader.download(file,from:url,to:target,staging:config.stagingDirectory(root:root),
                 session:session,restart:restart) { bytes in
-                progress(AssetDownloadProgress(event:"progress",path:file.path,completed_bytes:base+bytes,total_bytes:total,phase:"downloading"))
+                progress(AssetDownloadProgress(event:"progress",path:file.path,completed_bytes:base+bytes,total_bytes:total,phase:"downloading",model_id:model.id))
             }
             completed += Int64(file.size)
         }

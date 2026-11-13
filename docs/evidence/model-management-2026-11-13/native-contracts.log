@@ -1,0 +1,72 @@
+bash scripts/build_native.sh test
+swift-driver version: 1.168.6 warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+Verified CyberAudio managed Qwen TTS and cancellable ASR adapters.
+warning: '--skip-update' option is deprecated and will be removed in a future release
+warning: 'mlx-audio-swift': found 5 file(s) which are unhandled; explicitly declare them as resources or exclude from the target
+    /Users/codehub/Workspaces/CyberAudio-model-management/.context/native-build/checkouts/mlx-audio-swift/Sources/MLXAudioTTS/Models/IrodoriTTS/README.md
+    /Users/codehub/Workspaces/CyberAudio-model-management/.context/native-build/checkouts/mlx-audio-swift/Sources/MLXAudioTTS/Models/MossTTS/README.md
+    /Users/codehub/Workspaces/CyberAudio-model-management/.context/native-build/checkouts/mlx-audio-swift/Sources/MLXAudioTTS/Models/OmniVoice/README.md
+    /Users/codehub/Workspaces/CyberAudio-model-management/.context/native-build/checkouts/mlx-audio-swift/Sources/MLXAudioTTS/Models/Spark/README.md
+    /Users/codehub/Workspaces/CyberAudio-model-management/.context/native-build/checkouts/mlx-audio-swift/Sources/MLXAudioTTS/Models/BreezeTTS/README.md
+warning: 'mlx-audio-swift': found 1 file(s) which are unhandled; explicitly declare them as resources or exclude from the target
+    /Users/codehub/Workspaces/CyberAudio-model-management/.context/native-build/checkouts/mlx-audio-swift/Sources/MLXAudioSTT/Models/MingASR/README.md
+warning: 'mlx-audio-swift': found 1 file(s) which are unhandled; explicitly declare them as resources or exclude from the target
+    /Users/codehub/Workspaces/CyberAudio-model-management/.context/native-build/checkouts/mlx-audio-swift/Sources/MLXAudioSTS/Models/DeepFilterNet/README.md
+[0/1] Planning build
+Building for production...
+[0/2] Write swift-version--1AB21518FC5DEDBE.txt
+[1/3] Write sources
+[3/4] Compiling CyberAudioCoreTests AssetDownloadTests.swift
+[3/5] Write Objects.LinkFileList
+[4/5] Linking CyberAudioCoreTests
+Build of product 'CyberAudioCoreTests' complete! (5.09s)
+PASS configured model IDs and capabilities over HTTP
+PASS strict speech
+PASS binary multipart
+PASS atomic update admission
+PASS update lease expiry
+PASS producer cancellation join
+PASS timeout slot retention
+PASS HTTP auth WAV PCM and records
+PASS FFmpeg formats and limits
+PASS chunked limit and duplicate auth
+PASS private and partial failures
+PASS HTTP disconnect update drain and recovery
+PASS HTTP timeout retains producer
+PASS slow HTTP reader bounds producer
+PASS update rejects unread audio bodies
+PASS update waits for WAV response flush
+PASS unread WAV send deadline releases update drain
+PASS health and scoped cleanup
+PASS native setup preservation
+PASS tokenizer process and locale stability
+PASS native proxy download preserves failed assets
+PASS IPv6 HTTP and SOCKS5 download proxy routing
+PASS model download sources pin repositories and nested paths
+PASS ranged asset download and reuse
+PASS interrupted download resumes completed chunks
+PASS transient asset interruption retries unchanged range
+PASS temporary asset server failure recovers
+PASS persistent asset failures stop after bounded retries
+PASS interrupted large ranges fall back without losing prefix
+PASS persistent small range failure remains bounded
+PASS HTTP unavailability does not reduce range
+PASS asset retry respects server delay and permanent errors
+PASS asset cancellation interrupts retry delay
+PASS ignored ranges never append a full response
+PASS download rejects bad ranges and checksums
+PASS asset cancellation preserves resumable progress
+PASS asset download preserves final files and rejects symlinks
+PASS preparation readiness and disk capacity
+PASS preparation checks actual FFmpeg identity
+Native contracts: 39 cases, 0 failures, 0 skipped
+warning: '--skip-update' option is deprecated and will be removed in a future release
+Building for production...
+[0/2] Write swift-version--1AB21518FC5DEDBE.txt
+Build of product 'CyberAudioInferenceTests' complete! (0.35s)
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.
+warning: '--skip-update' option is deprecated and will be removed in a future release
+Building for production...
+[0/2] Write swift-version--1AB21518FC5DEDBE.txt
+Build of product 'CyberAudioAssets' complete! (0.30s)
+warning: '--build-system native' has been deprecated and will be removed in a future release; please report an issue at https://github.com/swiftlang/swift-package-manager/issues if you are unable to adopt the default build system.

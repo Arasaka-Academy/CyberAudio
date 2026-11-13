@@ -149,7 +149,7 @@ public enum AssetDownloader {
         return ServiceError(502,"download_unavailable",reason+"，已保留进度；请检查网络或代理后继续。")
     }
     static var unsafePath: ServiceError { ServiceError(500,"unsafe_download_path","下载路径包含非普通文件或符号链接，请检查暂存目录。") }
-    private static func publish(_ source: URL,to target: URL) throws {
+    static func publish(_ source: URL,to target: URL) throws {
         // RENAME_EXCL atomically publishes without replacing a final file that
         // appeared during verification. An external model volume needs a local
         // staging copy before the same atomic operation.
@@ -189,7 +189,7 @@ public enum AssetDownloader {
         guard info.st_mode & S_IFMT == S_IFREG else { throw unsafePath }
         return info.st_size
     }
-    private static func directory(_ url: URL) throws {
+    static func directory(_ url: URL) throws {
         var info = stat()
         if lstat(url.path,&info) == 0 {
             guard info.st_mode & S_IFMT == S_IFDIR else { throw unsafePath }

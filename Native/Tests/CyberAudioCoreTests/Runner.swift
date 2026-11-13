@@ -53,6 +53,7 @@ class XCTestCase {
             return
         }
         let cases: [(String,(ServiceTests) async throws -> Void)] = [
+            ("configured model IDs and capabilities over HTTP",{ try await $0.testConfiguredModelIDsAndCapabilitiesOverHTTP() }),
             ("strict speech",{ try $0.testStrictSpeechOptionsAndAliases() }),
             ("binary multipart",{ try $0.testMultipartBinaryBoundaryAndLimits() }),
             ("atomic update admission",{ try $0.testUpdateLeasesAndAdmissionAreAtomic() }),

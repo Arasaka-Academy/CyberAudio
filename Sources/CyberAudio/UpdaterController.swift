@@ -74,7 +74,7 @@ final class UpdaterController: NSObject, ObservableObject, SPUUpdaterDelegate, @
     init(backend: BackendController, audio: AudioWorkspace, dictation: DictationController,
          preparationBusy: @escaping () -> Bool = { false }) {
         self.backend = backend
-        gate = UpdateGate(audioBusy: { audio.working || audio.playing || dictation.blocksUpdate || preparationBusy() },
+        gate = UpdateGate(audioBusy: { audio.working || audio.playing || audio.managingModels || dictation.blocksUpdate || preparationBusy() },
                           prepare: { try await backend.prepareForUpdate(lease: $0) },
                           resume: { await backend.cancelUpdatePreparation(lease: $0) })
         super.init()

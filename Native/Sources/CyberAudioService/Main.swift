@@ -11,7 +11,7 @@ import CyberAudioInference
             guard args.count%2 == 0 else { throw ServiceError.inference }
             var options: [String:String] = [:]
             for i in stride(from:0,to:args.count,by:2) {
-                guard ["--root","--parent-pid","--instance","--metallib"].contains(args[i]),options[args[i]] == nil else { throw ServiceError.inference }
+                guard ["--root","--parent-pid","--instance","--metallib","--maintenance-lease"].contains(args[i]),options[args[i]] == nil else { throw ServiceError.inference }
                 options[args[i]] = args[i+1]
             }
             guard let path = options["--root"],let parent = options["--parent-pid"].flatMap(Int32.init),parent == getppid(),
@@ -25,6 +25,9 @@ import CyberAudioInference
             try AudioFile.cleanup(settings.temporaryDirectory)
             let log = try ServiceLog(root:root)
             let coordinator = ServiceCoordinator(settings:settings,log:log.write)
+            if let lease = options["--maintenance-lease"] {
+                _ = try coordinator.update(action:"prepare",instance:settings.instance,lease:lease)
+            }
             let server = HTTPService(coordinator:coordinator)
             _ = try server.start()
             log.write("service_started backend=mlx-swift")

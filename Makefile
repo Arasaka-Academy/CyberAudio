@@ -21,6 +21,7 @@ test: native-test
 	bash scripts/test_coreml_evidence.sh
 	bash scripts/test_dictation.sh
 	bash scripts/test_audio_workflow.sh
+	bash scripts/test_model_management.sh
 	swift build --build-system native -c release
 	bash scripts/test_workspace_layout.sh
 

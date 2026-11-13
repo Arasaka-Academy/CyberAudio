@@ -1,0 +1,37 @@
+{
+  "scope": "5a2c21a22901641b927164c720f3613de8823fb7 plus model-management changes and new files",
+  "execution": "Sequential main-thread review per AGENTS.md; all compilation, behavioral checks and rendering through Tailscale on codehubmac-mini",
+  "lenses": [
+    "correctness",
+    "API contracts and compatibility",
+    "data integrity and recovery",
+    "request admission and async ownership",
+    "download source integrity",
+    "testing",
+    "maintainability",
+    "native UI and project standards",
+    "CLI accessibility"
+  ],
+  "fixed_findings": [
+    {
+      "severity": "P2",
+      "issue": "A completed model check retained its transient checking caption while the page was idle",
+      "fix": "Clear the checking caption when the owned check finishes; retain separate error reporting",
+      "evidence": "Remote ModelManager assertions and light/dark native renders in make-check.log"
+    }
+  ],
+  "open_code_findings": [],
+  "acceptance": {
+    "native_contracts": "passed: 39 cases with no failures or skips, including configured ASR omission and explicit mismatch",
+    "controller_and_rendering": "passed: shared ownership, drain, candidate admission, update exclusion, rollback, migration resumption and 5 model renders",
+    "storage": "passed: 9 scenarios including forced unmount during a paused copy",
+    "packaging": "passed: ad-hoc app and nested signatures, bundled catalog and model-status smoke tests",
+    "runtime_matrix": "passed: all 8 variants in 9 real native inference pairs; installed production instance unchanged",
+    "make_check": "passed on final source: 39 native contracts, 54 Python tool tests, preparation, updates, dictation, audio, models and native layouts"
+  },
+  "validation_limits": [
+    "Native view rendering captures are not interactive desktop or accessibility automation",
+    "Mounted disposable APFS images exercise disconnection; physical USB removal was not exercised",
+    "Short synthesized bilingual probes establish model loading and API inference; they are not corpus accuracy or microphone/listening acceptance"
+  ]
+}

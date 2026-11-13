@@ -59,6 +59,8 @@ python3 scripts/sign_app.py sign "$app"
 asset_smoke="$(mktemp -d "${TMPDIR:-/tmp}/CyberAudio-assets-smoke.XXXXXX")"
 trap 'rm -rf "$asset_smoke"' EXIT
 "$app/Contents/Helpers/CyberAudioAssets" prepare --root "$asset_smoke"
+"$app/Contents/Helpers/CyberAudioAssets" catalog --json true >/dev/null
+"$app/Contents/Helpers/CyberAudioAssets" models --root "$asset_smoke" --json true >/dev/null
 python_resources="$(find "$app" \( -name '*.py' -o -name '*.pyc' -o -name '.venv' -o -name 'libpython*' \) -print)"
 if [[ -n "$python_resources" ]]; then
   printf '%s\n' 'Unexpected Python runtime resource in App.' >&2

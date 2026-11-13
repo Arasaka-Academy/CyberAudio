@@ -33,6 +33,7 @@ struct ServiceSettingsView: View {
     var body: some View {
         TabView(selection: $tab) {
             dictationSettings.tabItem { Label("听写", systemImage: "mic") }.tag(0)
+            ModelSettingsView().tabItem { Label("模型",systemImage:"square.stack.3d.up") }.tag(3)
             serviceSettings.tabItem { Label("服务", systemImage: "waveform") }.tag(1)
             generalSettings.tabItem { Label("通用与更新", systemImage: "gearshape") }.tag(2)
         }
@@ -114,16 +115,10 @@ struct ServiceSettingsView: View {
                 Text("本地语音引擎").font(.title3.weight(.semibold)); Spacer(); EngineStatus()
                 if backend.running {
                     Button("停止") { Task { await backend.stop() } }.disabled(audio.cannotStart || dictation.blocksUpdate || backend.status == "stopping")
-                } else { Button("启动") { backend.start() }.disabled(audio.preparingUpdate || dictation.blocksUpdate) }
+                } else { Button("启动") { backend.start() }.disabled(audio.preparingUpdate || audio.managingModels || dictation.blocksUpdate) }
                 Button("重启") { Task { await backend.restart() } }.disabled(audio.cannotStart || dictation.blocksUpdate || backend.status == "stopping")
             }
             Text(backend.detail).font(.caption).foregroundStyle(.secondary).lineLimit(2).textSelection(.enabled)
-            GroupBox("模型") {
-                VStack(alignment: .leading, spacing: 14) {
-                    model("语音识别", name: "Qwen3-ASR 1.7B · 8-bit", revision: "a8379a2e2f9e")
-                    model("语音合成", name: "Qwen3-TTS 1.7B · CustomVoice · 8-bit", revision: "41d3337e8b7f")
-                }.frame(maxWidth: .infinity, alignment: .leading).padding(8)
-            }
             GroupBox("API 连接") {
                 VStack(alignment: .leading, spacing: 14) {
                     serviceRow("本机") {
@@ -178,12 +173,4 @@ struct ServiceSettingsView: View {
         }.font(.callout)
     }
 
-    private func model(_ title: String, name: String, revision: String) -> some View {
-        serviceRow(title) {
-            VStack(alignment: .leading, spacing: 3) {
-                Text(name).font(.callout.weight(.medium)).fixedSize(horizontal: false, vertical: true)
-                Text("revision \(revision)…").font(.caption.monospaced()).foregroundStyle(.secondary)
-            }
-        }
-    }
 }
